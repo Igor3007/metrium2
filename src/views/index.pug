@@ -1,5 +1,15 @@
 extends layouts/main
 
+include ../blocks/modules/first-block/first-block
+include ../blocks/modules/all-categories/all-categories
+include ../blocks/modules/best-offers/best-offers
+include ../blocks/modules/special-offers/special-offers
+include ../blocks/modules/our-services/our-services
+include ../blocks/modules/company-about/company-about
+include ../blocks/modules/partners/partners
+include ../blocks/modules/our-awards/our-awards
+include ../blocks/modules/form-question/form-question
+
 block variables
   include ../data/data.pug
   - const title = "Metrium"
@@ -7,7 +17,15 @@ block variables
 
 block main
 
- 
+ +first-block
+ +all-categories
+ +best-offers
+ +special-offers
+ +our-services
+ +company-about
+ +partners
+ +our-awards
+ +form-question
  
 block scripts
   script(src="/js/vendor.js") 

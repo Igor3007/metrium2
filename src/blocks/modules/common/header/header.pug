@@ -1,0 +1,25 @@
+.header
+    .header__left
+        .header__burger
+            .icon-burger
+                span
+                span
+        .header__nav
+            nav
+                ul
+                    li: a(href='#') Городская
+                    li: a(href='#') Загородная
+                    li: a(href='#') Собственникам
+
+    .header__logo
+        a(href='#'): span(style="background-image: url('/img/common/logo.svg')")
+    .header__right
+        .header__phone
+            a(href='tel:+74952525255') +7(495)25-25-255
+        .header__wishlist
+            a(href='#'): +icons('#ic_heart')
+        .header__button
+            a(href='#')
+                button.btn.btn-gold 
+                    +icons('#ic_phone')
+                    span Перезвоните мне

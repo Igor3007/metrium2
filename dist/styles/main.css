@@ -15,19 +15,32 @@
 /* colors light */
 
 :root {
-  --primary: #000;
   --accent: #0090c3;
-  --accent-hover: #41BFF1;
-  --secondaty: #0009;
-  --disabled: #0006;
-  --critical: #ff3232;
-  --caution: #ffe816;
-  --success: #3df55b;
-  --inverse: #fff;
-  --Text-inverse: #FFF;
-  --dark: #2F3030;
-  --black: #000;
   --bg: #F2F6F9;
+  --white: #FFFFFF;
+  --text-1: #1A1A1A;
+  --text-2: #535968;
+  --text-3: #8DA4A8;
+  /* Text-size styles */
+  --body-24-reg: 24px;
+  --body-20-med: 20px;
+  --body-20-reg: 20px;
+  --body-18-med: 18px;
+  --body-18-reg: 18px;
+  --body-16-med: 16px;
+  --body-16-reg: 16px;
+  --body-14-med: 14px;
+  --body-14-reg: 14px;
+  --body-13-med: 13px;
+  --desk--super-h: 104px;
+  --desk--h1: 64px;
+  --desk--h2: 48px;
+  --desk--h3: 36px;
+  --desk--h4: 28px;
+  --mob--h1: 32px;
+  --mob--h2: 28px;
+  --mob--h3: 24px;
+  --mob--h4: 20px;
 }
 
 html,
