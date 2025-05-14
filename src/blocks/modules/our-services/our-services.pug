@@ -1,4 +1,13 @@
-mixin  our-services
+mixin card-services
+    .card-services
+        .card-services
+
+mixin our-services
     section.section-our-services
         .container
-            .our-services our-services
+            .our-services
+                .our-services__title Услуги компании
+                .our-services__desc Компания «Метриум» предлагает уникальную систему сервисов для инвестиций в высокобюджетную недвижимость по Москве и Московской области.
+                .our-services__list
+                    each item in [1,1,1,1,1,1]
+                        .our-services__item: +card-services

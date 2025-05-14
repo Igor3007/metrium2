@@ -1,4 +1,18 @@
-mixin  special-offers
+include ../card-collection/card-collection.pug
+
+mixin special-offers
     section.section-special-offers
         .container
-            .special-offers special-offers
+            .special-offers
+                .special-offers__title Подборка лучших предложений
+                .special-offers__slider
+                    .splide
+                        .splide__track
+                            .splide__list
+                                each item in [1,1,1,1,1]
+                                    .splide__slide: +card-collection
+                .special-offers__bottom
+                    .special-offers__nav
+                        .special-offers__nav-next: +icons('#ic_arr-left')
+                        .special-offers__nav-prev: +icons('#ic_arr-right')
+                    .special-offers__count 3/12

@@ -1,0 +1,40 @@
+mixin minicard  
+    .minicard
+        .minicard__top
+            .minicard__slider
+                .splide
+                    .splide__track
+                        .splide__list
+                            each item in [1,1,1,1,1,1]
+                                .splide__slide
+                                    +picture('/img/objects/img-block')
+        .minicard__main
+            .minicard__id ID объекта: 23478
+            .minicard__title: a(href='#') Воробьев Дом
+            .minicard__type Квартира
+            .minicard__address Воробьевское шоссе, 4с1, м. Лужники
+            .minicard__prop
+                ul
+                    li
+                        small Площадь
+                        span 124.7 м2
+                    li
+                        small Комнат
+                        span 3
+                    li
+                        small C/у
+                        span 3
+                    li
+                        small Этаж
+                        span 6/12
+                    
+            .minicard__price
+                .minicard__price-usd 2 408 245 $
+                .minicard__price-rub 199 520 000 ₽
+            .minicard__action
+                .minicard__detail
+                    a(href='#'): button.btn Подробнее
+                .minicard__getcall
+                    a(href='#'): button.btn.btn-line Заказать звонок
+
+

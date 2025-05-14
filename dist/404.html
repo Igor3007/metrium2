@@ -28,79 +28,23 @@
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
     <link rel="prefetch" href="/img/sprites/sprite.svg" as="image" crossorigin>
     <style>@font-face {
-  font-family: 'Involve SemiBold Oblique';
-  src: url("/fonts/involve/subset-Involve-SemiBoldOblique.woff2") format("woff2"), url("/fonts/involve/subset-Involve-SemiBoldOblique.woff") format("woff");
-  font-weight: 600;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Involve Medium Oblique';
-  src: url("/fonts/involve/subset-Involve-MediumOblique.woff2") format("woff2"), url("/fonts/involve/subset-Involve-MediumOblique.woff") format("woff");
-  font-weight: 500;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Involve';
-  src: url("/fonts/involve/subset-Involve-SemiBold.woff2") format("woff2"), url("/fonts/involve/subset-Involve-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Involve';
-  src: url("/fonts/involve/subset-Involve-Medium.woff2") format("woff2"), url("/fonts/involve/subset-Involve-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Involve';
-  src: url("/fonts/involve/subset-Involve-Oblique.woff2") format("woff2"), url("/fonts/involve/subset-Involve-Oblique.woff") format("woff");
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Involve';
-  src: url("/fonts/involve/subset-Involve-Bold.woff2") format("woff2"), url("/fonts/involve/subset-Involve-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Involve Bold Oblique';
-  src: url("/fonts/involve/subset-Involve-BoldOblique.woff2") format("woff2"), url("/fonts/involve/subset-Involve-BoldOblique.woff") format("woff");
-  font-weight: bold;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Involve';
-  src: url("/fonts/involve/subset-Involve-Regular.woff2") format("woff2"), url("/fonts/involve/subset-Involve-Regular.woff") format("woff");
+  font-family: 'Forma DJR Cyrillic';
+  src: url("/fonts/subset-FormaDJRCyrillicText-Regular.woff2") format("woff2"), url("/fonts/subset-FormaDJRCyrillicText-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url("/fonts/montserrat/subset-Montserrat-Regular.woff2") format("woff2"), url("/fonts/montserrat/subset-Montserrat-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url("/fonts/montserrat/subset-Montserrat-Medium.woff2") format("woff2"), url("/fonts/montserrat/subset-Montserrat-Medium.woff") format("woff");
+  font-family: 'Forma DJR Cyrillic';
+  src: url("/fonts/subset-FormaDJRCyrillicDisplay-Medium.woff2") format("woff2"), url("/fonts/subset-FormaDJRCyrillicDisplay-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url("/fonts/montserrat/subset-Montserrat-SemiBold.woff2") format("woff2"), url("/fonts/montserrat/subset-Montserrat-SemiBold.woff") format("woff");
-  font-weight: 600;
+  font-family: 'Guardian Egyptian LCG';
+  src: url("/fonts/subset-GuardianEgyptianLCG-Regular.woff2") format("woff2"), url("/fonts/subset-GuardianEgyptianLCG-Regular.woff") format("woff");
+  font-weight: normal;
   font-style: normal;
 }
 /*# sourceMappingURL=maps/critical-fonts.css.map */
@@ -110,34 +54,36 @@
   </head>
   <body class="perf-no-animation">
     <header> 
-      <div class="header">
-        <div class="header__left">
-          <div class="header__burger">
-            <div class="icon-burger"><span></span><span></span></div>
+      <div class="container">
+        <div class="header">
+          <div class="header__left">
+            <div class="header__burger" data-menu="open"> 
+              <div class="icon-burger"><span></span><span></span></div>
+            </div>
+            <div class="header__nav">
+              <nav>
+                <ul>
+                  <li><a href="#">Городская</a></li>
+                  <li><a href="#">Загородная</a></li>
+                  <li><a href="#">Собственникам</a></li>
+                </ul>
+              </nav>
+            </div>
           </div>
-          <div class="header__nav">
-            <nav>
-              <ul>
-                <li><a href="#">Городская</a></li>
-                <li><a href="#">Загородная</a></li>
-                <li><a href="#">Собственникам</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <div class="header__logo"><a href="#"><span style="background-image: url('/img/common/logo.svg')"></span></a></div>
-        <div class="header__right">
-          <div class="header__phone"><a href="tel:+74952525255">+7(495)25-25-255</a></div>
-          <div class="header__wishlist"><a href="#">
-              <svg width="24" height="24">
-                <use xlink:href="/img/sprites/sprite.svg#ic_heart"></use>
-              </svg></a></div>
-          <div class="header__button"><a href="#">
-              <button class="btn btn-gold"> 
+          <div class="header__logo"><a href="#"><span style="background-image: url('/img/common/logo.svg')"></span></a></div>
+          <div class="header__right">
+            <div class="header__phone"><a href="tel:+74952525255">+7(495)25-25-255</a></div>
+            <div class="header__wishlist"><a href="#">
                 <svg width="24" height="24">
-                  <use xlink:href="/img/sprites/sprite.svg#ic_phone"></use>
-                </svg><span>Перезвоните мне</span>
-              </button></a></div>
+                  <use xlink:href="/img/sprites/sprite.svg#ic_heart"></use>
+                </svg></a></div>
+            <div class="header__button"><a href="#">
+                <button class="btn btn-gold">
+                  <svg width="24" height="24">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_phone"></use>
+                  </svg><span>Перезвоните мне </span>
+                </button></a></div>
+          </div>
         </div>
       </div>
     </header>
@@ -241,6 +187,7 @@
       </section>
     </main>
     <footer>
+      <div data-menu="container"></div>
     </footer>
   </body>
   <script src="/js/vendor.js"> </script>

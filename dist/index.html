@@ -28,79 +28,23 @@
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
     <link rel="prefetch" href="/img/sprites/sprite.svg" as="image" crossorigin>
     <style>@font-face {
-  font-family: 'Involve SemiBold Oblique';
-  src: url("/fonts/involve/subset-Involve-SemiBoldOblique.woff2") format("woff2"), url("/fonts/involve/subset-Involve-SemiBoldOblique.woff") format("woff");
-  font-weight: 600;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Involve Medium Oblique';
-  src: url("/fonts/involve/subset-Involve-MediumOblique.woff2") format("woff2"), url("/fonts/involve/subset-Involve-MediumOblique.woff") format("woff");
-  font-weight: 500;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Involve';
-  src: url("/fonts/involve/subset-Involve-SemiBold.woff2") format("woff2"), url("/fonts/involve/subset-Involve-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Involve';
-  src: url("/fonts/involve/subset-Involve-Medium.woff2") format("woff2"), url("/fonts/involve/subset-Involve-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Involve';
-  src: url("/fonts/involve/subset-Involve-Oblique.woff2") format("woff2"), url("/fonts/involve/subset-Involve-Oblique.woff") format("woff");
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Involve';
-  src: url("/fonts/involve/subset-Involve-Bold.woff2") format("woff2"), url("/fonts/involve/subset-Involve-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Involve Bold Oblique';
-  src: url("/fonts/involve/subset-Involve-BoldOblique.woff2") format("woff2"), url("/fonts/involve/subset-Involve-BoldOblique.woff") format("woff");
-  font-weight: bold;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Involve';
-  src: url("/fonts/involve/subset-Involve-Regular.woff2") format("woff2"), url("/fonts/involve/subset-Involve-Regular.woff") format("woff");
+  font-family: 'Forma DJR Cyrillic';
+  src: url("/fonts/subset-FormaDJRCyrillicText-Regular.woff2") format("woff2"), url("/fonts/subset-FormaDJRCyrillicText-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url("/fonts/montserrat/subset-Montserrat-Regular.woff2") format("woff2"), url("/fonts/montserrat/subset-Montserrat-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url("/fonts/montserrat/subset-Montserrat-Medium.woff2") format("woff2"), url("/fonts/montserrat/subset-Montserrat-Medium.woff") format("woff");
+  font-family: 'Forma DJR Cyrillic';
+  src: url("/fonts/subset-FormaDJRCyrillicDisplay-Medium.woff2") format("woff2"), url("/fonts/subset-FormaDJRCyrillicDisplay-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url("/fonts/montserrat/subset-Montserrat-SemiBold.woff2") format("woff2"), url("/fonts/montserrat/subset-Montserrat-SemiBold.woff") format("woff");
-  font-weight: 600;
+  font-family: 'Guardian Egyptian LCG';
+  src: url("/fonts/subset-GuardianEgyptianLCG-Regular.woff2") format("woff2"), url("/fonts/subset-GuardianEgyptianLCG-Regular.woff") format("woff");
+  font-weight: normal;
   font-style: normal;
 }
 /*# sourceMappingURL=maps/critical-fonts.css.map */
@@ -110,42 +54,49 @@
   </head>
   <body class="perf-no-animation">
     <header> 
-      <div class="header">
-        <div class="header__left">
-          <div class="header__burger">
-            <div class="icon-burger"><span></span><span></span></div>
+      <div class="container">
+        <div class="header">
+          <div class="header__left">
+            <div class="header__burger" data-menu="open"> 
+              <div class="icon-burger"><span></span><span></span></div>
+            </div>
+            <div class="header__nav">
+              <nav>
+                <ul>
+                  <li><a href="#">Городская</a></li>
+                  <li><a href="#">Загородная</a></li>
+                  <li><a href="#">Собственникам</a></li>
+                </ul>
+              </nav>
+            </div>
           </div>
-          <div class="header__nav">
-            <nav>
-              <ul>
-                <li><a href="#">Городская</a></li>
-                <li><a href="#">Загородная</a></li>
-                <li><a href="#">Собственникам</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <div class="header__logo"><a href="#"><span style="background-image: url('/img/common/logo.svg')"></span></a></div>
-        <div class="header__right">
-          <div class="header__phone"><a href="tel:+74952525255">+7(495)25-25-255</a></div>
-          <div class="header__wishlist"><a href="#">
-              <svg width="24" height="24">
-                <use xlink:href="/img/sprites/sprite.svg#ic_heart"></use>
-              </svg></a></div>
-          <div class="header__button"><a href="#">
-              <button class="btn btn-gold"> 
+          <div class="header__logo"><a href="#"><span style="background-image: url('/img/common/logo.svg')"></span></a></div>
+          <div class="header__right">
+            <div class="header__phone"><a href="tel:+74952525255">+7(495)25-25-255</a></div>
+            <div class="header__wishlist"><a href="#">
                 <svg width="24" height="24">
-                  <use xlink:href="/img/sprites/sprite.svg#ic_phone"></use>
-                </svg><span>Перезвоните мне</span>
-              </button></a></div>
+                  <use xlink:href="/img/sprites/sprite.svg#ic_heart"></use>
+                </svg></a></div>
+            <div class="header__button"><a href="#">
+                <button class="btn btn-gold">
+                  <svg width="24" height="24">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_phone"></use>
+                  </svg><span>Перезвоните мне </span>
+                </button></a></div>
+          </div>
         </div>
       </div>
     </header>
     <main> 
       <section class="section-first-block">
-        <div class="container">
-          <div class="first-block">
-            <div class="first-block__wrp">
+        <div class="first-block">
+          <div class="first-block__bg">
+            <picture>
+              <source srcset="/img/other/img-big.webp" type="image/webp"/><img src="/img/other/img-big.jpg" loading="lazy" alt="image"/>
+            </picture>
+          </div>
+          <div class="first-block__wrp">
+            <div class="container">
               <div class="first-block__title">
                 <h1>
                    Метриум Премиум<span>Элитная недвижимость в Москве и Подмосковье</span></h1>
@@ -162,13 +113,188 @@
                 <div class="fb-filter">
                   <div class="fb-filter__tab">
                     <ul>
-                      <li><span>Городская</span></li>
+                      <li class="is-active"><span>Городская</span></li>
                       <li><span>Загородная</span></li>
                     </ul>
                   </div>
                   <div class="fb-filter__tab-container">
-                    <div class="fb-filter__tab-content"></div>
-                    <div class="fb-filter__tab-content"></div>
+                    <div class="fb-filter__tab-content is-active">
+                      <form action="#" method="POST">
+                        <div class="fb-filter__row">
+                          <div class="fb-filter__fields">
+                            <div class="fb-filter__field">
+                              <select placeholder="Покупка">
+                                <option>Покупка</option>
+                                <option>Аренда</option>
+                                <option>Субаренда</option>
+                              </select>
+                            </div>
+                            <div class="fb-filter__field">
+                              <select placeholder="Тип недвижимости">
+                                <option>Квартиры</option>
+                                <option>Котеджи</option>
+                                <option>Таунхаусы</option>
+                              </select>
+                            </div>
+                            <div class="fb-filter__field">
+                              <input type="text" placeholder="от"/>
+                              <input type="text" placeholder="до"/>
+                            </div>
+                            <div class="fb-filter__field">
+                              <select placeholder="Район" multiple="multiple">
+                                <option>Арбат</option>
+                                <option>Басманный</option>
+                                <option>Замоскворечье</option>
+                                <option>Красносельский</option>
+                                <option>Мещанский</option>
+                                <option>Пресненский</option>
+                                <option>Таганский</option>
+                                <option>Тверской</option>
+                                <option>Хамовники</option>
+                                <option>Якиманка</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="fb-filter__row">
+                          <div class="fb-filter__items">
+                            <div class="fb-filter__item">
+                              <div class="fb-filter-all"><span>Показать ещё фильтры</span>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_arrow-down"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="fb-filter__item">
+                              <button class="btn btn-line">
+                                <svg width="24" height="24">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_loc"></use>
+                                </svg><span>Смотреть на карте</span>
+                              </button>
+                            </div>
+                            <div class="fb-filter__item">
+                              <button class="btn btn-green">
+                                <svg width="24" height="24">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_house"></use>
+                                </svg><span>Подобрать недвижимость</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="fb-filter__row">
+                          <div class="fb-filter__selections">
+                            <ul>
+                              <li><a href="#">Купить квартиру в центре Москвы</a></li>
+                              <li><a href="#">Купить участок в Подмосковье</a></li>
+                              <li><a href="#">Сервисные апартаменты</a></li>
+                              <li><a href="#">Квартиры с террасами</a></li>
+                              <li><a href="#">Патриаршие пруды</a></li>
+                              <li><a href="#">Квартиры для большой семьи</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="fb-filter__tab-content">
+                      <form action="#" method="POST">
+                        <div class="fb-filter__row">
+                          <div class="fb-filter__fields">
+                            <div class="fb-filter__field">
+                              <select placeholder="Покупка">
+                                <option>Покупка</option>
+                                <option>Аренда</option>
+                                <option>Субаренда</option>
+                              </select>
+                            </div>
+                            <div class="fb-filter__field">
+                              <select placeholder="Тип недвижимости">
+                                <option>Дома</option>
+                                <option>Особняки</option>
+                                <option>Котеджи</option>
+                                <option>Таунхаусы</option>
+                              </select>
+                            </div>
+                            <div class="fb-filter__field">
+                              <input type="text" placeholder="от"/>
+                              <input type="text" placeholder="до"/>
+                            </div>
+                            <div class="fb-filter__field">
+                              <select placeholder="Шоссе">
+                                <option>Новорижское</option>
+                                <option>Рублево-успенское</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="fb-filter__row">
+                          <div class="fb-filter__items">
+                            <div class="fb-filter__item">
+                              <div class="fb-filter-all"><span>Показать ещё фильтры</span>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_arrow"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="fb-filter__item">
+                              <button class="btn btn-line">
+                                <svg width="24" height="24">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_loc"></use>
+                                </svg><span>Смотреть на карте</span>
+                              </button>
+                            </div>
+                            <div class="fb-filter__item">
+                              <button class="btn btn-green">
+                                <svg width="24" height="24">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_house"></use>
+                                </svg><span>Подобрать недвижимость</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="fb-filter__row">
+                          <div class="fb-filter__selections">
+                            <ul>
+                              <li><a href="#">Дома до 300м</a></li>
+                              <li><a href="#">Купить участок в Подмосковье</a></li>
+                              <li><a href="#">С выходом к озеру </a></li>
+                              <li><a href="#">10 минут от города</a></li>
+                              <li><a href="#">Патриаршие пруды</a></li>
+                              <li><a href="#">Дом для большой семьи</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="first-block__adv">
+                <div class="fb-advantages">
+                  <div class="fb-advantages__list">
+                    <div class="fb-advantages__item">
+                      <div class="fb-card-adv">
+                        <div class="fb-card-adv__title">> 10 лет</div>
+                        <div class="fb-card-adv__desc">на рынке премиальной недвижимости</div>
+                      </div>
+                    </div>
+                    <div class="fb-advantages__item">
+                      <div class="fb-card-adv">
+                        <div class="fb-card-adv__title">> 10 тысяч</div>
+                        <div class="fb-card-adv__desc">клиентов в Москве и Московской области</div>
+                      </div>
+                    </div>
+                    <div class="fb-advantages__item">
+                      <div class="fb-card-adv">
+                        <div class="fb-card-adv__title">> 50 экспертов</div>
+                        <div class="fb-card-adv__desc">экспертов в сегментах премиум и элит</div>
+                      </div>
+                    </div>
+                    <div class="fb-advantages__item">
+                      <div class="fb-card-adv">
+                        <div class="fb-card-adv__title">> 600 объектов</div>
+                        <div class="fb-card-adv__desc">среди наших предложений недвижимости</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -178,22 +304,1207 @@
       </section>
       <section class="section-all-categories">
         <div class="container">
-          <div class="all-categories">all-categories</div>
+          <div class="all-categories">
+            <div class="all-categories__list">
+              <div class="all-categories__item">
+                <div class="card-categories">
+                  <div class="card-categories__preview">
+                    <div class="card-categories__bg">
+                      <picture>
+                        <source srcset="/img/other/btn-category-big-v3.webp" type="image/webp"/><img src="/img/other/btn-category-big-v3.jpg" loading="lazy" alt="image"/>
+                      </picture>
+                    </div><a href="/category.html">
+                      <div class="card-categories__title">Городская недвижимость</div>
+                      <div class="card-categories__price">От 5 800 000 ₽</div>
+                      <div class="card-categories__bottom">
+                        <div class="card-categories__offers">512 предложений</div>
+                        <div class="card-categories__tosub">
+                          <svg width="24" height="24">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                          </svg>
+                        </div>
+                      </div></a>
+                  </div>
+                  <div class="card-categories__sub">
+                    <div class="card-categories__title">Городская недвижимость</div>
+                    <div class="card-categories__slider">
+                      <div class="splide">
+                        <div class="splide__track">
+                          <div class="splide__list">
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/01-flats.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Квартиры</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/02-apartments.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Апартаменты</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/03-rent.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Аренда</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/04-complexes.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Все новостройки</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/03-rent.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Аренда</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/04-complexes.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Все новостройки</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/03-rent.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Аренда</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/04-complexes.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Все новостройки</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/03-rent.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Жилые комплексы</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-categories__action">
+                      <div class="card-categories__tocat"><a href="#">
+                          <button class="btn btn-green">Вся городская недвижимость</button></a></div>
+                      <div class="card-categories__nav">
+                        <div class="card-categories__nav-prev">
+                          <svg width="24" height="24">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
+                          </svg>
+                        </div>
+                        <div class="card-categories__nav-next">
+                          <svg width="24" height="24">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="all-categories__item">
+                <div class="card-categories">
+                  <div class="card-categories__preview">
+                    <div class="card-categories__bg">
+                      <picture>
+                        <source srcset="/img/other/btn-category-big-v3.webp" type="image/webp"/><img src="/img/other/btn-category-big-v3.jpg" loading="lazy" alt="image"/>
+                      </picture>
+                    </div><a href="/category.html">
+                      <div class="card-categories__title">Городская недвижимость</div>
+                      <div class="card-categories__price">От 5 800 000 ₽</div>
+                      <div class="card-categories__bottom">
+                        <div class="card-categories__offers">512 предложений</div>
+                        <div class="card-categories__tosub">
+                          <svg width="24" height="24">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                          </svg>
+                        </div>
+                      </div></a>
+                  </div>
+                  <div class="card-categories__sub">
+                    <div class="card-categories__title">Городская недвижимость</div>
+                    <div class="card-categories__slider">
+                      <div class="splide">
+                        <div class="splide__track">
+                          <div class="splide__list">
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/01-flats.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Квартиры</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/02-apartments.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Апартаменты</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/03-rent.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Аренда</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/04-complexes.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Все новостройки</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/03-rent.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Аренда</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/04-complexes.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Все новостройки</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/03-rent.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Аренда</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/04-complexes.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Все новостройки</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/03-rent.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Жилые комплексы</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-categories__action">
+                      <div class="card-categories__tocat"><a href="#">
+                          <button class="btn btn-green">Вся городская недвижимость</button></a></div>
+                      <div class="card-categories__nav">
+                        <div class="card-categories__nav-prev">
+                          <svg width="24" height="24">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
+                          </svg>
+                        </div>
+                        <div class="card-categories__nav-next">
+                          <svg width="24" height="24">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="all-categories__item">
+                <div class="card-categories">
+                  <div class="card-categories__preview">
+                    <div class="card-categories__bg">
+                      <picture>
+                        <source srcset="/img/other/btn-category-big-v3.webp" type="image/webp"/><img src="/img/other/btn-category-big-v3.jpg" loading="lazy" alt="image"/>
+                      </picture>
+                    </div><a href="/category.html">
+                      <div class="card-categories__title">Городская недвижимость</div>
+                      <div class="card-categories__price">От 5 800 000 ₽</div>
+                      <div class="card-categories__bottom">
+                        <div class="card-categories__offers">512 предложений</div>
+                        <div class="card-categories__tosub">
+                          <svg width="24" height="24">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                          </svg>
+                        </div>
+                      </div></a>
+                  </div>
+                  <div class="card-categories__sub">
+                    <div class="card-categories__title">Городская недвижимость</div>
+                    <div class="card-categories__slider">
+                      <div class="splide">
+                        <div class="splide__track">
+                          <div class="splide__list">
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/01-flats.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Квартиры</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/02-apartments.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Апартаменты</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/03-rent.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Аренда</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/04-complexes.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Все новостройки</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/03-rent.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Аренда</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/04-complexes.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Все новостройки</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/03-rent.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Аренда</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/04-complexes.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Все новостройки</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/03-rent.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Жилые комплексы</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-categories__action">
+                      <div class="card-categories__tocat"><a href="#">
+                          <button class="btn btn-green">Вся городская недвижимость</button></a></div>
+                      <div class="card-categories__nav">
+                        <div class="card-categories__nav-prev">
+                          <svg width="24" height="24">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
+                          </svg>
+                        </div>
+                        <div class="card-categories__nav-next">
+                          <svg width="24" height="24">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="all-categories__item">
+                <div class="card-categories">
+                  <div class="card-categories__preview">
+                    <div class="card-categories__bg">
+                      <picture>
+                        <source srcset="/img/other/btn-category-big-v3.webp" type="image/webp"/><img src="/img/other/btn-category-big-v3.jpg" loading="lazy" alt="image"/>
+                      </picture>
+                    </div><a href="/category.html">
+                      <div class="card-categories__title">Городская недвижимость</div>
+                      <div class="card-categories__price">От 5 800 000 ₽</div>
+                      <div class="card-categories__bottom">
+                        <div class="card-categories__offers">512 предложений</div>
+                        <div class="card-categories__tosub">
+                          <svg width="24" height="24">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                          </svg>
+                        </div>
+                      </div></a>
+                  </div>
+                  <div class="card-categories__sub">
+                    <div class="card-categories__title">Городская недвижимость</div>
+                    <div class="card-categories__slider">
+                      <div class="splide">
+                        <div class="splide__track">
+                          <div class="splide__list">
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/01-flats.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Квартиры</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/02-apartments.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Апартаменты</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/03-rent.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Аренда</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/04-complexes.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Все новостройки</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/03-rent.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Аренда</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/04-complexes.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Все новостройки</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/03-rent.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Аренда</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/04-complexes.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Все новостройки</div>
+                              </div>
+                            </div>
+                            <div class="splide__item">
+                              <div class="sub-cat-card">
+                                <div class="sub-cat-card__icons"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/03-rent.svg"></span>
+                                </div>
+                                <div class="sub-cat-card__title">Жилые комплексы</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-categories__action">
+                      <div class="card-categories__tocat"><a href="#">
+                          <button class="btn btn-green">Вся городская недвижимость</button></a></div>
+                      <div class="card-categories__nav">
+                        <div class="card-categories__nav-prev">
+                          <svg width="24" height="24">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
+                          </svg>
+                        </div>
+                        <div class="card-categories__nav-next">
+                          <svg width="24" height="24">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="section-best-offers">
         <div class="container">
-          <div class="best-offers">best-offers</div>
+          <div class="best-offers">
+            <div class="best-offers__title">Новые предложения</div>
+            <div class="best-offers__tabs">
+              <ul>
+                <li><span>Квартиры</span></li>
+                <li><span>Новостройки</span></li>
+                <li><span>Дома на Новой Риге</span></li>
+                <li><span>Дома на Рублёвке</span></li>
+                <li><span>Участки</span></li>
+              </ul>
+            </div>
+            <div class="best-offers__slider">
+              <div class="splide">
+                <div class="splide__track">
+                  <div class="splide__list">
+                    <div class="splide__slide">
+                      <div class="minicard">
+                        <div class="minicard__top">
+                          <div class="minicard__slider">
+                            <div class="splide">
+                              <div class="splide__track">
+                                <div class="splide__list">
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="minicard__main">
+                          <div class="minicard__id">ID объекта: 23478</div>
+                          <div class="minicard__title"><a href="#">Воробьев Дом</a></div>
+                          <div class="minicard__type">Квартира</div>
+                          <div class="minicard__address">Воробьевское шоссе, 4с1, м. Лужники</div>
+                          <div class="minicard__prop">
+                            <ul>
+                              <li><small>Площадь</small><span>124.7 м2</span></li>
+                              <li><small>Комнат</small><span>3</span></li>
+                              <li><small>C/у</small><span>3</span></li>
+                              <li><small>Этаж</small><span>6/12</span></li>
+                            </ul>
+                          </div>
+                          <div class="minicard__price">
+                            <div class="minicard__price-usd">2 408 245 $</div>
+                            <div class="minicard__price-rub">199 520 000 ₽</div>
+                          </div>
+                          <div class="minicard__action">
+                            <div class="minicard__detail"><a href="#">
+                                <button class="btn">Подробнее</button></a></div>
+                            <div class="minicard__getcall"><a href="#">
+                                <button class="btn btn-line">Заказать звонок</button></a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="minicard">
+                        <div class="minicard__top">
+                          <div class="minicard__slider">
+                            <div class="splide">
+                              <div class="splide__track">
+                                <div class="splide__list">
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="minicard__main">
+                          <div class="minicard__id">ID объекта: 23478</div>
+                          <div class="minicard__title"><a href="#">Воробьев Дом</a></div>
+                          <div class="minicard__type">Квартира</div>
+                          <div class="minicard__address">Воробьевское шоссе, 4с1, м. Лужники</div>
+                          <div class="minicard__prop">
+                            <ul>
+                              <li><small>Площадь</small><span>124.7 м2</span></li>
+                              <li><small>Комнат</small><span>3</span></li>
+                              <li><small>C/у</small><span>3</span></li>
+                              <li><small>Этаж</small><span>6/12</span></li>
+                            </ul>
+                          </div>
+                          <div class="minicard__price">
+                            <div class="minicard__price-usd">2 408 245 $</div>
+                            <div class="minicard__price-rub">199 520 000 ₽</div>
+                          </div>
+                          <div class="minicard__action">
+                            <div class="minicard__detail"><a href="#">
+                                <button class="btn">Подробнее</button></a></div>
+                            <div class="minicard__getcall"><a href="#">
+                                <button class="btn btn-line">Заказать звонок</button></a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="minicard">
+                        <div class="minicard__top">
+                          <div class="minicard__slider">
+                            <div class="splide">
+                              <div class="splide__track">
+                                <div class="splide__list">
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="minicard__main">
+                          <div class="minicard__id">ID объекта: 23478</div>
+                          <div class="minicard__title"><a href="#">Воробьев Дом</a></div>
+                          <div class="minicard__type">Квартира</div>
+                          <div class="minicard__address">Воробьевское шоссе, 4с1, м. Лужники</div>
+                          <div class="minicard__prop">
+                            <ul>
+                              <li><small>Площадь</small><span>124.7 м2</span></li>
+                              <li><small>Комнат</small><span>3</span></li>
+                              <li><small>C/у</small><span>3</span></li>
+                              <li><small>Этаж</small><span>6/12</span></li>
+                            </ul>
+                          </div>
+                          <div class="minicard__price">
+                            <div class="minicard__price-usd">2 408 245 $</div>
+                            <div class="minicard__price-rub">199 520 000 ₽</div>
+                          </div>
+                          <div class="minicard__action">
+                            <div class="minicard__detail"><a href="#">
+                                <button class="btn">Подробнее</button></a></div>
+                            <div class="minicard__getcall"><a href="#">
+                                <button class="btn btn-line">Заказать звонок</button></a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="minicard">
+                        <div class="minicard__top">
+                          <div class="minicard__slider">
+                            <div class="splide">
+                              <div class="splide__track">
+                                <div class="splide__list">
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="minicard__main">
+                          <div class="minicard__id">ID объекта: 23478</div>
+                          <div class="minicard__title"><a href="#">Воробьев Дом</a></div>
+                          <div class="minicard__type">Квартира</div>
+                          <div class="minicard__address">Воробьевское шоссе, 4с1, м. Лужники</div>
+                          <div class="minicard__prop">
+                            <ul>
+                              <li><small>Площадь</small><span>124.7 м2</span></li>
+                              <li><small>Комнат</small><span>3</span></li>
+                              <li><small>C/у</small><span>3</span></li>
+                              <li><small>Этаж</small><span>6/12</span></li>
+                            </ul>
+                          </div>
+                          <div class="minicard__price">
+                            <div class="minicard__price-usd">2 408 245 $</div>
+                            <div class="minicard__price-rub">199 520 000 ₽</div>
+                          </div>
+                          <div class="minicard__action">
+                            <div class="minicard__detail"><a href="#">
+                                <button class="btn">Подробнее</button></a></div>
+                            <div class="minicard__getcall"><a href="#">
+                                <button class="btn btn-line">Заказать звонок</button></a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="minicard">
+                        <div class="minicard__top">
+                          <div class="minicard__slider">
+                            <div class="splide">
+                              <div class="splide__track">
+                                <div class="splide__list">
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="minicard__main">
+                          <div class="minicard__id">ID объекта: 23478</div>
+                          <div class="minicard__title"><a href="#">Воробьев Дом</a></div>
+                          <div class="minicard__type">Квартира</div>
+                          <div class="minicard__address">Воробьевское шоссе, 4с1, м. Лужники</div>
+                          <div class="minicard__prop">
+                            <ul>
+                              <li><small>Площадь</small><span>124.7 м2</span></li>
+                              <li><small>Комнат</small><span>3</span></li>
+                              <li><small>C/у</small><span>3</span></li>
+                              <li><small>Этаж</small><span>6/12</span></li>
+                            </ul>
+                          </div>
+                          <div class="minicard__price">
+                            <div class="minicard__price-usd">2 408 245 $</div>
+                            <div class="minicard__price-rub">199 520 000 ₽</div>
+                          </div>
+                          <div class="minicard__action">
+                            <div class="minicard__detail"><a href="#">
+                                <button class="btn">Подробнее</button></a></div>
+                            <div class="minicard__getcall"><a href="#">
+                                <button class="btn btn-line">Заказать звонок</button></a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="minicard">
+                        <div class="minicard__top">
+                          <div class="minicard__slider">
+                            <div class="splide">
+                              <div class="splide__track">
+                                <div class="splide__list">
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="minicard__main">
+                          <div class="minicard__id">ID объекта: 23478</div>
+                          <div class="minicard__title"><a href="#">Воробьев Дом</a></div>
+                          <div class="minicard__type">Квартира</div>
+                          <div class="minicard__address">Воробьевское шоссе, 4с1, м. Лужники</div>
+                          <div class="minicard__prop">
+                            <ul>
+                              <li><small>Площадь</small><span>124.7 м2</span></li>
+                              <li><small>Комнат</small><span>3</span></li>
+                              <li><small>C/у</small><span>3</span></li>
+                              <li><small>Этаж</small><span>6/12</span></li>
+                            </ul>
+                          </div>
+                          <div class="minicard__price">
+                            <div class="minicard__price-usd">2 408 245 $</div>
+                            <div class="minicard__price-rub">199 520 000 ₽</div>
+                          </div>
+                          <div class="minicard__action">
+                            <div class="minicard__detail"><a href="#">
+                                <button class="btn">Подробнее</button></a></div>
+                            <div class="minicard__getcall"><a href="#">
+                                <button class="btn btn-line">Заказать звонок</button></a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="minicard">
+                        <div class="minicard__top">
+                          <div class="minicard__slider">
+                            <div class="splide">
+                              <div class="splide__track">
+                                <div class="splide__list">
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="minicard__main">
+                          <div class="minicard__id">ID объекта: 23478</div>
+                          <div class="minicard__title"><a href="#">Воробьев Дом</a></div>
+                          <div class="minicard__type">Квартира</div>
+                          <div class="minicard__address">Воробьевское шоссе, 4с1, м. Лужники</div>
+                          <div class="minicard__prop">
+                            <ul>
+                              <li><small>Площадь</small><span>124.7 м2</span></li>
+                              <li><small>Комнат</small><span>3</span></li>
+                              <li><small>C/у</small><span>3</span></li>
+                              <li><small>Этаж</small><span>6/12</span></li>
+                            </ul>
+                          </div>
+                          <div class="minicard__price">
+                            <div class="minicard__price-usd">2 408 245 $</div>
+                            <div class="minicard__price-rub">199 520 000 ₽</div>
+                          </div>
+                          <div class="minicard__action">
+                            <div class="minicard__detail"><a href="#">
+                                <button class="btn">Подробнее</button></a></div>
+                            <div class="minicard__getcall"><a href="#">
+                                <button class="btn btn-line">Заказать звонок</button></a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="minicard">
+                        <div class="minicard__top">
+                          <div class="minicard__slider">
+                            <div class="splide">
+                              <div class="splide__track">
+                                <div class="splide__list">
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="minicard__main">
+                          <div class="minicard__id">ID объекта: 23478</div>
+                          <div class="minicard__title"><a href="#">Воробьев Дом</a></div>
+                          <div class="minicard__type">Квартира</div>
+                          <div class="minicard__address">Воробьевское шоссе, 4с1, м. Лужники</div>
+                          <div class="minicard__prop">
+                            <ul>
+                              <li><small>Площадь</small><span>124.7 м2</span></li>
+                              <li><small>Комнат</small><span>3</span></li>
+                              <li><small>C/у</small><span>3</span></li>
+                              <li><small>Этаж</small><span>6/12</span></li>
+                            </ul>
+                          </div>
+                          <div class="minicard__price">
+                            <div class="minicard__price-usd">2 408 245 $</div>
+                            <div class="minicard__price-rub">199 520 000 ₽</div>
+                          </div>
+                          <div class="minicard__action">
+                            <div class="minicard__detail"><a href="#">
+                                <button class="btn">Подробнее</button></a></div>
+                            <div class="minicard__getcall"><a href="#">
+                                <button class="btn btn-line">Заказать звонок</button></a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="best-offers__bottom">
+              <div class="best-offers__more"><a href="#">
+                  <button class="btn">
+                    <svg width="24" height="24">
+                      <use xlink:href="/img/sprites/sprite.svg#ic_house"></use>
+                    </svg><span>Смотреть все предложения</span>
+                  </button></a></div>
+              <div class="best-offers__nav">
+                <div class="best-offers__nav-prev">
+                  <svg width="24" height="24">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
+                  </svg>
+                </div>
+                <div class="best-offers__nav-next">
+                  <svg width="24" height="24">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="section-special-offers">
         <div class="container">
-          <div class="special-offers">special-offers</div>
+          <div class="special-offers">
+            <div class="special-offers__title">Подборка лучших предложений</div>
+            <div class="special-offers__slider">
+              <div class="splide">
+                <div class="splide__track">
+                  <div class="splide__list">
+                    <div class="splide__slide">
+                      <div class="card-collection">
+                        <div class="card-collection__bg">
+                          <picture>
+                            <source srcset="/img/objects/image-collection.webp" type="image/webp"/><img src="/img/objects/image-collection.jpg" loading="lazy" alt="image"/>
+                          </picture>
+                        </div>
+                        <div class="card-collection__content">
+                          <div class="card-collection__main">
+                            <div class="card-collection__title">Недвижимость на юге Москвы</div>
+                            <div class="card-collection__link"><a href="#">
+                                 Подробнее<span>
+                                  <svg width="24" height="24">
+                                    <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                                  </svg></span></a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="card-collection">
+                        <div class="card-collection__bg">
+                          <picture>
+                            <source srcset="/img/objects/image-collection.webp" type="image/webp"/><img src="/img/objects/image-collection.jpg" loading="lazy" alt="image"/>
+                          </picture>
+                        </div>
+                        <div class="card-collection__content">
+                          <div class="card-collection__main">
+                            <div class="card-collection__title">Недвижимость на юге Москвы</div>
+                            <div class="card-collection__link"><a href="#">
+                                 Подробнее<span>
+                                  <svg width="24" height="24">
+                                    <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                                  </svg></span></a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="card-collection">
+                        <div class="card-collection__bg">
+                          <picture>
+                            <source srcset="/img/objects/image-collection.webp" type="image/webp"/><img src="/img/objects/image-collection.jpg" loading="lazy" alt="image"/>
+                          </picture>
+                        </div>
+                        <div class="card-collection__content">
+                          <div class="card-collection__main">
+                            <div class="card-collection__title">Недвижимость на юге Москвы</div>
+                            <div class="card-collection__link"><a href="#">
+                                 Подробнее<span>
+                                  <svg width="24" height="24">
+                                    <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                                  </svg></span></a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="card-collection">
+                        <div class="card-collection__bg">
+                          <picture>
+                            <source srcset="/img/objects/image-collection.webp" type="image/webp"/><img src="/img/objects/image-collection.jpg" loading="lazy" alt="image"/>
+                          </picture>
+                        </div>
+                        <div class="card-collection__content">
+                          <div class="card-collection__main">
+                            <div class="card-collection__title">Недвижимость на юге Москвы</div>
+                            <div class="card-collection__link"><a href="#">
+                                 Подробнее<span>
+                                  <svg width="24" height="24">
+                                    <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                                  </svg></span></a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="card-collection">
+                        <div class="card-collection__bg">
+                          <picture>
+                            <source srcset="/img/objects/image-collection.webp" type="image/webp"/><img src="/img/objects/image-collection.jpg" loading="lazy" alt="image"/>
+                          </picture>
+                        </div>
+                        <div class="card-collection__content">
+                          <div class="card-collection__main">
+                            <div class="card-collection__title">Недвижимость на юге Москвы</div>
+                            <div class="card-collection__link"><a href="#">
+                                 Подробнее<span>
+                                  <svg width="24" height="24">
+                                    <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                                  </svg></span></a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="special-offers__bottom">
+              <div class="special-offers__nav">
+                <div class="special-offers__nav-next">
+                  <svg width="24" height="24">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
+                  </svg>
+                </div>
+                <div class="special-offers__nav-prev">
+                  <svg width="24" height="24">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="special-offers__count">3/12</div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="section-our-services">
         <div class="container">
-          <div class="our-services">our-services</div>
+          <div class="our-services">
+            <div class="our-services__title">Услуги компании</div>
+            <div class="our-services__desc">Компания «Метриум» предлагает уникальную систему сервисов для инвестиций в высокобюджетную недвижимость по Москве и Московской области.</div>
+            <div class="our-services__list">
+              <div class="our-services__item">
+                <div class="card-services">
+                  <div class="card-services"></div>
+                </div>
+              </div>
+              <div class="our-services__item">
+                <div class="card-services">
+                  <div class="card-services"></div>
+                </div>
+              </div>
+              <div class="our-services__item">
+                <div class="card-services">
+                  <div class="card-services"></div>
+                </div>
+              </div>
+              <div class="our-services__item">
+                <div class="card-services">
+                  <div class="card-services"></div>
+                </div>
+              </div>
+              <div class="our-services__item">
+                <div class="card-services">
+                  <div class="card-services"></div>
+                </div>
+              </div>
+              <div class="our-services__item">
+                <div class="card-services">
+                  <div class="card-services"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="section-company-about">
@@ -218,6 +1529,7 @@
       </section>
     </main>
     <footer>
+      <div data-menu="container"></div>
     </footer>
   </body>
   <script src="/js/vendor.js"> </script>

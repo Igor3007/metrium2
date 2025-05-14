@@ -1,5 +1,4 @@
 $main: var(--accent);
-
 $accent-1-1: $main;
 $accent-1-2: $main;
 
@@ -48,41 +47,51 @@ $color-bg-green-1: rgba(240, 255, 250, 1);
 
 @mixin font-h1() {
 
-    font-size: 30px;
-    font-weight: 600;
-    line-height: 100%;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: 4%;
+    font-family: var(--font-guardian);
 
     @media screen and (min-width: $w576) {
         font-size: 36px;
     }
 
     @media screen and (min-width: $w992) {
-        font-size: 40px;
+        font-size: 52px;
     }
 }
 
 @mixin font-h2() {
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 100%;
-
-    @media screen and (min-width: $w992) {
-        font-size: 30px;
-    }
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 112%;
+    letter-spacing: 4%;
+    font-family: var(--font-guardian);
 
     @media screen and (min-width: $w576) {
         font-size: 27px;
     }
+
+    @media screen and (min-width: $w992) {
+        font-size: 48px;
+    }
 }
 
 @mixin font-h3() {
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 36px;
+    font-weight: 400;
     font-style: normal;
     line-height: 100%;
 }
 
-@mixin font-h4() {}
+@mixin font-h4() {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 112%;
+    letter-spacing: 4%;
+    font-family: var(--font-guardian);
+}
 
 @mixin font-h5() {}
 

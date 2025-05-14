@@ -12,15 +12,11 @@
     white-space: nowrap;
     transition: .3s cubic-bezier(.1, .82, .25, 1);
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 15px;
     text-align: center;
     background-color: var(--accent);
-    border-radius: 50px;
-
-
-
-
+    border-radius: 12px;
 
     @media screen and (min-width: $w1200) {
         height: 56px;
@@ -28,7 +24,6 @@
 
     &:hover {
         background-color: var(--accent-hover);
-
     }
 
     &:active {
@@ -111,8 +106,12 @@
 
     &.btn-line {
         background-color: transparent;
-        color: #000;
         border: 1px solid #000;
+        color: #000;
+
+        & svg {
+            fill: #000;
+        }
 
         &:hover {
             border-color: var(--main);
@@ -131,9 +130,13 @@
         font-weight: 500;
     }
 
-    &.btn-gray {
-        background-color: #F2F6F9;
-        color: #000;
+    &.btn-green {
+        background-color: var(--accent-11);
+        color: #fff;
+
+        & svg {
+            fill: #fff;
+        }
 
         &:hover {
             background-color: var(--accent);

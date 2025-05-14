@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     class MainMenu {
         constructor(ctx) {
             this.$el = ctx
-            this.btns = this.$el.querySelectorAll('.btn-burger')
+            this.btns = this.$el.querySelectorAll('[data-menu="open"]')
             this.container = this.$el.querySelector('[data-menu="container"]')
 
             this.addEvent()
@@ -273,9 +273,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
 
         toggleMenu(item) {
-            item.classList.toggle('open')
+            item.classList.toggle('is-open')
 
-            if (!item.classList.contains('open')) {
+            if (!item.classList.contains('is-open')) {
                 this.closeMenu()
             } else {
                 this.openMenu()
@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         closeMenu() {
             this.btns.forEach(item => {
-                !item.classList.contains('open') || item.classList.remove('open')
+                !item.classList.contains('is-open') || item.classList.remove('is-open')
             });
 
             !this.$el.body.classList.contains('open-modile-menu') || !this.$el.body.classList.remove('open-modile-menu');
@@ -334,9 +334,49 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
     }
 
-    if (document.querySelector('.btn-burger')) {
+    if (document.querySelector('[data-menu="open"]')) {
         window.MainMenu = new MainMenu(document)
     }
+
+    /* ==============================================
+     select
+    ============================================== */
+
+    // public methods
+    // select.afSelect.open()
+    // select.afSelect.close()
+    // select.afSelect.update()
+
+    const selectCustom = new afSelect({
+        selector: 'select'
+    })
+
+    selectCustom.init()
+
+    /* ===============================================
+    slider card - categories__slider
+    ===============================================*/
+
+    document.querySelectorAll('.card-categories__slider .splide').forEach(slider => {
+
+        slider['Splide'] = new Splide(slider, {
+
+            arrows: false,
+            arrowPath: SLIDER_ARROW_PATH,
+            pagination: false,
+            gap: '20px',
+            autoWidth: true,
+            start: 0,
+            perPage: 2,
+            perMove: 1,
+            flickMaxPages: 1,
+            flickPower: 100,
+
+        });
+
+        slider['Splide'].mount();
+
+    })
 
 
 }); //dcl

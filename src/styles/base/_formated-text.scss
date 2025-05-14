@@ -234,7 +234,7 @@
                 display: inline-block;
                 position: absolute;
                 left: 0;
-                font-weight: 600;
+                font-weight: 500;
 
                 @media screen and (min-width: $w760) {}
             }
@@ -253,7 +253,7 @@
 
         & strong {
             color: $main;
-            font-weight: 600;
+            font-weight: 500;
 
             display: block;
         }
