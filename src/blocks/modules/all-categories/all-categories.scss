@@ -1,17 +1,45 @@
 .section-all-categories {
-    padding: 50px 0;
+    padding: 48px 0;
+
+    @media screen and (min-width: $w1440) {
+        padding: 95px 0;
+    }
 }
 
 .all-categories {
     &__list {
-        display: flex;
-        flex-wrap: wrap;
-        margin: -12px;
+
+        margin: -4px;
+
+        @media screen and (min-width: $w576) {
+            margin: -12px;
+        }
+
+        @media screen and (min-width: $w992) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        @media screen and (min-width: $w1440) {
+            margin: -16px;
+        }
     }
 
     &__item {
-        width: 50%;
-        padding: 12px;
+
+        padding: 4px;
+
+        @media screen and (min-width: $w576) {
+            padding: 12px;
+        }
+
+        @media screen and (min-width: $w992) {
+            width: 50%;
+        }
+
+        @media screen and (min-width: $w1440) {
+            padding: 16px;
+        }
     }
 
 
@@ -21,25 +49,162 @@
 .card-categories {
 
     background-color: var(--accent-12);
-    padding: 24px;
-    border-radius: 16px;
+    padding: 16px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+
+    @media screen and (min-width: $w992) {
+        padding: 24px;
+    }
+
+    @media screen and (min-width: $w1440) {
+        border-radius: 24px;
+        padding: 36px 32px;
+    }
 
     &__bg {
         @include layer(1);
+
+        & picture,
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block
+        }
     }
 
     &__preview {
-        position: relative;
+        @include layer(3);
+        transition: 0.4s ease;
+
+
+        & a {
+            @include layer(4);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 16px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+
+            @media screen and (min-width: $w576) {
+                padding: 24px;
+            }
+
+            @media screen and (min-width: $w1440) {
+                padding: 36px 32px;
+            }
+        }
+
+        & .card-categories {
+            &__title {
+                padding-bottom: 10px;
+                padding-top: 3px;
+
+                @media screen and (min-width: $w1440) {
+                    padding-bottom: 14px;
+                    padding-top: 5px;
+                    @include font-h3;
+                }
+            }
+        }
+    }
+
+
+
+    &__sub {
+        min-height: 124px;
+    }
+
+    &__bottom {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__offers {
+        letter-spacing: 2%;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    &__tosub {
         display: none;
+        margin-left: auto;
+
+        @media screen and (min-width: $w576) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+
+            & svg {
+                width: 14px;
+                height: 14px;
+                fill: var(--accent-11);
+            }
+        }
+
+        @media screen and (min-width: $w1440) {
+            width: 56px;
+            height: 56px;
+        }
     }
 
     &__title {
         padding-bottom: 24px;
         @include font-h4;
+
+        @media screen and (min-width: $w576) {
+            font-size: 26px;
+        }
+
+        @media screen and (min-width: $w1440) {
+            font-size: 28px;
+            padding-bottom: 36px;
+        }
+    }
+
+    &__tocat {
+        & .btn {
+            @media screen and (min-width: $w992) {
+                font-size: 18px;
+                font-weight: 500;
+                letter-spacing: 2%;
+                padding-left: 1.8em;
+                padding-right: 1.8em;
+            }
+        }
+    }
+
+    &__price {
+        letter-spacing: 4%;
+
+        @media screen and (min-width: $w576) {
+            font-size: 16px;
+        }
+
+        @media screen and (min-width: $w1440) {
+            letter-spacing: 2%;
+        }
     }
 
     &__slider {
         padding-bottom: 24px;
+        display: none;
+
+        @media screen and (min-width: $w576) {
+            display: block;
+        }
+
+        @media screen and (min-width: $w992) {
+            padding-bottom: 28px;
+        }
     }
 
     &__action {
@@ -48,7 +213,12 @@
     }
 
     &__nav {
-        display: flex;
+        display: none;
+
+        @media screen and (min-width: $w576) {
+            display: flex;
+            gap: 8px;
+        }
 
         &-prev,
         &-next {
@@ -68,15 +238,32 @@
                 height: 14px;
                 fill: #fff;
             }
+
+            &[disabled] {
+                background-color: transparent;
+                border-color: var(--text-3);
+                pointer-events: none;
+
+                & svg {
+                    fill: var(--text-3);
+                }
+            }
         }
 
+    }
+
+    &:hover {
+        & .card-categories__preview {
+            opacity: 0;
+            pointer-events: none;
+        }
     }
 }
 
 
 .sub-cat-card {
 
-    width: 164px;
+    width: 172px;
 
     &__icons {
 
@@ -101,6 +288,11 @@
 
     &__title {
         text-align: center;
+
+        @media screen and (min-width: $w576) {
+            font-size: 14px;
+            font-weight: 500;
+        }
     }
 
 }

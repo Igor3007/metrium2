@@ -1,0 +1,48 @@
+.section-best-offers {
+    background-color: var(--bg);
+    padding: 48px 0;
+}
+
+
+.best-offers {
+    &__title {
+        @include font-h2;
+        padding-bottom: 24px;
+    }
+
+    &__tabs {
+        padding: 8px;
+        border-radius: 8px;
+        display: flex;
+        overflow-x: auto;
+
+        @media screen and (max-width: $w480) {
+            margin-right: -16px;
+        }
+
+
+        @media screen and (min-width: $w992) {
+            background-color: #fff;
+            margin-bottom: 36px;
+        }
+
+        & ul {
+            display: flex;
+            margin: 0 -5px;
+
+            & li {
+                white-space: nowrap;
+                padding: 0 5px;
+
+                & span {
+                    background-color: #fff;
+                    display: inline-flex;
+                    min-height: 36px;
+                    align-items: center;
+                    padding: 5px 12px;
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+}

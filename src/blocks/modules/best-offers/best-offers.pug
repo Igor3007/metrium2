@@ -7,14 +7,19 @@ mixin  best-offers
                 .best-offers__title Новые предложения
                 .best-offers__tabs
                     ul
-                        li: span Квартиры
+                        li.is-active: span Квартиры
                         li: span Новостройки
                         li: span Дома на Новой Риге
                         li: span Дома на Рублёвке
                         li: span Участки
 
+                    ul.toggle-currency
+                        li.is-active: span ₽
+                        li: span $
+                        li: span €
+
                 .best-offers__slider
-                    .splide
+                    .splide(data-slider="offers")
                         .splide__track
                             .splide__list
                                 each item in [1,1,1,1,1,1,1,1]

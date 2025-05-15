@@ -378,5 +378,69 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     })
 
+    /* ===============================================
+    slider offers
+    ===============================================*/
+
+    document.querySelectorAll('[data-slider="offers"]').forEach(slider => {
+
+        slider['Splide'] = new Splide(slider, {
+
+            arrows: false,
+            arrowPath: SLIDER_ARROW_PATH,
+            pagination: false,
+            gap: 20,
+            start: 0,
+            perPage: 3,
+            perMove: 1,
+            flickMaxPages: 1,
+            flickPower: 100,
+
+        });
+
+        slider['Splide'].mount();
+
+        // disable drag on hover
+        slider.querySelectorAll('.minicard__slider').forEach(gallery => {
+            gallery.addEventListener('mouseenter', () => {
+                slider['Splide'].options = {
+                    drag: false,
+                };
+            })
+            gallery.addEventListener('mouseleave', () => {
+                slider['Splide'].options = {
+                    drag: true,
+                };
+            })
+        })
+
+    })
+
+    /* ===============================================
+    slider minicard
+    ===============================================*/
+
+    document.querySelectorAll('[data-slider="minicard"]').forEach(slider => {
+
+        slider['Splide'] = new Splide(slider, {
+
+            arrows: false,
+            arrowPath: SLIDER_ARROW_PATH,
+            pagination: false,
+            gap: 20,
+            start: 0,
+            perPage: 1,
+            perMove: 1,
+            flickMaxPages: 1,
+            flickPower: 100,
+
+        });
+
+        slider['Splide'].mount();
+
+
+
+    })
+
 
 }); //dcl

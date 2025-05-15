@@ -1,16 +1,19 @@
+
 mixin card-categories(data)
     .card-categories
         .card-categories__preview
             .card-categories__bg
-                +picture('/img/other/btn-category-big-v3')
+                +picture(data.image)
             a(href='/category.html')
-                .card-categories__title Городская недвижимость
-                .card-categories__price От 5 800 000 ₽
+                .card-categories__title= data.title
+                if data.price
+                    .card-categories__price От 5 800 000 ₽
                 .card-categories__bottom
-                    .card-categories__offers 512 предложений
+                    if data.offers
+                        .card-categories__offers 512 предложений
                     .card-categories__tosub: +icons('#ic_arr-right')
         .card-categories__sub
-            .card-categories__title Городская недвижимость
+            .card-categories__title= data.title
             .card-categories__slider
                 .splide
                     .splide__track
@@ -22,56 +25,142 @@ mixin card-categories(data)
                                         .sub-cat-card__title= item.title
             .card-categories__action
                 .card-categories__tocat
-                    a(href='#'): button.btn.btn-green Вся городская недвижимость
+                    a(href='#'): button.btn.btn-green= data.btn
                 .card-categories__nav
-                    .card-categories__nav-prev: +icons('#ic_arr-left')
+                    .card-categories__nav-prev(disabled): +icons('#ic_arr-left')
                     .card-categories__nav-next: +icons('#ic_arr-right')
 
 
 
 mixin all-categories
+
+    -
+        const categories = [
+            {
+                title: 'Городская недвижимость',
+                price: 'От 5 800 000 ₽',
+                image: '/img/other/btn-category-big-v3',
+                offers: '512 предложений',
+                btn: 'Вся городская недвижимость',
+                
+                sub: [
+                    {
+                        title: 'Квартиры',
+                        icon: '/img/icons/icon-subcategory/01-flats.svg',
+                    },
+                    {
+                        title: 'Апартаменты',
+                        icon: '/img/icons/icon-subcategory/02-apartments.svg',
+                    },
+                    {
+                        title: 'Аренда',
+                        icon: '/img/icons/icon-subcategory/03-rent.svg',
+                    },
+                    {
+                        title: 'Все новостройки',
+                        icon: '/img/icons/icon-subcategory/04-complexes.svg',
+                    },
+                    {
+                        title: 'Аренда',
+                        icon: '/img/icons/icon-subcategory/03-rent.svg',
+                    },
+                    {
+                        title: 'Все новостройки',
+                        icon: '/img/icons/icon-subcategory/04-complexes.svg',
+                    },
+                    {
+                        title: 'Аренда',
+                        icon: '/img/icons/icon-subcategory/03-rent.svg',
+                    },
+                    {
+                        title: 'Все новостройки',
+                        icon: '/img/icons/icon-subcategory/04-complexes.svg',
+                    },
+                ]
+            },
+            {
+                title: 'Загородная недвижимость',
+                price: 'От 16 800 000 ₽',
+                image: '/img/other/btn-category-big-2',
+                offers: '768 предложений',
+                btn: 'Вся загородная  недвижимость',
+                
+                sub: [
+                    {
+                        title: 'Квартиры',
+                        icon: '/img/icons/icon-subcategory/01-flats.svg',
+                    },
+                    {
+                        title: 'Апартаменты',
+                        icon: '/img/icons/icon-subcategory/02-apartments.svg',
+                    },
+                    {
+                        title: 'Аренда',
+                        icon: '/img/icons/icon-subcategory/03-rent.svg',
+                    },
+                    {
+                        title: 'Все новостройки',
+                        icon: '/img/icons/icon-subcategory/04-complexes.svg',
+                    },
+                ]
+            },
+            {
+                title: 'Собственникам',
+                price: false,
+                image: '/img/other/btn-category-big-4',
+                offers: false,
+                btn: 'Всё для собственников',
+                sub: [
+                    {
+                        title: 'Квартиры',
+                        icon: '/img/icons/icon-subcategory/01-flats.svg',
+                    },
+                    {
+                        title: 'Апартаменты',
+                        icon: '/img/icons/icon-subcategory/02-apartments.svg',
+                    },
+                    {
+                        title: 'Аренда',
+                        icon: '/img/icons/icon-subcategory/03-rent.svg',
+                    },
+                    {
+                        title: 'Все новостройки',
+                        icon: '/img/icons/icon-subcategory/04-complexes.svg',
+                    },
+                ]
+            },
+            {
+                title: 'Партнёрам',
+                price: false,
+                image: '/img/other/btn-category-big-5',
+                offers: false,
+                btn: 'Всё для партнёров',
+
+                sub: [
+                    {
+                        title: 'Квартиры',
+                        icon: '/img/icons/icon-subcategory/01-flats.svg',
+                    },
+                    {
+                        title: 'Апартаменты',
+                        icon: '/img/icons/icon-subcategory/02-apartments.svg',
+                    },
+                    {
+                        title: 'Аренда',
+                        icon: '/img/icons/icon-subcategory/03-rent.svg',
+                    },
+                    {
+                        title: 'Все новостройки',
+                        icon: '/img/icons/icon-subcategory/04-complexes.svg',
+                    },
+                ]
+            },
+         
+        ]
+
     section.section-all-categories
         .container
             .all-categories
                 .all-categories__list
-                    each item in [1,1,1,1]
-                        .all-categories__item: +card-categories({
-                            sub: [
-                                {
-                                    title: 'Квартиры',
-                                    icon: '/img/icons/icon-subcategory/01-flats.svg',
-                                },
-                                {
-                                    title: 'Апартаменты',
-                                    icon: '/img/icons/icon-subcategory/02-apartments.svg',
-                                },
-                                {
-                                    title: 'Аренда',
-                                    icon: '/img/icons/icon-subcategory/03-rent.svg',
-                                },
-                                {
-                                    title: 'Все новостройки',
-                                    icon: '/img/icons/icon-subcategory/04-complexes.svg',
-                                },
-                                {
-                                    title: 'Аренда',
-                                    icon: '/img/icons/icon-subcategory/03-rent.svg',
-                                },
-                                {
-                                    title: 'Все новостройки',
-                                    icon: '/img/icons/icon-subcategory/04-complexes.svg',
-                                },
-                                {
-                                    title: 'Аренда',
-                                    icon: '/img/icons/icon-subcategory/03-rent.svg',
-                                },
-                                {
-                                    title: 'Все новостройки',
-                                    icon: '/img/icons/icon-subcategory/04-complexes.svg',
-                                },
-                                {
-                                    title: 'Жилые комплексы',
-                                    icon: '/img/icons/icon-subcategory/03-rent.svg',
-                                },
-                            ]
-                        })
+                    each item in categories
+                        .all-categories__item: +card-categories(item)

@@ -15,6 +15,7 @@
      --accent-23: #f5e9dc;
      --text-1: #1A1A1A;
      --text-2: #535968;
+     --text-3: #8DA4A8;
  }
 
  html,
@@ -154,11 +155,11 @@
 
 
  @mixin container-breakpoint {
-     padding: 0 24px;
+     padding: 0 16px;
      min-width: 316px;
 
      @media screen and (min-width: $w480) {
-         padding: 0 24px;
+         padding: 0 16px;
          max-width: 100%;
      }
 

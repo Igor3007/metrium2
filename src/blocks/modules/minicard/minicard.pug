@@ -2,29 +2,29 @@ mixin minicard
     .minicard
         .minicard__top
             .minicard__slider
-                .splide
+                .splide(data-slider="minicard")
                     .splide__track
                         .splide__list
                             each item in [1,1,1,1,1,1]
                                 .splide__slide
                                     +picture('/img/objects/img-block')
         .minicard__main
-            .minicard__id ID объекта: 23478
-            .minicard__title: a(href='#') Воробьев Дом
-            .minicard__type Квартира
-            .minicard__address Воробьевское шоссе, 4с1, м. Лужники
+            .minicard__id ID: 23478
+            .minicard__title: a(href='#') 4-комн. квартира, 201 м2
+            .minicard__jk Вишневый сад
+            .minicard__address Мосфильмовская улица
             .minicard__prop
                 ul
-                    li
+                    li(style="background-image: url('/img/icons/01-area.svg')")
                         small Площадь
                         span 124.7 м2
-                    li
+                    li(style="background-image: url('/img/icons/02-room.svg')")
                         small Комнат
                         span 3
-                    li
+                    li(style="background-image: url('/img/icons/04-floor.svg')")
                         small C/у
                         span 3
-                    li
+                    li(style="background-image: url('/img/icons/05-bedroom.svg')")
                         small Этаж
                         span 6/12
                     
@@ -33,8 +33,11 @@ mixin minicard
                 .minicard__price-rub 199 520 000 ₽
             .minicard__action
                 .minicard__detail
-                    a(href='#'): button.btn Подробнее
+                    a(href='#'): button.btn.btn-green Подробнее
                 .minicard__getcall
-                    a(href='#'): button.btn.btn-line Заказать звонок
+                    a(href='#')
+                        button.btn.btn-line 
+                            +icons('#ic_phone')
+                            span Заказать звонок
 
 
