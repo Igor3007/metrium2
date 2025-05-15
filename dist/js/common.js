@@ -389,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             arrows: false,
             arrowPath: SLIDER_ARROW_PATH,
             pagination: false,
-            gap: 20,
+            gap: 36,
             start: 0,
             perPage: 3,
             perMove: 1,

@@ -4642,6 +4642,52 @@ header {
   border-radius: 8px;
 }
 
+.best-offers__slider {
+  padding-bottom: 60px;
+}
+
+.best-offers__bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.best-offers__nav {
+  display: flex;
+  align-items: center;
+}
+
+.best-offers__nav-prev,
+.best-offers__nav-next {
+  width: 56px;
+  height: 56px;
+  border: 1px solid transparent;
+  background-color: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.best-offers__nav-prev svg,
+.best-offers__nav-next svg {
+  width: 14px;
+  height: 14px;
+  fill: #fff;
+}
+
+.best-offers__nav-prev[disabled],
+.best-offers__nav-next[disabled] {
+  background-color: transparent;
+  border-color: var(--text-3);
+  pointer-events: none;
+}
+
+.best-offers__nav-prev[disabled] svg,
+.best-offers__nav-next[disabled] svg {
+  fill: var(--text-3);
+}
+
 .minicard {
   background-color: #fff;
   border-radius: 24px;
@@ -4649,12 +4695,16 @@ header {
 }
 
 .minicard__main {
-  padding: 16px;
+  padding: 24px;
 }
 
 .minicard__action {
   display: flex;
   gap: 16px;
+  padding-top: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s linear;
 }
 
 .minicard__action > div {
@@ -4668,6 +4718,115 @@ header {
 
 .minicard__action > div .btn svg {
   fill: #000;
+}
+
+.minicard__id {
+  color: var(--text-2);
+  padding-bottom: 12px;
+  letter-spacing: 4%;
+}
+
+.minicard__title {
+  font-size: 24px;
+  letter-spacing: 2%;
+  padding-bottom: 17px;
+}
+
+.minicard__jk {
+  color: var(--text-1);
+  display: flex;
+  align-items: center;
+  padding-bottom: 7px;
+  letter-spacing: 4%;
+}
+
+.minicard__jk span {
+  margin-left: 6px;
+  letter-spacing: 4%;
+}
+
+.minicard__jk svg {
+  fill: var(--accent);
+}
+
+.minicard__address {
+  color: var(--text-2);
+  padding-bottom: 19px;
+  letter-spacing: 2%;
+}
+
+.minicard__prop {
+  border-top: 1px solid var(--accent-13);
+  border-bottom: 1px solid var(--accent-13);
+  padding: 10px 0;
+  transition: 0.25s linear;
+}
+
+.minicard__prop ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.minicard__prop ul li {
+  width: calc(25% - 6px);
+  display: flex;
+  flex-direction: column;
+  padding-left: 35px;
+  letter-spacing: 2%;
+  background-repeat: no-repeat;
+  background-position: 8px 1px;
+}
+
+.minicard__prop ul li small {
+  font-size: 14px;
+  color: var(--text-2);
+  padding-bottom: 3px;
+}
+
+.minicard__prop ul li span {
+  font-size: 16px;
+}
+
+.minicard__price {
+  padding: 10px 0 34px;
+  position: absolute;
+  bottom: 0;
+  letter-spacing: 4%;
+  transition: 0.3s ease;
+}
+
+.minicard__price > div {
+  display: none;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.minicard__price > div.is-active {
+  display: block;
+}
+
+.minicard__price-old {
+  font-size: 13px;
+  color: var(--text-2);
+  text-decoration: line-through;
+  letter-spacing: 2%;
+  padding-bottom: 6px;
+}
+
+.minicard:hover .minicard__prop {
+  opacity: 0;
+}
+
+.minicard:hover .minicard__price {
+  bottom: 80px;
+}
+
+.minicard:hover .minicard__action {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.1s;
 }
 
 /* common styles */
@@ -5176,6 +5335,11 @@ span[data-color=fff] {
 
   .best-offers__title {
     font-size: 28px;
+  }
+
+  .best-offers__nav {
+    display: flex;
+    gap: 8px;
   }
 
   .splide__arrow {

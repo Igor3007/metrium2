@@ -4,12 +4,16 @@
     overflow: hidden;
 
     &__main {
-        padding: 16px;
+        padding: 24px;
     }
 
     &__action {
         display: flex;
         gap: 16px;
+        padding-top: 24px;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.2s linear;
 
         &>div {
             flex-grow: 1;
@@ -24,4 +28,126 @@
             }
         }
     }
+
+    &__id {
+        color: var(--text-2);
+        padding-bottom: 12px;
+        letter-spacing: 4%;
+    }
+
+    &__title {
+        font-size: 24px;
+        letter-spacing: 2%;
+        padding-bottom: 17px;
+    }
+
+    &__jk {
+        color: var(--text-1);
+        display: flex;
+        align-items: center;
+        padding-bottom: 7px;
+        letter-spacing: 4%;
+
+        & span {
+            margin-left: 6px;
+            letter-spacing: 4%;
+        }
+
+        & svg {
+            fill: var(--accent);
+        }
+    }
+
+    &__address {
+        color: var(--text-2);
+        padding-bottom: 19px;
+        letter-spacing: 2%;
+    }
+
+    &__prop {
+
+        border-top: 1px solid var(--accent-13);
+        border-bottom: 1px solid var(--accent-13);
+        padding: 10px 0;
+        transition: 0.25s linear;
+
+        & ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            & li {
+                width: calc(25% - 6px);
+                display: flex;
+                flex-direction: column;
+                padding-left: 35px;
+                letter-spacing: 2%;
+                background-repeat: no-repeat;
+                background-position: 8px 1px;
+
+                & small {
+                    font-size: 14px;
+                    color: var(--text-2);
+                    padding-bottom: 3px;
+                }
+
+                & span {
+                    font-size: 16px;
+
+                }
+            }
+        }
+    }
+
+    &__price {
+
+        padding: 10px 0 34px;
+        position: absolute;
+        bottom: 0;
+        letter-spacing: 4%;
+        transition: 0.3s ease;
+
+
+        &>div {
+            display: none;
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--accent);
+
+            &.is-active {
+                display: block;
+            }
+        }
+
+        &-old {
+            font-size: 13px;
+            color: var(--text-2);
+            text-decoration: line-through;
+            letter-spacing: 2%;
+            padding-bottom: 6px;
+        }
+
+
+    }
+
+    &:hover {
+        & .minicard {
+            &__prop {
+                opacity: 0;
+
+            }
+
+            &__price {
+                bottom: 80px;
+
+            }
+
+            &__action {
+                opacity: 1;
+                visibility: visible;
+                transition-delay: 0.1s;
+            }
+        }
+    }
+
 }

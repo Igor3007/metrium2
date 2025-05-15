@@ -11,7 +11,9 @@ mixin minicard
         .minicard__main
             .minicard__id ID: 23478
             .minicard__title: a(href='#') 4-комн. квартира, 201 м2
-            .minicard__jk Вишневый сад
+            .minicard__jk 
+                +icons('#ic_jk')
+                span Вишневый сад
             .minicard__address Мосфильмовская улица
             .minicard__prop
                 ul
@@ -21,16 +23,19 @@ mixin minicard
                     li(style="background-image: url('/img/icons/02-room.svg')")
                         small Комнат
                         span 3
-                    li(style="background-image: url('/img/icons/04-floor.svg')")
-                        small C/у
-                        span 3
                     li(style="background-image: url('/img/icons/05-bedroom.svg')")
+                        small Спален
+                        span 3
+                    li(style="background-image: url('/img/icons/04-floor.svg')")
                         small Этаж
                         span 6/12
                     
             .minicard__price
                 .minicard__price-usd 2 408 245 $
-                .minicard__price-rub 199 520 000 ₽
+                .minicard__price-rub.is-active 
+                    .minicard__price-old 918 126 582 ₽
+                    | 725 320 000 ₽
+                .minicard__price-eur 199 520 000 €
             .minicard__action
                 .minicard__detail
                     a(href='#'): button.btn.btn-green Подробнее
