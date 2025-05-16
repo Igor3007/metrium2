@@ -1,10 +1,16 @@
-mixin card-collection
+mixin card-collection(data)
+
     .card-collection
         .card-collection__bg
-            +picture('/img/objects/image-collection')
+            +picture(data.image)
         .card-collection__content
+
+            if data.sticker 
+                .card-collection__sticker
+                    span Выгодное <br> предложение
+
             .card-collection__main
-                .card-collection__title Недвижимость на юге Москвы
+                .card-collection__title= data.title
                 .card-collection__link
                     a(href='#') 
                         | Подробнее

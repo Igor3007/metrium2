@@ -1,0 +1,110 @@
+.section-our-services {
+    background-color: var(--bg);
+    padding: 50px 0;
+}
+
+.our-services {
+    &__title {
+        @include font-h2;
+        padding-bottom: 24px;
+    }
+
+    &__desc {
+        font-size: 20px;
+        color: var(--text-1);
+        padding-bottom: 30px;
+        max-width: 1056px;
+        line-height: 160%;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -10px;
+    }
+
+    &__item {
+        @media screen and (min-width: $w992) {
+            width: 33.33%;
+            padding: 10px;
+        }
+    }
+}
+
+.card-services {
+
+    background-color: #fff;
+    border-radius: 24px;
+    padding: 24px;
+    display: flex;
+    gap: 24px;
+
+    &__icon {
+        min-width: 160px;
+        width: 160px;
+        height: 160px;
+        background-color: var(--bg);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & .bgimage {
+            width: 72px;
+            height: 72px;
+            @include bgimage-contain;
+        }
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 2%;
+        padding-bottom: 12px;
+    }
+
+    &__desc {
+        color: var(--text-2);
+        font-size: 16px;
+        line-height: 140%;
+        padding-bottom: 12px;
+    }
+
+    &__link {
+
+        display: flex;
+
+
+        & a {
+            color: var(--accent-11);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+
+            & svg {
+                fill: #fff;
+                height: 8px;
+                width: 5px;
+            }
+        }
+
+        & span {
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--accent-11);
+            border-radius: 50%;
+        }
+    }
+
+
+}

@@ -1,0 +1,45 @@
+.section-special-offers {
+    padding: 55px 0;
+}
+
+.special-offers {
+    &__title {
+        @include font-h2;
+        padding-bottom: 24px;
+    }
+
+    &__nav {
+        @include splide-nav;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        gap: 24px
+    }
+
+    &__slider {
+        padding-bottom: 40px;
+    }
+
+    & .splide {
+        &__track {
+            overflow: visible;
+        }
+    }
+
+}
+
+.splide-counter {
+    background-color: var(--bg);
+    padding: 5px 12px;
+    height: 56px;
+    border-radius: 30px;
+    width: 92px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--text-1);
+    letter-spacing: 2%;
+}

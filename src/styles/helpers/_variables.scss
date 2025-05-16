@@ -88,6 +88,10 @@ $color-bg-green-1: rgba(240, 255, 250, 1);
     line-height: 112%;
     letter-spacing: 4%;
     font-family: var(--font-guardian);
+
+    @media screen and (min-width: $w576) {
+        font-size: 28px;
+    }
 }
 
 @mixin font-h5() {}

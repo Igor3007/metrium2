@@ -1,0 +1,66 @@
+.card-collection {
+
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+
+    &__bg {
+        position: relative;
+        z-index: 1;
+
+        & picture {
+            @include picture(125%, cover);
+        }
+    }
+
+    &__content {
+        @include layer(2);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__main {
+        margin-top: auto;
+        color: #fff;
+        text-align: center;
+        padding-bottom: 24px;
+    }
+
+    &__link {
+
+        display: flex;
+        justify-content: center;
+
+        & a {
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            & svg {
+                fill: var(--accent-11);
+                height: 8px;
+                width: 5px;
+            }
+        }
+
+        & span {
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+    }
+
+    &__title {
+        font-size: 24px;
+        letter-spacing: 2%;
+        padding-bottom: 14px;
+    }
+
+}

@@ -1,0 +1,38 @@
+.section-partners {
+    padding: 50px 0;
+    background-color: var(--bg)
+}
+
+.partners {
+
+    &__title {
+        @include font-h2;
+        padding-bottom: 24px;
+    }
+
+    &__slider {
+        padding-bottom: 40px
+    }
+
+    &__nav {
+        @include splide-nav;
+    }
+
+    & .splide {
+        &__track {
+            overflow: visible;
+        }
+    }
+}
+
+.item-partner {
+    width: 100%;
+
+    & .bgimage {
+        padding-top: 66%;
+        @include bgimage-contain;
+        width: 100%;
+        background-color: #E8EBEB;
+        border-radius: 24px;
+    }
+}

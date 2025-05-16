@@ -1,4 +1,28 @@
 mixin  partners
+    -
+        const partners = [
+            '/img/other/partner-logo/partner-logo.png',
+            '/img/other/partner-logo/partner-logo-1.png',
+            '/img/other/partner-logo/partner-logo-2.png',
+            '/img/other/partner-logo/partner-logo-3.png',
+            '/img/other/partner-logo/partner-logo-4.png',
+            '/img/other/partner-logo/partner-logo-5.png',
+            '/img/other/partner-logo/partner-logo-6.png',
+        ]
+
     section.section-partners
         .container
-            .partners partners
+            .partners
+                .partners__title Наши партнёры
+                .partners__slider
+                    .splide(data-slider="partners")
+                        .splide__track
+                            .splide__list
+                                each item in partners
+                                    .splide__slide
+                                        .item-partner
+                                            +bgimage(item)
+                .partners__bottom
+                    .partners__nav
+                        .partners__nav-next(disabled): +icons('#ic_arr-left')
+                        .partners__nav-prev: +icons('#ic_arr-right')

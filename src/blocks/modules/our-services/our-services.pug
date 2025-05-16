@@ -1,13 +1,56 @@
-mixin card-services
+mixin card-services(data)
     .card-services
-        .card-services
+        .card-services__icon
+            +bgimage(data.icon)
+        .card-services__main
+            .card-services__title= data.title
+            .card-services__desc= data.desc
+            .card-services__link
+                a(href='#')
+                    | Подробнее
+                    span: +icons('#ic_arr-right')
 
 mixin our-services
+
+    -
+        const services = [
+            {
+                title: 'Недвижимость',
+                desc: 'Покупка, продажа и аренда элитных объектов',
+                icon: '/img/icons/icon-subcategory/01-flats.svg',
+            },
+            {
+                title: 'Консалтинг',
+                desc: 'Комплексные решения для девелоперов',
+                icon: '/img/icons/icon-subcategory/21-services.svg',
+            },
+            {
+                title: 'Юридические услуги',
+                desc: 'Сопровождение сделок с элитной недвижимостью',
+                icon: '/img/icons/icon-subcategory/43-legal-services.svg',
+            },
+            {
+                title: 'Инвестиции',
+                desc: 'Стратегии по сохранению и приумножению капитала',
+                icon: '/img/icons/icon-subcategory/44-investments.svg',
+            },
+            {
+                title: 'Аналитика',
+                desc: 'Исследования и обзоры рынка премиум-класса',
+                icon: '/img/icons/icon-subcategory/45-analytics.svg',
+            },
+            {
+                title: 'О компании',
+                desc: 'Узнайте подробнее о нас и как мы работаем',
+                icon: '/img/icons/icon-subcategory/25-metrium-2.svg',
+            },
+        ]
+
     section.section-our-services
         .container
             .our-services
                 .our-services__title Услуги компании
                 .our-services__desc Компания «Метриум» предлагает уникальную систему сервисов для инвестиций в высокобюджетную недвижимость по Москве и Московской области.
                 .our-services__list
-                    each item in [1,1,1,1,1,1]
-                        .our-services__item: +card-services
+                    each item in services
+                        .our-services__item: +card-services(item)

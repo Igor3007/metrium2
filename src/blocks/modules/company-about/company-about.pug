@@ -1,4 +1,17 @@
-mixin  company-about
+mixin company-about
     section.section-company-about
         .container
-            .company-about company-about
+            .company-about
+                .company-about__wrp
+                    .company-about__logo
+                        +pictureSVG('/img/common/logo-current')
+                    .company-about__main
+                        .company-about__desc
+                            .formated-text
+                                h2 О компании Metrium Premium
+                                p Один из крупнейших игроков на рынке элитной жилой недвижимости Москвы и Подмосковья. Компания основана в 2014 году. В штате компании работают более 50 сотрудников.
+                                p За последние 2 года городским департаментом реализовано более 100 сделок, среди которых такие знаковые объекты, как пентхаус в Имперском Доме, квартиры в комплексах Barkli Virgin House, Итальянский квартал, Фьюжн парк, SMOLENSKY DE LUXE и прочие.
+                                p Загородный департамент реализовал более 80 сделок, из них такие знаковые объекты, как Жуковка, Барвиха, Николина Гора, Николино и другие.
+                                p Официальные партнеры по реализации объектов ведущих застройщиков в сегменте элитной недвижимости.
+                        .company-about__btn
+                            a(href='#'): button.btn.btn-green Подробнее о компании

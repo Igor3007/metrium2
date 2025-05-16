@@ -34,6 +34,11 @@ mixin picturePng(url)
   picture
     source(srcset=''+url+'.webp' type="image/webp" )
     img(src=''+url+'.png' loading='lazy' alt='image')
+
+mixin pictureSVG(url)
+  picture
+    img(src=''+url+'.svg' loading='lazy' alt='image')
+
 mixin pictureResp(url)
   picture
 

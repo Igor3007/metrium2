@@ -443,4 +443,83 @@ document.addEventListener('DOMContentLoaded', function (event) {
     })
 
 
+    /* ===============================================
+    slider special-offers
+    ===============================================*/
+
+    document.querySelectorAll('[data-slider=""]').forEach(slider => {
+
+        slider['Splide'] = new Splide(slider, {
+
+            arrows: false,
+            arrowPath: SLIDER_ARROW_PATH,
+            pagination: false,
+            gap: 16,
+            start: 0,
+            perPage: 4,
+            perMove: 1,
+            flickMaxPages: 1,
+            flickPower: 100,
+
+        });
+
+        slider['Splide'].mount();
+
+    })
+
+    /* ===============================================
+    slider partners
+    ===============================================*/
+
+    document.querySelectorAll('[data-slider="partners"]').forEach(slider => {
+
+        slider['Splide'] = new Splide(slider, {
+
+            arrows: false,
+            arrowPath: SLIDER_ARROW_PATH,
+            pagination: false,
+            gap: 16,
+            start: 0,
+            fixedWidth: '240px',
+            perMove: 1,
+            flickMaxPages: 1,
+            flickPower: 100,
+            type: 'loop',
+            padding: '5rem',
+            focus: 'center',
+
+        });
+
+        slider['Splide'].mount();
+
+    })
+
+    /* ===============================================
+    slider partners
+    ===============================================*/
+
+    document.querySelectorAll('[data-slider="awards"]').forEach(slider => {
+
+        slider['Splide'] = new Splide(slider, {
+
+            arrows: false,
+            arrowPath: SLIDER_ARROW_PATH,
+            pagination: false,
+            gap: 32,
+            start: 0,
+            perPage: 3,
+            perMove: 1,
+            flickMaxPages: 1,
+            flickPower: 100,
+            type: 'loop',
+
+
+
+        });
+
+        slider['Splide'].mount();
+
+    })
+
+
 }); //dcl

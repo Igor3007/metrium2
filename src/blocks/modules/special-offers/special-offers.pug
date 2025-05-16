@@ -1,18 +1,53 @@
 include ../card-collection/card-collection.pug
 
 mixin special-offers
+
+    - 
+        const collection = [
+            {
+                'title': 'Пентхаусы с незабываемым видом на город',
+                'image': '/img/objects/image-collection',
+                'sticker': true
+            },
+            {
+                'title': 'Идеальная инфраструктура жилого района',
+                'image': '/img/objects/image-collection2'
+            },
+            {
+                'title': 'Недвижимость на юге Москвы',
+                'image': '/img/objects/image-collection'
+            },
+            {
+                'title': 'Пример интересного предложения в 2 строки',
+                'image': '/img/objects/image-collection3'
+            },
+            {
+                'title': 'Недвижимость на юге Москвы',
+                'image': '/img/objects/image-collection'
+            },
+            {
+                'title': 'Пример интересного предложения в 2 строки',
+                'image': '/img/objects/image-collection3'
+            }
+        ];
+
     section.section-special-offers
         .container
             .special-offers
                 .special-offers__title Подборка лучших предложений
                 .special-offers__slider
-                    .splide
+                    .splide(data-slider="special-offers")
                         .splide__track
                             .splide__list
-                                each item in [1,1,1,1,1]
-                                    .splide__slide: +card-collection
+                                each item in collection
+                                    .splide__slide: +card-collection(item)
                 .special-offers__bottom
+                    .special-offers__count
+                        .splide-counter
+                            span 3
+                            |/
+                            span 12
                     .special-offers__nav
-                        .special-offers__nav-next: +icons('#ic_arr-left')
+                        .special-offers__nav-next(disabled): +icons('#ic_arr-left')
                         .special-offers__nav-prev: +icons('#ic_arr-right')
-                    .special-offers__count 3/12
+                    

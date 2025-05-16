@@ -1324,7 +1324,7 @@
           <div class="special-offers">
             <div class="special-offers__title">Подборка лучших предложений</div>
             <div class="special-offers__slider">
-              <div class="splide">
+              <div class="splide" data-slider="special-offers">
                 <div class="splide__track">
                   <div class="splide__list">
                     <div class="splide__slide">
@@ -1335,8 +1335,28 @@
                           </picture>
                         </div>
                         <div class="card-collection__content">
+                          <div class="card-collection__sticker"><span>Выгодное <br> предложение</span></div>
                           <div class="card-collection__main">
-                            <div class="card-collection__title">Недвижимость на юге Москвы</div>
+                            <div class="card-collection__title">Пентхаусы с незабываемым видом на город</div>
+                            <div class="card-collection__link"><a href="#">
+                                 Подробнее<span>
+                                  <svg width="24" height="24">
+                                    <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                                  </svg></span></a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="card-collection">
+                        <div class="card-collection__bg">
+                          <picture>
+                            <source srcset="/img/objects/image-collection2.webp" type="image/webp"/><img src="/img/objects/image-collection2.jpg" loading="lazy" alt="image"/>
+                          </picture>
+                        </div>
+                        <div class="card-collection__content">
+                          <div class="card-collection__main">
+                            <div class="card-collection__title">Идеальная инфраструктура жилого района</div>
                             <div class="card-collection__link"><a href="#">
                                  Подробнее<span>
                                   <svg width="24" height="24">
@@ -1369,12 +1389,12 @@
                       <div class="card-collection">
                         <div class="card-collection__bg">
                           <picture>
-                            <source srcset="/img/objects/image-collection.webp" type="image/webp"/><img src="/img/objects/image-collection.jpg" loading="lazy" alt="image"/>
+                            <source srcset="/img/objects/image-collection3.webp" type="image/webp"/><img src="/img/objects/image-collection3.jpg" loading="lazy" alt="image"/>
                           </picture>
                         </div>
                         <div class="card-collection__content">
                           <div class="card-collection__main">
-                            <div class="card-collection__title">Недвижимость на юге Москвы</div>
+                            <div class="card-collection__title">Пример интересного предложения в 2 строки</div>
                             <div class="card-collection__link"><a href="#">
                                  Подробнее<span>
                                   <svg width="24" height="24">
@@ -1407,12 +1427,12 @@
                       <div class="card-collection">
                         <div class="card-collection__bg">
                           <picture>
-                            <source srcset="/img/objects/image-collection.webp" type="image/webp"/><img src="/img/objects/image-collection.jpg" loading="lazy" alt="image"/>
+                            <source srcset="/img/objects/image-collection3.webp" type="image/webp"/><img src="/img/objects/image-collection3.jpg" loading="lazy" alt="image"/>
                           </picture>
                         </div>
                         <div class="card-collection__content">
                           <div class="card-collection__main">
-                            <div class="card-collection__title">Недвижимость на юге Москвы</div>
+                            <div class="card-collection__title">Пример интересного предложения в 2 строки</div>
                             <div class="card-collection__link"><a href="#">
                                  Подробнее<span>
                                   <svg width="24" height="24">
@@ -1427,8 +1447,11 @@
               </div>
             </div>
             <div class="special-offers__bottom">
+              <div class="special-offers__count">
+                <div class="splide-counter"><span>3</span>/<span>12</span></div>
+              </div>
               <div class="special-offers__nav">
-                <div class="special-offers__nav-next">
+                <div class="special-offers__nav-next" disabled="disabled">
                   <svg width="24" height="24">
                     <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
                   </svg>
@@ -1439,7 +1462,6 @@
                   </svg>
                 </div>
               </div>
-              <div class="special-offers__count">3/12</div>
             </div>
           </div>
         </div>
@@ -1452,32 +1474,86 @@
             <div class="our-services__list">
               <div class="our-services__item">
                 <div class="card-services">
-                  <div class="card-services"></div>
+                  <div class="card-services__icon"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/01-flats.svg"></span>
+                  </div>
+                  <div class="card-services__main">
+                    <div class="card-services__title">Недвижимость</div>
+                    <div class="card-services__desc">Покупка, продажа и аренда элитных объектов</div>
+                    <div class="card-services__link"><a href="#">Подробнее<span>
+                          <svg width="24" height="24">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                          </svg></span></a></div>
+                  </div>
                 </div>
               </div>
               <div class="our-services__item">
                 <div class="card-services">
-                  <div class="card-services"></div>
+                  <div class="card-services__icon"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/21-services.svg"></span>
+                  </div>
+                  <div class="card-services__main">
+                    <div class="card-services__title">Консалтинг</div>
+                    <div class="card-services__desc">Комплексные решения для девелоперов</div>
+                    <div class="card-services__link"><a href="#">Подробнее<span>
+                          <svg width="24" height="24">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                          </svg></span></a></div>
+                  </div>
                 </div>
               </div>
               <div class="our-services__item">
                 <div class="card-services">
-                  <div class="card-services"></div>
+                  <div class="card-services__icon"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/43-legal-services.svg"></span>
+                  </div>
+                  <div class="card-services__main">
+                    <div class="card-services__title">Юридические услуги</div>
+                    <div class="card-services__desc">Сопровождение сделок с элитной недвижимостью</div>
+                    <div class="card-services__link"><a href="#">Подробнее<span>
+                          <svg width="24" height="24">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                          </svg></span></a></div>
+                  </div>
                 </div>
               </div>
               <div class="our-services__item">
                 <div class="card-services">
-                  <div class="card-services"></div>
+                  <div class="card-services__icon"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/44-investments.svg"></span>
+                  </div>
+                  <div class="card-services__main">
+                    <div class="card-services__title">Инвестиции</div>
+                    <div class="card-services__desc">Стратегии по сохранению и приумножению капитала</div>
+                    <div class="card-services__link"><a href="#">Подробнее<span>
+                          <svg width="24" height="24">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                          </svg></span></a></div>
+                  </div>
                 </div>
               </div>
               <div class="our-services__item">
                 <div class="card-services">
-                  <div class="card-services"></div>
+                  <div class="card-services__icon"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/45-analytics.svg"></span>
+                  </div>
+                  <div class="card-services__main">
+                    <div class="card-services__title">Аналитика</div>
+                    <div class="card-services__desc">Исследования и обзоры рынка премиум-класса</div>
+                    <div class="card-services__link"><a href="#">Подробнее<span>
+                          <svg width="24" height="24">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                          </svg></span></a></div>
+                  </div>
                 </div>
               </div>
               <div class="our-services__item">
                 <div class="card-services">
-                  <div class="card-services"></div>
+                  <div class="card-services__icon"><span class="bgimage lazyload" data-bg="/img/icons/icon-subcategory/25-metrium-2.svg"></span>
+                  </div>
+                  <div class="card-services__main">
+                    <div class="card-services__title">О компании</div>
+                    <div class="card-services__desc">Узнайте подробнее о нас и как мы работаем</div>
+                    <div class="card-services__link"><a href="#">Подробнее<span>
+                          <svg width="24" height="24">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                          </svg></span></a></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1486,17 +1562,169 @@
       </section>
       <section class="section-company-about">
         <div class="container">
-          <div class="company-about">company-about</div>
+          <div class="company-about">
+            <div class="company-about__wrp">
+              <div class="company-about__logo">
+                <picture><img src="/img/common/logo-current.svg" loading="lazy" alt="image"/></picture>
+              </div>
+              <div class="company-about__main">
+                <div class="company-about__desc">
+                  <div class="formated-text">
+                    <h2>О компании Metrium Premium</h2>
+                    <p>Один из крупнейших игроков на рынке элитной жилой недвижимости Москвы и Подмосковья. Компания основана в 2014 году. В штате компании работают более 50 сотрудников.</p>
+                    <p>За последние 2 года городским департаментом реализовано более 100 сделок, среди которых такие знаковые объекты, как пентхаус в Имперском Доме, квартиры в комплексах Barkli Virgin House, Итальянский квартал, Фьюжн парк, SMOLENSKY DE LUXE и прочие.</p>
+                    <p>Загородный департамент реализовал более 80 сделок, из них такие знаковые объекты, как Жуковка, Барвиха, Николина Гора, Николино и другие.</p>
+                    <p>Официальные партнеры по реализации объектов ведущих застройщиков в сегменте элитной недвижимости.</p>
+                  </div>
+                </div>
+                <div class="company-about__btn"><a href="#">
+                    <button class="btn btn-green">Подробнее о компании</button></a></div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="section-partners">
         <div class="container">
-          <div class="partners">partners</div>
+          <div class="partners">
+            <div class="partners__title">Наши партнёры</div>
+            <div class="partners__slider">
+              <div class="splide" data-slider="partners">
+                <div class="splide__track">
+                  <div class="splide__list">
+                    <div class="splide__slide">
+                      <div class="item-partner"><span class="bgimage lazyload" data-bg="/img/other/partner-logo/partner-logo.png"></span>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="item-partner"><span class="bgimage lazyload" data-bg="/img/other/partner-logo/partner-logo-1.png"></span>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="item-partner"><span class="bgimage lazyload" data-bg="/img/other/partner-logo/partner-logo-2.png"></span>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="item-partner"><span class="bgimage lazyload" data-bg="/img/other/partner-logo/partner-logo-3.png"></span>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="item-partner"><span class="bgimage lazyload" data-bg="/img/other/partner-logo/partner-logo-4.png"></span>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="item-partner"><span class="bgimage lazyload" data-bg="/img/other/partner-logo/partner-logo-5.png"></span>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="item-partner"><span class="bgimage lazyload" data-bg="/img/other/partner-logo/partner-logo-6.png"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="partners__bottom">
+              <div class="partners__nav">
+                <div class="partners__nav-next" disabled="disabled">
+                  <svg width="24" height="24">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
+                  </svg>
+                </div>
+                <div class="partners__nav-prev">
+                  <svg width="24" height="24">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="section-our-awards">
         <div class="container">
-          <div class="our-awards">our-awards</div>
+          <div class="our-awards">
+            <div class="our-awards__title">Премии и награды</div>
+            <div class="our-awards__slider">
+              <div class="splide" data-slider="awards">
+                <div class="splide__track">
+                  <div class="splide__list">
+                    <div class="splide__slide">
+                      <div class="card-awards">
+                        <div class="card-awards__main">
+                          <div class="card-awards__name">Aldar Properties Awards</div>
+                          <div class="card-awards__desc">TOP Performing Moscow Agency</div>
+                          <div class="card-awards__year">2023</div>
+                        </div>
+                        <div class="card-awards__image"><span class="bgimage lazyload" data-bg="/img/other/badge-awards.jpg"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="card-awards">
+                        <div class="card-awards__main">
+                          <div class="card-awards__name">Aldar Properties Awards</div>
+                          <div class="card-awards__desc">TOP Performing Moscow Agency</div>
+                          <div class="card-awards__year">2023</div>
+                        </div>
+                        <div class="card-awards__image"><span class="bgimage lazyload" data-bg="/img/other/badge-awards.jpg"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="card-awards">
+                        <div class="card-awards__main">
+                          <div class="card-awards__name">Aldar Properties Awards</div>
+                          <div class="card-awards__desc">TOP Performing Moscow Agency</div>
+                          <div class="card-awards__year">2023</div>
+                        </div>
+                        <div class="card-awards__image"><span class="bgimage lazyload" data-bg="/img/other/badge-awards.jpg"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="card-awards">
+                        <div class="card-awards__main">
+                          <div class="card-awards__name">Aldar Properties Awards</div>
+                          <div class="card-awards__desc">TOP Performing Moscow Agency</div>
+                          <div class="card-awards__year">2023</div>
+                        </div>
+                        <div class="card-awards__image"><span class="bgimage lazyload" data-bg="/img/other/badge-awards.jpg"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="card-awards">
+                        <div class="card-awards__main">
+                          <div class="card-awards__name">Aldar Properties Awards</div>
+                          <div class="card-awards__desc">TOP Performing Moscow Agency</div>
+                          <div class="card-awards__year">2023</div>
+                        </div>
+                        <div class="card-awards__image"><span class="bgimage lazyload" data-bg="/img/other/badge-awards.jpg"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="our-awards__bottom">
+              <div class="our-awards__btn"><a href="#">
+                  <button class="btn btn-green">О компании</button></a></div>
+              <div class="our-awards__nav">
+                <div class="our-awards__nav-next" disabled="disabled">
+                  <svg width="24" height="24">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
+                  </svg>
+                </div>
+                <div class="our-awards__nav-prev">
+                  <svg width="24" height="24">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="section-form-question">

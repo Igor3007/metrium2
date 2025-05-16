@@ -1,4 +1,19 @@
+include card-awards
+
 mixin  our-awards
     section.section-our-awards
         .container
-            .our-awards our-awards
+            .our-awards
+                .our-awards__title Премии и награды
+                .our-awards__slider
+                    .splide(data-slider="awards")
+                        .splide__track
+                            .splide__list
+                                each iten in [1,1,1,1,1]
+                                    .splide__slide: +card-awards
+                .our-awards__bottom
+                    .our-awards__btn
+                        a(href='#'): button.btn.btn-green О компании
+                    .our-awards__nav
+                        .our-awards__nav-next(disabled): +icons('#ic_arr-left')
+                        .our-awards__nav-prev: +icons('#ic_arr-right')
