@@ -5086,6 +5086,10 @@ header {
   background-position: top center;
 }
 
+.section-form-question {
+  padding: 50px 0;
+}
+
 .minicard {
   background-color: #fff;
   border-radius: 24px;

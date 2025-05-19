@@ -1,4 +1,16 @@
 mixin  form-question
     section.section-form-question
         .container
-            .form-question form-question
+            .form-question
+                .form-question__main
+                    .form-question__title Есть вопрос или нужна консультация?
+                    .form-question__desc Оставляйте свой номер телефона — мы перезвоним и расскажем о самых выгодных предложениях, поможем подобрать наиболее подходящие варианты для вас!
+                .form-question__form
+                    .form-question__field
+                        form(action='#' method='POST')
+                            .form-question__input
+                                input(type="text" placeholder="Ваш номер телефона")
+                                button.btn Отправить
+                            .form-question__note
+                                | Нажимая кнопку, вы даёте согласие на 
+                                a(href='#') обработку персональных данных
