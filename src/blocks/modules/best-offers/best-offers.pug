@@ -7,11 +7,11 @@ mixin  best-offers
                 .best-offers__title Новые предложения
                 .best-offers__tabs
                     ul
-                        li.is-active: span Квартиры
-                        li: span Новостройки
-                        li: span Дома на Новой Риге
-                        li: span Дома на Рублёвке
-                        li: span Участки
+                        li(data-filter="1").is-active: span Квартиры
+                        li(data-filter="2"): span Новостройки
+                        li(data-filter="3"): span Дома на Новой Риге
+                        li(data-filter="4"): span Дома на Рублёвке
+                        li(data-filter="5"): span Участки
 
                     ul.toggle-currency
                         li.is-active: span ₽
@@ -32,5 +32,5 @@ mixin  best-offers
                                 +icons('#ic_house')
                                 span Смотреть все предложения
                     .best-offers__nav
-                        .best-offers__nav-prev: +icons('#ic_arr-left')
+                        .best-offers__nav-prev(disabled): +icons('#ic_arr-left')
                         .best-offers__nav-next: +icons('#ic_arr-right')

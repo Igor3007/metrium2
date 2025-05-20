@@ -395,6 +395,34 @@ document.addEventListener('DOMContentLoaded', function (event) {
             perMove: 1,
             flickMaxPages: 1,
             flickPower: 100,
+            breakpoints: {
+                480: {
+                    perPage: 1.05,
+                    gap: 8,
+                },
+
+                640: {
+                    perPage: 1.4,
+                    gap: 8,
+                },
+
+                767: {
+                    perPage: 2,
+                    gap: 8,
+                },
+
+                992: {
+                    perPage: 2.5,
+                    gap: 12,
+                },
+
+                1200: {
+                    perPage: 3,
+                    gap: 24,
+                },
+
+
+            }
 
         });
 
@@ -447,7 +475,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     slider special-offers
     ===============================================*/
 
-    document.querySelectorAll('[data-slider=""]').forEach(slider => {
+    document.querySelectorAll('[data-slider="special-offers"]').forEach(slider => {
 
         slider['Splide'] = new Splide(slider, {
 
@@ -460,6 +488,35 @@ document.addEventListener('DOMContentLoaded', function (event) {
             perMove: 1,
             flickMaxPages: 1,
             flickPower: 100,
+
+            breakpoints: {
+                480: {
+                    perPage: 1.05,
+                    gap: 8,
+                },
+
+                640: {
+                    perPage: 1.4,
+                    gap: 8,
+                },
+
+                767: {
+                    perPage: 2,
+                    gap: 8,
+                },
+
+                992: {
+                    perPage: 2.5,
+                    gap: 12,
+                },
+
+                1200: {
+                    perPage: 3,
+                    gap: 24,
+                },
+
+
+            }
 
         });
 
@@ -521,5 +578,109 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     })
 
+    /* ====================================
+    flex collections
+    ====================================*/
+
+    class FlexCollections {
+        constructor(params) {
+            this.params = params
+            this.$el = document.querySelector(params.el) || document
+            this.widthButtonShowMore = 50;
+            this.container = document.querySelector(this.params.container) || document
+            this.showMoreBotton = this.container.querySelector('.show-more-tag')
+            this.init()
+        }
+
+        init() {
+            this.addEvent()
+            this.render()
+        }
+
+        heightItems() {
+
+
+
+            return this.$el.clientHeight;
+        }
+
+        heightContainer() {
+
+            let heightItem = this.$el.querySelector('li').offsetHeight
+
+
+
+            if (document.body.clientWidth > 760) {
+                return heightItem
+            } else {
+                return heightItem * 3
+            }
+
+        }
+
+        render() {
+
+            if (this.$el.closest(this.params.container).classList.contains('is-open')) {
+                return false;
+            }
+
+            this.$el.querySelectorAll('li.is-hide').forEach(li => li.classList.remove('is-hide'))
+
+            this.showMoreBotton.style.display = (this.heightItems() > this.heightContainer() ? 'flex' : 'none')
+
+            let i = 0;
+
+            console.log(this.heightItems())
+            console.log(this.heightContainer())
+
+            while (this.heightItems() > this.heightContainer()) {
+                let visibleElements = this.$el.querySelectorAll('li:not(.is-hide)')
+                if (visibleElements[(visibleElements.length - 1)]) {
+                    visibleElements[(visibleElements.length - 1)].classList.add('is-hide')
+                }
+
+                i++;
+
+                if (i > 100) return false
+            }
+
+            this.container.classList.contains('is-init') || this.container.classList.add('is-init')
+
+        }
+
+        debounce(method, delay, e) {
+            clearTimeout(method._tId);
+            method._tId = setTimeout(function () {
+                method(e);
+            }, delay);
+        }
+
+
+        addEvent() {
+            const resizeHahdler = (e) => {
+                this.render()
+            }
+
+            const observer = new ResizeObserver((entries) => {
+                this.debounce(resizeHahdler, 30, entries)
+            });
+
+            observer.observe(document.querySelector(this.params.container));
+
+            this.showMoreBotton.addEventListener('click', e => {
+                this.container.classList.toggle('is-open');
+                this.showMoreBotton.querySelector('span').innerText = this.container.classList.contains('is-open') ? 'Свернуть' : '+'
+
+            })
+        }
+
+    }
+
+    if (document.querySelector('.fb-filter__selections')) {
+        let collections = new FlexCollections({
+            el: '.fb-filter__selections ul',
+            container: '.fb-filter__selections'
+        })
+    }
 
 }); //dcl

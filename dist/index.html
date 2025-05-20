@@ -99,7 +99,7 @@
             <div class="container">
               <div class="first-block__title">
                 <h1>
-                   Метриум Премиум<span>Элитная недвижимость в Москве и Подмосковье</span></h1>
+                   Метриум Премиум</h1>
               </div>
               <div class="first-block__fastlink">
                 <ul>
@@ -122,14 +122,14 @@
                       <form action="#" method="POST">
                         <div class="fb-filter__row">
                           <div class="fb-filter__fields">
-                            <div class="fb-filter__field">
-                              <select placeholder="Покупка">
+                            <div class="fb-filter__field fb-filter__field--first">
+                              <select placeholder="Купить">
                                 <option>Покупка</option>
                                 <option>Аренда</option>
                                 <option>Субаренда</option>
                               </select>
                             </div>
-                            <div class="fb-filter__field">
+                            <div class="fb-filter__field fb-filter__field--second">
                               <select placeholder="Тип недвижимости">
                                 <option>Квартиры</option>
                                 <option>Котеджи</option>
@@ -137,9 +137,40 @@
                               </select>
                             </div>
                             <div class="fb-filter__field">
-                              <input type="text" placeholder="от"/>
-                              <input type="text" placeholder="до"/>
+                              <div class="price-input">
+                                <label>Цена от</label>
+                                <input type="text" placeholder="10 000 000"/>
+                              </div>
                             </div>
+                            <div class="fb-filter__field">
+                              <div class="price-input">
+                                <label>до</label>
+                                <input type="text" placeholder="9 999 000 000"/>
+                              </div>
+                            </div>
+                            <div class="fb-filter__field fb-filter__field--currency">
+                              <div class="select-currency">
+                                <div class="select-currency__item">
+                                  <label>
+                                    <input type="radio" name="currency" value="₽"/><span>₽ </span>
+                                  </label>
+                                </div>
+                                <div class="select-currency__item">
+                                  <label>
+                                    <input type="radio" name="currency" value="$"/><span>$ </span>
+                                  </label>
+                                </div>
+                                <div class="select-currency__item">
+                                  <label>
+                                    <input type="radio" name="currency" value="€"/><span>€ </span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="fb-filter__row fb-filter__row--second">
+                          <div class="fb-filter__fields">
                             <div class="fb-filter__field">
                               <select placeholder="Район" multiple="multiple">
                                 <option>Арбат</option>
@@ -154,17 +185,15 @@
                                 <option>Якиманка</option>
                               </select>
                             </div>
-                          </div>
-                        </div>
-                        <div class="fb-filter__row">
-                          <div class="fb-filter__items">
-                            <div class="fb-filter__item">
+                            <div class="fb-filter__field">
                               <div class="fb-filter-all"><span>Показать ещё фильтры</span>
                                 <svg width="16" height="16">
                                   <use xlink:href="/img/sprites/sprite.svg#ic_arrow-down"></use>
                                 </svg>
                               </div>
                             </div>
+                          </div>
+                          <div class="fb-filter__items">
                             <div class="fb-filter__item">
                               <button class="btn btn-line">
                                 <svg width="24" height="24">
@@ -190,6 +219,7 @@
                               <li><a href="#">Квартиры с террасами</a></li>
                               <li><a href="#">Патриаршие пруды</a></li>
                               <li><a href="#">Квартиры для большой семьи</a></li>
+                              <div class="fb-filter__more show-more-tag" data-isopen="tag-collections"><span>+</span></div>
                             </ul>
                           </div>
                         </div>
@@ -215,14 +245,35 @@
                               </select>
                             </div>
                             <div class="fb-filter__field">
-                              <input type="text" placeholder="от"/>
-                              <input type="text" placeholder="до"/>
+                              <div class="price-input">
+                                <label>Цена от</label>
+                                <input type="text" placeholder="10 000 000"/>
+                              </div>
                             </div>
                             <div class="fb-filter__field">
-                              <select placeholder="Шоссе">
-                                <option>Новорижское</option>
-                                <option>Рублево-успенское</option>
-                              </select>
+                              <div class="price-input">
+                                <label>до</label>
+                                <input type="text" placeholder="9 999 000 000"/>
+                              </div>
+                            </div>
+                            <div class="fb-filter__field">
+                              <div class="select-currency">
+                                <div class="select-currency__item">
+                                  <label>
+                                    <input type="checkbox" value="₽"/><span>₽ </span>
+                                  </label>
+                                </div>
+                                <div class="select-currency__item">
+                                  <label>
+                                    <input type="checkbox" value="$"/><span>$ </span>
+                                  </label>
+                                </div>
+                                <div class="select-currency__item">
+                                  <label>
+                                    <input type="checkbox" value="€"/><span>€ </span>
+                                  </label>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -644,11 +695,11 @@
             <div class="best-offers__title">Новые предложения</div>
             <div class="best-offers__tabs">
               <ul>
-                <li class="is-active"><span>Квартиры</span></li>
-                <li><span>Новостройки</span></li>
-                <li><span>Дома на Новой Риге</span></li>
-                <li><span>Дома на Рублёвке</span></li>
-                <li><span>Участки</span></li>
+                <li class="is-active" data-filter="1"><span>Квартиры</span></li>
+                <li data-filter="2"><span>Новостройки</span></li>
+                <li data-filter="3"><span>Дома на Новой Риге</span></li>
+                <li data-filter="4"><span>Дома на Рублёвке</span></li>
+                <li data-filter="5"><span>Участки</span></li>
               </ul>
               <ul class="toggle-currency">
                 <li class="is-active"><span>₽</span></li>
@@ -1304,7 +1355,7 @@
                     </svg><span>Смотреть все предложения</span>
                   </button></a></div>
               <div class="best-offers__nav">
-                <div class="best-offers__nav-prev">
+                <div class="best-offers__nav-prev" disabled="disabled">
                   <svg width="24" height="24">
                     <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
                   </svg>
@@ -1750,7 +1801,8 @@
       </section>
     </main>
     <footer>
-      <div data-menu="container">
+      <div data-menu="container"></div>
+      <div class="container">
         <div class="footer">
           <div class="footer__row">
             <div class="footer__left">

@@ -11,6 +11,10 @@ header {
     display: flex;
     padding: 12px 0;
 
+    @media screen and (min-width: $w1200) {
+        padding: 32px 0;
+    }
+
     &__burger {
         width: 48px;
         height: 48px;
@@ -34,12 +38,16 @@ header {
             align-items: center;
             gap: 16px;
         }
+
+        @media screen and (min-width: $w1200) {
+            gap: 32px;
+        }
     }
 
     &__right {
         display: flex;
         align-items: center;
-        gap: 16px;
+        gap: 12px;
 
         @media screen and (min-width: $w992) {
             width: calc(50% - 100px);
@@ -62,6 +70,10 @@ header {
             height: 48px;
             width: 150px;
             @include bgimage-contain;
+
+            @media screen and (min-width: $w1200) {
+                height: 56px;
+            }
         }
     }
 
@@ -76,8 +88,17 @@ header {
                 display: flex;
                 gap: 16px;
 
+                @media screen and (min-width: $w1200) {
+                    gap: 30px;
+                }
+
                 & a {
-                    color: #fff
+                    color: #fff;
+                    letter-spacing: 2%;
+
+                    @media screen and (min-width: $w1200) {
+                        font-size: 18px;
+                    }
                 }
             }
         }
@@ -86,6 +107,12 @@ header {
 
 
     &__wishlist {
+
+        display: none;
+
+        @media screen and (min-width: $w992) {
+            display: block;
+        }
 
         & a {
             display: none;
@@ -116,6 +143,7 @@ header {
 
     &__phone {
         display: none;
+        margin-right: 20px;
 
         @media screen and (min-width: $w992) {
             display: flex;
@@ -124,7 +152,7 @@ header {
             & a {
                 font-size: 18px;
                 font-weight: 500;
-                letter-spacing: 2%;
+                letter-spacing: 4%;
                 color: #fff;
             }
         }

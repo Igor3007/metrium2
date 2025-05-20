@@ -1,6 +1,10 @@
 .section-best-offers {
     background-color: var(--bg);
     padding: 48px 0;
+
+    @media screen and (min-width: $w1440) {
+        padding: 63px 0;
+    }
 }
 
 
@@ -8,6 +12,10 @@
     &__title {
         @include font-h2;
         padding-bottom: 24px;
+
+        @media screen and (min-width: $w1440) {
+            padding-bottom: 34px;
+        }
     }
 
     &__tabs {
@@ -15,24 +23,48 @@
         border-radius: 8px;
         display: flex;
         overflow-x: auto;
+        margin-bottom: 24px;
 
         @media screen and (max-width: $w480) {
             margin-right: -16px;
         }
-
 
         @media screen and (min-width: $w992) {
             background-color: #fff;
             margin-bottom: 36px;
         }
 
+        @media screen and (min-width: $w1200) {
+            padding: 12px;
+        }
+
         & ul {
             display: flex;
             margin: 0 -5px;
 
+            @media screen and (min-width: $w1200) {
+                margin: 0;
+            }
+
             & li {
                 white-space: nowrap;
                 padding: 0 5px;
+
+                @media screen and (min-width: $w1200) {
+                    padding: 0;
+
+                    &:first-child {
+                        & span {
+                            border-radius: 12px 0 0 12px;
+                        }
+                    }
+
+                    &:last-child {
+                        & span {
+                            border-radius: 0 12px 12px 0;
+                        }
+                    }
+                }
 
                 & span {
                     background-color: #fff;
@@ -41,23 +73,76 @@
                     align-items: center;
                     padding: 5px 12px;
                     border-radius: 8px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: var(--bg);
+                    }
+
+                    @media screen and (min-width: $w1200) {
+                        padding: 18px 32px;
+                        border-radius: 0;
+                        font-size: 18px;
+                        letter-spacing: 2%;
+
+                    }
+                }
+
+                &.is-active {
+                    & span {
+                        background-color: var(--accent-11);
+                        color: #fff;
+                    }
                 }
             }
         }
     }
 
     &__slider {
-        padding-bottom: 60px;
+        padding-bottom: 16px;
+
+        @media screen and (min-width: $w1200) {
+            padding-bottom: 60px;
+        }
+
+        & .splide {
+            &__track {
+                overflow: visible;
+            }
+        }
     }
 
     &__bottom {
         display: flex;
         justify-content: space-between;
+
+        & .btn {
+            @media screen and (max-width: $w480) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__more {
+        @media screen and (max-width: $w480) {
+            width: 100%;
+        }
     }
 
     &__nav {
         @include splide-nav;
+        display: none;
+
+        @media screen and (min-width: $w760) {
+            display: flex;
+        }
     }
 
 
+}
+
+.toggle-currency {
+    @media screen and (min-width: $w1200) {
+        margin-left: auto !important;
+    }
 }

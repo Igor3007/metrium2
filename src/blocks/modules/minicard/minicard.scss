@@ -29,6 +29,14 @@
         }
     }
 
+    &__getcall {
+        display: none;
+
+        @media screen and (min-width: $w576) {
+            display: block;
+        }
+    }
+
     &__id {
         color: var(--text-2);
         padding-bottom: 12px;
@@ -80,10 +88,18 @@
                 width: calc(25% - 6px);
                 display: flex;
                 flex-direction: column;
-                padding-left: 35px;
+                padding-left: 0;
                 letter-spacing: 2%;
                 background-repeat: no-repeat;
                 background-position: 8px 1px;
+
+                @media screen and (max-width: $w576) {
+                    background-image: unset !important;
+                }
+
+                @media screen and (min-width: $w576) {
+                    padding-left: 35px;
+                }
 
                 & small {
                     font-size: 14px;

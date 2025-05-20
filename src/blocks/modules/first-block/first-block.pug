@@ -17,16 +17,16 @@ mixin tab-content-city
     form(action='#' method='POST')
         .fb-filter__row
             .fb-filter__fields
-                .fb-filter__field
+                .fb-filter__field.fb-filter__field--first
                     +select-field({
-                        placeholder: 'Покупка',
+                        placeholder: 'Купить',
                         option: [
                             'Покупка',
                             'Аренда',
                             'Субаренда',
                         ]
                     })
-                .fb-filter__field
+                .fb-filter__field.fb-filter__field--second
                     +select-field({
                         placeholder: 'Тип недвижимости',
                         option: [
@@ -37,8 +37,33 @@ mixin tab-content-city
                     })
                     
                 .fb-filter__field
-                    +price-field
+                    .price-input
+                        label Цена от
+                        input(type="text" placeholder="10 000 000")
 
+                .fb-filter__field
+                    .price-input
+                        label до
+                        input(type="text" placeholder="9 999 000 000")
+
+                .fb-filter__field.fb-filter__field--currency
+                    .select-currency
+                        .select-currency__item
+                            label
+                                input(type="radio" name="currency" value="₽")
+                                span ₽ 
+                        .select-currency__item
+                            label
+                                input(type="radio" name="currency" value="$")
+                                span $ 
+                        .select-currency__item
+                            label
+                                input(type="radio" name="currency" value="€")
+                                span € 
+
+                
+        .fb-filter__row.fb-filter__row--second
+            .fb-filter__fields
                 .fb-filter__field
                     +select-field({
                         multiple: true,
@@ -56,12 +81,14 @@ mixin tab-content-city
                             'Якиманка',
                         ]
                     })
-        .fb-filter__row
-            .fb-filter__items
-                .fb-filter__item
+
+                .fb-filter__field
                     .fb-filter-all
                         span Показать ещё фильтры
                         +icons('#ic_arrow-down', 16) 
+
+            .fb-filter__items
+                    
                 .fb-filter__item
                     button.btn.btn-line
                         +icons('#ic_loc')
@@ -79,10 +106,13 @@ mixin tab-content-city
                     li: a(href='#') Квартиры с террасами
                     li: a(href='#') Патриаршие пруды
                     li: a(href='#') Квартиры для большой семьи
+
+                    div(class="fb-filter__more show-more-tag" data-isopen="tag-collections"): span +
 mixin tab-content-village
     form(action='#' method='POST')
         .fb-filter__row
             .fb-filter__fields
+
                 .fb-filter__field
                     +select-field({
                         placeholder: 'Покупка',
@@ -92,6 +122,7 @@ mixin tab-content-village
                             'Субаренда',
                         ]
                     })
+
                 .fb-filter__field
                     +select-field({
                         placeholder: 'Тип недвижимости',
@@ -104,16 +135,29 @@ mixin tab-content-village
                     })
                     
                 .fb-filter__field
-                    +price-field
+                    .price-input
+                        label Цена от
+                        input(type="text" placeholder="10 000 000")
 
                 .fb-filter__field
-                    +select-field({
-                        placeholder: 'Шоссе',
-                        option: [
-                            'Новорижское',
-                            'Рублево-успенское',
-                        ]
-                    })
+                    .price-input
+                        label до
+                        input(type="text" placeholder="9 999 000 000")
+
+                .fb-filter__field
+                    .select-currency
+                        .select-currency__item
+                            label
+                                input(type="checkbox" value="₽")
+                                span ₽ 
+                        .select-currency__item
+                            label
+                                input(type="checkbox" value="$")
+                                span $ 
+                        .select-currency__item
+                            label
+                                input(type="checkbox" value="€")
+                                span € 
         .fb-filter__row
             .fb-filter__items
                 .fb-filter__item
@@ -149,7 +193,7 @@ mixin first-block
                         .first-block__title
                             h1 
                                 | Метриум Премиум
-                                span Элитная недвижимость в Москве и Подмосковье
+                                
                         .first-block__fastlink
                             ul
                                 li: a(href='#') Лучшие предложения
