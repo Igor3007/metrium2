@@ -88,6 +88,7 @@
                     border-radius: 8px;
                     cursor: pointer;
                     transition: 0.3s ease;
+                    color: var(--text-2);
 
                     &:hover {
                         background-color: var(--bg);
@@ -98,6 +99,7 @@
                         border-radius: 0;
                         font-size: 18px;
                         letter-spacing: 2%;
+                        font-weight: 500;
                         background-color: var(--bg);
 
                         &:hover {
@@ -204,14 +206,26 @@
         animation: to-fade-minicard 0.4s ease forwards;
     }
 
+    & .toggle-currency {
 
-}
+        padding-left: 16px;
 
-.toggle-currency {
+        @media screen and (min-width: $w1200) {
+            margin-left: auto !important;
+        }
 
-    padding-left: 16px;
+        & li {
+            & span {
+                font-weight: 400 !important;
 
-    @media screen and (min-width: $w1200) {
-        margin-left: auto !important;
+                @media screen and (min-width: $w1200) {
+                    font-size: 18px;
+                    padding-left: 23px;
+                    padding-right: 23px;
+                }
+            }
+        }
     }
+
+
 }

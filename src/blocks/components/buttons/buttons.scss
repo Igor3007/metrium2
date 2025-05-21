@@ -80,6 +80,7 @@
 
     & svg {
         fill: #fff;
+        min-width: 24px;
 
         &:first-child {
             margin-right: 1em;
@@ -138,11 +139,11 @@
 
     &.btn-line {
         background-color: transparent;
-        border: 1px solid #000;
-        color: #000;
+        border: 1px solid var(--accent-14);
+        color: var(--text-1);
 
         & svg {
-            fill: #000;
+            fill: var(--text-1);
             transition: 0.4s ease;
         }
 
@@ -261,6 +262,12 @@
     position: relative;
     overflow: hidden;
 
+    & .icon-burger,
+    & svg {
+        position: relative;
+        z-index: 2;
+    }
+
     &::before {
         content: '';
         position: absolute;
@@ -272,7 +279,7 @@
         width: 0px;
         height: 0px;
         background-color: var(--accent);
-        z-index: -1;
+        z-index: 1;
     }
 
     &:hover {

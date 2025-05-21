@@ -26,8 +26,14 @@
 
         & .splide {
             &__pagination {
-                position: relative;
-                padding: 14px 0;
+
+                bottom: -60px;
+
+                @media screen and (max-width: $w992) {
+                    position: relative;
+                    padding: 14px 0;
+                    bottom: unset;
+                }
             }
         }
     }

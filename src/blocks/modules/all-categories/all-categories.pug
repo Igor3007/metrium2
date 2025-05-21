@@ -19,8 +19,8 @@ mixin card-categories(data)
                     .splide__track
                         .splide__list
                             each item in data.sub
-                                .splide__item
-                                    .sub-cat-card
+                                .splide__slide
+                                    a(href="/categoty.html").sub-cat-card
                                         .sub-cat-card__icons: +bgimage(item.icon)
                                         .sub-cat-card__title= item.title
             .card-categories__action

@@ -358,12 +358,29 @@ document.addEventListener('DOMContentLoaded', function (event) {
     scroll page
     ================================================*/
 
-    let flag = false
+    if (document.querySelector('.section-first-block') && document.body.clientWidth >= 1200) {
 
-    window.addEventListener('scroll', () => {
-        document.body.classList.toggle('is-scroll-page', window.scrollY > 5)
-        document.body.classList.toggle('is-fixed-header', window.scrollY > window.innerHeight)
-    })
+        let scene = document.querySelector('.first-block-scroll-box')
+        let stickyBlock = document.querySelector('.first-block')
+        let header = document.querySelector('header')
+
+        scene.style.setProperty('height', '1400px')
+        stickyBlock.style.setProperty('position', 'sticky')
+        stickyBlock.style.setProperty('top', '0')
+        header.style.setProperty('position', 'fixed')
+
+        window.addEventListener('scroll', () => {
+            document.body.classList.toggle('is-scroll-page', window.scrollY > 5)
+            document.body.classList.toggle('is-fixed-header', window.scrollY > scene.clientHeight)
+
+            if ((scene.clientHeight - stickyBlock.clientHeight) < (window.scrollY - 30)) {
+                header.style.removeProperty('position')
+            } else {
+                header.style.setProperty('position', 'fixed')
+            }
+        })
+
+    }
 
     /* ===============================================
     splide nav
@@ -447,10 +464,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
             pagination: false,
             gap: '20px',
             start: 0,
+            perPage: 6,
             perMove: 1,
             flickMaxPages: 1,
             flickPower: 100,
-            fixedWidth: '95px'
+            fixedWidth: '164px'
 
         });
 
@@ -511,6 +529,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
             initSliderMinicard(splideList)
             initMinicardEvents(splideList)
 
+            if (this.currentCurrency) {
+                this.changeCurrency({
+                    dataset: {
+                        currency: this.currentCurrency
+                    }
+                })
+            }
+
+
             this.changeActiveFilter()
 
         }
@@ -531,9 +558,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
             this.$el.querySelectorAll('.minicard').forEach(minicard => {
                 minicard.querySelectorAll('[data-currency-id]').forEach(curr => {
-
-                    console.log(curr)
-
                     curr.classList.toggle('is-active', curr.dataset.currencyId == this.currentCurrency)
                 })
             })
@@ -683,6 +707,22 @@ document.addEventListener('DOMContentLoaded', function (event) {
     ===============================================*/
 
     const initMinicardEvents = (container) => {
+
+        function openGalleryProduct(e, minicard) {
+            const img = minicard.querySelectorAll('[data-slider="minicard"] img')
+            const arrImage = [];
+
+            img.forEach(image => {
+                arrImage.push(image.getAttribute('src'))
+            })
+
+            const instance = new FsLightbox();
+            instance.props.dots = true;
+            instance.props.type = "image";
+            instance.props.sources = arrImage;
+            instance.open(0)
+        }
+
         container.querySelectorAll('.minicard').forEach(el => {
 
             const slider = el.querySelector('[data-slider]')
@@ -695,7 +735,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 if (slider['Splide'].index <= 1) slider['Splide'].go('<')
             })
 
+            el.querySelector('.minicard__fullscreen').addEventListener('click', (e) => {
+                openGalleryProduct(e, el)
+            })
+
         })
+
+
     }
 
     initMinicardEvents(document)
@@ -713,7 +759,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             pagination: false,
             gap: 16,
             start: 0,
-            perPage: 4,
+            perPage: 3,
             fixedWidth: '440px',
             perMove: 1,
             flickMaxPages: 1,
@@ -733,12 +779,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 },
 
                 767: {
-                    fixedWidth: '440px',
+                    fixedWidth: '360px',
                     gap: 8,
                 },
 
                 992: {
-                    fixedWidth: '440px',
+                    fixedWidth: '360px',
                     gap: 12,
                 },
 
@@ -765,6 +811,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
             btn: 'special-offers',
             container: slider.closest('section'),
             onChange: (current, total) => {
+
+                total = document.body.clientWidth > 576 ? total - 2 : total
+
                 slideCounterCurrent.innerText = current
                 slideCounterTotal.innerText = total
             }
@@ -772,8 +821,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         slider['Splide'].mount();
 
+        let total = document.body.clientWidth > 576 ? slider['Splide'].length - 2 : slider['Splide'].length
+
         slideCounterCurrent.innerText = 1
-        slideCounterTotal.innerText = slider['Splide'].length
+        slideCounterTotal.innerText = total
 
     })
 
@@ -821,7 +872,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
             arrows: false,
             arrowPath: SLIDER_ARROW_PATH,
-            pagination: false,
+            pagination: true,
             gap: 32,
             start: 0,
             perPage: 3,
@@ -959,8 +1010,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
             this.showMoreBotton.addEventListener('click', e => {
                 this.container.classList.toggle('is-open');
-                this.showMoreBotton.querySelector('span').innerText = this.container.classList.contains('is-open') ? '-' : '+'
-
             })
         }
 

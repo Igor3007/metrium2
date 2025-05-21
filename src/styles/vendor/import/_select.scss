@@ -78,11 +78,11 @@ select {
         text-overflow: ellipsis;
         overflow: hidden;
         color: var(--text-1);
-        font-size: 17px;
+        font-size: 18px;
 
         &.af-selected-placeholder {
             color: var(--text-1);
-            font-size: 17px;
+            font-size: 18px;
         }
     }
 

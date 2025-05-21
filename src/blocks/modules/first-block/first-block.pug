@@ -50,7 +50,7 @@ mixin tab-content-city
                     .select-currency
                         .select-currency__item
                             label
-                                input(type="radio" name="currency" value="₽")
+                                input(type="radio" name="currency" value="₽" checked)
                                 span ₽ 
                         .select-currency__item
                             label
@@ -106,8 +106,12 @@ mixin tab-content-city
                     li: a(href='#') Квартиры с террасами
                     li: a(href='#') Патриаршие пруды
                     li: a(href='#') Квартиры для большой семьи
+                    li: a(href='#') Сервисные апартаменты
+                    li: a(href='#') Квартиры с террасами
+                    li: a(href='#') Патриаршие пруды
+                    li: a(href='#') Квартиры для большой семьи
 
-                    div(class="fb-filter__more show-more-tag" data-isopen="tag-collections"): span +
+                    div(class="fb-filter__more show-more-tag" data-isopen="tag-collections"): span
 mixin tab-content-village
     form(action='#' method='POST')
         .fb-filter__row
@@ -185,52 +189,51 @@ mixin tab-content-village
 mixin first-block
     section.section-first-block
         
-            .first-block
-                .first-block__bg
-                    +picture('/img/other/img-big')
-                .first-block__wrp
-                    .container
-                        .first-block__title
-                            h1 
-                                | Метриум Премиум
-                                
-                        .first-block__fastlink
-                            ul
-                                li: a(href='#') Лучшие предложения
-                                li: a(href='#') Эксклюзивные лоты
-                                li: a(href='#') Самые престижные районы
-                                li: a(href='#') Москва и Подмосковье
+            .first-block-scroll-box
+                .first-block
+                    .first-block__bg
+                        +picture('/img/other/img-big')
+                    .first-block__wrp
+                        .container
+                            .first-block__title
+                                h1 
+                                    | Метриум Премиум
+                                    span Элитная недвижимость в Москве и Подмосковье
+                                    
+                            .first-block__fastlink
+                                ul
+                                    li: a(href='#') Лучшие предложения
+                                    li: a(href='#') Эксклюзивные лоты
+                                    li: a(href='#') Самые престижные районы
+                                    li: a(href='#') Москва и Подмосковье
 
-                        .first-block__filter
-                            .fb-filter
-                                .fb-filter__tab
-                                    ul
-                                        li.is-active: span Городская
-                                        li: span Загородная
-                                .fb-filter__tab-container
+                            .first-block__filter
+                                .fb-filter
+                                    .fb-filter__tab
+                                        ul
+                                            li.is-active: span Городская
+                                            li: span Загородная
+                                    .fb-filter__tab-container
 
-                                    .fb-filter__tab-content.is-active: +tab-content-city
-                                    .fb-filter__tab-content: +tab-content-village
+                                        .fb-filter__tab-content.is-active: +tab-content-city
+                                        .fb-filter__tab-content: +tab-content-village
 
-                        .first-block__adv
-                            .fb-advantages
-                                .fb-advantages__list
-                                    .fb-advantages__item
-                                        .fb-card-adv
-                                            .fb-card-adv__title > 10 лет
-                                            .fb-card-adv__desc на рынке премиальной недвижимости
-                                    .fb-advantages__item
-                                        .fb-card-adv
-                                            .fb-card-adv__title > 10 тысяч
-                                            .fb-card-adv__desc клиентов в Москве и Московской области
-                                    .fb-advantages__item
-                                        .fb-card-adv
-                                            .fb-card-adv__title > 50 экспертов
-                                            .fb-card-adv__desc экспертов в сегментах премиум и элит
-                                    .fb-advantages__item
-                                        .fb-card-adv
-                                            .fb-card-adv__title > 600 объектов
-                                            .fb-card-adv__desc среди наших предложений недвижимости
-
-
-
+                            .first-block__adv
+                                .fb-advantages
+                                    .fb-advantages__list
+                                        .fb-advantages__item
+                                            .fb-card-adv
+                                                .fb-card-adv__title > 10 лет
+                                                .fb-card-adv__desc на рынке премиальной недвижимости
+                                        .fb-advantages__item
+                                            .fb-card-adv
+                                                .fb-card-adv__title > 10 тысяч
+                                                .fb-card-adv__desc клиентов в Москве и Московской области
+                                        .fb-advantages__item
+                                            .fb-card-adv
+                                                .fb-card-adv__title > 50 экспертов
+                                                .fb-card-adv__desc экспертов в сегментах премиум и элит
+                                        .fb-advantages__item
+                                            .fb-card-adv
+                                                .fb-card-adv__title > 600 объектов
+                                                .fb-card-adv__desc среди наших предложений недвижимости
