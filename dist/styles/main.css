@@ -4525,10 +4525,6 @@ footer {
   color: var(--accent-11);
 }
 
-body:not(.is-scroll-page) .first-block__title h1 {
-  font-size: 104px;
-}
-
 .first-block {
   position: relative;
 }
@@ -7680,6 +7676,10 @@ span[data-color=fff] {
 
   .footer__content {
     width: calc(75%);
+  }
+
+  body:not(.is-scroll-page) .first-block__title h1 {
+    font-size: 104px;
   }
 
   .first-block__wrp {
