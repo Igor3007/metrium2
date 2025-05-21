@@ -15,14 +15,14 @@
         }
 
         @media screen and (min-width: $w1440) {
-            padding: 72px 64px;
+            padding: 60px 64px;
             gap: 88px;
         }
     }
 
     &__logo {
         width: 100%;
-        max-width: 360px;
+        max-width: 328px;
         margin: auto;
 
         & img {
@@ -40,6 +40,17 @@
             & *:first-child {
                 margin-top: 0;
             }
+
+            & p {
+                font-size: 18px;
+                letter-spacing: 2%;
+                margin: 14px 0;
+            }
+
+            & h2 {
+                margin-bottom: 0;
+
+            }
         }
 
         & h2 {
@@ -48,9 +59,12 @@
     }
 
     &__btn {
+        padding-top: 10px;
+
         & .btn {
 
-            min-width: 320px;
+            padding-left: 1.8em;
+            padding-right: 1.8em;
 
             @media screen and (max-width: $w480) {
                 width: 100%;

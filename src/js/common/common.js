@@ -354,10 +354,79 @@ document.addEventListener('DOMContentLoaded', function (event) {
     selectCustom.init()
 
     /* ===============================================
+    splide nav
+    ===============================================*/
+
+    class SplideNavHelper {
+
+        constructor(params) {
+
+            this.params = params
+            this.slider = params.slider
+            this.btn = params.btn
+            this.container = params.container
+
+            this.prevButton = null
+            this.nextButton = null
+
+            this.init()
+        }
+
+        init() {
+            this.prevButton = this.container.querySelector('[data-slider-prev="' + this.btn + '"]')
+            this.nextButton = this.container.querySelector('[data-slider-next="' + this.btn + '"]')
+            this.prevButton.setAttribute('disabled', 'disabled')
+
+            this.addEvent()
+        }
+
+        addEvent() {
+            this.prevButton.addEventListener('click', e => {
+                this.slider.go('<')
+            })
+
+            this.nextButton.addEventListener('click', e => {
+                this.slider.go('>')
+            })
+
+            this.slider.on('mounted refresh', () => {
+
+                this.nextButton.removeAttribute('disabled')
+
+                setTimeout(() => {
+                    if (this.slider.length <= this.slider.options.perPage) {
+                        this.nextButton.setAttribute('disabled', 'disabled')
+                        this.prevButton.setAttribute('disabled', 'disabled')
+                    }
+                }, 100)
+            })
+
+
+            this.slider.on('move', (newIndex, prevIndex, destIndex) => {
+                this.nextButton.removeAttribute('disabled')
+                this.prevButton.removeAttribute('disabled')
+
+                if (destIndex == 0) {
+                    this.prevButton.setAttribute('disabled', 'disabled')
+                }
+
+                if (this.slider.length == (destIndex + this.slider.options.perPage)) {
+                    this.nextButton.setAttribute('disabled', 'disabled')
+                }
+
+                if (typeof this.params.onChange != 'undefined') {
+                    this.params.onChange(destIndex + 1, this.slider.length)
+                }
+            })
+        }
+
+    }
+
+    /* ===============================================
     slider card - categories__slider
     ===============================================*/
 
-    document.querySelectorAll('.card-categories__slider .splide').forEach(slider => {
+    document.querySelectorAll('[data-slider="category"]').forEach(slider => {
 
         slider['Splide'] = new Splide(slider, {
 
@@ -365,18 +434,108 @@ document.addEventListener('DOMContentLoaded', function (event) {
             arrowPath: SLIDER_ARROW_PATH,
             pagination: false,
             gap: '20px',
-            autoWidth: true,
             start: 0,
-            perPage: 2,
             perMove: 1,
             flickMaxPages: 1,
             flickPower: 100,
+            fixedWidth: '95px'
 
         });
+
+        // init splide nav
+        new SplideNavHelper({
+            slider: slider['Splide'],
+            btn: 'category',
+            container: slider.closest('.card-categories')
+        })
 
         slider['Splide'].mount();
 
     })
+
+    /* ===============================================
+    filter offers
+    ===============================================*/
+
+    class FilterOffeers {
+        constructor(params) {
+            this.$el = document.querySelector(params.el) || document
+            this.filterItems = this.$el.querySelectorAll('[data-filter]')
+            this.currencyItems = this.$el.querySelectorAll('[data-currency]')
+            this.filterSlides = this.$el.querySelectorAll('[data-filter-id]')
+            this.slider = params.slider
+            this.currentFilter = null
+            this.currentCurrency = null
+
+            this.init()
+        }
+
+        init() {
+            this.addEvent()
+        }
+
+        changeFilter(el) {
+
+            const splideList = this.$el.querySelector('.splide__list--offers')
+            splideList.innerHTML = ''
+
+
+            if (this.currentFilter == el.dataset.filter) {
+                this.filterSlides.forEach(item => {
+                    splideList.append(item.cloneNode(true))
+                })
+                this.currentFilter = null
+            } else {
+                this.currentFilter = el.dataset.filter
+                this.filterSlides.forEach(item => {
+                    if (item.dataset.filterId == el.dataset.filter) {
+                        splideList.append(item.cloneNode(true))
+                    }
+                })
+            }
+
+            this.slider.refresh();
+
+            initSliderMinicard(splideList)
+            initMinicardEvents(splideList)
+
+            this.changeActiveFilter()
+
+        }
+
+        changeActiveFilter() {
+            this.filterItems.forEach(el => {
+                el.classList.toggle('is-active', el.dataset.filter == this.currentFilter)
+            })
+        }
+
+        changeCurrency(el) {
+
+            this.currentCurrency = el.dataset.currency
+
+            this.currencyItems.forEach(el => {
+                el.classList.toggle('is-active', el.dataset.currency == this.currentCurrency)
+            })
+
+            this.$el.querySelectorAll('.minicard').forEach(minicard => {
+                minicard.querySelectorAll('[data-currency-id]').forEach(curr => {
+
+                    console.log(curr)
+
+                    curr.classList.toggle('is-active', curr.dataset.currencyId == this.currentCurrency)
+                })
+            })
+        }
+
+        addEvent() {
+            this.filterItems.forEach(el => {
+                el.addEventListener('click', (e) => this.changeFilter(el))
+            })
+            this.currencyItems.forEach(el => {
+                el.addEventListener('click', (e) => this.changeCurrency(el))
+            })
+        }
+    }
 
     /* ===============================================
     slider offers
@@ -391,42 +550,40 @@ document.addEventListener('DOMContentLoaded', function (event) {
             pagination: false,
             gap: 36,
             start: 0,
-            perPage: 3,
+            fixedWidth: '510px',
             perMove: 1,
             flickMaxPages: 1,
             flickPower: 100,
             breakpoints: {
                 480: {
-                    perPage: 1.05,
                     gap: 8,
+                    fixedWidth: '85vw'
                 },
 
                 640: {
-                    perPage: 1.4,
                     gap: 8,
+                    fixedWidth: '400px'
                 },
 
                 767: {
-                    perPage: 2,
                     gap: 8,
+                    fixedWidth: '440px'
                 },
 
                 992: {
-                    perPage: 2.5,
                     gap: 12,
+                    fixedWidth: '440px'
                 },
 
-                1200: {
-                    perPage: 3,
+                1360: {
                     gap: 24,
+                    fixedWidth: '510px'
                 },
 
 
             }
 
         });
-
-        slider['Splide'].mount();
 
         // disable drag on hover
         slider.querySelectorAll('.minicard__slider').forEach(gallery => {
@@ -442,34 +599,92 @@ document.addEventListener('DOMContentLoaded', function (event) {
             })
         })
 
+        // init splide nav
+        new SplideNavHelper({
+            slider: slider['Splide'],
+            btn: 'offers',
+            container: slider.closest('section')
+        })
+
+        //init filter
+
+        new FilterOffeers({
+            el: '.section-best-offers',
+            slider: slider['Splide']
+        })
+
+        slider['Splide'].mount();
     })
 
     /* ===============================================
     slider minicard
     ===============================================*/
 
-    document.querySelectorAll('[data-slider="minicard"]').forEach(slider => {
+    const initSliderMinicard = (conainer) => {
+        conainer.querySelectorAll('[data-slider="minicard"]').forEach(slider => {
 
-        slider['Splide'] = new Splide(slider, {
+            const container = slider.closest('.minicard')
+            const slideCounterCurrent = container.querySelector('[data-slider-counter="current"]')
+            const slideCounterTotal = container.querySelector('[data-slider-counter="total"]')
 
-            arrows: false,
-            arrowPath: SLIDER_ARROW_PATH,
-            pagination: false,
-            gap: 20,
-            start: 0,
-            perPage: 1,
-            perMove: 1,
-            flickMaxPages: 1,
-            flickPower: 100,
+            slider['Splide'] = new Splide(slider, {
 
-        });
+                arrows: false,
+                arrowPath: SLIDER_ARROW_PATH,
+                pagination: false,
+                gap: 20,
+                start: 0,
+                perPage: 1,
+                perMove: 1,
+                flickMaxPages: 1,
+                flickPower: 100,
 
-        slider['Splide'].mount();
+            });
+
+            slider['Splide'].mount();
+
+            slideCounterCurrent.innerText = 1
+            slideCounterTotal.innerText = slider['Splide'].length
 
 
+            // init splide nav
+            new SplideNavHelper({
+                slider: slider['Splide'],
+                btn: 'minicard',
+                container,
+                onChange: (current, total) => {
+                    slideCounterCurrent.innerText = current
+                    slideCounterTotal.innerText = total
+                }
+            })
 
-    })
+        })
+    }
 
+    initSliderMinicard(document);
+
+
+    /* ===============================================
+    minicard hover
+    ===============================================*/
+
+    const initMinicardEvents = (container) => {
+        container.querySelectorAll('.minicard').forEach(el => {
+
+            const slider = el.querySelector('[data-slider]')
+
+            el.addEventListener('mouseenter', () => {
+                if (slider['Splide'].index <= 1) slider['Splide'].go('>')
+            })
+
+            el.addEventListener('mouseleave', () => {
+                if (slider['Splide'].index <= 1) slider['Splide'].go('<')
+            })
+
+        })
+    }
+
+    initMinicardEvents(document)
 
     /* ===============================================
     slider special-offers
@@ -485,34 +700,35 @@ document.addEventListener('DOMContentLoaded', function (event) {
             gap: 16,
             start: 0,
             perPage: 4,
+            fixedWidth: '440px',
             perMove: 1,
             flickMaxPages: 1,
             flickPower: 100,
 
             breakpoints: {
                 480: {
-                    perPage: 1.05,
+                    fixedWidth: '85vw',
                     gap: 8,
                 },
 
                 640: {
-                    perPage: 1.4,
+                    fixedWidth: '400px',
                     gap: 8,
                 },
 
                 767: {
-                    perPage: 2,
+                    fixedWidth: '440px',
                     gap: 8,
                 },
 
                 992: {
-                    perPage: 2.5,
+                    fixedWidth: '440px',
                     gap: 12,
                 },
 
                 1200: {
-                    perPage: 3,
-                    gap: 24,
+                    fixedWidth: '440px',
+                    gap: 16,
                 },
 
 
@@ -520,7 +736,28 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         });
 
+        const container = slider.closest('section')
+        const slideCounterCurrent = container.querySelector('[data-slider-counter="current"]')
+        const slideCounterTotal = container.querySelector('[data-slider-counter="total"]')
+
+
+
+
+        // init splide nav
+        new SplideNavHelper({
+            slider: slider['Splide'],
+            btn: 'special-offers',
+            container: slider.closest('section'),
+            onChange: (current, total) => {
+                slideCounterCurrent.innerText = current
+                slideCounterTotal.innerText = total
+            }
+        })
+
         slider['Splide'].mount();
+
+        slideCounterCurrent.innerText = 1
+        slideCounterTotal.innerText = slider['Splide'].length
 
     })
 
@@ -546,6 +783,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
             focus: 'center',
 
         });
+
+        // init splide nav
+        new SplideNavHelper({
+            slider: slider['Splide'],
+            btn: 'partners',
+            container: slider.closest('section'),
+        })
 
         slider['Splide'].mount();
 
@@ -573,6 +817,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 
         });
+
+        // init splide nav
+        new SplideNavHelper({
+            slider: slider['Splide'],
+            btn: 'awards',
+            container: slider.closest('section'),
+        })
 
         slider['Splide'].mount();
 

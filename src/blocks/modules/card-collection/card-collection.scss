@@ -9,7 +9,7 @@
         z-index: 1;
 
         & picture {
-            @include picture(125%, cover);
+            @include picture(127%, cover);
         }
     }
 
@@ -26,6 +26,44 @@
         color: #fff;
         text-align: center;
         padding-bottom: 24px;
+        border-radius: 16px;
+        transition: 0.3s ease;
+
+
+    }
+
+    &__sticker {
+
+        position: absolute;
+        left: 0;
+        top: 20px;
+
+        & span {
+            background-color: var(--accent-11);
+            display: inline-block;
+            color: #fff;
+            border-radius: 0 6px 6px 0;
+            line-height: 130%;
+            padding: 5px 16px;
+            font-size: 15px;
+            padding-left: 16px;
+            letter-spacing: 2%;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                right: -10px;
+                top: -5px;
+                background-color: #fff;
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAARCAYAAADUryzEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJ9SURBVHgBnZPPaxNBFMe/s5NN0mQ32SRN2tCfQUhaalt/UBQieFCKiJTexX/Aiz0JBaWth4qIJ2/2IF4KvfQP8NKbh9qqYEvAVikoBW3TZG02yWazM75ULJTWKJ3l8R4zbz7vve/uAk1W/XJqrHard7hZjtLssOapch4IrxYvxSdPBRBK2VL8IR5Kdc/+vBJ78k+AHMvqf+JC2J/yQLuHQS9YTxRaW+y+ORCcaApwuttvN3x+aKhTH+1+6zufuYkwB7oEWKsO1ccnpZTsRIBzfeiaul+42IhV/mlU0YMxdPgATvleAQQEJdcTe9PP9RMBHr1ru/Y69+xgU5N3WJsGxFw6IOMEYOQVXokiX5IGjGOA2sdVxe01bjRipmkhxKhyo1aCRtA9JBB1I1k9v7iYtobPTR4DuB32Y29/y/juSPuIR8oz0KliK0Fa6bKfLqth+HrTumGYOZibd3eyvwU/AMilJY9Q7Sw3rKvRs+Flb7onjEQACHlp/gZAEsgGIlXwcJUEszRlKzdwCDDn5vR6qRqR9lcwgypn/ECcLEZFQmQR6qCfEi/USY8aJD3C2vMdAoz5+YLY528ck+iZItDnEECFNHogYoNAMgJ0UieGgCjbcCpMymjn9hENpCfwqLIjyJdJtCpkPAkZHIFsyRKEfgdDpTGqqGZs1P2+2cSXbxtHAMr4xLLiC76yizRriw0RoMq8D4rSAcnTtEeftmvCdSKL8fXKw2NvITIzU+RW8LO9JeDmt8Fq65CCQ5B+THyHLOZQeV8ymaV+YIxJ/G3tPkj2l18EF9x3XZZjvpS10ootNgY2nQXvdOFpJoX/XVNTUtlZWUn+WFvTmuX9AiSR4O2sTn3+AAAAAElFTkSuQmCC)
+            }
+        }
     }
 
     &__link {
@@ -60,7 +98,41 @@
     &__title {
         font-size: 24px;
         letter-spacing: 2%;
-        padding-bottom: 14px;
+        padding-bottom: 6px;
+        max-width: 360px;
+        margin: 0 auto;
+        line-height: 160%;
+    }
+
+    &:hover {
+        & .card-collection {
+            &__main {
+                background-color: #fff;
+                color: var(--text-1);
+                padding-top: 24px;
+            }
+
+            &__link {
+
+                display: flex;
+                justify-content: center;
+
+                & a {
+                    color: var(--accent-11);
+
+
+                    & svg {
+                        fill: #fff
+                    }
+                }
+
+                & span {
+
+                    background-color: var(--accent-11);
+
+                }
+            }
+        }
     }
 
 }

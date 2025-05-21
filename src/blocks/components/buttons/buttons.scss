@@ -17,9 +17,11 @@
     text-align: center;
     background-color: var(--accent);
     border-radius: 12px;
+    letter-spacing: 2%;
 
     @media screen and (min-width: $w1200) {
         height: 56px;
+        font-size: 18px;
     }
 
     &:hover {

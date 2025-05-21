@@ -379,7 +379,7 @@
                   <div class="card-categories__sub">
                     <div class="card-categories__title">Городская недвижимость</div>
                     <div class="card-categories__slider">
-                      <div class="splide">
+                      <div class="splide" data-slider="category">
                         <div class="splide__track">
                           <div class="splide__list">
                             <div class="splide__item">
@@ -446,12 +446,12 @@
                       <div class="card-categories__tocat"><a href="#">
                           <button class="btn btn-green">Вся городская недвижимость</button></a></div>
                       <div class="card-categories__nav">
-                        <div class="card-categories__nav-prev" disabled="disabled">
+                        <div class="card-categories__nav-prev" data-slider-prev="category">
                           <svg width="24" height="24">
                             <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
                           </svg>
                         </div>
-                        <div class="card-categories__nav-next">
+                        <div class="card-categories__nav-next" data-slider-next="category">
                           <svg width="24" height="24">
                             <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
                           </svg>
@@ -483,7 +483,7 @@
                   <div class="card-categories__sub">
                     <div class="card-categories__title">Загородная недвижимость</div>
                     <div class="card-categories__slider">
-                      <div class="splide">
+                      <div class="splide" data-slider="category">
                         <div class="splide__track">
                           <div class="splide__list">
                             <div class="splide__item">
@@ -522,12 +522,12 @@
                       <div class="card-categories__tocat"><a href="#">
                           <button class="btn btn-green">Вся загородная  недвижимость</button></a></div>
                       <div class="card-categories__nav">
-                        <div class="card-categories__nav-prev" disabled="disabled">
+                        <div class="card-categories__nav-prev" data-slider-prev="category">
                           <svg width="24" height="24">
                             <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
                           </svg>
                         </div>
-                        <div class="card-categories__nav-next">
+                        <div class="card-categories__nav-next" data-slider-next="category">
                           <svg width="24" height="24">
                             <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
                           </svg>
@@ -557,7 +557,7 @@
                   <div class="card-categories__sub">
                     <div class="card-categories__title">Собственникам</div>
                     <div class="card-categories__slider">
-                      <div class="splide">
+                      <div class="splide" data-slider="category">
                         <div class="splide__track">
                           <div class="splide__list">
                             <div class="splide__item">
@@ -596,12 +596,12 @@
                       <div class="card-categories__tocat"><a href="#">
                           <button class="btn btn-green">Всё для собственников</button></a></div>
                       <div class="card-categories__nav">
-                        <div class="card-categories__nav-prev" disabled="disabled">
+                        <div class="card-categories__nav-prev" data-slider-prev="category">
                           <svg width="24" height="24">
                             <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
                           </svg>
                         </div>
-                        <div class="card-categories__nav-next">
+                        <div class="card-categories__nav-next" data-slider-next="category">
                           <svg width="24" height="24">
                             <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
                           </svg>
@@ -631,7 +631,7 @@
                   <div class="card-categories__sub">
                     <div class="card-categories__title">Партнёрам</div>
                     <div class="card-categories__slider">
-                      <div class="splide">
+                      <div class="splide" data-slider="category">
                         <div class="splide__track">
                           <div class="splide__list">
                             <div class="splide__item">
@@ -670,12 +670,12 @@
                       <div class="card-categories__tocat"><a href="#">
                           <button class="btn btn-green">Всё для партнёров</button></a></div>
                       <div class="card-categories__nav">
-                        <div class="card-categories__nav-prev" disabled="disabled">
+                        <div class="card-categories__nav-prev" data-slider-prev="category">
                           <svg width="24" height="24">
                             <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
                           </svg>
                         </div>
-                        <div class="card-categories__nav-next">
+                        <div class="card-categories__nav-next" data-slider-next="category">
                           <svg width="24" height="24">
                             <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
                           </svg>
@@ -702,50 +702,84 @@
                 <li data-filter="5"><span>Участки</span></li>
               </ul>
               <ul class="toggle-currency">
-                <li class="is-active"><span>₽</span></li>
-                <li><span>$</span></li>
-                <li><span>€</span></li>
+                <li class="is-active" data-currency="rub"><span>₽</span></li>
+                <li data-currency="usd"><span>$</span></li>
+                <li data-currency="eur"><span>€</span></li>
               </ul>
             </div>
-            <div class="best-offers__slider">
+            <div class="best-offers__slider"> 
               <div class="splide" data-slider="offers">
                 <div class="splide__track">
-                  <div class="splide__list">
-                    <div class="splide__slide">
+                  <div class="splide__list splide__list--offers">
+                    <div class="splide__slide" data-filter-id="1">
                       <div class="minicard">
                         <div class="minicard__top">
+                          <div class="minicard__stickers">
+                            <ul>
+                              <li><span style="background: #B88E5F">Эксклюзив </span></li>
+                              <li><span style="background: #00403F">Старт продаж </span></li>
+                            </ul>
+                          </div>
+                          <div class="minicard__fullscreen">
+                            <svg width="24" height="24">
+                              <use xlink:href="/img/sprites/sprite.svg#ic_fullscreen"></use>
+                            </svg>
+                          </div>
+                          <div class="minicard__counter"><span data-slider-counter="current">2</span>/<span data-slider-counter="total">12</span></div>
+                          <div class="minicard__nav">
+                            <div class="minicard__nav-prev" data-slider-prev="minicard">
+                              <svg width="24" height="24">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
+                              </svg>
+                            </div>
+                            <div class="minicard__nav-next" data-slider-next="minicard">
+                              <svg width="24" height="24">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                              </svg>
+                            </div>
+                          </div>
                           <div class="minicard__slider">
                             <div class="splide" data-slider="minicard">
                               <div class="splide__track">
                                 <div class="splide__list">
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-1.webp" type="image/webp"/><img src="/img/objects/img-block-1.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-4.webp" type="image/webp"/><img src="/img/objects/img-block-4.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-1.webp" type="image/webp"/><img src="/img/objects/img-block-1.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-1.webp" type="image/webp"/><img src="/img/objects/img-block-1.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-1.webp" type="image/webp"/><img src="/img/objects/img-block-1.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-1.webp" type="image/webp"/><img src="/img/objects/img-block-1.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block-1.webp" type="image/webp"/><img src="/img/objects/img-block-1.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block-1.webp" type="image/webp"/><img src="/img/objects/img-block-1.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                 </div>
@@ -771,11 +805,11 @@
                             </ul>
                           </div>
                           <div class="minicard__price">
-                            <div class="minicard__price-usd">2 408 245 $</div>
-                            <div class="minicard__price-rub is-active"> 
+                            <div class="minicard__price-usd" data-currency-id="usd">2 408 245 $</div>
+                            <div class="minicard__price-rub is-active" data-currency-id="rub"> 
                               <div class="minicard__price-old">918 126 582 ₽</div>725 320 000 ₽
                             </div>
-                            <div class="minicard__price-eur">199 520 000 €</div>
+                            <div class="minicard__price-eur" data-currency-id="eur">199 520 000 €</div>
                           </div>
                           <div class="minicard__action">
                             <div class="minicard__detail"><a href="#">
@@ -790,41 +824,75 @@
                         </div>
                       </div>
                     </div>
-                    <div class="splide__slide">
+                    <div class="splide__slide" data-filter-id="1">
                       <div class="minicard">
                         <div class="minicard__top">
+                          <div class="minicard__stickers">
+                            <ul>
+                              <li><span style="background: #B88E5F">Эксклюзив </span></li>
+                              <li><span style="background: #00403F">Старт продаж </span></li>
+                            </ul>
+                          </div>
+                          <div class="minicard__fullscreen">
+                            <svg width="24" height="24">
+                              <use xlink:href="/img/sprites/sprite.svg#ic_fullscreen"></use>
+                            </svg>
+                          </div>
+                          <div class="minicard__counter"><span data-slider-counter="current">2</span>/<span data-slider-counter="total">12</span></div>
+                          <div class="minicard__nav">
+                            <div class="minicard__nav-prev" data-slider-prev="minicard">
+                              <svg width="24" height="24">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
+                              </svg>
+                            </div>
+                            <div class="minicard__nav-next" data-slider-next="minicard">
+                              <svg width="24" height="24">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                              </svg>
+                            </div>
+                          </div>
                           <div class="minicard__slider">
                             <div class="splide" data-slider="minicard">
                               <div class="splide__track">
                                 <div class="splide__list">
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-2.webp" type="image/webp"/><img src="/img/objects/img-block-2.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-4.webp" type="image/webp"/><img src="/img/objects/img-block-4.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-2.webp" type="image/webp"/><img src="/img/objects/img-block-2.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-2.webp" type="image/webp"/><img src="/img/objects/img-block-2.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-2.webp" type="image/webp"/><img src="/img/objects/img-block-2.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-2.webp" type="image/webp"/><img src="/img/objects/img-block-2.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block-2.webp" type="image/webp"/><img src="/img/objects/img-block-2.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block-2.webp" type="image/webp"/><img src="/img/objects/img-block-2.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                 </div>
@@ -850,11 +918,11 @@
                             </ul>
                           </div>
                           <div class="minicard__price">
-                            <div class="minicard__price-usd">2 408 245 $</div>
-                            <div class="minicard__price-rub is-active"> 
+                            <div class="minicard__price-usd" data-currency-id="usd">2 408 245 $</div>
+                            <div class="minicard__price-rub is-active" data-currency-id="rub"> 
                               <div class="minicard__price-old">918 126 582 ₽</div>725 320 000 ₽
                             </div>
-                            <div class="minicard__price-eur">199 520 000 €</div>
+                            <div class="minicard__price-eur" data-currency-id="eur">199 520 000 €</div>
                           </div>
                           <div class="minicard__action">
                             <div class="minicard__detail"><a href="#">
@@ -869,41 +937,75 @@
                         </div>
                       </div>
                     </div>
-                    <div class="splide__slide">
+                    <div class="splide__slide" data-filter-id="2">
                       <div class="minicard">
                         <div class="minicard__top">
+                          <div class="minicard__stickers">
+                            <ul>
+                              <li><span style="background: #B88E5F">Эксклюзив </span></li>
+                              <li><span style="background: #00403F">Старт продаж </span></li>
+                            </ul>
+                          </div>
+                          <div class="minicard__fullscreen">
+                            <svg width="24" height="24">
+                              <use xlink:href="/img/sprites/sprite.svg#ic_fullscreen"></use>
+                            </svg>
+                          </div>
+                          <div class="minicard__counter"><span data-slider-counter="current">2</span>/<span data-slider-counter="total">12</span></div>
+                          <div class="minicard__nav">
+                            <div class="minicard__nav-prev" data-slider-prev="minicard">
+                              <svg width="24" height="24">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
+                              </svg>
+                            </div>
+                            <div class="minicard__nav-next" data-slider-next="minicard">
+                              <svg width="24" height="24">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                              </svg>
+                            </div>
+                          </div>
                           <div class="minicard__slider">
                             <div class="splide" data-slider="minicard">
                               <div class="splide__track">
                                 <div class="splide__list">
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-3.webp" type="image/webp"/><img src="/img/objects/img-block-3.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-4.webp" type="image/webp"/><img src="/img/objects/img-block-4.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-3.webp" type="image/webp"/><img src="/img/objects/img-block-3.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-3.webp" type="image/webp"/><img src="/img/objects/img-block-3.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-3.webp" type="image/webp"/><img src="/img/objects/img-block-3.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-3.webp" type="image/webp"/><img src="/img/objects/img-block-3.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block-3.webp" type="image/webp"/><img src="/img/objects/img-block-3.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block-3.webp" type="image/webp"/><img src="/img/objects/img-block-3.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                 </div>
@@ -929,11 +1031,11 @@
                             </ul>
                           </div>
                           <div class="minicard__price">
-                            <div class="minicard__price-usd">2 408 245 $</div>
-                            <div class="minicard__price-rub is-active"> 
+                            <div class="minicard__price-usd" data-currency-id="usd">2 408 245 $</div>
+                            <div class="minicard__price-rub is-active" data-currency-id="rub"> 
                               <div class="minicard__price-old">918 126 582 ₽</div>725 320 000 ₽
                             </div>
-                            <div class="minicard__price-eur">199 520 000 €</div>
+                            <div class="minicard__price-eur" data-currency-id="eur">199 520 000 €</div>
                           </div>
                           <div class="minicard__action">
                             <div class="minicard__detail"><a href="#">
@@ -948,41 +1050,75 @@
                         </div>
                       </div>
                     </div>
-                    <div class="splide__slide">
+                    <div class="splide__slide" data-filter-id="3">
                       <div class="minicard">
                         <div class="minicard__top">
+                          <div class="minicard__stickers">
+                            <ul>
+                              <li><span style="background: #B88E5F">Эксклюзив </span></li>
+                              <li><span style="background: #00403F">Старт продаж </span></li>
+                            </ul>
+                          </div>
+                          <div class="minicard__fullscreen">
+                            <svg width="24" height="24">
+                              <use xlink:href="/img/sprites/sprite.svg#ic_fullscreen"></use>
+                            </svg>
+                          </div>
+                          <div class="minicard__counter"><span data-slider-counter="current">2</span>/<span data-slider-counter="total">12</span></div>
+                          <div class="minicard__nav">
+                            <div class="minicard__nav-prev" data-slider-prev="minicard">
+                              <svg width="24" height="24">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
+                              </svg>
+                            </div>
+                            <div class="minicard__nav-next" data-slider-next="minicard">
+                              <svg width="24" height="24">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                              </svg>
+                            </div>
+                          </div>
                           <div class="minicard__slider">
                             <div class="splide" data-slider="minicard">
                               <div class="splide__track">
                                 <div class="splide__list">
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-4.webp" type="image/webp"/><img src="/img/objects/img-block-4.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-4.webp" type="image/webp"/><img src="/img/objects/img-block-4.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-4.webp" type="image/webp"/><img src="/img/objects/img-block-4.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-4.webp" type="image/webp"/><img src="/img/objects/img-block-4.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-4.webp" type="image/webp"/><img src="/img/objects/img-block-4.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-4.webp" type="image/webp"/><img src="/img/objects/img-block-4.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block-4.webp" type="image/webp"/><img src="/img/objects/img-block-4.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block-4.webp" type="image/webp"/><img src="/img/objects/img-block-4.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                 </div>
@@ -1008,11 +1144,11 @@
                             </ul>
                           </div>
                           <div class="minicard__price">
-                            <div class="minicard__price-usd">2 408 245 $</div>
-                            <div class="minicard__price-rub is-active"> 
+                            <div class="minicard__price-usd" data-currency-id="usd">2 408 245 $</div>
+                            <div class="minicard__price-rub is-active" data-currency-id="rub"> 
                               <div class="minicard__price-old">918 126 582 ₽</div>725 320 000 ₽
                             </div>
-                            <div class="minicard__price-eur">199 520 000 €</div>
+                            <div class="minicard__price-eur" data-currency-id="eur">199 520 000 €</div>
                           </div>
                           <div class="minicard__action">
                             <div class="minicard__detail"><a href="#">
@@ -1027,41 +1163,75 @@
                         </div>
                       </div>
                     </div>
-                    <div class="splide__slide">
+                    <div class="splide__slide" data-filter-id="4">
                       <div class="minicard">
                         <div class="minicard__top">
+                          <div class="minicard__stickers">
+                            <ul>
+                              <li><span style="background: #B88E5F">Эксклюзив </span></li>
+                              <li><span style="background: #00403F">Старт продаж </span></li>
+                            </ul>
+                          </div>
+                          <div class="minicard__fullscreen">
+                            <svg width="24" height="24">
+                              <use xlink:href="/img/sprites/sprite.svg#ic_fullscreen"></use>
+                            </svg>
+                          </div>
+                          <div class="minicard__counter"><span data-slider-counter="current">2</span>/<span data-slider-counter="total">12</span></div>
+                          <div class="minicard__nav">
+                            <div class="minicard__nav-prev" data-slider-prev="minicard">
+                              <svg width="24" height="24">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
+                              </svg>
+                            </div>
+                            <div class="minicard__nav-next" data-slider-next="minicard">
+                              <svg width="24" height="24">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                              </svg>
+                            </div>
+                          </div>
                           <div class="minicard__slider">
                             <div class="splide" data-slider="minicard">
                               <div class="splide__track">
                                 <div class="splide__list">
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-5.webp" type="image/webp"/><img src="/img/objects/img-block-5.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-4.webp" type="image/webp"/><img src="/img/objects/img-block-4.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-5.webp" type="image/webp"/><img src="/img/objects/img-block-5.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-5.webp" type="image/webp"/><img src="/img/objects/img-block-5.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-5.webp" type="image/webp"/><img src="/img/objects/img-block-5.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-5.webp" type="image/webp"/><img src="/img/objects/img-block-5.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block-5.webp" type="image/webp"/><img src="/img/objects/img-block-5.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block-5.webp" type="image/webp"/><img src="/img/objects/img-block-5.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                 </div>
@@ -1087,11 +1257,11 @@
                             </ul>
                           </div>
                           <div class="minicard__price">
-                            <div class="minicard__price-usd">2 408 245 $</div>
-                            <div class="minicard__price-rub is-active"> 
+                            <div class="minicard__price-usd" data-currency-id="usd">2 408 245 $</div>
+                            <div class="minicard__price-rub is-active" data-currency-id="rub"> 
                               <div class="minicard__price-old">918 126 582 ₽</div>725 320 000 ₽
                             </div>
-                            <div class="minicard__price-eur">199 520 000 €</div>
+                            <div class="minicard__price-eur" data-currency-id="eur">199 520 000 €</div>
                           </div>
                           <div class="minicard__action">
                             <div class="minicard__detail"><a href="#">
@@ -1106,41 +1276,75 @@
                         </div>
                       </div>
                     </div>
-                    <div class="splide__slide">
+                    <div class="splide__slide" data-filter-id="5">
                       <div class="minicard">
                         <div class="minicard__top">
+                          <div class="minicard__stickers">
+                            <ul>
+                              <li><span style="background: #B88E5F">Эксклюзив </span></li>
+                              <li><span style="background: #00403F">Старт продаж </span></li>
+                            </ul>
+                          </div>
+                          <div class="minicard__fullscreen">
+                            <svg width="24" height="24">
+                              <use xlink:href="/img/sprites/sprite.svg#ic_fullscreen"></use>
+                            </svg>
+                          </div>
+                          <div class="minicard__counter"><span data-slider-counter="current">2</span>/<span data-slider-counter="total">12</span></div>
+                          <div class="minicard__nav">
+                            <div class="minicard__nav-prev" data-slider-prev="minicard">
+                              <svg width="24" height="24">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
+                              </svg>
+                            </div>
+                            <div class="minicard__nav-next" data-slider-next="minicard">
+                              <svg width="24" height="24">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                              </svg>
+                            </div>
+                          </div>
                           <div class="minicard__slider">
                             <div class="splide" data-slider="minicard">
                               <div class="splide__track">
                                 <div class="splide__list">
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-6.webp" type="image/webp"/><img src="/img/objects/img-block-6.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-4.webp" type="image/webp"/><img src="/img/objects/img-block-4.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-6.webp" type="image/webp"/><img src="/img/objects/img-block-6.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-6.webp" type="image/webp"/><img src="/img/objects/img-block-6.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-6.webp" type="image/webp"/><img src="/img/objects/img-block-6.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                   <div class="splide__slide">
                                     <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
+                                      <source srcset="/img/objects/img-block-6.webp" type="image/webp"/><img src="/img/objects/img-block-6.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block-6.webp" type="image/webp"/><img src="/img/objects/img-block-6.jpg" loading="lazy" alt="image"/>
+                                    </picture>
+                                  </div>
+                                  <div class="splide__slide">
+                                    <picture>
+                                      <source srcset="/img/objects/img-block-6.webp" type="image/webp"/><img src="/img/objects/img-block-6.jpg" loading="lazy" alt="image"/>
                                     </picture>
                                   </div>
                                 </div>
@@ -1166,169 +1370,11 @@
                             </ul>
                           </div>
                           <div class="minicard__price">
-                            <div class="minicard__price-usd">2 408 245 $</div>
-                            <div class="minicard__price-rub is-active"> 
+                            <div class="minicard__price-usd" data-currency-id="usd">2 408 245 $</div>
+                            <div class="minicard__price-rub is-active" data-currency-id="rub"> 
                               <div class="minicard__price-old">918 126 582 ₽</div>725 320 000 ₽
                             </div>
-                            <div class="minicard__price-eur">199 520 000 €</div>
-                          </div>
-                          <div class="minicard__action">
-                            <div class="minicard__detail"><a href="#">
-                                <button class="btn btn-green">Подробнее</button></a></div>
-                            <div class="minicard__getcall"><a href="#">
-                                <button class="btn btn-line"> 
-                                  <svg width="24" height="24">
-                                    <use xlink:href="/img/sprites/sprite.svg#ic_phone"></use>
-                                  </svg><span>Заказать звонок</span>
-                                </button></a></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="splide__slide">
-                      <div class="minicard">
-                        <div class="minicard__top">
-                          <div class="minicard__slider">
-                            <div class="splide" data-slider="minicard">
-                              <div class="splide__track">
-                                <div class="splide__list">
-                                  <div class="splide__slide">
-                                    <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
-                                    </picture>
-                                  </div>
-                                  <div class="splide__slide">
-                                    <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
-                                    </picture>
-                                  </div>
-                                  <div class="splide__slide">
-                                    <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
-                                    </picture>
-                                  </div>
-                                  <div class="splide__slide">
-                                    <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
-                                    </picture>
-                                  </div>
-                                  <div class="splide__slide">
-                                    <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
-                                    </picture>
-                                  </div>
-                                  <div class="splide__slide">
-                                    <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="minicard__main">
-                          <div class="minicard__id">ID: 23478</div>
-                          <div class="minicard__title"><a href="#">4-комн. квартира, 201 м2</a></div>
-                          <div class="minicard__jk"> 
-                            <svg width="24" height="24">
-                              <use xlink:href="/img/sprites/sprite.svg#ic_jk"></use>
-                            </svg><span>Вишневый сад</span>
-                          </div>
-                          <div class="minicard__address">Мосфильмовская улица</div>
-                          <div class="minicard__prop">
-                            <ul>
-                              <li style="background-image: url('/img/icons/01-area.svg')"><small>Площадь</small><span>124.7 м2</span></li>
-                              <li style="background-image: url('/img/icons/02-room.svg')"><small>Комнат</small><span>3</span></li>
-                              <li style="background-image: url('/img/icons/05-bedroom.svg')"><small>Спален</small><span>3</span></li>
-                              <li style="background-image: url('/img/icons/04-floor.svg')"><small>Этаж</small><span>6/12</span></li>
-                            </ul>
-                          </div>
-                          <div class="minicard__price">
-                            <div class="minicard__price-usd">2 408 245 $</div>
-                            <div class="minicard__price-rub is-active"> 
-                              <div class="minicard__price-old">918 126 582 ₽</div>725 320 000 ₽
-                            </div>
-                            <div class="minicard__price-eur">199 520 000 €</div>
-                          </div>
-                          <div class="minicard__action">
-                            <div class="minicard__detail"><a href="#">
-                                <button class="btn btn-green">Подробнее</button></a></div>
-                            <div class="minicard__getcall"><a href="#">
-                                <button class="btn btn-line"> 
-                                  <svg width="24" height="24">
-                                    <use xlink:href="/img/sprites/sprite.svg#ic_phone"></use>
-                                  </svg><span>Заказать звонок</span>
-                                </button></a></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="splide__slide">
-                      <div class="minicard">
-                        <div class="minicard__top">
-                          <div class="minicard__slider">
-                            <div class="splide" data-slider="minicard">
-                              <div class="splide__track">
-                                <div class="splide__list">
-                                  <div class="splide__slide">
-                                    <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
-                                    </picture>
-                                  </div>
-                                  <div class="splide__slide">
-                                    <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
-                                    </picture>
-                                  </div>
-                                  <div class="splide__slide">
-                                    <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
-                                    </picture>
-                                  </div>
-                                  <div class="splide__slide">
-                                    <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
-                                    </picture>
-                                  </div>
-                                  <div class="splide__slide">
-                                    <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
-                                    </picture>
-                                  </div>
-                                  <div class="splide__slide">
-                                    <picture>
-                                      <source srcset="/img/objects/img-block.webp" type="image/webp"/><img src="/img/objects/img-block.jpg" loading="lazy" alt="image"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="minicard__main">
-                          <div class="minicard__id">ID: 23478</div>
-                          <div class="minicard__title"><a href="#">4-комн. квартира, 201 м2</a></div>
-                          <div class="minicard__jk"> 
-                            <svg width="24" height="24">
-                              <use xlink:href="/img/sprites/sprite.svg#ic_jk"></use>
-                            </svg><span>Вишневый сад</span>
-                          </div>
-                          <div class="minicard__address">Мосфильмовская улица</div>
-                          <div class="minicard__prop">
-                            <ul>
-                              <li style="background-image: url('/img/icons/01-area.svg')"><small>Площадь</small><span>124.7 м2</span></li>
-                              <li style="background-image: url('/img/icons/02-room.svg')"><small>Комнат</small><span>3</span></li>
-                              <li style="background-image: url('/img/icons/05-bedroom.svg')"><small>Спален</small><span>3</span></li>
-                              <li style="background-image: url('/img/icons/04-floor.svg')"><small>Этаж</small><span>6/12</span></li>
-                            </ul>
-                          </div>
-                          <div class="minicard__price">
-                            <div class="minicard__price-usd">2 408 245 $</div>
-                            <div class="minicard__price-rub is-active"> 
-                              <div class="minicard__price-old">918 126 582 ₽</div>725 320 000 ₽
-                            </div>
-                            <div class="minicard__price-eur">199 520 000 €</div>
+                            <div class="minicard__price-eur" data-currency-id="eur">199 520 000 €</div>
                           </div>
                           <div class="minicard__action">
                             <div class="minicard__detail"><a href="#">
@@ -1355,12 +1401,12 @@
                     </svg><span>Смотреть все предложения</span>
                   </button></a></div>
               <div class="best-offers__nav">
-                <div class="best-offers__nav-prev" disabled="disabled">
+                <div class="best-offers__nav-prev" data-slider-prev="offers">
                   <svg width="24" height="24">
                     <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
                   </svg>
                 </div>
-                <div class="best-offers__nav-next">
+                <div class="best-offers__nav-next" data-slider-next="offers">
                   <svg width="24" height="24">
                     <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
                   </svg>
@@ -1499,15 +1545,15 @@
             </div>
             <div class="special-offers__bottom">
               <div class="special-offers__count">
-                <div class="splide-counter"><span>3</span>/<span>12</span></div>
+                <div class="splide-counter"><span data-slider-counter="current">3</span>/<span data-slider-counter="total">12</span></div>
               </div>
               <div class="special-offers__nav">
-                <div class="special-offers__nav-next" disabled="disabled">
+                <div class="special-offers__nav-prev" data-slider-prev="special-offers">
                   <svg width="24" height="24">
                     <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
                   </svg>
                 </div>
-                <div class="special-offers__nav-prev">
+                <div class="special-offers__nav-next" data-slider-next="special-offers">
                   <svg width="24" height="24">
                     <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
                   </svg>
@@ -1677,12 +1723,12 @@
             </div>
             <div class="partners__bottom">
               <div class="partners__nav">
-                <div class="partners__nav-next" disabled="disabled">
+                <div class="partners__nav-prev" data-slider-prev="partners">
                   <svg width="24" height="24">
                     <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
                   </svg>
                 </div>
-                <div class="partners__nav-prev">
+                <div class="partners__nav-next" data-slider-next="partners">
                   <svg width="24" height="24">
                     <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
                   </svg>
@@ -1763,12 +1809,12 @@
               <div class="our-awards__btn"><a href="#">
                   <button class="btn btn-green">О компании</button></a></div>
               <div class="our-awards__nav">
-                <div class="our-awards__nav-next" disabled="disabled">
+                <div class="our-awards__nav-prev" data-slider-prev="awards">
                   <svg width="24" height="24">
                     <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
                   </svg>
                 </div>
-                <div class="our-awards__nav-prev">
+                <div class="our-awards__nav-next" data-slider-next="awards">
                   <svg width="24" height="24">
                     <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
                   </svg>

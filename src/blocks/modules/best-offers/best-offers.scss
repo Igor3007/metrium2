@@ -1,9 +1,17 @@
 .section-best-offers {
     background-color: var(--bg);
-    padding: 48px 0;
+    padding: 29px 0;
+
+    @media screen and (min-width: $w760) {
+        padding: 48px 0;
+    }
 
     @media screen and (min-width: $w1440) {
         padding: 63px 0;
+    }
+
+    & .is-hide {
+        display: none
     }
 }
 
@@ -11,7 +19,12 @@
 .best-offers {
     &__title {
         @include font-h2;
-        padding-bottom: 24px;
+        padding-bottom: 12px;
+
+        @media screen and (min-width: $w760) {
+            padding-bottom: 24px;
+
+        }
 
         @media screen and (min-width: $w1440) {
             padding-bottom: 34px;
@@ -19,7 +32,7 @@
     }
 
     &__tabs {
-        padding: 8px;
+        padding: 8px 0;
         border-radius: 8px;
         display: flex;
         overflow-x: auto;
@@ -74,6 +87,7 @@
                     padding: 5px 12px;
                     border-radius: 8px;
                     cursor: pointer;
+                    transition: 0.3s ease;
 
                     &:hover {
                         background-color: var(--bg);
@@ -84,7 +98,12 @@
                         border-radius: 0;
                         font-size: 18px;
                         letter-spacing: 2%;
+                        background-color: var(--bg);
 
+                        &:hover {
+                            background-color: var(--accent-13);
+                            color: var(--text-1);
+                        }
                     }
                 }
 
@@ -92,6 +111,11 @@
                     & span {
                         background-color: var(--accent-11);
                         color: #fff;
+
+                        &:hover {
+                            background-color: var(--accent-11);
+                            color: #fff;
+                        }
                     }
                 }
             }
@@ -108,6 +132,26 @@
         & .splide {
             &__track {
                 overflow: visible;
+            }
+
+            &__slide {
+                &:nth-child(2) {
+                    & .minicard {
+                        animation-delay: 0.1s;
+                    }
+                }
+
+                &:nth-child(3) {
+                    & .minicard {
+                        animation-delay: 0.15s;
+                    }
+                }
+
+                &:nth-child(4) {
+                    & .minicard {
+                        animation-delay: 0.2s;
+                    }
+                }
             }
         }
     }
@@ -138,10 +182,30 @@
         }
     }
 
+    @keyframes to-fade-minicard {
+
+        from {
+            transform: translateX(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    & .minicard {
+        opacity: 0;
+        animation: to-fade-minicard 0.4s ease forwards;
+    }
+
 
 }
 
 .toggle-currency {
+
+    padding-left: 16px;
+
     @media screen and (min-width: $w1200) {
         margin-left: auto !important;
     }

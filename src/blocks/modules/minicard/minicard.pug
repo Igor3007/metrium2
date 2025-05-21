@@ -1,13 +1,31 @@
-mixin minicard  
+mixin minicard(data)
     .minicard
         .minicard__top
+             
+            .minicard__stickers
+                ul
+                    li: span(style="background: #B88E5F") Эксклюзив 
+                    li: span(style="background: #00403F") Старт продаж 
+                     
+            .minicard__fullscreen: +icons('#ic_fullscreen')
+            .minicard__counter
+                span(data-slider-counter="current") 2
+                | /
+                span(data-slider-counter="total") 12
+            .minicard__nav
+                .minicard__nav-prev(data-slider-prev="minicard"): +icons('#ic_arr-left')
+                .minicard__nav-next(data-slider-next="minicard"): +icons('#ic_arr-right')
             .minicard__slider
                 .splide(data-slider="minicard")
                     .splide__track
                         .splide__list
+                            .splide__slide
+                                    +picture(data.image)
+                            .splide__slide
+                                    +picture('/img/objects/img-block-4')
                             each item in [1,1,1,1,1,1]
                                 .splide__slide
-                                    +picture('/img/objects/img-block')
+                                    +picture(data.image)
         .minicard__main
             .minicard__id ID: 23478
             .minicard__title: a(href='#') 4-комн. квартира, 201 м2
@@ -31,11 +49,11 @@ mixin minicard
                         span 6/12
                     
             .minicard__price
-                .minicard__price-usd 2 408 245 $
-                .minicard__price-rub.is-active 
+                .minicard__price-usd(data-currency-id="usd") 2 408 245 $
+                .minicard__price-rub(data-currency-id="rub").is-active 
                     .minicard__price-old 918 126 582 ₽
                     | 725 320 000 ₽
-                .minicard__price-eur 199 520 000 €
+                .minicard__price-eur(data-currency-id="eur") 199 520 000 €
             .minicard__action
                 .minicard__detail
                     a(href='#'): button.btn.btn-green Подробнее

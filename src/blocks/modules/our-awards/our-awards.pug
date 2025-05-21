@@ -15,5 +15,5 @@ mixin  our-awards
                     .our-awards__btn
                         a(href='#'): button.btn.btn-green О компании
                     .our-awards__nav
-                        .our-awards__nav-next(disabled): +icons('#ic_arr-left')
-                        .our-awards__nav-prev: +icons('#ic_arr-right')
+                        .our-awards__nav-prev(data-slider-prev="awards"): +icons('#ic_arr-left')
+                        .our-awards__nav-next(data-slider-next="awards"): +icons('#ic_arr-right')

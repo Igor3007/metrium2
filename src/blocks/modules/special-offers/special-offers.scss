@@ -1,11 +1,19 @@
 .section-special-offers {
     padding: 55px 0;
+
+    @media screen and (min-width: $w1440) {
+        padding: 126px 0 90px;
+    }
 }
 
 .special-offers {
     &__title {
         @include font-h2;
         padding-bottom: 24px;
+
+        @media screen and (min-width: $w1200) {
+            padding-bottom: 50px;
+        }
     }
 
     &__nav {

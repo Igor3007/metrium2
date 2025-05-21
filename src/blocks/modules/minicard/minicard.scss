@@ -1,7 +1,159 @@
 .minicard {
     background-color: #fff;
-    border-radius: 24px;
+    border-radius: 16px;
     overflow: hidden;
+
+    @media screen and (min-width: $w760) {
+        border-radius: 24px;
+    }
+
+    &__top {
+        position: relative;
+    }
+
+    &__stickers {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        z-index: 2;
+        width: calc(100% - 96px);
+
+        @media screen and (min-width: $w760) {
+            top: 24px;
+            left: 24px;
+        }
+
+        & ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            & span {
+                background-color: #fff;
+                height: 32px;
+                display: flex;
+                align-items: center;
+                border-radius: 16px;
+                padding: 5px 16px;
+                white-space: nowrap;
+                color: #fff;
+            }
+        }
+    }
+
+    &__fullscreen {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        z-index: 2;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        @media screen and (min-width: $w760) {
+            top: 24px;
+            right: 24px;
+        }
+
+        @media screen and (min-width: $w992) {
+            opacity: 0;
+        }
+
+        & svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--text-1);
+        }
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    }
+
+    &__counter {
+        position: absolute;
+        bottom: 12px;
+        left: 12px;
+        z-index: 2;
+        background-color: #fff;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        border-radius: 16px;
+        padding: 5px 10px;
+        min-width: 56px;
+        justify-content: center;
+        transition: 0.3s ease;
+
+        @media screen and (min-width: $w760) {
+            bottom: 24px;
+            left: 24px;
+        }
+
+        @media screen and (min-width: $w992) {
+            opacity: 0;
+        }
+    }
+
+    &__nav {
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+        z-index: 2;
+        display: flex;
+        gap: 8px;
+        transition: 0.3s ease;
+
+        @media screen and (min-width: $w760) {
+            bottom: 24px;
+            right: 24px;
+        }
+
+        @media screen and (min-width: $w992) {
+            opacity: 0;
+        }
+
+        &-prev,
+        &-next {
+
+            width: 32px;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            cursor: pointer;
+
+            &[disabled] {
+                background-color: rgba(255, 255, 255, 0.4);
+                pointer-events: none;
+            }
+
+            & svg {
+                width: 10px;
+                height: 10px;
+            }
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.95);
+            }
+        }
+    }
+
+    &__slider {
+        position: relative;
+
+        & picture {
+            @include picture(66%, cover);
+        }
+    }
 
     &__main {
         padding: 24px;
@@ -162,6 +314,12 @@
                 opacity: 1;
                 visibility: visible;
                 transition-delay: 0.1s;
+            }
+
+            &__nav,
+            &__counter,
+            &__fullscreen {
+                opacity: 1;
             }
         }
     }

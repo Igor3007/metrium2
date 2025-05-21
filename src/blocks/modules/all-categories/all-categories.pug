@@ -15,7 +15,7 @@ mixin card-categories(data)
         .card-categories__sub
             .card-categories__title= data.title
             .card-categories__slider
-                .splide
+                .splide(data-slider="category")
                     .splide__track
                         .splide__list
                             each item in data.sub
@@ -27,8 +27,8 @@ mixin card-categories(data)
                 .card-categories__tocat
                     a(href='#'): button.btn.btn-green= data.btn
                 .card-categories__nav
-                    .card-categories__nav-prev(disabled): +icons('#ic_arr-left')
-                    .card-categories__nav-next: +icons('#ic_arr-right')
+                    .card-categories__nav-prev(data-slider-prev="category"): +icons('#ic_arr-left')
+                    .card-categories__nav-next(data-slider-next="category"): +icons('#ic_arr-right')
 
 
 

@@ -1,6 +1,36 @@
 include ../minicard/minicard.pug
 
 mixin  best-offers
+
+    -
+        const bestOffers = [
+            {
+                image: '/img/objects/img-block-1',
+                filterId: '1'
+            },
+            {
+                image: '/img/objects/img-block-2',
+                filterId: '1'
+            },
+            {
+                image: '/img/objects/img-block-3',
+                filterId: '2'
+            },
+            {
+                image: '/img/objects/img-block-4',
+                filterId: '3'
+            },
+            {
+                image: '/img/objects/img-block-5',
+                filterId: '4'
+            },
+            {
+                image: '/img/objects/img-block-6',
+                filterId: '5'
+            }, 
+             
+        ]
+
     section.section-best-offers
         .container
             .best-offers
@@ -14,17 +44,17 @@ mixin  best-offers
                         li(data-filter="5"): span Участки
 
                     ul.toggle-currency
-                        li.is-active: span ₽
-                        li: span $
-                        li: span €
+                        li(data-currency="rub").is-active: span ₽
+                        li(data-currency="usd"): span $
+                        li(data-currency="eur"): span €
 
-                .best-offers__slider
+                .best-offers__slider 
                     .splide(data-slider="offers")
                         .splide__track
-                            .splide__list
-                                each item in [1,1,1,1,1,1,1,1]
-                                    .splide__slide
-                                        +minicard
+                            .splide__list.splide__list--offers
+                                each item in bestOffers
+                                    .splide__slide(data-filter-id=item.filterId)
+                                        +minicard(item)
                 .best-offers__bottom
                     .best-offers__more
                         a(href='#')
@@ -32,5 +62,5 @@ mixin  best-offers
                                 +icons('#ic_house')
                                 span Смотреть все предложения
                     .best-offers__nav
-                        .best-offers__nav-prev(disabled): +icons('#ic_arr-left')
-                        .best-offers__nav-next: +icons('#ic_arr-right')
+                        .best-offers__nav-prev(data-slider-prev="offers"): +icons('#ic_arr-left')
+                        .best-offers__nav-next(data-slider-next="offers"): +icons('#ic_arr-right')

@@ -1,5 +1,5 @@
 .section-partners {
-    padding: 50px 0;
+    padding: 43px 0;
     background-color: var(--bg)
 }
 
@@ -8,10 +8,18 @@
     &__title {
         @include font-h2;
         padding-bottom: 24px;
+
+        @media screen and (min-width: $w1200) {
+            padding-bottom: 50px;
+        }
     }
 
     &__slider {
-        padding-bottom: 40px
+        padding-bottom: 40px;
+
+        @media screen and (min-width: $w1200) {
+            padding-bottom: 50px;
+        }
     }
 
     &__nav {

@@ -44,10 +44,10 @@ mixin special-offers
                 .special-offers__bottom
                     .special-offers__count
                         .splide-counter
-                            span 3
+                            span(data-slider-counter="current") 3
                             |/
-                            span 12
+                            span(data-slider-counter="total") 12
                     .special-offers__nav
-                        .special-offers__nav-next(disabled): +icons('#ic_arr-left')
-                        .special-offers__nav-prev: +icons('#ic_arr-right')
+                        .special-offers__nav-prev(data-slider-prev="special-offers"): +icons('#ic_arr-left')
+                        .special-offers__nav-next(data-slider-next="special-offers"): +icons('#ic_arr-right')
                     
