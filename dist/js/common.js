@@ -353,6 +353,18 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     selectCustom.init()
 
+
+    /* ================================================
+    scroll page
+    ================================================*/
+
+    let flag = false
+
+    window.addEventListener('scroll', () => {
+        document.body.classList.toggle('is-scroll-page', window.scrollY > 5)
+        document.body.classList.toggle('is-fixed-header', window.scrollY > window.innerHeight)
+    })
+
     /* ===============================================
     splide nav
     ===============================================*/

@@ -4211,11 +4211,55 @@ FAQ
 }
 
 header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 4;
+}
+
+body.is-fixed-header header {
+  position: fixed;
+}
+
+body.is-fixed-header header .container {
+  padding: 0;
+}
+
+body.is-fixed-header .header {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  padding: 16px 16px;
+}
+
+body.is-fixed-header .header a {
+  color: var(--text-1);
+}
+
+body.is-fixed-header .header__burger {
+  border: 2px solid rgba(58, 94, 86, 0.2);
+}
+
+body.is-fixed-header .header__wishlist a {
+  border: 2px solid rgba(58, 94, 86, 0.2);
+}
+
+body.is-fixed-header .header__wishlist svg {
+  fill: var(--accent-11);
+}
+
+body.is-fixed-header .header__logo span {
+  display: none;
+}
+
+body.is-fixed-header .header__logo span.logo-color {
+  display: block;
+}
+
+body.is-fixed-header .header .icon-burger span {
+  background-color: var(--accent-11);
 }
 
 .header {
@@ -4253,6 +4297,10 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   display: block;
+}
+
+.header__logo span.logo-color {
+  display: none;
 }
 
 .header__nav {
@@ -4477,6 +4525,10 @@ footer {
   color: var(--accent-11);
 }
 
+body:not(.is-scroll-page) .first-block__title h1 {
+  font-size: 104px;
+}
+
 .first-block {
   position: relative;
 }
@@ -4530,6 +4582,7 @@ footer {
   letter-spacing: 4%;
   font-family: var(--font-guardian);
   color: var(--accent);
+  transition: 0.3s ease;
 }
 
 .first-block__title h1 span {
@@ -6484,6 +6537,15 @@ span[data-color=fff] {
     line-height: 140%;
   }
 
+  body.is-fixed-header header .container {
+    padding: 0 20px;
+  }
+
+  body.is-fixed-header .header {
+    padding: 20px 20px;
+    border-radius: 0 0 24px 24px;
+  }
+
   .footer__main {
     width: 60%;
     flex-basis: 60% !important;
@@ -7757,6 +7819,17 @@ span[data-color=fff] {
   }
 }
 
+@media screen and (max-width: 1376px) {
+  .header__button .btn {
+    font-size: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    min-width: auto;
+    width: 56px;
+    height: 56px;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .select-styled {
     font-size: 14px;
@@ -7880,10 +7953,6 @@ span[data-color=fff] {
   }
 
   .header__button .btn {
-    font-size: 0;
-    padding-left: 5px;
-    padding-right: 5px;
-    min-width: auto;
     width: 48px;
     height: 48px;
   }

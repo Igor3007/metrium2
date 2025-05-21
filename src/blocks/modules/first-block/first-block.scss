@@ -1,5 +1,11 @@
 .section-first-block {}
 
+body:not(.is-scroll-page) {
+    .first-block__title h1 {
+        font-size: 104px;
+    }
+}
+
 .first-block {
     position: relative;
 
@@ -49,6 +55,7 @@
         & h1 {
             @include font-h1;
             color: var(--accent);
+            transition: 0.3s ease;
 
             @media screen and (min-width: $w1200) {
                 font-size: 48px;
