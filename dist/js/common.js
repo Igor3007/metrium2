@@ -959,7 +959,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
             this.showMoreBotton.addEventListener('click', e => {
                 this.container.classList.toggle('is-open');
-                this.showMoreBotton.querySelector('span').innerText = this.container.classList.contains('is-open') ? 'Свернуть' : '+'
+                this.showMoreBotton.querySelector('span').innerText = this.container.classList.contains('is-open') ? '-' : '+'
 
             })
         }

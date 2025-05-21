@@ -4645,6 +4645,10 @@ footer {
   display: block;
 }
 
+.fb-filter__selections.is-open li {
+  display: block;
+}
+
 .fb-filter__selections ul {
   display: flex;
   flex-wrap: wrap;

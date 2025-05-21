@@ -278,6 +278,12 @@ body:not(.is-scroll-page) {
             }
         }
 
+        &.is-open {
+            & li {
+                display: block;
+            }
+        }
+
         & ul {
             display: flex;
             flex-wrap: wrap;
