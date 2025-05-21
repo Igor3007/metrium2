@@ -848,6 +848,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
             type: 'loop',
             padding: '5rem',
             focus: 'center',
+            autoplay: true,
+            interval: 2000
 
         });
 
