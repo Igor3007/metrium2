@@ -1,6 +1,10 @@
 .section-our-awards {
-    padding: 42px 0;
-    background-color: var(--bg)
+    padding: 26px 0 0;
+    background-color: var(--bg);
+
+    @media screen and (min-width: $w576) {
+        padding: 42px 0;
+    }
 }
 
 .our-awards {
@@ -14,10 +18,24 @@
     }
 
     &__slider {
-        padding-bottom: 40px;
+        padding-bottom: 0px;
+
+        @media screen and (min-width: $w992) {
+            padding-bottom: 40px;
+        }
+
+        & .splide {
+            &__pagination {
+                position: relative;
+                padding: 14px 0;
+            }
+        }
     }
 
     &__bottom {
+
+        display: none;
+
         @media screen and (min-width: $w992) {
             display: flex;
             justify-content: space-between;

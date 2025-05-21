@@ -10,7 +10,9 @@ mixin  form-question
                         form(action='#' method='POST')
                             .form-question__input
                                 input(type="text" placeholder="Ваш номер телефона")
-                                button.btn Отправить
+                                button.btn 
+                                    span Отправить
+                                    +icons('#ic_arrow-right')
                             .form-question__note
                                 | Нажимая кнопку, вы даёте согласие на 
                                 a(href='#') обработку персональных данных

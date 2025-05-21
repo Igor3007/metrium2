@@ -397,3 +397,20 @@ span[data-color=fff] {
         }
     }
 }
+
+.splide {
+    &__pagination {
+        &__page {
+            width: 6px;
+            height: 6px;
+            margin-left: 10px;
+            margin-right: 10px;
+            background-color: var(--text-3);
+
+            &.is-active {
+                transform: scale(2);
+                background-color: var(--accent-11);
+            }
+        }
+    }
+}

@@ -1,6 +1,6 @@
 .btn {
 
-    padding: 0.8em 2.05em 0.85em 2.05em;
+    padding: 0.8em 1.5em 0.85em 1.5em;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -12,20 +12,50 @@
     white-space: nowrap;
     transition: .3s cubic-bezier(.1, .82, .25, 1);
     font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
+    font-weight: 400;
+    font-size: 18px;
     text-align: center;
     background-color: var(--accent);
     border-radius: 12px;
     letter-spacing: 2%;
+    position: relative;
+    overflow: hidden;
+    transition: 0.2s ease;
+    cursor: pointer;
 
     @media screen and (min-width: $w1200) {
         height: 56px;
         font-size: 18px;
+        padding: 0.8em 2.05em 0.85em 2.05em;
+    }
+
+    & span,
+    & svg {
+        position: relative;
+        z-index: 2;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        transition: 0.4s ease-out;
+        width: 0px;
+        height: 100%;
+        background-color: var(--accent-11);
+        z-index: 1;
     }
 
     &:hover {
-        background-color: var(--accent-hover);
+
+
+        &::before {
+            width: 200%;
+            height: 200%;
+            transition: 0.4s ease-in 0.05s;
+        }
     }
 
     &:active {
@@ -113,11 +143,27 @@
 
         & svg {
             fill: #000;
+            transition: 0.4s ease;
+        }
+
+        &::before {
+            background-color: var(--accent-11);
         }
 
         &:hover {
-            border-color: var(--main);
-            color: var(--black);
+            border-color: var(--accent-11);
+            color: #fff;
+            background-color: transparent;
+
+            &::before {
+                width: 200%;
+                height: 200%;
+                transition: 0.4s ease-in 0.05s;
+            }
+
+            & svg {
+                fill: #fff;
+            }
         }
     }
 
@@ -140,9 +186,16 @@
             fill: #fff;
         }
 
-        &:hover {
+        &::before {
             background-color: var(--accent);
+        }
+
+        &:hover {
             color: #fff;
+
+            & svg {
+                fill: #fff;
+            }
         }
     }
 
@@ -202,6 +255,33 @@
 
 
 
+}
+
+.hover-ripple {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        border-radius: 50%;
+        transition: 0.4s ease-out;
+        width: 0px;
+        height: 0px;
+        background-color: var(--accent);
+        z-index: -1;
+    }
+
+    &:hover {
+        &::before {
+            width: 200%;
+            height: 200%;
+            transition: 0.4s ease-in 0.05s;
+        }
+    }
 }
 
 

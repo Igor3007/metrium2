@@ -557,12 +557,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
             breakpoints: {
                 480: {
                     gap: 8,
-                    fixedWidth: '85vw'
+                    fixedWidth: '87.9vw',
+                    pagination: true
                 },
 
                 640: {
                     gap: 8,
-                    fixedWidth: '400px'
+                    fixedWidth: '400px',
+                    pagination: true
                 },
 
                 767: {
@@ -709,11 +711,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 480: {
                     fixedWidth: '85vw',
                     gap: 8,
+                    pagination: true
                 },
 
-                640: {
+                576: {
                     fixedWidth: '400px',
                     gap: 8,
+                    pagination: true
                 },
 
                 767: {
@@ -812,9 +816,32 @@ document.addEventListener('DOMContentLoaded', function (event) {
             perMove: 1,
             flickMaxPages: 1,
             flickPower: 100,
-            type: 'loop',
+            fixedWidth: '512px',
+            breakpoints: {
+                480: {
+                    fixedWidth: '85vw',
+                    gap: 8,
+                    pagination: true
+                },
+
+                640: {
+                    fixedWidth: '400px',
+                    gap: 8,
+                    pagination: true
+                },
+
+                992: {
+                    fixedWidth: '440px',
+                    gap: 12,
+                },
+
+                1200: {
+                    fixedWidth: '512px',
+                    gap: 16,
+                },
 
 
+            }
 
         });
 

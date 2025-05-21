@@ -57,7 +57,7 @@ $color-bg-green-1: rgba(240, 255, 250, 1);
 @mixin font-h2() {
     font-size: 28px;
     font-weight: 400;
-    line-height: 112%;
+    line-height: 141%;
     letter-spacing: 4%;
     font-family: var(--font-guardian);
 
@@ -67,6 +67,7 @@ $color-bg-green-1: rgba(240, 255, 250, 1);
 
     @media screen and (min-width: $w992) {
         font-size: 36px;
+        line-height: 112%;
     }
 
     @media screen and (min-width: $w576) {

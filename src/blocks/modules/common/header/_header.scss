@@ -95,6 +95,24 @@ header {
                 & a {
                     color: #fff;
                     letter-spacing: 2%;
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        height: 1px;
+                        display: inline-block;
+                        position: absolute;
+                        top: 100%;
+                        background-color: #fff;
+                        width: 0;
+                        transition: 0.3s ease;
+                    }
+
+                    &:hover {
+                        &::before {
+                            width: 100%;
+                        }
+                    }
 
                     @media screen and (min-width: $w1200) {
                         font-size: 18px;

@@ -1,6 +1,6 @@
 .section-our-services {
     background-color: var(--bg);
-    padding: 50px 0;
+    padding: 25px 0;
 
     @media screen and (min-width: $w1440) {
         padding: 67px 0 30px;
@@ -10,16 +10,30 @@
 .our-services {
     &__title {
         @include font-h2;
-        padding-bottom: 24px;
+        padding-bottom: 10px;
+
+
+        @media screen and (min-width: $w576) {
+            padding-bottom: 24px;
+        }
     }
 
     &__desc {
-        font-size: 20px;
+        font-size: 14px;
         color: var(--text-1);
-        padding-bottom: 30px;
+        padding-bottom: 18px;
         max-width: 1056px;
-        line-height: 160%;
+        line-height: 140%;
         letter-spacing: 2%;
+
+        @media screen and (min-width: $w992) {
+            line-height: 160%;
+            padding-bottom: 30px;
+        }
+
+        @media screen and (min-width: $w1200) {
+            font-size: 20px;
+        }
 
         @media screen and (min-width: $w1440) {
             padding-bottom: 54px;
@@ -29,11 +43,27 @@
     &__list {
         display: flex;
         flex-wrap: wrap;
-        margin: -10px;
+
+        @media screen and (min-width: $w1200) {
+            margin: -5px;
+        }
+
+        @media screen and (min-width: $w576) {
+            margin: -3px;
+        }
     }
 
     &__item {
-        @media screen and (min-width: $w992) {
+
+        margin-bottom: 8px;
+
+        @media screen and (min-width: $w576) {
+            width: 50%;
+            padding: 6px;
+            margin-bottom: 0;
+        }
+
+        @media screen and (min-width: $w1200) {
             width: 33.33%;
             padding: 10px;
         }
@@ -43,25 +73,42 @@
 .card-services {
 
     background-color: #fff;
-    border-radius: 24px;
-    padding: 24px;
+    border-radius: 16px;
+    padding: 15px;
     display: flex;
-    gap: 24px;
+    gap: 16px;
+
+    @media screen and (min-width: $w992) {
+        padding: 24px;
+        border-radius: 24px;
+        gap: 24px;
+    }
 
     &__icon {
-        min-width: 160px;
-        width: 160px;
-        height: 160px;
+        min-width: 105px;
+        width: 105px;
+        height: 105px;
         background-color: var(--bg);
         border-radius: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
 
+        @media screen and (min-width: $w992) {
+            min-width: 160px;
+            width: 160px;
+            height: 160px;
+        }
+
         & .bgimage {
-            width: 72px;
-            height: 72px;
+            width: 52px;
+            height: 52px;
             @include bgimage-contain;
+
+            @media screen and (min-width: $w992) {
+                width: 72px;
+                height: 72px;
+            }
         }
     }
 
@@ -72,17 +119,26 @@
     }
 
     &__title {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 500;
         letter-spacing: 2%;
-        padding-bottom: 12px;
+        padding-bottom: 5px;
+
+        @media screen and (min-width: $w576) {
+            font-size: 18px;
+            padding-bottom: 12px;
+        }
     }
 
     &__desc {
         color: var(--text-2);
-        font-size: 16px;
+        font-size: 14px;
         line-height: 140%;
         padding-bottom: 12px;
+
+        @media screen and (min-width: $w992) {
+            font-size: 16px;
+        }
     }
 
     &__link {
@@ -96,6 +152,7 @@
             align-items: center;
             gap: 12px;
             font-weight: 500;
+            font-size: 16px;
 
             & svg {
                 fill: #fff;

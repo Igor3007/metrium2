@@ -1,6 +1,10 @@
 .section-partners {
-    padding: 43px 0;
-    background-color: var(--bg)
+    padding: 0 0;
+    background-color: var(--bg);
+
+    @media screen and (min-width: $w576) {
+        padding: 43px 0;
+    }
 }
 
 .partners {
@@ -15,7 +19,11 @@
     }
 
     &__slider {
-        padding-bottom: 40px;
+        padding-bottom: 0px;
+
+        @media screen and (min-width: $w760) {
+            padding-bottom: 40px;
+        }
 
         @media screen and (min-width: $w1200) {
             padding-bottom: 50px;
@@ -24,6 +32,12 @@
 
     &__nav {
         @include splide-nav;
+
+        display: none;
+
+        @media screen and (min-width: $w760) {
+            display: flex;
+        }
     }
 
     & .splide {

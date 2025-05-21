@@ -1,6 +1,10 @@
 .section-company-about {
-    padding: 50px 0;
+    padding: 0px 0 30px;
     background-color: var(--bg);
+
+    @media screen and (min-width: $w576) {
+        padding: 50px 0;
+    }
 }
 
 .company-about {
@@ -24,6 +28,11 @@
         width: 100%;
         max-width: 328px;
         margin: auto;
+        padding-bottom: 20px;
+
+        @media screen and (min-width: $w576) {
+            padding-bottom: 0;
+        }
 
         & img {
             width: 100%;
@@ -45,11 +54,22 @@
                 font-size: 18px;
                 letter-spacing: 2%;
                 margin: 14px 0;
+
+                @media screen and (max-width: $w576) {
+                    font-size: 14px;
+                    line-height: 142%;
+                }
             }
 
             & h2 {
                 margin-bottom: 0;
 
+
+
+                @media screen and (max-width: $w576) {
+                    line-height: 160%;
+                    font-size: 24px;
+                }
             }
         }
 

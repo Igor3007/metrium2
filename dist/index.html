@@ -57,7 +57,7 @@
       <div class="container">
         <div class="header">
           <div class="header__left">
-            <div class="header__burger" data-menu="open"> 
+            <div class="header__burger hover-ripple" data-menu="open"> 
               <div class="icon-burger"><span></span><span></span></div>
             </div>
             <div class="header__nav">
@@ -73,7 +73,7 @@
           <div class="header__logo"><a href="#"><span style="background-image: url('/img/common/logo.svg')"></span></a></div>
           <div class="header__right">
             <div class="header__phone"><a href="tel:+74952525255">+7(495)25-25-255</a></div>
-            <div class="header__wishlist"><a href="#">
+            <div class="header__wishlist"><a class="hover-ripple" href="#">
                 <svg width="24" height="24">
                   <use xlink:href="/img/sprites/sprite.svg#ic_heart"></use>
                 </svg></a></div>
@@ -789,7 +789,7 @@
                         </div>
                         <div class="minicard__main">
                           <div class="minicard__id">ID: 23478</div>
-                          <div class="minicard__title"><a href="#">4-комн. квартира, 201 м2</a></div>
+                          <div class="minicard__title"><a href="#">4-комн. квартира, 201 м <sup>2</sup></a></div>
                           <div class="minicard__jk"> 
                             <svg width="24" height="24">
                               <use xlink:href="/img/sprites/sprite.svg#ic_jk"></use>
@@ -902,7 +902,7 @@
                         </div>
                         <div class="minicard__main">
                           <div class="minicard__id">ID: 23478</div>
-                          <div class="minicard__title"><a href="#">4-комн. квартира, 201 м2</a></div>
+                          <div class="minicard__title"><a href="#">4-комн. квартира, 201 м <sup>2</sup></a></div>
                           <div class="minicard__jk"> 
                             <svg width="24" height="24">
                               <use xlink:href="/img/sprites/sprite.svg#ic_jk"></use>
@@ -1015,7 +1015,7 @@
                         </div>
                         <div class="minicard__main">
                           <div class="minicard__id">ID: 23478</div>
-                          <div class="minicard__title"><a href="#">4-комн. квартира, 201 м2</a></div>
+                          <div class="minicard__title"><a href="#">4-комн. квартира, 201 м <sup>2</sup></a></div>
                           <div class="minicard__jk"> 
                             <svg width="24" height="24">
                               <use xlink:href="/img/sprites/sprite.svg#ic_jk"></use>
@@ -1128,7 +1128,7 @@
                         </div>
                         <div class="minicard__main">
                           <div class="minicard__id">ID: 23478</div>
-                          <div class="minicard__title"><a href="#">4-комн. квартира, 201 м2</a></div>
+                          <div class="minicard__title"><a href="#">4-комн. квартира, 201 м <sup>2</sup></a></div>
                           <div class="minicard__jk"> 
                             <svg width="24" height="24">
                               <use xlink:href="/img/sprites/sprite.svg#ic_jk"></use>
@@ -1241,7 +1241,7 @@
                         </div>
                         <div class="minicard__main">
                           <div class="minicard__id">ID: 23478</div>
-                          <div class="minicard__title"><a href="#">4-комн. квартира, 201 м2</a></div>
+                          <div class="minicard__title"><a href="#">4-комн. квартира, 201 м <sup>2</sup></a></div>
                           <div class="minicard__jk"> 
                             <svg width="24" height="24">
                               <use xlink:href="/img/sprites/sprite.svg#ic_jk"></use>
@@ -1354,7 +1354,7 @@
                         </div>
                         <div class="minicard__main">
                           <div class="minicard__id">ID: 23478</div>
-                          <div class="minicard__title"><a href="#">4-комн. квартира, 201 м2</a></div>
+                          <div class="minicard__title"><a href="#">4-комн. квартира, 201 м <sup>2</sup></a></div>
                           <div class="minicard__jk"> 
                             <svg width="24" height="24">
                               <use xlink:href="/img/sprites/sprite.svg#ic_jk"></use>
@@ -1836,7 +1836,11 @@
                 <form action="#" method="POST">
                   <div class="form-question__input">
                     <input type="text" placeholder="Ваш номер телефона"/>
-                    <button class="btn">Отправить</button>
+                    <button class="btn"> <span>Отправить</span>
+                      <svg width="24" height="24">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_arrow-right"></use>
+                      </svg>
+                    </button>
                   </div>
                   <div class="form-question__note">Нажимая кнопку, вы даёте согласие на <a href="#">обработку персональных данных</a></div>
                 </form>
@@ -1852,44 +1856,41 @@
         <div class="footer">
           <div class="footer__row">
             <div class="footer__left">
-              <div class="footer__logo"><a href="/"><span class="bgimage lazyload" data-bg="/img/common/logo.svg"></span></a></div>
+              <div class="footer__logo"><a href="/"><span class="bgimage lazyload" data-bg="/img/common/logo-color.svg"></span></a></div>
             </div>
             <div class="footer__content">
               <div class="footer__col">
-                <div class="footer__label">Городская недвижимость
-                  <ul>
-                    <li><a href="#">Элитные квартиры</a></li>
-                    <li><a href="#">Апартаменты</a></li>
-                    <li><a href="#">Элитные жилые комплексы</a></li>
-                    <li><a href="#">Новостройки</a></li>
-                    <li><a href="#">Особняки</a></li>
-                    <li><a href="#">Аренда</a></li>
-                    <li><a href="#">Специальные предложения</a></li>
-                  </ul>
-                </div>
+                <div class="footer__label">Городская недвижимость</div>
+                <ul>
+                  <li><a href="#">Элитные квартиры</a></li>
+                  <li><a href="#">Апартаменты</a></li>
+                  <li><a href="#">Элитные жилые комплексы</a></li>
+                  <li><a href="#">Новостройки</a></li>
+                  <li><a href="#">Особняки</a></li>
+                  <li><a href="#">Аренда</a></li>
+                  <li><a href="#">Специальные предложения</a></li>
+                </ul>
               </div>
               <div class="footer__col">
-                <div class="footer__label">Заговордная недвижимость
-                  <ul>
-                    <li><a href="#">Коттеджи</a></li>
-                    <li><a href="#">Таунхаусы</a></li>
-                    <li><a href="#">Посёлки</a></li>
-                    <li><a href="#">Участки</a></li>
-                    <li><a href="#">Аренда</a></li>
-                  </ul>
-                </div>
+                <div class="footer__label">Заговордная недвижимость</div>
+                <ul>
+                  <li><a href="#">Коттеджи</a></li>
+                  <li><a href="#">Таунхаусы</a></li>
+                  <li><a href="#">Посёлки</a></li>
+                  <li><a href="#">Участки</a></li>
+                  <li><a href="#">Аренда</a></li>
+                </ul>
               </div>
               <div class="footer__col">
-                <div class="footer__label">Услуги компании
-                  <ul>
-                    <li><a href="#">О компании</a></li>
-                    <li><a href="#">Консалтинг</a></li>
-                    <li><a href="#">Юридические услуги</a></li>
-                    <li><a href="#">Инвестиции</a></li>
-                    <li><a href="#">Аналитика</a></li>
-                    <li><a href="#">Собственникам</a></li>
-                  </ul>
-                </div>
+                <div class="footer__label">Услуги компании</div>
+                <ul>
+                  <li><a href="#">О компании</a></li>
+                  <li><a href="#">Консалтинг</a></li>
+                  <li><a href="#">Юридические услуги</a></li>
+                  <li><a href="#">Инвестиции</a></li>
+                  <li><a href="#">Аналитика</a></li>
+                  <li><a href="#">Собственникам</a></li>
+                </ul>
               </div>
             </div>
           </div>

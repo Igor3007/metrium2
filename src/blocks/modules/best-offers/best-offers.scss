@@ -153,8 +153,15 @@
                     }
                 }
             }
+
+            &__pagination {
+                position: relative;
+                padding: 28px 0 8px;
+            }
         }
     }
+
+
 
     &__bottom {
         display: flex;
@@ -168,9 +175,7 @@
     }
 
     &__more {
-        @media screen and (max-width: $w480) {
-            width: 100%;
-        }
+        @media screen and (max-width: $w480) {}
     }
 
     &__nav {

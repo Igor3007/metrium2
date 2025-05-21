@@ -1,5 +1,5 @@
 .section-special-offers {
-    padding: 55px 0;
+    padding: 35px 0 20px;
 
     @media screen and (min-width: $w1440) {
         padding: 126px 0 90px;
@@ -9,25 +9,44 @@
 .special-offers {
     &__title {
         @include font-h2;
-        padding-bottom: 24px;
+        padding-bottom: 18px;
 
         @media screen and (min-width: $w1200) {
             padding-bottom: 50px;
         }
+
+
+
     }
 
     &__nav {
         @include splide-nav;
+
     }
 
     &__bottom {
-        display: flex;
-        align-items: center;
-        gap: 24px
+        display: none;
+
+        @media screen and (min-width: $w576) {
+            display: flex;
+            align-items: center;
+            gap: 24px
+        }
     }
 
     &__slider {
-        padding-bottom: 40px;
+        padding-bottom: 0;
+
+        @media screen and (min-width: $w576) {
+            padding-bottom: 40px;
+        }
+
+        & .splide {
+            &__pagination {
+                position: relative;
+                padding: 24px 0;
+            }
+        }
     }
 
     & .splide {

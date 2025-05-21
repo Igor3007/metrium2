@@ -156,16 +156,27 @@
     }
 
     &__main {
-        padding: 24px;
+        padding: 16px;
+
+        @media screen and (min-width: $w576) {
+            padding: 24px;
+        }
     }
 
     &__action {
+
         display: flex;
-        gap: 16px;
-        padding-top: 24px;
-        opacity: 0;
-        visibility: hidden;
+        flex-direction: column;
         transition: 0.2s linear;
+        gap: 8px;
+
+        @media screen and (min-width: $w576) {
+            flex-direction: row;
+            opacity: 0;
+            visibility: hidden;
+            padding-top: 24px;
+            gap: 16px;
+        }
 
         &>div {
             flex-grow: 1;
@@ -181,13 +192,7 @@
         }
     }
 
-    &__getcall {
-        display: none;
 
-        @media screen and (min-width: $w576) {
-            display: block;
-        }
-    }
 
     &__id {
         color: var(--text-2);
@@ -196,9 +201,13 @@
     }
 
     &__title {
-        font-size: 24px;
+        font-size: 20px;
         letter-spacing: 2%;
         padding-bottom: 17px;
+
+        @media screen and (min-width: $w576) {
+            font-size: 24px;
+        }
     }
 
     &__jk {
@@ -269,18 +278,28 @@
 
     &__price {
 
-        padding: 10px 0 34px;
-        position: absolute;
-        bottom: 0;
+        padding: 10px 0 26px;
+
         letter-spacing: 4%;
         transition: 0.3s ease;
+
+        @media screen and (min-width: $w576) {
+            position: absolute;
+            bottom: 0;
+            padding: 10px 0 34px;
+        }
 
 
         &>div {
             display: none;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 500;
             color: var(--accent);
+            letter-spacing: 2%;
+
+            @media screen and (min-width: $w576) {
+                font-size: 28px;
+            }
 
             &.is-active {
                 display: block;
@@ -301,13 +320,14 @@
     &:hover {
         & .minicard {
             &__prop {
-                opacity: 0;
+                @media screen and (min-width: $w576) {
+                    opacity: 0;
+                }
 
             }
 
             &__price {
                 bottom: 80px;
-
             }
 
             &__action {

@@ -1,7 +1,7 @@
 .container
     .header
         .header__left
-            .header__burger(data-menu="open") 
+            .header__burger.hover-ripple(data-menu="open") 
                 .icon-burger
                     span
                     span
@@ -18,7 +18,7 @@
             .header__phone
                 a(href='tel:+74952525255') +7(495)25-25-255
             .header__wishlist
-                a(href='#'): +icons('#ic_heart', 24)
+                a(href='#' class="hover-ripple"): +icons('#ic_heart', 24)
             .header__button
                 a(href='#')
                     button.btn.btn-gold
