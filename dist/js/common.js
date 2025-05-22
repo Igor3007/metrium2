@@ -769,23 +769,27 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 480: {
                     fixedWidth: '85vw',
                     gap: 8,
-                    pagination: true
+                    pagination: true,
+                    perPage: 1,
                 },
 
                 576: {
                     fixedWidth: '400px',
                     gap: 8,
-                    pagination: true
+                    pagination: true,
+                    perPage: 1,
                 },
 
                 767: {
                     fixedWidth: '360px',
                     gap: 8,
+                    perPage: 2,
                 },
 
                 992: {
                     fixedWidth: '360px',
                     gap: 12,
+                    perPage: 2,
                 },
 
                 1200: {
@@ -886,18 +890,21 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 480: {
                     fixedWidth: '85vw',
                     gap: 8,
-                    pagination: true
+                    pagination: true,
+                    perPage: 1,
                 },
 
                 640: {
                     fixedWidth: '400px',
                     gap: 8,
-                    pagination: true
+                    pagination: true,
+                    perPage: 1,
                 },
 
                 992: {
                     fixedWidth: '440px',
                     gap: 12,
+                    perPage: 2,
                 },
 
                 1200: {

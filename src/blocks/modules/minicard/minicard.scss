@@ -181,7 +181,10 @@
 
         &>div {
             flex-grow: 1;
-            width: calc(50% - 16px);
+
+            @media screen and (min-width: $w576) {
+                width: calc(50% - 16px);
+            }
 
             & .btn {
                 width: 100%;

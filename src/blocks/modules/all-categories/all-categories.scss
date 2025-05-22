@@ -261,22 +261,22 @@
     &:hover {
         & .card-categories {
 
-
-
-            &__bg {
-                transform: scale(0);
-                transition: 0.3s ease;
-            }
-
-            &__preview {
-                opacity: 0;
-                pointer-events: none;
-
-                & .card-categories__title {
-                    transform: translateY(-5px);
+            @media screen and (min-width: $w760) {
+                &__bg {
+                    transform: scale(0);
                     transition: 0.3s ease;
-                    font-size: 28px;
-                    color: var(--text-1);
+                }
+
+                &__preview {
+                    opacity: 0;
+                    pointer-events: none;
+
+                    & .card-categories__title {
+                        transform: translateY(-5px);
+                        transition: 0.3s ease;
+                        font-size: 28px;
+                        color: var(--text-1);
+                    }
                 }
             }
         }
