@@ -212,7 +212,7 @@ body:not(.is-scroll-page) {
                     }
 
                     &__field {
-                        width: 336px;
+                        width: 324px;
                     }
                 }
             }
@@ -519,6 +519,9 @@ body:not(.is-scroll-page) {
     align-items: center;
     white-space: nowrap;
     height: 56px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+
 
     & input {
         flex-grow: 1;
@@ -542,6 +545,10 @@ body:not(.is-scroll-page) {
 
     & label {
         color: var(--text-2);
+    }
+
+    &:has(input:focus) {
+        border-color: var(--accent-11);
     }
 }
 

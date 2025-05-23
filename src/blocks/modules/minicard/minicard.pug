@@ -27,6 +27,8 @@ mixin minicard(data)
                                 .splide__slide
                                     +picture(data.image)
         .minicard__main
+            .minicard__wishlist
+                span(data-wishlist=data.id): +icons('#ic_heart')
             .minicard__id ID: 23478
             .minicard__title: a(href='#') 4-комн. квартира, 201 м <sup>2</sup>
             .minicard__jk 

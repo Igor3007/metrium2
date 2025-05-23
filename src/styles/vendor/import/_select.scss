@@ -25,6 +25,7 @@ select {
     min-width: rem(150);
     height: $select-height;
 
+
     &--selected {
         & .select-styled span {
             color: var(--text-1);
@@ -48,17 +49,17 @@ select {
 
     background-color: var(--accent-12);
     padding: rem(8) rem(15);
-    transition: all 0.2s ease-in;
-    border: 1px solid transparent;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
-
     line-height: 160%;
     color: #737373;
     display: flex;
     justify-content: space-between;
     height: 100%;
     border-radius: 8px;
+    border: 2px solid transparent;
+
 
     &:hover {
         background-color: var(--accent-14);
@@ -111,7 +112,9 @@ select {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         transition: none;
-        background-color: var(--accent-13);
+        border: 2px solid var(--accent-11);
+
+
 
         &:after {
             transform: rotate(180deg);
@@ -127,18 +130,19 @@ select {
 
     padding: 10px;
     position: absolute;
-    top: 100%;
+    top: calc(100% - 2px);
     right: auto;
     left: 0;
     z-index: 999;
     margin: 0;
     background-color: $bg-gray;
-    // box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.25);
     color: #000;
     min-width: 100%;
     width: auto;
     border-radius: 0 0 6px 6px;
     max-width: 100%;
+    border: 2px solid var(--accent-11);
+    transition: 0.3s ease;
 
     & input[type="text"] {
         width: 100% !important;
@@ -156,7 +160,7 @@ select {
         padding-top: 4px;
 
         &:focus {
-            border-color: var(--accent-11);
+            border-color: var(--accent);
         }
     }
 
@@ -250,7 +254,7 @@ select {
             color: #222;
             background: transparent;
             //box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.25);
-            color: var(--accent-11);
+            color: var(--accent);
         }
 
         &[rel="hide"] {
@@ -286,7 +290,7 @@ select {
 .af-select.af-select--top {
     & .select-list {
         top: auto;
-        bottom: 100%;
+        bottom: calc(100% - 2px);
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
         border-top-left-radius: 8px;
@@ -297,8 +301,8 @@ select {
 
     & .select-styled:active,
     .select-styled.active {
-        border-bottom-left-radius: inherit;
-        border-bottom-right-radius: inherit;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
 
         border-top-left-radius: 0;
         border-top-right-radius: 0;
@@ -424,6 +428,13 @@ select {
     }
 }
 
+.af-selected-count {
+    color: var(--text-2);
+
+    & span {
+        color: var(--accent-11);
+    }
+}
 
 
 .af-select--multiple {
@@ -435,8 +446,8 @@ select {
     }
 
     & .af-check-multiple {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
         display: inline-block;
         position: absolute;
         left: 15px;
@@ -446,15 +457,27 @@ select {
         &::before {
             content: '';
             @include layer(2);
-            background-size: 17px auto;
+            background-size: 10px auto;
             background-position: center;
             background-repeat: no-repeat;
-            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTMiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE2LjY0Ny42NDZhLjUuNSAwIDExLjcwNy43MDdsLTExIDExYS41LjUgMCAwMS0uNzA3IDBsLTUtNS0uMDY1LS4wNzhhLjUuNSAwIDAxLjY5NC0uNjkzbC4wNzguMDY0TDYgMTEuMjkzIDE2LjY0Ny42NDZ6IiBmaWxsPSIjMDA0MDNGIi8+PC9zdmc+);
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOSAxTDQgNyAxIDQiIHN0cm9rZT0iIzUyNTE2NiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=);
             opacity: 0;
 
         }
 
+        &::after {
 
+            @include layer(1);
+            content: '';
+            border-radius: 4px;
+
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            opacity: 1;
+            transition: 0.2s ease;
+            box-shadow: 0 0 0 2px var(--accent) inset;
+        }
 
 
     }
@@ -471,16 +494,16 @@ select {
                 & .af-check-multiple {
                     &::before {
                         opacity: 1;
-
+                        filter: brightness(200);
                     }
 
                     &::after {
-
-                        background-color: #222;
+                        background-color: var(--accent);
                         width: 100%;
                         height: 100%;
                         margin: auto;
                         opacity: 1;
+                        box-shadow: 0 0 0 2px var(--accent) inset;
                     }
                 }
             }
@@ -491,7 +514,7 @@ select {
 
                     &::after {
 
-                        box-shadow: 0 0 0 2px #222 inset;
+                        box-shadow: 0 0 0 2px var(--accent) inset;
 
                     }
                 }

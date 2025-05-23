@@ -915,8 +915,7 @@ select {
 .select-styled {
   background-color: var(--accent-12);
   padding: 8px 15px;
-  transition: all 0.2s ease-in;
-  border: 1px solid transparent;
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   line-height: 160%;
@@ -925,6 +924,7 @@ select {
   justify-content: space-between;
   height: 100%;
   border-radius: 8px;
+  border: 2px solid transparent;
 }
 
 .select-styled:hover {
@@ -965,7 +965,7 @@ select {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   transition: none;
-  background-color: var(--accent-13);
+  border: 2px solid var(--accent-11);
 }
 
 .select-styled:active:after,
@@ -980,7 +980,7 @@ select {
 .select-list {
   padding: 10px;
   position: absolute;
-  top: 100%;
+  top: calc(100% - 2px);
   right: auto;
   left: 0;
   z-index: 999;
@@ -991,6 +991,8 @@ select {
   width: auto;
   border-radius: 0 0 6px 6px;
   max-width: 100%;
+  border: 2px solid var(--accent-11);
+  transition: 0.3s ease;
 }
 
 .select-list input[type="text"] {
@@ -1010,7 +1012,7 @@ select {
 }
 
 .select-list input[type="text"]:focus {
-  border-color: var(--accent-11);
+  border-color: var(--accent);
 }
 
 .select-list.active {
@@ -1045,7 +1047,7 @@ select {
 .select-options li:hover {
   color: #222;
   background: transparent;
-  color: var(--accent-11);
+  color: var(--accent);
 }
 
 .select-options li[rel="hide"] {
@@ -1074,7 +1076,7 @@ select {
 
 .af-select.af-select--top .select-list {
   top: auto;
-  bottom: 100%;
+  bottom: calc(100% - 2px);
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   border-top-left-radius: 8px;
@@ -1083,8 +1085,8 @@ select {
 
 .af-select.af-select--top .select-styled:active,
 .af-select.af-select--top .select-styled.active {
-  border-bottom-left-radius: inherit;
-  border-bottom-right-radius: inherit;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   transition: none;
@@ -1203,13 +1205,21 @@ select {
   }
 }
 
+.af-selected-count {
+  color: var(--text-2);
+}
+
+.af-selected-count span {
+  color: var(--accent-11);
+}
+
 .af-select--multiple .select-options li {
   padding-left: 46px;
 }
 
 .af-select--multiple .af-check-multiple {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   display: inline-block;
   position: absolute;
   left: 15px;
@@ -1225,27 +1235,46 @@ select {
   left: 0;
   right: 0;
   z-index: 2;
-  background-size: 17px auto;
+  background-size: 10px auto;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTMiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE2LjY0Ny42NDZhLjUuNSAwIDExLjcwNy43MDdsLTExIDExYS41LjUgMCAwMS0uNzA3IDBsLTUtNS0uMDY1LS4wNzhhLjUuNSAwIDAxLjY5NC0uNjkzbC4wNzguMDY0TDYgMTEuMjkzIDE2LjY0Ny42NDZ6IiBmaWxsPSIjMDA0MDNGIi8+PC9zdmc+);
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOSAxTDQgNyAxIDQiIHN0cm9rZT0iIzUyNTE2NiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=);
   opacity: 0;
 }
 
-.af-select--multiple .select-options li.active .af-check-multiple::before {
-  opacity: 1;
-}
-
-.af-select--multiple .select-options li.active .af-check-multiple::after {
-  background-color: #222;
+.af-select--multiple .af-check-multiple::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  content: '';
+  border-radius: 4px;
   width: 100%;
   height: 100%;
   margin: auto;
   opacity: 1;
+  transition: 0.2s ease;
+  box-shadow: 0 0 0 2px var(--accent) inset;
+}
+
+.af-select--multiple .select-options li.active .af-check-multiple::before {
+  opacity: 1;
+  filter: brightness(200);
+}
+
+.af-select--multiple .select-options li.active .af-check-multiple::after {
+  background-color: var(--accent);
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  opacity: 1;
+  box-shadow: 0 0 0 2px var(--accent) inset;
 }
 
 .af-select--multiple .select-options li:hover .af-check-multiple::after {
-  box-shadow: 0 0 0 2px #222 inset;
+  box-shadow: 0 0 0 2px var(--accent) inset;
 }
 
 @keyframes splide-loading {
@@ -4833,6 +4862,8 @@ footer {
   align-items: center;
   white-space: nowrap;
   height: 56px;
+  border: 2px solid transparent;
+  transition: 0.3s ease;
 }
 
 .price-input input {
@@ -4855,6 +4886,10 @@ footer {
 
 .price-input label {
   color: var(--text-2);
+}
+
+.price-input:has(input:focus) {
+  border-color: var(--accent-11);
 }
 
 .select-currency {
@@ -5955,6 +5990,30 @@ footer {
   padding-bottom: 17px;
 }
 
+.minicard__wishlist {
+  position: absolute;
+  right: 24px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.minicard__wishlist svg {
+  fill: var(--text-3);
+}
+
+.minicard__wishlist span {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.minicard__wishlist span:hover svg {
+  fill: var(--accent);
+}
+
 .minicard__jk {
   color: var(--text-1);
   display: flex;
@@ -6054,10 +6113,52 @@ footer {
   transition-delay: 0.1s;
 }
 
+.minicard:hover .minicard__wishlist,
 .minicard:hover .minicard__nav,
 .minicard:hover .minicard__counter,
 .minicard:hover .minicard__fullscreen {
   opacity: 1;
+}
+
+@keyframes to-fav-animate {
+  0% {
+    transform: scale(0.7);
+  }
+
+  50% {
+    transform: scale(1.4);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+[data-wishlist] {
+  position: relative;
+}
+
+[data-wishlist].is-active svg {
+  position: relative;
+  z-index: 1;
+  fill: var(--accent);
+}
+
+[data-wishlist].is-active::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE3IDExYzEuNDktMS40NiAzLTMuMjEgMy01LjVBNS41IDUuNSAwIDAwMTQuNSAwYy0xLjc2IDAtMyAuNS00LjUgMkM4LjUuNSA3LjI2IDAgNS41IDBBNS41IDUuNSAwIDAwMCA1LjVDMCA3LjggMS41IDkuNTUgMyAxMWw3IDcgNy03eiIgZmlsbD0iI0I4OEU1RiIvPjwvc3ZnPg==);
+  background-size: 62% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  animation: to-fav-animate 0.3s ease forwards;
 }
 
 .card-collection {
@@ -7632,7 +7733,7 @@ span[data-color=fff] {
   }
 
   .fb-filter__row--second .fb-filter__field {
-    width: 336px;
+    width: 324px;
   }
 
   .fb-filter__fields {
