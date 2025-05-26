@@ -760,9 +760,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             pagination: false,
             gap: 16,
             start: 0,
-            perPage: 3,
             fixedWidth: '440px',
-            perMove: 1,
             flickMaxPages: 1,
             flickPower: 100,
 
@@ -771,26 +769,26 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     fixedWidth: '85vw',
                     gap: 8,
                     pagination: true,
-                    perPage: 1,
+
                 },
 
                 576: {
                     fixedWidth: '400px',
                     gap: 8,
                     pagination: true,
-                    perPage: 1,
+
                 },
 
                 767: {
                     fixedWidth: '360px',
                     gap: 8,
-                    perPage: 2,
+
                 },
 
                 992: {
                     fixedWidth: '360px',
                     gap: 12,
-                    perPage: 2,
+
                 },
 
                 1200: {
@@ -806,8 +804,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
         const container = slider.closest('section')
         const slideCounterCurrent = container.querySelector('[data-slider-counter="current"]')
         const slideCounterTotal = container.querySelector('[data-slider-counter="total"]')
-
-
 
 
         // init splide nav

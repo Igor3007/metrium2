@@ -2057,7 +2057,7 @@ select {
   letter-spacing: 2%;
   position: relative;
   overflow: hidden;
-  transition: 0.2s ease;
+  transition: 0.3s ease;
   cursor: pointer;
 }
 
@@ -2073,17 +2073,19 @@ select {
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
-  transition: 0.4s ease-out;
+  transition: 0.5s ease;
   width: 0px;
   height: 100%;
   background-color: var(--accent-11);
   z-index: 1;
+  opacity: 0.1;
 }
 
 .btn:hover::before {
   width: 200%;
   height: 200%;
-  transition: 0.4s ease-in 0.05s;
+  transition: 0.5s ease 0.05s;
+  opacity: 1;
 }
 
 .btn:active {
@@ -4786,7 +4788,9 @@ footer {
 }
 
 .fb-filter__item .btn {
-  width: 100%;
+  width: auto;
+  padding-left: 1.45em;
+  padding-right: 1.45em;
 }
 
 .fb-filter__more span {
@@ -4858,6 +4862,7 @@ footer {
   padding: 15px 14px;
   border-radius: 12px;
   height: 100%;
+  transition: 0.3s ease;
 }
 
 .fb-card-adv__title {
@@ -4869,10 +4874,19 @@ footer {
   color: var(--accent);
   font-size: 18px;
   padding-bottom: 8px;
+  transition: 0.3s ease;
 }
 
 .fb-card-adv__desc {
   line-height: 140%;
+}
+
+.fb-card-adv:hover {
+  background-color: var(--accent-14);
+}
+
+.fb-card-adv:hover .fb-card-adv__title {
+  color: var(--accent-11);
 }
 
 .price-input {
@@ -6033,6 +6047,10 @@ footer {
 }
 
 .minicard__wishlist span:hover svg {
+  fill: var(--black);
+}
+
+.minicard__wishlist span.is-active:hover svg {
   fill: var(--accent);
 }
 
@@ -7156,10 +7174,8 @@ span[data-color=fff] {
     display: flex;
     align-items: center;
     gap: 8px;
-  }
-
-  .fb-filter__item {
-    width: calc(50% - 4px);
+    width: 100%;
+    justify-content: flex-end;
   }
 
   .fb-advantages__list {
@@ -7747,7 +7763,7 @@ span[data-color=fff] {
   }
 
   .fb-filter__row {
-    padding-bottom: 22px;
+    padding-bottom: 19px;
   }
 
   .fb-filter__row:last-child {
@@ -7764,6 +7780,8 @@ span[data-color=fff] {
 
   .fb-filter__row--second .fb-filter__field {
     width: 324px;
+    display: flex;
+    align-items: center;
   }
 
   .fb-filter__fields {
@@ -7779,7 +7797,7 @@ span[data-color=fff] {
   }
 
   .fb-filter__selections {
-    padding-top: 26px;
+    padding-top: 34px;
     position: relative;
   }
 

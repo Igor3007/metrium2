@@ -195,7 +195,7 @@ body:not(.is-scroll-page) {
         padding-bottom: 8px;
 
         @media screen and (min-width: $w1200) {
-            padding-bottom: 22px;
+            padding-bottom: 19px;
 
             &:last-child {
                 padding-bottom: 0;
@@ -213,6 +213,8 @@ body:not(.is-scroll-page) {
 
                     &__field {
                         width: 324px;
+                        display: flex;
+                        align-items: center;
                     }
                 }
             }
@@ -300,7 +302,7 @@ body:not(.is-scroll-page) {
     &__selections {
 
         @media screen and (min-width: $w1200) {
-            padding-top: 26px;
+            padding-top: 34px;
             position: relative;
 
             &::before {
@@ -380,6 +382,8 @@ body:not(.is-scroll-page) {
             display: flex;
             align-items: center;
             gap: 8px;
+            width: 100%;
+            justify-content: flex-end;
         }
 
 
@@ -390,12 +394,12 @@ body:not(.is-scroll-page) {
 
         margin: 8px 0;
 
-        @media screen and (min-width: $w760) {
-            width: calc(50% - 4px);
-        }
+
 
         & .btn {
-            width: 100%;
+            width: auto;
+            padding-left: 1.45em;
+            padding-right: 1.45em;
         }
     }
 
@@ -497,22 +501,20 @@ body:not(.is-scroll-page) {
     padding: 15px 14px;
     border-radius: 12px;
     height: 100%;
+    transition: 0.3s ease;
 
     @media screen and (min-width: $w1200) {
-
         padding: 22px 24px 16px;
         border-radius: 16px;
         height: 100%;
-
     }
-
-
 
     &__title {
         @include font-h3;
         color: var(--accent);
         font-size: 18px;
         padding-bottom: 8px;
+        transition: 0.3s ease;
 
         @media screen and (min-width: $w576) {
             font-size: 28px;
@@ -529,6 +531,17 @@ body:not(.is-scroll-page) {
 
         @media screen and (min-width: $w1200) {
             letter-spacing: 2%;
+        }
+    }
+
+    &:hover {
+
+        background-color: var(--accent-14);
+
+        & .fb-card-adv {
+            &__title {
+                color: var(--accent-11);
+            }
         }
     }
 

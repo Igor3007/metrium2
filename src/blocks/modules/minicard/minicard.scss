@@ -236,7 +236,15 @@
 
             &:hover {
                 & svg {
-                    fill: var(--accent);
+                    fill: var(--black);
+                }
+            }
+
+            &.is-active {
+                &:hover {
+                    & svg {
+                        fill: var(--accent);
+                    }
                 }
             }
         }
