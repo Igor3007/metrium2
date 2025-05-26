@@ -278,11 +278,22 @@ body:not(.is-scroll-page) {
 
     }
 
+    @keyframes fade-tab-fb {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
     &__tab-content {
         display: none;
 
         &.is-active {
             display: block;
+            animation: fade-tab-fb 0.5s ease forwards;
         }
     }
 
@@ -313,12 +324,25 @@ body:not(.is-scroll-page) {
                     transform: rotate(45deg);
                 }
             }
+
+            & ul {
+                @media screen and (min-width: $w760) {
+                    max-height: none;
+                }
+            }
         }
 
         & ul {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
+            max-height: 85px;
+            overflow: hidden;
+
+
+            @media screen and (min-width: $w760) {
+                max-height: 41px;
+            }
         }
 
         & a {

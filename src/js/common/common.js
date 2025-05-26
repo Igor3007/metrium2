@@ -936,9 +936,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
     class FlexCollections {
         constructor(params) {
             this.params = params
-            this.$el = document.querySelector(params.el) || document
+            this.$el = params.el || document
             this.widthButtonShowMore = 50;
-            this.container = document.querySelector(this.params.container) || document
+            this.container = this.params.container || document
             this.showMoreBotton = this.container.querySelector('.show-more-tag')
             this.init()
         }
@@ -961,29 +961,23 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 
 
-            if (document.body.clientWidth > 760) {
+            if (document.body.clientWidth > 767) {
                 return heightItem
             } else {
-                return heightItem * 3
+                return (heightItem * 2) + 10
             }
 
         }
 
         render() {
 
-            if (this.$el.closest(this.params.container).classList.contains('is-open')) {
+            if (this.params.container.classList.contains('is-open')) {
                 return false;
             }
 
             this.$el.querySelectorAll('li.is-hide').forEach(li => li.classList.remove('is-hide'))
-
             this.showMoreBotton.style.display = (this.heightItems() > this.heightContainer() ? 'flex' : 'none')
-
             let i = 0;
-
-            console.log(this.heightItems())
-            console.log(this.heightContainer())
-
             while (this.heightItems() > this.heightContainer()) {
                 let visibleElements = this.$el.querySelectorAll('li:not(.is-hide)')
                 if (visibleElements[(visibleElements.length - 1)]) {
@@ -991,12 +985,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 }
 
                 i++;
-
                 if (i > 100) return false
             }
 
             this.container.classList.contains('is-init') || this.container.classList.add('is-init')
-
         }
 
         debounce(method, delay, e) {
@@ -1016,7 +1008,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 this.debounce(resizeHahdler, 30, entries)
             });
 
-            observer.observe(document.querySelector(this.params.container));
+            observer.observe(this.params.container);
 
             this.showMoreBotton.addEventListener('click', e => {
                 this.container.classList.toggle('is-open');
@@ -1026,10 +1018,19 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
 
     if (document.querySelector('.fb-filter__selections')) {
-        let collections = new FlexCollections({
-            el: '.fb-filter__selections ul',
-            container: '.fb-filter__selections'
+
+        document.querySelectorAll('.fb-filter__selections').forEach(item => {
+
+            if (!item.classList.contains('.is-init')) {
+                let collections = new FlexCollections({
+                    el: item.querySelector('ul'),
+                    container: item
+                })
+            }
+
+
         })
+
     }
 
     /* ==============================================
@@ -1136,6 +1137,43 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     // init initWishLists
     initWishLists(document)
+
+    /* ===============================================
+    filter first block
+    ===============================================*/
+
+
+    class FBFilter {
+        constructor() {
+
+            this.$el = document.querySelector('.fb-filter') || document
+            this.tabs = this.$el.querySelectorAll('[data-fb="tabs"] > li')
+            this.tabsContent = this.$el.querySelectorAll('[data-fb="tabs-content"] > div')
+
+            this.init()
+
+        }
+
+        init() {
+            this.addEvents()
+        }
+
+        changeTab(i) {
+
+            this.tabs.forEach((item, index) => item.classList.toggle('is-active', i == index))
+            this.tabsContent.forEach((item, index) => item.classList.toggle('is-active', i == index))
+
+        }
+
+        addEvents() {
+            this.tabs.forEach((item, i) => {
+                item.addEventListener('click', e => this.changeTab(i))
+            })
+        }
+
+    }
+
+    if (document.querySelector('.fb-filter')) new FBFilter()
 
 
 }); //dcl

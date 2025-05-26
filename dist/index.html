@@ -93,7 +93,8 @@
           <div class="first-block">
             <div class="first-block__bg">
               <picture>
-                <source srcset="/img/other/img-big.webp" type="image/webp"/><img src="/img/other/img-big.jpg" loading="lazy" alt="image"/>
+                <source srcset="/img/other/img-big.webp" type="image/webp" media="(min-width: 480px)"/>
+                <source srcset="/img/other/img-big.jpg" type="image/jpeg" media="(min-width: 480px)"/><img loading="eager" src="/img/other/img-big-480.jpg" alt="Image"/>
               </picture>
             </div>
             <div class="first-block__wrp">
@@ -113,12 +114,12 @@
                 <div class="first-block__filter">
                   <div class="fb-filter">
                     <div class="fb-filter__tab">
-                      <ul>
+                      <ul data-fb="tabs">
                         <li class="is-active"><span>Городская</span></li>
                         <li><span>Загородная</span></li>
                       </ul>
                     </div>
-                    <div class="fb-filter__tab-container">
+                    <div class="fb-filter__tab-container" data-fb="tabs-content">
                       <div class="fb-filter__tab-content is-active">
                         <form action="#" method="POST">
                           <div class="fb-filter__row">
@@ -234,14 +235,14 @@
                         <form action="#" method="POST">
                           <div class="fb-filter__row">
                             <div class="fb-filter__fields">
-                              <div class="fb-filter__field">
-                                <select placeholder="Покупка">
+                              <div class="fb-filter__field fb-filter__field--first">
+                                <select placeholder="Купить">
                                   <option>Покупка</option>
                                   <option>Аренда</option>
                                   <option>Субаренда</option>
                                 </select>
                               </div>
-                              <div class="fb-filter__field">
+                              <div class="fb-filter__field fb-filter__field--second">
                                 <select placeholder="Тип недвижимости">
                                   <option>Дома</option>
                                   <option>Особняки</option>
@@ -261,36 +262,52 @@
                                   <input type="text" placeholder="9 999 000 000"/>
                                 </div>
                               </div>
-                              <div class="fb-filter__field">
+                              <div class="fb-filter__field fb-filter__field--currency">
                                 <div class="select-currency">
                                   <div class="select-currency__item">
                                     <label>
-                                      <input type="checkbox" value="₽"/><span>₽ </span>
+                                      <input type="radio" name="currency" value="₽" checked="checked"/><span>₽ </span>
                                     </label>
                                   </div>
                                   <div class="select-currency__item">
                                     <label>
-                                      <input type="checkbox" value="$"/><span>$ </span>
+                                      <input type="radio" name="currency" value="$"/><span>$ </span>
                                     </label>
                                   </div>
                                   <div class="select-currency__item">
                                     <label>
-                                      <input type="checkbox" value="€"/><span>€ </span>
+                                      <input type="radio" name="currency" value="€"/><span>€ </span>
                                     </label>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="fb-filter__row">
-                            <div class="fb-filter__items">
-                              <div class="fb-filter__item">
+                          <div class="fb-filter__row fb-filter__row--second">
+                            <div class="fb-filter__fields">
+                              <div class="fb-filter__field">
+                                <select placeholder="Район" multiple="multiple">
+                                  <option>Арбат</option>
+                                  <option>Басманный</option>
+                                  <option>Замоскворечье</option>
+                                  <option>Красносельский</option>
+                                  <option>Мещанский</option>
+                                  <option>Пресненский</option>
+                                  <option>Таганский</option>
+                                  <option>Тверской</option>
+                                  <option>Хамовники</option>
+                                  <option>Якиманка</option>
+                                </select>
+                              </div>
+                              <div class="fb-filter__field">
                                 <div class="fb-filter-all"><span>Показать ещё фильтры</span>
                                   <svg width="16" height="16">
-                                    <use xlink:href="/img/sprites/sprite.svg#ic_arrow"></use>
+                                    <use xlink:href="/img/sprites/sprite.svg#ic_arrow-down"></use>
                                   </svg>
                                 </div>
                               </div>
+                            </div>
+                            <div class="fb-filter__items">
                               <div class="fb-filter__item">
                                 <button class="btn btn-line">
                                   <svg width="24" height="24">
@@ -316,6 +333,11 @@
                                 <li><a href="#">10 минут от города</a></li>
                                 <li><a href="#">Патриаршие пруды</a></li>
                                 <li><a href="#">Дом для большой семьи</a></li>
+                                <li><a href="#">С выходом к озеру </a></li>
+                                <li><a href="#">10 минут от города</a></li>
+                                <li><a href="#">Патриаршие пруды</a></li>
+                                <li><a href="#">Дом для большой семьи</a></li>
+                                <div class="fb-filter__more show-more-tag" data-isopen="tag-collections"><span></span></div>
                               </ul>
                             </div>
                           </div>

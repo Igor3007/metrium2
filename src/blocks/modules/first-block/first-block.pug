@@ -113,25 +113,24 @@ mixin tab-content-city
 
                     div(class="fb-filter__more show-more-tag" data-isopen="tag-collections"): span
 mixin tab-content-village
+
     form(action='#' method='POST')
         .fb-filter__row
             .fb-filter__fields
-
-                .fb-filter__field
+                .fb-filter__field.fb-filter__field--first
                     +select-field({
-                        placeholder: 'Покупка',
+                        placeholder: 'Купить',
                         option: [
                             'Покупка',
                             'Аренда',
                             'Субаренда',
                         ]
                     })
-
-                .fb-filter__field
+                .fb-filter__field.fb-filter__field--second
                     +select-field({
                         placeholder: 'Тип недвижимости',
                         option: [
-                            'Дома',
+                              'Дома',
                             'Особняки',
                             'Котеджи',
                             'Таунхаусы',
@@ -148,26 +147,49 @@ mixin tab-content-village
                         label до
                         input(type="text" placeholder="9 999 000 000")
 
-                .fb-filter__field
+                .fb-filter__field.fb-filter__field--currency
                     .select-currency
                         .select-currency__item
                             label
-                                input(type="checkbox" value="₽")
+                                input(type="radio" name="currency" value="₽" checked)
                                 span ₽ 
                         .select-currency__item
                             label
-                                input(type="checkbox" value="$")
+                                input(type="radio" name="currency" value="$")
                                 span $ 
                         .select-currency__item
                             label
-                                input(type="checkbox" value="€")
+                                input(type="radio" name="currency" value="€")
                                 span € 
-        .fb-filter__row
-            .fb-filter__items
-                .fb-filter__item
+
+                
+        .fb-filter__row.fb-filter__row--second
+            .fb-filter__fields
+                .fb-filter__field
+                    +select-field({
+                        multiple: true,
+                        placeholder: 'Район',
+                        option: [
+                            'Арбат',
+                            'Басманный',
+                            'Замоскворечье',
+                            'Красносельский',
+                            'Мещанский',
+                            'Пресненский',
+                            'Таганский',
+                            'Тверской',
+                            'Хамовники',
+                            'Якиманка',
+                        ]
+                    })
+
+                .fb-filter__field
                     .fb-filter-all
                         span Показать ещё фильтры
-                        +icons('#ic_arrow', 16) 
+                        +icons('#ic_arrow-down', 16) 
+
+            .fb-filter__items
+                    
                 .fb-filter__item
                     button.btn.btn-line
                         +icons('#ic_loc')
@@ -185,6 +207,14 @@ mixin tab-content-village
                     li: a(href='#') 10 минут от города
                     li: a(href='#') Патриаршие пруды
                     li: a(href='#') Дом для большой семьи
+                    li: a(href='#') С выходом к озеру 
+                    li: a(href='#') 10 минут от города
+                    li: a(href='#') Патриаршие пруды
+                    li: a(href='#') Дом для большой семьи
+
+                    div(class="fb-filter__more show-more-tag" data-isopen="tag-collections"): span
+ 
+ 
 
 mixin first-block
     section.section-first-block
@@ -192,7 +222,10 @@ mixin first-block
             .first-block-scroll-box
                 .first-block
                     .first-block__bg
-                        +picture('/img/other/img-big')
+                        picture
+                            source(srcset='/img/other/img-big.webp' type="image/webp" media='(min-width: 480px)')
+                            source(srcset='/img/other/img-big.jpg' type="image/jpeg" media='(min-width: 480px)')
+                            img( loading="eager" src='/img/other/img-big-480.jpg' alt='Image')
                     .first-block__wrp
                         .container
                             .first-block__title
@@ -210,10 +243,10 @@ mixin first-block
                             .first-block__filter
                                 .fb-filter
                                     .fb-filter__tab
-                                        ul
+                                        ul(data-fb="tabs")
                                             li.is-active: span Городская
                                             li: span Загородная
-                                    .fb-filter__tab-container
+                                    .fb-filter__tab-container(data-fb="tabs-content")
 
                                         .fb-filter__tab-content.is-active: +tab-content-city
                                         .fb-filter__tab-content: +tab-content-village
