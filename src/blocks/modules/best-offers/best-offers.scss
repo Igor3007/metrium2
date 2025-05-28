@@ -183,7 +183,9 @@
     }
 
     &__more {
-        @media screen and (max-width: $w480) {}
+        @media screen and (max-width: $w480) {
+            width: 100%;
+        }
     }
 
     &__nav {
