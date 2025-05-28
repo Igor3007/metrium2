@@ -4752,6 +4752,10 @@ footer {
   transform: rotate(45deg);
 }
 
+.fb-filter__selections.is-open ul {
+  max-height: none !important;
+}
+
 .fb-filter__selections ul {
   display: flex;
   flex-wrap: wrap;
@@ -4788,7 +4792,7 @@ footer {
 }
 
 .fb-filter__item .btn {
-  width: auto;
+  width: 100%;
   padding-left: 1.45em;
   padding-right: 1.45em;
 }
@@ -6728,6 +6732,10 @@ span[data-color=fff] {
   .faq-item {
     padding: 16px 0;
   }
+
+  .fb-filter__item .btn {
+    width: auto;
+  }
 }
 
 @media screen and (min-width: 576px) {
@@ -7152,10 +7160,6 @@ span[data-color=fff] {
 
   .fb-filter__field {
     width: calc(50% - 4px);
-  }
-
-  .fb-filter__selections.is-open ul {
-    max-height: none;
   }
 
   .fb-filter__selections ul {
