@@ -393,6 +393,16 @@
         cursor: pointer;
         transition: 0.3s ease;
 
+        @media screen and (min-width: $w1440) {
+            width: 56px;
+            height: 56px;
+        }
+
+        @media screen and (min-width: $w1200) {
+            width: 50px;
+            height: 50px;
+        }
+
         &:hover {
             background-color: var(--accent-11);
         }

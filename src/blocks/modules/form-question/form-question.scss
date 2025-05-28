@@ -93,6 +93,15 @@
                 border-top-right-radius: 0;
                 border-bottom-right-radius: 0;
                 margin-right: -16px;
+
+            }
+
+            @media screen and (min-width: $w1200) {
+                height: 50px;
+            }
+
+            @media screen and (min-width: $w1440) {
+                height: 56px;
             }
         }
 

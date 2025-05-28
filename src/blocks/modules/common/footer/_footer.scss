@@ -158,6 +158,14 @@ footer {
             font-size: 16px;
             transition: 0.3s ease;
 
+            @media screen and (min-width: $w1440) {
+                font-size: 16px;
+            }
+
+            @media screen and (min-width: $w1200) {
+                font-size: 14px;
+            }
+
             &:hover {
                 color: var(--accent-11);
             }

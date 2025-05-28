@@ -153,6 +153,16 @@
             width: 56px;
             height: 56px;
         }
+
+        @media screen and (min-width: $w1440) {
+            width: 56px;
+            height: 56px;
+        }
+
+        @media screen and (min-width: $w1200) {
+            width: 50px;
+            height: 50px;
+        }
     }
 
     &__title {
@@ -171,8 +181,13 @@
 
     &__tocat {
         & .btn {
-            @media screen and (min-width: $w992) {
+
+            @media screen and (min-width: $w1440) {
                 font-size: 18px;
+            }
+
+            @media screen and (min-width: $w992) {
+                font-size: 16px;
                 font-weight: 500;
                 letter-spacing: 2%;
                 padding-left: 1.8em;
@@ -231,6 +246,16 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
+
+            @media screen and (min-width: $w1440) {
+                width: 56px;
+                height: 56px;
+            }
+
+            @media screen and (min-width: $w1200) {
+                width: 50px;
+                height: 50px;
+            }
 
             &:hover {
                 background-color: var(--accent-11);
@@ -296,14 +321,20 @@
         & .bgimage {
 
             @include bgimage-contain;
-            width: 96px;
-            min-width: 96px;
-            height: 96px;
+            width: 72px;
+            min-width: 72px;
+            height: 72px;
             margin: auto;
             background-size: 60% auto;
             background-color: #fff;
             border-radius: 50%;
             transition: 0.3s ease;
+
+            @media screen and (min-width: $w1440) {
+                width: 96px;
+                min-width: 96px;
+                height: 96px;
+            }
         }
     }
 

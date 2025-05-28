@@ -418,6 +418,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 this.slider.go('>')
             })
 
+
+
             this.slider.on('mounted refresh', () => {
 
                 this.nextButton.removeAttribute('disabled')
@@ -434,6 +436,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
             this.slider.on('move', (newIndex, prevIndex, destIndex) => {
                 this.nextButton.removeAttribute('disabled')
                 this.prevButton.removeAttribute('disabled')
+
+                if (this.slider.options.type == 'loop') {
+                    return false
+                }
 
                 if (destIndex == 0) {
                     this.prevButton.setAttribute('disabled', 'disabled')
@@ -468,7 +474,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
             perMove: 1,
             flickMaxPages: 1,
             flickPower: 100,
-            fixedWidth: '164px'
+            fixedWidth: '164px',
+
+            breakpoints: {
+                1440: {
+                    fixedWidth: '120px',
+                },
+            }
 
         });
 
@@ -616,7 +628,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                 1360: {
                     gap: 24,
-                    fixedWidth: '510px'
+                    fixedWidth: '410px'
                 },
 
 
@@ -791,8 +803,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                 },
 
-                1200: {
-                    fixedWidth: '440px',
+                1376: {
+                    fixedWidth: '360px',
                     gap: 16,
                 },
 
@@ -850,7 +862,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
             padding: '5rem',
             focus: 'center',
             autoplay: true,
-            interval: 2000
+            interval: 2000,
+
+            breakpoints: {
+                1376: {
+                    fixedWidth: '170px',
+                },
+            }
 
         });
 
@@ -904,8 +922,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     perPage: 2,
                 },
 
-                1200: {
-                    fixedWidth: '512px',
+                1376: {
+                    fixedWidth: '440px',
                     gap: 16,
                 },
 

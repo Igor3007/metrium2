@@ -64,6 +64,11 @@
 
     @media screen and (min-width: $w1440) {
         padding: 40px 32px;
+        height: 325px;
+    }
+
+    @media screen and (min-width: $w1200) {
+        height: 300px;
     }
 
     &__main {

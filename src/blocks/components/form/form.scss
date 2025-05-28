@@ -336,6 +336,14 @@
          box-sizing: border-box;
          border-radius: 8px;
 
+         @media screen and (min-width: $w1440) {
+             height: 56px;
+         }
+
+         @media screen and (min-width: $w1200) {
+             height: 50px;
+         }
+
          & .select-options li {
              max-width: none;
          }

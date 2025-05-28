@@ -4,6 +4,10 @@
     @media screen and (min-width: $w1440) {
         padding: 126px 0 90px;
     }
+
+    @media screen and (min-width: $w992) {
+        padding: 60px 0 90px;
+    }
 }
 
 .special-offers {

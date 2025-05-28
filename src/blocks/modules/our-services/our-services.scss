@@ -5,6 +5,10 @@
     @media screen and (min-width: $w1440) {
         padding: 67px 0 30px;
     }
+
+    @media screen and (min-width: $w992) {
+        padding: 60px 0 30px;
+    }
 }
 
 .our-services {
@@ -32,11 +36,12 @@
         }
 
         @media screen and (min-width: $w1200) {
-            font-size: 20px;
+            font-size: 18px;
         }
 
         @media screen and (min-width: $w1440) {
             padding-bottom: 54px;
+            font-size: 20px;
         }
     }
 
@@ -94,10 +99,16 @@
         align-items: center;
         justify-content: center;
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: $w1440) {
             min-width: 160px;
             width: 160px;
             height: 160px;
+        }
+
+        @media screen and (min-width: $w992) {
+            min-width: 110px;
+            width: 110px;
+            height: 110px;
         }
 
         & .bgimage {
@@ -105,9 +116,14 @@
             height: 52px;
             @include bgimage-contain;
 
-            @media screen and (min-width: $w992) {
+            @media screen and (min-width: $w1440) {
                 width: 72px;
                 height: 72px;
+            }
+
+            @media screen and (min-width: $w992) {
+                width: 60px;
+                height: 60px;
             }
         }
     }

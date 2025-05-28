@@ -45,6 +45,7 @@
         @media screen and (min-width: $w992) {
             background-color: #fff;
             margin-bottom: 36px;
+            border-radius: 17px;
         }
 
         @media screen and (min-width: $w1200) {
@@ -95,9 +96,9 @@
                     }
 
                     @media screen and (min-width: $w1200) {
-                        padding: 18px 32px;
+                        padding: 16px 32px;
                         border-radius: 0;
-                        font-size: 18px;
+                        font-size: 16px;
                         letter-spacing: 2%;
                         font-weight: 500;
                         background-color: var(--bg);
@@ -106,6 +107,11 @@
                             background-color: var(--accent-13);
                             color: var(--text-1);
                         }
+                    }
+
+                    @media screen and (min-width: $w1440) {
+                        padding: 18px 32px;
+                        font-size: 18px;
                     }
                 }
 

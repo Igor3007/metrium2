@@ -25,6 +25,14 @@ select {
     min-width: rem(150);
     height: $select-height;
 
+    @media screen and (min-width: $w1440) {
+        height: $select-height;
+    }
+
+    @media screen and (min-width: $w1200) {
+        height: 50px;
+    }
+
 
     &--selected {
         & .select-styled span {

@@ -2114,7 +2114,7 @@ select {
 }
 
 .btn svg:first-child {
-  margin-right: 1em;
+  margin-right: 0.4em;
 }
 
 .btn svg:last-child {
@@ -5140,9 +5140,9 @@ footer {
   background-position: center;
   background-repeat: no-repeat;
   display: block;
-  width: 96px;
-  min-width: 96px;
-  height: 96px;
+  width: 72px;
+  min-width: 72px;
+  height: 72px;
   margin: auto;
   background-size: 60% auto;
   background-color: #fff;
@@ -5564,7 +5564,7 @@ footer {
 .company-about__desc .formated-text p {
   font-size: 18px;
   letter-spacing: 2%;
-  margin: 14px 0;
+  margin: 8px 0;
 }
 
 .company-about__desc .formated-text h2 {
@@ -6111,10 +6111,6 @@ footer {
   font-size: 14px;
   color: var(--text-2);
   padding-bottom: 3px;
-}
-
-.minicard__prop ul li span {
-  font-size: 16px;
 }
 
 .minicard__price {
@@ -6821,7 +6817,7 @@ span[data-color=fff] {
   }
 
   body.is-fixed-header .header {
-    padding: 20px 20px;
+    padding: 14px 14px;
     border-radius: 0 0 24px 24px;
   }
 
@@ -7046,10 +7042,6 @@ span[data-color=fff] {
     padding: 10px 0 34px;
   }
 
-  .minicard__price > div {
-    font-size: 28px;
-  }
-
   .minicard:hover .minicard__prop {
     opacity: 0;
   }
@@ -7258,7 +7250,8 @@ span[data-color=fff] {
   }
 
   .card-collection__title {
-    font-size: 24px;
+    font-size: 18px;
+    line-height: 140%;
   }
 
   .bottom-question {
@@ -7377,8 +7370,8 @@ span[data-color=fff] {
   }
 
   .header__burger {
-    width: 56px;
-    height: 56px;
+    width: 50px;
+    height: 50px;
   }
 
   .header__left {
@@ -7403,8 +7396,8 @@ span[data-color=fff] {
   }
 
   .header__wishlist a {
-    width: 56px;
-    height: 56px;
+    width: 50px;
+    height: 50px;
   }
 
   .header__wishlist {
@@ -7420,7 +7413,7 @@ span[data-color=fff] {
   .header__phone a {
     font-size: 18px;
     font-weight: 500;
-    letter-spacing: 4%;
+    letter-spacing: 6%;
     color: #fff;
     position: relative;
   }
@@ -7487,7 +7480,7 @@ span[data-color=fff] {
   }
 
   .card-categories__tocat .btn {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     letter-spacing: 2%;
     padding-left: 1.8em;
@@ -7506,11 +7499,20 @@ span[data-color=fff] {
   .best-offers__tabs {
     background-color: #fff;
     margin-bottom: 36px;
+    border-radius: 17px;
+  }
+
+  .section-special-offers {
+    padding: 60px 0 90px;
   }
 
   .special-offers__title {
     font-size: 36px;
     line-height: 112%;
+  }
+
+  .section-our-services {
+    padding: 60px 0 30px;
   }
 
   .our-services__title {
@@ -7530,14 +7532,14 @@ span[data-color=fff] {
   }
 
   .card-services__icon {
-    min-width: 160px;
-    width: 160px;
-    height: 160px;
+    min-width: 110px;
+    width: 110px;
+    height: 110px;
   }
 
   .card-services__icon .bgimage {
-    width: 72px;
-    height: 72px;
+    width: 60px;
+    height: 60px;
   }
 
   .card-services__desc {
@@ -7546,7 +7548,8 @@ span[data-color=fff] {
 
   .company-about__wrp {
     display: flex;
-    gap: 32px;
+    gap: 60px;
+    padding: 50px 50px;
   }
 
   .partners__title {
@@ -7658,10 +7661,22 @@ span[data-color=fff] {
     height: 56px;
   }
 
+  .af-select {
+    height: 50px;
+  }
+
   .btn {
-    height: 56px;
-    font-size: 18px;
-    padding: 0.8em 2.05em 0.85em 2.05em;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .form .af-select {
+    height: 50px;
   }
 
   .header {
@@ -7673,7 +7688,7 @@ span[data-color=fff] {
   }
 
   .header__logo span {
-    height: 56px;
+    height: 48px;
   }
 
   .header__nav {
@@ -7707,8 +7722,17 @@ span[data-color=fff] {
     width: 100%;
   }
 
+  .icon-burger {
+    width: 21px;
+    height: 21px;
+  }
+
   .footer__row {
     display: flex;
+  }
+
+  .footer__link a {
+    font-size: 14px;
   }
 
   .footer__link ul {
@@ -7758,12 +7782,12 @@ span[data-color=fff] {
   }
 
   .fb-filter__tab-container {
-    padding: 32px;
+    padding: 24px;
     border-radius: 0px 15px 15px 15px;
   }
 
   .fb-filter__row {
-    padding-bottom: 19px;
+    padding-bottom: 8px;
   }
 
   .fb-filter__row:last-child {
@@ -7779,7 +7803,7 @@ span[data-color=fff] {
   }
 
   .fb-filter__row--second .fb-filter__field {
-    width: 324px;
+    width: calc(25vw - 98px);
     display: flex;
     align-items: center;
   }
@@ -7797,15 +7821,15 @@ span[data-color=fff] {
   }
 
   .fb-filter__selections {
-    padding-top: 34px;
+    padding-top: 24px;
     position: relative;
   }
 
   .fb-filter__selections::before {
     content: '';
     position: absolute;
-    left: -32px;
-    right: -32px;
+    left: -24px;
+    right: -24px;
     top: 0;
     background-color: #eee;
     height: 1px;
@@ -7818,14 +7842,15 @@ span[data-color=fff] {
   }
 
   .fb-filter-all {
-    height: 56px;
-    justify-content: flex-start;
-    font-size: 18px;
-    letter-spacing: 2%;
+    height: 50px;
   }
 
   .fb-advantages__list {
     padding: 49px 0;
+  }
+
+  .fb-advantages__item {
+    flex-basis: 280px;
   }
 
   .fb-card-adv {
@@ -7835,7 +7860,7 @@ span[data-color=fff] {
   }
 
   .fb-card-adv__title {
-    font-size: 36px;
+    font-size: 28px;
     padding-bottom: 16px;
   }
 
@@ -7843,9 +7868,24 @@ span[data-color=fff] {
     letter-spacing: 2%;
   }
 
+  .price-input {
+    height: 50px;
+  }
+
   .select-currency__item {
-    max-width: 56px;
-    width: 56px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .card-categories__tosub {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card-categories__nav-prev,
+  .card-categories__nav-next {
+    width: 50px;
+    height: 50px;
   }
 
   .best-offers__tabs {
@@ -7869,9 +7909,9 @@ span[data-color=fff] {
   }
 
   .best-offers__tabs ul li span {
-    padding: 18px 32px;
+    padding: 16px 32px;
     border-radius: 0;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 2%;
     font-weight: 500;
     background-color: var(--bg);
@@ -7884,6 +7924,12 @@ span[data-color=fff] {
 
   .best-offers__slider {
     padding-bottom: 60px;
+  }
+
+  .best-offers__nav-prev,
+  .best-offers__nav-next {
+    width: 50px;
+    height: 50px;
   }
 
   .best-offers .toggle-currency {
@@ -7900,8 +7946,14 @@ span[data-color=fff] {
     padding-bottom: 50px;
   }
 
+  .special-offers__nav-prev,
+  .special-offers__nav-next {
+    width: 50px;
+    height: 50px;
+  }
+
   .our-services__desc {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .our-services__list {
@@ -7921,8 +7973,40 @@ span[data-color=fff] {
     padding-bottom: 50px;
   }
 
+  .partners__nav-prev,
+  .partners__nav-next {
+    width: 50px;
+    height: 50px;
+  }
+
   .our-awards__title {
     padding-bottom: 48px;
+  }
+
+  .our-awards__nav-prev,
+  .our-awards__nav-next {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card-awards {
+    height: 300px;
+  }
+
+  .form-question__form input {
+    height: 50px;
+  }
+
+  .minicard__prop ul li small {
+    font-size: 13px;
+  }
+
+  .minicard__prop ul li span {
+    font-size: 14px;
+  }
+
+  .minicard__price > div {
+    font-size: 25px;
   }
 }
 
@@ -7977,8 +8061,30 @@ span[data-color=fff] {
     font-size: 18px;
   }
 
+  .af-select {
+    height: 56px;
+  }
+
+  .btn {
+    height: 56px;
+    font-size: 18px;
+    padding: 0.8em 2.05em 0.85em 2.05em;
+  }
+
+  .btn svg:first-child {
+    margin-right: 1em;
+  }
+
+  .btn svg:last-child {
+    margin-left: 0.4em;
+  }
+
   .form__item > .form__item {
     flex-direction: row;
+  }
+
+  .form .af-select {
+    height: 56px;
   }
 
   .faq-item {
@@ -7998,6 +8104,30 @@ span[data-color=fff] {
     padding: 15px 0;
   }
 
+  body.is-fixed-header .header {
+    padding: 20px 20px;
+    border-radius: 0 0 24px 24px;
+  }
+
+  .header__burger {
+    width: 56px;
+    height: 56px;
+  }
+
+  .header__logo span {
+    height: 56px;
+  }
+
+  .header__wishlist a {
+    width: 56px;
+    height: 56px;
+  }
+
+  .icon-burger {
+    width: 24px;
+    height: 24px;
+  }
+
   footer {
     padding: 62px 0;
   }
@@ -8015,6 +8145,10 @@ span[data-color=fff] {
 
   .footer__col ul li {
     padding: 9.5px 0;
+  }
+
+  .footer__link a {
+    font-size: 16px;
   }
 
   .footer__about p:first-child {
@@ -8042,6 +8176,53 @@ span[data-color=fff] {
 
   .first-block__wrp {
     padding-bottom: 15px;
+  }
+
+  .fb-filter__tab-container {
+    padding: 32px;
+    border-radius: 0px 15px 15px 15px;
+  }
+
+  .fb-filter__row {
+    padding-bottom: 19px;
+  }
+
+  .fb-filter__row--second .fb-filter__field {
+    width: 324px;
+  }
+
+  .fb-filter__selections {
+    padding-top: 34px;
+  }
+
+  .fb-filter__selections::before {
+    left: -32px;
+    right: -32px;
+  }
+
+  .fb-filter-all {
+    height: 56px;
+    justify-content: flex-start;
+    font-size: 18px;
+    letter-spacing: 2%;
+  }
+
+  .fb-advantages__item {
+    flex-basis: 360px;
+  }
+
+  .fb-card-adv__title {
+    font-size: 36px;
+  }
+
+  .price-input {
+    height: 56px;
+  }
+
+  .select-currency__item {
+    height: 56px;
+    max-width: 56px;
+    width: 56px;
   }
 
   .section-all-categories {
@@ -8075,13 +8256,34 @@ span[data-color=fff] {
     letter-spacing: 4%;
   }
 
+  .card-categories__tosub {
+    width: 56px;
+    height: 56px;
+  }
+
   .card-categories__title {
     font-size: 28px;
     padding-bottom: 36px;
   }
 
+  .card-categories__tocat .btn {
+    font-size: 18px;
+  }
+
   .card-categories__price {
     letter-spacing: 2%;
+  }
+
+  .card-categories__nav-prev,
+  .card-categories__nav-next {
+    width: 56px;
+    height: 56px;
+  }
+
+  .sub-cat-card__icons .bgimage {
+    width: 96px;
+    min-width: 96px;
+    height: 96px;
   }
 
   .section-best-offers {
@@ -8096,12 +8298,29 @@ span[data-color=fff] {
     padding-bottom: 34px;
   }
 
+  .best-offers__tabs ul li span {
+    padding: 18px 32px;
+    font-size: 18px;
+  }
+
+  .best-offers__nav-prev,
+  .best-offers__nav-next {
+    width: 56px;
+    height: 56px;
+  }
+
   .section-special-offers {
     padding: 126px 0 90px;
   }
 
   .special-offers__title {
     font-size: 48px;
+  }
+
+  .special-offers__nav-prev,
+  .special-offers__nav-next {
+    width: 56px;
+    height: 56px;
   }
 
   .section-our-services {
@@ -8114,6 +8333,18 @@ span[data-color=fff] {
 
   .our-services__desc {
     padding-bottom: 54px;
+    font-size: 20px;
+  }
+
+  .card-services__icon {
+    min-width: 160px;
+    width: 160px;
+    height: 160px;
+  }
+
+  .card-services__icon .bgimage {
+    width: 72px;
+    height: 72px;
   }
 
   .company-about__wrp {
@@ -8125,12 +8356,25 @@ span[data-color=fff] {
     font-size: 48px;
   }
 
+  .partners__nav-prev,
+  .partners__nav-next {
+    width: 56px;
+    height: 56px;
+  }
+
   .our-awards__title {
     font-size: 48px;
   }
 
+  .our-awards__nav-prev,
+  .our-awards__nav-next {
+    width: 56px;
+    height: 56px;
+  }
+
   .card-awards {
     padding: 40px 32px;
+    height: 325px;
   }
 
   .section-form-question {
@@ -8144,6 +8388,26 @@ span[data-color=fff] {
   .form-question__desc {
     font-size: 16px;
     max-width: 650px;
+  }
+
+  .form-question__form input {
+    height: 56px;
+  }
+
+  .minicard__prop ul li small {
+    font-size: 14px;
+  }
+
+  .minicard__prop ul li span {
+    font-size: 16px;
+  }
+
+  .minicard__price > div {
+    font-size: 28px;
+  }
+
+  .card-collection__title {
+    font-size: 24px;
   }
 
   .page__back {
@@ -8172,14 +8436,24 @@ span[data-color=fff] {
   }
 }
 
+@media screen and (max-width: 1440.98px) {
+  body.is-fixed-header .header__wishlist svg {
+    width: 21px;
+  }
+
+  .company-about__desc .formated-text p {
+    font-size: 16px;
+  }
+}
+
 @media screen and (max-width: 1376px) {
   .header__button .btn {
     font-size: 0;
     padding-left: 5px;
     padding-right: 5px;
     min-width: auto;
-    width: 56px;
-    height: 56px;
+    width: 50px;
+    height: 50px;
   }
 }
 
@@ -8361,6 +8635,7 @@ span[data-color=fff] {
   .company-about__desc .formated-text p {
     font-size: 14px;
     line-height: 142%;
+    margin: 14px 0;
   }
 
   .company-about__desc .formated-text h2 {
@@ -8423,6 +8698,12 @@ span[data-color=fff] {
 
   .company-about__btn .btn {
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1440.98px) {
+  .company-about__desc .formated-text h2 {
+    margin-bottom: 20px;
   }
 }
 

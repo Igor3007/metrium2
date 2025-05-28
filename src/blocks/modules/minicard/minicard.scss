@@ -312,10 +312,25 @@
                     font-size: 14px;
                     color: var(--text-2);
                     padding-bottom: 3px;
+
+                    @media screen and (min-width: $w1440) {
+                        font-size: 14px;
+                    }
+
+                    @media screen and (min-width: $w1200) {
+                        font-size: 13px;
+                    }
                 }
 
                 & span {
-                    font-size: 16px;
+
+                    @media screen and (min-width: $w1440) {
+                        font-size: 16px;
+                    }
+
+                    @media screen and (min-width: $w1200) {
+                        font-size: 14px;
+                    }
 
                 }
             }
@@ -343,8 +358,12 @@
             color: var(--accent);
             letter-spacing: 2%;
 
-            @media screen and (min-width: $w576) {
+            @media screen and (min-width: $w1440) {
                 font-size: 28px;
+            }
+
+            @media screen and (min-width: $w1200) {
+                font-size: 25px;
             }
 
             &.is-active {

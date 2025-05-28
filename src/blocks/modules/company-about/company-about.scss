@@ -15,7 +15,8 @@
 
         @media screen and (min-width: $w992) {
             display: flex;
-            gap: 32px;
+            gap: 60px;
+            padding: 50px 50px;
         }
 
         @media screen and (min-width: $w1440) {
@@ -53,18 +54,25 @@
             & p {
                 font-size: 18px;
                 letter-spacing: 2%;
-                margin: 14px 0;
+                margin: 8px 0;
 
                 @media screen and (max-width: $w576) {
                     font-size: 14px;
                     line-height: 142%;
+                    margin: 14px 0;
+                }
+
+                @media screen and (max-width: $w1440) {
+                    font-size: 16px;
                 }
             }
 
             & h2 {
                 margin-bottom: 0;
 
-
+                @media screen and (min-width: $w760) and (max-width: $w1440) {
+                    margin-bottom: 20px;
+                }
 
                 @media screen and (max-width: $w576) {
                     line-height: 160%;
