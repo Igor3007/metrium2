@@ -516,14 +516,19 @@ select {
                     }
 
                     &:hover {
-                        &::after {
-                            background-color: var(--accent-11);
-                            box-shadow: 0 0 0 2px var(--accent-11) inset;
+
+                        @media screen and (min-width: $w576) {
+                            &::after {
+                                background-color: var(--accent-11);
+                                box-shadow: 0 0 0 2px var(--accent-11) inset;
+                            }
+
+                            &::before {
+                                background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMSAxaDEwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+);
+                            }
                         }
 
-                        &::before {
-                            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMSAxaDEwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+);
-                        }
+
                     }
                 }
 

@@ -445,7 +445,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     this.prevButton.setAttribute('disabled', 'disabled')
                 }
 
-                if (this.slider.length == (destIndex + this.slider.options.perPage)) {
+                let slideTotal = (destIndex + this.slider.options.perPage)
+
+                if (this.slider.options.offsetPagination) {
+                    slideTotal = slideTotal + this.slider.options.offsetPagination
+                }
+
+                if (this.slider.length == slideTotal) {
                     this.nextButton.setAttribute('disabled', 'disabled')
                 }
 
@@ -603,32 +609,36 @@ document.addEventListener('DOMContentLoaded', function (event) {
             perMove: 1,
             flickMaxPages: 1,
             flickPower: 100,
+            offsetPagination: 2,
             breakpoints: {
                 480: {
                     gap: 8,
                     fixedWidth: '87.9vw',
-                    pagination: true
+                    pagination: true,
                 },
 
                 640: {
                     gap: 8,
                     fixedWidth: '400px',
-                    pagination: true
+                    pagination: true,
                 },
 
                 767: {
                     gap: 8,
-                    fixedWidth: '440px'
+                    fixedWidth: '440px',
+                    offsetPagination: false
                 },
 
                 992: {
                     gap: 12,
-                    fixedWidth: '440px'
+                    fixedWidth: '440px',
+                    offsetPagination: false
                 },
 
                 1360: {
                     gap: 24,
-                    fixedWidth: '410px'
+                    fixedWidth: '410px',
+                    offsetPagination: false
                 },
 
 
@@ -775,12 +785,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
             fixedWidth: '440px',
             flickMaxPages: 1,
             flickPower: 100,
+            offsetPagination: 2,
 
             breakpoints: {
                 480: {
                     fixedWidth: '85vw',
                     gap: 8,
                     pagination: true,
+                    offsetPagination: 0
 
                 },
 
@@ -788,24 +800,28 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     fixedWidth: '400px',
                     gap: 8,
                     pagination: true,
+                    offsetPagination: 0
 
                 },
 
                 767: {
                     fixedWidth: '360px',
                     gap: 8,
+                    offsetPagination: 2
 
                 },
 
                 992: {
                     fixedWidth: '360px',
                     gap: 12,
+                    offsetPagination: 2
 
                 },
 
                 1376: {
                     fixedWidth: '360px',
                     gap: 16,
+                    offsetPagination: 2
                 },
 
 

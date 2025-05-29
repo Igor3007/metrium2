@@ -85,6 +85,10 @@ body.is-fixed-header {
 
         & .btn-gold {
             background-color: var(--accent-11);
+
+            &::before {
+                background-color: var(--accent);
+            }
         }
 
         & .hover-ripple {

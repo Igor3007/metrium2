@@ -1273,15 +1273,6 @@ select {
   box-shadow: 0 0 0 2px var(--accent) inset;
 }
 
-.af-select--multiple .select-options li.active .af-check-multiple:hover::after {
-  background-color: var(--accent-11);
-  box-shadow: 0 0 0 2px var(--accent-11) inset;
-}
-
-.af-select--multiple .select-options li.active .af-check-multiple:hover::before {
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMSAxaDEwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+);
-}
-
 .af-select--multiple .select-options li:hover .af-check-multiple::after {
   box-shadow: 0 0 0 2px var(--accent) inset;
 }
@@ -4319,6 +4310,10 @@ body.is-fixed-header .header .btn-gold {
   background-color: var(--accent-11);
 }
 
+body.is-fixed-header .header .btn-gold::before {
+  background-color: var(--accent);
+}
+
 body.is-fixed-header .header .hover-ripple {
   transition: 0.5s ease;
 }
@@ -6772,6 +6767,15 @@ span[data-color=fff] {
   .sp-block-table table th:first-child,
   .sp-block-table table td:first-child {
     font-weight: 700;
+  }
+
+  .af-select--multiple .select-options li.active .af-check-multiple:hover::after {
+    background-color: var(--accent-11);
+    box-shadow: 0 0 0 2px var(--accent-11) inset;
+  }
+
+  .af-select--multiple .select-options li.active .af-check-multiple:hover::before {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMSAxaDEwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+);
   }
 
   .checkbox:hover .checkbox__text {
