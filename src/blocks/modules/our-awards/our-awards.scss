@@ -92,7 +92,11 @@
 
     &__year {
         font-weight: 500;
-        font-size: 20px;
+        font-size: 16px;
+
+        @media screen and (min-width: $w992) {
+            font-size: 20px;
+        }
     }
 
     &__image {
