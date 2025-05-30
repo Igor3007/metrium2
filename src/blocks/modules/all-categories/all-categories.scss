@@ -127,6 +127,10 @@
         letter-spacing: 2%;
         font-size: 16px;
         font-weight: 500;
+
+        @media screen and (min-width: $w1440) {
+            font-size: 20px;
+        }
     }
 
     &__tosub {

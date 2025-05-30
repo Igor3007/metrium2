@@ -91,6 +91,12 @@ body:not(.is-scroll-page) {
                 transition: 0.4s ease;
                 font-family: inherit;
                 opacity: 0;
+
+                @media screen and (max-width: $w480) {
+                    font-size: 16px;
+                    opacity: 1;
+                    font-family: var(--font-forma-djr) !important;
+                }
             }
         }
     }
@@ -471,7 +477,7 @@ body:not(.is-scroll-page) {
 
 .fb-filter-all {
 
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     color: var(--accent-11);
     display: flex;
@@ -491,6 +497,8 @@ body:not(.is-scroll-page) {
 
     @media screen and (min-width: $w1200) {
         height: 50px;
+        font-size: 16px;
+        margin-left: 0;
     }
 
     &:hover {

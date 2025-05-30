@@ -38,6 +38,11 @@
                 white-space: nowrap;
                 color: #fff;
                 line-height: 100%;
+                font-size: 14px;
+
+                @media screen and (min-width: $w1440) {
+                    font-size: 15px;
+                }
             }
         }
     }

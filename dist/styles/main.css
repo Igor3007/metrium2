@@ -2040,7 +2040,7 @@ select {
   white-space: nowrap;
   transition: 0.3s cubic-bezier(0.1, 0.82, 0.25, 1);
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 18px;
   text-align: center;
   background-color: var(--accent);
@@ -2056,27 +2056,6 @@ select {
 .btn svg {
   position: relative;
   z-index: 2;
-}
-
-.btn::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  transition: 0.5s ease;
-  width: 0px;
-  height: 100%;
-  background-color: var(--accent-11);
-  z-index: 1;
-  opacity: 0.1;
-}
-
-.btn:hover::before {
-  width: 200%;
-  height: 200%;
-  transition: 0.5s ease 0.05s;
-  opacity: 1;
 }
 
 .btn:active {
@@ -2117,10 +2096,6 @@ select {
   color: var(--accent);
 }
 
-.btn.btn-white:hover {
-  color: var(--accent);
-}
-
 .btn.btn-white:disabled {
   color: #B8B8B8;
   border-color: var(--color-bg-1);
@@ -2131,18 +2106,9 @@ select {
   color: #fff;
 }
 
-.btn.btn-black:hover {
-  background-color: var(--main);
-}
-
 .btn.btn-light {
   background-color: var(--color-bg-2);
   color: var(--accent);
-}
-
-.btn.btn-light:hover {
-  color: var(--accent);
-  background-color: var(--color-bg-3);
 }
 
 .btn.btn-light:disabled {
@@ -2163,22 +2129,6 @@ select {
 
 .btn.btn-line::before {
   background-color: var(--accent-11);
-}
-
-.btn.btn-line:hover {
-  border-color: var(--accent-11);
-  color: #fff;
-  background-color: transparent;
-}
-
-.btn.btn-line:hover::before {
-  width: 200%;
-  height: 200%;
-  transition: 0.4s ease-in 0.05s;
-}
-
-.btn.btn-line:hover svg {
-  fill: #fff;
 }
 
 .btn.btn-full {
@@ -2203,14 +2153,6 @@ select {
 
 .btn.btn-green::before {
   background-color: var(--accent);
-}
-
-.btn.btn-green:hover {
-  color: #fff;
-}
-
-.btn.btn-green:hover svg {
-  fill: #fff;
 }
 
 .btn.btn-xsmall {
@@ -4276,6 +4218,11 @@ body.is-fixed-header .header a {
   color: var(--text-1);
 }
 
+body.is-fixed-header .header__phone a,
+body.is-fixed-header .header__nav a {
+  font-weight: 500;
+}
+
 body.is-fixed-header .header__phone a::before,
 body.is-fixed-header .header__nav a::before {
   background-color: var(--accent-11);
@@ -4821,7 +4768,7 @@ footer {
 }
 
 .fb-filter-all {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--accent-11);
   display: flex;
@@ -5887,6 +5834,7 @@ footer {
   white-space: nowrap;
   color: #fff;
   line-height: 100%;
+  font-size: 14px;
 }
 
 .minicard__fullscreen {
@@ -6776,6 +6724,64 @@ span[data-color=fff] {
 
   .af-select--multiple .select-options li.active .af-check-multiple:hover::before {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMSAxaDEwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+);
+  }
+
+  .btn::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: 0.5s ease;
+    width: 0px;
+    height: 100%;
+    background-color: var(--accent-11);
+    z-index: 1;
+    opacity: 0.1;
+  }
+
+  .btn:hover::before {
+    width: 200%;
+    height: 200%;
+    transition: 0.5s ease 0.05s;
+    opacity: 1;
+  }
+
+  .btn.btn-white:hover {
+    color: var(--accent);
+  }
+
+  .btn.btn-black:hover {
+    background-color: var(--main);
+  }
+
+  .btn.btn-light:hover {
+    color: var(--accent);
+    background-color: var(--color-bg-3);
+  }
+
+  .btn.btn-line:hover {
+    border-color: var(--accent-11);
+    color: #fff;
+    background-color: transparent;
+  }
+
+  .btn.btn-line:hover::before {
+    width: 200%;
+    height: 200%;
+    transition: 0.4s ease-in 0.05s;
+  }
+
+  .btn.btn-line:hover svg {
+    fill: #fff;
+  }
+
+  .btn.btn-green:hover {
+    color: #fff;
+  }
+
+  .btn.btn-green:hover svg {
+    fill: #fff;
   }
 
   .checkbox:hover .checkbox__text {
@@ -7713,6 +7719,7 @@ span[data-color=fff] {
     color: #fff;
     letter-spacing: 2%;
     position: relative;
+    font-weight: 500;
   }
 
   .header__nav ul a::before {
@@ -7851,6 +7858,8 @@ span[data-color=fff] {
 
   .fb-filter-all {
     height: 50px;
+    font-size: 16px;
+    margin-left: 0;
   }
 
   .fb-advantages__list {
@@ -8264,6 +8273,10 @@ span[data-color=fff] {
     letter-spacing: 4%;
   }
 
+  .card-categories__offers {
+    font-size: 20px;
+  }
+
   .card-categories__tosub {
     width: 56px;
     height: 56px;
@@ -8400,6 +8413,10 @@ span[data-color=fff] {
 
   .form-question__form input {
     height: 56px;
+  }
+
+  .minicard__stickers ul span {
+    font-size: 15px;
   }
 
   .minicard__prop ul li small {
@@ -8694,6 +8711,12 @@ span[data-color=fff] {
 
   .pagination__more {
     padding-bottom: 24px;
+  }
+
+  .first-block__title h1 span {
+    font-size: 16px;
+    opacity: 1;
+    font-family: var(--font-forma-djr) !important;
   }
 
   .best-offers__tabs {
