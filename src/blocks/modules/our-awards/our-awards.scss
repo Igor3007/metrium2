@@ -83,7 +83,11 @@
 
     &__desc {
         margin-top: auto;
-        font-size: 16px;
+        font-size: 14px;
+
+        @media screen and (min-width: $w992) {
+            font-size: 16px;
+        }
     }
 
     &__year {

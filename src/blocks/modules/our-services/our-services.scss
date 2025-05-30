@@ -112,8 +112,8 @@
         }
 
         & .bgimage {
-            width: 52px;
-            height: 52px;
+            width: 72px;
+            height: 72px;
             @include bgimage-contain;
 
             @media screen and (min-width: $w1440) {

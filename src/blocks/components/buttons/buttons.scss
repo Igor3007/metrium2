@@ -22,6 +22,7 @@
     overflow: hidden;
     transition: 0.3s ease;
     cursor: pointer;
+    line-height: 140%;
 
     @media screen and (min-width: $w1200) {
         height: 50px;

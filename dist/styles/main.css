@@ -2050,6 +2050,7 @@ select {
   overflow: hidden;
   transition: 0.3s ease;
   cursor: pointer;
+  line-height: 140%;
 }
 
 .btn span,
@@ -5411,8 +5412,8 @@ footer {
 }
 
 .card-services__icon .bgimage {
-  width: 52px;
-  height: 52px;
+  width: 72px;
+  height: 72px;
   position: relative;
   background-size: contain;
   background-position: center;
@@ -5707,7 +5708,7 @@ footer {
 
 .card-awards__desc {
   margin-top: auto;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .card-awards__year {
@@ -7583,6 +7584,10 @@ span[data-color=fff] {
   .our-awards__bottom {
     display: flex;
     justify-content: space-between;
+  }
+
+  .card-awards__desc {
+    font-size: 16px;
   }
 
   .form-question {
