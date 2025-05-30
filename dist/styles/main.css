@@ -7865,6 +7865,8 @@ span[data-color=fff] {
     height: 50px;
     font-size: 16px;
     margin-left: 0;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .fb-advantages__list {
