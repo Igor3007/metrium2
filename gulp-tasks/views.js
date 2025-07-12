@@ -3,12 +3,14 @@
 import {paths} from "./config.js";
 import gulp from "gulp";
 import pug from "gulp-pug";
-import replace from "gulp-replace";
 import browserSync from "browser-sync";
+import gulpData from "gulp-data";
+import {readFileSync} from "fs";
 // import gulpHtmlClean from "gulp-htmlclean";
 
 export const viewsDev = () => (
     gulp.src(paths.views.src)
+        .pipe(gulpData((file) => (JSON.parse(readFileSync(paths.data.src)))))
         .pipe(pug())
         .pipe(gulp.dest(paths.views.dist))
         .pipe(browserSync.reload({stream: true}))
@@ -19,8 +21,6 @@ export const viewsProd = () => (
         .pipe(pug({
             pretty: true
         }))
-        // .pipe(replace(".css", ".min.css"))
-        // .pipe(replace(".js", ".min.js"))
         // .pipe(gulpHtmlClean())
         .pipe(gulp.dest(paths.views.dist))
 );

@@ -17,6 +17,8 @@
      --text-1: #1A1A1A;
      --text-2: #535968;
      --text-3: #8DA4A8;
+  --ink: #{vars.$color-text-1};
+  --paper: #{vars.$color-bg-1};
  }
 
  html,

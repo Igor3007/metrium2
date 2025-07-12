@@ -1,7 +1,7 @@
 .container
-    .header
+    .header.header_white
         .header__left
-            .header__burger.hover-ripple(data-menu="open") 
+            .header__burger.hover-ripple(data-menu="open")
                 .icon-burger
                     span
                     span
@@ -9,11 +9,10 @@
                 nav
                     ul
                         each item in mainNav
-                            li(class={'is-active': item.url === pageUrl}): a(href="")= item.title
+                            li(class={'is-active': item.url===pageUrl}): a(href="")= item.title
 
         .header__logo
-            a(href='#')
-                span(style="background-image: url('/img/common/logo.svg')")
+            a(href='/')
                 span.logo-color(style="background-image: url('/img/common/logo-color.svg')")
         .header__right
             .header__phone
