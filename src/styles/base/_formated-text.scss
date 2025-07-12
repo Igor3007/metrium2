@@ -1,51 +1,53 @@
+@use "../vars";
+
 .formated-text {
 
     & h1 {
-        @include font-h1;
         margin-bottom: 0.7em;
         margin-top: 1em;
+        @include vars.font-h1;
 
-        @media screen and (max-width: $w760) {
+        @media screen and (max-width: vars.$w760) {
             font-size: 28px;
         }
     }
 
     & h2 {
-        @include font-h2;
         margin-bottom: 0.7em;
         margin-top: 1.2em;
+        @include vars.font-h2;
 
-        @media screen and (max-width: $w760) {
+        @media screen and (max-width: vars.$w760) {
             font-size: 26px;
         }
     }
 
     & h3 {
-        @include font-h3;
         margin-bottom: 0.7em;
         margin-top: 1.4em;
+        @include vars.font-h3;
 
-        @media screen and (max-width: $w760) {
+        @media screen and (max-width: vars.$w760) {
             font-size: 24px;
         }
     }
 
     & h4 {
-        @include font-h4;
         margin-bottom: 0.7em;
         margin-top: 1.5em;
+        @include vars.font-h4;
 
-        @media screen and (max-width: $w760) {
+        @media screen and (max-width: vars.$w760) {
             font-size: 22px;
         }
     }
 
     & h5 {
-        @include font-h5;
         margin-bottom: 0.7em;
         margin-top: 1.5em;
+        @include vars.font-h5;
 
-        @media screen and (max-width: $w760) {
+        @media screen and (max-width: vars.$w760) {
             font-size: 18px;
         }
     }
@@ -55,7 +57,7 @@
         margin-bottom: 0.7em;
         margin-top: 2em;
 
-        @media screen and (max-width: $w760) {
+        @media screen and (max-width:vars.$w760) {
             font-size: 16px;
         }
     }
@@ -78,7 +80,7 @@
         width: 100%;
         min-width: 600px;
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width:vars.$w992) {
             margin: 20px 0;
         }
 
@@ -92,7 +94,7 @@
             line-height: 120%;
             font-size: 14px;
 
-            @media screen and (min-width: $w576) {
+            @media screen and (min-width:vars.$w576) {
                 padding: 15px 16px 16px 16px;
                 line-height: 140%;
             }
@@ -104,11 +106,11 @@
                 font-weight: 500;
                 width: 180px;
 
-                @media screen and (min-width: $w992) {
+                @media screen and (min-width:vars.$w992) {
                     width: 320px;
                 }
 
-                @media screen and (min-width: $w576) {
+                @media screen and (min-width:vars.$w576) {
                     font-weight: 700;
                 }
             }
@@ -125,7 +127,7 @@
 
         margin: 16px 0;
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width:vars.$w992) {
             margin: 20px 0;
         }
 
@@ -147,7 +149,7 @@
         margin: 10px 0;
         line-height: 155%;
 
-        @media screen and (min-width: $w1440) {
+        @media screen and (min-width:vars.$w1440) {
             margin: 20px 0;
         }
     }
@@ -157,7 +159,7 @@
         margin: 16px 0;
         padding-left: 8px;
 
-        @media screen and (min-width: $w760) {
+        @media screen and (min-width:vars.$w760) {
             padding-left: 20px;
         }
 
@@ -168,7 +170,7 @@
             padding-left: 20px;
             padding-bottom: 10px;
 
-            @media screen and (min-width: $w1440) {
+            @media screen and (min-width:vars.$w1440) {
                 padding-bottom: 14px;
                 padding-left: 30px;
             }
@@ -189,7 +191,7 @@
                 border-radius: 1px;
                 background-color: var(--accent);
 
-                @media screen and (min-width: $w1440) {
+                @media screen and (min-width:vars.$w1440) {
                     width: 7.5px;
                     height: 7.5px;
                 }
@@ -207,7 +209,7 @@
         margin: 16px 0;
         padding-left: 8px;
 
-        @media screen and (min-width: $w760) {
+        @media screen and (min-width:vars.$w760) {
             padding-left: 20px;
         }
 
@@ -220,7 +222,7 @@
 
             padding-left: 20px;
 
-            @media screen and (min-width: $w760) {
+            @media screen and (min-width:vars.$w760) {
 
                 padding-left: 30px;
             }
@@ -236,7 +238,7 @@
                 left: 0;
                 font-weight: 500;
 
-                @media screen and (min-width: $w760) {}
+                @media screen and (min-width:vars.$w760) {}
             }
         }
     }
@@ -252,7 +254,7 @@
         margin: 1.5em 0;
 
         & strong {
-            color: $main;
+            color: vars.$main;
             font-weight: 500;
 
             display: block;
@@ -273,7 +275,7 @@
         margin-right: 0;
         border-radius: 12px;
 
-        @media screen and (min-width: $w760) {
+        @media screen and (min-width:vars.$w760) {
             padding: 24px 24px 24px 124px;
             background-position: 24px 24px;
             background-repeat: no-repeat;
@@ -307,7 +309,7 @@
         min-width: 600px;
         border-collapse: unset;
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width:vars.$w992) {
             margin: 20px 0;
         }
 
@@ -320,7 +322,7 @@
             font-size: 14px;
             border: none;
 
-            @media screen and (min-width: $w576) {
+            @media screen and (min-width:vars.$w576) {
                 padding: 15px 16px 16px 16px;
                 line-height: 140%;
             }
@@ -332,11 +334,11 @@
                 font-weight: 500;
                 width: 180px;
 
-                @media screen and (min-width: $w992) {
+                @media screen and (min-width:vars.$w992) {
                     width: 320px;
                 }
 
-                @media screen and (min-width: $w576) {
+                @media screen and (min-width:vars.$w576) {
                     font-weight: 700;
                 }
             }
@@ -355,7 +357,7 @@
         margin: 16px 0;
         padding-left: 8px;
 
-        @media screen and (min-width: $w760) {
+        @media screen and (min-width:vars.$w760) {
             padding-left: 20px;
         }
 
@@ -366,7 +368,7 @@
             padding-left: 20px;
             padding-bottom: 10px;
 
-            @media screen and (min-width: $w1440) {
+            @media screen and (min-width:vars.$w1440) {
                 padding-bottom: 14px;
                 padding-left: 30px;
             }
@@ -387,7 +389,7 @@
                 border-radius: 1px;
                 background-color: var(--accent);
 
-                @media screen and (min-width: $w1440) {
+                @media screen and (min-width:vars.$w1440) {
                     width: 7.5px;
                     height: 7.5px;
                 }
@@ -418,12 +420,12 @@
     background-color: var(--color-accent-1);
     border-radius: 8px;
 
-    @media screen and (min-width: $w1440) {
+    @media screen and (min-width:vars.$w1440) {
         font-size: 18px;
     }
 
 
-    @media screen and (min-width: $w1200) {
+    @media screen and (min-width:vars.$w1200) {
         height: 56px;
     }
 

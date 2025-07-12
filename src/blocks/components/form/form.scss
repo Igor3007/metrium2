@@ -1,4 +1,7 @@
- .form {
+@use "../../../styles/vars";
+@use "../../../styles/helpers/functions";
+
+.form {
 
      font-family: var(--font-montserrat);
      font-weight: 500;
@@ -12,8 +15,8 @@
 
          font-size: 14px;
          line-height: 15px;
-         padding-left: rem(15);
-         padding-right: rem(15);
+         padding-left: functions.rem_(15);
+         padding-right: functions.rem_(15);
          padding-top: 10px;
          padding-bottom: 10px;
          box-sizing: border-box;
@@ -26,7 +29,7 @@
          color: #222;
          height: 50px;
 
-         @media screen and (min-width: $w576) {
+         @media screen and (min-width: vars.$w576) {
              height: 56px;
          }
 
@@ -110,7 +113,7 @@
          resize: vertical;
          width: 100%;
          font-size: 15px;
-         padding: rem(15);
+         padding: functions.rem_(15);
          line-height: 140%;
          outline: none !important;
          border: 2px solid transparent;
@@ -150,7 +153,7 @@
          line-height: 140%;
          font-weight: 400;
 
-         @media screen and (min-width: $w760) {
+         @media screen and (min-width: vars.$w760) {
              font-size: 15px;
          }
      }
@@ -184,12 +187,12 @@
                  cursor: pointer;
                  padding-bottom: 10px;
 
-                 @media screen and (min-width: $w760) {
+                 @media screen and (min-width: vars.$w760) {
                      padding-bottom: 0;
                  }
              }
 
-             @media screen and (min-width: $w760) {
+             @media screen and (min-width: vars.$w760) {
                  flex-direction: row;
              }
          }
@@ -205,7 +208,7 @@
          flex-direction: column;
          width: 100%;
 
-         @media screen and (min-width: $w760) {
+         @media screen and (min-width: vars.$w760) {
              flex-direction: row;
              align-items: center;
              margin: -10px;
@@ -217,7 +220,7 @@
              flex-direction: column;
              width: 100%;
 
-             @media screen and (min-width: $w1440) {
+             @media screen and (min-width: vars.$w1440) {
                  flex-direction: row;
              }
          }
@@ -240,14 +243,14 @@
              align-self: start;
              font-weight: 500;
 
-             @media screen and (min-width: $w760) {
+             @media screen and (min-width: vars.$w760) {
                  align-self: center;
                  font-weight: normal;
              }
          }
 
          &--w-auto {
-             @media screen and (min-width: $w760) {
+             @media screen and (min-width: vars.$w760) {
                  flex-grow: 0;
                  width: auto;
              }
@@ -261,7 +264,7 @@
              }
          }
 
-         @media screen and (min-width: $w760) {
+         @media screen and (min-width: vars.$w760) {
              padding: 11px 10px;
              margin-bottom: 0;
          }
@@ -272,11 +275,11 @@
          font-weight: 500;
          font-size: 16px;
          width: 100%;
-         color: $main;
+         color: vars.$main;
          color: var(--text-01);
          padding-bottom: 10px;
 
-         @media screen and (min-width: $w480) {
+         @media screen and (min-width: vars.$w480) {
              font-size: 18px;
          }
 
@@ -306,7 +309,7 @@
          width: 100%;
          justify-content: flex-end;
 
-         @media screen and (min-width: $w576) {
+         @media screen and (min-width: vars.$w576) {
              flex-direction: row;
 
          }
@@ -319,16 +322,16 @@
      & fieldset {
          border: none;
          padding: 0;
-         margin-top: rem(40);
+         margin-top: functions.rem_(40);
 
 
          &:first-child {
-             margin-top: rem(0);
+             margin-top: functions.rem_(0);
          }
      }
 
      & legend {
-         margin-bottom: rem(30);
+         margin-bottom: functions.rem_(30);
      }
 
      & .af-select {
@@ -336,11 +339,11 @@
          box-sizing: border-box;
          border-radius: 8px;
 
-         @media screen and (min-width: $w1440) {
+         @media screen and (min-width: vars.$w1440) {
              height: 56px;
          }
 
-         @media screen and (min-width: $w1200) {
+         @media screen and (min-width: vars.$w1200) {
              height: 50px;
          }
 
@@ -374,12 +377,12 @@
      & input[type="email"],
      & input[type="tel"] {
          font-size: 15px;
-         padding: rem(10) 0;
+         padding: functions.rem_(10) 0;
          display: block;
          width: 100%;
          border: none;
          background: transparent;
-         color: $main;
+         color: vars.$main;
          font-weight: 500;
          height: 20px !important;
          transform: translateY(15px);
@@ -441,7 +444,7 @@
 
          &::before,
          &::after {
-             background: $red;
+             background: vars.$red;
              width: 50%;
          }
      }
@@ -449,7 +452,7 @@
      & textarea[area-valid=false]~.tooltip,
      & input[area-valid=false]~.tooltip {
 
-         color: $red;
+         color: vars.$red;
      }
 
      & textarea:focus[area-valid=false]~.bar,
@@ -634,7 +637,7 @@
          height: 100%;
          display: flex;
          align-items: center;
-         min-width: 50;
+         min-width: 50%;
          padding-left: 10px;
          justify-content: center;
          border-radius: 3px;

@@ -1,23 +1,25 @@
+@use "../../../styles/helpers/functions";
+@use "sass:math";
 /* burger */
 
 $scale: 1;
 
-$burger_w: rem(32/$scale);
-$burger_h: rem(32/$scale);
-$line_w: rem(22/$scale);
-$line_h: rem(2);
-$line_mrg_1: rem(-(8/$scale));
-$line_mrg_2: rem(-(2/$scale));
-$line_mrg_3: rem((4/$scale));
-$line_offset: rem((6/$scale));
-$left: rem(5/$scale);
+$burger_w: functions.rem_(math.div(32, $scale));
+$burger_h: functions.rem_(math.div(32, $scale));
+$line_w: functions.rem_(math.div(22, $scale));
+$line_h: functions.rem_(2);
+$line_mrg_1: functions.rem_(-(math.div(8, $scale)));
+$line_mrg_2: functions.rem_(-(math.div(2, $scale)));
+$line_mrg_3: functions.rem_((math.div(4, $scale)));
+$line_offset: functions.rem_((math.div(6, $scale)));
+$left: functions.rem_(math.div(5, $scale));
 
 .btn-burger {
     position: relative;
     display: none;
     width: $burger_w;
     height: $burger_h;
-    margin-right: rem(10);
+    margin-right: functions.rem_(10);
     -webkit-transition: -webkit-transform .3s cubic-bezier(.4, 0, .2, 1);
     transition: -webkit-transform .3s cubic-bezier(.4, 0, .2, 1);
     transition: transform .3s cubic-bezier(.4, 0, .2, 1);

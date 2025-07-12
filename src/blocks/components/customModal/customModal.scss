@@ -1,3 +1,5 @@
+@use "../../../styles/vars";
+
 /* popup */
 
 @keyframes zoomInUp {
@@ -116,7 +118,7 @@
     animation: 0.2s ease 0.2s both zoomInUp;
     opacity: 0;
 
-    @media screen and (min-width: $w480) {
+    @media screen and (min-width: vars.$w480) {
         max-width: 90%;
     }
 
@@ -131,7 +133,7 @@
     z-index: 101;
     top: 65px;
 
-    @media screen and (max-width: $w480) {
+    @media screen and (max-width: vars.$w480) {
         right: 10px;
     }
 }
@@ -166,7 +168,7 @@
         width: 40px;
         min-width: 40px;
         height: 40px;
-        border: 3px solid $accent-2-1;
+        border: 3px solid vars.$accent-2-1;
         border-radius: 50%;
         border-left-color: transparent !important;
         transition: transform 0.5s linear;
@@ -191,7 +193,7 @@
             top: 20px;
             right: 20px;
 
-            @media screen and (min-width: $w760) {
+            @media screen and (min-width: vars.$w760) {
                 top: 25px;
                 right: 15px;
             }
@@ -213,7 +215,7 @@
     padding: 24px 12px;
     max-width: 100%;
 
-    @media screen and (min-width: $w480) {
+    @media screen and (min-width: vars.$w480) {
         width: 440px;
         padding: 24px;
     }
@@ -395,7 +397,7 @@
 }
 
 
-@media screen and (min-width: $w480) {
+@media screen and (min-width: vars.$w480) {
     .af-position-left {
         & .af-popup {
             &__container {

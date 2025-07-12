@@ -1,60 +1,45 @@
 "use strict";
 
-import {
-    paths
-} from "../gulpfile.babel";
-import gulp from "gulp";
-import gulpif from "gulp-if";
-import rename from "gulp-rename";
-import sass from "gulp-sass";
-import mincss from "gulp-clean-css";
-import groupmedia from "gulp-group-css-media-queries";
-import autoprefixer from "gulp-autoprefixer";
-import sourcemaps from "gulp-sourcemaps";
-import plumber from "gulp-plumber";
-import browsersync from "browser-sync";
-import debug from "gulp-debug";
-import yargs from "yargs";
+import browserSync from "browser-sync";
+import cssNano from "gulp-cssnano";
+import gulp from 'gulp';
+import gulpReplace from "gulp-replace";
+import autoprefixer from 'autoprefixer';
+import gulpSrcMap from "gulp-sourcemaps";
+import postcss from 'gulp-postcss';
+import postcssPresetEnv from 'postcss-preset-env';
+import sortMediaQueries from 'postcss-sort-media-queries';
+import {paths} from "./config.js";
 
-const argv = yargs.argv,
-    production = !!argv.production;
+import * as _Sass from 'sass';
+import gulpSass from 'gulp-sass';
 
-gulp.task("styles", () => {
-    return gulp.src(paths.styles.src)
-        .pipe(gulpif(!production, sourcemaps.init()))
-        .pipe(plumber())
+const sass = gulpSass(_Sass);
+
+export const stylesDev = () => (
+    gulp.src(paths.styles.src)
+        .pipe(gulpSrcMap.init())
         .pipe(sass())
-        .pipe(groupmedia())
-        // .pipe(autoprefixer({
-        //     cascade: false,
-        //     grid: true
-        // }))
-        // .pipe(mincss({
-        //     compatibility: "ie8",
-        //     level: {
-        //         1: {
-        //             specialComments: 0,
-        //             removeEmpty: true,
-        //             removeWhitespace: true
-        //         },
-        //         2: {
-        //             mergeMedia: true,
-        //             removeEmpty: true,
-        //             removeDuplicateFontRules: true,
-        //             removeDuplicateMediaBlocks: true,
-        //             removeDuplicateRules: true,
-        //             removeUnusedAtRules: false
-        //         }
-        //     }
-        // }))
-        // .pipe(gulpif(production, rename({
-        //     suffix: ".min"
-        // })))
-        .pipe(plumber.stop())
-        .pipe(gulpif(!production, sourcemaps.write("./maps/")))
+        .pipe(postcss([
+            autoprefixer(),
+            postcssPresetEnv(),
+            sortMediaQueries({sort:'mobile-first'})
+        ]))
+        .pipe(cssNano())
+        .pipe(gulpSrcMap.write())
         .pipe(gulp.dest(paths.styles.dist))
-        .pipe(debug({
-            "title": "CSS files"
-        }))
-        .pipe(browsersync.stream());
-});
+        .pipe(browserSync.reload({stream: true}))
+);
+
+export const stylesProd = () => (
+    gulp.src(paths.styles.src)
+        .pipe(sass())
+        .pipe(postcss([
+            autoprefixer(),
+            postcssPresetEnv(),
+            sortMediaQueries({sort:'mobile-first'})
+        ]))
+        .pipe(gulpReplace("/*!","/*"))
+        .pipe(cssNano())
+        .pipe(gulp.dest(paths.styles.dist))
+);

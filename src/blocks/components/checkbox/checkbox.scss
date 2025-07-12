@@ -1,3 +1,6 @@
+@use "../../../styles/vars";
+@use "../../../styles/helpers/functions";
+
 .checkbox {
     display: inline-flex;
     position: relative;
@@ -33,7 +36,7 @@
         min-width: 20px;
         background-color: transparent;
         display: inline-block;
-        margin-right: rem(10);
+        margin-right: functions.rem_(10);
         border: 1px solid #2F3030;
         border-radius: 4px;
         transition: 0.3s ease;
@@ -116,7 +119,7 @@
             }
 
             &__text {
-                @media screen and (min-width: $w576) {
+                @media screen and (min-width: vars.$w576) {
                     color: var(--accent);
                 }
 
@@ -176,7 +179,7 @@
     }
 
     &__elem {
-        top: rem(1);
+        top: functions.rem_(1);
         position: relative;
         height: 20px;
         width: 20px;
@@ -250,7 +253,7 @@
     font-size: 13px;
     font-weight: 400;
 
-    @media screen and (min-width: $w992) {
+    @media screen and (min-width: vars.$w992) {
         font-size: 14px;
     }
 
@@ -265,10 +268,10 @@
             width: 48px;
             height: 24px;
             display: inline-block;
-            background: $gray-80;
+            background: vars.$gray-80;
             border-radius: 50px 50px;
             position: relative;
-            margin-right: rem(10);
+            margin-right: functions.rem_(10);
             transition: 0.3s ease;
 
             &:hover {
@@ -295,10 +298,10 @@
         display: none;
 
         &:checked~div .toggle-slide {
-            background: $accent-1-1;
+            background: vars.$accent-1-1;
 
             &:hover {
-                background: $accent-1-2;
+                background: vars.$accent-1-2;
             }
 
 
@@ -322,7 +325,7 @@
 
     & input:checked~div .toggle-deactive {
         display: none;
-        color: $gray-22;
+        color: vars.$gray-22;
 
     }
 }

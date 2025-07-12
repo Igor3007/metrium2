@@ -1,19 +1,21 @@
+@use "../../../../styles/vars";
+
 footer {
     background-color: var(--bg);
     padding: 22px 0;
 
-    @media screen and (min-width: $w992) {
+    @media screen and (min-width: vars.$w992) {
         padding: 40px 0;
     }
 
-    @media screen and (min-width: $w1440) {
+    @media screen and (min-width: vars.$w1440) {
         padding: 62px 0;
     }
 }
 
 .footer {
 
-    letter-spacing: 2%;
+    letter-spacing: .02em;
 
     &__logo {
 
@@ -23,7 +25,7 @@ footer {
             width: 145px;
             height: 55px;
 
-            @include bgimage-contain;
+            @include vars.bgimage-contain;
         }
     }
 
@@ -32,7 +34,7 @@ footer {
         color: var(--text-1);
         padding-bottom: 9px;
 
-        @media screen and (min-width: $w1440) {
+        @media screen and (min-width: vars.$w1440) {
             font-size: 20px;
             padding-top: 4px;
             padding-bottom: 12px;
@@ -44,11 +46,11 @@ footer {
         padding-bottom: 0px;
         margin-bottom: 20px;
 
-        @media screen and (min-width: $w1200) {
+        @media screen and (min-width: vars.$w1200) {
             display: flex;
         }
 
-        @media screen and (min-width: $w1440) {
+        @media screen and (min-width: vars.$w1440) {
             padding-bottom: 36px;
             margin-bottom: 65px;
         }
@@ -61,7 +63,7 @@ footer {
     }
 
     &__main {
-        @media screen and (min-width: $w576) {
+        @media screen and (min-width: vars.$w576) {
             width: 60%;
             flex-basis: 60% !important;
         }
@@ -87,7 +89,7 @@ footer {
             & li {
                 padding: 7px 0;
 
-                @media screen and (min-width: $w1440) {
+                @media screen and (min-width: vars.$w1440) {
                     padding: 9.5px 0;
                 }
             }
@@ -149,7 +151,7 @@ footer {
 
         padding-bottom: 12px;
 
-        @media screen and (min-width: $w576) {
+        @media screen and (min-width: vars.$w576) {
             padding-bottom: 0;
         }
 
@@ -158,11 +160,11 @@ footer {
             font-size: 16px;
             transition: 0.3s ease;
 
-            @media screen and (min-width: $w1440) {
+            @media screen and (min-width: vars.$w1440) {
                 font-size: 16px;
             }
 
-            @media screen and (min-width: $w1200) {
+            @media screen and (min-width: vars.$w1200) {
                 font-size: 14px;
             }
 
@@ -176,7 +178,7 @@ footer {
         }
 
         & ul {
-            @media screen and (min-width: $w1200) {
+            @media screen and (min-width: vars.$w1200) {
                 display: flex;
                 gap: 20px;
             }
@@ -193,7 +195,7 @@ footer {
             line-height: 143%;
 
             &:first-child {
-                @media screen and (min-width: $w1440) {
+                @media screen and (min-width: vars.$w1440) {
                     margin-top: 0;
                     line-height: 165%;
                 }
@@ -206,14 +208,14 @@ footer {
 
         color: var(--text-1);
 
-        @media screen and (min-width: $w576) {
+        @media screen and (min-width: vars.$w576) {
             display: flex;
             flex-direction: column;
             align-items: flex-end;
             justify-content: flex-end;
         }
 
-        @media screen and (min-width: $w1440) {
+        @media screen and (min-width: vars.$w1440) {
             justify-content: flex-start;
         }
 
@@ -225,7 +227,7 @@ footer {
             color: var(--accent);
             font-size: 16px;
 
-            @media screen and (min-width: $w1440) {
+            @media screen and (min-width: vars.$w1440) {
                 font-size: 20px;
                 padding-top: 12px;
             }
@@ -237,39 +239,39 @@ footer {
     }
 
     &__left {
-        @media screen and (min-width: $w1200) {
+        @media screen and (min-width: vars.$w1200) {
             width: 240px;
         }
 
-        @media screen and (min-width: $w1440) {
+        @media screen and (min-width: vars.$w1440) {
             width: 25.5%;
             padding-right: 40px;
         }
     }
 
     &__content {
-        @media screen and (min-width: $w576) {
+        @media screen and (min-width: vars.$w576) {
             display: flex;
             flex-wrap: wrap;
             gap: 16px;
         }
 
-        @media screen and (min-width: $w1200) {
+        @media screen and (min-width: vars.$w1200) {
             width: calc(100% - 240px);
         }
 
-        @media screen and (min-width: $w1440) {
+        @media screen and (min-width: vars.$w1440) {
             width: calc(75%);
 
         }
 
         &>div {
-            @media screen and (min-width: $w576) {
+            @media screen and (min-width: vars.$w576) {
                 flex-grow: 1;
                 flex-basis: 260px;
             }
 
-            @media screen and (min-width: $w1200) {
+            @media screen and (min-width: vars.$w1200) {
                 flex-basis: 20px;
             }
         }

@@ -1,7 +1,9 @@
+@use "../../../styles/vars";
+
 .section-all-categories {
     padding: 48px 0;
 
-    @media screen and (min-width: $w1440) {
+    @media screen and (min-width: vars.$w1440) {
         padding: 95px 0;
     }
 }
@@ -11,16 +13,16 @@
 
         margin: -4px;
 
-        @media screen and (min-width: $w576) {
+        @media screen and (min-width: vars.$w576) {
             margin: -12px;
         }
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: vars.$w992) {
             display: flex;
             flex-wrap: wrap;
         }
 
-        @media screen and (min-width: $w1440) {
+        @media screen and (min-width: vars.$w1440) {
             margin: -16px;
         }
     }
@@ -29,15 +31,15 @@
 
         padding: 4px;
 
-        @media screen and (min-width: $w576) {
+        @media screen and (min-width: vars.$w576) {
             padding: 12px;
         }
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: vars.$w992) {
             width: 50%;
         }
 
-        @media screen and (min-width: $w1440) {
+        @media screen and (min-width: vars.$w1440) {
             padding: 16px;
         }
     }
@@ -54,17 +56,17 @@
     position: relative;
     overflow: hidden;
 
-    @media screen and (min-width: $w760) {
+    @media screen and (min-width: vars.$w760) {
         padding: 24px;
     }
 
-    @media screen and (min-width: $w1440) {
+    @media screen and (min-width: vars.$w1440) {
         border-radius: 24px;
         padding: 36px 32px;
     }
 
     &__bg {
-        @include layer(1);
+        @include vars.layer(1);
 
         & picture,
         & img {
@@ -76,22 +78,22 @@
     }
 
     &__preview {
-        @include layer(3);
+        @include vars.layer(3);
         transition: 0.5s ease 0.05s;
 
         & a {
-            @include layer(4);
+            @include vars.layer(4);
             background-color: rgba(0, 0, 0, 0.5);
             padding: 16px;
             color: #fff;
             display: flex;
             flex-direction: column;
 
-            @media screen and (min-width: $w576) {
+            @media screen and (min-width: vars.$w576) {
                 padding: 24px;
             }
 
-            @media screen and (min-width: $w1440) {
+            @media screen and (min-width: vars.$w1440) {
                 padding: 36px 32px;
             }
         }
@@ -101,10 +103,10 @@
                 padding-bottom: 10px;
                 padding-top: 3px;
 
-                @media screen and (min-width: $w1440) {
+                @media screen and (min-width: vars.$w1440) {
                     padding-bottom: 14px;
                     padding-top: 5px;
-                    @include font-h3;
+                    @include vars.font-h3;
                 }
             }
         }
@@ -124,11 +126,11 @@
     }
 
     &__offers {
-        letter-spacing: 2%;
+        letter-spacing: .02em;
         font-size: 16px;
         font-weight: 500;
 
-        @media screen and (min-width: $w1440) {
+        @media screen and (min-width: vars.$w1440) {
             font-size: 20px;
         }
     }
@@ -137,7 +139,7 @@
         display: none;
         margin-left: auto;
 
-        @media screen and (min-width: $w576) {
+        @media screen and (min-width: vars.$w576) {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -153,17 +155,17 @@
             }
         }
 
-        @media screen and (min-width: $w760) {
+        @media screen and (min-width: vars.$w760) {
             width: 56px;
             height: 56px;
         }
 
-        @media screen and (min-width: $w1440) {
+        @media screen and (min-width: vars.$w1440) {
             width: 56px;
             height: 56px;
         }
 
-        @media screen and (min-width: $w1200) {
+        @media screen and (min-width: vars.$w1200) {
             width: 50px;
             height: 50px;
         }
@@ -171,13 +173,13 @@
 
     &__title {
         padding-bottom: 24px;
-        @include font-h4;
+        @include vars.font-h4;
 
-        @media screen and (min-width: $w576) {
+        @media screen and (min-width: vars.$w576) {
             font-size: 26px;
         }
 
-        @media screen and (min-width: $w1440) {
+        @media screen and (min-width: vars.$w1440) {
             font-size: 28px;
             padding-bottom: 36px;
         }
@@ -186,14 +188,14 @@
     &__tocat {
         & .btn {
 
-            @media screen and (min-width: $w1440) {
+            @media screen and (min-width: vars.$w1440) {
                 font-size: 18px;
             }
 
-            @media screen and (min-width: $w992) {
+            @media screen and (min-width: vars.$w992) {
                 font-size: 16px;
                 font-weight: 500;
-                letter-spacing: 2%;
+                letter-spacing: .02em;
                 padding-left: 1.8em;
                 padding-right: 1.8em;
             }
@@ -201,14 +203,14 @@
     }
 
     &__price {
-        letter-spacing: 4%;
+        letter-spacing: .04em;
 
-        @media screen and (min-width: $w576) {
+        @media screen and (min-width: vars.$w576) {
             font-size: 16px;
         }
 
-        @media screen and (min-width: $w1440) {
-            letter-spacing: 2%;
+        @media screen and (min-width: vars.$w1440) {
+            letter-spacing: .02em;
         }
     }
 
@@ -216,11 +218,11 @@
         padding-bottom: 24px;
         display: none;
 
-        @media screen and (min-width: $w576) {
+        @media screen and (min-width: vars.$w576) {
             display: block;
         }
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: vars.$w992) {
             padding-bottom: 28px;
         }
     }
@@ -233,7 +235,7 @@
     &__nav {
         display: none;
 
-        @media screen and (min-width: $w576) {
+        @media screen and (min-width: vars.$w576) {
             display: flex;
             gap: 8px;
         }
@@ -251,12 +253,12 @@
             justify-content: center;
             cursor: pointer;
 
-            @media screen and (min-width: $w1440) {
+            @media screen and (min-width: vars.$w1440) {
                 width: 56px;
                 height: 56px;
             }
 
-            @media screen and (min-width: $w1200) {
+            @media screen and (min-width: vars.$w1200) {
                 width: 50px;
                 height: 50px;
             }
@@ -290,7 +292,7 @@
     &:hover {
         & .card-categories {
 
-            @media screen and (min-width: $w760) {
+            @media screen and (min-width: vars.$w760) {
                 &__bg {
                     transform: scale(0);
                     transition: 0.3s ease;
@@ -324,7 +326,7 @@
 
         & .bgimage {
 
-            @include bgimage-contain;
+            @include vars.bgimage-contain;
             width: 72px;
             min-width: 72px;
             height: 72px;
@@ -334,7 +336,7 @@
             border-radius: 50%;
             transition: 0.3s ease;
 
-            @media screen and (min-width: $w1440) {
+            @media screen and (min-width: vars.$w1440) {
                 width: 96px;
                 min-width: 96px;
                 height: 96px;
@@ -345,7 +347,7 @@
     &__title {
         text-align: center;
 
-        @media screen and (min-width: $w576) {
+        @media screen and (min-width: vars.$w576) {
             font-size: 14px;
             font-weight: 500;
         }

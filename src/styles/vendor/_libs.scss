@@ -1,4 +1,4 @@
-@import "import/normalize";
-@import "import/select";
-@import "./import/splide-core.min.scss";
-@import "./import/splide-default.min.scss";
+@use "import/normalize";
+@use "import/select";
+@use "./import/splide-core.min.scss";
+@use "./import/splide-default.min.scss";

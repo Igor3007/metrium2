@@ -1,13 +1,13 @@
 "use strict";
 
-import { paths } from "../gulpfile.babel";
+import {paths} from "./config.js";
 import gulp from "gulp";
-import favicons from "gulp-favicons";
-import debug from "gulp-debug";
+import g_favicons from "gulp-favicons";
 
-gulp.task("favicons", () => {
-    return gulp.src(paths.favicons.src)
-        .pipe(favicons({
+
+export const favicons = async () => (
+    await gulp.src(paths.favicons.src, {encoding: false})
+        .pipe(g_favicons({
             icons: {
                 appleIcon: true,
                 favicons: true,
@@ -21,7 +21,4 @@ gulp.task("favicons", () => {
             }
         }))
         .pipe(gulp.dest(paths.favicons.dist))
-        .pipe(debug({
-            "title": "Favicons"
-        }));
-});
+);

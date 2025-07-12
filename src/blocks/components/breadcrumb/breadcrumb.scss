@@ -1,3 +1,5 @@
+@use "../../../styles/vars";
+@use "../../../styles/helpers/functions";
 .breadcrumb {
 
     background-color: transparent;
@@ -31,7 +33,7 @@
             display: inline-flex;
             font-size: 12px;
 
-            @media screen and (min-width: $w480) {
+            @media screen and (min-width: vars.$w480) {
                 font-size: 13px;
             }
 
@@ -48,7 +50,7 @@
 
         &::after {
             content: '';
-            margin: 0 rem(4);
+            margin: 0 functions.rem_(4);
             color: #7A808D;
             display: inline-block;
             border-radius: 50%;
@@ -61,8 +63,8 @@
             background-color: var(--accent);
             top: -2px;
 
-            @media screen and (min-width: $w576) {
-                margin: 0 rem(6);
+            @media screen and (min-width: vars.$w576) {
+                margin: 0 functions.rem_(6);
             }
         }
 

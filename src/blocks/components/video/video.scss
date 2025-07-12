@@ -1,3 +1,6 @@
+@use "../../../styles/vars";
+@use "../../../styles/helpers/functions";
+
 .yt-video,
 .video {
     margin: 0 auto;
@@ -72,7 +75,7 @@
 
 
 
-            @media screen and (min-width: $w576) {
+            @media screen and (min-width: vars.$w576) {
                 width: 50px;
                 min-width: 50px;
                 height: 50px;
@@ -126,8 +129,6 @@
         justify-content: center;
         flex-direction: column;
         transition: 0.3s ease;
-        align-items: center;
-        justify-content: center;
         z-index: 3;
 
         &:hover {
@@ -135,7 +136,7 @@
         }
 
 
-        @media screen and (min-width: $w760) {
+        @media screen and (min-width: vars.$w760) {
             padding: 24px;
 
         }
@@ -149,11 +150,11 @@
         font-weight: bold;
         text-align: center;
         color: #FFFFFF;
-        max-width: rem(400);
+        max-width: functions.rem_(400);
         margin: 0 auto;
         line-height: 140%;
 
-        @media screen and (min-width: $w760) {
+        @media screen and (min-width: vars.$w760) {
             font-size: 28px;
         }
 
@@ -208,7 +209,7 @@
     }
 
     &__source {
-        @include layer(1);
+        @include vars.layer(1);
 
         & video {
             width: 100%;

@@ -1,12 +1,14 @@
+@use "../../../styles/vars";
+
 .section-best-offers {
     background-color: var(--bg);
     padding: 29px 0;
 
-    @media screen and (min-width: $w760) {
+    @media screen and (min-width: vars.$w760) {
         padding: 48px 0;
     }
 
-    @media screen and (min-width: $w1440) {
+    @media screen and (min-width: vars.$w1440) {
         padding: 63px 0;
     }
 
@@ -18,15 +20,15 @@
 
 .best-offers {
     &__title {
-        @include font-h2;
         padding-bottom: 12px;
+        @include vars.font-h2;
 
-        @media screen and (min-width: $w760) {
+        @media screen and (min-width: vars.$w760) {
             padding-bottom: 24px;
 
         }
 
-        @media screen and (min-width: $w1440) {
+        @media screen and (min-width: vars.$w1440) {
             padding-bottom: 34px;
         }
     }
@@ -38,17 +40,17 @@
         overflow-x: auto;
         margin-bottom: 24px;
 
-        @media screen and (max-width: $w480) {
+        @media screen and (max-width: vars.$w480) {
             margin-right: -16px;
         }
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: vars.$w992) {
             background-color: #fff;
             margin-bottom: 36px;
             border-radius: 17px;
         }
 
-        @media screen and (min-width: $w1200) {
+        @media screen and (min-width: vars.$w1200) {
             padding: 12px;
         }
 
@@ -56,7 +58,7 @@
             display: flex;
             margin: 0 -5px;
 
-            @media screen and (min-width: $w1200) {
+            @media screen and (min-width: vars.$w1200) {
                 margin: 0;
             }
 
@@ -64,7 +66,7 @@
                 white-space: nowrap;
                 padding: 0 5px;
 
-                @media screen and (min-width: $w1200) {
+                @media screen and (min-width: vars.$w1200) {
                     padding: 0;
 
                     &:first-child {
@@ -95,11 +97,11 @@
                         background-color: var(--bg);
                     }
 
-                    @media screen and (min-width: $w1200) {
+                    @media screen and (min-width: vars.$w1200) {
                         padding: 16px 32px;
                         border-radius: 0;
                         font-size: 16px;
-                        letter-spacing: 2%;
+                        letter-spacing: .02em;
                         font-weight: 400;
                         background-color: var(--bg);
 
@@ -109,7 +111,7 @@
                         }
                     }
 
-                    @media screen and (min-width: $w1440) {
+                    @media screen and (min-width: vars.$w1440) {
                         padding: 18px 32px;
                         font-size: 18px;
                     }
@@ -133,7 +135,7 @@
     &__slider {
         padding-bottom: 16px;
 
-        @media screen and (min-width: $w1200) {
+        @media screen and (min-width: vars.$w1200) {
             padding-bottom: 60px;
         }
 
@@ -176,23 +178,23 @@
         justify-content: space-between;
 
         & .btn {
-            @media screen and (max-width: $w480) {
+            @media screen and (max-width: vars.$w480) {
                 width: 100%;
             }
         }
     }
 
     &__more {
-        @media screen and (max-width: $w480) {
+        @media screen and (max-width: vars.$w480) {
             width: 100%;
         }
     }
 
     &__nav {
-        @include splide-nav;
         display: none;
+        @include vars.splide-nav;
 
-        @media screen and (min-width: $w760) {
+        @media screen and (min-width: vars.$w760) {
             display: flex;
         }
     }
@@ -218,7 +220,7 @@
 
         padding-left: 16px;
 
-        @media screen and (min-width: $w1200) {
+        @media screen and (min-width: vars.$w1200) {
             margin-left: auto !important;
         }
 
@@ -226,7 +228,7 @@
             & span {
                 font-weight: 400 !important;
 
-                @media screen and (min-width: $w1200) {
+                @media screen and (min-width: vars.$w1200) {
                     font-size: 18px;
                     padding-left: 23px;
                     padding-right: 23px;

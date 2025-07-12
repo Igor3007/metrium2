@@ -1,10 +1,13 @@
- .pagination {
+@use "../../../styles/vars";
+@use "../../../styles/helpers/functions";
+
+.pagination {
      display: flex;
      justify-content: space-between;
      flex-wrap: wrap;
      width: 100%;
 
-     @media screen and (max-width: $w480) {
+     @media screen and (max-width: vars.$w480) {
          flex-wrap: wrap;
          flex-direction: column;
      }
@@ -25,7 +28,7 @@
 
                  margin: 0 4px;
 
-                 @media screen and (max-width: $w576) {
+                 @media screen and (max-width: vars.$w576) {
                      display: none;
 
                      &:nth-last-child(2),
@@ -42,8 +45,8 @@
 
                  & span,
                  & a {
-                     width: rem(40);
-                     height: rem(40);
+                     width: functions.rem_(40);
+                     height: functions.rem_(40);
                      display: flex;
                      align-items: center;
                      justify-content: center;
@@ -54,9 +57,9 @@
                      border-radius: 50px;
                      transition: 0.3s ease;
 
-                     @media screen and (min-width: $w992) {
-                         width: rem(37);
-                         height: rem(37);
+                     @media screen and (min-width: vars.$w992) {
+                         width: functions.rem_(37);
+                         height: functions.rem_(37);
                          font-size: 16px;
                      }
 
@@ -121,7 +124,7 @@
                      }
 
                      & a:not(:hover) {
-                         @media screen and (max-width: $w576) {
+                         @media screen and (max-width: vars.$w576) {
                              background-color: transparent;
                          }
                      }
@@ -136,7 +139,7 @@
 
          width: 100%;
 
-         @media screen and (max-width: $w480) {
+         @media screen and (max-width: vars.$w480) {
              padding-bottom: 24px;
 
          }
@@ -152,7 +155,7 @@
 
              letter-spacing: -3%;
 
-             @media screen and (min-width: $w992) {
+             @media screen and (min-width: vars.$w992) {
                  max-width: 500px;
              }
 

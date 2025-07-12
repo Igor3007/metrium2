@@ -1,3 +1,5 @@
+@use "../../../../styles/vars";
+
 header {
     position: absolute;
     top: 0;
@@ -14,7 +16,7 @@ body.is-fixed-header {
 
             padding: 0;
 
-            @media screen and (min-width: $w576) {
+            @media screen and (min-width: vars.$w576) {
                 padding: 0 20px;
             }
         }
@@ -27,12 +29,12 @@ body.is-fixed-header {
         border-radius: 0;
         padding: 16px 16px;
 
-        @media screen and (min-width: $w576) {
+        @media screen and (min-width: vars.$w576) {
             padding: 14px 14px;
             border-radius: 0 0 24px 24px;
         }
 
-        @media screen and (min-width: $w1440) {
+        @media screen and (min-width: vars.$w1440) {
             padding: 20px 20px;
             border-radius: 0 0 24px 24px;
         }
@@ -65,7 +67,7 @@ body.is-fixed-header {
             & svg {
                 fill: var(--accent-11);
 
-                @media screen and (max-width: $w1440) {
+                @media screen and (max-width: vars.$w1440) {
                     width: 21px;
                 }
             }
@@ -129,7 +131,7 @@ body.is-fixed-header {
     display: flex;
     padding: 12px 0;
 
-    @media screen and (min-width: $w1200) {
+    @media screen and (min-width: vars.$w1200) {
         padding: 32px 0;
     }
 
@@ -143,26 +145,26 @@ body.is-fixed-header {
         align-items: center;
         justify-content: center;
 
-        @media screen and (min-width: $w1440) {
+        @media screen and (min-width: vars.$w1440) {
             width: 56px;
             height: 56px;
         }
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: vars.$w992) {
             width: 50px;
             height: 50px;
         }
     }
 
     &__left {
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: vars.$w992) {
             width: calc(50% - 100px);
             display: flex;
             align-items: center;
             gap: 16px;
         }
 
-        @media screen and (min-width: $w1200) {
+        @media screen and (min-width: vars.$w1200) {
             gap: 32px;
         }
     }
@@ -172,7 +174,7 @@ body.is-fixed-header {
         align-items: center;
         gap: 12px;
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: vars.$w992) {
             width: calc(50% - 100px);
             display: flex;
             justify-content: flex-end;
@@ -185,20 +187,20 @@ body.is-fixed-header {
         display: flex;
         justify-content: center;
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: vars.$w992) {
             width: 200px;
         }
 
         & span {
             height: 48px;
             width: 150px;
-            @include bgimage-contain;
+            @include vars.bgimage-contain;
 
-            @media screen and (min-width: $w1200) {
+            @media screen and (min-width: vars.$w1200) {
                 height: 48px;
             }
 
-            @media screen and (min-width: $w1440) {
+            @media screen and (min-width: vars.$w1440) {
                 height: 56px;
             }
 
@@ -213,7 +215,7 @@ body.is-fixed-header {
     &__nav {
         display: none;
 
-        @media screen and (min-width: $w1200) {
+        @media screen and (min-width: vars.$w1200) {
             display: flex;
             align-items: center;
 
@@ -221,13 +223,13 @@ body.is-fixed-header {
                 display: flex;
                 gap: 16px;
 
-                @media screen and (min-width: $w1200) {
+                @media screen and (min-width: vars.$w1200) {
                     gap: 30px;
                 }
 
                 & a {
                     color: #fff;
-                    letter-spacing: 2%;
+                    letter-spacing: .02em;
                     position: relative;
                     font-weight: 500;
 
@@ -248,7 +250,7 @@ body.is-fixed-header {
                         }
                     }
 
-                    @media screen and (min-width: $w1200) {
+                    @media screen and (min-width: vars.$w1200) {
                         font-size: 18px;
                     }
                 }
@@ -262,7 +264,7 @@ body.is-fixed-header {
 
         display: none;
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: vars.$w992) {
             display: block;
         }
 
@@ -277,18 +279,18 @@ body.is-fixed-header {
             align-items: center;
             justify-content: center;
 
-            @media screen and (min-width: $w992) {
+            @media screen and (min-width: vars.$w992) {
                 width: 50px;
                 height: 50px;
             }
 
-            @media screen and (min-width: $w1440) {
+            @media screen and (min-width: vars.$w1440) {
                 width: 56px;
                 height: 56px;
             }
         }
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: vars.$w992) {
             display: flex;
             align-items: center;
         }
@@ -302,14 +304,14 @@ body.is-fixed-header {
         display: none;
         margin-right: 20px;
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: vars.$w992) {
             display: flex;
             align-items: center;
 
             & a {
                 font-size: 18px;
                 font-weight: 500;
-                letter-spacing: 6%;
+                letter-spacing: .06em;
                 color: #fff;
                 position: relative;
 
@@ -335,7 +337,7 @@ body.is-fixed-header {
 
     &__button {
         & .btn {
-            @media screen and (max-width: $w1376) {
+            @media screen and (max-width: vars.$w1376) {
                 font-size: 0;
                 padding-left: 5px;
                 padding-right: 5px;
@@ -344,7 +346,7 @@ body.is-fixed-header {
                 height: 50px;
             }
 
-            @media screen and (max-width: $w760) {
+            @media screen and (max-width: vars.$w760) {
                 width: 48px;
                 height: 48px;
             }
@@ -366,12 +368,12 @@ body.is-fixed-header {
     width: 24px;
     height: 24px;
 
-    @media screen and (min-width: $w1440) {
+    @media screen and (min-width: vars.$w1440) {
         width: 24px;
         height: 24px;
     }
 
-    @media screen and (min-width: $w1200) {
+    @media screen and (min-width: vars.$w1200) {
         width: 21px;
         height: 21px;
     }

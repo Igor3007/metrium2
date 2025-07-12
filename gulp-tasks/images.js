@@ -1,28 +1,21 @@
 "use strict";
 
-import { paths } from "../gulpfile.babel";
+import {paths} from "./config.js";
 import gulp from "gulp";
-import gulpif from "gulp-if";
-import imagemin from "gulp-imagemin";
+import imagemin, {mozjpeg,svgo} from "gulp-imagemin";
 import imageminPngquant from "imagemin-pngquant";
 import imageminZopfli from "imagemin-zopfli";
-import imageminMozjpeg from "imagemin-mozjpeg";
-import imageminGiflossy from "imagemin-giflossy";
-import debug from "gulp-debug";
-import browsersync from "browser-sync";
-import yargs from "yargs";
+import browserSync from "browser-sync";
 
-const argv = yargs.argv,
-    production = !!argv.production;
+export const imagesDev = () => (
+    gulp.src(paths.images.src, {encoding: false})
+        .pipe(gulp.dest(paths.images.dist))
+        .pipe(browserSync.reload({stream: true}))
+);
 
-gulp.task("images", () => {
-    return gulp.src(paths.images.src)
-        .pipe(gulpif(production, imagemin([
-            imageminGiflossy({
-                optimizationLevel: 3,
-                optimize: 3,
-                lossy: 2
-            }),
+export const imagesProd = () => (
+    gulp.src(paths.images.src, {encoding: false})
+        .pipe(imagemin([
             imageminPngquant({
                 speed: 5,
                 quality: [0.6, 0.8]
@@ -30,26 +23,21 @@ gulp.task("images", () => {
             imageminZopfli({
                 more: true
             }),
-            imageminMozjpeg({
+            mozjpeg({
                 progressive: true,
                 quality: 90
             }),
-            imagemin.svgo({
+            svgo({
                 plugins: [
-                    { removeViewBox: false },
-                    { removeUnusedNS: false },
-                    { removeUselessStrokeAndFill: false },
-                    { cleanupIDs: false },
-                    { removeComments: true },
-                    { removeEmptyAttrs: true },
-                    { removeEmptyText: true },
-                    { collapseGroups: true }
+                    { name: "removeViewBox", active:" false"},
+                    { name: "removeUnusedNS", active:" false"},
+                    { name: "removeUselessStrokeAndFill", active:" false"},
+                    { name: "cleanupIDs", active:" false"},
+                    { name: "removeComments", active:" true"},
+                    { name: "removeEmptyAttrs", active:" true"},
+                    { name: "removeEmptyText", active:" true"},
+                    { name: "collapseGroups", active:" true"}
                 ]
             })
-        ])))
-        .pipe(gulp.dest(paths.images.dist))
-        .pipe(debug({
-            "title": "Images"
-        }))
-        .on("end", browsersync.reload);
-});
+            ]))
+);

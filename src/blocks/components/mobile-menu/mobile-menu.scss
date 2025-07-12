@@ -1,7 +1,7 @@
+@use "../../../styles/vars";
+@use "../../../styles/helpers/functions";
+
 .mobile-menu {
-
-
-
     background: #242424;
     position: fixed;
     left: 0;
@@ -17,19 +17,19 @@
     z-index: 10;
     padding: 80px;
 
-    @media screen and (max-width: $w760) {
+    @media screen and (max-width: vars.$w760) {
         padding: 50px;
     }
 
-    @media screen and (max-width: $w576) {
+    @media screen and (max-width: vars.$w576) {
         padding: 30px;
     }
 
-    @media screen and (max-width: $w480) {
+    @media screen and (max-width: vars.$w480) {
         padding: 25px;
     }
 
-    @media screen and (max-width: $w360) {
+    @media screen and (max-width: vars.$w360) {
         padding: 15px;
 
     }
@@ -47,7 +47,7 @@
 
     &__nav {
 
-        margin-top: rem(40);
+        margin-top: functions.rem_(40);
 
         & li {
             & a {
@@ -62,12 +62,12 @@
                 display: block;
                 padding-bottom: 8px;
 
-                @media screen and (max-width: $w576) {
+                @media screen and (max-width: vars.$w576) {
                     font-size: 18px;
                     line-height: 157%;
                 }
 
-                @media screen and (max-width: $w360) {
+                @media screen and (max-width: vars.$w360) {
                     font-size: 16px;
                 }
             }
@@ -79,7 +79,7 @@
         align-items: center;
         border-right: 2px solid #fff;
 
-        @media screen and (max-width: $w576) {
+        @media screen and (max-width: vars.$w576) {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -102,16 +102,16 @@
         font-size: 14px;
         text-align: center;
 
-        @media screen and (max-width: $w576) {
+        @media screen and (max-width: vars.$w576) {
             padding: 0 30px;
         }
 
-        @media screen and (max-width: $w480) {
+        @media screen and (max-width: vars.$w480) {
             padding: 0 20px;
             font-size: 13px;
         }
 
-        @media screen and (max-width: $w360) {
+        @media screen and (max-width: vars.$w360) {
             padding: 0 10px;
         }
     }
@@ -169,7 +169,7 @@
     &__photo {
         margin-right: 20px;
 
-        @media screen and (max-width: $w576) {
+        @media screen and (max-width: vars.$w576) {
             margin-right: 0px;
             margin-bottom: 15px;
         }
@@ -180,7 +180,7 @@
             @include bgimage-cover;
             border-radius: 50%;
 
-            @media screen and (max-width: $w480) {
+            @media screen and (max-width: vars.$w480) {
                 width: 60px;
                 height: 60px;
             }
@@ -197,12 +197,12 @@
         color: #FFFFFF;
         padding-bottom: 10px;
 
-        @media screen and (max-width: $w576) {
+        @media screen and (max-width: vars.$w576) {
             text-align: center;
             justify-content: center;
         }
 
-        @media screen and (max-width: $w480) {
+        @media screen and (max-width: vars.$w480) {
             font-size: 14px;
             padding-bottom: 4px;
         }
@@ -216,12 +216,12 @@
         align-items: center;
         color: #FFFFFF;
 
-        @media screen and (max-width: $w576) {
+        @media screen and (max-width: vars.$w576) {
             text-align: center;
             justify-content: center;
         }
 
-        @media screen and (max-width: $w480) {
+        @media screen and (max-width: vars.$w480) {
             font-size: 12px;
         }
     }
@@ -247,12 +247,12 @@
     bottom: 100px;
     right: 100px;
 
-    @media screen and (max-width: $w1024) {
+    @media screen and (max-width: vars.$w1024) {
         bottom: 40px;
         right: 40px;
     }
 
-    @media screen and (max-width: $w576) {
+    @media screen and (max-width: vars.$w576) {
         right: 20px;
     }
 
@@ -265,7 +265,7 @@
             @include bgimage-cover;
             border-radius: 50%;
 
-            @media screen and (max-width: $w1024) {
+            @media screen and (max-width: vars.$w1024) {
                 width: 50px;
                 height: 50px;
                 margin-right: 0;

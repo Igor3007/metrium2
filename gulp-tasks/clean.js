@@ -1,8 +1,5 @@
 "use strict";
 
-import gulp from "gulp";
-import del from "del";
+import {deleteSync} from "del";
 
-gulp.task("clean", () => {
-    return del(["./dist/*"]);
-});
+export const clean = async () => (deleteSync(["./dist/*"]));

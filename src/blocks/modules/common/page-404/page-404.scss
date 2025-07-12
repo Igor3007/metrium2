@@ -1,11 +1,13 @@
+@use "../../../../styles/vars";
+
 .section-page-404 {
     padding: 45px 0;
 
-    @media screen and (min-width: $w992) {
+    @media screen and (min-width: vars.$w992) {
         padding: 45px 0;
     }
 
-    @media screen and (min-width: $w1440) {
+    @media screen and (min-width: vars.$w1440) {
         padding: 70px 0 45px 0;
     }
 }
@@ -24,7 +26,7 @@
         padding-bottom: 60px;
         line-height: 127%;
 
-        @media screen and (max-width: $w480) {
+        @media screen and (max-width: vars.$w480) {
 
             padding-bottom: 40px;
 
@@ -46,7 +48,7 @@
         justify-content: center;
         padding-bottom: 45px;
 
-        @media screen and (max-width: $w480) {
+        @media screen and (max-width: vars.$w480) {
             order: -1;
         }
 
@@ -65,7 +67,7 @@
 
             justify-content: center;
 
-            @media screen and (max-width: $w1024) {
+            @media screen and (max-width: vars.$w1024) {
                 max-width: 785px;
                 margin: 0 auto;
             }
@@ -74,15 +76,15 @@
 
                 display: block;
 
-                @media screen and (min-width: $w1200) {
+                @media screen and (min-width: vars.$w1200) {
                     width: calc(20% - 12px);
                 }
 
-                @media screen and (min-width: $w760) {
+                @media screen and (min-width: vars.$w760) {
                     width: calc(33.33% - 12px);
                 }
 
-                @media screen and (max-width: $w480) {
+                @media screen and (max-width: vars.$w480) {
 
 
                     width: calc(100% - 12px);

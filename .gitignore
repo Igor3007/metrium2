@@ -16,3 +16,4 @@ package-lock.json
 robots.txt
 list.php
 .httpauth
+/dist/

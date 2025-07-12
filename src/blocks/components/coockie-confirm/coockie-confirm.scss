@@ -43,12 +43,12 @@
 
     & button.btn-line {
         white-space: nowrap;
-        border-color: $main;
+        border-color: vars.$main;
         height: 50px;
         padding: 0 47px;
 
         &:hover {
-            background-color: $main;
+            background-color: vars.$main;
         }
     }
 
@@ -69,7 +69,7 @@
 }
 
 .bottom-popup__desc a {
-    color: $main;
+    color: vars.$main;
     text-decoration: underline;
 }
 

@@ -1,9 +1,11 @@
+@use "../../../styles/vars";
+
 .minicard {
     background-color: #fff;
     border-radius: 16px;
     overflow: hidden;
 
-    @media screen and (min-width: $w760) {
+    @media screen and (min-width: vars.$w760) {
         border-radius: 24px;
     }
 
@@ -18,7 +20,7 @@
         z-index: 2;
         width: calc(100% - 96px);
 
-        @media screen and (min-width: $w760) {
+        @media screen and (min-width: vars.$w760) {
             top: 24px;
             left: 24px;
         }
@@ -40,7 +42,7 @@
                 line-height: 100%;
                 font-size: 14px;
 
-                @media screen and (min-width: $w1440) {
+                @media screen and (min-width: vars.$w1440) {
                     font-size: 15px;
                 }
             }
@@ -62,12 +64,12 @@
         cursor: pointer;
         transition: 0.3s ease;
 
-        @media screen and (min-width: $w760) {
+        @media screen and (min-width: vars.$w760) {
             top: 24px;
             right: 24px;
         }
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: vars.$w992) {
             opacity: 0;
         }
 
@@ -97,12 +99,12 @@
         justify-content: center;
         transition: 0.3s ease;
 
-        @media screen and (min-width: $w760) {
+        @media screen and (min-width: vars.$w760) {
             bottom: 24px;
             left: 24px;
         }
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: vars.$w992) {
             opacity: 0;
         }
     }
@@ -116,12 +118,12 @@
         gap: 8px;
         transition: 0.3s ease;
 
-        @media screen and (min-width: $w760) {
+        @media screen and (min-width: vars.$w760) {
             bottom: 24px;
             right: 24px;
         }
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: vars.$w992) {
             opacity: 0;
         }
 
@@ -157,14 +159,14 @@
         position: relative;
 
         & picture {
-            @include picture(66%, cover);
+            @include vars.picture(66%, cover);
         }
     }
 
     &__main {
         padding: 16px;
 
-        @media screen and (min-width: $w576) {
+        @media screen and (min-width: vars.$w576) {
             padding: 24px;
         }
     }
@@ -176,7 +178,7 @@
         transition: 0.2s linear;
         gap: 8px;
 
-        @media screen and (min-width: $w576) {
+        @media screen and (min-width: vars.$w576) {
             flex-direction: row;
             opacity: 0;
             visibility: hidden;
@@ -187,7 +189,7 @@
         &>div {
             flex-grow: 1;
 
-            @media screen and (min-width: $w576) {
+            @media screen and (min-width: vars.$w576) {
                 width: calc(50% - 16px);
             }
 
@@ -206,15 +208,15 @@
     &__id {
         color: var(--text-2);
         padding-bottom: 12px;
-        letter-spacing: 4%;
+        letter-spacing: .04em;
     }
 
     &__title {
         font-size: 20px;
-        letter-spacing: 2%;
+        letter-spacing: .02em;
         padding-bottom: 17px;
 
-        @media screen and (min-width: $w576) {
+        @media screen and (min-width: vars.$w576) {
             font-size: 24px;
         }
     }
@@ -260,12 +262,12 @@
         display: flex;
         align-items: center;
         padding-bottom: 7px;
-        letter-spacing: 4%;
+        letter-spacing: .04em;
 
         & a,
         & span {
             margin-left: 6px;
-            letter-spacing: 4%;
+            letter-spacing: .04em;
 
             &:hover {
                 text-decoration: underline;
@@ -281,7 +283,7 @@
     &__address {
         color: var(--text-2);
         padding-bottom: 19px;
-        letter-spacing: 2%;
+        letter-spacing: .02em;
     }
 
     &__prop {
@@ -301,15 +303,15 @@
                 display: flex;
                 flex-direction: column;
                 padding-left: 0;
-                letter-spacing: 2%;
+                letter-spacing: .02em;
                 background-repeat: no-repeat;
                 background-position: 8px 1px;
 
-                @media screen and (max-width: $w576) {
+                @media screen and (max-width: vars.$w576) {
                     background-image: unset !important;
                 }
 
-                @media screen and (min-width: $w576) {
+                @media screen and (min-width: vars.$w576) {
                     padding-left: 35px;
                 }
 
@@ -318,22 +320,22 @@
                     color: var(--text-2);
                     padding-bottom: 3px;
 
-                    @media screen and (min-width: $w1440) {
+                    @media screen and (min-width: vars.$w1440) {
                         font-size: 14px;
                     }
 
-                    @media screen and (min-width: $w1200) {
+                    @media screen and (min-width: vars.$w1200) {
                         font-size: 13px;
                     }
                 }
 
                 & span {
 
-                    @media screen and (min-width: $w1440) {
+                    @media screen and (min-width: vars.$w1440) {
                         font-size: 16px;
                     }
 
-                    @media screen and (min-width: $w1200) {
+                    @media screen and (min-width: vars.$w1200) {
                         font-size: 14px;
                     }
 
@@ -346,10 +348,10 @@
 
         padding: 10px 0 26px;
 
-        letter-spacing: 4%;
+        letter-spacing: .04em;
         transition: 0.3s ease;
 
-        @media screen and (min-width: $w576) {
+        @media screen and (min-width: vars.$w576) {
             position: absolute;
             bottom: 0;
             padding: 10px 0 34px;
@@ -361,13 +363,13 @@
             font-size: 24px;
             font-weight: 400;
             color: var(--accent);
-            letter-spacing: 2%;
+            letter-spacing: .02em;
 
-            @media screen and (min-width: $w1440) {
+            @media screen and (min-width: vars.$w1440) {
                 font-size: 28px;
             }
 
-            @media screen and (min-width: $w1200) {
+            @media screen and (min-width: vars.$w1200) {
                 font-size: 25px;
             }
 
@@ -380,7 +382,7 @@
             font-size: 13px;
             color: var(--text-2);
             text-decoration: line-through;
-            letter-spacing: 2%;
+            letter-spacing: .02em;
             padding-bottom: 6px;
         }
 
@@ -390,7 +392,7 @@
     &:hover {
         & .minicard {
             &__prop {
-                @media screen and (min-width: $w576) {
+                @media screen and (min-width: vars.$w576) {
                     opacity: 0;
                 }
 

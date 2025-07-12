@@ -1,27 +1,29 @@
 "use strict";
 
-import { paths } from "../gulpfile.babel";
+import {paths} from "./config.js";
 import gulp from "gulp";
-import gulpif from "gulp-if";
 import imageminWebp from "imagemin-webp";
 import webp from "gulp-webp";
-import debug from "gulp-debug";
-import browsersync from "browser-sync";
-import yargs from "yargs";
+import browserSync from "browser-sync";
 
-const argv = yargs.argv,
-    production = !!argv.production;
-
-gulp.task("webp", () => {
-    return gulp.src(paths.webp.src)
-        .pipe(webp(gulpif(production, imageminWebp({
-            lossless: true,
-            quality: 100,
-            alphaQuality: 100
-        }))))
+export const webpDev = () => (
+    gulp.src(paths.webp.src, {encoding: false})
         .pipe(gulp.dest(paths.webp.dist))
-        .pipe(debug({
-            "title": "Images"
-        }))
-        .on("end", browsersync.reload);
-});
+        .pipe(webp(imageminWebp({
+            lossless: true,
+            quality: 80,
+            alphaQuality: 100
+        })))
+        .pipe(gulp.dest(paths.webp.dist))
+        .pipe(browserSync.reload({stream: true}))
+);
+
+export const webpProd = () => (
+    gulp.src(paths.webp.src, {encoding: false})
+        .pipe(webp(imageminWebp({
+            lossless: true,
+            quality: 80,
+            alphaQuality: 100
+        })))
+        .pipe(gulp.dest(paths.webp.dist))
+);

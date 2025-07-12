@@ -74,7 +74,7 @@ mixin ic_24(url)
   span.bgimage.lazyload.ic_24(data-bg=""+url+"")
 
 mixin bgimage(url)
-  span.bgimage.lazyload(data-bg=""+url+"")
+  span.bgimage(style="background-image: url("+url+")")
 
 mixin bgimage--nolazy(url)
   span.bgimage(style="background-image: url("+url+")")

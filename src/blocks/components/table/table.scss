@@ -1,11 +1,13 @@
-  .table {
+@use "../../../styles/vars";
+
+.table {
       display: block;
       min-width: 100%;
       //table-layout: fixed;
       border-collapse: collapse;
       margin: -1px 0;
 
-      @media screen and (min-width: $w992) {
+      @media screen and (min-width: vars.$w992) {
           display: table;
       }
 
@@ -14,13 +16,13 @@
           display: flex;
           flex-wrap: wrap;
 
-          @media screen and (max-width: $w992) {
+          @media screen and (max-width: vars.$w992) {
               padding: 12px 0;
               border-bottom: 1px solid var(--color-borders-2);
           }
 
 
-          @media screen and (min-width: $w992) {
+          @media screen and (min-width: vars.$w992) {
               display: table-row;
               border: none;
           }
@@ -41,11 +43,11 @@
           vertical-align: middle;
 
 
-          @media screen and (min-width: $w992) {
+          @media screen and (min-width: vars.$w992) {
               display: table-cell;
           }
 
-          @media screen and (min-width: $w576) {
+          @media screen and (min-width: vars.$w576) {
               padding: 15px 16px 16px 16px;
               line-height: 140%;
           }
@@ -61,7 +63,7 @@
       }
 
       &__td {
-          @media screen and (max-width: $w992) {
+          @media screen and (max-width: vars.$w992) {
               &::before {
                   content: attr(data-title);
                   display: block;

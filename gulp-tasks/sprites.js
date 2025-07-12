@@ -1,13 +1,12 @@
 "use strict";
 
-import { paths } from "../gulpfile.babel";
+import {paths} from "./config.js";
 import gulp from "gulp";
 import svg from "gulp-svg-sprite";
-import debug from "gulp-debug";
-import browsersync from "browser-sync";
+import browserSync from "browser-sync";
 
-gulp.task("sprites", () => {
-    return gulp.src(paths.sprites.src)
+export const spritesDev = () => (
+    gulp.src(paths.sprites.src)
         .pipe(svg({
             shape: {
                 dest: "intermediate-svg"
@@ -19,8 +18,20 @@ gulp.task("sprites", () => {
             }
         }))
         .pipe(gulp.dest(paths.sprites.dist))
-        .pipe(debug({
-            "title": "Sprites"
+        .pipe(browserSync.reload({stream: true}))
+);
+
+export const spritesProd = () => (
+    gulp.src(paths.sprites.src)
+        .pipe(svg({
+            shape: {
+                dest: "intermediate-svg"
+            },
+            mode: {
+                stack: {
+                    sprite: "../sprite.svg"
+                }
+            }
         }))
-        .on("end", browsersync.reload);
-});
+        .pipe(gulp.dest(paths.sprites.dist))
+);

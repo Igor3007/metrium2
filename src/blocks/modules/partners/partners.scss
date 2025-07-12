@@ -1,8 +1,10 @@
+@use "../../../styles/vars";
+
 .section-partners {
     padding: 0 0;
     background-color: var(--bg);
 
-    @media screen and (min-width: $w576) {
+    @media screen and (min-width: vars.$w576) {
         padding: 43px 0;
     }
 }
@@ -10,10 +12,10 @@
 .partners {
 
     &__title {
-        @include font-h2;
         padding-bottom: 24px;
+        @include vars.font-h2;
 
-        @media screen and (min-width: $w1200) {
+        @media screen and (min-width: vars.$w1200) {
             padding-bottom: 50px;
         }
     }
@@ -21,21 +23,20 @@
     &__slider {
         padding-bottom: 0px;
 
-        @media screen and (min-width: $w760) {
+        @media screen and (min-width: vars.$w760) {
             padding-bottom: 40px;
         }
 
-        @media screen and (min-width: $w1200) {
+        @media screen and (min-width: vars.$w1200) {
             padding-bottom: 50px;
         }
     }
 
     &__nav {
-        @include splide-nav;
-
         display: none;
+        @include vars.splide-nav;
 
-        @media screen and (min-width: $w760) {
+        @media screen and (min-width: vars.$w760) {
             display: flex;
         }
     }
@@ -52,7 +53,7 @@
 
     & .bgimage {
         padding-top: 66%;
-        @include bgimage-contain;
+        @include vars.bgimage-contain;
         width: 100%;
         background-color: #E8EBEB;
         border-radius: 24px;

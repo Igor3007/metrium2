@@ -1,17 +1,17 @@
-@import "common/header/header";
-@import "common/footer/footer";
-// @import "common/page-404/page-404";
-// @import "common/main-menu/main-menu";
+@forward "common/header/header";
+@forward "common/footer/footer";
+// @forward "common/page-404/page-404";
+// @forward "common/main-menu/main-menu";
 
-@import "first-block/first-block";
-@import "all-categories/all-categories";
-@import "best-offers/best-offers";
-@import "special-offers/special-offers";
-@import "our-services/our-services";
-@import "company-about/company-about";
-@import "partners/partners";
-@import "our-awards/our-awards";
-@import "form-question/form-question";
+@forward "first-block/first-block";
+@forward "all-categories/all-categories";
+@forward "best-offers/best-offers";
+@forward "special-offers/special-offers";
+@forward "our-services/our-services";
+@forward "company-about/company-about";
+@forward "partners/partners";
+@forward "our-awards/our-awards";
+@forward "form-question/form-question";
 
-@import "minicard/minicard";
-@import "card-collection/card-collection";
+@forward "minicard/minicard";
+@forward "card-collection/card-collection";

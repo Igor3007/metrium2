@@ -1,5 +1,6 @@
- :root {
+@use "../vars";
 
+:root {
      --font-guardian: 'Guardian Egyptian LCG';
      --font-forma-djr: 'Forma DJR Cyrillic', 'Tahoma', 'Arial';
 
@@ -38,11 +39,11 @@
      scrollbar-gutter: stable;
      background-color: #fff;
 
-     @media screen and (min-width: $w1510) {
+     @media screen and (min-width: vars.$w1510) {
          font-size: 16px;
      }
 
-     @include scrollbar();
+     @include vars.scrollbar();
 
  }
 
@@ -56,7 +57,7 @@
      min-height: -webkit-fill-available;
 
      & * {
-         @include scrollbar();
+         @include vars.scrollbar();
      }
 
  }
@@ -158,32 +159,32 @@
      padding: 0 16px;
      min-width: 316px;
 
-     @media screen and (min-width: $w480) {
+     @media screen and (min-width: vars.$w480) {
          padding: 0 16px;
          max-width: 100%;
      }
 
-     @media screen and (min-width: $w576) {
+     @media screen and (min-width: vars.$w576) {
          padding: 0 24px;
          max-width: 100%;
      }
 
-     @media screen and (min-width: $w760) {
+     @media screen and (min-width: vars.$w760) {
          padding: 0 30px;
          max-width: 100%;
      }
 
-     @media screen and (min-width: $w992) {
+     @media screen and (min-width: vars.$w992) {
          padding: 0 40px;
          max-width: 100%;
      }
 
-     @media screen and (min-width: $w1200) {
+     @media screen and (min-width: vars.$w1200) {
          padding: 0 40px;
          max-width: 100%;
      }
 
-     @media screen and (min-width: $w1440) {
+     @media screen and (min-width: vars.$w1440) {
          padding: 0 40px;
          max-width: 1680px;
      }

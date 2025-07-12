@@ -1,26 +1,27 @@
+@use "../../../styles/vars";
+
 .section-our-awards {
     padding: 26px 0 0;
     background-color: var(--bg);
 
-    @media screen and (min-width: $w576) {
+    @media screen and (min-width: vars.$w576) {
         padding: 42px 0;
     }
 }
 
 .our-awards {
     &__title {
-        @include font-h2;
         padding-bottom: 24px;
-
-        @media screen and (min-width: $w1200) {
+        @include vars.font-h2;
+        @media screen and (min-width: vars.$w1200) {
             padding-bottom: 48px;
         }
     }
 
     &__slider {
-        padding-bottom: 0px;
+        padding-bottom: 0;
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: vars.$w992) {
             padding-bottom: 40px;
         }
 
@@ -29,7 +30,7 @@
 
                 bottom: -60px;
 
-                @media screen and (max-width: $w992) {
+                @media screen and (max-width: vars.$w992) {
                     position: relative;
                     padding: 14px 0;
                     bottom: unset;
@@ -42,14 +43,14 @@
 
         display: none;
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: vars.$w992) {
             display: flex;
             justify-content: space-between;
         }
     }
 
     &__nav {
-        @include splide-nav;
+        @include vars.splide-nav;
     }
 }
 
@@ -62,12 +63,12 @@
     display: flex;
     gap: 24px;
 
-    @media screen and (min-width: $w1440) {
+    @media screen and (min-width: vars.$w1440) {
         padding: 40px 32px;
         height: 325px;
     }
 
-    @media screen and (min-width: $w1200) {
+    @media screen and (min-width: vars.$w1200) {
         height: 300px;
     }
 
@@ -78,14 +79,14 @@
     }
 
     &__name {
-        @include font-h4;
+        @include vars.font-h4;
     }
 
     &__desc {
         margin-top: auto;
         font-size: 14px;
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: vars.$w992) {
             font-size: 16px;
         }
     }
@@ -94,7 +95,7 @@
         font-weight: 500;
         font-size: 16px;
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: vars.$w992) {
             font-size: 20px;
         }
     }
@@ -103,7 +104,7 @@
         width: 64px;
 
         & .bgimage {
-            @include bgimage-contain;
+            @include vars.bgimage-contain;
             width: 100%;
             height: 100%;
             background-position: top center;

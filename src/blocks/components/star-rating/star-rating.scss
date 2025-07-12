@@ -1,3 +1,4 @@
+@use "../../../styles/helpers/functions";
 
 .star-rating {
 	overflow: hidden;
@@ -10,7 +11,7 @@
 
     & label {
 
-        padding-right: rem(5);
+        padding-right: functions.rem_(5);
         cursor: pointer;
 
         &:nth-child(2){
@@ -39,20 +40,20 @@
         display: none;
 
         &:checked ~ label svg {
-            fill: $red
+            fill: vars.$red
         }
 
         &:checked + label:hover svg,
         &:checked + label:hover ~ label svg,
         &:checked ~ label:hover svg,
         &:checked ~ label:hover ~ label svg{
-            fill: $red;
+            fill: vars.$red;
         }
     }
 
     &:not(:checked) > label:hover svg,
     &:not(:checked) > label:hover ~ label svg {
-        fill: $red;
+        fill: vars.$red;
     }
 
 }
