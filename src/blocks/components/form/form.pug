@@ -1,0 +1,44 @@
+mixin radio-group(options, data)
+    - var name = options?.name
+    - var inline = options?.inline
+    - var legend = options?.legend
+    fieldset.input-group(class = inline?"inline":null)
+        if legend
+            .input-group__title= legend
+        .input-group__inputs
+            each item,index in data
+                label(for=`${name}-${index}`)
+                    input(type="radio" id=`${name}-${index}` name=name value=item.value checked=item.selected)
+                    span.title= item.title
+
+mixin checkbox-group(options, data)
+    - var name = options?.name
+    - var inline = options?.inline
+    - var legend = options?.legend
+    fieldset.input-group(class = inline?"inline":null)
+        if legend
+            .input-group__title= legend
+        .input-group__inputs
+            each item,index in data
+                label(for=`${name}-${index}`)
+                    input(type="checkbox" id=`${name}-${index}` value=item.value checked=item.selected)
+                    span.title= item.title
+
+mixin select-field(data)
+    if data.multiple
+        select(placeholder=data.placeholder multiple)
+            each item in data.options
+                option= item
+    else
+        select(placeholder=data.placeholder)
+            each item in data.options
+                option= item
+
+mixin prefixed-input(options)
+    -var type = options?.type || "text"
+    -var placeholder = options?.placeholder || null
+    -var formatted = options?.format
+    .prefixed-input
+        if block
+            block
+        input(type=type, placeholder=placeholder, class={formatted : formatted})

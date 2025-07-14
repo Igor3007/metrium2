@@ -1,0 +1,79 @@
+include ../../../views/helpers/mixins
+include ../../../blocks/components/form/form
+
+section.page-title
+    +breadcrumbs([{url: "", title: "Элитная недвижимость в Москве"}])
+    h1 Элитная недвижимость в Москве
+    .page-title__filter
+        .btn-wrapper
+            button.btn.btn-gold(data-target=".page-title__filter" data-toggle="show")
+                +icons('#ic_filters')
+                span Фильтры недвижимости
+        .page-filter
+            form.form.primary-form
+                .page-filter__item
+                    +radio-group(
+                        {name: "buy", inline: true},
+                        [
+                            {title: "Купить", value: "buy", selected: true},
+                            {title: "Арендовать", value: "rent"}
+                        ]
+                    )
+                .page-filter__item
+                    +select-field({
+                        placeholder: "Тип недвижимости",
+                        options: [
+                            "321",
+                            "123",
+                            "213"
+                        ]
+                    })
+                .page-filter__item
+                    +select-field({
+                        placeholder: "Новостройки и вторичка",
+                        options: [
+                            "321",
+                            "123",
+                            "213"
+                        ]
+                    })
+                .page-filter__item
+                    +radio-group(
+                        {name: "ready", legend: "Готовность:"},
+                        [
+                            {title: "Неважно", value: "any", selected: true},
+                            {title: "Готов", value: "yes"},
+                            {title: "Строится", value: "no"}
+                        ]
+                    )
+                .page-filter__item
+                    +checkbox-group(
+                        {name: "bedrooms", legend: "Спален:"},
+                        [
+                            {title: "1", value: "1"},
+                            {title: "2", value: "2"},
+                            {title: "3", value: "3"},
+                            {title: "4", value: "4"},
+                            {title: "5+", value: "5"}
+                        ]
+                    )
+                .page-filter__item
+                    +prefixed-input({format: true})
+                        label Цена от
+                .page-filter__item
+                    +prefixed-input()
+                        label до
+                .page-filter__item
+                    +radio-group(
+                        {name: "currency"},
+                        [
+                            {title: "₽", value: "RUB", selected: true},
+                            {title: "$", value: "USD"},
+                            {title: "€", value: "EU"}
+                        ]
+                    )
+            form.form.secondary-form
+                .page-filter__item
+                    +prefixed-input({placeholder: "Поиск по ID"})
+                        +icons("#ic_search")
+

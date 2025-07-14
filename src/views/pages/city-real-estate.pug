@@ -1,5 +1,13 @@
 extends ../layouts/page
 
+include ../../blocks/components/breadcrumbs/breadcrumbs
+
 block variables
     - const title = "Городская недвижимость - Metrium"
     - const pageUrl = "/city-real-estate.html"
+
+block main
+    .container
+        include ../../blocks/modules/page-title/page-title--city-real-estate
+    .container
+        p Catalog

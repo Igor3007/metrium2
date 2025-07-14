@@ -6,6 +6,11 @@ header {
     left: 0;
     right: 0;
     z-index: 4;
+
+    &.white {
+        border-bottom: 1px solid vars.$color-accent-13;
+        position: sticky;
+    }
 }
 
 body.is-fixed-header {
@@ -365,6 +370,7 @@ body.is-fixed-header {
         &#{$ancestor} {
             --ink: #{vars.$color-text-1};
             --paper: #{vars.$color-white};
+
             .hover-ripple {
                 &:before {
                     background-color: vars.$color-accent-11;

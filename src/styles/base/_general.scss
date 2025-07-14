@@ -87,6 +87,18 @@
      line-height: 130%;
  }
 
+ h1 {
+   @include vars.font-h1
+ }
+
+ h2 {
+   @include vars.font-h2
+ }
+
+ h3 {
+   @include vars.font-h3
+ }
+
  body.page-hidden-ts,
  body.page-hidden {
      touch-action: none;
