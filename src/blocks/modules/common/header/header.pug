@@ -9,8 +9,7 @@
                 nav
                     ul
                         each item in mainNav
-                            li(class={'is-active': item.url === pageUrl}): a(href="")= item.title
-
+                            li(class={'is-active': item.url === pageUrl}): a(href=item.url)= item.title
         .header__logo
             a(href='#')
                 span(style="background-image: url('/img/common/logo.svg')")

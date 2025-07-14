@@ -92,6 +92,14 @@ body.is-fixed-header {
             }
         }
 
+        & .btn-green {
+            background-color: var(--accent);
+
+            &::before {
+                background-color: var(--accent-11);
+            }
+        }
+
         & .hover-ripple {
 
             transition: 0.5s ease;
@@ -357,6 +365,15 @@ body.is-fixed-header {
         &#{$ancestor} {
             --ink: #{vars.$color-text-1};
             --paper: #{vars.$color-white};
+            .hover-ripple {
+                &:before {
+                    background-color: vars.$color-accent-11;
+                }
+                &:hover {
+                    border-color: vars.$color-accent-11;
+                    --ink: #{vars.$color-white};
+                }
+            }
         }
         #{$ancestor} {
             &__logo {
@@ -371,6 +388,18 @@ body.is-fixed-header {
                             --ink: #{vars.$color-accent-11};
                         }
                     }
+                }
+            }
+            &__burger {
+                border-color: rgba(vars.$color-accent-11, .2);
+                --ink: #{vars.$color-accent-11};
+                cursor: pointer;
+
+            }
+            &__wishlist {
+                a {
+                    border-color: rgba(vars.$color-accent-11, .2);
+                    --ink: #{vars.$color-accent-11};
                 }
             }
         }
