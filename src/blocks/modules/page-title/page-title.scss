@@ -38,7 +38,7 @@
 }
 
 .page-filter {
-  display: none;
+  //display: none;
   @include vars.from('md') {
     display: block;
   }

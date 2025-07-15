@@ -3,8 +3,8 @@
 # Promicom Develop
 
 ```
-node v12.22.12
+node v22.17.0 (LTS)
 
-yarn install --ignore-engines
+npm install
 
 ```
