@@ -5,7 +5,6 @@
     padding: 0.8em 1.5em 0.85em 1.5em;
     color: #fff;
     border: none;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -232,6 +231,18 @@
                 & svg {
                     fill: #fff;
                 }
+            }
+        }
+    }
+
+    &.btn-transparent {
+        background-color: transparent;
+        color: var(--text-2);
+        &:hover {
+            background-color: var(--accent-14);
+            &:before {
+                background-color: var(--accent-14);
+                z-index: -1;
             }
         }
     }

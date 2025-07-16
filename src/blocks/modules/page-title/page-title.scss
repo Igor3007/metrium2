@@ -1,58 +1,147 @@
 @use "../../../styles/vars";
 
 .page-title {
-  padding-block: 24px;
-  overflow: visible;
+    padding-block: 24px;
+    overflow: visible;
 
-  .breadcrumbs {
-    margin-bottom: 12px;
-  }
-
-  h1 {
-    margin-bottom: 16px;
-    @include vars.font-h2
-  }
-
-  .btn-wrapper {
-    display: flex;
-    justify-content: center;
-    @include vars.from('md') {
-      display: none;
+    .breadcrumbs {
+        margin-bottom: 12px;
     }
-    .btn {
-      width: 100%;
-      max-width: 400px;
-    }
-  }
 
-  &__filter {
-    &.show {
-      .btn-wrapper {
-        display: none;
-      }
-      .page-filter {
-        display: block;
-      }
+    h1 {
+        margin-bottom: 16px;
+        @include vars.font-h2;
     }
-  }
+
+    h4 {
+        @include vars.font-h4;
+    }
+
+    .toggler {
+        display: flex;
+        justify-content: center;
+        @include vars.from('md') {
+            display: none;
+        }
+
+        .btn {
+            width: 100%;
+            max-width: 400px;
+        }
+    }
+
+    &__filter {
+        .page-filter__modal-heading {
+            display: none;
+        }
+        &.sm-modal {
+            position: fixed;
+            inset: 0;
+            z-index: vars.$z-modal;
+            background: rgba(0, 0, 0, .7);
+            backdrop-filter: blur(2px);
+            overflow: auto;
+
+            .toggler {
+                display: none;
+            }
+
+            .page-filter {
+                display: block;
+                background: var(--white);
+                padding: var(--container-padding);
+                padding-bottom: 0;
+                max-width: 600px;
+                margin: 16px auto 0;
+                border-radius: 16px 16px 0 0;
+
+                &__modal-heading {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .close {
+                        border: none;
+                        cursor: pointer;
+                        background: var(--accent-12);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 12px;
+                        color: var(--text-3);
+
+                        &:hover {
+                            background: transparent;
+                            color: var(--text-2);
+                        }
+
+                        &:active {
+                            background: var(--accent-11);
+                            color: var(--white);
+                        }
+
+                    }
+                }
+            }
+        }
+    }
 }
 
 .page-filter {
-  //display: none;
-  @include vars.from('md') {
-    display: block;
-  }
-  &__item {
-    width: 100%;
-  }
-  form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-
-    fieldset {
-      margin: 0;
+    display: none;
+    position: relative;
+    @include vars.from('md') {
+        display: block;
     }
-  }
+    &__item {
+        width: 100%;
+    }
 
+    .form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        &.secondary-form {
+            border-top: 1px solid var(--accent-13);
+            margin-top: 24px;
+            padding-top: 24px;
+        }
+
+        fieldset {
+            margin: 0;
+        }
+    }
+
+    &__footer {
+        position: sticky;
+        bottom: 0;
+        background: var(--white);
+        padding: 12px;
+        margin-inline: calc(-1 * var(--container-padding));
+        box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.12);
+
+        .btn-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+    }
+}
+
+.instant-filter {
+    &__title {
+        font: 400 16px/1.5 vars.$font-default;
+    }
+    &__list {
+        @include vars.before('md') {
+            max-height: none !important;
+            .is-hide {
+                display: block !important;
+            }
+            .show-more-tag {
+                display: none !important;
+            }
+        }
+    }
 }

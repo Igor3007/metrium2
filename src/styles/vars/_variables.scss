@@ -72,6 +72,8 @@ $w480: 480px;
 $w375: 375.98px;
 $w360: 360.98px;
 
+$z-modal: 10;
+
 /* popular breakpoints and mixin for applying */
 $breakpoints: (
     xs: $w375,
@@ -84,11 +86,23 @@ $breakpoints: (
 @mixin from($breakpoint) {
   @if map.has-key($breakpoints, $breakpoint) {
     $breakpoint-value: map.get($breakpoints, $breakpoint);
-    @media screen and (min-width: $breakpoint-value) {
+    @media screen and (min-width: $breakpoint-value + 1) {
       @content;
     }
   }
   @else {
     @warn "Invalid breakpoint: #{$breakpoint}. Available breakpoints are: #{map.keys($breakpoints)}.";
   }
+}
+
+@mixin before($breakpoint) {
+    @if map.has-key($breakpoints, $breakpoint) {
+        $breakpoint-value: map.get($breakpoints, $breakpoint);
+        @media screen and (max-width: $breakpoint-value) {
+            @content;
+        }
+    }
+    @else {
+        @warn "Invalid breakpoint: #{$breakpoint}. Available breakpoints are: #{map.keys($breakpoints)}.";
+    }
 }

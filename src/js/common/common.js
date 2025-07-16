@@ -3,15 +3,13 @@ import {afSelect} from "../vendor/af-select.min.js";
 import {Splide} from "@splidejs/splide";
 import Cookies from "js-cookie";
 import {initTogglers} from "./toggler.js";
-import {initFormattedInput} from "./formatted-input.js";
+import {FlexCollections} from "./flex-collections.js";
 
 document.addEventListener('DOMContentLoaded', function (event) {
     initTogglers();
-    initFormattedInput();
 
     const API_YMAPS = 'https://api-maps.yandex.ru/2.1/?apikey=0e2d85e0-7f40-4425-aab6-ff6d922bb371&suggest_apikey=ad5015b5-5f39-4ba3-9731-a83afcecb740&lang=ru_RU&mode=debug';
     const SLIDER_ARROW_PATH = 'M16.2859 12.2421C16.6493 11.9029 17.2188 11.9225 17.558 12.2859L23.7802 18.9526C24.1029 19.2984 24.1029 19.835 23.7802 20.1808L17.558 26.8474C17.2188 27.2108 16.6493 27.2304 16.2859 26.8913C15.9225 26.5521 15.9029 25.9826 16.2421 25.6193L21.8911 19.5667L16.2421 13.5141C15.9029 13.1507 15.9225 12.5812 16.2859 12.2421Z'
-
 
     /* =================================================
     css variable
@@ -964,109 +962,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     })
 
-    /* ====================================
-    flex collections
-    ====================================*/
-
-    class FlexCollections {
-        constructor(params) {
-            this.params = params
-            this.$el = params.el || document
-            this.widthButtonShowMore = 50;
-            this.container = this.params.container || document
-            this.showMoreBotton = this.container.querySelector('.show-more-tag')
-            this.init()
-        }
-
-        init() {
-            this.addEvent()
-            this.render()
-        }
-
-        heightItems() {
-
-
-
-            return this.$el.clientHeight;
-        }
-
-        heightContainer() {
-
-            let heightItem = this.$el.querySelector('li').offsetHeight
-
-
-
-            if (document.body.clientWidth > 767) {
-                return heightItem
-            } else {
-                return (heightItem * 2) + 10
-            }
-
-        }
-
-        render() {
-
-            if (this.params.container.classList.contains('is-open')) {
-                return false;
-            }
-
-            this.$el.querySelectorAll('li.is-hide').forEach(li => li.classList.remove('is-hide'))
-            this.showMoreBotton.style.display = (this.heightItems() > this.heightContainer() ? 'flex' : 'none')
-            let i = 0;
-            while (this.heightItems() > this.heightContainer()) {
-                let visibleElements = this.$el.querySelectorAll('li:not(.is-hide)')
-                if (visibleElements[(visibleElements.length - 1)]) {
-                    visibleElements[(visibleElements.length - 1)].classList.add('is-hide')
-                }
-
-                i++;
-                if (i > 100) return false
-            }
-
-            this.container.classList.contains('is-init') || this.container.classList.add('is-init')
-        }
-
-        debounce(method, delay, e) {
-            clearTimeout(method._tId);
-            method._tId = setTimeout(function () {
-                method(e);
-            }, delay);
-        }
-
-
-        addEvent() {
-            const resizeHahdler = (e) => {
-                this.render()
-            }
-
-            const observer = new ResizeObserver((entries) => {
-                this.debounce(resizeHahdler, 30, entries)
-            });
-
-            observer.observe(this.params.container);
-
-            this.showMoreBotton.addEventListener('click', e => {
-                this.container.classList.toggle('is-open');
-            })
-        }
-
-    }
-
-    if (document.querySelector('.fb-filter__selections')) {
-
-        document.querySelectorAll('.fb-filter__selections').forEach(item => {
-
+    // apply `flex collections`
+    document
+        .querySelectorAll('[data-collection="flex"]')
+        .forEach(item => {
             if (!item.classList.contains('.is-init')) {
                 let collections = new FlexCollections({
                     el: item.querySelector('ul'),
                     container: item
                 })
             }
-
-
         })
-
-    }
 
     /* ==============================================
     wishlist

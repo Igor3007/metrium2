@@ -342,6 +342,13 @@
         & .select-options li {
             max-width: none;
         }
+
+        .select-list {
+            input {
+                font-size: 16px;
+                padding-left: 45px;
+            }
+        }
     }
 
 

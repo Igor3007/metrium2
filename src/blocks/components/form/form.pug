@@ -26,7 +26,7 @@ mixin checkbox-group(options, data)
 
 mixin select-field(data)
     if data.multiple
-        select(placeholder=data.placeholder multiple)
+        select(placeholder=data.placeholder multiple="multiple")
             each item in data.options
                 option= item
     else

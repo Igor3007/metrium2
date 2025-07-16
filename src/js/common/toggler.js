@@ -4,13 +4,20 @@ export const initTogglers = () => {
         .forEach(el => {
             el.addEventListener('click', (e) => {
                 e.preventDefault();
-                const {target, toggle} = el.dataset;
-                document
-                    .querySelectorAll(target)
-                    .forEach(
-                        el => {
-                            el.classList.toggle(toggle)
-                        });
+                const {target, toggle, parent} = el.dataset;
+
+                if (target) {
+                    document
+                        .querySelectorAll(target)
+                        .forEach(
+                            el => {
+                                el.classList.toggle(toggle)
+                            });
+                }
+
+                if (parent) {
+                    el.closest(parent).classList.toggle(toggle)
+                }
             })
         });
 }
