@@ -690,6 +690,10 @@
     font: 400 18px/28px vars.$font-default;
     align-items: center;
 
+    @include vars.from('md') {
+        flex-wrap: nowrap;
+    }
+
     &__title {
         color: var(--text-1);
     }
@@ -710,6 +714,10 @@
         flex-grow: 1;
         text-align: center;
         width: 100%;
+        white-space: nowrap;
+        @include vars.from('md') {
+            padding-block: 14px;
+        }
 
         input {
             display: none;
