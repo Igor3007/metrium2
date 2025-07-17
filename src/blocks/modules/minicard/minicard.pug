@@ -1,12 +1,13 @@
 mixin minicard(data)
+    -var image = data.image
+    -var id = data.id
     .minicard
         .minicard__top
-             
             .minicard__stickers
                 ul
-                    li: span(style="background: #B88E5F") Эксклюзив 
-                    li: span(style="background: #00403F") Старт продаж 
-                     
+                    li: span(style="background: #B88E5F") Эксклюзив
+                    li: span(style="background: #00403F") Старт продаж
+
             .minicard__fullscreen: +icons('#ic_fullscreen')
             .minicard__counter
                 span(data-slider-counter="current") 2
@@ -20,49 +21,51 @@ mixin minicard(data)
                     .splide__track
                         .splide__list
                             .splide__slide
-                                    +picture(data.image)
+                                    +picture(image)
                             .splide__slide
                                     +picture('/img/objects/img-block-4')
                             each item in [1,1,1,1,1,1]
                                 .splide__slide
-                                    +picture(data.image)
+                                    +picture(image)
         .minicard__main
             .minicard__wishlist
-                span(data-wishlist=data.id): +icons('#ic_heart')
+                span(data-wishlist=id): +icons('#ic_heart')
             .minicard__id ID: 23478
             .minicard__title: a(href='#') 4-комн. квартира, 201 м <sup>2</sup>
-            .minicard__jk 
-                +icons('#ic_jk')
-                a(href="#") Вишневый сад
-            .minicard__address Мосфильмовская улица
-            .minicard__prop
-                ul
-                    li(style="background-image: url('/img/icons/01-area.svg')")
-                        small Площадь
-                        span 124.7 м2
-                    li(style="background-image: url('/img/icons/02-room.svg')")
-                        small Комнат
-                        span 3
-                    li(style="background-image: url('/img/icons/05-bedroom.svg')")
-                        small Спален
-                        span 3
-                    li(style="background-image: url('/img/icons/04-floor.svg')")
-                        small Этаж
-                        span 6/12
-                    
-            .minicard__price
-                .minicard__price-usd(data-currency-id="usd") 2 408 245 $
-                .minicard__price-rub(data-currency-id="rub").is-active 
-                    .minicard__price-old 918 126 582 ₽
-                    | 725 320 000 ₽
-                .minicard__price-eur(data-currency-id="eur") 199 520 000 €
-            .minicard__action
-                .minicard__detail
-                    a(href='#'): button.btn.btn-green: span Подробнее
-                .minicard__getcall
-                    a(href='#')
-                        button.btn.btn-line 
-                            +icons('#ic_phone')
-                            span Заказать звонок
+            .minicard__params
+                .minicard__place
+                    .minicard__jk
+                        +icons('#ic_jk')
+                        a(href="#") Вишневый сад
+                    .minicard__address Мосфильмовская улица
+                .minicard__prop
+                    ul
+                        li(style="background-image: url('/img/icons/01-area.svg')")
+                            small Площадь
+                            span 124.7 м²
+                        li(style="background-image: url('/img/icons/02-room.svg')")
+                            small Комнат
+                            span 3
+                        li(style="background-image: url('/img/icons/05-bedroom.svg')")
+                            small Спален
+                            span 3
+                        li(style="background-image: url('/img/icons/04-floor.svg')")
+                            small Этаж
+                            span 6/12
+            .minicard__footer
+                .minicard__price
+                    .minicard__price-usd(data-currency-id="usd") 2 408 245 $
+                    .minicard__price-rub(data-currency-id="rub").is-active
+                        .minicard__price-old 918 126 582 ₽
+                        | 725 320 000 ₽
+                    .minicard__price-eur(data-currency-id="eur") 199 520 000 €
+                .minicard__action
+                    .minicard__detail
+                        a(href='#'): button.btn.btn-green: span Подробнее
+                    .minicard__getcall
+                        a(href='#')
+                            button.btn.btn-line
+                                +icons('#ic_phone')
+                                span Заказать звонок
 
 

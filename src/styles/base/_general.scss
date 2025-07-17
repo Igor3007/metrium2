@@ -106,7 +106,9 @@ body.page-hidden {
     overscroll-behavior-y: none;
 }
 
-img, svg {
+img,
+picture,
+svg {
     display: block;
 }
 

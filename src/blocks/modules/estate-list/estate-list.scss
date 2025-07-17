@@ -1,7 +1,14 @@
 @use "../../../styles/vars";
 @forward "./submodules/list-header/list-header.scss";
+@forward "./submodules/list-body/list-body.scss";
 
 .estate-list {
     background: var(--accent-12);
     padding: 24px 0;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
 }

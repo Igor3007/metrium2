@@ -92,7 +92,9 @@
                 svg {
                     margin-inline: 0;
                 }
-                &.active {
+                .estate-list:not(.list) &.grid,
+                .estate-list.list &.list
+                {
                     color: var(--white);
                     background: var(--accent-11);
                 }

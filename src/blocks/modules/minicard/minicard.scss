@@ -1,9 +1,11 @@
 @use "../../../styles/vars";
 
 .minicard {
+    $ancestor: &;
     background-color: #fff;
     border-radius: 16px;
     overflow: hidden;
+    position: relative;
 
     @media screen and (min-width: vars.$w760) {
         border-radius: 24px;
@@ -233,8 +235,6 @@
         }
 
         & span {
-
-            display: inline-block;
             width: 36px;
             height: 36px;
             display: flex;
@@ -395,7 +395,6 @@
                 @media screen and (min-width: vars.$w576) {
                     opacity: 0;
                 }
-
             }
 
             &__price {
@@ -414,6 +413,50 @@
             &__fullscreen {
                 opacity: 1;
             }
+        }
+    }
+
+    @container (width > 1199px) {
+        display: flex;
+        #{$ancestor} {
+            &__top {
+                //aspect-ratio: 247 / 164;
+                min-height: 100%;
+                min-width: 494px;
+            }
+            &__main {
+                flex-grow: 1;
+            }
+            &__prop {
+                border: none;
+                opacity: 1 !important;
+                flex-basis: 50%;
+            }
+            &__params {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-top: 1px solid var(--accent-13);
+                border-bottom: 1px solid var(--accent-13);
+                padding: 12px 0;
+                white-space: nowrap;
+            }
+            &__action {
+                opacity: 1;
+                visibility: visible;
+                flex-basis: 50%;
+            }
+            &__price {
+                position: static;
+            }
+            &__footer {
+                display: flex;
+                justify-content: space-between;
+            }
+            &__slider {
+                height: 100%;
+            }
+
         }
     }
 
