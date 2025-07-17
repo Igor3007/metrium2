@@ -206,8 +206,14 @@ input[type="date"] {
     }
 }
 
-.hidden-from-md {
+.hide-from-md {
     @include vars.from('md') {
+        display: none;
+    }
+}
+
+.hide-before-md {
+    @include vars.before('md') {
         display: none;
     }
 }

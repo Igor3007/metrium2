@@ -144,6 +144,23 @@
             border-bottom: 1px solid var(--accent-13);
             margin-block: 24px;
             padding-block: 24px;
+            @include vars.from('md') {
+                max-height: 0;
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
+                opacity: 0;
+                transition: .3s;
+
+                &.open {
+                    opacity: 1;
+                    margin-block: 24px;
+                    padding-block: 24px;
+                    max-height: none;
+                    animation: max-height-animation;
+                    animation-duration: .3s;
+                }
+            }
         }
 
         fieldset {
@@ -164,6 +181,14 @@
             flex-direction: column;
             gap: 12px;
         }
+    }
+
+    &__footer {
+        .btn-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+
     }
 
     &__instant-filter {

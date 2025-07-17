@@ -1,5 +1,6 @@
 include ../../../views/helpers/mixins
 include ../../../blocks/components/form/form
+include ../../../blocks/components/index
 
 section.page-title
     +breadcrumbs([{url: "", title: "Элитная недвижимость в Москве"}])
@@ -10,7 +11,7 @@ section.page-title
                 +icons('#ic_filters')
                 span Фильтры недвижимости
         .page-filter
-            .page-filter__modal-heading.hidden-from-md
+            .page-filter__modal-heading.hide-from-md
                 h4 Фильтры недвижимости
                 button.close(data-target=".page-title__filter" data-toggle="sm-modal")
                     +icons("#ic_close", 12)
@@ -91,7 +92,7 @@ section.page-title
                             placeholder: 'Район',
                             options: catalog.districts
                         })
-                    .page-filter__item.hidden-from-md
+                    .page-filter__item.hide-from-md
                         +select-field({
                             multiple: true,
                             placeholder: 'Метро',
@@ -166,8 +167,10 @@ section.page-title
                             div(class="fb-filter__more show-more-tag" data-isopen="tag-collections"): span
                 .page-filter__footer
                     .btn-wrapper
-                        button.btn.btn-green(type="submit")
+                        button.btn.btn-green(type="submit").hide-from-md
                             span Применить фильтры
+                        .hide-before-md
+                            +toggler-tick({title: ["Дополнительный фильтр", "Простой фильтр"], toggle: "open", target: ".secondary-form"})
                         button.btn.btn-transparent(type="reset")
                             span Сбросить фильтры
                             +icons("#ic_close", 12)
