@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     // select.afSelect.update()
 
     const selectCustom = new afSelect({
-        selector: 'select'
+        selector: 'select:not(.native)'
     })
 
     selectCustom.init()

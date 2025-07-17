@@ -1,0 +1,7 @@
+@use "../../../styles/vars";
+@forward "./submodules/list-header/list-header.scss";
+
+.estate-list {
+    background: var(--accent-12);
+    padding: 24px 0;
+}

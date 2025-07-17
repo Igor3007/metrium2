@@ -1,0 +1,23 @@
+.list-header
+    .list-header__qty
+        |Найдено 512 вариантов
+    .list-header__controls
+        .list-header__controls-sort
+            select
+                option По возрастанию
+            .btn.btn-line
+                +icons("#ic_sort")
+                |Сортировка
+
+        .list-header__controls-group
+            .buttons-group
+                button.btn.hide-before-md.active
+                    +icons("#ic_grid")
+                    span плиткой
+                button.btn.hide-before-md
+                    +icons("#ic_list")
+                    span списком
+                a(href="#").btn
+                    +icons("#ic_on-map-small")
+                    span на карте
+
