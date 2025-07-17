@@ -1,0 +1,8 @@
+mixin breadcrumbs(links)
+    ul.breadcrumbs
+        li: a(href="/") Главная
+        each item, index in links
+            if links.length !== (index+1)
+                li: a(href=item.url)!= item.title
+            else
+                li: span!= item.title

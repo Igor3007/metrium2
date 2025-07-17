@@ -7,11 +7,11 @@ mixin select-field(data)
         select(placeholder=data.placeholder)
             each item in data.option
                 option= item
-    
+
 
 mixin price-field
     input(type="text" placeholder="от")
-    input(type="text" placeholder="до") 
+    input(type="text" placeholder="до")
 
 mixin tab-content-city
     form(action='#' method='POST')
@@ -35,7 +35,7 @@ mixin tab-content-city
                             'Таунхаусы',
                         ]
                     })
-                    
+
                 .fb-filter__field
                     .price-input
                         label Цена от
@@ -51,17 +51,17 @@ mixin tab-content-city
                         .select-currency__item
                             label
                                 input(type="radio" name="currency" value="₽" checked)
-                                span ₽ 
+                                span ₽
                         .select-currency__item
                             label
                                 input(type="radio" name="currency" value="$")
-                                span $ 
+                                span $
                         .select-currency__item
                             label
                                 input(type="radio" name="currency" value="€")
-                                span € 
+                                span €
 
-                
+
         .fb-filter__row.fb-filter__row--second
             .fb-filter__fields
                 .fb-filter__field
@@ -85,10 +85,10 @@ mixin tab-content-city
                 .fb-filter__field
                     .fb-filter-all
                         span Показать ещё фильтры
-                        +icons('#ic_arrow-down', 16) 
+                        +icons('#ic_arrow-down', 16)
 
             .fb-filter__items
-                    
+
                 .fb-filter__item
                     button.btn.btn-line
                         +icons('#ic_loc')
@@ -98,7 +98,7 @@ mixin tab-content-city
                         +icons('#ic_house')
                         span Подобрать недвижимость
         .fb-filter__row
-            .fb-filter__selections
+            .fb-filter__selections(data-collection="flex")
                 ul
                     li: a(href='#') Купить квартиру в центре Москвы
                     li: a(href='#') Купить участок в Подмосковье
@@ -136,7 +136,7 @@ mixin tab-content-village
                             'Таунхаусы',
                         ]
                     })
-                    
+
                 .fb-filter__field
                     .price-input
                         label Цена от
@@ -152,17 +152,17 @@ mixin tab-content-village
                         .select-currency__item
                             label
                                 input(type="radio" name="currency" value="₽" checked)
-                                span ₽ 
+                                span ₽
                         .select-currency__item
                             label
                                 input(type="radio" name="currency" value="$")
-                                span $ 
+                                span $
                         .select-currency__item
                             label
                                 input(type="radio" name="currency" value="€")
-                                span € 
+                                span €
 
-                
+
         .fb-filter__row.fb-filter__row--second
             .fb-filter__fields
                 .fb-filter__field
@@ -186,10 +186,10 @@ mixin tab-content-village
                 .fb-filter__field
                     .fb-filter-all
                         span Показать ещё фильтры
-                        +icons('#ic_arrow-down', 16) 
+                        +icons('#ic_arrow-down', 16)
 
             .fb-filter__items
-                    
+
                 .fb-filter__item
                     button.btn.btn-line
                         +icons('#ic_loc')
@@ -203,22 +203,22 @@ mixin tab-content-village
                 ul
                     li: a(href='#') Дома до 300м
                     li: a(href='#') Купить участок в Подмосковье
-                    li: a(href='#') С выходом к озеру 
+                    li: a(href='#') С выходом к озеру
                     li: a(href='#') 10 минут от города
                     li: a(href='#') Патриаршие пруды
                     li: a(href='#') Дом для большой семьи
-                    li: a(href='#') С выходом к озеру 
+                    li: a(href='#') С выходом к озеру
                     li: a(href='#') 10 минут от города
                     li: a(href='#') Патриаршие пруды
                     li: a(href='#') Дом для большой семьи
 
                     div(class="fb-filter__more show-more-tag" data-isopen="tag-collections"): span
- 
- 
+
+
 
 mixin first-block
     section.section-first-block
-        
+
             .first-block-scroll-box
                 .first-block
                     .first-block__bg
@@ -229,10 +229,10 @@ mixin first-block
                     .first-block__wrp
                         .container
                             .first-block__title
-                                h1 
+                                h1
                                     | Метриум Премиум
                                     span Элитная недвижимость в Москве и Подмосковье
-                                    
+
                             .first-block__fastlink
                                 ul
                                     li: a(href='#') Лучшие предложения

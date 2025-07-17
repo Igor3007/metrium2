@@ -96,5 +96,8 @@ export const paths = {
     gzip: {
         src: "./src/.htaccess",
         dist: "./dist/"
+    },
+    data: {
+        src: "./src/data/data.json",
     }
 };

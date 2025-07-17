@@ -1,0 +1,32 @@
+@use "../../../../styles/vars";
+
+.toggler-tick {
+    display: flex;
+    cursor: pointer;
+
+    &:after {
+        content: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOCAxMC4wMDAyTDEyIDE0LjAwMDJMMTYgMTAuMDAwMiIgc3Ryb2tlPSIjMDA0MDNGIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==);
+        height: 24px;
+        width: 24px;
+        transition: .3s;
+    }
+
+    &__title {
+        color: var(--accent-11);
+        display: none;
+    }
+
+    &:not(.on) &_off {
+        display: flex;
+    }
+    &.on &_on {
+        display: flex;
+    }
+
+    &.on {
+        &:after {
+            transform: rotate(180deg);
+        }
+    }
+
+}

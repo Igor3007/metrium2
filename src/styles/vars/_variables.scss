@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $main: var(--accent);
 $accent-1-1: $main;
 $accent-1-2: $main;
@@ -44,6 +46,13 @@ $color-borders-3: rgba(215, 225, 245, 1);
 $color-borders-4: rgba(34, 64, 122, 1);
 $color-green-1: rgba(0, 184, 122, 1);
 $color-bg-green-1: rgba(240, 255, 250, 1);
+$color-accent-11: #00403f;
+$color-accent-13: #E8EAEB;
+
+$font-default-strict: "Forma DJR Cyrillic";
+$font-default: $font-default-strict 'Tahoma' 'Arial' sans-serif;
+$font-captions-strict: "Guardian Egyptian LCG";
+$font-captions: $font-captions-strict serif;
 
 /* media breakpoints */
 
@@ -62,3 +71,38 @@ $w576: 576px;
 $w480: 480px;
 $w375: 375.98px;
 $w360: 360.98px;
+
+$z-modal: 10;
+
+/* popular breakpoints and mixin for applying */
+$breakpoints: (
+    xs: $w375,
+    sm: $w576,
+    md: $w760,
+    lg: $w992,
+    xl: $w1200
+);
+
+@mixin from($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map.get($breakpoints, $breakpoint);
+    @media screen and (min-width: $breakpoint-value + 1) {
+      @content;
+    }
+  }
+  @else {
+    @warn "Invalid breakpoint: #{$breakpoint}. Available breakpoints are: #{map.keys($breakpoints)}.";
+  }
+}
+
+@mixin before($breakpoint) {
+    @if map.has-key($breakpoints, $breakpoint) {
+        $breakpoint-value: map.get($breakpoints, $breakpoint);
+        @media screen and (max-width: $breakpoint-value) {
+            @content;
+        }
+    }
+    @else {
+        @warn "Invalid breakpoint: #{$breakpoint}. Available breakpoints are: #{map.keys($breakpoints)}.";
+    }
+}

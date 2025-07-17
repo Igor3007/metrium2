@@ -6,6 +6,11 @@ header {
     left: 0;
     right: 0;
     z-index: 4;
+
+    &.white {
+        border-bottom: 1px solid vars.$color-accent-13;
+        position: sticky;
+    }
 }
 
 body.is-fixed-header {
@@ -23,8 +28,8 @@ body.is-fixed-header {
     }
 
     & .header {
-        background-color: #fff;
-        color: #000;
+        --ink: #{vars.$color-text-1};
+        --paper: #{vars.$color-white};
         box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.1);
         border-radius: 0;
         padding: 16px 16px;
@@ -37,10 +42,6 @@ body.is-fixed-header {
         @media screen and (min-width: vars.$w1440) {
             padding: 20px 20px;
             border-radius: 0 0 24px 24px;
-        }
-
-        & a {
-            color: var(--text-1);
         }
 
         &__phone,
@@ -96,6 +97,14 @@ body.is-fixed-header {
             }
         }
 
+        & .btn-green {
+            background-color: var(--accent);
+
+            &::before {
+                background-color: var(--accent-11);
+            }
+        }
+
         & .hover-ripple {
 
             transition: 0.5s ease;
@@ -127,9 +136,14 @@ body.is-fixed-header {
 }
 
 .header {
+    $ancestor: &;
+
+    --ink: #{vars.$color-white};
+    --paper: transparent;
 
     display: flex;
     padding: 12px 0;
+    background-color: var(--paper);
 
     @media screen and (min-width: vars.$w1200) {
         padding: 32px 0;
@@ -228,7 +242,7 @@ body.is-fixed-header {
                 }
 
                 & a {
-                    color: #fff;
+                    color: var(--ink);
                     letter-spacing: .02em;
                     position: relative;
                     font-weight: 500;
@@ -239,7 +253,7 @@ body.is-fixed-header {
                         display: inline-block;
                         position: absolute;
                         top: 100%;
-                        background-color: #fff;
+                        background-color: var(--ink);
                         width: 0;
                         transition: 0.3s ease;
                     }
@@ -269,7 +283,6 @@ body.is-fixed-header {
         }
 
         & a {
-            display: none;
             width: 48px;
             height: 48px;
             border-radius: 12px;
@@ -296,7 +309,7 @@ body.is-fixed-header {
         }
 
         & svg {
-            fill: #fff;
+            fill: var(--ink);
         }
     }
 
@@ -312,7 +325,7 @@ body.is-fixed-header {
                 font-size: 18px;
                 font-weight: 500;
                 letter-spacing: .06em;
-                color: #fff;
+                color: var(--ink);
                 position: relative;
 
                 &::before {
@@ -321,7 +334,7 @@ body.is-fixed-header {
                     display: inline-block;
                     position: absolute;
                     top: 100%;
-                    background-color: #fff;
+                    background-color: var(--ink);
                     width: 0;
                     transition: 0.3s ease;
                 }
@@ -349,6 +362,51 @@ body.is-fixed-header {
             @media screen and (max-width: vars.$w760) {
                 width: 48px;
                 height: 48px;
+            }
+        }
+    }
+
+    &_white {
+        &#{$ancestor} {
+            --ink: #{vars.$color-text-1};
+            --paper: #{vars.$color-white};
+
+            .hover-ripple {
+                &:before {
+                    background-color: vars.$color-accent-11;
+                }
+                &:hover {
+                    border-color: vars.$color-accent-11;
+                    --ink: #{vars.$color-white};
+                }
+            }
+        }
+        #{$ancestor} {
+            &__logo {
+                .logo-color {
+                    display: block !important;
+                }
+            }
+            &__nav {
+                ul {
+                    & > li {
+                        &.is-active {
+                            --ink: #{vars.$color-accent-11};
+                        }
+                    }
+                }
+            }
+            &__burger {
+                border-color: rgba(vars.$color-accent-11, .2);
+                --ink: #{vars.$color-accent-11};
+                cursor: pointer;
+
+            }
+            &__wishlist {
+                a {
+                    border-color: rgba(vars.$color-accent-11, .2);
+                    --ink: #{vars.$color-accent-11};
+                }
             }
         }
     }
@@ -382,7 +440,7 @@ body.is-fixed-header {
         height: 2px;
         width: 100%;
         display: inline-block;
-        background-color: #fff;
+        background-color: var(--ink);
         border-radius: 2px;
         transition: 0.3s ease;
     }
@@ -390,7 +448,7 @@ body.is-fixed-header {
 }
 
 .is-open .icon-burger {
-    gap: 0px;
+    gap: 0;
     transform: rotate(180deg);
 
 

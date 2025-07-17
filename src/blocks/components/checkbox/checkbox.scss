@@ -27,6 +27,7 @@
         line-height: 140%;
         text-align: left;
         transition: 0.3s ease;
+        @include vars.font-size-18();
     }
 
     &__elem {
@@ -37,7 +38,7 @@
         background-color: transparent;
         display: inline-block;
         margin-right: functions.rem_(10);
-        border: 1px solid #2F3030;
+        border: 2px solid var(--accent-13);
         border-radius: 4px;
         transition: 0.3s ease;
 
@@ -59,7 +60,6 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;
-
         }
     }
 

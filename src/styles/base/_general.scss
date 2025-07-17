@@ -1,266 +1,288 @@
 @use "../vars";
 
 :root {
-     --font-guardian: 'Guardian Egyptian LCG';
-     --font-forma-djr: 'Forma DJR Cyrillic', 'Tahoma', 'Arial';
+    --font-guardian: 'Guardian Egyptian LCG';
+    --font-forma-djr: 'Forma DJR Cyrillic', 'Tahoma', 'Arial';
 
-     --accent: #b88e5f;
-     --bg: #F2F6F9;
-     --white: #FFFFFF;
-     --accent-11: #00403f;
-     --accent-12: #f5f7f7;
-     --accent-13: #e8eaeb;
-     --accent-14: #dee0e0;
-     --accent-21: #b88e5f;
-     --accent-22: #ebba83;
-     --accent-23: #f5e9dc;
-     --text-1: #1A1A1A;
-     --text-2: #535968;
-     --text-3: #8DA4A8;
- }
+    --accent: #b88e5f;
+    --bg: #F2F6F9;
+    --white: #FFFFFF;
+    --accent-11: #00403f;
+    --accent-12: #f5f7f7;
+    --accent-13: #e8eaeb;
+    --accent-14: #dee0e0;
+    --accent-21: #b88e5f;
+    --accent-22: #ebba83;
+    --accent-23: #f5e9dc;
+    --text-1: #1A1A1A;
+    --text-2: #535968;
+    --text-3: #8DA4A8;
 
- html,
- body {
+    --container-padding: 16px;
+    --ink: #{vars.$color-text-1};
+    --paper: #{vars.$color-bg-1};
+}
 
-     font-family: var(--font-forma-djr);
-     font-weight: 400;
-     font-style: normal;
-     font-size: 14px;
-     line-height: 150%;
-     color: #111;
-     letter-spacing: normal;
-     text-size-adjust: none;
-     -webkit-text-size-adjust: none;
-     -moz-text-size-adjust: none;
-     -ms-text-size-adjust: none;
-     height: -webkit-fill-available;
-     -moz-scrollbar-color: #333 #fff;
-     -moz-scrollbar-width: thin;
-     scrollbar-gutter: stable;
-     background-color: #fff;
+html,
+body {
 
-     @media screen and (min-width: vars.$w1510) {
-         font-size: 16px;
-     }
+    font-family: var(--font-forma-djr);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 150%;
+    color: #111;
+    letter-spacing: normal;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    height: -webkit-fill-available;
+    -moz-scrollbar-color: #333 #fff;
+    -moz-scrollbar-width: thin;
+    scrollbar-gutter: stable;
+    background-color: #fff;
 
-     @include vars.scrollbar();
+    @media screen and (min-width: vars.$w1510) {
+        font-size: 16px;
+    }
 
- }
+    @include vars.scrollbar();
 
- html * {
-     -moz-osx-font-smoothing: grayscale;
-     -webkit-font-smoothing: antialiased;
- }
+}
 
- body {
-     min-height: 100vh;
-     min-height: -webkit-fill-available;
+html * {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
 
-     & * {
-         @include vars.scrollbar();
-     }
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
 
- }
+    & * {
+        @include vars.scrollbar();
+    }
 
-
-
-
- button:active,
- button:hover,
- input:active,
- input:focus,
- input:hover {
-     outline: none;
- }
-
- h1,
- h2,
- h3,
- h4,
- h5,
- h6,
- ul {
-     margin: 0;
-     padding: 0;
-     line-height: 130%;
- }
-
- body.page-hidden-ts,
- body.page-hidden {
-     touch-action: none;
-     overflow: hidden !important;
-     overscroll-behavior-y: none;
- }
-
- * {
-     box-sizing: border-box;
-     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
- }
-
- a {
-     color: #111;
-     text-decoration: none;
- }
-
- img {
-     display: block;
-     max-width: 100%;
- }
-
- ul {
-     list-style-type: none;
- }
+}
 
 
- div.hidden {
-     display: none;
- }
+button:active,
+button:hover,
+input:active,
+input:focus,
+input:hover {
+    outline: none;
+}
 
- .hide {
-     display: none;
- }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+    margin: 0;
+    padding: 0;
+    line-height: 130%;
+}
 
- section {
-     overflow: hidden;
-     position: relative;
- }
+h1 {
+    @include vars.font-h1
+}
 
- main {
-     width: 100%;
-     min-height: 70vh;
-     max-width: 1920px;
-     margin: 0 auto;
-     background-color: #fff;
- }
+h2 {
+    @include vars.font-h2
+}
 
+h3 {
+    @include vars.font-h3
+}
 
- input[type="date"]::-webkit-inner-spin-button,
- input[type="date"]::-webkit-calendar-picker-indicator {
-     opacity: 0.5;
-     background-color: transparent;
-     opacity: 0;
-     position: absolute;
-     left: 0;
-     width: 95%;
-     cursor: pointer;
- }
+body.page-hidden-ts,
+body.page-hidden {
+    touch-action: none;
+    overflow: hidden !important;
+    overscroll-behavior-y: none;
+}
 
- input[type="date"] {
-     position: relative;
- }
+img, svg {
+    display: block;
+}
 
- .dragscroll.dragging {
-     pointer-events: none;
- }
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
+a {
+    color: #111;
+    text-decoration: none;
+}
 
+img {
+    display: block;
+    max-width: 100%;
+}
 
- @mixin container-breakpoint {
-     padding: 0 16px;
-     min-width: 316px;
-
-     @media screen and (min-width: vars.$w480) {
-         padding: 0 16px;
-         max-width: 100%;
-     }
-
-     @media screen and (min-width: vars.$w576) {
-         padding: 0 24px;
-         max-width: 100%;
-     }
-
-     @media screen and (min-width: vars.$w760) {
-         padding: 0 30px;
-         max-width: 100%;
-     }
-
-     @media screen and (min-width: vars.$w992) {
-         padding: 0 40px;
-         max-width: 100%;
-     }
-
-     @media screen and (min-width: vars.$w1200) {
-         padding: 0 40px;
-         max-width: 100%;
-     }
-
-     @media screen and (min-width: vars.$w1440) {
-         padding: 0 40px;
-         max-width: 1680px;
-     }
- }
+ul {
+    list-style-type: none;
+}
 
 
- .container {
-     width: 100%;
-     margin: 0 auto;
-     box-sizing: border-box;
-     @include container-breakpoint;
- }
+div.hidden {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+
+section {
+    overflow: hidden;
+    position: relative;
+}
+
+main {
+    width: 100%;
+    min-height: 70vh;
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: #fff;
+}
 
 
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0.5;
+    background-color: transparent;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    width: 95%;
+    cursor: pointer;
+}
+
+input[type="date"] {
+    position: relative;
+}
+
+.dragscroll.dragging {
+    pointer-events: none;
+}
 
 
+@mixin container-breakpoint {
+    min-width: 316px;
+
+    @media screen and (min-width: vars.$w480) {
+        --container-padding: 16px;
+        max-width: 100%;
+    }
+
+    @media screen and (min-width: vars.$w576) {
+        --container-padding: 24px;
+        max-width: 100%;
+    }
+
+    @media screen and (min-width: vars.$w760) {
+        --container-padding: 30px;
+        max-width: 100%;
+    }
+
+    @media screen and (min-width: vars.$w992) {
+        --container-padding: 40px;
+        max-width: 100%;
+    }
+
+    @media screen and (min-width: vars.$w1200) {
+        --container-padding: 40px;
+        max-width: 100%;
+    }
+
+    @media screen and (min-width: vars.$w1440) {
+        --container-padding: 40px;
+        max-width: 1680px;
+    }
+}
+
+.hide-from-md {
+    @include vars.from('md') {
+        display: none;
+    }
+}
+
+.hide-before-md {
+    @include vars.before('md') {
+        display: none;
+    }
+}
 
 
- /* =========================================== */
- /* =========================================== */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-inline: var(--container-padding);
+    @include container-breakpoint;
+}
 
 
+/* =========================================== */
+/* =========================================== */
 
 
+.lazyload {
+    opacity: 0;
+}
 
- .lazyload {
-     opacity: 0;
- }
+.lazyloaded {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
 
- .lazyloaded {
-     opacity: 1;
-     transition: opacity 0.3s ease;
- }
+.overflow--hidden {
+    overflow: hidden !important;
+}
 
- .overflow--hidden {
-     overflow: hidden !important;
- }
+.overflow--hidden-fixed {
+    overflow: hidden !important;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
 
- .overflow--hidden-fixed {
-     overflow: hidden !important;
-     position: fixed;
-     left: 0;
-     right: 0;
-     top: 0;
-     bottom: 0;
- }
+.overflow--hidden-scrollBar {
+    overflow-x: hidden !important;
+    overflow-y: scroll !important;
+}
 
- .overflow--hidden-scrollBar {
-     overflow-x: hidden !important;
-     overflow-y: scroll !important;
- }
-
- .safari-fixed {
-     height: calc(100vh - 1px);
-     overflow: hidden !important;
-     position: fixed;
-     left: 0;
-     right: 0;
-     top: 0;
-     bottom: 0;
- }
+.safari-fixed {
+    height: calc(100vh - 1px);
+    overflow: hidden !important;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
 
 
- .table-responsive {
-     overflow-x: auto;
+.table-responsive {
+    overflow-x: auto;
 
-     & table {
-         min-width: auto;
-     }
- }
+    & table {
+        min-width: auto;
+    }
+}
 
- .lazyload {
-     opacity: 0;
- }
+.lazyload {
+    opacity: 0;
+}
 
- .lazyloaded {
-     opacity: 1;
-     transition: opacity 0.5s ease;
- }
+.lazyloaded {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}

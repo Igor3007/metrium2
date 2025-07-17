@@ -1,7 +1,7 @@
-include ../../blocks/components/headers/headers 
+include ../../blocks/components/headers/headers
 include ../../blocks/components/select/select
 
- 
+
 
 mixin picture2(url)
   picture
@@ -62,12 +62,12 @@ mixin pictureResp(url)
         img(src=''+url.def+'.jpg' alt='Image')
 
 
-mixin icons(id, size)
+mixin icons(id, size, _class)
   if size
-    svg(width=''+size+'' height=''+size+'')
+    svg(width=''+size+'' height=''+size+'' class=['icon',_class].join(" ").trim())
       use(xlink:href="/img/sprites/sprite.svg"+id)
   else
-    svg(width="24" height="24")
+    svg(width="24" height="24" class=['icon',_class].join(" ").trim())
       use(xlink:href="/img/sprites/sprite.svg"+id)
 
 mixin ic_24(url)
@@ -121,14 +121,14 @@ mixin radio-desc(label, desc, name, val, check)
     else
       input(type="radio" name=""+name+"" value=""+val+"")
     span.radio__elem
-    span.radio__text  
+    span.radio__text
       span.radio__title!= label
       span.radio__desc!= desc
- 
+
 mixin input-material(type, placeholder, value)
   .input-material
     input(type=''+type+'' value=(value?value:''))
-    label!= placeholder 
+    label!= placeholder
 
 mixin input-material-required(type, placeholder, value)
 
@@ -136,24 +136,24 @@ mixin input-material-required(type, placeholder, value)
 
     .input-material
       input(type=''+type+'' value=(value?value:'') required maxlength="60" data-input-mask="name")
-      label!= placeholder 
+      label!= placeholder
 
   if(type == 'email')
 
     .input-material
       input(type=''+type+'' value=(value?value:'') required maxlength="60" data-input-mask="email")
-      label!= placeholder 
+      label!= placeholder
 
 mixin input-material-date(type, placeholder, value)
   .input-material.input-material--date
     input(type=''+type+'' value=(value?value:'') class="input-datepicker" data-datepicker-lang="ru")
-    label= placeholder 
+    label= placeholder
 
 mixin input-material-suggest(type, placeholder, value)
   .input-material.input-material--suggest
     input(type=''+type+'' value=(value?value:'') class="input-suggest" data-url="/js/select.json")
-    label= placeholder 
-     
+    label= placeholder
+
 
 mixin input(type, placeholder, valid, required)
   .input-primary

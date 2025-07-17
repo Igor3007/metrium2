@@ -33,7 +33,7 @@ gulp.task('browser-sync', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch(paths.views.watch, gulp.parallel(viewsDev));
+    gulp.watch([paths.views.watch, paths.data.src], gulp.parallel(viewsDev));
     gulp.watch(paths.styles.watch, gulp.parallel(stylesDev));
     gulp.watch(paths.common.watch, gulp.parallel(jsDev));
     gulp.watch(paths.sprites.watch, gulp.parallel(spritesDev));
