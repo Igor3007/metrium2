@@ -3,7 +3,7 @@
 .list-header {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
 
     @include vars.from('md') {
         flex-direction: row;
@@ -67,6 +67,7 @@
         padding-inline: 0;
         display: flex;
         gap: 12px;
+        height: 52px;
 
         svg {
             margin-inline: 0;

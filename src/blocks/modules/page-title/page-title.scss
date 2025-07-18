@@ -9,8 +9,9 @@
     }
 
     h1 {
-        margin-bottom: 16px;
-        @include vars.font-h2;
+        font: 400 28px/40px vars.$font-captions;
+        letter-spacing: .04em;
+        margin-block: 10px 15px;
     }
 
     h4 {
@@ -28,6 +29,7 @@
         .btn {
             width: 100%;
             max-width: 400px;
+            height: 52px;
         }
     }
 
@@ -173,7 +175,7 @@
         bottom: 0;
         background: var(--white);
         padding: 12px;
-        margin-inline: calc(-1 * var(--container-padding));
+        margin-inline: var(--container-out);
         box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.12);
 
         .btn-wrapper {

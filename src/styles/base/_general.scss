@@ -19,6 +19,7 @@
     --text-3: #8DA4A8;
 
     --container-padding: 16px;
+    --container-out: -16px;
     --ink: #{vars.$color-text-1};
     --paper: #{vars.$color-bg-1};
 }
@@ -179,31 +180,37 @@ input[type="date"] {
 
     @media screen and (min-width: vars.$w480) {
         --container-padding: 16px;
+        --container-out: -16px;
         max-width: 100%;
     }
 
     @media screen and (min-width: vars.$w576) {
         --container-padding: 24px;
+        --container-out: -24px;
         max-width: 100%;
     }
 
     @media screen and (min-width: vars.$w760) {
         --container-padding: 30px;
+        --container-out: -30px;
         max-width: 100%;
     }
 
     @media screen and (min-width: vars.$w992) {
         --container-padding: 40px;
+        --container-out: -40px;
         max-width: 100%;
     }
 
     @media screen and (min-width: vars.$w1200) {
         --container-padding: 40px;
+        --container-out: -40px;
         max-width: 100%;
     }
 
     @media screen and (min-width: vars.$w1440) {
         --container-padding: 40px;
+        --container-out: -40px;
         max-width: 1680px;
     }
 }

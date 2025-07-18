@@ -2,18 +2,22 @@ import {MaskInput} from "maska";
 import {afSelect} from "../vendor/af-select.min.js";
 import {Splide} from "@splidejs/splide";
 import Cookies from "js-cookie";
-import {initTogglers} from "./toggler.js";
 import {FlexCollections} from "./flex-collections.js";
-import {initToggleTicks} from "../../blocks/components";
+import {SplideNavHelper} from "./splide-nav-helper.js";
 import {initAddRemoveClassButtons} from "./add-remove-class.js";
+import {initSliderViewed} from "../../blocks/modules/index.js";
+import {initToggleTicks} from "../../blocks/components";
+import {initTogglers} from "./toggler.js";
+import {
+    SLIDER_ARROW_PATH,
+    API_YMAPS
+} from "./consts.js";
 
 document.addEventListener('DOMContentLoaded', function (event) {
     initTogglers();
     initToggleTicks();
     initAddRemoveClassButtons();
-
-    const API_YMAPS = 'https://api-maps.yandex.ru/2.1/?apikey=0e2d85e0-7f40-4425-aab6-ff6d922bb371&suggest_apikey=ad5015b5-5f39-4ba3-9731-a83afcecb740&lang=ru_RU&mode=debug';
-    const SLIDER_ARROW_PATH = 'M16.2859 12.2421C16.6493 11.9029 17.2188 11.9225 17.558 12.2859L23.7802 18.9526C24.1029 19.2984 24.1029 19.835 23.7802 20.1808L17.558 26.8474C17.2188 27.2108 16.6493 27.2304 16.2859 26.8913C15.9225 26.5521 15.9029 25.9826 16.2421 25.6193L21.8911 19.5667L16.2421 13.5141C15.9029 13.1507 15.9225 12.5812 16.2859 12.2421Z'
+    initSliderViewed();
 
     /* =================================================
     css variable
@@ -390,89 +394,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
 
     /* ===============================================
-    splide nav
-    ===============================================*/
-
-    class SplideNavHelper {
-
-        constructor(params) {
-
-            this.params = params
-            this.slider = params.slider
-            this.btn = params.btn
-            this.container = params.container
-
-            this.prevButton = null
-            this.nextButton = null
-
-            this.init()
-        }
-
-        init() {
-            this.prevButton = this.container.querySelector('[data-slider-prev="' + this.btn + '"]')
-            this.nextButton = this.container.querySelector('[data-slider-next="' + this.btn + '"]')
-            this.prevButton.setAttribute('disabled', 'disabled')
-
-            this.addEvent()
-        }
-
-        addEvent() {
-            this.prevButton.addEventListener('click', e => {
-                this.slider.go('<')
-            })
-
-            this.nextButton.addEventListener('click', e => {
-                this.slider.go('>')
-            })
-
-
-
-            this.slider.on('mounted refresh', () => {
-
-                this.nextButton.removeAttribute('disabled')
-
-                setTimeout(() => {
-                    if (this.slider.length <= this.slider.options.perPage) {
-                        this.nextButton.setAttribute('disabled', 'disabled')
-                        this.prevButton.setAttribute('disabled', 'disabled')
-                    }
-                }, 100)
-            })
-
-
-            this.slider.on('move', (newIndex, prevIndex, destIndex) => {
-                this.nextButton.removeAttribute('disabled')
-                this.prevButton.removeAttribute('disabled')
-
-                if (this.slider.options.type == 'loop') {
-                    return false
-                }
-
-                if (destIndex == 0) {
-                    this.prevButton.setAttribute('disabled', 'disabled')
-                }
-
-                let slideTotal = (destIndex + this.slider.options.perPage)
-
-                if (this.slider.options.offsetPagination) {
-                    slideTotal = slideTotal + this.slider.options.offsetPagination
-                }
-
-                if (this.slider.length == slideTotal) {
-                    this.nextButton.setAttribute('disabled', 'disabled')
-                }
-
-                if (typeof this.params.onChange != 'undefined') {
-                    this.params.onChange(destIndex + 1, this.slider.length)
-                }
-            })
-        }
-
-    }
-
-    /* ===============================================
     slider card - categories__slider
-    ===============================================*/
+    =============================================== */
 
     document.querySelectorAll('[data-slider="category"]').forEach(slider => {
 
@@ -603,86 +526,87 @@ document.addEventListener('DOMContentLoaded', function (event) {
     slider offers
     ===============================================*/
 
-    document.querySelectorAll('[data-slider="offers"]').forEach(slider => {
+    document
+        .querySelectorAll('[data-slider="offers"]')
+        .forEach(slider => {
+            slider['Splide'] = new Splide(slider, {
 
-        slider['Splide'] = new Splide(slider, {
+                arrows: false,
+                arrowPath: SLIDER_ARROW_PATH,
+                pagination: false,
+                gap: 36,
+                start: 0,
+                fixedWidth: '510px',
+                perMove: 1,
+                flickMaxPages: 1,
+                flickPower: 100,
+                offsetPagination: 2,
+                breakpoints: {
+                    480: {
+                        gap: 8,
+                        fixedWidth: '87.9vw',
+                        pagination: true,
+                    },
 
-            arrows: false,
-            arrowPath: SLIDER_ARROW_PATH,
-            pagination: false,
-            gap: 36,
-            start: 0,
-            fixedWidth: '510px',
-            perMove: 1,
-            flickMaxPages: 1,
-            flickPower: 100,
-            offsetPagination: 2,
-            breakpoints: {
-                480: {
-                    gap: 8,
-                    fixedWidth: '87.9vw',
-                    pagination: true,
-                },
+                    640: {
+                        gap: 8,
+                        fixedWidth: '400px',
+                        pagination: true,
+                    },
 
-                640: {
-                    gap: 8,
-                    fixedWidth: '400px',
-                    pagination: true,
-                },
+                    767: {
+                        gap: 8,
+                        fixedWidth: '440px',
+                        offsetPagination: false
+                    },
 
-                767: {
-                    gap: 8,
-                    fixedWidth: '440px',
-                    offsetPagination: false
-                },
+                    992: {
+                        gap: 12,
+                        fixedWidth: '440px',
+                        offsetPagination: false
+                    },
 
-                992: {
-                    gap: 12,
-                    fixedWidth: '440px',
-                    offsetPagination: false
-                },
-
-                1360: {
-                    gap: 24,
-                    fixedWidth: '410px',
-                    offsetPagination: false
-                },
+                    1360: {
+                        gap: 24,
+                        fixedWidth: '410px',
+                        offsetPagination: false
+                    },
 
 
-            }
+                }
 
-        });
+            });
 
-        // disable drag on hover
-        slider.querySelectorAll('.minicard__slider').forEach(gallery => {
-            gallery.addEventListener('mouseenter', () => {
-                slider['Splide'].options = {
-                    drag: false,
-                };
+            // disable drag on hover
+            slider.querySelectorAll('.minicard__slider').forEach(gallery => {
+                gallery.addEventListener('mouseenter', () => {
+                    slider['Splide'].options = {
+                        drag: false,
+                    };
+                })
+                gallery.addEventListener('mouseleave', () => {
+                    slider['Splide'].options = {
+                        drag: true,
+                    };
+                })
             })
-            gallery.addEventListener('mouseleave', () => {
-                slider['Splide'].options = {
-                    drag: true,
-                };
+
+            // init splide nav
+            new SplideNavHelper({
+                slider: slider['Splide'],
+                btn: 'offers',
+                container: slider.closest('section')
             })
+
+            //init filter
+
+            new FilterOffeers({
+                el: '.section-best-offers',
+                slider: slider['Splide']
+            })
+
+            slider['Splide'].mount();
         })
-
-        // init splide nav
-        new SplideNavHelper({
-            slider: slider['Splide'],
-            btn: 'offers',
-            container: slider.closest('section')
-        })
-
-        //init filter
-
-        new FilterOffeers({
-            el: '.section-best-offers',
-            slider: slider['Splide']
-        })
-
-        slider['Splide'].mount();
-    })
 
     /* ===============================================
     slider minicard

@@ -43,15 +43,18 @@
 }
 
 .splide {
-    &__pagination__page {
-
-        width: 9px;
-        height: 9px;
-
-        &.is-active {
-            background: var(--accent);
-            transform: scale(1);
-            z-index: 1;
+    & &__pagination {
+        position: relative;
+        padding: 24px 0;
+        &__page {
+            background: var(--text-3);
+            height: 6px;
+            width: 6px;
+            margin: 0 6px;
+            &.is-active {
+                background: var(--accent-11);
+                transform: scale(2);
+            }
         }
     }
 }

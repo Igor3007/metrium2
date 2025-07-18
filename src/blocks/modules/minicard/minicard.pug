@@ -35,9 +35,12 @@ mixin minicard(data)
             .minicard__params
                 .minicard__place
                     .minicard__jk
-                        +icons('#ic_jk')
+                        +icons('#ic_city')
                         a(href="#") Вишневый сад
                     .minicard__address Мосфильмовская улица
+                    .minicard__stations
+                        +icons('#ic_stations')
+                        span Пушкинская, Тверская, Чеховская
                 .minicard__prop
                     ul
                         li(style="background-image: url('/img/icons/01-area.svg')")

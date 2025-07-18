@@ -1,0 +1,10 @@
+@use "../../../styles/vars";
+
+.recently-viewed {
+    background: var(--accent-12);
+    padding-top: 32px;
+
+    &__title {
+        font: 400 28px/40px vars.$font-captions;
+    }
+}
