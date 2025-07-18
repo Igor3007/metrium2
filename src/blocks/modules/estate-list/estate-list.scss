@@ -1,6 +1,7 @@
 @use "../../../styles/vars";
-@forward "./submodules/list-header/list-header.scss";
-@forward "./submodules/list-body/list-body.scss";
+@forward "./components/list-header/list-header.scss";
+@forward "./components/list-body/list-body.scss";
+@forward "./components/list-footer/list-footer.scss";
 
 .estate-list {
     background: var(--accent-12);

@@ -11,7 +11,7 @@
     "scripts": {
         "dev": "gulp",
         "build": "gulp prod --production",
-        "sprites": "node ./scripts/icons-page.js && start ./src/img/svg/icons.html"
+        "icons": "node ./scripts/icons-page.js && start ./src/img/svg/icons.html"
     },
     "devDependencies": {
         "@rollup/plugin-node-resolve": "16.0.1",

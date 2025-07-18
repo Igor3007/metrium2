@@ -1,0 +1,21 @@
+@use "../../../../../styles/vars";
+
+.list-footer {
+    display: flex;
+    justify-content: center;
+
+    @include vars.from('md') {
+        justify-content: space-between;
+        background: var(--white);
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .btn-show-more {
+        .icon {
+            margin-left: 11px;
+            width: 8px;
+            height: 8px;
+        }
+    }
+}
