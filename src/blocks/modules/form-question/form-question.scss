@@ -1,11 +1,14 @@
 @use "../../../styles/vars";
 
 .section-form-question {
-    background: linear-gradient(to bottom, var(--bg) 50%, #fff 50%, #fff 100%, );
     padding: 7px 0 50px;
 
     @media screen and (min-width: vars.$w1440) {
         padding: 42px 0 100px;
+    }
+
+    &.homepage {
+        background: linear-gradient(to bottom, var(--bg) 50%, #fff 50%, #fff 100%, );
     }
 }
 
@@ -162,3 +165,31 @@
         }
     }
 }
+
+.slim {
+    .form-question {
+        padding: 24px;
+        gap: 40px;
+        margin: 0;
+        &__title {
+            line-height: 1.5;
+        }
+        &__desc {
+            padding-bottom: 25px;
+            max-width: none;
+        }
+        &__input {
+            margin-bottom: 11px;
+            input {
+                margin-bottom: 12px;
+            }
+            .btn {
+                @include vars.before('md') {
+                    height: 52px;
+                }
+            }
+        }
+
+    }
+}
+

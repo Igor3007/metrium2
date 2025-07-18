@@ -1,16 +1,19 @@
-mixin  form-question
-    section.section-form-question
+mixin  form-question(data)
+    -var title = data?.title || "Есть вопрос или нужна консультация?"
+    -var description = data?.description || "Оставляйте свой номер телефона — мы перезвоним и расскажем о самых выгодных предложениях, поможем подобрать наиболее подходящие варианты для вас!"
+    -var className = data?.class || false
+    section.section-form-question(class = className)
         .container
             .form-question
                 .form-question__main
-                    .form-question__title Есть вопрос или нужна консультация?
-                    .form-question__desc Оставляйте свой номер телефона — мы перезвоним и расскажем о самых выгодных предложениях, поможем подобрать наиболее подходящие варианты для вас!
+                    .form-question__title= title
+                    .form-question__desc= description
                 .form-question__form
                     .form-question__field
                         form(action='#' method='POST')
                             .form-question__input
                                 input(type="text" placeholder="Ваш номер телефона" data-maska="+7(###)###-##-##")
-                                button.btn 
+                                button.btn
                                     span Отправить
                                     +icons('#ic_arrow-right')
                             .form-question__note

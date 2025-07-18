@@ -2,6 +2,7 @@ extends ../layouts/page
 
 include ../../blocks/components/breadcrumbs/breadcrumbs
 include ../../blocks/modules/special-offers/special-offers
+include ../../blocks/modules/form-question/form-question
 
 block variables
     - const title = "Городская недвижимость - Metrium"
@@ -11,3 +12,8 @@ block main
     include ../../blocks/modules/page-title/page-title--city
     include ../../blocks/modules/estate-list/estate-list
     +special-offers({title: "Подборки предложений городской недвижимости"})
+    +form-question({
+        title: "Затрудняетесь с выбором?",
+        description: "Эксперты «Метриум Премиум» помогут вам и сэкономят время без предоплаты и комиссии!",
+        class: "slim"
+    })
