@@ -1,6 +1,7 @@
 extends ../layouts/page
 
 include ../../blocks/components/breadcrumbs/breadcrumbs
+include ../../blocks/modules/special-offers/special-offers
 
 block variables
     - const title = "Городская недвижимость - Metrium"
@@ -9,3 +10,4 @@ block variables
 block main
     include ../../blocks/modules/page-title/page-title--city
     include ../../blocks/modules/estate-list/estate-list
+    +special-offers({title: "Подборки предложений городской недвижимости"})
