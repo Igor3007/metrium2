@@ -1,0 +1,19 @@
+@use "../../../styles/vars";
+@forward "./components/list-header/list-header.scss";
+@forward "./components/list-body/list-body.scss";
+@forward "./components/list-footer/list-footer.scss";
+
+.estate-list {
+    background: var(--accent-12);
+    padding: 24px 0;
+    @include vars.from('md') {
+        padding-top: 46px;
+        padding-bottom: 88px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+}

@@ -10,6 +10,7 @@ header {
     &.white {
         border-bottom: 1px solid vars.$color-accent-13;
         position: sticky;
+        background: var(--white);
     }
 }
 
@@ -379,6 +380,10 @@ body.is-fixed-header {
                     border-color: vars.$color-accent-11;
                     --ink: #{vars.$color-white};
                 }
+            }
+
+            .btn-green {
+                padding-inline: 1.4em;
             }
         }
         #{$ancestor} {

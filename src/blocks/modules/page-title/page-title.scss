@@ -3,14 +3,23 @@
 .page-title {
     padding-block: 24px;
     overflow: visible;
+    @include vars.from('md') {
+        padding-top: 48px;
+        padding-bottom: 12px;
+    }
 
     .breadcrumbs {
         margin-bottom: 12px;
     }
 
     h1 {
-        margin-bottom: 16px;
-        @include vars.font-h2;
+        font: 400 28px/40px vars.$font-captions;
+        letter-spacing: .04em;
+        margin-block: 10px 15px;
+        @include vars.from('md') {
+            font: 400 48px/60px vars.$font-captions;
+            margin-block: 15px 48px;
+        }
     }
 
     h4 {
@@ -28,6 +37,8 @@
         .btn {
             width: 100%;
             max-width: 400px;
+            height: 52px;
+            font: 500 16px/1.5 vars.$font-default;
         }
     }
 
@@ -138,10 +149,21 @@
         gap: 16px;
         &.primary-form {
             margin-top: 24px;
+            position: relative;
+            @include vars.from('md') {
+                padding-bottom: 24px;
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: calc(50% - 50vw);
+                    right: calc(50% - 50vw);
+                    border-bottom: 1px solid var(--accent-13);
+                }
+            }
         }
         &.secondary-form {
-            border-top: 1px solid var(--accent-13);
-            border-bottom: 1px solid var(--accent-13);
             margin-block: 24px;
             padding-block: 24px;
             @include vars.from('md') {
@@ -155,10 +177,20 @@
                 &.open {
                     opacity: 1;
                     margin-block: 24px;
-                    padding-block: 24px;
                     max-height: none;
                     animation: max-height-animation;
                     animation-duration: .3s;
+                    width: 35%;
+                    gap: 25px;
+                }
+                .checkbox {
+                    padding-top: 6px;
+                }
+            }
+
+            h4 {
+                @include vars.from('md') {
+                    //margin-bottom: 12px;
                 }
             }
         }
@@ -173,7 +205,7 @@
         bottom: 0;
         background: var(--white);
         padding: 12px;
-        margin-inline: calc(-1 * var(--container-padding));
+        margin-inline: var(--container-out);
         box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.12);
 
         .btn-wrapper {
@@ -184,16 +216,70 @@
     }
 
     &__footer {
+        @include vars.from('md') {
+            padding-top: 10px;
+            padding-bottom: 7px;
+        }
         .btn-wrapper {
             display: flex;
             justify-content: space-between;
         }
-
     }
 
     &__instant-filter {
-        margin-bottom: 24px;
+        @include vars.from('md') {
+            display: none;
+            .secondary-form.open + & {
+                display: block;
+            }
+        }
     }
+
+    .fb-filter__selections {
+        @include vars.from('md') {
+            padding-block: 24px;
+            &:before, &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                left: calc(50% - 50vw);
+                right: calc(50% - 50vw);
+                border-bottom: 1px solid var(--accent-13);
+                height: 0;
+            }
+            &:before {
+                top: 0;
+            }
+            &:after {
+                bottom: 0;
+            }
+        }
+    }
+
+    button.btn-reset {
+        @include vars.from('md') {
+            font: 500 18px/28px vars.$font-default;
+            letter-spacing: .02em;
+            padding: 0;
+            &:before {
+                content: none;
+            }
+            &:hover {
+                background: transparent;
+                color: vars.$red;
+            }
+
+            .icon {
+                width: 12px;
+                height: 12px;
+            }
+        }
+    }
+    .filter-toggle {
+        display: flex;
+        align-items: center;
+    }
+
 }
 
 .instant-filter {

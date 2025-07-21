@@ -11,15 +11,8 @@
     "scripts": {
         "dev": "gulp",
         "build": "gulp prod --production",
-        "build:views": "gulp views --production",
-        "build:styles": "gulp styles --production",
-        "build:scripts": "gulp scripts --production",
-        "build:images": "gulp images --production",
-        "build:webp": "gulp webp --production",
-        "build:sprites": "gulp sprites --production",
-        "build:fonts": "gulp fonts --production",
-        "build:favicons": "gulp favicons --production",
-        "build:gzip": "gulp gzip --production"
+        "icons": "node ./scripts/icons-page.js && start ./src/img/svg/icons.html",
+        "deploy": "npm run build && node --env-file=./.env ./scripts/sftp_deploy.js"
     },
     "devDependencies": {
         "@rollup/plugin-node-resolve": "16.0.1",
@@ -51,6 +44,7 @@
         "imagemin-svgo": "^11.0.1",
         "imagemin-webp": "8.0.0",
         "imagemin-zopfli": "7.0.0",
+        "node-ssh": "13.2.1",
         "postcss-preset-env": "10.2.4",
         "postcss-sort-media-queries": "5.2.0",
         "rollup": "4.45.0",

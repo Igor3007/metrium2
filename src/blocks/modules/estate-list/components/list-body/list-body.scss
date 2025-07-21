@@ -1,0 +1,21 @@
+@use "../../../../../styles/vars";
+
+.list-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    @include vars.from('md') {
+        grid-template-columns: repeat(auto-fill,minmax(380px,1fr));
+        gap: 32px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        .estate-list.list & {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        container-type: inline-size;
+    }
+}

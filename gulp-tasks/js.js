@@ -8,6 +8,7 @@ import buffer from "vinyl-buffer";
 import gulpSrcMap from "gulp-sourcemaps";
 import gulpTerser from "gulp-terser";
 import {paths} from "./config.js";
+import browserSync from "browser-sync";
 
 let cache;
 
@@ -29,6 +30,7 @@ export const jsDev = () => (
         .pipe(gulpSrcMap.init({loadMaps: true}))
         .pipe(gulpSrcMap.write('.'))
         .pipe(gulp.dest(paths.scripts.dist))
+        .pipe(browserSync.reload({stream: true}))
 );
 
 export const jsProd = () => (

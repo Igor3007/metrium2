@@ -11,21 +11,20 @@ include ../blocks/modules/our-awards/our-awards
 include ../blocks/modules/form-question/form-question
 
 block variables
-  include ../data/data.pug
-  - const title = "Metrium"
- 
+    include ../data/data.pug
+    - const title = "Metrium"
+
 
 block main
+    +first-block
+    +all-categories
+    +best-offers
+    +special-offers
+    +our-services
+    +company-about
+    +partners
+    +our-awards
+    +form-question({class: "homepage"})
 
- +first-block
- +all-categories
- +best-offers
- +special-offers
- +our-services
- +company-about
- +partners
- +our-awards
- +form-question
- 
 block scripts
-  script(src="/js/index.js")
+    script(src="/js/index.js")

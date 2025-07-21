@@ -1,8 +1,10 @@
 include ../card-collection/card-collection.pug
+include ../../components/slider-nav/slider-nav
 
-mixin special-offers
-
-    - 
+mixin special-offers(data)
+    - var title = data?.title || "Подборка лучших предложений!"
+    - var className = data?.class || false
+    -
         const collection = [
             {
                 'title': 'Пентхаусы с незабываемым видом на город',
@@ -31,10 +33,10 @@ mixin special-offers
             }
         ];
 
-    section.section-special-offers
+    section.section-special-offers(class=className)
         .container
             .special-offers
-                .special-offers__title Подборка лучших предложений
+                .special-offers__title= title
                 .special-offers__slider
                     .splide(data-slider="special-offers")
                         .splide__track
@@ -47,7 +49,4 @@ mixin special-offers
                             span(data-slider-counter="current") 3
                             |/
                             span(data-slider-counter="total") 12
-                    .special-offers__nav
-                        .special-offers__nav-prev(data-slider-prev="special-offers"): +icons('#ic_arr-left')
-                        .special-offers__nav-next(data-slider-next="special-offers"): +icons('#ic_arr-right')
-                    
+                    +slider-nav({sliderName: "special-offers"})

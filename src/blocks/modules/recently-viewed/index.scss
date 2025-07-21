@@ -1,0 +1,42 @@
+@use "../../../styles/vars";
+
+.recently-viewed {
+    background: var(--accent-12);
+    padding-top: 32px;
+    @include vars.from('md') {
+        padding-top: 64px;
+    }
+
+    &__title {
+        font: 400 28px/40px vars.$font-captions;
+        @include vars.from('md') {
+            font-size: 48px;
+            line-height: 60px;
+            letter-spacing: 0.04em;
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        @include vars.from('md') {
+            margin-bottom: 52px;
+        }
+    }
+
+    &__slider {
+        @include vars.from('md') {
+            margin-bottom: 48px;
+        }
+    }
+
+    .splide {
+        &__track {
+            @include vars.before('md') {
+                overflow: visible;
+            }
+        }
+    }
+}

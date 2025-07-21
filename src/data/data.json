@@ -1,7 +1,7 @@
 {
     "mainNav": [
         {
-            "url": "/city-real-estate.html",
+            "url": "/city.html",
             "title": "Городская"
         },
         {
@@ -14,7 +14,7 @@
         }
     ],
     "catalog": {
-        "districts":[
+        "districts": [
             "Авиамоторный",
             "Академический",
             "Алексеевский",
@@ -467,6 +467,34 @@
             "Эко Лайф",
             "Южное Бутово",
             "Янино Парк"
+        ]
+    },
+    "sets": {
+        "cards01": [
+            {
+                "image": "/img/objects/img-block-1",
+                "id": "1"
+            },
+            {
+                "image": "/img/objects/img-block-2",
+                "id": "2"
+            },
+            {
+                "image": "/img/objects/img-block-3",
+                "id": "13"
+            },
+            {
+                "image": "/img/objects/img-block-4",
+                "id": "1342"
+            },
+            {
+                "image": "/img/objects/img-block-5",
+                "id": "5431"
+            },
+            {
+                "image": "/img/objects/img-block-6",
+                "id": "6571"
+            }
         ]
     }
 }
