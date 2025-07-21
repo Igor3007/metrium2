@@ -161,7 +161,16 @@
         position: relative;
 
         & picture {
-            @include vars.picture(66%, cover);
+            aspect-ratio: 3 / 2;
+            height: 100%;
+            @include vars.picture(0, cover);
+        }
+
+        .splide {
+            height: 100%;
+            &__track {
+                height: 100%;
+            }
         }
     }
 
