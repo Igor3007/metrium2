@@ -10,12 +10,13 @@ mixin  form-question(data)
                     .form-question__desc= description
                 .form-question__form
                     .form-question__field
-                        form(action='#' method='POST')
+                        form(action='#' method='POST' data-send="ajax")
                             .form-question__input
-                                input(type="text" placeholder="Ваш номер телефона" data-maska="+7(###)###-##-##")
+                                input(type="text" placeholder="Ваш номер телефона" data-maska="+7(###)###-##-##" required=true)
                                 button.btn
                                     span Отправить
                                     +icons('#ic_arrow-right')
                             .form-question__note
+                                +checkbox("", "agree", {required: true})
                                 | Нажимая кнопку, вы даёте согласие на 
                                 a(href='#' target="_blank") обработку персональных данных

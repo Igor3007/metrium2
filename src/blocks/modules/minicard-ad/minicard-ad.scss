@@ -73,6 +73,12 @@
                 text-decoration: underline;
             }
         }
+        &:invalid {
+            .btn {
+                pointer-events: none;
+                background: var(--text-3);
+            }
+        }
     }
 
     @container (width > 1199px) {

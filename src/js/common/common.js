@@ -8,6 +8,7 @@ import {initAddRemoveClassButtons} from "./add-remove-class.js";
 import {initSliderViewed} from "../../blocks/modules/index.js";
 import {initToggleTicks} from "../../blocks/components";
 import {initTogglers} from "./toggler.js";
+import {initFormAJAX} from "./form-ajax.js";
 import {
     SLIDER_ARROW_PATH,
     API_YMAPS
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initToggleTicks();
     initAddRemoveClassButtons();
     initSliderViewed();
+    initFormAJAX();
 
     /* =================================================
     css variable
