@@ -3,6 +3,9 @@
 .page-title {
     padding-block: 24px;
     overflow: visible;
+    @include vars.from('md') {
+        padding-top: 48px;
+    }
 
     .breadcrumbs {
         margin-bottom: 12px;
@@ -12,6 +15,10 @@
         font: 400 28px/40px vars.$font-captions;
         letter-spacing: .04em;
         margin-block: 10px 15px;
+        @include vars.from('md') {
+            font: 400 48px/60px vars.$font-captions;
+            margin-block: 15px 48px;
+        }
     }
 
     h4 {
@@ -30,6 +37,7 @@
             width: 100%;
             max-width: 400px;
             height: 52px;
+            font: 500 16px/1.5 vars.$font-default;
         }
     }
 
@@ -161,6 +169,14 @@
                     max-height: none;
                     animation: max-height-animation;
                     animation-duration: .3s;
+                    width: 35%;
+                    gap: 25px;
+                }
+            }
+
+            h4 {
+                @include vars.from('md') {
+                    //margin-bottom: 12px;
                 }
             }
         }

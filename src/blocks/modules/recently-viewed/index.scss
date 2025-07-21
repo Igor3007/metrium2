@@ -15,11 +15,16 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 52px;
+        margin-bottom: 16px;
+        @include vars.from('md') {
+            margin-bottom: 52px;
+        }
     }
 
     &__slider {
-        margin-bottom: 48px;
+        @include vars.from('md') {
+            margin-bottom: 48px;
+        }
     }
 
     .splide {

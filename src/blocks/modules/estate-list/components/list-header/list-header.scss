@@ -48,6 +48,7 @@
                     position: absolute;
                     inset: 0;
                     pointer-events: none;
+                    font: 500 16px/1.5 vars.$font-default;
 
                     .icon {
                         color: var(--accent-11);
@@ -78,6 +79,7 @@
         display: flex;
         .btn {
             width: 100%;
+            font: 500 16px/1.5 vars.$font-default;
             @include vars.before('md') {
                 background: var(--accent-11);
             }

@@ -8,7 +8,7 @@ mixin recently-viewed(data)
         .container
             .recently-viewed__header
                 h3.recently-viewed__title= title
-                +slider-nav({sliderName: "viewed"})
+                +slider-nav({sliderName: "viewed", class: "hide-before-md"})
             .recently-viewed__slider
                 .splide(data-slider="viewed")
                     .splide__track

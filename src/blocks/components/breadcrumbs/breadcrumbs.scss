@@ -1,32 +1,44 @@
 @use "../../../styles/vars";
 
 .breadcrumbs {
-  display: flex;
-
-  a {
-    color: inherit;
-    line-height: 24px;
-    font: 400 14px/20px vars.$font-default;
-  }
-
-  li {
-    color: vars.$color-accent-11;
     display: flex;
-    align-items: center;
 
-    &:not(:last-child) {
-      &:after {
-        content: "";
-        width: 4px;
-        height: 4px;
-        background-color: var(--accent-21);
-        border-radius: 50%;
-        margin-inline: 16px;
-        margin-bottom: .15em;
-      }
+    a {
+        color: inherit;
+        line-height: 24px;
+        font: 400 14px/20px vars.$font-default;
+        @include vars.from('md') {
+            font: 400 16px/1.5 vars.$font-default;
+            letter-spacing: .02em;
+        }
     }
-    &:last-child {
-      color: vars.$color-text-1;
+
+    span {
+        @include vars.from('md') {
+            font: 400 16px/1.5 vars.$font-default;
+            letter-spacing: .02em;
+        }
     }
-  }
+
+    li {
+        color: vars.$color-accent-11;
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+            &:after {
+                content: "";
+                width: 4px;
+                height: 4px;
+                background-color: var(--accent-21);
+                border-radius: 50%;
+                margin-inline: 16px;
+                margin-bottom: .15em;
+            }
+        }
+
+        &:last-child {
+            color: vars.$color-text-1;
+        }
+    }
 }

@@ -381,6 +381,10 @@ body.is-fixed-header {
                     --ink: #{vars.$color-white};
                 }
             }
+
+            .btn-green {
+                padding-inline: 1.4em;
+            }
         }
         #{$ancestor} {
             &__logo {
