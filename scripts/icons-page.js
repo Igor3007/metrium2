@@ -5,7 +5,6 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
 const imagesDir = path.join(__dirname, '../src/img/svg');
-console.log(imagesDir);
 
 fs.readdir(imagesDir, (err, files) => {
     if (err) {
@@ -17,7 +16,7 @@ fs.readdir(imagesDir, (err, files) => {
         const srcPath = `${file}`;
         return `
     <div style="padding: 10px; outline: 1px solid silver" title="${file}">
-        <img src="${srcPath}" style="max-width:200px; margin:10px;">
+        <img src="${srcPath}" style="max-width:200px; margin:10px;" alt="file">
     </div>
     `;
     }).join('\n');

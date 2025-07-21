@@ -12,7 +12,7 @@
         "dev": "gulp",
         "build": "gulp prod --production",
         "icons": "node ./scripts/icons-page.js && start ./src/img/svg/icons.html",
-        "deploy": "npm run build && node --env-file=./.env ./scripts/sftp_deploy.js"
+        "deploy": "gulp prod --production && node --env-file=.env scripts/deploy.js"
     },
     "devDependencies": {
         "@rollup/plugin-node-resolve": "16.0.1",

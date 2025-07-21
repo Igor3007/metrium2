@@ -18,6 +18,7 @@ export const viewsDev = () => (
 
 export const viewsProd = () => (
     gulp.src(paths.views.src)
+        .pipe(gulpData((file) => (JSON.parse(readFileSync(paths.data.src)))))
         .pipe(pug({
             pretty: true
         }))
