@@ -11,7 +11,8 @@
     "scripts": {
         "dev": "gulp",
         "build": "gulp prod --production",
-        "icons": "node ./scripts/icons-page.js && start ./src/img/svg/icons.html"
+        "icons": "node ./scripts/icons-page.js && start ./src/img/svg/icons.html",
+        "deploy": "npm run build && node --env-file=./.env ./scripts/sftp_deploy.js"
     },
     "devDependencies": {
         "@rollup/plugin-node-resolve": "16.0.1",
@@ -43,6 +44,7 @@
         "imagemin-svgo": "^11.0.1",
         "imagemin-webp": "8.0.0",
         "imagemin-zopfli": "7.0.0",
+        "node-ssh": "13.2.1",
         "postcss-preset-env": "10.2.4",
         "postcss-sort-media-queries": "5.2.0",
         "rollup": "4.45.0",
