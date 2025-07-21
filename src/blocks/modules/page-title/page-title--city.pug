@@ -170,8 +170,8 @@ section.page-title
                         .btn-wrapper
                             button.btn.btn-green(type="submit").hide-from-md
                                 span Применить фильтры
-                            .hide-before-md
+                            .hide-before-md.filter-toggle
                                 +toggler-tick({title: ["Дополнительный фильтр", "Простой фильтр"], toggle: "open", target: ".secondary-form"})
-                            button.btn.btn-transparent(type="reset")
+                            button.btn.btn-transparent.btn-reset(type="reset")
                                 span Сбросить фильтры
                                 +icons("#ic_close", 12)

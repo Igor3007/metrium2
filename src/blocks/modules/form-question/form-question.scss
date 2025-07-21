@@ -174,8 +174,16 @@
         padding: 24px;
         gap: 40px;
         margin:0;
+        @include vars.from('md') {
+            padding: 21px 32px 13px 40px;
+            align-items: flex-start;
+        }
         &__title {
             line-height: 1.5;
+            @include vars.from('md') {
+                margin-top: 14px;
+                padding-bottom: 10px;
+            }
         }
         &__desc {
             padding-bottom: 25px;
@@ -183,12 +191,21 @@
         }
         &__input {
             margin-bottom: 11px;
+            @include vars.from('md') {
+                margin-top: 11px;
+                margin-bottom: 5px;
+            }
             input {
                 margin-bottom: 12px;
             }
             .btn {
                 @include vars.before('md') {
                     height: 52px;
+                }
+                @include vars.from('md') {
+                    padding-inline: 2.45em 2.15em;
+                    font: 500 18px/28px vars.$font-default;
+                    letter-spacing: .02em;
                 }
             }
         }

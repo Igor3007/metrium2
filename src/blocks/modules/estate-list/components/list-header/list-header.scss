@@ -16,6 +16,10 @@
     &__qty {
         font: 400 16px/1.5 vars.$font-default;
         color: var(--text-2);
+        @include vars.from('md') {
+            font: 400 18px/28px vars.$font-default;
+            letter-spacing: 0.02em;
+        }
     }
     &__controls {
         display: flex;
@@ -56,6 +60,16 @@
                 }
             }
             @include vars.from('md') {
+                display: flex;
+                background: var(--accent-12);
+                border-radius: 8px;
+                align-items: center;
+                span.title {
+                    font: 400 18px/28px vars.$font-default;
+                    letter-spacing: 0.02em;
+                    color: var(--text-3);
+                    margin-left: 16px;
+                }
                 .btn {
                     display: none;
                 }
@@ -86,6 +100,9 @@
             @include vars.from('md') {
                 background: var(--accent-12);
                 color: var(--text-2);
+                font: 500 18px/28px vars.$font-default;
+                height: 56px;
+                padding-inline: 25px;
                 &:hover {
                     color: var(--text-1);
                 }

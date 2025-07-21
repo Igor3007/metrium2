@@ -1,11 +1,29 @@
+@use "../../styles/vars";
+
 .city-page {
     &.section-special-offers {
         padding-top: 48px;
         padding-bottom: 25px;
+        @include vars.from('md') {
+            padding-top: 100px;
+            padding-bottom: 96px;
+        }
+    }
+    .special-offers__slider {
+        @include vars.from('md') {
+           padding-bottom: 33px;
+        }
+    }
+    .special-offers__bottom {
+        gap: 16px;
     }
     &.seo-text {
         background: var(--accent-12);
         border-bottom: 1px solid var(--accent-13);
         padding-bottom: 88px;
+        @include vars.from('md') {
+            padding-top: 9px;
+            padding-bottom: 75px;
+        }
     }
 }

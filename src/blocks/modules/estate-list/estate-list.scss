@@ -6,6 +6,10 @@
 .estate-list {
     background: var(--accent-12);
     padding: 24px 0;
+    @include vars.from('md') {
+        padding-top: 46px;
+        padding-bottom: 88px;
+    }
 
     .container {
         display: flex;

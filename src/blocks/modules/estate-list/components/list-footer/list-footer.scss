@@ -19,6 +19,9 @@
         @include vars.before('md') {
             width: 100%;
         }
+        @include vars.from('md') {
+            padding-inline: 1.6em;
+        }
         .icon {
             margin-left: 11px;
             width: 8px;
