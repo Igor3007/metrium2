@@ -16,7 +16,9 @@
     }
 
     .btn-show-more {
-        width: 100%;
+        @include vars.before('md') {
+            width: 100%;
+        }
         .icon {
             margin-left: 11px;
             width: 8px;

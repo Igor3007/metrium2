@@ -3,8 +3,30 @@
 .recently-viewed {
     background: var(--accent-12);
     padding-top: 32px;
+    @include vars.from('md') {
+        padding-top: 64px;
+    }
 
     &__title {
         font: 400 28px/40px vars.$font-captions;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 52px;
+    }
+
+    &__slider {
+        margin-bottom: 48px;
+    }
+
+    .splide {
+        &__track {
+            @include vars.before('md') {
+                overflow: visible;
+            }
+        }
     }
 }

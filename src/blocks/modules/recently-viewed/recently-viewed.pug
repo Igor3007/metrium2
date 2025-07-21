@@ -1,17 +1,18 @@
+include ../../components/slider-nav/slider-nav
+
 mixin recently-viewed(data)
     - var className = data?.class || false
     - var title = data?.title || "Недавно просмотренные"
 
-    section.recently-viewed.container(class= className)
-        .recently-viewed__header
-            h3.recently-viewed__title= title
-            .recently-viewed__slider-remote.hide-before-md
-                button.prev(data-slider-prev="viewed"): +icons('#ic_arr-left')
-                button.next(data-slider-next="viewed"): +icons('#ic_arr-right')
-        .recently-viewed__slider
-            .splide(data-slider="viewed")
-                .splide__track
-                    .splide__list
-                        each card in sets.cards01
-                            .splide__slide
-                                +minicard(card)
+    section.recently-viewed(class= className)
+        .container
+            .recently-viewed__header
+                h3.recently-viewed__title= title
+                +slider-nav({sliderName: "viewed"})
+            .recently-viewed__slider
+                .splide(data-slider="viewed")
+                    .splide__track
+                        .splide__list
+                            each card in sets.cards01
+                                .splide__slide
+                                    +minicard(card)

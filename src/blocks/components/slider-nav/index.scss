@@ -1,0 +1,57 @@
+@use "../../../styles/vars";
+
+.slider-nav {
+    display: flex;
+    align-items: center;
+
+    @media screen and (min-width: vars.$w576) {
+        display: flex;
+        gap: 8px;
+    }
+
+    &-prev,
+    &-next {
+
+        width: 56px;
+        height: 56px;
+        border: 1px solid transparent;
+        background-color: var(--accent);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        @media screen and (min-width: vars.$w1440) {
+            width: 56px;
+            height: 56px;
+        }
+
+        @media screen and (min-width: vars.$w1200) {
+            width: 50px;
+            height: 50px;
+        }
+
+        &:hover {
+            background-color: var(--accent-11);
+        }
+
+
+        & svg {
+            width: 14px;
+            height: 14px;
+            fill: #fff;
+        }
+
+        &[disabled] {
+            background-color: transparent;
+            border-color: var(--text-3);
+            pointer-events: none;
+
+            & svg {
+                fill: var(--text-3);
+            }
+        }
+    }
+}

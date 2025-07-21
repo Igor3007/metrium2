@@ -20,14 +20,6 @@
         @media screen and (min-width: vars.$w1200) {
             padding-bottom: 50px;
         }
-
-
-
-    }
-
-    &__nav {
-        @include vars.splide-nav;
-
     }
 
     &__bottom {
