@@ -170,7 +170,6 @@
                 max-height: 0;
                 padding: 0;
                 margin: 0;
-                overflow: hidden;
                 opacity: 0;
                 transition: .3s;
 
@@ -180,8 +179,20 @@
                     max-height: none;
                     animation: max-height-animation;
                     animation-duration: .3s;
-                    width: 35%;
                     gap: 25px;
+                    display: block;
+                    > * + * {
+                        margin-top: 25px;
+                    }
+                    .prefixed-input {
+                        width: 328px;
+                    }
+                    .input-group label {
+                        padding-inline: 33px ;
+                    }
+                    .page-filter__item, .input-group {
+                        width: auto;
+                    }
                 }
                 .checkbox {
                     padding-top: 6px;
@@ -256,30 +267,41 @@
         }
     }
 
-    button.btn-reset {
-        @include vars.from('md') {
-            font: 500 18px/28px vars.$font-default;
-            letter-spacing: .02em;
-            padding: 0;
-            &:before {
-                content: none;
+    form {
+        button.btn-reset {
+            @include vars.from('md') {
+                font: 500 18px/28px vars.$font-default;
+                letter-spacing: .02em;
+                padding: 0;
+                color: var(--text-3);
+                &:before {
+                    content: none;
+                }
+                &:hover {
+                    background: transparent;
+                    color: vars.$red;
+                }
+                .icon {
+                    width: 12px;
+                    height: 12px;
+                }
             }
-            &:hover {
-                background: transparent;
-                color: vars.$red;
-            }
-
-            .icon {
-                width: 12px;
-                height: 12px;
+        }
+        &.touched {
+            button.btn-reset {
+                @include vars.from('md') {
+                    color: var(--text-2);
+                }
             }
         }
     }
+
+
     .filter-toggle {
         display: flex;
         align-items: center;
+        font: 500 18px/28px vars.$font-default;
     }
-
 }
 
 .instant-filter {

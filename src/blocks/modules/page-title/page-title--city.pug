@@ -101,7 +101,7 @@ section.page-title
                         .page-filter__item.md
                             +select-field({
                                 multiple: true,
-                                placeholder: 'ЖК',
+                                placeholder: 'Жилищные комплексы',
                                 options: catalog.ZHK
                             })
                     .form.secondary-form
@@ -170,7 +170,11 @@ section.page-title
                             button.btn.btn-green(type="submit").hide-from-md
                                 span Применить фильтры
                             .hide-before-md.filter-toggle
-                                +toggler-tick({title: ["Дополнительный фильтр", "Простой фильтр"], toggle: "open", target: ".secondary-form"})
+                                +toggler-tick({
+                                    title: ["Дополнительный фильтр", "Простой фильтр"],
+                                    toggle: "open",
+                                    target: ".secondary-form"
+                                })
                             button.btn.btn-transparent.btn-reset(type="reset")
                                 span Сбросить фильтры
                                 +icons("#ic_close", 12)

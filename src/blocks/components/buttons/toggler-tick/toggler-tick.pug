@@ -3,7 +3,8 @@ mixin toggler-tick(options)
     - var target = options?.target
     - var toggle = options?.toggle
     - var parent = options?.parent
-    .toggler-tick(data-ticktarget=target, data-ticktoggle=toggle||false, data-tickparent=parent||false)
+    - var className = options?.class || false
+    .toggler-tick(data-ticktarget=target, data-ticktoggle=toggle||false, data-tickparent=parent||false, class=className)
         .toggler-tick__title.toggler-tick_off= title[0]
         .toggler-tick__title.toggler-tick_on= title[1]||title[0]
         .toggler-tick__tick

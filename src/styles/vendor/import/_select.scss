@@ -24,7 +24,7 @@ select {
     user-select: none;
     color: $select-color;
     width: $select-width;
-    min-width: functions.rem_(150);
+    min-width: fit-content;
     height: $select-height;
 
     @media screen and (min-width: vars.$w1440) {
@@ -68,6 +68,7 @@ select {
     height: 100%;
     border-radius: 8px;
     border: 2px solid transparent;
+    min-width: fit-content;
 
     &:hover {
         background-color: var(--accent-14);
@@ -88,6 +89,7 @@ select {
         overflow: hidden;
         color: var(--text-1);
         font-size: 18px;
+        flex-shrink: 0;
 
         &.af-selected-placeholder {
             color: var(--text-1);
@@ -127,6 +129,17 @@ select {
         &:after {
             transform: rotate(180deg);
         }
+    }
+
+    .prefix {
+        margin-right: 8px;
+        font: 400 18px/28px vars.$font-default;
+        color: var(--text-3);
+    }
+    .postfix {
+        margin-left: 8px;
+        font: 400 18px/28px vars.$font-default;
+        color: var(--text-3);
     }
 }
 

@@ -26,6 +26,24 @@ export class afSelect {
 
     }
 
+    reset(elem) {
+        const select = elem.closest('select');
+        const placeholder = select.getAttribute('placeholder');
+        const rootEl = elem.closest('.af-select');
+        elem
+            .querySelectorAll('option')
+            .forEach(item => {
+                item.removeAttribute('selected')
+            });
+        rootEl
+            .querySelectorAll('li.active')
+            .forEach(el => {
+                el.classList.remove('active')
+            });
+        rootEl
+            .querySelector('.select-styled span').innerText = placeholder;
+    }
+
     ajaxOption(item, callback) {
         let xhr = new XMLHttpRequest();
         let result = null;
@@ -57,15 +75,18 @@ export class afSelect {
     }
 
     renderOption(item) {
-
         var _this = this;
-        var select = item.querySelector('select')
-        var placeholder = select.getAttribute('placeholder')
-        var multiple = select.getAttribute('multiple')
+        var select = item.querySelector('select');
+        var placeholder = select.getAttribute('placeholder');
+        var multiple = select.getAttribute('multiple');
+        var {prefix, postfix} = select.dataset;
+
+        const prefixEl = (prefix ? `<div class='prefix'>${prefix}</div>` : '');
+        const postfixEl = (postfix ? `<div class='postfix'>${postfix}</div>` : '');
 
         const styledSelect = document.createElement('div')
         styledSelect.classList.add('select-styled');
-        styledSelect.innerHTML = '<span>' + placeholder + '</span>';
+        styledSelect.innerHTML =`${prefixEl}<span>${placeholder}</span>${postfixEl}`;
 
         const styledOptions = document.createElement('ul')
         styledOptions.classList.add('select-options');
@@ -110,7 +131,7 @@ export class afSelect {
 
                 //если не задан placeholder, сделать им первый элемент
                 if (index == 0 && !placeholder) {
-                    styledSelect.innerHTML = '<span>' + item.innerText + '</span>';
+                    styledSelect.innerHTML = prefixEl + `<span>${item.innerText}</span>` + postfixEl;
                 }
 
                 //если есть selected элемент
@@ -133,10 +154,10 @@ export class afSelect {
 
                     if (!placeholder) {
 
-                        styledSelect.innerHTML = '<span>' + selectedText(item) + '</span>';
+                        styledSelect.innerHTML = `${prefixEl}<span>${selectedText(item)}</span>${postfixEl}`;
                         li.classList.add('active')
                     } else {
-                        styledSelect.innerHTML = '<span class="af-selected-placeholder" data-af-placeholder="' + placeholder + '">' + selectedText(item) + '</span>';
+                        styledSelect.innerHTML = prefixEl + '<span class="af-selected-placeholder" data-af-placeholder="' + placeholder + '">' + selectedText(item) + '</span>' + postfixEl;
                         li.classList.add('active')
                     }
                 }
@@ -148,7 +169,6 @@ export class afSelect {
 
             })
         }
-
 
 
         //ajax option
@@ -202,6 +222,9 @@ export class afSelect {
         select.afSelect.update = function () {
             _this.reinit(select)
         }
+        select.afSelect.reset = function () {
+            _this.reset(select)
+        }
 
     }
 
@@ -223,11 +246,9 @@ export class afSelect {
     renderTemplate() {
 
         const _this = this;
-        const istanse = []
+        const instances = []
 
-
-
-        this.selectAll.forEach(function (item, index) {
+        this.selectAll.forEach(function (item) {
 
             if (!item.classList.contains('select-hidden')) {
                 item.classList.add('select-hidden');
@@ -241,13 +262,13 @@ export class afSelect {
                 wrapper.innerHTML = item.outerHTML;
                 item.parentNode.replaceChild(wrapper, item);
 
-                //add event 
-                istanse.push(wrapper)
+                //add event
+                instances.push(wrapper)
             }
 
         })
 
-        istanse.forEach(function (item, index) {
+        instances.forEach(function (item) {
             _this.renderOption(item)
             _this.clickEventOpenSelect(item)
         })
@@ -312,7 +333,6 @@ export class afSelect {
         const styledSelect = parentElem.querySelector('.select-styled')
 
 
-
         elem.addEventListener('click', function (event) {
 
             event.stopPropagation()
@@ -324,7 +344,14 @@ export class afSelect {
 
                 // если мульти то не сбрасывать active
                 if (!multiple) {
-                    parentElem.querySelector('.select-options li.active').classList.remove('active')
+                    parentElem
+                        .querySelectorAll('option')
+                        .forEach(item => {
+                            item.removeAttribute('selected')
+                        });
+                    parentElem
+                        .querySelector('.select-options li.active')
+                        .classList.remove('active');
                 }
             }
 
@@ -380,7 +407,6 @@ export class afSelect {
             }
 
 
-
         })
     }
 
@@ -394,7 +420,6 @@ export class afSelect {
             if (event.target.closest('.select-styled')) {
                 _this.openSelect(this)
             }
-
         }
 
         elem.removeEventListener('click', addEventOpen)

@@ -1,5 +1,5 @@
 import {MaskInput} from "maska";
-import {afSelect} from "../vendor/af-select.min.js";
+import {afSelect} from "../vendor/af-select.js";
 import {Splide} from "@splidejs/splide";
 import Cookies from "js-cookie";
 import {FlexCollections} from "./flex-collections.js";
@@ -9,6 +9,8 @@ import {initSliderViewed} from "../../blocks/modules/index.js";
 import {initToggleTicks} from "../../blocks/components";
 import {initTogglers} from "./toggler.js";
 import {initFormAJAX} from "./form-ajax.js";
+import {initPrefixedInputs} from "./prefixed-inputs.js";
+import "../vendor/fslightbox.min.js";
 import {
     SLIDER_ARROW_PATH,
     API_YMAPS
@@ -20,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initAddRemoveClassButtons();
     initSliderViewed();
     initFormAJAX();
+    initPrefixedInputs();
 
     /* =================================================
     css variable
@@ -313,7 +316,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
 
 
-
         afterLoad() {
             this.container.querySelectorAll('.isset-sub').forEach(item => {
                 item.addEventListener('click', e => {
@@ -351,6 +353,22 @@ document.addEventListener('DOMContentLoaded', function (event) {
         window.MainMenu = new MainMenu(document)
     }
 
+    /* ========================
+        FORM data changes
+    ========================= */
+
+    document
+        .querySelectorAll('form')
+        .forEach(form => {
+            form
+                .querySelectorAll('input, select, textarea')
+                .forEach(el => {
+                    el.addEventListener('change', e => {
+                        form.classList.add('touched');
+                    })
+                })
+        })
+
     /* ==============================================
      select
     ============================================== */
@@ -364,7 +382,18 @@ document.addEventListener('DOMContentLoaded', function (event) {
         selector: 'select:not(.native)'
     })
 
-    selectCustom.init()
+    selectCustom.init();
+
+    document
+        .querySelectorAll('form')
+        .forEach(form => {
+            form.addEventListener('reset', e => {
+                form.classList.remove('touched');
+                form.querySelectorAll('select:not(.native)').forEach(select => {
+                    select.afSelect.reset();
+                })
+            })
+        });
 
 
     /* ================================================

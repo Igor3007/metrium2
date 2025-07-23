@@ -3,8 +3,7 @@
         |Найдено 512 вариантов
     .list-header__controls
         .list-header__controls-sort
-            span.title Сортировать
-            select
+            select(data-prefix="Сортировать")
                 option По актуальности
                 option По возрастанию
             .btn.btn-line
@@ -19,7 +18,7 @@
                 button.btn.hide-before-md.list(data-add="list" data-parent=".estate-list")
                     +icons("#ic_list")
                     span Списком
-                a(href="#").btn
+                a(href="/city-map.html").btn
                     +icons("#ic_on-map-small")
                     span На карте
 

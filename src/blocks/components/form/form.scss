@@ -717,6 +717,9 @@
         white-space: nowrap;
         @include vars.from('md') {
             padding-block: 14px;
+            &:hover {
+                background-color: var(--accent-14);
+            }
         }
 
         input {
@@ -756,6 +759,7 @@
     align-items: center;
     background: var(--accent-12);
     border-radius: 12px;
+    font: 400 18px/28px vars.$font-default;
 
     &:focus-within {
         outline: 2px solid var(--accent-11);
@@ -763,7 +767,6 @@
 
     label {
         white-space: nowrap;
-        font: 400 18px/28px vars.$font-default;
         color: var(--text-2);
         margin-left: 16px;
     }
@@ -771,9 +774,17 @@
     input {
         border: none !important;
         background: none;
+        font-size: inherit !important;
+        line-height: inherit !important;
+        padding-left: 8px !important;
+        &::placeholder {
+            color: var(--text-2) !important;
+        }
     }
 
     .icon {
         margin-left: 16px;
+        min-width: 28px;
+        color: var(--text-3);
     }
 }

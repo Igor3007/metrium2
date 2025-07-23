@@ -3,6 +3,7 @@
 .toggler-tick {
     display: flex;
     cursor: pointer;
+    align-items: center;
 
     &:after {
         content: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOCAxMC4wMDAyTDEyIDE0LjAwMDJMMTYgMTAuMDAwMiIgc3Ryb2tlPSIjMDA0MDNGIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==);
