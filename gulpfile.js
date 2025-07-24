@@ -40,6 +40,7 @@ gulp.task('watch', function () {
     gulp.watch(paths.images.watch, gulp.parallel(imagesDev));
     gulp.watch(paths.webp.watch, gulp.parallel(webpDev));
     gulp.watch(paths.fonts.watch, gulp.parallel(copyFonts));
+    gulp.watch(paths.json.watch, gulp.parallel(copyJSON));
 })
 
 gulp.task(

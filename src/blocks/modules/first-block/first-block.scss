@@ -471,7 +471,7 @@ body:not(.is-scroll-page) {
         }
 
 
-        @media screen and (min-width: vars.$w576) {
+        @media screen and (min-width: vars.$w1200) {
             height: 40px;
         }
     }

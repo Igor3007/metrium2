@@ -7,6 +7,7 @@
 
     @include vars.from('md') {
         flex-direction: row;
+        flex-wrap: wrap;
         background: var(--white);
         padding: 20px;
         border-radius: 16px;
@@ -24,6 +25,7 @@
     &__controls {
         display: flex;
         gap: 8px;
+        flex-wrap: wrap;
         @include vars.from('md') {
             flex-grow: 1;
             justify-content: space-between;
@@ -61,6 +63,7 @@
             }
             @include vars.from('md') {
                 display: flex;
+                min-width: 400px;
                 background: var(--accent-12);
                 border-radius: 8px;
                 align-items: center;
@@ -118,6 +121,8 @@
                     color: var(--white);
                     background: var(--accent-11);
                 }
+            }
+            @include vars.from('xl') {
                 &:not(:first-child) {
                     border-top-left-radius: 0;
                     border-bottom-left-radius: 0;

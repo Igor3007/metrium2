@@ -87,10 +87,10 @@ section.page-title
                                 +prefixed-input()
                                     label до
                         .page-filter__item.md
-                            +select-field({
+                            +select-extended({
                                 multiple: true,
-                                placeholder: 'Район',
-                                options: catalog.districts
+                                placeholder: 'Выберите район',
+                                options: catalog.districts.map(x => ({title: x.name, value: x.id}))
                             })
                         .page-filter__item.hide-from-md
                             +select-field({
@@ -175,6 +175,6 @@ section.page-title
                                     toggle: "open",
                                     target: ".secondary-form"
                                 })
-                            button.btn.btn-transparent.btn-reset(type="reset")
+                            button.btn.btn-transparent.btn-reset(type="reset" data-remove="sm-modal" data-target=".page-title__filter" data-prevent="none")
                                 span Сбросить фильтры
                                 +icons("#ic_close", 12)

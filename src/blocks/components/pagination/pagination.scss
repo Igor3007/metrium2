@@ -54,13 +54,16 @@
 
         a, span {
             display: flex;
-            width: 54px;
+            width: 46px;
             height: 54px;
             align-items: center;
             justify-content: center;
             color: inherit;
             font: 400 18px/28px vars.$font-default;
             letter-spacing: .02em;
+            @include vars.from('lg') {
+                width: 54px;
+            }
         }
     }
 

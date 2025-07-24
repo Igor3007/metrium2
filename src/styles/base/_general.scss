@@ -225,6 +225,18 @@ input[type="date"] {
     }
 }
 
+.hide-before-lg {
+    @include vars.before('lg') {
+        display: none !important;
+    }
+}
+
+.hide-before-xl {
+    @include vars.before('xl') {
+        display: none !important;
+    }
+}
+
 
 .container {
     width: 100%;

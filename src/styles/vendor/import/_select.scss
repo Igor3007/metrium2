@@ -42,6 +42,16 @@ select {
         }
     }
 
+    &.has-prefix {
+        .select-styled {
+            justify-content: flex-start;
+            &:after {
+                position: absolute;
+                right: 23px;
+            }
+        }
+    }
+
 }
 
 // .af-selected-placeholder::before {
@@ -88,12 +98,18 @@ select {
         text-overflow: ellipsis;
         overflow: hidden;
         color: var(--text-1);
-        font-size: 18px;
+        font-size: 16px;
         flex-shrink: 0;
+        @include vars.from('md') {
+            font-size: 18px;
+        }
 
         &.af-selected-placeholder {
             color: var(--text-1);
-            font-size: 18px;
+            font-size: 16px;
+            @include vars.from('md') {
+                font-size: 18px;
+            }
         }
     }
 
@@ -132,7 +148,7 @@ select {
     }
 
     .prefix {
-        margin-right: 8px;
+        margin-right: 10px;
         font: 400 18px/28px vars.$font-default;
         color: var(--text-3);
     }

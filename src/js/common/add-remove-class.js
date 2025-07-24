@@ -4,7 +4,10 @@ export const initAddRemoveClassButtons = () => {
         .forEach(el => {
             el.addEventListener('click', (e) => {
                 e.preventDefault();
-                const {target, add, parent} = el.dataset;
+                const {target, add, parent, prevent} = el.dataset;
+                if (!prevent || prevent !== "none") {
+                    e.preventDefault();
+                }
 
                 if (target) {
                     document
@@ -25,9 +28,10 @@ export const initAddRemoveClassButtons = () => {
         .querySelectorAll('[data-remove]')
         .forEach(el => {
             el.addEventListener('click', (e) => {
-                e.preventDefault();
-                const {target, remove, parent} = el.dataset;
-
+                const {target, remove, parent, prevent} = el.dataset;
+                if (!prevent || prevent !== "none") {
+                    e.preventDefault();
+                }
                 if (target) {
                     document
                         .querySelectorAll(target)

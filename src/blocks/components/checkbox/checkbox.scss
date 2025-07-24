@@ -11,8 +11,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    align-items: flex-start;
-
+    align-items: center;
 
     & input {
         position: absolute;
@@ -20,11 +19,11 @@
         cursor: pointer;
         height: 0;
         width: 0;
-        display: none;
+        display: none !important;
     }
 
     &__text {
-        line-height: 140%;
+        line-height: 1;
         text-align: left;
         transition: 0.3s ease;
         @include vars.font-size-18();

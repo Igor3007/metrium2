@@ -12,7 +12,9 @@
     }
 
     &__button {
-        width: 100%;
+        @include vars.before('md') {
+            width: 100%;
+        }
     }
 
     .btn-show-more {

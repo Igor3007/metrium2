@@ -34,6 +34,15 @@ mixin select-field(data)
             each item in data.options
                 option= item
 
+mixin select-extended(data)
+    - var multiple = data.multiple || false;
+    - var placeholder = data.placeholder || false;
+    - var className = data.class || false;
+    - var options = data.options
+    select(placeholder=placeholder multiple=multiple class=className)
+        each item in options
+            option(value=item.value)= item.title
+
 mixin prefixed-input(options)
     -var type = options?.type || "text"
     -var placeholder = options?.placeholder || null

@@ -23,8 +23,14 @@
     }
 
     h4 {
-        margin-top: 4px;
-        @include vars.font-h4;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.6;
+        letter-spacing: .04em;
+        font-family: vars.$font-default;
+        @media screen and (min-width: vars.$w576) {
+            font-size: 28px;
+        }
     }
 
     .toggler {
@@ -115,6 +121,17 @@
             width: auto;
             flex-grow: 1;
             &.sm {
+                width: 30%;
+            }
+            &.md {
+                width: 50%;
+            }
+            &.lg {
+                width: 70%;
+            }
+        }
+        @include vars.from('lg') {
+            &.sm {
                 width: 15%;
             }
             &.md {
@@ -135,8 +152,9 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 4px;
+        gap: 6px 4px;
         @include vars.from('md') {
+            gap: 4px;
             width: auto;
             flex-direction: row;
             flex-grow: 1;
@@ -149,23 +167,30 @@
         gap: 16px;
         &.primary-form {
             margin-top: 24px;
+            padding-bottom: 24px;
             position: relative;
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 0;
+                border-bottom: 1px solid var(--accent-13);
+                left: 0;
+                right: 0;
+            }
             @include vars.from('md') {
-                padding-bottom: 24px;
                 &:after {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    bottom: 0;
                     left: calc(50% - 50vw);
                     right: calc(50% - 50vw);
-                    border-bottom: 1px solid var(--accent-13);
                 }
             }
         }
         &.secondary-form {
-            margin-block: 24px;
+            margin-bottom: 24px;
             padding-block: 24px;
+            @include vars.before('md') {
+                gap: 24px;
+            }
             @include vars.from('md') {
                 max-height: 0;
                 padding: 0;
@@ -300,7 +325,14 @@
     .filter-toggle {
         display: flex;
         align-items: center;
+        position: relative;
         font: 500 18px/28px vars.$font-default;
+    }
+
+    .checkbox {
+        @include vars.before('md') {
+            margin-top: 7px;
+        }
     }
 }
 
@@ -312,12 +344,22 @@
     &__list {
         @include vars.before('md') {
             max-height: none !important;
+            margin-bottom: 24px;
             .is-hide {
-                display: block !important;
+                display: block;
+                &:nth-child(n+7) {
+                    display: none;
+                    .is-open & {
+                        display: block;
+                    }
+                }
             }
-            .show-more-tag {
-                display: none !important;
-            }
+        }
+    }
+    &.fb-filter__selections a {
+        @include vars.before('md') {
+            font-size: 16px;
+            height: 40px;
         }
     }
 }

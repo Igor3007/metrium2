@@ -686,12 +686,14 @@
     margin: 0;
     display: inline-flex;
     flex-wrap: wrap;
-    gap: 4px 12px;
-    font: 400 18px/28px vars.$font-default;
+    gap: 8px 12px;
+    font: 400 16px/24px vars.$font-default;
     align-items: center;
 
     @include vars.from('md') {
+        gap: 4px 12px;
         flex-wrap: nowrap;
+        font: 400 18px/28px vars.$font-default;
     }
 
     &__title {
@@ -707,7 +709,7 @@
     label {
         background: var(--accent-12);
         color: var(--text-2);
-        padding: 10px 24px;
+        padding: 12px 24px;
         border-radius: 12px;
         transition: 0.4s;
         cursor: pointer;
@@ -759,7 +761,10 @@
     align-items: center;
     background: var(--accent-12);
     border-radius: 12px;
-    font: 400 18px/28px vars.$font-default;
+    font: 400 16px/24px vars.$font-default;
+    @include vars.from('md') {
+        font: 400 18px/28px vars.$font-default;
+    }
 
     &:focus-within {
         outline: 2px solid var(--accent-11);

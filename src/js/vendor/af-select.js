@@ -253,7 +253,10 @@ export class afSelect {
             if (!item.classList.contains('select-hidden')) {
                 item.classList.add('select-hidden');
                 const wrapper = document.createElement('div');
+                const {prefix, postfix} = item.dataset;
                 wrapper.classList.add('af-select');
+                if (prefix) wrapper.classList.add('has-prefix');
+                if (postfix) wrapper.classList.add('has-postfix');
 
                 if (item.getAttribute('multiple')) {
                     wrapper.classList.add('af-select--multiple');

@@ -10,6 +10,9 @@
         margin-top: 20px;
         margin-bottom: 20px;
 
+
+    }
+    @include vars.from('xl') {
         .estate-list.list & {
             grid-template-columns: 1fr;
         }

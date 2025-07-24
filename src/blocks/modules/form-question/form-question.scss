@@ -156,6 +156,9 @@
     }
 
     &__note {
+        .checkbox {
+            top: 4px;
+        }
         & a {
             color: var(--accent);
 
