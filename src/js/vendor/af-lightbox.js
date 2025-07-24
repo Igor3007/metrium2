@@ -1,4 +1,4 @@
-class afLightbox {
+export class afLightbox {
     constructor(opion) {
 
         this.modal = '';
@@ -77,6 +77,10 @@ class afLightbox {
 
     changeContent(content) {
         this.modal.querySelector('.af-popup__content').innerHTML = content
+    }
+
+    replaceContent(content) {
+        this.modal.querySelector('.af-popup__content').replaceChildren(content);
     }
 
     createEvent() {

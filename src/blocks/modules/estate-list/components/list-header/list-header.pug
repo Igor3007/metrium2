@@ -3,10 +3,10 @@
         |Найдено 512 вариантов
     .list-header__controls
         .list-header__controls-sort
-            select(data-prefix="Сортировать")
-                option По актуальности
-                option По возрастанию
-            .btn.btn-line
+            select#sortlist(data-prefix="Сортировать")
+                option(value=1) По актуальности
+                option(value=2) По возрастанию
+            .btn.btn-line(data-selectpopup="#sortlist")
                 +icons("#ic_sort")
                 |Сортировка
 

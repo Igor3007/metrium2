@@ -11,6 +11,7 @@ import {initTogglers} from "./toggler.js";
 import {initFormAJAX} from "./form-ajax.js";
 import {initPrefixedInputs} from "./prefixed-inputs.js";
 import "../vendor/fslightbox.min.js";
+import {initPopupSelect} from "./popup-select.js";
 import {
     SLIDER_ARROW_PATH,
     API_YMAPS
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initSliderViewed();
     initFormAJAX();
     initPrefixedInputs();
+    initPopupSelect();
 
     /* =================================================
     css variable

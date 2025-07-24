@@ -1,0 +1,24 @@
+@use "../vars";
+
+.popup-select {
+    padding-block: 40px 24px;
+    font: 400 16px/1.5 vars.$font-default;
+    color: var(--text-1);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    button {
+        width: 100%;
+        border: none;
+        border-radius: 8px;
+        padding: 1em;
+        background: var(--accent-13);
+        cursor: pointer;
+
+        &.selected {
+            color: var(--white);
+            background: var(--accent-11);
+        }
+    }
+}
