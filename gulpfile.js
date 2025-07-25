@@ -14,11 +14,11 @@ import {
     viewsProd,
     favicons,
     imagesDev,
-    imagesProd,
     webpDev,
     webpProd,
     spritesDev,
     spritesProd,
+    htmlTemplates,
 } from "./gulp-tasks/index.js";
 import browserSync from "browser-sync";
 
@@ -34,6 +34,7 @@ gulp.task('browser-sync', function () {
 
 gulp.task('watch', function () {
     gulp.watch([paths.views.watch, paths.data.src], gulp.parallel(viewsDev));
+    gulp.watch(paths.templates.watch, gulp.parallel(htmlTemplates));
     gulp.watch(paths.styles.watch, gulp.parallel(stylesDev));
     gulp.watch(paths.common.watch, gulp.parallel(jsDev));
     gulp.watch(paths.sprites.watch, gulp.parallel(spritesDev));
@@ -48,7 +49,7 @@ gulp.task(
     gulp.series(
         clean,
         stylesDev,
-        gulp.parallel(viewsDev, jsDev, copyFonts, copyJSON, favicons, imagesDev, webpDev, spritesDev),
+        gulp.parallel(viewsDev, jsDev, copyFonts, copyJSON, favicons, imagesDev, webpDev, spritesDev, htmlTemplates),
         gulp.parallel('browser-sync', 'watch')
     )
 );
@@ -58,6 +59,6 @@ gulp.task(
     gulp.series(
         clean,
         stylesProd,
-        gulp.parallel(viewsProd, copyFonts, jsProd, favicons, imagesDev, webpProd, spritesProd)
+        gulp.parallel(viewsProd, copyFonts, jsProd, favicons, imagesDev, webpProd, spritesProd, htmlTemplates)
     )
 );

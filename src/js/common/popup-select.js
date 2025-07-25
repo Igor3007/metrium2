@@ -21,11 +21,13 @@ export const initPopupSelect = () => {
                         }
                         item.innerHTML = opt.innerHTML;
                         item.addEventListener('click', (e) => {
+                            // remove `selected` attribute from all options
                             opt.parentElement
                                 .querySelectorAll('option')
                                 .forEach(optx => {
                                     optx.removeAttribute('selected');
                                 })
+                            // and set to chosen one
                             opt.setAttribute('selected', 'selected');
                             popup.close();
                             select.dispatchEvent(new Event('change'));

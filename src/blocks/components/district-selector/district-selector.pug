@@ -1,0 +1,8 @@
+mixin district-selector(data)
+    - const placeholder = data?.placeholder || ''
+    - const prefix = data?.prefix || ''
+    .district-selector(data-placeholder = placeholder, data-prefix = prefix)
+        input(type="hidden")
+        span= placeholder
+
+

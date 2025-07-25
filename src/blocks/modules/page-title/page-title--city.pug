@@ -87,10 +87,9 @@ section.page-title
                                 +prefixed-input()
                                     label до
                         .page-filter__item.md
-                            +select-extended({
-                                multiple: true,
-                                placeholder: 'Выберите район',
-                                options: catalog.districts.map(x => ({title: x.name, value: x.id}))
+                            +district-selector({
+                                placeholder: "Выберите район",
+                                prefix: "Район, выбрано:"
                             })
                         .page-filter__item.hide-from-md
                             +select-field({

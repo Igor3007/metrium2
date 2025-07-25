@@ -1,0 +1,47 @@
+@use "../../styles/vars";
+.districts-popup {
+    &__title {
+        font: 400 clamp(24px, 4vw, 36px)/1.5 vars.$font-captions;
+    }
+}
+#instants {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+
+    li {
+        font: 400 16px/1.5 vars.$font-default;
+        color: var(--text-2);
+        padding: 8px 16px;
+        background: var(--accent-12);
+        border-radius: 20px;
+        cursor: pointer;
+        &:hover {
+            background: var(--accent-14);
+        }
+    }
+}
+
+#areas {
+    width: calc(75% - 8px);
+    column-count: 3;
+    column-gap: 32px;
+}
+
+#districts {
+    column-count: 4;
+    column-gap: 32px;
+
+    ul {
+        break-inside: avoid;
+        &:not(:has(.district:not(.hidden))) {
+            display: none;
+        }
+    }
+
+    li.district {
+        &.hidden {
+            display: none;
+        }
+    }
+}

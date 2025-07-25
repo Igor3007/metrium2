@@ -6,7 +6,7 @@ import {FlexCollections} from "./flex-collections.js";
 import {SplideNavHelper} from "./splide-nav-helper.js";
 import {initAddRemoveClassButtons} from "./add-remove-class.js";
 import {initSliderViewed} from "../../blocks/modules/index.js";
-import {initToggleTicks} from "../../blocks/components";
+import {initToggleTicks, initDistrictSelectors} from "../../blocks/components";
 import {initTogglers} from "./toggler.js";
 import {initFormAJAX} from "./form-ajax.js";
 import {initPrefixedInputs} from "./prefixed-inputs.js";
@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initFormAJAX();
     initPrefixedInputs();
     initPopupSelect();
+    initDistrictSelectors();
 
     /* =================================================
     css variable

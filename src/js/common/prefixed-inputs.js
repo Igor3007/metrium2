@@ -4,7 +4,6 @@ export const initPrefixedInputs = () => {
         .forEach((el) => {
             const input = el.querySelector("input");
             el.addEventListener("click", (e) => {
-                console.log(input);
                 input.focus();
             })
 

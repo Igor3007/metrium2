@@ -1,0 +1,20 @@
+.districts-popup
+    .districts-popup__header
+        h3.districts-popup__title Выберите районы
+        .input-filter
+            input(type="search", placeholder="Название района")
+    form
+        .disricts-popup__instant
+            p Быстрый выбор района
+            ul#instants
+        .disricts-popup__areas
+            p Административные округа
+            ul#areas
+        .disricts-popup__districts
+            p Районы
+            div#districts
+        .btn-wrapper
+            button(type="submit").btn.btn-green
+                span Показать подходящие объекты
+            button(type="reset").btn.btn-transparent.btn-reset
+                span Сбросить

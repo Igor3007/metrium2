@@ -12,6 +12,11 @@ export const paths = {
             "./src/blocks/**/*.js",
         ]
     },
+    templates: {
+        src: "./src/views/templates/*.pug",
+        dist: "./dist/templates/",
+        watch: "./src/views/templates/*.pug",
+    },
     styles: {
         src: [
             "./src/styles/*.scss",
@@ -49,7 +54,8 @@ export const paths = {
     },
     common: {
         watch: [
-            "./src/js/**/*.js"
+            "./src/js/**/*.js",
+            "./src/blocks/**/*.js"
         ]
     },
     images: {
