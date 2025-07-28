@@ -3,17 +3,33 @@ import {checkboxTpl} from "../../../js/helpers/index.js";
 
 const initFilterSearch = (element, data) => {
     const input = element.querySelector(".input-filter input");
+    const btn = element.querySelector(".input-filter button");
     if (!input) return;
 
     let bouncer = null;
 
+    btn.addEventListener("click", () => {
+        input.value = "";
+        listUpdate("");
+    });
+
     const listUpdate = (value) => {
         const VALUE = value?.trim().toUpperCase();
+        const areasContainer = document.querySelector('.disricts-popup__areas');
+        const instantContainer = document.querySelector('.disricts-popup__instant');
+
+        if (!!VALUE) {
+            areasContainer.classList.add('hidden');
+            instantContainer.classList.add('hidden');
+        } else {
+            areasContainer.classList.remove('hidden');
+            instantContainer.classList.remove('hidden');
+        }
 
         data.districts.forEach(d => {
             const item = districts.querySelector(`[data-id="${d.id}"]`);
             const li = item.closest("li");
-            if (d.name.toUpperCase().includes(VALUE) && !!VALUE) {
+            if (!VALUE || d.name.toUpperCase().includes(VALUE)) {
                 li.classList.remove("hidden");
             } else {
                 li.classList.add("hidden");
@@ -148,6 +164,7 @@ const initDistrictSelector = (element, template, data) => {
         reset.addEventListener("click", (e) => {
             input.value = "[]";
             container.innerHTML = resultString([]);
+            popup.close();
         })
 
 

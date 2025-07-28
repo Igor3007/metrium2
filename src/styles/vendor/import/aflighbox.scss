@@ -95,12 +95,12 @@
 .af-popup__content {
     background: #FFF;
     box-shadow: 0 0 20px 0 #00000021;
-    padding: 20px;
+    padding: 20px var(--container-padding) ;
     border-radius: 8px 8px;
     position: relative;
 
     @media screen and (min-width: 767.98px) {
-        padding: 28px;
+        padding-block: 28px;
     }
 }
 
@@ -125,20 +125,21 @@
     cursor: pointer;
     z-index: 101;
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: var(--container-padding);
+    top: 24px;
     min-width: 24px;
-    width: 24px;
-    height: 24px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-    border: 1px solid #D0D1D1;
-    background: #FFF;
+    background: var(--accent-12);
+    color: var(--text-3);
+    line-height: 1;
+    font-size: 24px;
 
     @media screen and (min-width: 767.98px) {
-        right: 28px;
         top: 28px;
 
         min-width: 32px;

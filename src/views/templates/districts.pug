@@ -1,20 +1,25 @@
+include ../helpers/mixins
+
 .districts-popup
     .districts-popup__header
         h3.districts-popup__title Выберите районы
         .input-filter
+            +icons("#ic_search",28,"icon-search")
             input(type="search", placeholder="Название района")
-    form
+            button &times;
+    form.districts-popup__body
         .disricts-popup__instant
-            p Быстрый выбор района
+            h5 Быстрый выбор района
             ul#instants
         .disricts-popup__areas
-            p Административные округа
+            h4 Административные округа
             ul#areas
         .disricts-popup__districts
-            p Районы
+            h4 Районы
             div#districts
         .btn-wrapper
             button(type="submit").btn.btn-green
                 span Показать подходящие объекты
             button(type="reset").btn.btn-transparent.btn-reset
                 span Сбросить
+                +icons("#ic_close")
