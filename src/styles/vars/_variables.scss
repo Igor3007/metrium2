@@ -80,7 +80,8 @@ $breakpoints: (
     sm: $w576,
     md: $w760,
     lg: $w992,
-    xl: $w1200
+    xl: $w1200,
+    xxl: $w1660
 );
 
 @mixin from($breakpoint) {

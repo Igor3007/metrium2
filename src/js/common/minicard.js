@@ -1,0 +1,91 @@
+import {Splide} from "@splidejs/splide";
+import {SLIDER_ARROW_PATH} from "./consts.js";
+import {SplideNavHelper} from "./splide-nav-helper.js";
+
+
+/* ===============================================
+slider minicard
+===============================================*/
+
+export const initSliderMinicard = (conainer) => {
+    conainer.querySelectorAll('[data-slider="minicard"]').forEach(slider => {
+
+        const container = slider.closest('.minicard')
+        const slideCounterCurrent = container.querySelector('[data-slider-counter="current"]')
+        const slideCounterTotal = container.querySelector('[data-slider-counter="total"]')
+
+        slider['Splide'] = new Splide(slider, {
+
+            arrows: false,
+            arrowPath: SLIDER_ARROW_PATH,
+            pagination: false,
+            gap: 20,
+            start: 0,
+            perPage: 1,
+            perMove: 1,
+            flickMaxPages: 1,
+            flickPower: 100,
+
+        });
+
+        slider['Splide'].mount();
+
+        slideCounterCurrent.innerText = 1
+        slideCounterTotal.innerText = slider['Splide'].length
+
+
+        // init splide nav
+        new SplideNavHelper({
+            slider: slider['Splide'],
+            btn: 'minicard',
+            container,
+            onChange: (current, total) => {
+                slideCounterCurrent.innerText = current
+                slideCounterTotal.innerText = total
+            }
+        })
+
+    })
+}
+
+/* ===============================================
+minicard hover
+===============================================*/
+
+export const initMinicardEvents = (container) => {
+
+    function openGalleryProduct(e, minicard) {
+        const img = minicard.querySelectorAll('[data-slider="minicard"] img')
+        const arrImage = [];
+
+        img.forEach(image => {
+            arrImage.push(image.getAttribute('src'))
+        })
+
+        const instance = new FsLightbox();
+        instance.props.dots = true;
+        instance.props.type = "image";
+        instance.props.sources = arrImage;
+        instance.open(0)
+    }
+
+    container.querySelectorAll('.minicard').forEach(el => {
+
+        const slider = el.querySelector('[data-slider]')
+
+        el.addEventListener('mouseenter', () => {
+            if (slider['Splide'].index <= 1) slider['Splide'].go('>')
+        })
+
+        el.addEventListener('mouseleave', () => {
+            if (slider['Splide'].index <= 1) slider['Splide'].go('<')
+        })
+
+        el.querySelector('.minicard__fullscreen').addEventListener('click', (e) => {
+            openGalleryProduct(e, el)
+        })
+
+    })
+
+
+}

@@ -59,6 +59,6 @@ gulp.task(
     gulp.series(
         clean,
         stylesProd,
-        gulp.parallel(viewsProd, copyFonts, jsProd, favicons, imagesDev, webpProd, spritesProd, htmlTemplates)
+        gulp.parallel(viewsProd, copyFonts, copyJSON, jsProd, favicons, imagesDev, webpProd, spritesProd, htmlTemplates)
     )
 );

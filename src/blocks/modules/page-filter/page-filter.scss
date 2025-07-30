@@ -1,0 +1,331 @@
+@use "../../../styles/vars";
+
+.sm-modal {
+    .page-filter {
+        display: block;
+        background: var(--white);
+        padding: var(--container-padding);
+        padding-bottom: 0;
+        max-width: 600px;
+        margin: 16px auto 0;
+        border-radius: 16px 16px 0 0;
+        @include vars.from('md') {
+            border-radius: 16px;
+            padding-bottom: var(--container-padding);
+        }
+        @include vars.from('lg') {
+            max-width: 920px;
+        }
+        @include vars.from('xl') {
+            max-width: 1024px;
+        }
+        @include vars.from('xxl') {
+            max-width: 1600px;
+        }
+
+        &__modal-heading {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form {
+            &.primary-form {
+                &:after {
+                    left: auto;
+                    right: auto;
+                }
+            }
+            &.secondary-form {
+                display: flex;
+                max-height: none;
+                opacity: 1;
+                @include vars.from('md') {
+                    display: block;
+                }
+            }
+        }
+
+        .filter-toggle {
+            display: none;
+        }
+        button[type="submit"] {
+            display: flex;
+        }
+    }
+}
+
+.page-filter {
+    display: none;
+    position: relative;
+    @include vars.from('md') {
+        display: block;
+    }
+    &__modal-heading {
+        margin-top: 8px;
+    }
+    &__item {
+        width: 100%;
+        @include vars.from('md') {
+            width: auto;
+            flex-grow: 1;
+            &.sm {
+                width: 30%;
+            }
+            &.md {
+                width: 50%;
+            }
+            &.lg {
+                width: 70%;
+            }
+        }
+        @include vars.from('lg') {
+            &.sm {
+                width: 15%;
+            }
+            &.md {
+                width: 25%;
+            }
+            &.lg {
+                width: 35%;
+            }
+            &.full {
+                width: 100%;
+            }
+        }
+        &.full {
+            width: 100%;
+        }
+    }
+    &__group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 6px 4px;
+        @include vars.from('md') {
+            gap: 4px;
+            width: auto;
+            flex-direction: row;
+            flex-grow: 1;
+        }
+    }
+
+    .form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        &.primary-form {
+            margin-top: 24px;
+            padding-bottom: 24px;
+            position: relative;
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 0;
+                border-bottom: 1px solid var(--accent-13);
+                left: 0;
+                right: 0;
+            }
+            @include vars.from('md') {
+                &:after {
+                    left: calc(50% - 50vw);
+                    right: calc(50% - 50vw);
+                }
+            }
+        }
+        &.secondary-form {
+            margin-bottom: 24px;
+            padding-block: 24px;
+            overflow: hidden;
+            @include vars.before('md') {
+                gap: 24px;
+            }
+            @include vars.from('md') {
+                max-height: 0;
+                padding: 0;
+                margin: 0;
+                opacity: 0;
+                transition: .3s;
+
+                &.open {
+                    opacity: 1;
+                    margin-block: 24px;
+                    max-height: none;
+                    animation: max-height-animation;
+                    animation-duration: .3s;
+                    gap: 25px;
+                    display: block;
+                }
+                > * + * {
+                    margin-top: 25px;
+                }
+                .checkbox {
+                    padding-top: 6px;
+                }
+                .prefixed-input {
+                    width: 328px;
+                }
+                .input-group label {
+                    padding-inline: 33px ;
+                }
+                .page-filter__item, .input-group {
+                    width: auto;
+                }
+            }
+
+            h4 {
+                @include vars.from('md') {
+                    //margin-bottom: 12px;
+                }
+            }
+        }
+
+        fieldset {
+            margin: 0;
+        }
+    }
+
+    .sm-modal &__footer {
+        position: sticky;
+        bottom: 0;
+        background: var(--white);
+        padding: 12px;
+        margin-inline: var(--container-out);
+        box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.12);
+        @include vars.from('md') {
+            box-shadow: none;
+            position: static;
+            margin-inline: 0;
+            padding: 32px 0 0 0;
+        }
+
+        .btn-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            @include vars.from('md') {
+                flex-direction: row;
+            }
+        }
+    }
+
+    &__footer {
+        @include vars.from('md') {
+            padding-top: 10px;
+            padding-bottom: 7px;
+        }
+        .btn-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__instant-filter {
+        @include vars.from('md') {
+            display: none;
+            .secondary-form.open + & {
+                display: block;
+            }
+            .sm-modal & {
+                display: block;
+                .instant-filter:before,
+                .instant-filter:after {
+                    left: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+
+    .fb-filter__selections {
+        @include vars.from('md') {
+            padding-block: 24px;
+            &:before, &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                left: calc(50% - 50vw);
+                right: calc(50% - 50vw);
+                border-bottom: 1px solid var(--accent-13);
+                height: 0;
+            }
+            &:before {
+                top: 0;
+            }
+            &:after {
+                bottom: 0;
+            }
+        }
+    }
+
+    form {
+        button.btn-reset {
+            @include vars.from('md') {
+                font: 500 18px/28px vars.$font-default;
+                letter-spacing: .02em;
+                padding: 0;
+                color: var(--text-3);
+                &:before {
+                    content: none;
+                }
+                &:hover {
+                    background: transparent;
+                    color: vars.$red;
+                }
+                .icon {
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+        }
+        &.touched {
+            button.btn-reset {
+                @include vars.from('md') {
+                    color: var(--text-2);
+                }
+            }
+        }
+    }
+
+
+    .filter-toggle {
+        display: flex;
+        align-items: center;
+        position: relative;
+        font: 500 18px/28px vars.$font-default;
+    }
+
+    .checkbox {
+        @include vars.before('md') {
+            margin-top: 7px;
+        }
+    }
+}
+
+.instant-filter {
+    &__title {
+        font: 400 16px/1.5 vars.$font-default;
+        margin-bottom: 12px;
+    }
+    &__list {
+        @include vars.before('md') {
+            max-height: none !important;
+            margin-bottom: 24px;
+            .is-hide {
+                display: block;
+                &:nth-child(n+7) {
+                    display: none;
+                    .is-open & {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    &.fb-filter__selections a {
+        @include vars.before('md') {
+            font-size: 16px;
+            height: 40px;
+        }
+    }
+}

@@ -93,28 +93,8 @@
     }
 
     .buttons-group {
-        display: flex;
         .btn {
-            width: 100%;
-            font: 500 16px/1.5 vars.$font-default;
-            @include vars.before('md') {
-                background: var(--accent-11);
-            }
             @include vars.from('md') {
-                background: var(--accent-12);
-                color: var(--text-2);
-                font: 500 18px/28px vars.$font-default;
-                height: 56px;
-                padding-inline: 25px;
-                &:hover {
-                    color: var(--text-1);
-                }
-                &:before {
-                    background: var(--accent-13);
-                }
-                svg {
-                    margin-inline: 0;
-                }
                 .estate-list:not(.list) &.grid,
                 .estate-list.list &.list
                 {

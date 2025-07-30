@@ -7,8 +7,12 @@
     overflow: hidden;
     position: relative;
 
-    @media screen and (min-width: vars.$w760) {
+    @container (width > 400px) {
         border-radius: 24px;
+    }
+
+    &-wrapper {
+        container-type: inline-size;
     }
 
     &__top {
@@ -22,7 +26,7 @@
         z-index: 2;
         width: calc(100% - 96px);
 
-        @media screen and (min-width: vars.$w760) {
+        @container (width > 400px) {
             top: 24px;
             left: 24px;
         }
@@ -44,7 +48,7 @@
                 line-height: 100%;
                 font-size: 14px;
 
-                @media screen and (min-width: vars.$w1440) {
+                @container (width > 500px) {
                     font-size: 15px;
                 }
             }
@@ -168,6 +172,7 @@
 
         .splide {
             height: 100%;
+
             &__track {
                 height: 100%;
             }
@@ -177,7 +182,7 @@
     &__main {
         padding: 16px;
 
-        @media screen and (min-width: vars.$w576) {
+        @container (width > 400px) {
             padding: 24px;
         }
     }
@@ -189,18 +194,22 @@
         transition: 0.2s linear;
         gap: 8px;
 
-        @media screen and (min-width: vars.$w576) {
+        @container (width > 400px) {
             flex-direction: row;
-            opacity: 0;
-            visibility: hidden;
-            padding-top: 24px;
             gap: 16px;
+            @media screen and (min-width: vars.$w576) {
+                @container (width > 400px) {
+                    opacity: 0;
+                    visibility: hidden;
+                    padding-top: 24px;
+                }
+            }
         }
 
         & > div {
             flex-grow: 1;
 
-            @media screen and (min-width: vars.$w576) {
+            @container (width > 400px) {
                 width: calc(50% - 16px);
             }
 
@@ -226,7 +235,7 @@
         letter-spacing: .02em;
         padding-bottom: 17px;
 
-        @media screen and (min-width: vars.$w576) {
+        @container (width > 400px) {
             font-size: 24px;
         }
     }
@@ -298,9 +307,11 @@
         color: var(--text-2);
         letter-spacing: .02em;
     }
+
     &__stations {
         display: flex;
         align-items: center;
+
         .icon {
             width: 32px;
             height: 16px;
@@ -329,11 +340,11 @@
                 background-repeat: no-repeat;
                 background-position: 8px 1px;
 
-                @media screen and (max-width: vars.$w576) {
+                @container (width < 401px) {
                     background-image: unset !important;
                 }
 
-                @media screen and (min-width: vars.$w576) {
+                @container (width > 400px) {
                     padding-left: 35px;
                 }
 
@@ -374,9 +385,11 @@
         transition: 0.3s ease;
 
         @media screen and (min-width: vars.$w576) {
-            position: absolute;
-            bottom: 0;
-            padding: 10px 0 34px;
+            @container (width > 400px) {
+                position: absolute;
+                bottom: 0;
+                padding: 10px 0 34px;
+            }
         }
 
 
@@ -414,8 +427,10 @@
     &:hover {
         & .minicard {
             &__prop {
-                @media screen and (min-width: vars.$w576) {
-                    opacity: 0;
+                @container (width > 400px) {
+                    @media screen and (min-width: vars.$w576) {
+                        opacity: 0;
+                    }
                 }
             }
 
