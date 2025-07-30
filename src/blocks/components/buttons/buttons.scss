@@ -377,7 +377,10 @@
                 border-bottom-right-radius: 0;
             }
         }
-
+        &.active {
+            background: var(--accent-11);
+            color: var(--white);
+        }
     }
 }
 
