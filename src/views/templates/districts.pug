@@ -5,21 +5,21 @@ include ../helpers/mixins
         h3.districts-popup__title Выберите районы
         .input-filter
             +icons("#ic_search",28,"icon-search")
-            input(type="search", placeholder="Название района")
+            input(type="text", placeholder="Название района")
             button &times;
     form.districts-popup__body
-        .disricts-popup__instant
+        .districts-popup__instant
             h5 Быстрый выбор района
             ul#instants
-        .disricts-popup__areas
+        .districts-popup__areas
             h4 Административные округа
             ul#areas
-        .disricts-popup__districts
+        .districts-popup__districts
             h4 Районы
             div#districts
-        .btn-wrapper
-            button(type="submit").btn.btn-green
-                span Показать подходящие объекты
-            button(type="reset").btn.btn-transparent.btn-reset
-                span Сбросить
-                +icons("#ic_close")
+    .btn-wrapper
+        button(type="submit").btn.btn-green
+            span Показать подходящие объекты
+        button(type="reset").btn.btn-transparent.btn-reset
+            span Сбросить
+            +icons("#ic_close")

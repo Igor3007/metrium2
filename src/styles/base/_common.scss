@@ -419,3 +419,37 @@ span[data-color=fff] {
         }
     }
 }
+
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 12px;
+    background: var(--accent);
+    color: white;
+    cursor: pointer;
+    transition: background-color .3s, opacity 1s;
+    visibility: hidden;
+    opacity: 0;
+
+    &:hover {
+        background-color: var(--accent-11);
+    }
+
+    svg {
+        transform: rotate(90deg);
+    }
+
+    @include vars.from('xl') {
+        .scrolled &{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}

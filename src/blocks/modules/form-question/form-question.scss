@@ -210,6 +210,9 @@
                     font: 500 18px/28px vars.$font-default;
                     letter-spacing: .02em;
                 }
+                &:before {
+                    background: var(--accent-22);
+                }
             }
         }
 

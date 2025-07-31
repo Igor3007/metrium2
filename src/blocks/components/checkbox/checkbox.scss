@@ -19,7 +19,7 @@
         cursor: pointer;
         height: 0;
         width: 0;
-        display: none !important;
+        appearance: none;
     }
 
     &__text {
@@ -95,12 +95,12 @@
             z-index: 2;
             background-color: var(--accent);
             border-color: var(--accent);
-
-            &:hover {
-                border-color: var(--accent-11);
-                background-color: var(--accent-11);
+            @include vars.from('md') {
+                &:hover {
+                    border-color: var(--accent-11);
+                    background-color: var(--accent-11);
+                }
             }
-
         }
 
 

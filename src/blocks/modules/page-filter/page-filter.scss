@@ -71,6 +71,9 @@
             &.sm {
                 width: 30%;
             }
+            &.s4 {
+                width: 40%;
+            }
             &.md {
                 width: 50%;
             }
@@ -298,6 +301,12 @@
     .checkbox {
         @include vars.before('md') {
             margin-top: 7px;
+        }
+    }
+
+    form .af-select {
+        @include vars.from('md') {
+            height: 56px;
         }
     }
 }

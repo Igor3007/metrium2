@@ -2,8 +2,8 @@ export class afSelect {
 
     constructor(option) {
         this.selector = option.selector;
-        this.selectAll = document.querySelectorAll(this.selector)
-        this.on = option.on ? option.on : false
+        this.selectAll = document.querySelectorAll(this.selector);
+        this.on = option.on ? option.on : false;
     }
 
     init() {
@@ -328,16 +328,15 @@ export class afSelect {
     }
 
     clickEventListItem(elem, option, index) {
-
-        const parentElem = option.parentNode.parentNode
+        const parentElem = option.parentNode.parentNode;
+        const select = parentElem.querySelector('select');
         const _this = this;
-        const placeholder = parentElem.querySelector('select').getAttribute('placeholder')
-        const multiple = parentElem.querySelector('select').getAttribute('multiple')
+        const placeholder = select.getAttribute('placeholder');
+        const multiple = select.getAttribute('multiple');
         const styledSelect = parentElem.querySelector('.select-styled')
 
 
         elem.addEventListener('click', function (event) {
-
             event.stopPropagation()
             event.preventDefault()
 
@@ -395,11 +394,9 @@ export class afSelect {
             }
 
             if (!multiple) {
-                parentElem.querySelector('select').value = this.getAttribute('rel')
+                select.value = this.getAttribute('rel');
             }
-
-            var dispatchEvent = new Event('change');
-            parentElem.querySelector('select').dispatchEvent(dispatchEvent);
+            select.dispatchEvent(new Event('change'));
 
             if (!event.target.classList.contains('af-check-multiple')) {
                 _this.closeSelect()

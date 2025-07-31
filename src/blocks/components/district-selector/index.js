@@ -15,8 +15,8 @@ const initFilterSearch = (element, data) => {
 
     const listUpdate = (value) => {
         const VALUE = value?.trim().toUpperCase();
-        const areasContainer = document.querySelector('.disricts-popup__areas');
-        const instantContainer = document.querySelector('.disricts-popup__instant');
+        const areasContainer = document.querySelector('.districts-popup__areas');
+        const instantContainer = document.querySelector('.districts-popup__instant');
 
         if (!!VALUE) {
             areasContainer.classList.add('hidden');

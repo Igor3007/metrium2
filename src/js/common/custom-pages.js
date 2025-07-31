@@ -15,4 +15,5 @@ document.addEventListener('DOMContentLoaded', function (event) {
             estateListView();
             break;
     }
+
 });

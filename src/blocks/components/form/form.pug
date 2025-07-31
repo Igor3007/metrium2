@@ -25,14 +25,21 @@ mixin checkbox-group(options, data)
                     span.title= item.title
 
 mixin select-field(data)
-    if data.multiple
-        select(placeholder=data.placeholder multiple="multiple")
-            each item in data.options
-                option= item
-    else
-        select(placeholder=data.placeholder)
-            each item in data.options
-                option= item
+    -var multiple = data?.multiple ? "multiple" : false
+    select(placeholder=data.placeholder multiple=multiple)
+        each item in data.options
+            option= item
+
+mixin select-range(data)
+    -var options = data?.options || []
+    -var label = data?.label
+    .select-range
+        select(data-range="from", data-find="false", data-prefix=`${label} от: `)
+            each option in options
+                option(value=option)= option
+        select(data-range="to", data-find="false" data-prefix="до: ")
+            each option in data.options
+                option(value=option)= option
 
 mixin select-extended(data)
     - var multiple = data.multiple || false;
@@ -51,3 +58,4 @@ mixin prefixed-input(options)
         if block
             block
         input(type=type, placeholder=placeholder, class={formatted : formatted})
+        .clear ×

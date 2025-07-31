@@ -18,7 +18,7 @@ select {
 }
 
 .af-select {
-    cursor: pointer;
+    //cursor: pointer;
     display: inline-block;
     position: relative;
     user-select: none;
@@ -79,6 +79,7 @@ select {
     border-radius: 8px;
     border: 2px solid transparent;
     min-width: fit-content;
+    cursor: pointer;
 
     &:hover {
         background-color: var(--accent-14);
@@ -172,7 +173,7 @@ select {
     left: 0;
     z-index: 999;
     margin: 0;
-    background-color: $bg-gray;
+    background-color: #fff;
     color: #000;
     min-width: 100%;
     width: auto;
@@ -189,9 +190,9 @@ select {
         background-size: 17px auto;
         background-position: 15px center;
         padding-left: 45px;
-        background-color: #fff;
+        background-color: var(--accent-12);
         height: 42px;
-        border: 1px solid var(--accent-14);
+        border: none;
         border-radius: 10px;
         font-size: 16px;
         padding-top: 4px;
