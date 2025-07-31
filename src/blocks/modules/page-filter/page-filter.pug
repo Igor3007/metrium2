@@ -48,6 +48,11 @@ include ../../../blocks/components/index
                     label: "Спален",
                     options: [" ",1, 2, 3, 4, 5]
                 })
+            .page-filter__item.s4
+                +select-range({
+                    label: "Комнат",
+                    options: [" ", 1, 2, 3, 4, 5]
+                })
             .page-filter__group
                 .page-filter__item.lg
                     +prefixed-input({format: true})
@@ -119,17 +124,6 @@ include ../../../blocks/components/index
                         {title: "1", value: "1"},
                         {title: "2", value: "2"},
                         {title: "3+", value: "3"}
-                    ]
-                )
-            .page-filter__item
-                +radio-group(
-                    {name: "rooms", legend: "Комнат:"},
-                    [
-                        {title: "1", value: "1"},
-                        {title: "2", value: "2"},
-                        {title: "3", value: "3"},
-                        {title: "4", value: "4"},
-                        {title: "5+", value: "5"}
                     ]
                 )
             .page-filter__item.full
