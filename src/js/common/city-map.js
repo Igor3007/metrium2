@@ -22,4 +22,20 @@ export const initMap = async () => {
                 document.querySelector('.city-map__filters')?.classList.remove('sm-modal');
             })
         })
+
+    document.querySelector('.city-map__list .close')?.addEventListener('click', e => {
+        e.preventDefault();
+        document
+            .querySelectorAll('.map-point')?.forEach((item) => {
+            item.classList.remove('active');
+        });
+    })
+
+    document.querySelector('.page-filter .close').addEventListener('click', e => {
+        document.body.classList.remove('frozen');
+    })
+
+    document.querySelector('[data-target=".city-map__filters"]').addEventListener('click', e => {
+        document.body.classList.add('frozen');
+    })
 }

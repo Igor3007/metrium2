@@ -1,4 +1,5 @@
 import {initMinicardEvents, initSliderMinicard} from "./minicard.js";
+import {initWishLists} from "./wishlist.js";
 
 export class EstateMap {
 
@@ -87,6 +88,7 @@ export class EstateMap {
 
         initSliderMinicard(card);
         initMinicardEvents(card);
+        initWishLists(card);
 
         return card;
     }
@@ -98,6 +100,14 @@ export class EstateMap {
         this.resultContainer.replaceChildren(result);
     }
 
+    setActivePoint = (_this) => {
+        document
+            .querySelectorAll('.map-point')?.forEach((item) => {
+            item.classList.remove('active');
+        });
+        _this.style.element.classList.add('active');
+    }
+
     marker = (feature) => {
         const _this = this;
         return new ymaps3.YMapMarker(
@@ -107,6 +117,7 @@ export class EstateMap {
                 onClick() {
                     _this.resultWrapper.classList.add('open');
                     _this.drawResult([feature]);
+                    _this.setActivePoint(this);
                 }
             },
             this.contentPin.cloneNode(true)
@@ -122,6 +133,7 @@ export class EstateMap {
                 onClick() {
                     _this.resultWrapper.classList.add('open');
                     _this.drawResult(features);
+                    _this.setActivePoint(this);
                 }
             },
             this.circle(features.length).cloneNode(true)

@@ -95,6 +95,10 @@ body {
         @include vars.scrollbar();
     }
 
+    &.frozen {
+        overflow: hidden;
+    }
+
 }
 
 

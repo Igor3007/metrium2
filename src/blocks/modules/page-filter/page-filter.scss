@@ -26,10 +26,16 @@
         &__modal-heading {
             display: flex;
             justify-content: space-between;
+            @include vars.from('md') {
+                margin-top: 0;
+            }
         }
 
         .form {
             &.primary-form {
+                @include vars.from('md') {
+                    padding-bottom: 32px;
+                }
                 &:after {
                     left: auto;
                     right: auto;
@@ -40,7 +46,10 @@
                 max-height: none;
                 opacity: 1;
                 @include vars.from('md') {
+                    padding-top: 32px;
                     display: block;
+                    border-top: 1px solid var(--accent-13);
+                    padding-bottom: 32px;
                 }
             }
         }
@@ -142,6 +151,8 @@
             overflow: hidden;
             @include vars.before('md') {
                 gap: 24px;
+                border-top: 1px solid var(--accent-13);
+                border-bottom: 1px solid var(--accent-13);
             }
             @include vars.from('md') {
                 max-height: 0;
@@ -213,6 +224,11 @@
     }
 
     &__footer {
+        @include vars.before('md') {
+            .btn {
+                font-size: 16px;
+            }
+        }
         @include vars.from('md') {
             padding-top: 10px;
             padding-bottom: 7px;
