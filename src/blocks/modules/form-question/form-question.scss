@@ -137,6 +137,13 @@
                 }
             }
         }
+
+        .checkbox input:checked ~ .checkbox__elem {
+            &:hover {
+                background: var(--accent-22);
+                border-color: var(--accent-22);
+            }
+        }
     }
 
     &__input {
