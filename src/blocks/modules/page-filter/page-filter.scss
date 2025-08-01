@@ -103,29 +103,32 @@
         @include vars.from('md') {
             width: auto;
             flex-grow: 1;
-            &.sm {
-                width: 30%;
+            &.fix1 {
+                width: 100%;
             }
-            &.md {
-                width: 50%;
-                min-width: 300px;
-            }
-            &.lg {
-                width: 70%;
+            &.fix2 {
+                width: 100%;
             }
         }
         @include vars.from('lg') {
-            &.sm {
-                width: 15%;
+            &.fix1 {
+                width: auto;
+                min-width: 25%;
             }
-            &.md {
-                width: 25%;
+        }
+        @include vars.from('xl') {
+            &.fix2 {
+                width: auto;
+                .sm-modal & {
+                    width: 100%;
+                }
             }
-            &.lg {
-                width: 35%;
-            }
-            &.full {
-                width: 100%;
+        }
+        @include vars.from('xxl') {
+            &.fix2 {
+                .sm-modal & {
+                    width: auto;
+                }
             }
         }
         &.full {

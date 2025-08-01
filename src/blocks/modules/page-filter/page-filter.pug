@@ -9,7 +9,7 @@ include ../../../blocks/components/index
             +icons("#ic_close", 12)
     form
         .form.primary-form
-            .page-filter__item.sm
+            .page-filter__item
                 +radio-group(
                     {name: "buy", inline: true},
                     [
@@ -17,7 +17,7 @@ include ../../../blocks/components/index
                         {title: "Арендовать", value: "rent"}
                     ]
                 )
-            .page-filter__item.md
+            .page-filter__item.fix1
                 +select-field({
                     placeholder: "Тип недвижимости",
                     options: [
@@ -26,7 +26,7 @@ include ../../../blocks/components/index
                         "Тип недвижимости 3"
                     ]
                 })
-            .page-filter__item.md
+            .page-filter__item.fix1
                 +select-field({
                     placeholder: "Новостройки и вторичка",
                     options: [
@@ -34,7 +34,7 @@ include ../../../blocks/components/index
                         "Вторичка"
                     ]
                 })
-            .page-filter__item
+            .page-filter__item.fix2
                 +radio-group(
                     {name: "ready", legend: "Готовность:"},
                     [
@@ -43,21 +43,21 @@ include ../../../blocks/components/index
                         {title: "Строится", value: "no"}
                     ]
                 )
-            .page-filter__item.md
+            .page-filter__item
                 +select-range({
                     label: "Спален",
                     options: [" ",1, 2, 3, 4, 5]
                 })
-            .page-filter__item.md
+            .page-filter__item
                 +select-range({
                     label: "Комнат",
                     options: [" ", 1, 2, 3, 4, 5]
                 })
-            .page-filter__group.page-filter__item.xl
-                .page-filter__item.lg
+            .page-filter__group.page-filter__item
+                .page-filter__item
                     +prefixed-input({maska: "###############"})
                         label Цена от
-                .page-filter__item.lg
+                .page-filter__item
                     +prefixed-input({maska: "###############"})
                         label до
                 .page-filter__item
@@ -70,13 +70,13 @@ include ../../../blocks/components/index
                         ]
                     )
             .page-filter__group
-                .page-filter__item.md
+                .page-filter__item
                     +prefixed-input({maska: "######"})
                         label Площадь от (м²)
-                .page-filter__item.md
+                .page-filter__item
                     +prefixed-input({maska: "######"})
                         label до
-            .page-filter__item.md
+            .page-filter__item
                 +district-selector({
                     placeholder: "Выберите район",
                     prefix: "Район, выбрано:"

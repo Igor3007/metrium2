@@ -455,8 +455,10 @@ body:not(.is-scroll-page) {
         font-size: 16px;
         transition: 0.3s ease;
 
-        &:hover {
-            background-color: var(--accent-14);
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: var(--accent-14);
+            }
         }
 
         &::after {
