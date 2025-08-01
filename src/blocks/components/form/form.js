@@ -29,17 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                     const to_value = to_custom.querySelector('.select-styled span').innerText;
                     if (parseInt(value) > parseInt(to_value)) {
-                        to_custom.querySelector('.select-styled span').innerText = value;
+                        to_custom.querySelector('.select-styled span').innerText = " ";
                     }
                 });
 
                 to_el.addEventListener('change', (e) => {
                     const {value} = to_el;
                     const from_custom = from_el.closest('.af-select');
-                    from_custom.querySelectorAll('.select-options li').forEach(option => {
-                        const _value = option.getAttribute('rel');
-                        option.classList.toggle('disabled', parseInt(value) < parseInt(_value));
-                    });
                     const from_value = from_custom.querySelector('.select-styled span').innerText;
                     if (parseInt(value) < parseInt(from_value)) {
                         from_custom.querySelector('.select-styled span').innerText = value;
@@ -48,5 +44,16 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
     }, 300);
+
+    document.querySelectorAll('form')?.forEach(form => {
+        form.addEventListener('reset', (e) => {
+            form.querySelectorAll('.district-selector').forEach(el => {
+                el.querySelector('input').value = "[]";
+                const container = el.querySelector("span");
+                const {placeholder} = el.dataset;
+                container.innerHTML = placeholder;
+            });
+        });
+    });
 
 });

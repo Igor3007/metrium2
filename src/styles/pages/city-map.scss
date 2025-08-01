@@ -14,6 +14,8 @@
         display: flex;
         gap: 8px;
 
+
+
         @include vars.before('md') {
             & > * {
                 flex: 1 1 50%;
@@ -21,6 +23,10 @@
             .btn {
                 font-size: 16px;
                 height: 52px;
+
+                &.grid span {
+                    align-self: flex-end;
+                }
             }
         }
 

@@ -82,7 +82,9 @@ select {
     cursor: pointer;
 
     &:hover {
-        background-color: var(--accent-14);
+        @include vars.from('md') {
+            background-color: var(--accent-14);
+        }
     }
 
     @media screen and (max-width: vars.$w1200) {

@@ -1,11 +1,11 @@
 export class afLightbox {
-    constructor(opion) {
+    constructor(options) {
 
         this.modal = '';
         this.instanseIndex = null;
-        if (opion) {
-            this.mobileBottom = (opion.mobileInBottom ? opion.mobileInBottom : false)
-            this.clases = (opion.clases ? opion.clases : null)
+        if (options) {
+            this.mobileBottom = (options.mobileInBottom ? options.mobileInBottom : false)
+            this.classes = (options.classes ? options.classes : null)
         }
 
         this.init()
@@ -37,7 +37,7 @@ export class afLightbox {
 
     createTemplate() {
         let template = document.createElement('div')
-        template.innerHTML = `<div class="af-popup ${this.clases} "> <div class="af-popup__bg"></div><div class="af-popup__wrp"><div class="af-popup__container"><div class="af-popup__close">×</div><div class="af-popup__content"></div></div></div></div>`
+        template.innerHTML = `<div class="af-popup ${this.classes} "> <div class="af-popup__bg"></div><div class="af-popup__wrp"><div class="af-popup__container"><div class="af-popup__close">×</div><div class="af-popup__content"></div></div></div></div>`
         document.body.append(template)
         this.instanse = template;
         return template;

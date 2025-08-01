@@ -29,13 +29,22 @@ export const initMap = async () => {
             .querySelectorAll('.map-point')?.forEach((item) => {
             item.classList.remove('active');
         });
-    })
+    });
 
     document.querySelector('.page-filter .close').addEventListener('click', e => {
-        document.body.classList.remove('frozen');
-    })
+        document.body.classList.remove('page-hidden');
+    });
 
     document.querySelector('[data-target=".city-map__filters"]').addEventListener('click', e => {
-        document.body.classList.add('frozen');
+        document.body.classList.add('page-hidden');
+    });
+
+    document.querySelector('.page-filter').addEventListener('click', e => {
+        e.stopPropagation();
+    });
+
+    document.querySelector('.city-map__filters')?.addEventListener('click', e => {
+        document.body.classList.remove('page-hidden');
+        document.querySelector('.city-map__filters')?.classList.remove('sm-modal');
     })
 }

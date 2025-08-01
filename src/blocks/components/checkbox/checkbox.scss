@@ -112,20 +112,21 @@
     }
 
     &:hover {
-        & .checkbox {
-            &__elem {
-                border-color: var(--accent);
-            }
-
-            &__text {
-                @media screen and (min-width: vars.$w576) {
-                    color: var(--accent);
+        @media (any-hover: hover) {
+            & .checkbox {
+                &__elem {
+                    border-color: var(--accent);
                 }
 
+                &__text {
+                    @media screen and (min-width: vars.$w576) {
+                        color: var(--accent);
+                    }
+
+                }
             }
         }
     }
-
 }
 
 

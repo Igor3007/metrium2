@@ -1,7 +1,6 @@
 import {MaskInput} from "maska";
 import {afSelect} from "../vendor/af-select.js";
 import {Splide} from "@splidejs/splide";
-import Cookies from "js-cookie";
 import {FlexCollections} from "./flex-collections.js";
 import {SplideNavHelper} from "./splide-nav-helper.js";
 import {initAddRemoveClassButtons} from "./add-remove-class.js";
@@ -270,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     ==================================================*/
 
     function initMaska() {
-        new MaskInput("[data-maska]")
+        new MaskInput("[data-maska]");
 
         new MaskInput("[data-input-mask='name']", {
             mask: 'A',
@@ -280,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     repeated: true
                 },
             }
-        })
+        });
 
     }
 

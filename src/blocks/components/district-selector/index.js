@@ -69,7 +69,7 @@ const initDistrictSelector = (element, template, data) => {
         const districts = wrapper.querySelector('#districts');
         const submit = wrapper.querySelector('[type="submit"]');
         const reset = wrapper.querySelector('[type="reset"]');
-        const popup = new afLightbox({mobileInBottom: true});
+        const popup = new afLightbox({mobileInBottom: true, classes: "district-popup"});
 
         let initValue;
         try {

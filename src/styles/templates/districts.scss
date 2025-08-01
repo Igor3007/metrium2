@@ -1,7 +1,7 @@
 @use "../../styles/vars";
 
 .districts-popup {
-    height: 90vh;
+    height: 93vh;
     display: flex;
     flex-direction: column;
     @include vars.from('md') {
@@ -9,6 +9,7 @@
     }
     @include vars.from('lg') {
         width: 900px;
+        height: 92vh;
     }
     @include vars.from('xl') {
         width: 1024px;
@@ -73,8 +74,10 @@
             color: var(--text-3);
             cursor: pointer;
 
-            &:hover {
-                color: vars.$red;
+            @media (any-hover: hover) {
+                &:hover {
+                    color: vars.$red;
+                }
             }
         }
 
@@ -84,6 +87,7 @@
         font: 400 clamp(20px, 3.5vw, 28px)/1.6 vars.$font-captions;
         margin-bottom: 16px;
     }
+
     h5 {
         font: 400 16px/1.5 vars.$font-default;
         margin-bottom: 12px;
@@ -111,6 +115,10 @@
             button {
                 width: 100%;
                 font-size: 16px;
+
+                &.btn-reset span {
+                    padding-top: 1px;
+                }
             }
         }
 
@@ -126,6 +134,25 @@
         gap: 24px;
     }
 }
+
+.district-popup {
+    .af-popup {
+        &__wrp {
+            justify-content: flex-end;
+        }
+
+        &__container {
+            margin: 0;
+        }
+
+        &__content {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+}
+
+
 
 #instants {
     display: flex;

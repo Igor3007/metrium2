@@ -4,7 +4,7 @@ include ../../../blocks/components/index
 
 .page-filter
     .page-filter__modal-heading.hide-from-md
-        h4 Фильтры недвижимости
+        h3 Фильтры недвижимости
         button.close(data-target=".page-title__filter" data-toggle="sm-modal")
             +icons("#ic_close", 12)
     form
@@ -55,10 +55,10 @@ include ../../../blocks/components/index
                 })
             .page-filter__group.page-filter__item.xl
                 .page-filter__item.lg
-                    +prefixed-input({format: true})
+                    +prefixed-input({maska: "###############"})
                         label Цена от
                 .page-filter__item.lg
-                    +prefixed-input()
+                    +prefixed-input({maska: "###############"})
                         label до
                 .page-filter__item
                     +radio-group(
@@ -71,10 +71,10 @@ include ../../../blocks/components/index
                     )
             .page-filter__group
                 .page-filter__item.md
-                    +prefixed-input()
+                    +prefixed-input({maska: "######"})
                         label Площадь от (м²)
                 .page-filter__item.md
-                    +prefixed-input()
+                    +prefixed-input({maska: "######"})
                         label до
             .page-filter__item.md
                 +district-selector({
