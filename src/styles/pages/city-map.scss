@@ -13,8 +13,7 @@
         background: white;
         display: flex;
         gap: 8px;
-
-
+        z-index: 10;
 
         @include vars.before('md') {
             & > * {
@@ -24,8 +23,9 @@
                 font-size: 16px;
                 height: 52px;
 
-                &.grid span {
-                    align-self: flex-end;
+                span {
+                    line-height: 24px;
+                    top: 1px;
                 }
             }
         }
@@ -52,22 +52,7 @@
             display: block;
             position: fixed;
             inset: 0;
-            z-index: 5;
-        }
-
-        h4 {
-            font-size: 20px;
-            font-weight: 400;
-            line-height: 1.6;
-            letter-spacing: .04em;
-            font-family: vars.$font-captions;
-            @media screen and (min-width: vars.$w576) {
-                font-size: 28px;
-            }
-            @include vars.from('md') {
-                line-height: 48px;
-                font-size: 36px;
-            }
+            z-index: 15;
         }
     }
 
@@ -101,6 +86,9 @@
             background: var(--accent-12);
             padding-block: 16px;
             border-radius: 16px 16px 0 0;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
             @include vars.from('xl') {
                 border-radius: 0;
                 padding-block: 24px;
@@ -127,6 +115,14 @@
         }
     }
 
+    .loader-wrapper {
+        z-index: 5;
+        background: #ffffff80;
+        &.hidden {
+            display: none;
+        }
+    }
+
 }
 
 #city-map {
@@ -138,6 +134,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
     gap: 16px;
+    flex-grow: 1;
 }
 
 .map-point {

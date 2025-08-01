@@ -776,7 +776,7 @@
     }
 
     &:focus-within {
-        outline: 2px solid var(--accent-11);
+        box-shadow: 0 0 0 2px var(--accent-11) inset;
     }
 
     label {

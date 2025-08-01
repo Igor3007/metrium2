@@ -9,7 +9,7 @@
     }
     @include vars.from('lg') {
         width: 900px;
-        height: 92vh;
+        height: 91vh;
     }
     @include vars.from('xl') {
         width: 1024px;
@@ -115,10 +115,16 @@
             button {
                 width: 100%;
                 font-size: 16px;
+                height: 52px;
 
-                &.btn-reset span {
-                    padding-top: 1px;
+                &.btn-reset {
+                    height: 36px;
+
+                    span {
+                        padding-top: 1px;
+                    }
                 }
+
             }
         }
 
@@ -143,11 +149,16 @@
 
         &__container {
             margin: 0;
+            @include vars.from('xxl') {
+                margin-bottom: 16px;
+            }
         }
 
         &__content {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
+            @include vars.before('xxl') {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
         }
     }
 }
@@ -197,12 +208,25 @@
         column-count: 4;
     }
 
+    .no-result {
+        display: none;
+        font: 400 18px/28px vars.$font-default;
+        column-span: all;
+    }
+
     ul {
         break-inside: avoid;
 
         &:not(:has(.district:not(.hidden))) {
             // для списков в котором каждый .district имеет .hidden (нет таких, которые не имеют)
             display: none;
+        }
+    }
+
+    &:not(:has(.district:not(.hidden))) {
+        // для контейнера районов, в котором все районы скрыты
+        .no-result {
+            display: block !important;
         }
     }
 

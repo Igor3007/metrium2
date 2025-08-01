@@ -236,11 +236,13 @@
     &.btn-transparent {
         background-color: transparent;
         color: var(--text-2);
-        &:hover {
-            background-color: var(--accent-14);
-            &:before {
+        @media (any-hover: hover) {
+            &:hover {
                 background-color: var(--accent-14);
-                z-index: -1;
+                &:before {
+                    background-color: var(--accent-14);
+                    z-index: -1;
+                }
             }
         }
     }

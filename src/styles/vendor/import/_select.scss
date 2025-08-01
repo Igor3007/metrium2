@@ -82,7 +82,7 @@ select {
     cursor: pointer;
 
     &:hover {
-        @include vars.from('md') {
+        @media (any-hover: hover) {
             background-color: var(--accent-14);
         }
     }
@@ -543,7 +543,7 @@ select {
 
                     &:hover {
 
-                        @media screen and (min-width: vars.$w576) {
+                        @media (any-hover: hover) {
                             &::after {
                                 background-color: var(--accent-11);
                                 box-shadow: 0 0 0 2px var(--accent-11) inset;

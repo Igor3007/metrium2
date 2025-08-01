@@ -76,7 +76,7 @@ include ../../../blocks/components/index
                 .page-filter__item
                     +prefixed-input({maska: "######"})
                         label до
-            .page-filter__item
+            .page-filter__item.fix1
                 +district-selector({
                     placeholder: "Выберите район",
                     prefix: "Район, выбрано:"
@@ -87,7 +87,7 @@ include ../../../blocks/components/index
                     placeholder: 'Метро',
                     options: catalog.metro
                 })
-            .page-filter__item.md
+            .page-filter__item.fix1
                 +select-field({
                     multiple: true,
                     placeholder: 'Жилищные комплексы',

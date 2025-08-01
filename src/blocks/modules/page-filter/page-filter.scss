@@ -19,6 +19,9 @@
         }
         @media screen and (min-width: 1680px) {
             width: 1680px;
+            padding-bottom: var(--container-padding);
+            margin-bottom: 16px;
+            border-radius: 16px;
         }
 
         &__modal-heading {
@@ -251,6 +254,10 @@
         @include vars.before('md') {
             .btn {
                 font-size: 16px;
+                height: 52px;
+                &-reset {
+                    height: 36px;
+                }
             }
         }
         @include vars.from('md') {

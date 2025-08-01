@@ -4,9 +4,10 @@ export const initMap = async () => {
     const mapContainer = document.getElementById('city-map');
     const resultContainer = document.getElementById('city-map-results');
     const resultWrapper = document.querySelector('.city-map__list');
+    const loader = document.querySelector('#loader');
     if (!mapContainer) { return}
 
-    const map = new EstateMap({element: mapContainer, resultContainer, resultWrapper});
+    const map = new EstateMap({element: mapContainer, resultContainer, resultWrapper, loader});
     await map.init();
 
     document
@@ -19,6 +20,7 @@ export const initMap = async () => {
                 // todo form new url
                 const filteredUrl = "/json/filtered-map.json";
                 map.redraw(filteredUrl);
+                document.querySelector('.city-map__list')?.classList.remove('open');
                 document.querySelector('.city-map__filters')?.classList.remove('sm-modal');
             })
         })

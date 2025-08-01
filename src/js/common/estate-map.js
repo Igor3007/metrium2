@@ -8,6 +8,7 @@ export class EstateMap {
         this.element = options.element;
         this.resultContainer = options.resultContainer;
         this.resultWrapper = options.resultWrapper;
+        this.loader = options.loader;
         this.cardTpl = null;
     }
 
@@ -55,6 +56,7 @@ export class EstateMap {
     }
 
     redraw = async (url) => {
+        this.loader?.classList.remove('hidden');
         this.removeClusters();
         const mapData = await fetch(url)
             .then(res => res.json());
@@ -73,6 +75,9 @@ export class EstateMap {
         });
 
         this.map.addChild(this.clusterer);
+        setTimeout(() => {
+            this.loader?.classList.add('hidden');
+        }, 500);
     }
 
     drawCard = (el) => {
@@ -93,11 +98,21 @@ export class EstateMap {
         return card;
     }
 
+    drawLoader = () => {
+        const loader = document.createElement('div');
+        loader.className = 'loader-wrapper abs';
+        loader.innerHTML = '<div class="loader"></div>';
+        this.resultContainer.replaceChildren(loader);
+    }
+
     drawResult = (elements) => {
+        this.drawLoader();
         const result = document.createDocumentFragment();
         elements.forEach((element) => {result.appendChild(this.drawCard(element));});
 
-        this.resultContainer.replaceChildren(result);
+        setTimeout(() => {
+            this.resultContainer.replaceChildren(result);
+        }, 500);
     }
 
     setActivePoint = (_this) => {
