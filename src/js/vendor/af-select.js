@@ -374,7 +374,7 @@ export class afSelect {
                         selected_arr.push(item.innerText)
                     })
 
-                    if (selected_arr.length < 3) {
+                    if (selected_arr.length < 2) {
                         return (selected_arr.length ? selected_arr.join(', ') : placeholder);
                     } else {
                         return '<div class="af-selected-count" >Выбрано:  <span>' + selected_arr.length + ' шт. </span>  </div>'

@@ -5,7 +5,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 4;
+    z-index: vars.$z-header;
 
     &.white {
         border-bottom: 1px solid vars.$color-accent-13;
