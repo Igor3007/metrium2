@@ -21,12 +21,9 @@ export class EstateMap {
             '@yandex/ymaps3-clusterer@0.0'
         ]);
 
-        const {YMap, YMapDefaultSchemeLayer,YMapFeatureDataSource,YMapLayer} = ymaps3;
+        const {YMap, YMapDefaultSchemeLayer, YMapFeatureDataSource, YMapLayer, YMapControls} = ymaps3;
         const {YMapClusterer, clusterByGrid} = await ymaps3.import('@yandex/ymaps3-clusterer');
-        // this.YMap = YMap;
-        // this.YMapDefaultSchemeLayer = YMapDefaultSchemeLayer;
-        // this.YMapFeatureDataSource = YMapFeatureDataSource;
-        // this.YMapLayer = YMapLayer;
+        const {YMapZoomControl} = await ymaps3.import('@yandex/ymaps3-default-ui-theme');
         this.YMapClusterer = YMapClusterer;
         this.clusterByGrid = clusterByGrid;
 
@@ -36,7 +33,14 @@ export class EstateMap {
         this.map = new YMap(
             this.element,
             {
-                location: {center: [37.588144, 55.733842],zoom: 10}
+                zoomRange: {
+                    min: 5,
+                    max: 20
+                },
+                location: {
+                    center: [37.588144, 55.733842],
+                    zoom: 10
+                }
             }
         );
 
@@ -44,8 +48,11 @@ export class EstateMap {
         this.map
             .addChild(new YMapDefaultSchemeLayer())
             .addChild(new YMapFeatureDataSource({id: 'my-source'}))
-            .addChild(new YMapLayer({source: 'my-source', type: 'markers', zIndex: 1800}));
-
+            .addChild(new YMapLayer({source: 'my-source', type: 'markers', zIndex: 1800}))
+            .addChild(
+                new YMapControls({position: 'right'})
+                    .addChild(new YMapZoomControl({}))
+            );
         await this.redraw('/json/map.json');
     }
 
@@ -108,7 +115,9 @@ export class EstateMap {
     drawResult = (elements) => {
         this.drawLoader();
         const result = document.createDocumentFragment();
-        elements.forEach((element) => {result.appendChild(this.drawCard(element));});
+        elements.forEach((element) => {
+            result.appendChild(this.drawCard(element));
+        });
 
         setTimeout(() => {
             this.resultContainer.replaceChildren(result);
