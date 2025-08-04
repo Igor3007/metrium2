@@ -112,6 +112,9 @@
             &.fix2 {
                 width: 100%;
             }
+            &.fix4 {
+                width: 40%;
+            }
         }
         @include vars.from('lg') {
             &.fix1 {
@@ -151,9 +154,11 @@
             width: auto;
             flex-direction: row;
             flex-grow: 1;
+            &.fix3 {
+                width: 40%;
+            }
         }
     }
-
     .form {
         display: flex;
         flex-wrap: wrap;

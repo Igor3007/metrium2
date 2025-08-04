@@ -1,5 +1,6 @@
 import {afLightbox} from "../../../js/vendor/af-lightbox.js";
 import {checkboxTpl} from "../../../js/helpers/index.js";
+import {pluralForm} from "../../../js/helpers/plural-form.js";
 
 const initFilterSearch = (element, data) => {
     const input = element.querySelector(".input-filter input");
@@ -47,16 +48,19 @@ const initFilterSearch = (element, data) => {
 const initDistrictSelector = (element, template, data) => {
     const input = element.querySelector("input");
     const container = element.querySelector("span");
-    const {placeholder, prefix} = element.dataset;
+    const {placeholder, prefix, pluraltpl} = element.dataset;
+
+    const plurals = pluraltpl?.split(",").map(item => item.trim());
 
     const resultString = (res) => {
-        switch (res.length) {
+        const n = res.length;
+        switch (n) {
             case 0:
                 return placeholder;
             case 1:
                 return data.districts.find(x => (x.id === +res[0])).name;
             default:
-                return `${prefix} ${res.length}`;
+                return pluralForm(n, plurals).replace('{{n}}', n);
         }
     };
 

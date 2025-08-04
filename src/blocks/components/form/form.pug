@@ -26,7 +26,8 @@ mixin checkbox-group(options, data)
 
 mixin select-field(data)
     -var multiple = data?.multiple ? "multiple" : false
-    select(placeholder=data.placeholder multiple=multiple)
+    -var pluralTemplate = data?.pluralTemplate || false
+    select(placeholder=data.placeholder multiple=multiple data-pluraltpl=pluralTemplate)
         each item in data.options
             option= item
 

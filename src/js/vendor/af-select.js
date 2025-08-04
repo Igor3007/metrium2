@@ -1,3 +1,5 @@
+import {pluralForm} from "../helpers/plural-form.js";
+
 export class afSelect {
 
     constructor(option) {
@@ -368,16 +370,24 @@ export class afSelect {
             function selectedText(option) {
                 if (multiple) {
 
+                    const plurals = select.dataset.pluraltpl?.split(',').map(item => item.trim());
+
                     let selected_arr = [];
 
                     option.parentNode.querySelectorAll('option[selected]').forEach(function (item) {
                         selected_arr.push(item.innerText)
                     })
 
+                    const n = selected_arr.length;
+
+                    const qty = (plurals && plurals.length) ?
+                        (pluralForm(n, plurals).replace('{{n}}', n)) :
+                        ('Выбрано: ' + n + ' шт.');
+
                     if (selected_arr.length < 2) {
                         return (selected_arr.length ? selected_arr.join(', ') : placeholder);
                     } else {
-                        return '<div class="af-selected-count" >Выбрано:  <span>' + selected_arr.length + ' шт. </span>  </div>'
+                        return '<div class="af-selected-count" ><span>' + qty +'</span></div>'
                     }
 
 

@@ -69,29 +69,31 @@ include ../../../blocks/components/index
                             {title: "€", value: "EU"}
                         ]
                     )
-            .page-filter__group
+            .page-filter__group.fix3
                 .page-filter__item
                     +prefixed-input({maska: "######"})
                         label Площадь от (м²)
                 .page-filter__item
                     +prefixed-input({maska: "######"})
                         label до
-            .page-filter__item.fix1
+            .page-filter__item.fix4
                 +district-selector({
                     placeholder: "Выберите район",
-                    prefix: "Район, выбрано:"
+                    pluralTemplate: "Выбран {{n}} район, Выбраны {{n}} района, Выбраны {{n}} районов"
                 })
-            .page-filter__item.hide-from-md
+            .page-filter__item.fix4
                 +select-field({
                     multiple: true,
                     placeholder: 'Метро',
-                    options: catalog.metro
+                    options: catalog.metro,
+                    pluralTemplate: "Выбрана {{n}} станция, Выбраны {{n}} станции, Выбраны {{n}} станций"
                 })
-            .page-filter__item.fix1
+            .page-filter__item.fix4
                 +select-field({
                     multiple: true,
                     placeholder: 'Жилищные комплексы',
-                    options: catalog.ZHK
+                    options: catalog.ZHK,
+                    pluralTemplate: "Выбран {{n}} ЖК, Выбраны {{n}} ЖК, Выбраны {{n}} ЖК"
                 })
         .form.secondary-form
             .page-filter__item.full

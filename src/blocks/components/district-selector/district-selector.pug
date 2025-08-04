@@ -1,7 +1,8 @@
 mixin district-selector(data)
     - const placeholder = data?.placeholder || ''
     - const prefix = data?.prefix || ''
-    .district-selector(data-placeholder = placeholder, data-prefix = prefix)
+    - const pluralTemplate = data?.pluralTemplate || false
+    .district-selector(data-placeholder = placeholder, data-prefix = prefix, data-pluraltpl = pluralTemplate)
         input(type="hidden")
         span= placeholder
 
