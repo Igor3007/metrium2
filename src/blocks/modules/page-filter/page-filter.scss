@@ -113,13 +113,16 @@
                 width: 100%;
             }
             &.fix4 {
-                width: 40%;
+                width: 100%;
             }
         }
         @include vars.from('lg') {
             &.fix1 {
                 width: auto;
                 min-width: 25%;
+            }
+            &.fix4 {
+                width: 40%;
             }
         }
         @include vars.from('xl') {

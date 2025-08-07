@@ -185,8 +185,10 @@
 }
 
 .ymaps3x0--button.ymaps3x0--control-button {
-    &:hover {
-        background: var(--accent-14)
+    @media (any-hover: hover) {
+        &:hover {
+            background: var(--accent-14)
+        }
     }
     &[disabled], &.disabled {
         pointer-events: none;
