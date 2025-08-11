@@ -1,10 +1,11 @@
-mixin minicard(data)
+mixin minicard-resident(data)
     -var image = data.image
     -var id = data?.id || 23479
-    -var stickers = data?.stickers || [{color: "#B88E5F", title: "Эксклюзив"}, {color: "#00403F", title:"Старт продаж"}]
+    -var stickers = data?.stickers || []
     -var price = data?.price || "725 320 000 ₽"
+    -var sample = data?.sample || 0
     .minicard-wrapper
-        .minicard.minicard-common
+        .minicard.minicard-resident
             .minicard__top
                 .minicard__stickers
                     ul
@@ -24,9 +25,9 @@ mixin minicard(data)
                         .splide__track
                             .splide__list
                                 .splide__slide
-                                        +picture(image)
+                                    +picture(image)
                                 .splide__slide
-                                        +picture('/img/objects/img-block-4')
+                                    +picture('/img/objects/img-block-4')
                                 each item in [1,1,1,1,1,1]
                                     .splide__slide
                                         +picture(image)
@@ -41,31 +42,33 @@ mixin minicard(data)
                         .minicard__jk
                             +icons('#ic_city')
                             a(href="#") Вишневый сад
-                        .minicard__address Мосфильмовская улица
+                        .minicard__address
+                            ul
+                                li ЗАО
+                                li Раменка
+                                li Мосфильмовская улица
                         .minicard__stations
                             +icons('#ic_stations')
                             span Пушкинская, Тверская, Чеховская
-                    .minicard__prop
-                        ul
-                            li(style="background-image: url('/img/icons/01-area.svg')")
-                                small Площадь
-                                span 124.7 м²
-                            li(style="background-image: url('/img/icons/02-room.svg')")
-                                small Комнат
-                                span 3
-                            li(style="background-image: url('/img/icons/05-bedroom.svg')")
-                                small Спален
-                                span 3
-                            li(style="background-image: url('/img/icons/04-floor.svg')")
-                                small Этаж
-                                span 6/12
+                        .minicard__estate-list
+                            if sample > 0
+                                ul
+                                    li: a(href="#")
+                                        span.desc Квартира 180.20 м²
+                                        span.price 308 286 000 ₽
+                                    if sample > 1
+                                        li: a(href="#")
+                                            span.desc Квартира 165.00 м²
+                                            span.price 332 548 000 ₽
+                                        li: a(href="#")
+                                            span.desc Квартира 155.90 м²
+                                            span.price 253 927 000 ₽
+                                if sample > 1
+                                    a.show-all(href="#") Смотреть все 12 предложений
+                            else
+                                .minicard__estate-list--empty Информацию о доступных объектах<br/>уточняйте у менеджеров
+
                 .minicard__footer
-                    .minicard__price
-                        .minicard__price-usd(data-currency-id="usd") 2 408 245 $
-                        .minicard__price-rub(data-currency-id="rub").is-active
-                            .minicard__price-old 918 126 582 ₽
-                            = price
-                        .minicard__price-eur(data-currency-id="eur") 199 520 000 €
                     .minicard__action
                         .minicard__detail
                             a(href='#'): button.btn.btn-green: span Подробнее

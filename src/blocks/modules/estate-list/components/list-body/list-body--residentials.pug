@@ -1,0 +1,11 @@
+include ../../../minicard/minicard-resident
+
+.list-body
+    -var id = 0
+    while id++ < 12
+        if (id === 9)
+            .list-body__item.hide-before-md
+                include ../../../minicard-ad/minicard-ad
+        else
+            .list-body__item
+                +minicard-resident({id, image:"/img/objects/img-block-1", sample: id%3})
