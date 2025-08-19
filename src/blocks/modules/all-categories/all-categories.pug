@@ -11,7 +11,7 @@ mixin card-categories(data)
                 .card-categories__bottom
                     if data.offers
                         .card-categories__offers 512 предложений
-                    .card-categories__tosub: +icons('#ic_arr-right')
+                    .card-categories__tosub: +icon('ic_arr-right')
         .card-categories__sub
             .card-categories__title= data.title
             .card-categories__slider
@@ -27,8 +27,8 @@ mixin card-categories(data)
                 .card-categories__tocat
                     a(href='#'): button.btn.btn-green: span= data.btn
                 .card-categories__nav
-                    .card-categories__nav-prev(data-slider-prev="category"): +icons('#ic_arr-left')
-                    .card-categories__nav-next(data-slider-next="category"): +icons('#ic_arr-right')
+                    .card-categories__nav-prev(data-slider-prev="category"): +icon('ic_arr-left')
+                    .card-categories__nav-next(data-slider-next="category"): +icon('ic_arr-right')
 
 
 
@@ -42,7 +42,7 @@ mixin all-categories
                 image: '/img/other/btn-category-big-v3',
                 offers: '512 предложений',
                 btn: 'Вся городская недвижимость',
-                
+
                 sub: [
                     {
                         title: 'Квартиры',
@@ -84,7 +84,7 @@ mixin all-categories
                 image: '/img/other/btn-category-big-2',
                 offers: '768 предложений',
                 btn: 'Вся загородная  недвижимость',
-                
+
                 sub: [
                     {
                         title: 'Квартиры',
@@ -155,7 +155,7 @@ mixin all-categories
                     },
                 ]
             },
-         
+
         ]
 
     section.section-all-categories

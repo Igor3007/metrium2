@@ -18,8 +18,7 @@ export const jsDev = () => (
         plugins: [nodeResolve()],
         cache: cache,
         output: {
-            format: 'iife',
-            sourceMap: true,
+            format: 'iife'
         }
     })
         .on('bundle', function (bundle) {
@@ -39,8 +38,7 @@ export const jsProd = () => (
         plugins: [nodeResolve()],
         cache: cache,
         output: {
-            format: 'iife',
-            sourceMap: false,
+            format: 'iife'
         }
     })
         .on('bundle', function (bundle) {

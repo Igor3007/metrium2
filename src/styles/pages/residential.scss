@@ -1,0 +1,71 @@
+@use "../../styles/vars";
+
+.get-to {
+    display: flex;
+    margin-inline: var(--container-out);
+    padding-inline: var(--container-padding);
+    overflow-x: auto;
+
+    ul {
+        display: flex;
+
+        li {
+            display: flex;
+            gap: 4px;
+            color: var(--accent-11);
+            align-items: center;
+            &:not(:last-child) {
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 4px;
+                    height: 4px;
+                    background-color: var(--accent-14);
+                    border-radius: 50%;
+                    margin-inline: 4px 8px;
+                }
+            }
+        }
+    }
+
+    span {
+        white-space: nowrap;
+    }
+
+    &__map {
+        display: flex;
+        margin-left: 24px;
+        color: var(--accent-11);
+    }
+}
+
+.page-title {
+    background-color: var(--bg);
+}
+
+.residentials {
+    &-wrp {
+        background: var(--bg);
+    }
+    &__grid {
+        @include vars.from('md') {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0 32px;
+        }
+    }
+    &__sticky-wrp {
+        grid-row: span 2;
+    }
+
+    .gallery-big {
+        grid-column: 1 / 3;
+    }
+    .sticky-content {
+        @include vars.from('md') {
+            top: var(--hgt-header);
+            position: sticky;
+        }
+    }
+
+}

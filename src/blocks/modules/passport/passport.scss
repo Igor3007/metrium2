@@ -1,0 +1,48 @@
+@use "../../../styles/vars";
+
+.passport {
+    background: vars.$color-white;
+    font: 400 15px/24px vars.$font-default;
+    letter-spacing: 0.02em;
+    padding: 16px;
+    border-radius: 16px;
+    position: relative;
+
+    > * + * {
+        margin-top: 8px;
+    }
+
+    &__id {
+        color: var(--text-2);
+    }
+
+    &__price {
+        color: var(--accent-21);
+        font-size: 24px;
+        line-height: 36px;
+    }
+
+    &__terms {
+        display: flex;
+        justify-content: space-between;
+
+        .attr {
+            color: var(--text-2);
+        }
+
+        .value {
+            color: var(--text-1);
+            font-weight: 500;
+        }
+    }
+
+    &__fav {
+        position: absolute;
+        top: 16px;
+        right: 24px;
+        cursor: pointer;
+        svg {
+            fill: var(--text-3);
+        }
+    }
+}

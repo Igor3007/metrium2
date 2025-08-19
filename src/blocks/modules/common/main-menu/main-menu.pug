@@ -4,11 +4,11 @@ mixin item-contact(data)
     .item-contact__main
       .item-contact__label= data.label
       .item-contact__link: a(href=data.link)= data.text
- 
+
 mixin main-menu(data)
   .main-menu(data-menu="container")
     .main-menu__wrp
-      .main-menu__close(data-menu="close"): +icons('#ic_cross', 35)
+      .main-menu__close(data-menu="close"): +icon('ic_cross', 35)
       .main-menu__nav
         nav
           ul
@@ -18,7 +18,7 @@ mixin main-menu(data)
                 if item.icon
                   a(href=item.href)
                     if item.icon
-                      +icons(item.icon)
+                      +icon(item.icon)
                     span= item.text
                 else
                   a(href=item.href)= item.text
@@ -43,5 +43,5 @@ mixin main-menu(data)
               a(href='mailto:zakaz@ag-technologies.ru') zakaz@ag-technologies.ru
 
           .menu-bottom__right
-            a(href='#'): +icons('#ic_tg-dark', 28)
-            a(href='#'): +icons('#ic_wa-dark', 28)
+            a(href='#'): +icon('ic_tg-dark', 28)
+            a(href='#'): +icon('ic_wa-dark', 28)

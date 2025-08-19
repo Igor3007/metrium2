@@ -2,18 +2,15 @@
 
 .breadcrumbs {
     display: flex;
+    overflow: auto;
+    margin-inline: var(--container-out);
+    padding-inline: var(--container-padding) ;
 
-    a {
+    a, span {
+        white-space: nowrap;
+        font: 400 14px/20px vars.$font-default;
         color: inherit;
         line-height: 24px;
-        font: 400 14px/20px vars.$font-default;
-        @include vars.from('md') {
-            font: 400 16px/1.5 vars.$font-default;
-            letter-spacing: .02em;
-        }
-    }
-
-    span {
         @include vars.from('md') {
             font: 400 16px/1.5 vars.$font-default;
             letter-spacing: .02em;

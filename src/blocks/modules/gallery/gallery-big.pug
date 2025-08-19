@@ -1,0 +1,17 @@
+-var base = "/img/residentials/"
+-var images = ["image00.jpg", "image01.jpg", "image02.jpg", "image03.jpg", "image04.jpg", "image05.jpg", "image06.jpg", "image07.jpg"]
+section.gallery-big
+    .splide.main
+        .splide__track
+            ul.splide__list
+                for image in images
+                    li.splide__slide
+                        picture
+                            img(src=base+image)
+    .splide.thumbs
+        .splide__track
+            ul.splide__list
+                for image in images
+                    li.splide__slide
+                        picture
+                            img(src=base + image)

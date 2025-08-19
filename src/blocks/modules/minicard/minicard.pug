@@ -11,14 +11,14 @@ mixin minicard(data)
                         each sticker in stickers
                             li: span(style=`background: ${sticker.color}`)= sticker.title
 
-                .minicard__fullscreen: +icons('#ic_fullscreen')
+                .minicard__fullscreen: +icon('ic_fullscreen')
                 .minicard__counter
                     span(data-slider-counter="current") 2
                     | /
                     span(data-slider-counter="total") 12
                 .minicard__nav
-                    .minicard__nav-prev(data-slider-prev="minicard"): +icons('#ic_arr-left')
-                    .minicard__nav-next(data-slider-next="minicard"): +icons('#ic_arr-right')
+                    .minicard__nav-prev(data-slider-prev="minicard"): +icon('ic_arr-left')
+                    .minicard__nav-next(data-slider-next="minicard"): +icon('ic_arr-right')
                 .minicard__slider
                     .splide(data-slider="minicard")
                         .splide__track
@@ -32,18 +32,18 @@ mixin minicard(data)
                                         +picture(image)
             .minicard__main
                 .minicard__wishlist
-                    span(data-wishlist=id): +icons('#ic_heart')
+                    span(data-wishlist=id): +icon('ic_heart')
                 .minicard__id ID:&nbsp;
                     = id
                 .minicard__title: a(href='#') 4-комн. квартира, 201 м <sup>2</sup>
                 .minicard__params
                     .minicard__place
                         .minicard__jk
-                            +icons('#ic_city')
+                            +icon('ic_city')
                             a(href="#") Вишневый сад
                         .minicard__address Мосфильмовская улица
                         .minicard__stations
-                            +icons('#ic_stations')
+                            +icon('ic_stations')
                             span Пушкинская, Тверская, Чеховская
                     .minicard__prop
                         ul
@@ -72,5 +72,5 @@ mixin minicard(data)
                         .minicard__getcall
                             a(href='#')
                                 button.btn.btn-line
-                                    +icons('#ic_phone')
+                                    +icon('ic_phone')
                                     span Заказать звонок

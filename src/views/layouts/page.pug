@@ -41,20 +41,20 @@ html(lang="ru")
 
         link(rel="stylesheet" href="styles/main.css?v=1.0")
 
-    body.perf-no-animation.page
+    body.perf-no-animation.page(class=(bodyClass || false))
 
         header.white
             block header
                 include ../../blocks/modules/common/header/header_white.pug
 
-        main
+        main(class=(mainClass || false))
             block main
 
         footer
             block footer
                 include ../../blocks/modules/common/footer/footer.pug
         button.scroll-top
-            +icons("#ic_chevron-left")
+            +icon("ic_chevron-left")
 
     block scripts
 

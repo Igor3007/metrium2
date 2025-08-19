@@ -33,8 +33,8 @@ mixin  best-offers
                 image: '/img/objects/img-block-6',
                 filterId: '5',
                 id: '6571'
-            }, 
-             
+            },
+
         ]
 
     section.section-best-offers
@@ -54,7 +54,7 @@ mixin  best-offers
                         li(data-currency="usd"): span $
                         li(data-currency="eur"): span €
 
-                .best-offers__slider 
+                .best-offers__slider
                     .splide(data-slider="offers")
                         .splide__track
                             .splide__list.splide__list--offers
@@ -65,8 +65,8 @@ mixin  best-offers
                     .best-offers__more
                         a(href='#')
                             button.btn.btn-green
-                                +icons('#ic_house')
+                                +icon('ic_house')
                                 span Смотреть все предложения
                     .best-offers__nav
-                        .best-offers__nav-prev(data-slider-prev="offers"): +icons('#ic_arr-left')
-                        .best-offers__nav-next(data-slider-next="offers"): +icons('#ic_arr-right')
+                        .best-offers__nav-prev(data-slider-prev="offers"): +icon('ic_arr-left')
+                        .best-offers__nav-next(data-slider-next="offers"): +icon('ic_arr-right')

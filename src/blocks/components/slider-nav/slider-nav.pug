@@ -2,5 +2,5 @@ mixin slider-nav(data)
     - var sliderName = data?.sliderName
     - var className = data?.class || false
     .slider-nav(class = className)
-        button.slider-nav-prev(data-slider-prev=sliderName): +icons('#ic_arr-left')
-        button.slider-nav-next(data-slider-next=sliderName): +icons('#ic_arr-right')
+        button.slider-nav-prev(data-slider-prev=sliderName): +icon('ic_arr-left')
+        button.slider-nav-next(data-slider-next=sliderName): +icon('ic_arr-right')

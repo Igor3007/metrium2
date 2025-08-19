@@ -6,7 +6,7 @@ include ../../../blocks/components/index
     .page-filter__modal-heading.hide-from-md
         h3 Фильтры недвижимости
         button.close(data-target=".page-title__filter" data-toggle="sm-modal")
-            +icons("#ic_close", 12)
+            +icon("ic_close", 12)
     form
         .form.primary-form
             .page-filter__item
@@ -100,7 +100,7 @@ include ../../../blocks/components/index
                 h4 Дополнительные параметры объекта
             .page-filter__item.full
                 +prefixed-input({placeholder: "Поиск по ID"})
-                    +icons("#ic_search",28,"icon-search")
+                    +icon("ic_search",28,"icon-search")
             .page-filter__item
                 +radio-group(
                     {name: "levels", legend: "Уровней:"},
@@ -157,4 +157,4 @@ include ../../../blocks/components/index
                     span Применить фильтры
                 button.btn.btn-transparent.btn-reset(type="reset" data-remove="sm-modal" data-target=".page-title__filter" data-prevent="none")
                     span Сбросить фильтры
-                    +icons("#ic_close", 12)
+                    +icon("ic_close", 12)

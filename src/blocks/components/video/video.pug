@@ -8,8 +8,8 @@ mixin video (data)
       if data.title
         .video__title= data.title
       .video__button(data-video="play")
-        +icons('#ic_play', 70)
-     
+        +icon('ic_play', 70)
+
 
 mixin video-review (data)
   .video(data-id=""+data.link+"")
@@ -19,37 +19,37 @@ mixin video-review (data)
       if data.title
         .video__title= data.title
       .video__button
-        +icons('#ic_play', 52)
+        +icon('ic_play', 52)
         span Watch the video review
 
 
 mixin video2 (data)
-  .video 
+  .video
     .video__preview
       +picture(data.preview)
     .video__action
       if data.title
         .video__title= data.title
       .video__button
-        +icons('#ic_play', 70)
+        +icon('ic_play', 70)
     .video__source
       video(preload="none")
         source(src="/files/video-sound.mp4" type="video/mp4")
 
 mixin video-slider (data)
-  .video 
+  .video
     .video__preview
       +picture(data.preview)
     .video__action
       if data.title
         .video__title= data.title
       .video__button
-        +icons('#ic_play', 70)
+        +icon('ic_play', 70)
     .video__source
       video(preload="none" controls="none")
         source(src="/files/slider.webm" type="video/webm")
         source(src="/files/slider.mp4" type="video/mp4")
-     
+
 
 
 mixin video-youtube (data)
@@ -57,8 +57,8 @@ mixin video-youtube (data)
     .yt-video__preview
       +picture(data.preview)
     .yt-video__action
-       
+
       .yt-video__button
-        +icons('#ic_play', 52)
+        +icon('ic_play', 52)
     .yt-video__iframe
-         
+

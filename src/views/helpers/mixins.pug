@@ -62,13 +62,9 @@ mixin pictureResp(url)
         img(src=''+url.def+'.jpg' alt='Image')
 
 
-mixin icons(id, size, _class)
-  if size
-    svg(width=''+size+'' height=''+size+'' class=['icon',_class].join(" ").trim())
-      use(xlink:href="/img/sprites/sprite.svg"+id)
-  else
-    svg(width="24" height="24" class=['icon',_class].join(" ").trim())
-      use(xlink:href="/img/sprites/sprite.svg"+id)
+mixin icon(id, size, _class)
+  svg(width=(size || "24") height=(size || "24") class=['icon',_class].join(" ").trim())
+    use(href="/img/sprites/sprite.svg#"+id)
 
 mixin ic_24(url)
   span.bgimage.lazyload.ic_24(data-bg=""+url+"")
@@ -168,7 +164,7 @@ mixin input(type, placeholder, valid, required)
 mixin input-icon(type, placeholder, valid, icon)
   .input-primary.input-icon
     if icon
-      +icons(''+icon+'', 16)
+      +icon('ic_'+icon+'', 16)
     input(type=''+type+'', placeholder=placeholder data-valid-type=''+(valid ? valid : '')+'' )
     if type == 'password'
       span.tooltip-showpass

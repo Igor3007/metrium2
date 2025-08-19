@@ -1,0 +1,50 @@
+extends ../layouts/page
+
+include ../../blocks/components/breadcrumbs/breadcrumbs
+include ../helpers/mixins
+
+block variables
+    - const title = "Дворянское гнездо - Metrium"
+    - const pageUrl = "/city.html"
+    - const bodyClass = "residentials"
+block main
+    section
+        .container
+            +breadcrumbs([
+                {url: "/city.html", title: "Элитная недвижимость в Москве"},
+                {url: "/residentials.html", title: "Жилые комплексы"},
+                {url: "/residential-ready.html", title: "Дворянское гнездо"}
+            ])
+    section.page-title
+        .container
+            h2 Дворянское гнездо
+            .get-to
+                ul
+                    li
+                        +icon('ic_metro')
+                        span Смоленская
+                    li
+                        span Москва, Большой Лёвшинский переулок, 11
+                a.get-to__map(href="#")
+                    +icon('ic_on-map-small')
+                    span На карте
+    .residentials-wrp
+        .residentials__grid.container
+            include ../../blocks/modules/gallery/gallery-big
+            div.residentials__sticky-wrp
+                .sticky-content
+                    include ../../blocks/modules/passport/passport
+                    section
+                        h2 записаться на просмотр
+            section.residentials__content
+                h2 Описание, подбор, список, карта
+                article
+                    h3 description
+                article
+                    h3 filter
+                    h3 list
+                    h2 list-header
+                    h2 list-content
+                    h2 list-footer
+                article
+                    h2 map

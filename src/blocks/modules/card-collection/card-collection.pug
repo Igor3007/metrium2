@@ -5,13 +5,13 @@ mixin card-collection(data)
             +picture(data.image)
         .card-collection__content
 
-            if data.sticker 
+            if data.sticker
                 .card-collection__sticker
                     span Выгодное <br> предложение
 
             .card-collection__main
                 .card-collection__title= data.title
                 .card-collection__link
-                    a(href='#') 
+                    a(href='#')
                         | Подробнее
-                        span: +icons('#ic_arr-right')
+                        span: +icon('ic_arr-right')

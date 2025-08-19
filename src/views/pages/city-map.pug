@@ -11,17 +11,17 @@ block main
         #city-map
         .city-map__controls
             button.btn.btn-gold(data-target=".city-map__filters" data-toggle="sm-modal")
-                +icons('#ic_filters')
+                +icon('ic_filters')
                 span Фильтры
             .buttons-group
                 a.btn.grid(href="/city.html")
-                    +icons("#ic_grid")
+                    +icon("ic_grid")
                     span Плиткой
                 a.btn.hide-before-xl.list(href="/city.html?view=list")
-                    +icons("#ic_list")
+                    +icon("ic_list")
                     span Списком
                 a(href="/city-map.html").btn.active.hide-before-xl
-                    +icons("#ic_on-map-small")
+                    +icon("ic_on-map-small")
                     span На карте
         .city-map__filters.page-title__filter
             include ../../blocks/modules/page-filter/page-filter
@@ -30,7 +30,7 @@ block main
                 .city-map__list-header
                     h4 Подходящие варианты
                     button.close(data-target=".city-map__list" data-toggle="open")
-                        +icons("#ic_close", 12)
+                        +icon("ic_close", 12)
                 #city-map-results
 
 block append scripts

@@ -14,8 +14,9 @@ fs.readdir(imagesDir, (err, files) => {
 
     const imagesHtml = imageFiles.map(file => {
         const srcPath = `${file}`;
+        const name = file.split('.')[0];
         return `
-    <div style="padding: 10px; outline: 1px solid silver" title="${file}">
+    <div class="icon" style="padding: 10px; outline: 1px solid silver" title="${file}" data-name="${name}">
         <img src="${srcPath}" style="max-width:200px; margin:10px;" alt="file">
     </div>
     `;
@@ -33,6 +34,9 @@ fs.readdir(imagesDir, (err, files) => {
                     flex-wrap:wrap;
                     background: antiquewhite;
                 }
+                .icon {
+                    cursor: pointer;
+                }
                 input[type='checkbox']:checked + .wrapper {
                     background: #000;
                 }
@@ -45,6 +49,18 @@ fs.readdir(imagesDir, (err, files) => {
                 <div class="wrapper">
                     ${imagesHtml}
                 </div>
+                <script>
+                    document.querySelectorAll('.icon').forEach(el => {
+                        el.addEventListener('click', () => {
+                            const {name} = el.dataset;
+                            navigator.clipboard.writeText(name).then(() => {
+                                console.log('Copied');
+                            });
+                            console.log(name);
+                        })
+                    });
+
+                </script>
             </body>
             </html>
         `;
