@@ -40,6 +40,21 @@ fs.readdir(imagesDir, (err, files) => {
                 input[type='checkbox']:checked + .wrapper {
                     background: #000;
                 }
+                .notification-wrapper {
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                }
+                .note {
+                    background: wheat;
+                    padding: 20px;
+                    box-sizing: border-box;
+                    transform: translateY(100%);
+                    transition: .5s;
+                    &.show {
+                        transform: translateY(0);
+                    }
+                }
                 </style>
             </head>
             <body>
@@ -50,17 +65,22 @@ fs.readdir(imagesDir, (err, files) => {
                     ${imagesHtml}
                 </div>
                 <script>
+                    document.addEventListener('DOMContentLoaded',() => {
+                        const note = document.querySelector('.note');
                     document.querySelectorAll('.icon').forEach(el => {
                         el.addEventListener('click', () => {
                             const {name} = el.dataset;
                             navigator.clipboard.writeText(name).then(() => {
-                                console.log('Copied');
+                                 note.innerHTML = "<strong>"+ name +"</strong> copied to clipboard";
+                                 note.classList.add('show');
+                                 setTimeout(() =>{note.classList.remove('show')}, 2000);
                             });
-                            console.log(name);
+
                         })
                     });
-
+                    });
                 </script>
+                <div class="notification-wrapper"><div class="note"></div></div>
             </body>
             </html>
         `;
