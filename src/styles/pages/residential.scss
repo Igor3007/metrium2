@@ -55,7 +55,7 @@
         }
     }
     &__sticky-wrp {
-        grid-row: span 2;
+        grid-row: span 3;
     }
 
     .gallery-big,
@@ -64,10 +64,24 @@
         grid-column: 1 / 3;
     }
 
+    .gallery-big {
+        margin-bottom: 16px;
+    }
+
+    &__content {
+        h4 {
+            font: 400 clamp(20px,4vw,28px)/1.6 vars.$font-captions;
+            letter-spacing: 0.04em;
+        }
+    }
+
     &__anchors {
         margin-inline: var(--container-out);
         overflow-x: auto;
+        margin-block: 24px;
+        background-color: var(--white);
         @include vars.from('md') {
+            background-color: transparent;
             margin-inline: 0;
         }
     }
@@ -75,6 +89,24 @@
         @include vars.from('md') {
             top: var(--hgt-header);
             position: sticky;
+        }
+    }
+    &__description {
+        background: var(--white);
+        padding: 16px;
+        border-radius: 16px;
+
+
+        p {
+            font: 400 15px/24px vars.$font-default;
+            letter-spacing: 0.02em;
+            hyphens: auto;
+        }
+        .dotted-list {
+            @include vars.from('xl') {
+                columns: 2;
+                column-gap: 32px;
+            }
         }
     }
 

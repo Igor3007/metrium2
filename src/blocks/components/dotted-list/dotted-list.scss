@@ -1,0 +1,24 @@
+@use "../../../styles/vars";
+
+.dotted-list {
+    li {
+        display: flex;
+        gap: 8px;
+        justify-content: space-between;
+        font: 400 15px/24px vars.$font-default;
+        &:not(:last-child) {
+            margin-bottom: 12px;
+        }
+    }
+    &__dots {
+        flex-grow: 1;
+        border-bottom: 1px dashed var(--accent-14);
+        margin-bottom: 8px;
+    }
+    &__dt {
+        color: var(--text-2);
+    }
+    &__dd {
+        font-weight: 500;
+    }
+}

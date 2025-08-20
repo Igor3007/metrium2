@@ -1,0 +1,7 @@
+mixin dotted-list(list)
+    ul.dotted-list
+        each item in list
+            li
+                span.dotted-list__dt= item[0]
+                span.dotted-list__dots
+                span.dotted-list__dd= item[1]
