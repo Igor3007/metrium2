@@ -58,8 +58,18 @@
         grid-row: span 2;
     }
 
-    .gallery-big {
+    .gallery-big,
+    &__content,
+    &__anchors {
         grid-column: 1 / 3;
+    }
+
+    &__anchors {
+        margin-inline: var(--container-out);
+        overflow-x: auto;
+        @include vars.from('md') {
+            margin-inline: 0;
+        }
     }
     .sticky-content {
         @include vars.from('md') {

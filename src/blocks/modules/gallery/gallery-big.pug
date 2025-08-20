@@ -8,6 +8,18 @@ section.gallery-big
                     li.splide__slide
                         picture
                             img(src=base+image)
+        .gallery-big__controls
+            .gallery-big__all
+                +icon("ic_fullscreen", 12)
+                span Все фото
+            .gallery-big__counter
+                span 1 / 12
+            .gallery-big__arrows
+                .arrow(data-dir="prev")
+                    +icon("ic_chevron-left", 12)
+                .arrow(data-dir="next")
+                    +icon("ic_chevron-right", 12)
+
     .splide.thumbs
         .splide__track
             ul.splide__list

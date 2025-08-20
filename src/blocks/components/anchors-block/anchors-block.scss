@@ -1,0 +1,45 @@
+@use "../../../styles/vars";
+
+.anchors-block {
+    display: flex;
+    gap: 8px;
+    padding: 12px var(--container-padding);
+    background: var(--white);
+    @include vars.from('md') {
+        padding: 12px;
+        border-radius: 16px;
+        gap: 0;
+    }
+
+    a {
+        font: 400 14px/20px vars.$font-default;
+        color: var(--text-2);
+        padding: 8px 16px;
+        border-radius: 8px;
+        background: var(--accent-12);
+        transition: .3s;
+        @include vars.from('md') {
+            flex-grow: 1;
+            text-align: center;
+
+            &:not(:first-child) {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+            &:not(:last-child) {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+
+        &.active {
+            background: var(--accent-11);
+            color: var(--white);
+        }
+
+        &:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+    }
+}

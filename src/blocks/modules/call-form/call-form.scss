@@ -1,0 +1,84 @@
+@use "../../../styles/vars";
+
+.call-form {
+    margin-top: 8px;
+    background: vars.$color-white;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        &.narrow {
+            gap: 8px;
+        }
+    }
+
+    &__title {
+        color: var(--text-2);
+        font: 400 16px/1.5 vars.$font-default;
+        letter-spacing: 0.02em;
+    }
+
+    &__via {
+        display: flex;
+        gap: 8px;
+
+        label {
+            padding: 8px 16px;
+            color: var(--text-2);
+            background: var(--accent-12);
+            border-radius: 8px;
+            cursor: pointer;
+            &:has(input:checked) {
+                background: var(--accent-11);
+                color: var(--white);
+            }
+        }
+        .title {
+            font: 400 14px/20px vars.$font-default;
+        }
+        input {
+            display: none;
+        }
+    }
+
+    &__input {
+        input {
+            width: 100%;
+            appearance: none;
+            border: none;
+            padding: 14px 16px;
+            font: 400 18px/28px vars.$font-default;
+            color: var(--text-2);
+            background: var(--accent-12);
+            border-radius: 12px;
+        }
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .checkbox {
+        display: flex;
+        float: left;
+        height: 2lh;
+    }
+
+    .subtitle {
+        font: 400 14px/20px vars.$font-default;
+        a {
+            color: var(--accent-11);
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+
+}

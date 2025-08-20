@@ -1,6 +1,7 @@
 extends ../layouts/page
 
 include ../../blocks/components/breadcrumbs/breadcrumbs
+include ../../blocks/components/anchors-block/anchors-block
 include ../helpers/mixins
 
 block variables
@@ -34,9 +35,15 @@ block main
             div.residentials__sticky-wrp
                 .sticky-content
                     include ../../blocks/modules/passport/passport
-                    section
-                        h2 записаться на просмотр
+                    include ../../blocks/modules/call-form/call-form
+            section.residentials__anchors
+                +anchors-block([
+                    {anchor: "description", title: "Описание", active: true},
+                    {anchor: "estates", title: "Недвижимость"},
+                    {anchor: "infrastructure", title: "Инфраструктура"}
+                ])
             section.residentials__content
+
                 h2 Описание, подбор, список, карта
                 article
                     h3 description

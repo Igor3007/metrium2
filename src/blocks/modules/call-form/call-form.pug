@@ -1,0 +1,30 @@
+form.call-form
+    .call-form__group.narrow
+        .call-form__title Где вам удобно общаться?
+        .call-form__via
+            label(for="tele")
+                input#tele(type="radio" name="via" checked="checked")
+                .title Телефон
+            label(for="wap")
+                input#wap(type="radio" name="via")
+                .title WhatsApp
+            label(for="tg")
+                input#tg(type="radio" name="via")
+                .title Telegram
+    .call-form__group
+        .call-form__input
+            input(type="text" placeholder="Ваше имя" name="name")
+        .call-form__input
+            input(type="tel" placeholder="Номер телефона" name="tel" required="required")
+    .call-form__group
+        .call-form__input
+            button.btn.btn-green
+                span Записаться на просмотр
+        .call-form__input
+            button.btn.btn-line
+                span Получить презентацию
+        .call-form__input.subtitle
+            +checkbox("", "agree", {required: true})
+            span Нажимая на кнопку, вы соглашаетесь с нашими
+            a(href='#' target="_blank")  «Правилами обработки персональных данных»
+

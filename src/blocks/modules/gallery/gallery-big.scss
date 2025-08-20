@@ -19,6 +19,9 @@
                     position: absolute;
                     bottom: 0;
                     padding: 12px 0;
+                    @include vars.from('md') {
+                        display: none;
+                    }
 
                     button {
                         background: #FFFFFF;
@@ -33,7 +36,87 @@
             }
         }
     }
+    &__controls {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        @include vars.before('md') {
+            display: none;
+        }
+    }
+    &__all {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        background: var(--white);
+        display: flex;
+        font-size: 14px;
+        line-height: 22px;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px;
+        border-radius: 20px;
+        pointer-events: initial;
+        cursor: pointer;
+
+        span {
+            margin-bottom: -2px;
+        }
+    }
+    &__arrows {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        display: flex;
+        gap: 8px;
+
+        .arrow {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: initial;
+            opacity: .8;
+            cursor: pointer;
+        }
+    }
+    &__counter {
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+        background: var(--white);
+        font: 400 16px/1.5 vars.$font-default;
+        padding: 9px 16px 7px;
+        border-radius: 20px;
+    }
     .thumbs {
-        display: none;
+        margin-top: 12px;
+
+        @include vars.before('md') {
+            display: none;
+        }
+
+        picture {
+            overflow: hidden;
+            border-radius: 12px;
+            opacity: .5;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &.splide {
+            .splide {
+                &__arrows {
+                    display: none;
+                }
+            }
+        }
     }
 }
