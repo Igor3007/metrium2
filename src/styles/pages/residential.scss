@@ -39,11 +39,10 @@
     }
 }
 
-.page-title {
-    background-color: var(--bg);
-}
-
 .residentials {
+    .page-title {
+        background-color: var(--bg);
+    }
     &-wrp {
         background: var(--bg);
     }
@@ -108,6 +107,11 @@
                 column-gap: 32px;
             }
         }
+    }
+    &__filter {
+        background: var(--white);
+        padding: 16px;
+        border-radius: 16px;
     }
 
 }
