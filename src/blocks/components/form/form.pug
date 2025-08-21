@@ -72,6 +72,24 @@ mixin select-range-units(data)
                         span= unit[1]
                         input(type="radio" name=`${name}_units` value=unit[0] data-unit=unit[1] checked=(index === 0))
 
+mixin select-range-ext(data)
+    -var placeholder = data?.placeholder || ""
+    -var name = data?.name || crypto.randomUUID()
+    -var postfix = data?.postfix || ""
+    .select-units(data-placeholder=placeholder data-postfix=postfix)
+        .select-units__head._head
+            span= placeholder
+            +icon('ic_arrow-down', 10)
+        .select-units__body._body
+            .prefixed-input.select-units__input._from
+                span от
+                input(type="text" name=`${name}_from`)
+                .clear ×
+            .prefixed-input.select-units__input._to
+                span до
+                input(type="text" name=`${name}_to`)
+                .clear ×
+
 mixin select-extended(data)
     - var multiple = data.multiple || false;
     - var placeholder = data.placeholder || false;

@@ -59,6 +59,7 @@ block main
                     ])
 
                 article.residentials__filter
+                    h4 Подберите недвижимость в ЖК Дворянское гнездо
                     form
                         .residentials__input
                             +select-field({
@@ -78,9 +79,16 @@ block main
                             })
                         +select-range-units({
                             placeholder: "Цена",
-                            range: [0],
                             units: [["RUB","₽"],["USD","$"],["EUR","€"]]
                         })
+                        +select-range-ext({
+                            placeholder: "Площадь",
+                            postfix: "м²"
+                        })
+                        +select-range-ext({
+                            placeholder: "Этаж",
+                        })
+                        +checkbox("Терраса", "terr")
                 h3 list
                 h2 list-header
                 h2 list-content

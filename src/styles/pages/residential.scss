@@ -112,6 +112,17 @@
         background: var(--white);
         padding: 16px;
         border-radius: 16px;
+        margin-top: 16px;
+
+        h4 {
+            margin-bottom: 16px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+            gap: 8px;
+        }
     }
 
 }

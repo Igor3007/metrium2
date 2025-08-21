@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const _from = select.querySelector('._from input');
         const _to = select.querySelector('._to input');
 
-        const {placeholder} = select.dataset;
+        const {placeholder, postfix} = select.dataset;
 
         let values = {
             from: undefined,
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const renderValues = () => {
             let unitEl = select.querySelector('._units input:checked');
-            const {unit} = unitEl.dataset;
+            const unit = unitEl?.dataset.unit || postfix || "";
             let str = '';
             str += (values.from) ? `от ${values.from} ` : '';
             str += (values.to) ? `до ${values.to} ` : '';
@@ -111,6 +111,9 @@ document.addEventListener('DOMContentLoaded', () => {
         _to?.addEventListener('blur', (e) => {
             const {value} = e.target;
             values.to = parseInt(value.replace(/\D/g,'')) || '';
+            if (values.to < values.from) {
+                values.to = '';
+            }
             e.target.value = values.to;
             e.target.dispatchEvent(new Event('change'));
         });
