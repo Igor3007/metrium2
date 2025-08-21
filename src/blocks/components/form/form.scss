@@ -1,6 +1,8 @@
 @use "../../../styles/vars";
 @use "../../../styles/helpers/functions";
 
+@forward "select-range-units";
+
 .form {
 
     font-family: var(--font-montserrat);
@@ -829,5 +831,5 @@
     .prefix {
         white-space: nowrap;
     }
-
 }
+

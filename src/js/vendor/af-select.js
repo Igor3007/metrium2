@@ -316,10 +316,10 @@ export class afSelect {
     closeSelect() {
         if (!document.querySelector('.select-styled.active')) return false
 
-        document.querySelector('.select-styled.active').classList.remove('active')
-        document.querySelector('.select-options.active').classList.remove('active')
-        document.querySelector('.select-list.active').classList.remove('active')
-        document.querySelector('body').classList.remove('af-select-open')
+        document.querySelector('.select-styled.active')?.classList.remove('active')
+        document.querySelector('.select-options.active')?.classList.remove('active')
+        document.querySelector('.select-list.active')?.classList.remove('active')
+        document.querySelector('body')?.classList.remove('af-select-open')
     }
 
     clickEventOut() {

@@ -1,0 +1,113 @@
+@use "../../../styles/vars";
+
+.select-units {
+    $ancestor: &;
+    position: relative;
+    overflow: hidden;
+    font: 400 18px/28px vars.$font-default;
+
+    &__head {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--accent-12);
+        padding: 12px 14px;
+        border: 2px solid transparent;
+        border-radius: 12px;
+        transition: border-color .3s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background: var(--accent-13);
+            }
+        }
+
+        .icon {
+            fill: var(--accent-11);
+            margin: 0 6px;
+            transition: 0.3s;
+        }
+    }
+
+    &__body {
+        height: 0;
+        position: absolute;
+        padding: 12px 14px;
+        border: 2px solid transparent;
+        border-top: none;
+        border-radius: 0 0 12px 12px;
+        background: var(--white);
+        width: 100%;
+        transition: border-color .3s;
+    }
+
+    &__input {
+        margin-bottom: 4px;
+        color: var(--text-2);
+        padding: 12px 14px;
+        //border: 2px solid transparent;
+        //border-radius: 12px;
+        background: var(--accent-12);
+        display: flex;
+
+        span {
+            margin-right: .5em;
+        }
+
+        input {
+            background: none;
+            border: none;
+            flex-grow: 1;
+        }
+
+        &:focus-within {
+            border-color: var(--accent-11);
+        }
+    }
+
+    &__units {
+        display: flex;
+        gap: 4px;
+
+        label {
+            flex-grow: 1;
+            background: var(--accent-12);
+            font: 400 18px/28px vars.$font-default;
+            padding: 14px;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+
+            &:has(input:checked) {
+                background: var(--accent-11);
+                color: var(--white);
+            }
+        }
+
+        input {
+            display: none;
+        }
+    }
+
+    &.active {
+        overflow: visible;
+
+        #{$ancestor} {
+            &__head {
+                background: var(--white);
+                border-color: var(--accent-11);
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+
+                .icon {
+                    transform: rotate(180deg);
+                }
+            }
+            &__body {
+                height: auto;
+                border-color: var(--accent-11);
+            }
+        }
+    }
+}

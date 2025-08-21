@@ -1,5 +1,6 @@
 extends ../layouts/page
 include ../../blocks/components/index
+include ../../blocks/components/form/form
 include ../helpers/mixins
 
 block variables
@@ -57,11 +58,32 @@ block main
                         ["Срок сдачи", "3 квартал 2027"]
                     ])
 
-                article
-                    h3 filter
-                    h3 list
-                    h2 list-header
-                    h2 list-content
-                    h2 list-footer
+                article.residentials__filter
+                    form
+                        .residentials__input
+                            +select-field({
+                                placeholder: "Тип сделки",
+                                options: ["Тип сделки 001", "Тип сделки 002", "Тип сделки 003"]
+                            })
+                        .residentials__input
+                            +select-field({
+                                placeholder: "Тип недвижимости",
+                                options: ["Тип недвижимости 001", "Тип недвижимости 002", "Тип недвижимости 003"]
+                            })
+                        .residentials__input
+                            +select-field({
+                                multiple: true,
+                                placeholder: "Спален",
+                                options: ["1", "2", "3", "4"]
+                            })
+                        +select-range-units({
+                            placeholder: "Цена",
+                            range: [0],
+                            units: [["RUB","₽"],["USD","$"],["EUR","€"]]
+                        })
+                h3 list
+                h2 list-header
+                h2 list-content
+                h2 list-footer
                 article
                     h2 map
