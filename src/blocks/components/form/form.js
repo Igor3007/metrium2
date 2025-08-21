@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let str = '';
             str += (values.from) ? `от ${values.from} ` : '';
             str += (values.to) ? `до ${values.to} ` : '';
-            str += (str) ? unit : placeholder;
+            str = (str) ? `${placeholder}: ${str} ${unit}` : placeholder;
             _head.querySelector('span').innerHTML = str;
         }
 

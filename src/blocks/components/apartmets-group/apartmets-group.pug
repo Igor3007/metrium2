@@ -1,0 +1,25 @@
+include ../pagination/pagination
+
+mixin apartmets-group()
+    details.apartments-group
+        summary
+            .hide-before-xl Номер ID
+            div 3-комнатные
+            div от 105.10 м²
+            .hide-before-xl
+            div от 157 874 000 ₽
+            .apartments-group__toggler 4 объекта
+                +icon("ic_arrow-down", 10)
+        .apartments-group__list
+            +apartment-detail()
+            +apartment-detail()
+            +apartment-detail()
+            +apartment-detail()
+            +apartment-detail()
+            .hide-from-xl
+                button.btn.btn-green.btn-show-more
+                    span Показать еще
+                    +icon("ic_arrow-down", 8)
+            .apartments-group__paginator.hide-before-xl
+                +pagination-compact()
+

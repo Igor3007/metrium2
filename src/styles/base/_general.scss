@@ -236,6 +236,12 @@ input[type="date"] {
     }
 }
 
+.hide-from-xl {
+    @include vars.from('xl') {
+        display: none;
+    }
+}
+
 .hide-before-md {
     @include vars.before('md') {
         display: none !important;

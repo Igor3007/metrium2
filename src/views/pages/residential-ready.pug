@@ -42,7 +42,7 @@ block main
                     {anchor: "infrastructure", title: "Инфраструктура"}
                 ])
             section.residentials__content
-                article.residentials__description
+                article.residentials__description#description
                     h4 О жилом комплексе Дворянское гнездо
                     p ЖК Дворянское гнездо, выстроенный в стиле неоклассической архитектуры, имеет семь этажей и всего 25 квартир, площадь которых варьирует в пределах диапазона 150-500 квадратных метров.
                     p ЖК «Дворянское гнездо» — это современный жилой комплекс, сочетающий в себе комфорт, качество и элегантность. Расположенный в престижном районе, он предлагает жильцам просторные квартиры с продуманными планировками и высококачественной отделкой. Архитектура комплекса выдержана в классическом стиле с элементами современного дизайна, что придает ему благородный и уютный облик.
@@ -58,7 +58,7 @@ block main
                         ["Срок сдачи", "3 квартал 2027"]
                     ])
 
-                article.residentials__filter
+                article.residentials__filter#estates
                     h4 Подберите недвижимость в ЖК Дворянское гнездо
                     form
                         .residentials__input
@@ -89,9 +89,20 @@ block main
                             placeholder: "Этаж",
                         })
                         +checkbox("Терраса", "terr")
-                h3 list
-                h2 list-header
-                h2 list-content
-                h2 list-footer
+                article.residentials__list
+                    .residentials__list-header
+                        .residentials__count Объектов: 24
+                        .list-header__controls
+                            .list-header__controls-sort
+                                select#sortlist(data-prefix="Сортировать")
+                                    option(value=1) По актуальности
+                                    option(value=2) По возрастанию
+                                .btn.btn-line(data-selectpopup="#sortlist")
+                                    +icon("ic_sort")
+                                    | Сортировка
+                    .residentials__list-content
+                        +apartmets-group()
+                        +apartmets-group()
+                        +apartmets-group()
                 article
                     h2 map

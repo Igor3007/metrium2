@@ -1,0 +1,82 @@
+@use "../../../styles/vars";
+
+.apartments-group {
+    $ancestor: &;
+    background: var(--accent-12);
+    padding: 10px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    transition: .3s;
+    @include vars.from('xl') {
+        padding-block: 24px;
+    }
+    @include vars.from('xxl') {
+        padding: 24px;
+    }
+
+    summary {
+        display: grid;
+        gap: 8px;
+        grid-template-columns: 1fr 1fr;
+        font: 400 16px/24px vars.$font-default;
+        color: var(--text-1);
+        pointer-events: none;
+
+        @include vars.before('xl') {
+            & > *:nth-child(3n) {
+                text-align: right;
+            }
+        }
+        @include vars.from('xl') {
+            grid-template-columns: 2fr 2fr 2fr 2fr 3fr 3fr;
+        }
+
+    }
+
+    &__toggler {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        cursor: pointer;
+        font-weight: 500;
+        color: var(--accent-11);
+        pointer-events: auto;
+
+        .icon {
+            fill: var(--accent-11);
+            margin-left: 8px;
+            transition: .3s;
+        }
+    }
+
+    &__list {
+        display: grid;
+        gap: 8px;
+        max-height: 0;
+    }
+
+    &__paginator {
+        display: flex;
+        justify-content: center;
+        margin-top: 4px;
+    }
+
+    &[open] {
+        background: var(--white);
+        border-color: var(--accent-11);
+
+        #{$ancestor} {
+            &__toggler {
+                .icon {
+                    transform: rotate(180deg);
+                }
+            }
+            &__list {
+                max-height: none;
+                animation: max-height-animation;
+                animation-duration: .3s;
+                margin-top: 16px;
+            }
+        }
+    }
+}

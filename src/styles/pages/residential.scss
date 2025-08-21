@@ -79,9 +79,12 @@
         overflow-x: auto;
         margin-block: 24px;
         background-color: var(--white);
+        position: sticky;
+        top: var(--hgt-header);
+        z-index: 30;
         @include vars.from('md') {
             background-color: transparent;
-            margin-inline: 0;
+            margin-inline: -12px;
         }
     }
     .sticky-content {
@@ -122,6 +125,46 @@
             display: grid;
             grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
             gap: 8px;
+        }
+    }
+    &__list {
+        margin-top: 16px;
+        background: var(--white);
+        padding: 16px;
+        border-radius: 16px;
+
+        &-content {
+            display: grid;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        &-header {
+            @include vars.from('xl') {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .list-header__controls {
+            @include vars.from('xl') {
+                flex-grow: 0;
+            }
+        }
+
+        .list-header__controls-sort {
+            min-width: 100%;
+            @include vars.from('xl') {
+                min-width: 400px;
+            }
+        }
+    }
+    &__count {
+        font: 400 16px/1.5 vars.$font-default;
+        color: var(--text-2);
+        @include vars.before('xl') {
+            margin-bottom: 8px;
         }
     }
 
