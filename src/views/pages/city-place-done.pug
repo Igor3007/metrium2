@@ -9,11 +9,11 @@ block variables
     - const pageUrl = "/city.html"
     - const bodyClass = "cityplace"
 block main
-    section
+    section.page-header
         .container
             +breadcrumbs([
                 {url: "/city.html", title: "Элитная недвижимость в Москве"},
-                {url: "/cityplace.html", title: "Жилые комплексы"},
+                {url: "/city-places-all.html", title: "Жилые комплексы"},
                 {url: "/residential-ready.html", title: "Дворянское гнездо"}
             ])
     section.page-title
@@ -49,8 +49,8 @@ block main
                     p ЖК «Дворянское гнездо» — это современный жилой комплекс, сочетающий в себе комфорт, качество и элегантность. Расположенный в престижном районе, он предлагает жильцам просторные квартиры с продуманными планировками и высококачественной отделкой. Архитектура комплекса выдержана в классическом стиле с элементами современного дизайна, что придает ему благородный и уютный облик.
                     p На последнем уровне дома находятся пентхаусы, а на первом — сауны, тренажерный зал с бассейном, просторный вестибюль и холл для ожидания. Поскольку возле особняка нет высоких строений, его окна обеспечивают внутренним помещениям полноценное естественное освещение. На северной стороне ЖК Дворянского гнезда имеется внутренний двор обустроенным ландшафтом и площадкой для детей.
                     +dotted-list([
-                        ["Площадь объектов от","105.10 м²"],
-                        ["Потолки","3.5  — 5 м"],
+                        ["Площадь объектов от", "105.10 м²"],
+                        ["Потолки", "3.5  — 5 м"],
                         ["Тип недвижимости", "Квартиры"],
                         ["Паркинг", "Да"],
                         ["Объектов в комплексе", "24"],
@@ -80,7 +80,7 @@ block main
                             })
                         +select-range-units({
                             placeholder: "Цена",
-                            units: [["RUB","₽"],["USD","$"],["EUR","€"]]
+                            units: [["RUB", "₽"], ["USD", "$"], ["EUR", "€"]]
                         })
                         +select-range-ext({
                             placeholder: "Площадь",
@@ -101,10 +101,17 @@ block main
                                 .btn.btn-line(data-selectpopup="#sortlist")
                                     +icon("ic_sort")
                                     | Сортировка
-                    .cityplace__list-content
-                        +apartmets-group()
-                        +apartmets-group()
-                        +apartmets-group()
+                article.cityplace__list-done
+                    -var id = 0
+                    while id++ < 6
+                        +minicard({id, image: "/img/objects/img-block-1"})
+                .cityplace__list-footer
+                    .hide-from-md
+                        button.btn.btn-green.btn-show-more
+                            span Показать еще
+                            +icon("ic_arrow-down", 8)
+                    .hide-before-md
+                        +pagination-compact
                 article.cityplace__map-block
                     h4 На карте и инфраструктура
                     +ymap-static("37.620070,55.753630")

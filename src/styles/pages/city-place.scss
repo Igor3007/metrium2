@@ -160,6 +160,25 @@
             }
         }
     }
+
+    &__list-done {
+        margin-top: 16px;
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    }
+
+    &__list-footer {
+        button {
+            width: 100%;
+            margin-top: 16px;
+        }
+        .pagination__page {
+            margin-top: 16px;
+            justify-content: center;
+        }
+    }
+
     &__count {
         font: 400 16px/1.5 vars.$font-default;
         color: var(--text-2);
