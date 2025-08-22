@@ -601,6 +601,37 @@
 
 }
 
+.minicard-cityplace {
+    .minicard {
+        &__main {
+            --card-padding: 16px;
+        }
+        &__id {
+            font: 400 16px/1.5 vars.$font-default;
+            letter-spacing: .02em;
+            padding-bottom: 4px;
+        }
+        &__jk {
+            svg {
+                margin: 0;
+            }
+            a {
+                font-size: 18px;
+                line-height: 28px;
+                margin-left: 10px;
+            }
+        }
+        &__address {
+            font-size: 15px;
+        }
+        &__estate-list {
+            margin-top: 8px;
+            margin-bottom: 6px;
+        }
+
+    }
+}
+
 @keyframes to-fav-animate {
     0% {
         transform: scale(.7)

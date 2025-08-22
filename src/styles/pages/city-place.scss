@@ -217,3 +217,10 @@
     }
 
 }
+
+.page-header {
+    margin-block: 24px;
+    @include vars.from('md') {
+        margin-block: 32px;
+    }
+}

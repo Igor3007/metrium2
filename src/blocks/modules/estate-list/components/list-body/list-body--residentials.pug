@@ -1,4 +1,4 @@
-include ../../../minicard/minicard-resident
+include ../../../minicard/minicard-cityplace
 
 .list-body
     -var id = 0
@@ -8,4 +8,4 @@ include ../../../minicard/minicard-resident
                 include ../../../minicard-ad/minicard-ad
         else
             .list-body__item
-                +minicard-resident({id, image:"/img/objects/img-block-1", sample: id%3})
+                +minicard-cityplace({id, image:"/img/objects/img-block-1", sample: id%3})
