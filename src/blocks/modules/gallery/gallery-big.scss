@@ -81,6 +81,16 @@
             pointer-events: initial;
             opacity: .8;
             cursor: pointer;
+            transition: opacity .3s;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &.disabled {
+                opacity: .4;
+                pointer-events: none;
+            }
         }
     }
     &__counter {
@@ -102,7 +112,6 @@
         picture {
             overflow: hidden;
             border-radius: 12px;
-            opacity: .5;
 
             img {
                 width: 100%;
@@ -115,6 +124,17 @@
             .splide {
                 &__arrows {
                     display: none;
+                }
+                &__slide {
+                    border: none;
+                    opacity: .5;
+                    transition: opacity .3s;
+
+                    &.is-active,
+                    &:hover
+                    {
+                        opacity: 1;
+                    }
                 }
             }
         }
