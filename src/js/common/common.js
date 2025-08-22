@@ -12,6 +12,7 @@ import {initPrefixedInputs} from "./prefixed-inputs.js";
 import "../vendor/fslightbox.min.js";
 import {initPopupSelect} from "./popup-select.js";
 import {initMap} from "./city-map.js";
+import {initStaticMaps} from "./map-static.js";
 import {initSliderMinicard, initMinicardEvents} from "./minicard.js";
 import {initWishLists, WishList} from "./wishlist.js";
 import {initScrollToAnchors} from "./initScrollToAnchors.js";
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initMap();
     initGallery();
     initScrollToAnchors();
+    initStaticMaps();
 
     /* =================================================
     css variable
