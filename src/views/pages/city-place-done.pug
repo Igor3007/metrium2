@@ -7,13 +7,13 @@ include ../helpers/mixins
 block variables
     - const title = "Дворянское гнездо - Metrium"
     - const pageUrl = "/city.html"
-    - const bodyClass = "residentials"
+    - const bodyClass = "cityplace"
 block main
     section
         .container
             +breadcrumbs([
                 {url: "/city.html", title: "Элитная недвижимость в Москве"},
-                {url: "/residentials.html", title: "Жилые комплексы"},
+                {url: "/cityplace.html", title: "Жилые комплексы"},
                 {url: "/residential-ready.html", title: "Дворянское гнездо"}
             ])
     section.page-title
@@ -29,21 +29,21 @@ block main
                 a.get-to__map(href="#")
                     +icon('ic_on-map-small')
                     span На карте
-    .residentials-wrp
-        .residentials__grid.container
+    .cityplace-wrp
+        .cityplace__grid.container
             include ../../blocks/modules/gallery/gallery-big
-            div.residentials__sticky-wrp
+            div.cityplace__sticky-wrp
                 .sticky-content
                     include ../../blocks/modules/passport/passport
                     include ../../blocks/modules/call-form/call-form
-            section.residentials__anchors
+            section.cityplace__anchors
                 +anchors-block([
                     {anchor: "description", title: "Описание", active: true},
                     {anchor: "estates", title: "Недвижимость"},
                     {anchor: "infrastructure", title: "Инфраструктура"}
                 ])
-            section.residentials__content
-                article.residentials__description#description
+            section.cityplace__content
+                article.cityplace__description#description
                     h4 О жилом комплексе Дворянское гнездо
                     p ЖК Дворянское гнездо, выстроенный в стиле неоклассической архитектуры, имеет семь этажей и всего 25 квартир, площадь которых варьирует в пределах диапазона 150-500 квадратных метров.
                     p ЖК «Дворянское гнездо» — это современный жилой комплекс, сочетающий в себе комфорт, качество и элегантность. Расположенный в престижном районе, он предлагает жильцам просторные квартиры с продуманными планировками и высококачественной отделкой. Архитектура комплекса выдержана в классическом стиле с элементами современного дизайна, что придает ему благородный и уютный облик.
@@ -59,20 +59,20 @@ block main
                         ["Срок сдачи", "3 квартал 2027"]
                     ])
 
-                article.residentials__filter#estates
+                article.cityplace__filter#estates
                     h4 Подберите недвижимость в ЖК Дворянское гнездо
                     form
-                        .residentials__input
+                        .cityplace__input
                             +select-field({
                                 placeholder: "Тип сделки",
                                 options: ["Тип сделки 001", "Тип сделки 002", "Тип сделки 003"]
                             })
-                        .residentials__input
+                        .cityplace__input
                             +select-field({
                                 placeholder: "Тип недвижимости",
                                 options: ["Тип недвижимости 001", "Тип недвижимости 002", "Тип недвижимости 003"]
                             })
-                        .residentials__input
+                        .cityplace__input
                             +select-field({
                                 multiple: true,
                                 placeholder: "Спален",
@@ -90,9 +90,9 @@ block main
                             placeholder: "Этаж",
                         })
                         +checkbox("Терраса", "terr")
-                article.residentials__list
-                    .residentials__list-header
-                        .residentials__count Объектов: 24
+                article.cityplace__list
+                    .cityplace__list-header
+                        .cityplace__count Объектов: 24
                         .list-header__controls
                             .list-header__controls-sort
                                 select#sortlist(data-prefix="Сортировать")
@@ -101,11 +101,11 @@ block main
                                 .btn.btn-line(data-selectpopup="#sortlist")
                                     +icon("ic_sort")
                                     | Сортировка
-                    .residentials__list-content
+                    .cityplace__list-content
                         +apartmets-group()
                         +apartmets-group()
                         +apartmets-group()
-                article.residentials__map-block
+                article.cityplace__map-block
                     h4 На карте и инфраструктура
                     +ymap-static("37.620070,55.753630")
     +recently-viewed({title: "Похожие предложения"})

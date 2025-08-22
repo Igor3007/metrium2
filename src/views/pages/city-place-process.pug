@@ -1,0 +1,119 @@
+extends ../layouts/page
+include ../../blocks/components/index
+include ../../blocks/modules/index
+include ../../blocks/components/form/form
+include ../helpers/mixins
+
+block variables
+    - const title = "Дворянское гнездо - Metrium"
+    - const pageUrl = "/city.html"
+    - const bodyClass = "cityplace"
+block main
+    section
+        .container
+            +breadcrumbs([
+                {url: "/city.html", title: "Элитная недвижимость в Москве"},
+                {url: "/cityplace.html", title: "Жилые комплексы"},
+                {url: "/residential-ready.html", title: "Дворянское гнездо"}
+            ])
+    section.page-title
+        .container
+            h2 Дворянское гнездо
+            .get-to
+                ul
+                    li
+                        +icon('ic_metro')
+                        span Смоленская
+                    li
+                        span Москва, Большой Лёвшинский переулок, 11
+                a.get-to__map(href="#")
+                    +icon('ic_on-map-small')
+                    span На карте
+    .cityplace-wrp
+        .cityplace__grid.container
+            include ../../blocks/modules/gallery/gallery-big
+            div.cityplace__sticky-wrp
+                .sticky-content
+                    include ../../blocks/modules/passport/passport
+                    include ../../blocks/modules/call-form/call-form
+            section.cityplace__anchors
+                +anchors-block([
+                    {anchor: "description", title: "Описание", active: true},
+                    {anchor: "estates", title: "Недвижимость"},
+                    {anchor: "infrastructure", title: "Инфраструктура"}
+                ])
+            section.cityplace__content
+                article.cityplace__description#description
+                    h4 О жилом комплексе Дворянское гнездо
+                    p ЖК Дворянское гнездо, выстроенный в стиле неоклассической архитектуры, имеет семь этажей и всего 25 квартир, площадь которых варьирует в пределах диапазона 150-500 квадратных метров.
+                    p ЖК «Дворянское гнездо» — это современный жилой комплекс, сочетающий в себе комфорт, качество и элегантность. Расположенный в престижном районе, он предлагает жильцам просторные квартиры с продуманными планировками и высококачественной отделкой. Архитектура комплекса выдержана в классическом стиле с элементами современного дизайна, что придает ему благородный и уютный облик.
+                    p На последнем уровне дома находятся пентхаусы, а на первом — сауны, тренажерный зал с бассейном, просторный вестибюль и холл для ожидания. Поскольку возле особняка нет высоких строений, его окна обеспечивают внутренним помещениям полноценное естественное освещение. На северной стороне ЖК Дворянского гнезда имеется внутренний двор обустроенным ландшафтом и площадкой для детей.
+                    +dotted-list([
+                        ["Площадь объектов от","105.10 м²"],
+                        ["Потолки","3.5  — 5 м"],
+                        ["Тип недвижимости", "Квартиры"],
+                        ["Паркинг", "Да"],
+                        ["Объектов в комплексе", "24"],
+                        ["Готовность", "Строится"],
+                        ["Этажность", "7"],
+                        ["Срок сдачи", "3 квартал 2027"]
+                    ])
+
+                article.cityplace__filter#estates
+                    h4 Подберите недвижимость в ЖК Дворянское гнездо
+                    form
+                        .cityplace__input
+                            +select-field({
+                                placeholder: "Тип сделки",
+                                options: ["Тип сделки 001", "Тип сделки 002", "Тип сделки 003"]
+                            })
+                        .cityplace__input
+                            +select-field({
+                                placeholder: "Тип недвижимости",
+                                options: ["Тип недвижимости 001", "Тип недвижимости 002", "Тип недвижимости 003"]
+                            })
+                        .cityplace__input
+                            +select-field({
+                                multiple: true,
+                                placeholder: "Спален",
+                                options: ["1", "2", "3", "4"]
+                            })
+                        +select-range-units({
+                            placeholder: "Цена",
+                            units: [["RUB","₽"],["USD","$"],["EUR","€"]]
+                        })
+                        +select-range-ext({
+                            placeholder: "Площадь",
+                            postfix: "м²"
+                        })
+                        +select-range-ext({
+                            placeholder: "Этаж",
+                        })
+                        +checkbox("Терраса", "terr")
+                article.cityplace__list
+                    .cityplace__list-header
+                        .cityplace__count Объектов: 24
+                        .list-header__controls
+                            .list-header__controls-sort
+                                select#sortlist(data-prefix="Сортировать")
+                                    option(value=1) По актуальности
+                                    option(value=2) По возрастанию
+                                .btn.btn-line(data-selectpopup="#sortlist")
+                                    +icon("ic_sort")
+                                    | Сортировка
+                    .cityplace__list-content
+                        +apartmets-group()
+                        +apartmets-group()
+                        +apartmets-group()
+                article.cityplace__map-block
+                    h4 На карте и инфраструктура
+                    +ymap-static("37.620070,55.753630")
+    +recently-viewed({title: "Похожие предложения"})
+    +recently-viewed()
+    +form-question({
+        title: "Затрудняетесь с выбором?",
+        description: "Эксперты «Метриум Премиум» помогут вам и сэкономят время без предоплаты и комиссии!",
+        class: "slim dark-bg"
+    })
+block append scripts
+    script(src="https://api-maps.yandex.ru/v3/?apikey=0e00c58a-2691-4220-95a9-f61fbbb73582&lang=ru_RU")
