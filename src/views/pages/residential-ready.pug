@@ -1,5 +1,6 @@
 extends ../layouts/page
 include ../../blocks/components/index
+include ../../blocks/modules/index
 include ../../blocks/components/form/form
 include ../helpers/mixins
 
@@ -104,8 +105,15 @@ block main
                         +apartmets-group()
                         +apartmets-group()
                         +apartmets-group()
-                article.residentials__map
+                article.residentials__map-block
                     h4 На карте и инфраструктура
                     +ymap-static("37.620070,55.753630")
+    +recently-viewed({title: "Похожие предложения"})
+    +recently-viewed()
+    +form-question({
+        title: "Затрудняетесь с выбором?",
+        description: "Эксперты «Метриум Премиум» помогут вам и сэкономят время без предоплаты и комиссии!",
+        class: "slim dark-bg"
+    })
 block append scripts
     script(src="https://api-maps.yandex.ru/v3/?apikey=0e00c58a-2691-4220-95a9-f61fbbb73582&lang=ru_RU")

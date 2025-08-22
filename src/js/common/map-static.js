@@ -25,7 +25,8 @@ class MapStatic {
                 location: {
                     center: this.center,
                     zoom: 10
-                }
+                },
+                behaviors: ['drag', 'pinchZoom']
             }
         );
 
@@ -50,7 +51,7 @@ class MapStatic {
 }
 export const initStaticMaps = () => {
     document
-        .querySelectorAll('.map-static')
+        .querySelectorAll('.ymap-static')
         .forEach(map => {
             const {center} = map.dataset;
             const mapStatic = new MapStatic({center: center.split(","), element: map});

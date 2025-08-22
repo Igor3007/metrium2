@@ -167,5 +167,34 @@
             margin-bottom: 8px;
         }
     }
+    &__map-block {
+        background: var(--white);
+        padding: 16px;
+        border-radius: 16px;
+        margin-top: 16px;
+        @include vars.from('xl') {
+            padding: 32px;
+        }
+
+        h4 {
+            margin-bottom: 16px;
+            @include vars.from('xl') {
+                margin-bottom: 24px;
+            }
+        }
+
+        .map-static {
+            height: auto;
+            max-height: 480px;
+            aspect-ratio: .733;
+            border-radius: 12px;
+            overflow: hidden;
+            @include vars.before('md') {
+                .ymaps3x0--controls {
+                    display: none;
+                }
+            }
+        }
+    }
 
 }
