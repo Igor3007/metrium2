@@ -90,6 +90,7 @@ html * {
 body {
     min-height: 100vh;
     min-height: -webkit-fill-available;
+    height: max-content; /* fix with Chrome position sticky */
 
     & * {
         @include vars.scrollbar();
@@ -344,4 +345,8 @@ input[type="date"] {
 
 .ymaps3x0--controls {
     z-index: 20 !important;
+}
+
+.no-hover {
+    pointer-events: none !important;
 }

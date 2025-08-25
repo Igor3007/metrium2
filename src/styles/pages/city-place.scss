@@ -4,10 +4,11 @@
     display: flex;
     margin-inline: var(--container-out);
     padding-inline: var(--container-padding);
-    overflow-x: auto;
+    //overflow-x: auto;
 
     ul {
         display: flex;
+        margin-top: 12px;
 
         li {
             display: flex;
@@ -36,6 +37,7 @@
         display: flex;
         margin-left: 24px;
         color: var(--accent-11);
+        margin-top: 12px;
     }
 }
 
@@ -97,10 +99,13 @@
         background: var(--white);
         padding: 16px;
         border-radius: 16px;
-
+        font: 400 15px/24px vars.$font-default;
+        @include vars.from('md') {
+            padding: 32px;
+            font: 400 18px/28px vars.$font-default;
+        }
 
         p {
-            font: 400 15px/24px vars.$font-default;
             letter-spacing: 0.02em;
             hyphens: auto;
         }
@@ -116,6 +121,10 @@
         padding: 16px;
         border-radius: 16px;
         margin-top: 16px;
+        @include vars.from('md') {
+            padding: 32px;
+            margin-top: 32px;
+        }
 
         h4 {
             margin-bottom: 16px;
@@ -132,6 +141,10 @@
         background: var(--white);
         padding: 16px;
         border-radius: 16px;
+        @include vars.from('md') {
+            padding: 32px;
+            margin-top: 32px;
+        }
 
         &-content {
             display: grid;
@@ -191,6 +204,9 @@
         padding: 16px;
         border-radius: 16px;
         margin-top: 16px;
+        @include vars.from('md') {
+            margin-top: 32px;
+        }
         @include vars.from('xl') {
             padding: 32px;
         }
@@ -222,5 +238,16 @@
     margin-block: 24px;
     @include vars.from('md') {
         margin-block: 32px;
+    }
+}
+
+.city-places-all,
+.city-place {
+    .section-form-question {
+        padding-bottom: 32px;
+        border-bottom: 1px solid var(--accent-14);
+        @include vars.from('xl') {
+            padding-bottom: 96px;
+        }
     }
 }

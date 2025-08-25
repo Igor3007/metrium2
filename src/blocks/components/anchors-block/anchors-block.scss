@@ -21,6 +21,9 @@
         @include vars.from('md') {
             flex-grow: 1;
             text-align: center;
+            font-size: 18px;
+            line-height: 28px;
+            padding: 14px;
 
             &:not(:first-child) {
                 border-top-left-radius: 0;

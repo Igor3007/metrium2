@@ -8,6 +8,7 @@ block variables
     - const title = "Дворянское гнездо - Metrium"
     - const pageUrl = "/city.html"
     - const bodyClass = "cityplace"
+    - const mainClass = "city-place"
 block main
     section.page-header
         .container
@@ -105,7 +106,7 @@ block main
                         +apartmets-group()
                         +apartmets-group()
                         +apartmets-group()
-                article.cityplace__map-block
+                article.cityplace__map-block#infrastructure
                     h4 На карте и инфраструктура
                     +ymap-static("37.620070,55.753630")
     +recently-viewed({title: "Похожие предложения"})

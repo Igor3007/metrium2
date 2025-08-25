@@ -19,8 +19,8 @@
         gap: 8px;
         grid-template-columns: 1fr 1fr;
         font: 400 16px/24px vars.$font-default;
+        cursor: pointer;
         color: var(--text-1);
-        pointer-events: none;
 
         @include vars.before('xl') {
             & > *:nth-child(3n) {
@@ -29,6 +29,7 @@
         }
         @include vars.from('xl') {
             grid-template-columns: 2fr 2fr 2fr 2fr 3fr 3fr;
+            font: 400 18px/28px vars.$font-default;
         }
 
     }
@@ -37,10 +38,8 @@
         display: flex;
         justify-content: end;
         align-items: center;
-        cursor: pointer;
         font-weight: 500;
         color: var(--accent-11);
-        pointer-events: auto;
 
         .icon {
             fill: var(--accent-11);

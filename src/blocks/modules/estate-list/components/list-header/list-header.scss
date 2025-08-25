@@ -94,6 +94,9 @@
 
     .buttons-group {
         .btn {
+            .icon {
+                margin: 0;
+            }
             @include vars.from('md') {
                 .estate-list:not(.list) &.grid,
                 .estate-list.list &.list
@@ -112,7 +115,6 @@
                     border-bottom-right-radius: 0;
                 }
             }
-
         }
     }
 

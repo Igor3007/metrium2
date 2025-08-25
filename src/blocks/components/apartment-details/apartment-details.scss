@@ -14,6 +14,7 @@
         grid-template-columns: 2fr 2fr 2fr 2fr 3fr 3fr;
         padding: 16px;
         align-items: center;
+        font: 400 18px/28px vars.$font-default;
     }
 
     &__image {
