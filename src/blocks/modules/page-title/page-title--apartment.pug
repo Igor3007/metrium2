@@ -1,0 +1,17 @@
+include ../../../views/helpers/mixins
+include ../../../blocks/components/form/form
+include ../../../blocks/components/index
+include parts/page-details/page-details
+
+section.page-title.page-title--apartment
+    .container
+        +breadcrumbs([
+            {url: "/", title: "Главная"},
+            {url: "#", title: "Элитная недвижимость в Москве"},
+            {url: "#", title: "Жилые комплексы"},
+            {url: "#", title: "Дворянское гнездо"},
+            {url: "#", title: "6-комн. Квартира в ЖК Дворянское гнездо"},
+        ])
+        h1 6-комн. Квартира в ЖК Дворянское гнездо
+        .page-title__details
+            +page-details

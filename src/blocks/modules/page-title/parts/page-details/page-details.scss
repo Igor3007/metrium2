@@ -1,0 +1,47 @@
+.page-details {
+    display: flex;
+    align-items: center;
+
+    &>div {
+
+        display: flex;
+        align-items: center;
+
+        &::after {
+            content: '';
+            width: 4px;
+            height: 4px;
+            display: inline-block;
+            border-radius: 50%;
+            background-color: var(--accent-14);
+            margin: 0 10px;
+        }
+
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+
+    &__jk,
+    &__inmap,
+    &__metro {
+        & a {
+            display: flex;
+            align-items: center;
+            color: var(--accent-11);
+            font-weight: 500;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        & svg {
+            color: var(--accent-11);
+            margin-right: 6px;
+        }
+    }
+}
