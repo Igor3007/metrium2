@@ -2,22 +2,41 @@
  *  Smooth scroll with anchor links
  */
 export const initScrollToAnchors = () => {
+    let options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.3,
+    };
+
+    let callback = (entries, observer) => {
+        entries.forEach(entry => {
+                const {target} = entry;
+                const id = target.getAttribute('id');
+                document.querySelectorAll(`a[href="#${id}"]`).forEach(a => {
+                    a.classList.toggle('active', entry.isIntersecting)
+                })
+        })
+    };
+
+    let observer = new IntersectionObserver(callback, options);
+
     document
-        .querySelectorAll('a[href^="#"]:not([href="#"])') // all links starts with "#" but not single "#"
+        .querySelectorAll('.observed')
         .forEach(a => {
+            const href = a.getAttribute('href');
+            const id = href.split('#')[1].split('?')[0];
+            const target = document.getElementById(id);
+
+            if (!target) return;
+
             a.addEventListener('click', (e) => {
                 e.preventDefault();
-                const href = a.getAttribute('href');
-                const id = href.split('#')[1].split('?')[0];
-
-                const target = document.getElementById(id);
-
-                if (!target) return;
-
                 target.scrollIntoView({
                     behavior: "smooth",
-                    block: "center"
+                    block: "start"
                 })
             });
+
+            observer.observe(target);
         });
 }

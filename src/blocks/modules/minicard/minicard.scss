@@ -663,7 +663,7 @@
             width: 100%;
             height: 100%;
             background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE3IDExYzEuNDktMS40NiAzLTMuMjEgMy01LjVBNS41IDUuNSAwIDAwMTQuNSAwYy0xLjc2IDAtMyAuNS00LjUgMkM4LjUuNSA3LjI2IDAgNS41IDBBNS41IDUuNSAwIDAwMCA1LjVDMCA3LjggMS41IDkuNTUgMyAxMWw3IDcgNy03eiIgZmlsbD0iI0I4OEU1RiIvPjwvc3ZnPg==);
-            background-size: 62% auto;
+            //background-size: 62% auto; // commented for broken icon in `passport` module
             background-repeat: no-repeat;
             background-position: center;
             position: absolute;

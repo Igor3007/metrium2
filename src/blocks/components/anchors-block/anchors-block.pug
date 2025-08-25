@@ -1,7 +1,7 @@
 mixin anchors-block(links)
     nav.anchors-block
         each link in links
-            a(
+            a.observed(
                 href = `#${link.anchor}`
                 class = {active: link.active})
                 = link.title

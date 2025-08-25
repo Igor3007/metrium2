@@ -41,6 +41,10 @@
     }
 }
 
+html:has(.cityplace) {
+    scroll-padding-top: 200px;
+}
+
 .cityplace {
     .page-title {
         background-color: var(--bg);

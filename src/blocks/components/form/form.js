@@ -120,7 +120,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         select.querySelectorAll('input').forEach(input => {
            input.addEventListener('change', renderValues);
+
+           input.addEventListener('input', (e) => {
+               let {value} = input;
+               value = value.replace(/\D/g,'');
+               input.value = value;
+           });
         });
+
+
 
     });
 
