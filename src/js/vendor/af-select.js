@@ -46,6 +46,12 @@ export class afSelect {
             .querySelector('.select-styled span').innerText = placeholder;
     }
 
+    closeThirdPartySelects = () => {
+        document
+            .querySelectorAll('.select-units')
+            .forEach(select => {select.classList.remove('active')});
+    }
+
     ajaxOption(item, callback) {
         let xhr = new XMLHttpRequest();
         let result = null;
@@ -282,6 +288,7 @@ export class afSelect {
     }
 
     openSelect(elem) {
+        this.closeThirdPartySelects();
 
         if (elem.querySelector('.select-styled.active')) {
             this.closeSelect()
@@ -316,10 +323,10 @@ export class afSelect {
     closeSelect() {
         if (!document.querySelector('.select-styled.active')) return false
 
-        document.querySelector('.select-styled.active')?.classList.remove('active')
-        document.querySelector('.select-options.active')?.classList.remove('active')
-        document.querySelector('.select-list.active')?.classList.remove('active')
-        document.querySelector('body')?.classList.remove('af-select-open')
+        document.querySelector('.select-styled.active')?.classList.remove('active');
+        document.querySelector('.select-options.active')?.classList.remove('active');
+        document.querySelector('.select-list.active')?.classList.remove('active');
+        document.querySelector('body')?.classList.remove('af-select-open');
     }
 
     clickEventOut() {
