@@ -65,9 +65,9 @@ export default class customSelect{
 
     if(!document.querySelector('.select-styled.active')) return false
 
-    document.querySelector('.select-styled.active').classList.remove('active')
-    document.querySelector('.select-options.active').classList.remove('active')
-    document.querySelector('body').classList.remove('af-select-open')
+    document.querySelector('.select-styled.active')?.classList.remove('active')
+    document.querySelector('.select-options.active')?.classList.remove('active')
+    document.querySelector('body')?.classList.remove('af-select-open')
   }
 
   clickEventOut() {
@@ -89,7 +89,7 @@ export default class customSelect{
 
       if(parentElem.querySelector('.select-options li.active'))
         parentElem.querySelector('.select-options li.active').classList.remove('active')
-      
+
       this.classList.add('active')
       parentElem.querySelector('.select-styled span').innerHTML = this.innerHTML
       parentElem.querySelector('select').value = this.getAttribute('rel')

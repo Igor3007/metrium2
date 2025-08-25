@@ -1,11 +1,11 @@
-mixin minicard-resident(data)
+mixin minicard-cityplace(data)
     -var image = data.image
     -var id = data?.id || 23479
     -var stickers = data?.stickers || []
     -var price = data?.price || "725 320 000 ₽"
     -var sample = data?.sample || 0
     .minicard-wrapper
-        .minicard.minicard-resident
+        .minicard.minicard-cityplace
             .minicard__top
                 .minicard__stickers
                     ul
@@ -36,12 +36,11 @@ mixin minicard-resident(data)
                     span(data-wishlist=id): +icon('ic_heart')
                 .minicard__id ID:&nbsp;
                     = id
-                .minicard__title: a(href='#') 4-комн. квартира, 201 м <sup>2</sup>
                 .minicard__params
                     .minicard__place
                         .minicard__jk
-                            +icon('ic_city')
-                            a(href="#") Вишневый сад
+                            +icon('ic_city', 28)
+                            a(href="#") Дворянское гнездо
                         .minicard__address
                             ul
                                 li ЗАО

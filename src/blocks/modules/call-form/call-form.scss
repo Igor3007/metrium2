@@ -4,10 +4,13 @@
     margin-top: 8px;
     background: vars.$color-white;
     border-radius: 16px;
-    padding: 24px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    @include vars.from('md') {
+        padding: 24px;
+    }
 
     &__group {
         display: flex;

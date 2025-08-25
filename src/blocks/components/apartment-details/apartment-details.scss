@@ -1,0 +1,32 @@
+@use "../../../styles/vars";
+
+.apartment-details {
+    background: var(--accent-12);
+    padding: 12px;
+    border-radius: 12px;
+    position: relative;
+    display: grid;
+    gap: 4px;
+    font: 400 16px/24px vars.$font-default;
+    letter-spacing: .02em;
+
+    @include vars.from('xl') {
+        grid-template-columns: 2fr 2fr 2fr 2fr 3fr 3fr;
+        padding: 16px;
+        align-items: center;
+        font: 400 18px/28px vars.$font-default;
+    }
+
+    &__image {
+        @include vars.before('xl') {
+            width: 120px;
+            position: absolute;
+            right: 12px;
+            top: 12px;
+        }
+        @include vars.from('xl') {
+            width: 96px;
+            justify-self: end;
+        }
+    }
+}

@@ -9,16 +9,17 @@ import {initToggleTicks, initDistrictSelectors} from "../../blocks/components";
 import {initTogglers} from "./toggler.js";
 import {initFormAJAX} from "./form-ajax.js";
 import {initPrefixedInputs} from "./prefixed-inputs.js";
-import "../vendor/fslightbox.min.js";
 import {initPopupSelect} from "./popup-select.js";
 import {initMap} from "./city-map.js";
+import {initStaticMaps} from "./map-static.js";
 import {initSliderMinicard, initMinicardEvents} from "./minicard.js";
 import {initWishLists, WishList} from "./wishlist.js";
+import {initScrollToAnchors} from "./initScrollToAnchors.js";
+import "fslightbox";
 import "./all-pages.js";
 import "./custom-pages.js";
 import "../../blocks/components/form/form.js";
 
-"./y-maps.js";
 import {
     SLIDER_ARROW_PATH,
     API_YMAPS
@@ -35,7 +36,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initDistrictSelectors();
     initMap();
     initGallery();
-
+    initScrollToAnchors();
+    initStaticMaps();
 
     /* =================================================
     css variable

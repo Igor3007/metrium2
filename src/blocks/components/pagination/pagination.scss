@@ -67,6 +67,13 @@
         }
     }
 
+    &__page.compact {
+        span,
+        a {
+            height: 42px;
+        }
+    }
+
     &__more {
 
         width: 100%;

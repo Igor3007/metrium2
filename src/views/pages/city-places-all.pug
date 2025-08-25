@@ -8,9 +8,10 @@ include ../../blocks/modules/recently-viewed/recently-viewed
 block variables
     - const title = "Жилые комплексы - Metrium"
     - const pageUrl = "/city.html"
+    - const mainClass = "city-places-all"
 
 block main
-    include ../../blocks/modules/page-title/page-title--residentials
+    include ../../blocks/modules/page-title/page-title--city-places
     include ../../blocks/modules/estate-list/residentials-list
     +special-offers({title: "Подборки городской недвижимости", class: "city-page"})
     +recently-viewed()

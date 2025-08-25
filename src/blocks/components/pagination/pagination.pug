@@ -12,6 +12,18 @@ mixin pagination()
             +icon('ic_chevron-right')
 
 
+mixin pagination-compact()
+    ul.pagination__page.compact
+        li.prev.control.disabled: span
+            +icon('ic_chevron-left')
+        li.active: a(href="#1") 1
+        li: a(href="#2") 2
+        li: a(href="#3") 3
+        li: a(href="#4") 4
+        li.next.control: a(href="#2")
+            +icon('ic_chevron-right')
+
+
 mixin pagination-showmore()
     .pagination
         .pagination__more

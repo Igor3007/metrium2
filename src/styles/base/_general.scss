@@ -90,6 +90,7 @@ html * {
 body {
     min-height: 100vh;
     min-height: -webkit-fill-available;
+    height: max-content; /* fix with Chrome position sticky */
 
     & * {
         @include vars.scrollbar();
@@ -236,6 +237,12 @@ input[type="date"] {
     }
 }
 
+.hide-from-xl {
+    @include vars.from('xl') {
+        display: none;
+    }
+}
+
 .hide-before-md {
     @include vars.before('md') {
         display: none !important;
@@ -321,4 +328,25 @@ input[type="date"] {
 .lazyloaded {
     opacity: 1;
     transition: opacity 0.5s ease;
+}
+
+.ymap-static {
+    // для карты необходим фиксированный размер. можно переопределить в компонентах
+    width: 100%;
+    height: 400px;
+}
+
+.static-map-marker {
+    width: 60px;
+    height: 68px;
+    background: url("/img/svg/ic_pin.svg");
+    transform: translate(-50%, -100%);
+}
+
+.ymaps3x0--controls {
+    z-index: 20 !important;
+}
+
+.no-hover {
+    pointer-events: none !important;
 }
