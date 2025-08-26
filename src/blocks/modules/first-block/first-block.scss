@@ -27,6 +27,10 @@ body:not(.is-scroll-page) {
     }
 }
 
+.fb-filter-all a {
+	color: var(--accent-11);
+}
+
 .first-block {
     position: relative;
 
@@ -37,6 +41,7 @@ body:not(.is-scroll-page) {
         & picture {
             position: relative;
             z-index: 1;
+            height: 100%;
         }
 
         & img {
