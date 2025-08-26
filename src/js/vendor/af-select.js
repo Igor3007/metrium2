@@ -342,12 +342,12 @@ export class afSelect {
         const _this = this;
         const placeholder = select.getAttribute('placeholder');
         const multiple = select.getAttribute('multiple');
-        const styledSelect = parentElem.querySelector('.select-styled')
+        const styledSelect = parentElem.querySelector('.select-styled');
 
 
         elem.addEventListener('click', function (event) {
-            event.stopPropagation()
-            event.preventDefault()
+            event.stopPropagation();
+            event.preventDefault();
 
             option.closest('.af-select').classList.add('af-select--selected')
 
@@ -422,8 +422,6 @@ export class afSelect {
             if (_this.on.change) {
                 _this.on.change(option)
             }
-
-
         })
     }
 

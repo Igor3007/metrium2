@@ -7,7 +7,7 @@ import {initAddRemoveClassButtons} from "./add-remove-class.js";
 import {initSliderViewed, initGallery} from "../../blocks/modules/index.js";
 import {initToggleTicks, initDistrictSelectors} from "../../blocks/components";
 import {initTogglers} from "./toggler.js";
-import {initFormAJAX} from "./form-ajax.js";
+import {initFormAJAX, initFormOnChangeSubmit} from "./form-ajax.js";
 import {initPrefixedInputs} from "./prefixed-inputs.js";
 import {initPopupSelect} from "./popup-select.js";
 import {initMap} from "./city-map.js";
@@ -38,6 +38,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initGallery();
     initScrollToAnchors();
     initStaticMaps();
+    setTimeout(
+        () => {initFormOnChangeSubmit()}
+        , 500); // need to prevent clearing eventHandlers with afSelect
 
     /* =================================================
     css variable
