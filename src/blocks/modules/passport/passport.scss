@@ -9,6 +9,8 @@
     position: relative;
     @include vars.from('md') {
         padding: 24px;
+        font-size: 18px;
+        line-height: 28px;
     }
 
     > * + * {

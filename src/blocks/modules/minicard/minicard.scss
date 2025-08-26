@@ -247,8 +247,10 @@
 
         position: absolute;
         right: 24px;
-        opacity: 0;
-        cursor: pointer;
+        @media (any-hover: hover) {
+            opacity: 0;
+            cursor: pointer;
+        }
 
         & svg {
             fill: var(--text-3);
@@ -313,8 +315,10 @@
 
         ul {
             display: flex;
+
             li {
                 color: var(--text-1);
+
                 &:not(:last-child) {
                     &:after {
                         content: '/';
@@ -357,15 +361,18 @@
                     span {
                         white-space: nowrap;
                     }
+
                     .desc {
                         color: var(--text-2);
                     }
+
                     .price {
                         color: var(--text-1);
                     }
                 }
             }
         }
+
         .show-all {
             font: 500 16px/24px vars.$font-default;
             letter-spacing: .02em;
@@ -373,6 +380,7 @@
             display: block;
             margin-top: 12px;
         }
+
         &--empty {
             background: var(--accent-12);
             color: var(--text-2);
@@ -606,29 +614,55 @@
         &__main {
             --card-padding: 16px;
         }
+
         &__id {
             font: 400 16px/1.5 vars.$font-default;
             letter-spacing: .02em;
             padding-bottom: 4px;
         }
+
         &__jk {
             svg {
                 margin: 0;
             }
+
             a {
                 font-size: 18px;
                 line-height: 28px;
                 margin-left: 10px;
             }
         }
+
         &__address {
             font-size: 15px;
         }
+
         &__estate-list {
             margin-top: 8px;
             margin-bottom: 6px;
         }
 
+    }
+}
+
+.minicard-country {
+    .minicard {
+        &__prop {
+            opacity: 1 !important;
+
+            ul {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+
+                li {
+                    width: auto;
+                }
+            }
+        }
+
+        &__price {
+            position: static !important;
+        }
     }
 }
 

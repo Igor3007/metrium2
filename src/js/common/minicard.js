@@ -81,13 +81,9 @@ export const initMinicardEvents = (container) => {
             if (slider['Splide'].index <= 1) slider['Splide'].go('<')
         })
 
-        let minicardFullscreen = el.querySelector('.minicard__fullscreen');
-        if(minicardFullscreen) {
-            minicardFullscreen.addEventListener('click', (e) => {
-                openGalleryProduct(e, el)
-            })
-        }
-
+        el.querySelector('.minicard__fullscreen')?.addEventListener('click', (e) => {
+            openGalleryProduct(e, el)
+        })
 
     })
 

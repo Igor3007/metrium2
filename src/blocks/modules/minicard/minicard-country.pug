@@ -1,0 +1,82 @@
+mixin minicard-country(data)
+    -var image = data.image
+    -var id = data?.id || 23479
+    -var stickers = data?.stickers || [{color: "#B88E5F", title: "Эксклюзив"}, {color: "#00403F", title:"Старт продаж"}]
+    -var price = data?.price || "725 320 000 ₽"
+    .minicard-wrapper
+        .minicard.minicard-country
+            .minicard__top
+                .minicard__stickers
+                    ul
+                        each sticker in stickers
+                            li: span(style=`background: ${sticker.color}`)= sticker.title
+
+                .minicard__fullscreen: +icon('ic_fullscreen')
+                .minicard__counter
+                    span(data-slider-counter="current") 2
+                    | /
+                    span(data-slider-counter="total") 12
+                .minicard__nav
+                    .minicard__nav-prev(data-slider-prev="minicard"): +icon('ic_arr-left')
+                    .minicard__nav-next(data-slider-next="minicard"): +icon('ic_arr-right')
+                .minicard__slider
+                    .splide(data-slider="minicard")
+                        .splide__track
+                            .splide__list
+                                .splide__slide
+                                    +picture(image)
+                                .splide__slide
+                                    +picture('/img/objects/img-block-4')
+                                each item in [1,1,1,1,1,1]
+                                    .splide__slide
+                                        +picture(image)
+            .minicard__main
+                .minicard__wishlist
+                    span(data-wishlist=id): +icon('ic_heart')
+                .minicard__id ID:&nbsp;
+                    = id
+                .minicard__title: a(href='#') 4-комн. квартира, 201 м <sup>2</sup>
+                .minicard__params
+                    .minicard__place
+                        .minicard__jk
+                            +icon('ic_country')
+                            a(href="#") Пестово
+                        .minicard__address
+                            ul
+                                li Рублёво-Успенское шоссе
+                                li 12 км от МКАД
+                    .minicard__prop
+                        ul
+                            li(style="background-image: url('/img/icons/01-area.svg')")
+                                small Дом
+                                span 635 м²
+                            li(style="background-image: url('/img/icons/02-room.svg')")
+                                small Участок
+                                span 37 соток
+                            li(style="background-image: url('/img/icons/04-floor.svg')")
+                                small Этажей
+                                span 3
+                            li(style="background-image: url('/img/icons/05-bedroom.svg')")
+                                small Спален
+                                span 3
+                            li(style="background-image: url('/img/icons/06-paint-roller.svg')")
+                                small Отделка
+                                span с отделкой
+                            li(style="background-image: url('/img/icons/08-pool.svg')")
+                                small Бассейн
+                                span да
+                .minicard__footer
+                    .minicard__price
+                        .minicard__price-usd(data-currency-id="usd") 2 408 245 $
+                        .minicard__price-rub(data-currency-id="rub").is-active
+                            .minicard__price-old 918 126 582 ₽
+                            = price
+                        .minicard__price-eur(data-currency-id="eur") 199 520 000 €
+                    .minicard__action
+                        .minicard__detail
+                            a(href='#'): button.btn.btn-green: span Подробнее
+                        .minicard__getcall
+                            a(href='#')
+                                button.btn.btn-line
+                                    +icon('ic_phone')
+                                    span Заказать звонок

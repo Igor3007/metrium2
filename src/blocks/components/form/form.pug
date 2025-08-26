@@ -1,8 +1,9 @@
 mixin radio-group(options, data)
-    - var name = options?.name
+    - var name = options?.name || crypto.randomUUID()
     - var inline = options?.inline
     - var legend = options?.legend
-    fieldset.input-group(class = inline?"inline":null)
+    - var className = options?.class || ""
+    fieldset.input-group(class=[className, inline?"inline":""].join(" ").trim())
         if legend
             .input-group__title= legend
         .input-group__inputs
@@ -53,6 +54,7 @@ mixin select-range-units(data)
     -var placeholder = data?.placeholder || ""
     -var units = data?.units || []
     -var name = data?.name || crypto.randomUUID()
+    -var maska = data?.maska || undefined
     .select-units(data-placeholder=placeholder)
         .select-units__head._head
             span= placeholder
@@ -60,11 +62,11 @@ mixin select-range-units(data)
         .select-units__body._body
             .prefixed-input.select-units__input._from
                 span от
-                input(type="text" name=`${name}_from`)
+                input(type="text" name=`${name}_from` data-maska=maska)
                 .clear ×
             .prefixed-input.select-units__input._to
                 span до
-                input(type="text" name=`${name}_to`)
+                input(type="text" name=`${name}_to` data-maska=maska)
                 .clear ×
             .select-units__units._units
                 each unit, index in units
@@ -76,6 +78,7 @@ mixin select-range-ext(data)
     -var placeholder = data?.placeholder || ""
     -var name = data?.name || crypto.randomUUID()
     -var postfix = data?.postfix || ""
+    -var maska = data?.maska || undefined
     .select-units(data-placeholder=placeholder data-postfix=postfix)
         .select-units__head._head
             span= placeholder
@@ -83,11 +86,11 @@ mixin select-range-ext(data)
         .select-units__body._body
             .prefixed-input.select-units__input._from
                 span от
-                input(type="text" name=`${name}_from`)
+                input(type="text" name=`${name}_from` data-maska=maska)
                 .clear ×
             .prefixed-input.select-units__input._to
                 span до
-                input(type="text" name=`${name}_to`)
+                input(type="text" name=`${name}_to` data-maska=maska)
                 .clear ×
 
 mixin select-extended(data)

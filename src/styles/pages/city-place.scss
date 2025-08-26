@@ -4,7 +4,7 @@
     display: flex;
     margin-inline: var(--container-out);
     padding-inline: var(--container-padding);
-    //overflow-x: auto;
+    overflow-x: auto;
 
     ul {
         display: flex;
@@ -48,6 +48,9 @@ html:has(.cityplace) {
 .cityplace {
     .page-title {
         background-color: var(--bg);
+        @include vars.from('md') {
+            padding-bottom: 40px;
+        }
     }
     &-wrp {
         background: var(--bg);
@@ -124,7 +127,7 @@ html:has(.cityplace) {
         background: var(--white);
         padding: 16px;
         border-radius: 16px;
-        margin-top: 16px;
+        margin-top: 24px;
         @include vars.from('md') {
             padding: 32px;
             margin-top: 32px;
@@ -138,22 +141,30 @@ html:has(.cityplace) {
             display: grid;
             grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
             gap: 8px;
+
+            .checkbox {
+                height: 36px;
+            }
+            @include vars.from('md') {
+                gap: 12px;
+                margin-top: 22px;
+            }
         }
     }
     &__list {
-        margin-top: 16px;
+        margin-top: 24px;
         background: var(--white);
         padding: 16px;
         border-radius: 16px;
         @include vars.from('md') {
             padding: 32px;
-            margin-top: 32px;
+            margin-top: 16px;
         }
 
         &-content {
             display: grid;
             gap: 8px;
-            margin-top: 16px;
+            margin-top: 24px;
         }
 
         &-header {
@@ -179,7 +190,7 @@ html:has(.cityplace) {
     }
 
     &__list-done {
-        margin-top: 16px;
+        margin-top: 24px;
         display: grid;
         gap: 16px;
         grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
@@ -202,12 +213,16 @@ html:has(.cityplace) {
         @include vars.before('xl') {
             margin-bottom: 8px;
         }
+        @include vars.from('md') {
+            font-size: 18px;
+            line-height: 28px;
+        }
     }
     &__map-block {
         background: var(--white);
         padding: 16px;
         border-radius: 16px;
-        margin-top: 16px;
+        margin-top: 24px;
         @include vars.from('md') {
             margin-top: 32px;
         }
@@ -248,9 +263,9 @@ html:has(.cityplace) {
 .city-places-all,
 .city-place {
     .section-form-question {
-        padding-bottom: 32px;
+        padding-bottom: 48px;
         border-bottom: 1px solid var(--accent-14);
-        @include vars.from('xl') {
+        @include vars.from('md') {
             padding-bottom: 96px;
         }
     }

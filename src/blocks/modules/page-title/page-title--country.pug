@@ -1,0 +1,14 @@
+include ../../../views/helpers/mixins
+include ../../../blocks/components/form/form
+include ../../../blocks/components/index
+
+section.page-title
+    .container
+        +breadcrumbs([{url: "", title: "Элитная недвижимость в Подмосковье"}])
+        h1 Элитная недвижимость в Подмосковье
+        .page-title__filter
+            .btn-wrapper.toggler
+                button.btn.btn-gold(data-target=".page-title__filter" data-toggle="sm-modal")
+                    +icon('ic_filters')
+                    span Фильтры недвижимости
+            include ../page-filter/page-filter--country

@@ -1,0 +1,138 @@
+include ../../../views/helpers/mixins
+include ../../../blocks/components/form/form
+include ../../../blocks/components/index
+
+.page-filter
+    .page-filter__modal-heading.hide-from-md
+        h3 Фильтры недвижимости
+        button.close(data-target=".page-title__filter" data-toggle="sm-modal")
+            +icon("ic_close", 12)
+    form
+        .form.primary-form
+            .page-filter__item
+                +radio-group(
+                    {name: "buy", inline: true},
+                    [
+                        {title: "Купить", value: "buy", selected: true},
+                        {title: "Арендовать", value: "rent"}
+                    ]
+                )
+            .page-filter__item
+                +select-field({
+                    placeholder: "Тип недвижимости",
+                    options: [
+                        "Тип недвижимости 1",
+                        "Тип недвижимости 2",
+                        "Тип недвижимости 3"
+                    ]
+                })
+            .page-filter__group.page-filter__item.fix-country_2
+                .page-filter__item
+                    +prefixed-input({maska: "###############"})
+                        label От МКАД, от (км)
+                .page-filter__item
+                    +prefixed-input({maska: "###############"})
+                        label до
+            .page-filter__item.fix-country_3
+                +select-field({
+                    placeholder: "Направлениe",
+                    options: ["Норд", "Ост", "Зюйд", "Вест", "Норд-Норд и немного Вест"]
+                })
+            .page-filter__group.page-filter__item
+                .page-filter__item
+                    +prefixed-input({maska: "###############"})
+                        label Цена от
+                .page-filter__item
+                    +prefixed-input({maska: "###############"})
+                        label до
+                .page-filter__item
+                    +radio-group(
+                        {name: "currency"},
+                        [
+                            {title: "₽", value: "RUB", selected: true},
+                            {title: "$", value: "USD"},
+                            {title: "€", value: "EU"}
+                        ]
+                    )
+            .page-filter__group.fix-country_4
+                .page-filter__item
+                    +prefixed-input({maska: "######"})
+                        label Площадь дома от (м²)
+                .page-filter__item
+                    +prefixed-input({maska: "######"})
+                        label до
+            .page-filter__group.fix-country_4
+                .page-filter__item
+                    +prefixed-input({maska: "######"})
+                        label Площадь участка от (соток)
+                .page-filter__item
+                    +prefixed-input({maska: "######"})
+                        label до
+
+        .form.secondary-form
+            .page-filter__item.full
+                h4 Дополнительные параметры объекта
+            .page-filter__item.full
+                +prefixed-input({placeholder: "Поиск по ID"})
+                    +icon("ic_search",28,"icon-search")
+
+            .page-filter__item.fix-country_1
+                +select-field({
+                    placeholder: "Тип участка",
+                    options: ["Тип участка 1", "Тип участка 2"]
+                })
+            .page-filter__group.fit
+                .page-filter__item
+                    +prefixed-input({maska: "###"})
+                        label Этажей от
+                .page-filter__item
+                    +prefixed-input({maska: "###"})
+                        label до
+            .page-filter__item
+                +radio-group(
+                    {legend: "Отделка:", class:"slim"},
+                    [
+                        {title: "Неважно", value: "1"},
+                        {title: "С отделкой", value: "2"},
+                        {title: "Под отделку", value: "3"}
+                    ]
+                )
+            .page-filter__item
+                +radio-group(
+                    {legend: "Охрана:"},
+                    [
+                        {title: "Неважно", value: "-1"},
+                        {title: "Да", value: "1"},
+                        {title: "Нет", value: "0"}
+                    ]
+                )
+            .page-filter__item.full
+                +checkbox("Бассейн", "swim")
+
+        .page-filter__instant-filter
+            .instant-filter.fb-filter__selections(data-collection="flex")
+                .instant-filter__title Быстрый поиск
+                ul.instant-filter__list
+                    li: a(href='#') Купить участок в Подмосковье
+                    li: a(href='#') Сервисные апартаменты
+                    li: a(href='#') Квартиры с террасами
+                    li: a(href='#') Патриаршие пруды
+                    li: a(href='#') Квартиры для большой семьи
+                    li: a(href='#') Сервисные апартаменты
+                    li: a(href='#') Квартиры с террасами
+                    li: a(href='#') Патриаршие пруды
+                    li: a(href='#') Квартиры для большой семьи
+                    div(class="fb-filter__more show-more-tag" data-isopen="tag-collections"): span
+        .page-filter__footer
+            .btn-wrapper
+                .hide-before-md.filter-toggle
+                    +toggler-tick({
+                        title: ["Дополнительный фильтр", "Простой фильтр"],
+                        toggle: "open",
+                        target: ".secondary-form"
+                    })
+                button.btn.btn-green(type="submit").hide-from-md
+                    span Применить фильтры
+                button.btn.btn-transparent.btn-reset(type="reset" data-remove="sm-modal" data-target=".page-title__filter" data-prevent="none")
+                    span Сбросить фильтры
+                    +icon("ic_close", 12)

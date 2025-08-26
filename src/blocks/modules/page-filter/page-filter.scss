@@ -161,6 +161,9 @@
                 width: 40%;
             }
         }
+        &.fit {
+            width: fit-content;
+        }
     }
     .form {
         display: flex;
@@ -394,6 +397,30 @@
         @include vars.before('md') {
             font-size: 16px;
             height: 40px;
+        }
+    }
+}
+
+.fix {
+    &-country {
+        &_1 {
+            max-width: 400px;
+        }
+        &_2 {
+            @include vars.from('lg') {
+                max-width: 70%;
+            }
+        }
+        &_3 {
+            @include vars.from('xl') {
+                min-width: 30%;
+            }
+        }
+        &_4 {
+            @include vars.from('xl') {
+                flex-basis: 45%;
+                max-width: 50%;
+            }
         }
     }
 }

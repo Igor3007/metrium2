@@ -4,7 +4,11 @@
     $ancestor: &;
     position: relative;
     overflow: hidden;
-    font: 400 18px/28px vars.$font-default;
+    font: 400 16px/28px vars.$font-default;
+
+    @include vars.from('md') {
+        font-size: 18px;
+    }
 
     &__head {
         cursor: pointer;
@@ -14,7 +18,7 @@
         background: var(--accent-12);
         padding: 12px 14px;
         border: 2px solid transparent;
-        border-radius: 12px;
+        border-radius: 8px;
         transition: border-color .3s;
 
         @media (any-hover: hover) {
@@ -32,6 +36,7 @@
 
     &__body {
         height: 0;
+        opacity: 0;
         position: absolute;
         padding: 12px 14px;
         border: 2px solid transparent;
@@ -107,6 +112,7 @@
             }
             &__body {
                 height: auto;
+                opacity: 1;
                 border-color: var(--accent-11);
             }
         }

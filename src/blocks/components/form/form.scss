@@ -743,6 +743,10 @@
         }
     }
 
+    &.slim label {
+        padding: 12px;
+    }
+
     &.inline {
         & #{$ancestor} {
             &__inputs {

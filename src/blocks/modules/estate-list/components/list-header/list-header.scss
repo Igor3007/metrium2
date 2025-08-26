@@ -55,6 +55,8 @@
                     position: absolute;
                     inset: 0;
                     font: 500 16px/1.5 vars.$font-default;
+                    display: flex;
+                    gap: 12px;
 
                     .icon {
                         color: var(--accent-11);

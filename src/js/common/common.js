@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     function css_variable() {
         let vh = window.innerHeight * 0.01;
-        let hgtheader = document.querySelector('.header') ? document.querySelector('.header').clientHeight : 64
+        let hgtheader = document.querySelector('header') ? document.querySelector('header').clientHeight : 64
         let hgtheadertop = document.querySelector('.header-top') ? document.querySelector('.header-top').clientHeight : 41
         let sphead = document.querySelector('.sp-head') ? document.querySelector('.sp-head').clientHeight : 41
 
@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
     }
 
-    window.addEventListener('load', css_variable)
-    window.addEventListener('resize', css_variable)
+    window.addEventListener('load', css_variable);
+    window.addEventListener('resize', css_variable);
 
     /* =================================================
     load ymaps api
