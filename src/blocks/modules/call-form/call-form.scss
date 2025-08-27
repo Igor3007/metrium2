@@ -30,6 +30,7 @@
     &__via {
         display: flex;
         gap: 8px;
+        flex-wrap: wrap;
 
         label {
             padding: 8px 16px;
