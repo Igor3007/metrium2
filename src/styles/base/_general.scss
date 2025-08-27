@@ -351,6 +351,8 @@ input[type="date"] {
     pointer-events: none !important;
 }
 
-.text-right {
-    text-align: right;
+.text-right-from-xl {
+    @include vars.from('xl') {
+        text-align: right;
+    }
 }

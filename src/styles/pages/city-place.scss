@@ -43,6 +43,9 @@
 
 html:has(.cityplace) {
     scroll-padding-top: 130px;
+    @include vars.from('xl') {
+        scroll-padding-top: 200px;
+    }
 }
 
 .cityplace {
@@ -56,7 +59,7 @@ html:has(.cityplace) {
         background: var(--bg);
     }
     &__grid {
-        @include vars.from('md') {
+        @include vars.from('lg') {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 0 32px;

@@ -30,7 +30,6 @@
     &__via {
         display: flex;
         gap: 8px;
-        flex-wrap: wrap;
 
         label {
             padding: 8px 16px;
@@ -71,11 +70,13 @@
     .checkbox {
         display: flex;
         float: left;
-        height: 2lh;
     }
 
     .subtitle {
         font: 400 14px/20px vars.$font-default;
+        display: flex;
+        align-items: center;
+
         a {
             color: var(--accent-11);
             &:hover {

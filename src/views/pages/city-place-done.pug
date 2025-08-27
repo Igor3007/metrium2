@@ -108,19 +108,19 @@ block main
                     article.cityplace__list-done
                         -var id = 0
                         while id++ < 6
-                            +minicard({id, image: "/img/objects/img-block-1"})
+                            +minicard-cityplace({id, image: "/img/objects/img-block-1", sample:id})
                     .cityplace__list-footer
                         .hide-from-md
                             button.btn.btn-green.btn-show-more
-                                span Показать еще
+                                span Показать ещё
                                 +icon("ic_arrow-down", 8)
                         .hide-before-md
                             +pagination-compact
                 article.cityplace__map-block#infrastructure
                     h4 На карте и инфраструктура
                     +ymap-static("37.620070,55.753630")
-    +recently-viewed({title: "Похожие предложения"})
-    +recently-viewed()
+    +recently-viewed({title: "Похожие предложения", type: "city-place"})
+    +recently-viewed({type: "city-place"})
     +form-question({
         title: "Затрудняетесь с выбором?",
         description: "Эксперты «Метриум Премиум» помогут вам и сэкономят время без предоплаты и комиссии!",
