@@ -5,6 +5,8 @@
     gap: 8px;
     padding: 12px var(--container-padding);
     background: var(--white);
+    width: fit-content;
+    min-width: 100%;
     @include vars.from('md') {
         padding: 12px;
         border-radius: 16px;

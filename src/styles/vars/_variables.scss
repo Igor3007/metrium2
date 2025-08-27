@@ -110,3 +110,11 @@ $breakpoints: (
         @warn "Invalid breakpoint: #{$breakpoint}. Available breakpoints are: #{map.keys($breakpoints)}.";
     }
 }
+
+@mixin hover() {
+    @media (any-hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+}

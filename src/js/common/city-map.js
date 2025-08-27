@@ -7,7 +7,19 @@ export const initMap = async () => {
     const loader = document.querySelector('#loader');
     if (!mapContainer) { return}
 
-    const map = new EstateMap({element: mapContainer, resultContainer, resultWrapper, loader});
+    let templateUrl;
+    const {pathname} = window.location;
+
+    switch (pathname) {
+        case "/country-map.html":
+            templateUrl = '/templates/country-card.html';
+            break
+        default:
+            templateUrl = '/templates/estate-card.html';
+            break;
+    }
+
+    const map = new EstateMap({element: mapContainer, resultContainer, resultWrapper, loader, templateUrl});
     await map.init();
 
     document

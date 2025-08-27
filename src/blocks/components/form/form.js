@@ -132,4 +132,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
+    setTimeout(()=> {
+        document
+            .querySelectorAll('[data-redirect-input]')
+            .forEach(el => {
+                const id = el.dataset.redirectInput;
+                const target = document.getElementById(id);
+                if (!target) return;
+
+                el.addEventListener('change', () => {
+                    target.value = el.value;
+                    target.dispatchEvent(new Event('change'));
+                });
+            });
+    }, 1000); // timeout because afSelect clear eventListeners
 });

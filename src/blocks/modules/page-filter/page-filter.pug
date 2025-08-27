@@ -7,7 +7,8 @@ include ../../../blocks/components/index
         h3 Фильтры недвижимости
         button.close(data-target=".page-title__filter" data-toggle="sm-modal")
             +icon("ic_close", 12)
-    form
+    form(action="#" data-send="ajax-on-change")
+        input#sort(type="text", hidden="hidden")
         .form.primary-form
             .page-filter__item
                 +radio-group(

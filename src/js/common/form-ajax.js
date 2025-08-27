@@ -53,3 +53,37 @@ export const initFormAJAX = () => {
 
         })
 }
+
+export const initFormOnChangeSubmit = () => {
+    document
+        .querySelectorAll('form[data-send="ajax-on-change"]')
+        .forEach(form => {
+            const url = form.getAttribute("action");
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+
+            form
+                .querySelectorAll('select, input, textarea')
+                .forEach(el => {
+                    console.log(el);
+                    el.addEventListener('change', (e) => {
+                        console.log('>>>', url);
+                        fetch(url, {
+                            method: "POST",
+                            body: data
+                        })
+                            .then(res => {
+                                if (res.ok) {
+                                    window.STATUS.msg(successMsg)
+                                } else {
+                                    window.STATUS.err(res.statusText);
+                                }
+                            })
+                            .catch(err => {
+                                console.error(err);
+                                window.STATUS.err('Извините, что-то пошло не так…');
+                            });
+                    })
+                });
+        });
+}

@@ -1,9 +1,10 @@
 include ../../components/slider-nav/slider-nav
-include ../minicard/minicard
+include ../minicard/index
 
 mixin recently-viewed(data)
     - var className = data?.class || false
     - var title = data?.title || "Недавно просмотренные"
+    - var type = data?.type
 
     section.recently-viewed(class= className)
         .container
@@ -16,4 +17,10 @@ mixin recently-viewed(data)
                         .splide__list
                             each card in sets.cards01
                                 .splide__slide
-                                    +minicard(card)
+                                    case type
+                                        when "city-place"
+                                            +minicard-cityplace(card)
+                                        when "country"
+                                            +minicard-country(card)
+                                        default
+                                            +minicard(card)

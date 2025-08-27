@@ -43,10 +43,12 @@
             font: 400 18px/28px vars.$font-default;
         }
 
-        @media (any-hover: hover) {
-            &:hover {
-                background: var(--accent-14);
-            }
+        @include vars.hover {
+            background: var(--accent-14);
+        }
+
+        & > * {
+            white-space: nowrap;
         }
 
     }
@@ -72,6 +74,11 @@
 
         .btn {
             width: 100%;
+
+            .icon {
+                margin-left: 4px;
+            }
+
         }
     }
 

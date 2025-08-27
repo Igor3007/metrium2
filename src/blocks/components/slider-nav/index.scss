@@ -32,7 +32,7 @@
             height: 50px;
         }
 
-        &:hover {
+        @include vars.hover {
             background-color: var(--accent-11);
         }
 
