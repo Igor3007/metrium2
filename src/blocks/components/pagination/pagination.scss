@@ -22,7 +22,7 @@
             border: 1px solid transparent;
             cursor: pointer;
             transition: .3s;
-            &:hover {
+            @include vars.hover {
                 background: var(--accent-13);
             }
             &:has(span) {
@@ -39,7 +39,7 @@
                 background: var(--accent-21);
                 border-color: var(--accent-21);
                 color: var(--white);
-                &:hover {
+                @include vars.hover {
                     background: var(--accent-11);
                     border-color: var(--accent-11);
                 }
@@ -98,7 +98,7 @@
                 max-width: 500px;
             }
 
-            &:hover {
+            @include vars.hover {
                 background-color: var(--bg);
                 color: var(--accent);
             }

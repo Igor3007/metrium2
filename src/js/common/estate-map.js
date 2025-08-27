@@ -10,11 +10,12 @@ export class EstateMap {
         this.resultWrapper = options.resultWrapper;
         this.loader = options.loader;
         this.cardTpl = null;
+        this.templateUrl = options.templateUrl;
     }
 
     async init() {
         await ymaps3.ready;
-        this.cardTpl = await fetch('/templates/estate-card.html').then(res => res.text());
+        this.cardTpl = await fetch(this.templateUrl).then(res => res.text());
 
         ymaps3.import.registerCdn('https://cdn.jsdelivr.net/npm/{package}', [
             '@yandex/ymaps3-default-ui-theme@0.0',

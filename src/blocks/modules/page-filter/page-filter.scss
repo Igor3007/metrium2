@@ -333,7 +333,7 @@
                 &:before {
                     content: none;
                 }
-                &:hover {
+                @include vars.hover {
                     background: transparent;
                     color: vars.$red;
                 }
