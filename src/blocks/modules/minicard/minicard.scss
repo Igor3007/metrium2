@@ -562,6 +562,7 @@
 
     @container (width > 1120px) {
         display: flex;
+        flex-direction: row;
         #{$ancestor} {
             &__top {
                 //aspect-ratio: 247 / 164;

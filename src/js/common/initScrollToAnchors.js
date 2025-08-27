@@ -26,7 +26,6 @@ export const initScrollToAnchors = () => {
             const href = a.getAttribute('href');
             const id = href.split('#')[1].split('?')[0];
             const target = document.getElementById(id);
-            console.log(target);
             if (!target) return;
 
             a.addEventListener('click', (e) => {
