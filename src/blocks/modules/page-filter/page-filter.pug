@@ -8,6 +8,7 @@ include ../../../blocks/components/index
         button.close(data-target=".page-title__filter" data-toggle="sm-modal")
             +icon("ic_close", 12)
     form(action="#" data-send="ajax-on-change")
+        input#sort(type="text", hidden="hidden")
         .form.primary-form
             .page-filter__item
                 +radio-group(

@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
         case '/city.html':
             estateListView();
             break;
+        case '/country.html':
+            estateListView();
+            break;
     }
 
 });

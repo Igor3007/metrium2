@@ -5,14 +5,14 @@
     grid-template-columns: 1fr;
     gap: 16px;
     @include vars.from('md') {
-        grid-template-columns: repeat(auto-fill,minmax(380px,1fr));
-        gap: 32px;
+        grid-template-columns: repeat(auto-fill,minmax(340px,1fr));
         margin-top: 20px;
         margin-bottom: 20px;
-
-
     }
     @include vars.from('xl') {
+        grid-template-columns: repeat(auto-fill,minmax(380px,1fr));
+        gap: 32px;
+
         .estate-list.list & {
             grid-template-columns: 1fr;
         }
@@ -20,5 +20,9 @@
 
     &__item {
         container-type: inline-size;
+    }
+
+    .minicard-wrapper {
+        height: 100%;
     }
 }

@@ -4,8 +4,8 @@
 export const initScrollToAnchors = () => {
     let options = {
         root: null,
-        rootMargin: "0px",
-        threshold: 0.3,
+        rootMargin: "-140px 0px 0px 0px", // average header + anchor block
+        threshold: 0,
     };
 
     let callback = (entries, observer) => {
@@ -26,7 +26,7 @@ export const initScrollToAnchors = () => {
             const href = a.getAttribute('href');
             const id = href.split('#')[1].split('?')[0];
             const target = document.getElementById(id);
-
+            console.log(target);
             if (!target) return;
 
             a.addEventListener('click', (e) => {
