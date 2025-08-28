@@ -1,9 +1,20 @@
 extends ../layouts/page
 
+include ../../blocks/modules/special-offers/special-offers
+include ../../blocks/modules/recently-viewed/recently-viewed
+include ../../blocks/modules/form-question/form-question
+
 block variables
     - const title = "Посёлки - Metrium"
     - const pageUrl = "/country.html"
 
 block main
     include ../../blocks/modules/page-title/page-title--country-places
-    include ../../blocks/modules/estate-list/country-list
+    include ../../blocks/modules/estate-list/country-places-list
+    +special-offers({title: "Подборки предложений загородной недвижимости", class: "city-page"})
+    +recently-viewed({type: ""})
+    +form-question({
+        title: "Затрудняетесь с выбором?",
+        description: "Эксперты «Метриум Премиум» помогут вам и сэкономят время без предоплаты и комиссии!",
+        class: "slim dark-bg"
+    })

@@ -1,0 +1,144 @@
+extends ../layouts/page
+include ../../blocks/components/index
+include ../../blocks/modules/index
+include ../../blocks/components/form/form
+include ../helpers/mixins
+
+block variables
+    - const title = "Шато Соверен - Metrium"
+    - const pageUrl = "/country.html"
+    - const bodyClass = "cityplace"
+    - const mainClass = "city-place"
+
+    -var gallery_base = "/img/country-inner/"
+    -var gallery_images = ["image05.jpg", "image02.jpg", "image03.jpg", "image04.jpg", "image01.jpg", "image06.jpg", "image07.jpg", "image08.jpg", "image09.jpg", "image10.jpg"]
+block main
+    section.page-header
+        .container
+            +breadcrumbs([
+                {url: "/country.html", title: "Элитная недвижимость в Подмосковье"},
+                {url: "/country-places.html", title: "Посёлки"},
+                {url: "/country-inner.html", title: "Шато Соверен"}
+            ])
+    section.page-title
+        .container
+            h2 Шато Соверен
+            .get-to
+                ul
+                    li
+                        span Новорижское шоссе
+                a.get-to__map(href="#infrastructure")
+                    +icon('ic_on-map-small')
+                    span На карте
+    .cityplace-wrp
+        .cityplace__grid.container
+            include ../../blocks/modules/gallery/gallery-big
+            div.cityplace__sticky-wrp
+                .sticky-content
+                    include ../../blocks/modules/passport/passport
+                    include ../../blocks/modules/call-form/call-form
+            section.cityplace__anchors
+                +anchors-block([
+                    {anchor: "description", title: "Описание", active: true},
+                    {anchor: "estates", title: "Недвижимость"},
+                    {anchor: "infrastructure", title: "Инфраструктура"}
+                ])
+            section.cityplace__content
+                article.cityplace__description#description
+                    h4 О посёлке Шато Соверен
+                    p Поселок «Шато Соверен». Дома построены из кирпича, фасады отделаны камнем. Уникальной особенностью поселка является выезд одновременно на Рижское и Рублевское шоссе.
+                    p В поселке есть винный погреб на 15 тысяч бутылок коллекционного вина, банкет-холл, частью которого является закрытый сигарный мужской клуб, ресторан высокой кухни, летний театр, SPA-комплекс с бассейнами, фитнес-центром
+                    p На последнем уровне дома находятся пентхаусы, а на первом — сауны, тренажерный зал с бассейном, просторный вестибюль и холл для ожидания. Поскольку возле особняка нет высоких строений, его окна обеспечивают внутренним помещениям полноценное естественное освещение. На северной стороне ЖК Дворянского гнезда имеется внутренний двор обустроенным ландшафтом и площадкой для детей.
+                    +dotted-list([
+                        ["Готовность", "Готов"],
+                        ["Срок сдачи", "2020"],
+                        ["Всего объектов", "24"],
+                        ["Под отделку", "12"],
+                        ["Площадь объектов ЖК", "150 — 500 м²"],
+                        ["Этажей", "7"],
+                        ["Готовность", "Готов"],
+                        ["Срок сдачи", "1 квартал 2020"]
+                    ])
+                #estates
+                    article.cityplace__filter
+                        h4 Подберите недвижимость в ЖК Дворянское гнездо
+                        form
+                            .cityplace__input
+                                +select-field({
+                                    placeholder: "Тип сделки",
+                                    options: ["Тип сделки 001", "Тип сделки 002", "Тип сделки 003"]
+                                })
+                            .cityplace__input
+                                +select-field({
+                                    placeholder: "Тип недвижимости",
+                                    options: ["Тип недвижимости 001", "Тип недвижимости 002", "Тип недвижимости 003"]
+                                })
+                            +select-range-units({
+                                placeholder: "Цена",
+                                maska: "############",
+                                units: [["RUB", "₽"], ["USD", "$"], ["EUR", "€"]]
+                            })
+                            +select-range-ext({
+                                placeholder: "Площадь дома",
+                                maska: "######",
+                                postfix: "м²"
+                            })
+                            +select-range-ext({
+                                placeholder: "Площадь участка",
+                                maska: "######",
+                                postfix: "сот"
+                            })
+                            .cityplace__input
+                                +select-field({
+                                    placeholder: "Тип участка",
+                                    options: ["Тип участка 001", "Тип участка 002", "Тип участка 003"]
+                                })
+                            +select-range-ext({
+                                placeholder: "Этажей",
+                                maska: "###",
+                            })
+                            .cityplace__input
+                                +select-field({
+                                    placeholder: "Отделка",
+                                    options: ["Да", "Нет", "Не важно"]
+                                })
+                            .cityplace__input
+                                +select-field({
+                                    placeholder: "Охрана",
+                                    options: ["Да", "Нет", "Не важно"]
+                                })
+                            +checkbox("Бассейн", "pool")
+                    article.cityplace__list
+                        .cityplace__list-header
+                            .cityplace__count Объектов: 24
+                            .list-header__controls
+                                .list-header__controls-sort
+                                    select#sortlist(data-prefix="Сортировать")
+                                        option(value=1) По актуальности
+                                        option(value=2) По возрастанию
+                                    .btn.btn-line(data-selectpopup="#sortlist")
+                                        +icon("ic_sort")
+                                        | Сортировка
+                    article.cityplace__list-done
+                        -var id = 0
+                        while id++ < 6
+                            +minicard-cityplace({id, image: "/img/objects/img-block-1", sample:id})
+                    .cityplace__list-footer
+                        .hide-from-md
+                            button.btn.btn-green.btn-show-more
+                                span Показать ещё
+                                +icon("ic_arrow-down", 8)
+                        .hide-before-md
+                            +pagination-compact
+                article.cityplace__map-block#infrastructure
+                    h4 На карте и инфраструктура
+                    +ymap-static("37.620070,55.753630")
+    +recently-viewed({title: "Похожие предложения", type: "city-place"})
+    +recently-viewed({type: "city-place"})
+    +form-question({
+        title: "Затрудняетесь с выбором?",
+        description: "Эксперты «Метриум Премиум» помогут вам и сэкономят время без предоплаты и комиссии!",
+        class: "slim dark-bg"
+    })
+block append scripts
+    script(src="https://api-maps.yandex.ru/v3/?apikey=0e00c58a-2691-4220-95a9-f61fbbb73582&lang=ru_RU")

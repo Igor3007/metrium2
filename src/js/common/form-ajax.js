@@ -65,9 +65,7 @@ export const initFormOnChangeSubmit = () => {
             form
                 .querySelectorAll('select, input, textarea')
                 .forEach(el => {
-                    console.log(el);
                     el.addEventListener('change', (e) => {
-                        console.log('>>>', url);
                         fetch(url, {
                             method: "POST",
                             body: data
