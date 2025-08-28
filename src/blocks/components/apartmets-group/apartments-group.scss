@@ -17,7 +17,7 @@
 
     summary {
         display: grid;
-        gap: 8px;
+        gap: 4px;
         grid-template-columns: 1fr 1fr;
         font: 400 16px/24px vars.$font-default;
         cursor: pointer;
@@ -31,12 +31,12 @@
             }
         }
         @include vars.from('xl') {
-            padding-top: 24px;
-            margin-top: -24px;
+            padding: 24px;
+            margin-block: -24px;
         }
         @include vars.from('xxl') {
-            padding: 24px;
-            margin: -24px;
+            padding: 24px 56px;
+            margin: -24px -40px;
         }
         @include vars.from('xl') {
             grid-template-columns: 2fr 2fr 2fr 2fr 3fr 3fr;

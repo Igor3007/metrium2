@@ -36,8 +36,6 @@
 
      const heightHeaderTop = document.querySelector('.header-top').clientHeight
 
-     console.log(heightHeaderTop)
-
      if (window.pageYOffset >= heightHeaderTop) {
          nav.classList.add("header--fixed-menu");
      } else {

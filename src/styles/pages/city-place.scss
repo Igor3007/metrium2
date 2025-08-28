@@ -160,7 +160,6 @@ html:has(.cityplace) {
         padding: 16px;
         border-radius: 16px;
         @include vars.from('md') {
-            padding: 32px;
             margin-top: 16px;
         }
 

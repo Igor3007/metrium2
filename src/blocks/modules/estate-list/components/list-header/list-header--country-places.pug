@@ -1,0 +1,20 @@
+.list-header
+    .list-header__qty
+        |Найдено 512 вариантов
+    .list-header__controls
+        .list-header__controls-sort
+            select#sortlist(data-prefix="Сортировать" data-redirect-input="sort")
+                option(value=1) По актуальности
+                option(value=2) По возрастанию
+            .btn.btn-line(data-selectpopup="#sortlist")
+                +icon("ic_sort")
+                |Сортировка
+
+        .list-header__controls-group
+            .buttons-group
+                button.btn.hide-before-xl.grid(data-remove="list" data-parent=".estate-list")
+                    +icon("ic_grid")
+                    span Плиткой
+                a(href="/country-map.html").btn
+                    +icon("ic_on-map-small")
+                    span На карте
