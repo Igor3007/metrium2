@@ -3,6 +3,7 @@ class MapStatic {
     constructor(options) {
         this.center = options.center;
         this.element = options.element;
+        this.zoom = options.zoom || 10;
     }
 
     async init() {
@@ -24,7 +25,7 @@ class MapStatic {
                 },
                 location: {
                     center: this.center,
-                    zoom: 10
+                    zoom: this.zoom
                 },
                 behaviors: ['drag', 'pinchZoom']
             }
@@ -53,8 +54,8 @@ export const initStaticMaps = () => {
     document
         .querySelectorAll('.ymap-static')
         .forEach(map => {
-            const {center} = map.dataset;
-            const mapStatic = new MapStatic({center: center.split(","), element: map});
+            const {center, zoom} = map.dataset;
+            const mapStatic = new MapStatic({center: center.split(","), zoom, element: map});
             mapStatic.init().catch(err => {
                 console.error(err);
             });

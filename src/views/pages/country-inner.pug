@@ -7,7 +7,7 @@ include ../helpers/mixins
 block variables
     - const title = "Шато Соверен - Metrium"
     - const pageUrl = "/country.html"
-    - const bodyClass = "cityplace"
+    - const bodyClass = "country-inner cityplace"
     - const mainClass = "city-place"
 
     -var gallery_base = "/img/country-inner/"
@@ -61,8 +61,9 @@ block main
                     ])
                 #estates
                     article.cityplace__filter
-                        h4 Подберите недвижимость в ЖК Дворянское гнездо
-                        form
+                        h4 Подберите недвижимость в посёлке Шато Соверен
+                        form(action="#" data-send="ajax-on-change")
+                            input#sort(hidden="hidden" type="text")
                             .cityplace__input
                                 +select-field({
                                     placeholder: "Тип сделки",
@@ -113,7 +114,8 @@ block main
                             .cityplace__count Объектов: 24
                             .list-header__controls
                                 .list-header__controls-sort
-                                    select#sortlist(data-prefix="Сортировать")
+                                    select#sortlist(data-prefix="Сортировать" data-redirect-input="sort")
+                                        option(value="" disabled="disabled" selected="selected")
                                         option(value=1) По актуальности
                                         option(value=2) По возрастанию
                                     .btn.btn-line(data-selectpopup="#sortlist")
@@ -122,7 +124,7 @@ block main
                     article.cityplace__list-done
                         -var id = 0
                         while id++ < 6
-                            +minicard-cityplace({id, image: "/img/objects/img-block-1", sample:id})
+                            +minicard-country-inner({id, image: "/img/objects/img-block-1", sample:id})
                     .cityplace__list-footer
                         .hide-from-md
                             button.btn.btn-green.btn-show-more
@@ -132,9 +134,9 @@ block main
                             +pagination-compact
                 article.cityplace__map-block#infrastructure
                     h4 На карте и инфраструктура
-                    +ymap-static("37.620070,55.753630")
-    +recently-viewed({title: "Похожие предложения", type: "city-place"})
-    +recently-viewed({type: "city-place"})
+                    +ymap-static("37.620070,55.753630", "12")
+    +recently-viewed({title: "Похожие предложения", type: "country-place", class: "_similar"})
+    +recently-viewed({title: "Недавно просмотренные", type: "city-place", class: "_recently"})
     +form-question({
         title: "Затрудняетесь с выбором?",
         description: "Эксперты «Метриум Премиум» помогут вам и сэкономят время без предоплаты и комиссии!",

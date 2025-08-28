@@ -4,7 +4,7 @@
 export const initScrollToAnchors = () => {
     let options = {
         root: null,
-        rootMargin: "-140px 0px 0px 0px", // average header + anchor block
+        rootMargin: "-200px 0px 0px 0px", // average header + anchor block
         threshold: 0,
     };
 

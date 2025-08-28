@@ -22,5 +22,7 @@ mixin recently-viewed(data)
                                             +minicard-cityplace(card)
                                         when "country"
                                             +minicard-country(card)
+                                        when "country-place"
+                                            +minicard-countryplace(card)
                                         default
                                             +minicard(card)

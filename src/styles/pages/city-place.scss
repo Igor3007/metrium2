@@ -147,6 +147,7 @@ html:has(.cityplace) {
 
             .checkbox {
                 height: 36px;
+                align-self: center;
             }
             @include vars.from('md') {
                 gap: 12px;
