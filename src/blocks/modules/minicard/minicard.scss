@@ -703,6 +703,49 @@
     }
 }
 
+.minicard-country-inner {
+    @include vars.from('lg') {
+        --card-padding: 16px;
+    }
+
+    .minicard__slider picture {
+        aspect-ratio: 1.56;
+    }
+
+    .minicard__title {
+        padding-bottom: 13px;
+    }
+
+    .minicard__prop ul {
+        padding: 0 8px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        li {
+            width: auto;
+
+            small {
+                padding-bottom: 0;
+            }
+        }
+    }
+    .minicard__prop {
+        padding-bottom: 7px;
+        opacity: 1;
+    }
+    .minicard__price {
+        padding-top: 15px;
+        padding-bottom: 18px;
+        & > div {
+            font-size: 24px;
+            line-height: 1.5;
+        }
+    }
+    .minicard__price-old {
+        padding-bottom: 0;
+    }
+}
+
 @keyframes to-fav-animate {
     0% {
         transform: scale(.7)

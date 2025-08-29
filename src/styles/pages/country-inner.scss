@@ -1,0 +1,61 @@
+@use "../../styles/vars";
+
+body.country-inner {
+    @include vars.from('md') {
+
+        .passport {
+            padding-bottom: 27px;
+            &__fav {
+                top: 28px;
+                right: 34px;
+            }
+            &__price {
+                margin-top: 15px;
+            }
+            &__terms {
+                margin-top: 13px;
+            }
+        }
+
+         .thumbs.splide .splide__pagination {
+             display: none;
+         }
+
+        .cityplace__content {
+            margin-top: 8px;
+        }
+        .cityplace__description {
+            padding-bottom: 15px;
+            h4 {
+                margin-bottom: 20px;
+            }
+
+            p {
+                margin-block: 12px;
+                letter-spacing: .02em;
+            }
+
+            .dotted-list {
+                margin-top: 25px;
+            }
+
+            .dotted-list li {
+                margin-bottom: 16px;
+            }
+
+        }
+
+        .cityplace__list-done {
+            margin-top: 16px;
+        }
+
+        ._similar {
+            padding-top: 96px;
+        }
+        ._recently {
+            padding-top: 55px;
+        }
+
+    }
+
+}

@@ -1,3 +1,3 @@
-mixin ymap-static(data)
+mixin ymap-static(data, zoom)
     -var center = data || "37.620070,55.753630"
-    .ymap-static(data-center=center)
+    .ymap-static(data-center=center data-zoom=zoom)
