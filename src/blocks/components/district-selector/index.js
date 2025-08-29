@@ -160,7 +160,11 @@ const initDistrictSelector = (element, template, data) => {
                     result.push(x.dataset.id);
                 }
             });
-            input.value = JSON.stringify(result);
+            //input.value = JSON.stringify(result);
+            input.value = result.join(',');
+
+            input.dispatchEvent(new Event('change'));
+
             container.innerHTML = resultString(result);
             popup.close();
         })
@@ -179,8 +183,8 @@ const initDistrictSelector = (element, template, data) => {
 }
 
 export const initDistrictSelectors = async () => {
-    const data = await fetch('/json/districts.json').then(res => res.json());
-    const template = await fetch('/templates/districts.html').then(res => res.text());
+    const data = await fetch('/api/districts').then(res => res.json());
+    const template = await fetch('/districts/popup').then(res => res.text());
 
     document
         .querySelectorAll('.district-selector')
@@ -188,4 +192,3 @@ export const initDistrictSelectors = async () => {
             initDistrictSelector(el, template, data);
         });
 }
-
