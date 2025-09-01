@@ -10,6 +10,17 @@ mixin card-services(data)
                     | Подробнее
                     span: +icon('ic_arr-right')
 
+mixin card-service-highlighted(data)
+    .card-services.highlighted
+        .card-services__icon
+            +bgimage(data.icon)
+        .card-services__main
+            .card-services__title= data.title
+            .card-services__desc= data.desc
+            .card-services__link
+                a.btn(href='#')
+                    div Получить консультацию
+
 mixin our-services
 
     -

@@ -1,0 +1,63 @@
+include ./all-categories
+
+-
+    const categories = [
+        {
+            title: 'Собственникам',
+            price: false,
+            image: '/img/other/btn-category-big-4',
+            offers: false,
+            btn: 'Всё для собственников',
+            sub: [
+                {
+                    title: 'Квартиры',
+                    icon: '/img/icons/icon-subcategory/01-flats.svg',
+                },
+                {
+                    title: 'Апартаменты',
+                    icon: '/img/icons/icon-subcategory/02-apartments.svg',
+                },
+                {
+                    title: 'Аренда',
+                    icon: '/img/icons/icon-subcategory/03-rent.svg',
+                },
+                {
+                    title: 'Все новостройки',
+                    icon: '/img/icons/icon-subcategory/04-complexes.svg',
+                },
+            ]
+        },
+        {
+            title: 'Партнёрам',
+            price: false,
+            image: '/img/other/btn-category-big-5',
+            offers: false,
+            btn: 'Всё для партнёров',
+
+            sub: [
+                {
+                    title: 'Квартиры',
+                    icon: '/img/icons/icon-subcategory/01-flats.svg',
+                },
+                {
+                    title: 'Апартаменты',
+                    icon: '/img/icons/icon-subcategory/02-apartments.svg',
+                },
+                {
+                    title: 'Аренда',
+                    icon: '/img/icons/icon-subcategory/03-rent.svg',
+                },
+                {
+                    title: 'Все новостройки',
+                    icon: '/img/icons/icon-subcategory/04-complexes.svg',
+                },
+            ]
+        },
+
+    ]
+
+.container
+    .all-categories
+        .all-categories__list
+            each item in categories
+                .all-categories__item: +card-categories(item)

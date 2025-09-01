@@ -4,7 +4,7 @@ import {Splide} from "@splidejs/splide";
 import {FlexCollections} from "./flex-collections.js";
 import {SplideNavHelper} from "./splide-nav-helper.js";
 import {initAddRemoveClassButtons} from "./add-remove-class.js";
-import {initSliderViewed, initGallery} from "../../blocks/modules/index.js";
+import {initSliderViewed, initGallery, initFactoidGallery} from "../../blocks/modules/index.js";
 import {initToggleTicks, initDistrictSelectors} from "../../blocks/components";
 import {initTogglers} from "./toggler.js";
 import {initFormAJAX, initFormOnChangeSubmit} from "./form-ajax.js";
@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initGallery();
     initScrollToAnchors();
     initStaticMaps();
+    initFactoidGallery();
     setTimeout(
         () => {initFormOnChangeSubmit()}
         , 500); // need to prevent clearing eventHandlers with afSelect

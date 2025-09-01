@@ -1,0 +1,16 @@
+-var images = gallery_images || ["/img/company/factoid01.jpg","/img/residentials/image00.jpg", "/img/residentials/image01.jpg", "/img/residentials/image02.jpg", "/img/residentials/image03.jpg", "/img/residentials/image04.jpg", "/img/residentials/image05.jpg", "/img/residentials/image06.jpg", "/img/residentials/image07.jpg"]
+section.gallery-facts
+    .splide.main
+        .splide__track
+            ul.splide__list
+                for image in images
+                    li.splide__slide
+                        picture
+                            img(src=image)
+        .gallery-facts__controls
+            .arrow.disabled(data-dir="prev")
+                +icon("ic_chevron-left", 12)
+            .gallery-facts__counter
+                span 1 / 12
+            .arrow(data-dir="next")
+                +icon("ic_chevron-right", 12)

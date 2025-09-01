@@ -1,0 +1,9 @@
+mixin manager(data)
+    - const img = data?.img
+    - const name = data?.name
+    - const job = data?.job
+    .manager
+        picture
+            img(src=img alt=name)
+        .manager__name= name
+        .manager__job= job

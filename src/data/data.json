@@ -1143,5 +1143,36 @@
                 "id": "6571"
             }
         ]
+    },
+    "pages": {
+        "company": {
+            "services": [
+                {
+                    "title": "Недвижимость",
+                    "desc": "Покупка, продажа и аренда элитных объектов",
+                    "icon": "/img/icons/icon-subcategory/01-flats.svg"
+                },
+                {
+                    "title": "Консалтинг",
+                    "desc": "Комплексные решения для девелоперов",
+                    "icon": "/img/icons/icon-subcategory/21-services.svg"
+                },
+                {
+                    "title": "Юридические услуги",
+                    "desc": "Сопровождение сделок с элитной недвижимостью",
+                    "icon": "/img/icons/icon-subcategory/43-legal-services.svg"
+                },
+                {
+                    "title": "Инвестиции",
+                    "desc": "Стратегии по сохранению и приумножению капитала",
+                    "icon": "/img/icons/icon-subcategory/44-investments.svg"
+                },
+                {
+                    "title": "Аналитика",
+                    "desc": "Исследования и обзоры рынка премиум-класса",
+                    "icon": "/img/icons/icon-subcategory/45-analytics.svg"
+                }
+            ]
+        }
     }
 }

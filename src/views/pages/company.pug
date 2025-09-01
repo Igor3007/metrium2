@@ -1,0 +1,45 @@
+extends ../layouts/page
+
+include ../../blocks/modules/our-services/our-services
+
+block variables
+    - const title = "О компании - Metrium"
+    - const pageUrl = "/company.html"
+block main
+    include ../../blocks/modules/page-title/page-title--company
+
+    include ../../blocks/modules/factoid/factoid
+
+    include ../../blocks/modules/management/management
+
+    section.company__services
+        .container
+            h2 Услуги компании
+            p Компания «Метриум» предлагает уникальную систему сервисов для инвестиций в высокобюджетную недвижимость по Москве и Московской области.
+            .company__services-grid
+                each card in pages.company.services
+                    +card-services(card)
+                +card-service-highlighted({
+                    title: 'О компании',
+                    desc: 'Узнайте подробнее о нас и как мы работаем',
+                    icon: '/img/icons/icon-subcategory/25-metrium-2.svg'
+                })
+        include ../../blocks/modules/all-categories/categories--company
+
+    section.partners
+        .container
+            h2 Наши партнёры
+            .company__partners
+                picture.partner: img(src="/img/company/logo00.png" alt="Level group")
+                picture.partner: img(src="/img/company/logo01.png" alt="MR group")
+                picture.partner: img(src="/img/company/logo02.png" alt="Stone")
+                picture.partner: img(src="/img/company/logo03.png" alt="VOS'HOD")
+                picture.partner: img(src="/img/company/logo04.png" alt="Mirum")
+                picture.partner: img(src="/img/company/logo05.png" alt="Аеон девелопмент")
+                picture.partner: img(src="/img/company/logo06.png" alt="OCtober Group")
+                picture.partner: img(src="/img/company/logo07.png" alt="Villagio")
+
+    section.container: h2 awards
+
+    section.container: h2 contacts
+

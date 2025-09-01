@@ -197,5 +197,23 @@
         }
     }
 
+    &.highlighted {
+        background: var(--accent-11);
+
+        .card-services__title,
+        .card-services__desc,
+        .btn {
+            color: var(--white);
+        }
+
+        .btn {
+            & > div {
+                z-index: 10;
+            }
+            &:before {
+                background: var(--accent-22);
+            }
+        }
+    }
 
 }

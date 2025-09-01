@@ -1,0 +1,116 @@
+@use "../../../styles/vars";
+
+.factoid {
+    background: var(--bg);
+    padding-block: 64px 80px;
+
+    &__block {
+        background: var(--white);
+        padding: 48px;
+        border-radius: 24px;
+    }
+
+    &__main {
+        display: grid;
+        grid-template-columns: 1fr 800px;
+        gap: 48px;
+    }
+
+    &__main-footer {
+        display: flex;
+        gap: 8px;
+
+    }
+
+    &__note {
+        font: 400 18px/28px vars.$font-default;
+        color: var(--text-2);
+    }
+
+    &__title {
+        font: 400 48px/60px vars.$font-captions;
+        letter-spacing: .04em;
+    }
+
+    &__description {
+        p {
+            font: 400 18px/28px vars.$font-default;
+            letter-spacing: .02em;
+            margin-block: 12px;
+            hyphens: auto;
+        }
+    }
+
+    &__facts {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        margin-top: 24px;
+    }
+
+    &__fact {
+        background: var(--white);
+        padding: 16px 24px;
+        border-radius: 16px;
+
+        h3 {
+            font: 400 36px/48px vars.$font-captions;
+            color: var(--accent);
+        }
+
+        .subtitle {
+            font: 400 16px/1.5 vars.$font-default;
+            color: var(--text-1);
+        }
+    }
+}
+
+.gallery-facts {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+
+    picture {
+        aspect-ratio: 200 / 133;
+    }
+
+    &__controls {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+
+        .arrow {
+            padding: 10px;
+            border-radius: 20px;
+            background: var(--white);
+            cursor: pointer;
+            opacity: .8;
+
+            &.disabled {
+                opacity: .4;
+                pointer-events: none;
+            }
+
+            @include vars.hover {
+                opacity: 1;
+            }
+
+            .icon {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    &__counter {
+        font: 400 16px/1.5 vars.$font-default;
+        padding: 8px 16px;
+        background: var(--white);
+        border-radius: 20px;
+    }
+}
