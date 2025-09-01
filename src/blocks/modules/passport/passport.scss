@@ -80,5 +80,11 @@
         svg {
             fill: var(--text-3);
         }
+
+        @include vars.hover {
+            svg {
+                fill: var(--text-1);
+            }
+        }
     }
 }

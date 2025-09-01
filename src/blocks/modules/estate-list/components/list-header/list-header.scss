@@ -105,6 +105,9 @@
                 {
                     color: var(--white);
                     background: var(--accent-11);
+                    &:before {
+                        content: none; // prevent hover effect
+                    }
                 }
             }
             @include vars.from('xl') {

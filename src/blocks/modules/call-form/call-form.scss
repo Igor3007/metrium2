@@ -41,6 +41,9 @@
                 background: var(--accent-11);
                 color: var(--white);
             }
+            @include vars.hover {
+                background: var(--accent-14);
+            }
         }
         .title {
             font: 400 14px/20px vars.$font-default;
@@ -60,6 +63,13 @@
             color: var(--text-2);
             background: var(--accent-12);
             border-radius: 12px;
+            @include vars.hover {
+                background: var(--accent-14);
+            }
+
+            &:focus-within {
+                outline: 2px solid var(--accent-11);
+            }
         }
     }
 
@@ -73,13 +83,16 @@
     }
 
     .subtitle {
-        font: 400 14px/20px vars.$font-default;
+        font: 400 14px/20px vars.$font-default !important;
         display: flex;
         align-items: center;
 
         a {
             color: var(--accent-11);
-            &:hover {
+            position: relative;
+            z-index: 5;
+
+            @include vars.hover {
                 text-decoration: underline;
             }
         }

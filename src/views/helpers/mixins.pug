@@ -82,6 +82,8 @@ mixin checkbox(label, name,  attr)
     input(type="checkbox" name=""+name+"" checked=check required=required)
     span.checkbox__elem
     span.checkbox__text!= label
+    if block
+        block
 
 mixin checkbox-required(label, name,  check)
   label.checkbox
