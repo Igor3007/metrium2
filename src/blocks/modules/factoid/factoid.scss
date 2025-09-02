@@ -19,17 +19,24 @@
     &__main-footer {
         display: flex;
         gap: 8px;
+        margin-top: 36px;
 
+        .btn {
+            padding-inline: 24px;
+            min-width: auto;
+        }
     }
 
     &__note {
         font: 400 18px/28px vars.$font-default;
         color: var(--text-2);
+        margin-bottom: 9px;
     }
 
     &__title {
         font: 400 48px/60px vars.$font-captions;
         letter-spacing: .04em;
+        margin-bottom: 30px;
     }
 
     &__description {
@@ -56,6 +63,7 @@
         h3 {
             font: 400 36px/48px vars.$font-captions;
             color: var(--accent);
+            margin-bottom: 8px;
         }
 
         .subtitle {

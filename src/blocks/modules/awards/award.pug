@@ -1,0 +1,14 @@
+mixin award(data)
+    - const title = data?.title || "`title` placeholder"
+    - const desc = data?.desc || "`desc` (description) placeholder"
+    - const year = data?.year || "YEAR"
+    - const img = data?.img || ""
+    .award
+        .award__main
+            .award__title= title
+            .award__footer
+                .award__desc= desc
+                .award__year= year
+        .award__img
+            picture
+                img(src=img alt=title)

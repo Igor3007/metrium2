@@ -1,0 +1,54 @@
+@use "../../../styles/vars";
+
+.awards {
+    h2 {
+        line-height: 1.3;
+        margin-bottom: 48px;
+    }
+    &__grid {
+        display: grid;
+        gap: 32px;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    }
+}
+
+.award {
+    background: var(--white);
+    padding: 32px;
+    border-radius: 24px;
+    display: grid;
+    grid-template-columns: 1fr 168px;
+    gap: 24px;
+
+    picture {
+        display: block;
+        aspect-ratio: 21/32;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font: 400 28px/40px vars.$font-captions;
+        color: var(--text-1);
+        letter-spacing: .04em;
+    }
+
+    &__desc {
+        font: 400 16px/1.5 vars.$font-default;
+        letter-spacing: .02em;
+        margin-bottom: 4px;
+    }
+
+    &__year {
+        font: 500 20px/1.6 vars.$font-default;
+    }
+}

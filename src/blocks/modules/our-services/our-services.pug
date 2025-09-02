@@ -11,12 +11,14 @@ mixin card-services(data)
                     span: +icon('ic_arr-right')
 
 mixin card-service-highlighted(data)
+    - const title = data?.title || 'Title'
+    - const desc = data?.desc || 'Description'
     .card-services.highlighted
         .card-services__icon
             +bgimage(data.icon)
         .card-services__main
-            .card-services__title= data.title
-            .card-services__desc= data.desc
+            .card-services__title= title
+            .card-services__desc= desc
             .card-services__link
                 a.btn(href='#')
                     div Получить консультацию

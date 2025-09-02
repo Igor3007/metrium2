@@ -1,6 +1,14 @@
 @use "../../../styles/vars";
 
 .management {
+    padding-block: 64px;
+
+    h2 {
+        line-height: 1;
+        margin-top: 6px;
+        margin-bottom: 54px;
+    }
+
     &__managers {
         display: grid;
         gap: 32px;
@@ -11,6 +19,8 @@
         background: linear-gradient(0, var(--bg), var(--bg) 50%, #fff 50%, #fff);
 
         &-content {
+            font: 400 18px/28px vars.$font-default;
+            letter-spacing: .02em;
             border-radius: 16px;
             border: 8px solid var(--white);
             background: var(--accent-13);

@@ -12,11 +12,22 @@ section.factoid
                 .factoid__slider
                     include ./factoid-gallery
             ul.factoid__main-footer
-                li Получить консультацию
-                li Услуги
-                li Партнёры
-                li Награды
-                li Контакты
+                li
+                    button.btn.btn-green
+                        +icon("ic_send")
+                        span Получить консультацию
+                li
+                    a.btn.btn-line(href="#service")
+                        span Услуги
+                li
+                    a.btn.btn-line(href="#partners")
+                        span Партнёры
+                li
+                    a.btn.btn-line(href="#awards")
+                        span Награды
+                li
+                    a.btn.btn-line(href="#contacts")
+                        span Контакты
         .factoid__facts
             .factoid__fact
                 h3 > 10 лет

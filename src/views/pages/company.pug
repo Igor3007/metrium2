@@ -5,6 +5,7 @@ include ../../blocks/modules/our-services/our-services
 block variables
     - const title = "О компании - Metrium"
     - const pageUrl = "/company.html"
+    - const mainClass = "company"
 block main
     include ../../blocks/modules/page-title/page-title--company
 
@@ -15,13 +16,13 @@ block main
     section.company__services
         .container
             h2 Услуги компании
-            p Компания «Метриум» предлагает уникальную систему сервисов для инвестиций в высокобюджетную недвижимость по Москве и Московской области.
+            p.subtitle Компания «Метриум» предлагает уникальную систему сервисов для инвестиций в высокобюджетную недвижимость по Москве и Московской области.
             .company__services-grid
                 each card in pages.company.services
                     +card-services(card)
                 +card-service-highlighted({
-                    title: 'О компании',
-                    desc: 'Узнайте подробнее о нас и как мы работаем',
+                    title: 'Свяжитесь с нами',
+                    desc: 'Наши эксперты проконсультируют по услугам и любым вопросам, связанным с элитной недвижимостью!',
                     icon: '/img/icons/icon-subcategory/25-metrium-2.svg'
                 })
         include ../../blocks/modules/all-categories/categories--company
@@ -39,7 +40,9 @@ block main
                 picture.partner: img(src="/img/company/logo06.png" alt="OCtober Group")
                 picture.partner: img(src="/img/company/logo07.png" alt="Villagio")
 
-    section.container: h2 awards
+    section.company__awards
+        .container
+            include ../../blocks/modules/awards/awards
 
     section.container: h2 contacts
 
