@@ -3,22 +3,35 @@
 .awards {
     h2 {
         line-height: 1.3;
-        margin-bottom: 48px;
+        margin-bottom: 24px;
+        @include vars.from('md') {
+            margin-bottom: 48px;
+        }
     }
     &__grid {
         display: grid;
         gap: 32px;
-        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        grid-template-columns: 1fr;
+        @include vars.from('md') {
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        }
     }
 }
 
 .award {
     background: var(--white);
-    padding: 32px;
-    border-radius: 24px;
+    padding: 16px;
+    border-radius: 12px;
     display: grid;
-    grid-template-columns: 1fr 168px;
-    gap: 24px;
+    grid-template-columns: 1fr 130px;
+    gap: 16px;
+    hyphens: auto;
+    @include vars.from('md') {
+        border-radius: 24px;
+        padding: 32px;
+        grid-template-columns: 1fr 168px;
+        gap: 24px;
+    }
 
     picture {
         display: block;
@@ -37,18 +50,18 @@
     }
 
     &__title {
-        font: 400 28px/40px vars.$font-captions;
+        font: 400 clamp(20px, 3vw ,28px)/1.43 vars.$font-captions;
         color: var(--text-1);
         letter-spacing: .04em;
     }
 
     &__desc {
-        font: 400 16px/1.5 vars.$font-default;
+        font: 400 clamp(14px, 1vw, 16px)/1.5 vars.$font-default;
         letter-spacing: .02em;
         margin-bottom: 4px;
     }
 
     &__year {
-        font: 500 20px/1.6 vars.$font-default;
+        font: 500 clamp(16px, 1.5vw, 20px)/1.6 vars.$font-default;
     }
 }

@@ -2,46 +2,68 @@
 
 .factoid {
     background: var(--bg);
-    padding-block: 64px 80px;
+    padding-block: 32px 40px;
+    @include vars.from('lg') {
+        padding-block: 64px 80px;
+    }
 
     &__block {
         background: var(--white);
-        padding: 48px;
+        padding: var(--container-padding);
         border-radius: 24px;
+        @include vars.from('xxl') {
+            padding: 48px;
+        }
+
     }
 
     &__main {
-        display: grid;
-        grid-template-columns: 1fr 800px;
-        gap: 48px;
+        @include vars.from('lg') {
+            display: grid;
+            gap: 48px;
+            grid-template-columns: 1fr 1fr;
+        }
+        @include vars.from('xxl') {
+            grid-template-columns: 1fr 800px;
+        }
     }
 
     &__main-footer {
         display: flex;
         gap: 8px;
         margin-top: 36px;
+        flex-wrap: wrap;
 
         .btn {
             padding-inline: 24px;
             min-width: auto;
+            @include vars.before('md') {
+                width: 100%;
+            }
+        }
+
+        li {
+            @include vars.before('md') {
+                width: 100%;
+            }
         }
     }
 
     &__note {
-        font: 400 18px/28px vars.$font-default;
+        font: 400 clamp(14px, 1.5vw, 18px)/1.56 vars.$font-default;
         color: var(--text-2);
         margin-bottom: 9px;
     }
 
     &__title {
-        font: 400 48px/60px vars.$font-captions;
+        font: 400 clamp(24px, 4vw, 48px)/1.25 vars.$font-captions;
         letter-spacing: .04em;
         margin-bottom: 30px;
     }
 
     &__description {
         p {
-            font: 400 18px/28px vars.$font-default;
+            font: 400 clamp(14px, 1.5vw, 18px)/1.56 vars.$font-default;
             letter-spacing: .02em;
             margin-block: 12px;
             hyphens: auto;
@@ -50,9 +72,12 @@
 
     &__facts {
         display: grid;
-        gap: 24px;
+        gap: 16px;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         margin-top: 24px;
+        @include vars.from('xl') {
+            gap: 24px;
+        }
     }
 
     &__fact {
@@ -61,7 +86,7 @@
         border-radius: 16px;
 
         h3 {
-            font: 400 36px/48px vars.$font-captions;
+            font: 400 clamp(24px, 3vw, 36px)/1.33 vars.$font-captions;
             color: var(--accent);
             margin-bottom: 8px;
         }
@@ -69,6 +94,12 @@
         .subtitle {
             font: 400 16px/1.5 vars.$font-default;
             color: var(--text-1);
+        }
+
+        @include vars.hover {
+            h3 {
+                color: var(--accent-11);
+            }
         }
     }
 }

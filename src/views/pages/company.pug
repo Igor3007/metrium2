@@ -15,7 +15,7 @@ block main
 
     section.company__services
         .container
-            h2 Услуги компании
+            h2#service Услуги компании
             p.subtitle Компания «Метриум» предлагает уникальную систему сервисов для инвестиций в высокобюджетную недвижимость по Москве и Московской области.
             .company__services-grid
                 each card in pages.company.services
@@ -29,7 +29,7 @@ block main
 
     section.partners
         .container
-            h2 Наши партнёры
+            h2#partners Наши партнёры
             .company__partners
                 picture.partner: img(src="/img/company/logo00.png" alt="Level group")
                 picture.partner: img(src="/img/company/logo01.png" alt="MR group")
@@ -44,5 +44,8 @@ block main
         .container
             include ../../blocks/modules/awards/awards
 
-    section.container: h2 contacts
-
+    section.company__contacts
+        .container
+            include ../../blocks/modules/contacts/contacts
+block append scripts
+    script(src="https://api-maps.yandex.ru/v3/?apikey=0e00c58a-2691-4220-95a9-f61fbbb73582&lang=ru_RU")

@@ -1,7 +1,10 @@
 @use "../../../styles/vars";
 
 .management {
-    padding-block: 64px;
+    padding-block: 32px;
+    @include vars.from('lg') {
+        padding-block: 64px;
+    }
 
     h2 {
         line-height: 1;
@@ -10,16 +13,22 @@
     }
 
     &__managers {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         gap: 32px;
-        grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
+        align-items: center;
+
+        @include vars.from('md') {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
+        }
     }
 
     &__footer {
         background: linear-gradient(0, var(--bg), var(--bg) 50%, #fff 50%, #fff);
 
         &-content {
-            font: 400 18px/28px vars.$font-default;
+            font: 400 clamp(14px, 1.5vw, 18px)/1.56 vars.$font-default;
             letter-spacing: .02em;
             border-radius: 16px;
             border: 8px solid var(--white);
@@ -30,7 +39,12 @@
 }
 
 .manager {
-    width: 512px;
+    @include vars.before('md') {
+        text-align: center;
+    }
+    @include vars.from('xl') {
+        width: 512px;
+    }
 
     picture {
         border: 2px solid var(--accent-13);
@@ -38,6 +52,9 @@
         aspect-ratio: 3 / 4;
         border-radius: 64px;
         overflow: hidden;
+        @include vars.before('md') {
+            margin-inline: auto;
+        }
         img {
             width: 100%;
             height: 100%;

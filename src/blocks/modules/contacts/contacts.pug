@@ -1,0 +1,32 @@
+.contacts
+    h2#contacts Контакты
+    .contacts__grid
+        .contacts__contact
+            .contacts__group
+                span Телефон
+                a(href="tel:+74952525255") +7 (495) 25-25-255
+            .contacts__group
+                span Электронная почта
+                a(href="mailto:contact@metrium-premium.ru") contact@metrium-premium.ru
+            .contacts__group
+                span Мессенджеры и соцсети:
+                .contacts__social
+                    a(href="#")
+                        +icon("ic_tg_fill")
+                        span Telegram
+                    a(href="#")
+                        +icon("ic_wa-fill")
+                        span WhatsApp
+                    a(href="#")
+                        +icon("ic_vk-fill")
+                        span VK
+        .contacts__place
+            .contacts__group
+                span Адрес
+                p Москва, ул. Станиславского, д. 21, стр. 3 / БЦ «Фабрика Станиславского», 5 этаж.
+            .contacts__group
+                span Время работы
+                p Понедельник — Четверг — с 9:00 до 20:00. Пятница — с 9:00 до 19:00.
+                    br
+                    | Суббота и воскресенье — по договорённости.
+    .ymap-static(data-center="40,60" data-zoom="9")

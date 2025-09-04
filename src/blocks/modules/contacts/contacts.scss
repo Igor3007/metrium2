@@ -1,0 +1,87 @@
+@use "../../../styles/vars";
+
+.contacts {
+    padding-block: 32px 40px;
+    @include vars.from('lg') {
+        padding-block: 64px 80px;
+    }
+
+    h2 {
+        letter-spacing: .04em;
+        margin-bottom: 32px;
+        @include vars.from('xl') {
+            font: 400 48px/1.25 vars.$font-captions;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        gap: 24px;
+        @include vars.from('lg') {
+            grid-template-columns: 1fr 1fr;
+        }
+        @include vars.from('xxl') {
+            gap: 144px;
+        }
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    &__group {
+
+        & > span {
+            font: 400 16px/1.5 vars.$font-default;
+            letter-spacing: .018em;
+            color: var(--text-2);
+            display: block;
+            margin-bottom: 4px;
+        }
+        & > a {
+            font: 400 clamp(18px, 3vw, 36px)/1.33 vars.$font-captions;
+            letter-spacing: .04em;
+            color: var(--accent-21);
+            @include vars.hover {
+                color: var(--accent-11);
+            }
+        }
+    }
+
+    &__social {
+        display: flex;
+        gap: 16px;
+        margin-top: 12px;
+        align-items: center;
+
+        .icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        a {
+            display: flex;
+            gap: 8px;
+            color: var(--accent-21);
+            font: 500 16px/2 vars.$font-default;
+            letter-spacing: .018em;
+            @include vars.hover {
+                color: var(--accent-11);
+            }
+        }
+    }
+
+    p {
+        font: 400 clamp(14px, 2vw, 20px)/1.6 vars.$font-default;
+        letter-spacing: .018em;
+        margin-block: 8px 24px;
+    }
+
+    .ymap-static {
+        margin-top: 36px;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+}
