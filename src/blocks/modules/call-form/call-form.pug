@@ -18,10 +18,10 @@ form.call-form
             input(type="tel" placeholder="Номер телефона" name="tel" required="required" data-maska="+7(###)###-##-##")
     .call-form__group
         .call-form__input
-            button.btn.btn-green
+            button.btn.btn-green(data-type="review")
                 span Записаться на просмотр
         .call-form__input
-            button.btn.btn-line
+            button.btn.btn-line(data-type="consult")
                 span Получить презентацию
         .call-form__input.subtitle
             +checkbox("", "agree", {required: true})

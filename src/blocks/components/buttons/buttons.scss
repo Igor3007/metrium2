@@ -210,6 +210,10 @@
         font-weight: 500;
     }
 
+    &.btn-wide {
+        width: 100%;
+    }
+
     &.btn-green {
         background-color: var(--accent-11);
         color: #fff;

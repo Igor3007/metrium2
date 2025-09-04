@@ -115,6 +115,9 @@
             &.fix4 {
                 width: 100%;
             }
+            &.fix5 {
+                flex-grow: 0;
+            }
         }
         @include vars.from('lg') {
             &.fix1 {

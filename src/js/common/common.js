@@ -15,6 +15,7 @@ import {initStaticMaps} from "./map-static.js";
 import {initSliderMinicard, initMinicardEvents} from "./minicard.js";
 import {initWishLists, WishList} from "./wishlist.js";
 import {initScrollToAnchors} from "./initScrollToAnchors.js";
+import {callFormProcess} from "./custom-forms.js";
 import "fslightbox";
 import "./all-pages.js";
 import "./custom-pages.js";
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initGallery();
     initScrollToAnchors();
     initStaticMaps();
+    callFormProcess();
     initFactoidGallery();
     setTimeout(
         () => {initFormOnChangeSubmit()}
