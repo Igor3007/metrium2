@@ -16,7 +16,7 @@ mixin detail-apartament
             section.cityplace__anchors
                 +anchors-block([
                     {anchor: "description", title: "Описание", active: true},
-                    {anchor: "props", title: "Характеристики}"},
+                    {anchor: "props", title: "Характеристики"},
                     {anchor: "infrastructure", title: "Инфраструктура"}
                 ])
             section.cityplace__content
@@ -60,4 +60,11 @@ mixin detail-apartament
 
                 article.cityplace__map-block#infrastructure
                     h4 На карте и инфраструктура
+                    .cityplace__map-legend
+                        +dotted-list([
+                            ["Город", "Москва"],
+                            ["Район", "Хамовники"],
+                            ["Округ", "ЦАО"],
+                            ["Адрес", "Большой Лёвшинский пер., 11"]
+                        ])
                     +ymap-static("37.620070,55.753630", "12")

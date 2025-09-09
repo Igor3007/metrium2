@@ -284,6 +284,21 @@ html:has(.cityplace) {
             }
         }
     }
+    &__map-legend {
+        .dotted-list {
+            @include vars.from('xl') {
+                margin-top: -10px;
+                margin-bottom: 24px;
+                columns: 2;
+                column-gap: 50px;
+            }
+            li {
+                font: 500 16px/1.5 vars.$font-default;
+                margin-bottom: 16px;
+                letter-spacing: .02em;
+            }
+        }
+    }
 }
 
 .detail-apartment {
@@ -315,6 +330,20 @@ html:has(.cityplace) {
         .icon {
             width: 18px;
             height: 18px;
+        }
+    }
+
+    .recently-viewed.similar {
+        @include vars.from('md') {
+            padding-top: 96px;
+        }
+    }
+
+    .section-special-offers {
+        background: var(--bg);
+        @include vars.from('md') {
+            padding-top: 50px;
+            padding-bottom: 36px;
         }
     }
 }

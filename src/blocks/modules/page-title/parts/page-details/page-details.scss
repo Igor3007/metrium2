@@ -1,11 +1,17 @@
 .page-details {
     display: flex;
     align-items: center;
+    overflow: auto;
+    margin-inline: var(--container-out);
+    padding-inline: var(--container-padding);
+    padding-bottom: 10px;
+    margin-bottom: -10px;
 
     &>div {
 
         display: flex;
         align-items: center;
+        white-space: nowrap;
 
         &::after {
             content: '';
@@ -30,6 +36,7 @@
     &__metro {
         & a {
             display: flex;
+            white-space: nowrap;
             align-items: center;
             color: var(--accent-11);
             font-weight: 500;
