@@ -16,6 +16,7 @@ import {initSliderMinicard, initMinicardEvents} from "./minicard.js";
 import {initWishLists, WishList} from "./wishlist.js";
 import {initScrollToAnchors} from "./initScrollToAnchors.js";
 import {callFormProcess} from "./custom-forms.js";
+import {initSwitch} from "./switcher.js";
 import "fslightbox";
 import "./all-pages.js";
 import "./custom-pages.js";
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initStaticMaps();
     callFormProcess();
     initFactoidGallery();
+    initSwitch();
     setTimeout(
         () => {initFormOnChangeSubmit()}
         , 500); // need to prevent clearing eventHandlers with afSelect

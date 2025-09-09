@@ -240,3 +240,26 @@
 .dark-bg.section-form-question {
     background: var(--accent-12);
 }
+
+.nested {
+    &.section-form-question {
+        padding-top: 2px;
+        padding-bottom: 0;
+    }
+    .container {
+        padding: 0;
+    }
+    .form-question {
+        @include vars.from('lg') {
+            padding: 32px;
+            &__main {
+                margin-bottom: 24px;
+            }
+            &__title {
+                font: 400 28px/40px vars.$font-captions;
+                letter-spacing: .04em;
+                padding-bottom: 12px;
+            }
+        }
+    }
+}

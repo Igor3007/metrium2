@@ -1,0 +1,18 @@
+mixin contact-float()
+    details.float-contacts
+        summary
+            +icon("ic_chat","","closed")
+            +icon("ic_close",18,"opened")
+        ul
+            li
+                a(href="#").float-contacts__item.brand-tg: +icon("ic_tg-fab")
+                span.title Telegram
+            li
+                a(href="#").float-contacts__item.brand-wa: +icon("ic_whatsapp-fab")
+                span.title WhatsApp
+            li
+                a(href="#").float-contacts__item.brand-vk: +icon("ic_vk-fab")
+                span.title Вконтакте
+            li
+                a(href="#").float-contacts__item.brand-mail: +icon("ic_mail-fab")
+                span.title Написать нам

@@ -15,6 +15,7 @@
             gap: 4px;
             color: var(--accent-11);
             align-items: center;
+
             &:not(:last-child) {
                 &:after {
                     content: "";
@@ -55,9 +56,11 @@ html:has(.cityplace) {
             padding-bottom: 40px;
         }
     }
+
     &-wrp {
         background: var(--bg);
     }
+
     &__grid {
         @include vars.from('lg') {
             display: grid;
@@ -65,6 +68,7 @@ html:has(.cityplace) {
             gap: 0 32px;
         }
     }
+
     &__sticky-wrp {
         grid-row: span 3;
     }
@@ -73,6 +77,18 @@ html:has(.cityplace) {
     &__content,
     &__anchors {
         grid-column: 1 / 3;
+    }
+
+    &__content {
+        article {
+            h4:not(:first-child) {
+                margin-top: 24px;
+            }
+
+            & + article {
+                margin-top: 32px;
+            }
+        }
     }
 
     .gallery-big {
@@ -99,12 +115,14 @@ html:has(.cityplace) {
             margin-inline: -12px;
         }
     }
+
     .sticky-content {
         @include vars.from('md') {
             top: var(--hgt-header);
             position: sticky;
         }
     }
+
     &__description {
         background: var(--white);
         padding: 16px;
@@ -119,13 +137,22 @@ html:has(.cityplace) {
             letter-spacing: 0.02em;
             hyphens: auto;
         }
+
         .dotted-list {
             @include vars.from('xl') {
                 columns: 2;
                 column-gap: 32px;
             }
         }
+
+        .detail-apartment & {
+            @include vars.from('md') {
+                padding: 32px;
+                font: 400 16px/24px vars.$font-default;
+            }
+        }
     }
+
     &__filter {
         background: var(--white);
         padding: 16px;
@@ -142,19 +169,21 @@ html:has(.cityplace) {
 
         form {
             display: grid;
-            grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 8px;
 
             .checkbox {
                 height: 36px;
                 align-self: center;
             }
+
             @include vars.from('md') {
                 gap: 12px;
                 margin-top: 22px;
             }
         }
     }
+
     &__list {
         margin-top: 24px;
         background: var(--white);
@@ -196,7 +225,7 @@ html:has(.cityplace) {
         margin-top: 24px;
         display: grid;
         gap: 16px;
-        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 
     &__list-footer {
@@ -204,6 +233,7 @@ html:has(.cityplace) {
             width: 100%;
             margin-top: 16px;
         }
+
         .pagination__page {
             margin-top: 16px;
             justify-content: center;
@@ -221,6 +251,7 @@ html:has(.cityplace) {
             line-height: 28px;
         }
     }
+
     &__map-block {
         background: var(--white);
         padding: 16px;
@@ -253,7 +284,39 @@ html:has(.cityplace) {
             }
         }
     }
+}
 
+.detail-apartment {
+    .cityplace {
+        &__description {
+            margin-top: 8px;
+            margin-bottom: 30px;
+
+            p {
+                margin-top: 12px;
+                margin-bottom: 0;
+            }
+
+            h4 {
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    .link-more {
+        display: flex;
+        gap: 4px;
+        font: 500 16px/1.5 vars.$font-default;
+        color: var(--accent-11);
+        align-items: center;
+        margin-top: 16px;
+        letter-spacing: .02em;
+
+        .icon {
+            width: 18px;
+            height: 18px;
+        }
+    }
 }
 
 .page-header {

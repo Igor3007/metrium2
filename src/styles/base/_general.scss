@@ -17,6 +17,9 @@
     --text-1: #1A1A1A;
     --text-2: #535968;
     --text-3: #8DA4A8;
+    --brand-tg: #039BE5;
+    --brand-wa: #4CAF50;
+    --brand-vk: #0077FF;
 
     --container-padding: 16px;
     --container-out: -16px;
@@ -355,4 +358,8 @@ input[type="date"] {
     @include vars.from('xl') {
         text-align: right;
     }
+}
+
+[data-case]:not(.active) {
+    display: none;
 }

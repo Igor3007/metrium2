@@ -37,6 +37,7 @@
         .btn {
             padding-inline: 24px;
             min-width: auto;
+            width: 100%;
             @include vars.before('md') {
                 width: 100%;
             }
@@ -45,6 +46,9 @@
         li {
             @include vars.before('md') {
                 width: 100%;
+            }
+            @include vars.before('xl') {
+                flex-grow: 1;
             }
         }
     }

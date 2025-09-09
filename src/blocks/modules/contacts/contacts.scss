@@ -65,10 +65,16 @@
             display: flex;
             gap: 8px;
             color: var(--accent-21);
-            font: 500 16px/2 vars.$font-default;
+            font: 500 16px/1 vars.$font-default;
             letter-spacing: .018em;
+            align-items: center;
             @include vars.hover {
                 color: var(--accent-11);
+            }
+
+            span {
+                margin-top: 2px;
+
             }
         }
     }

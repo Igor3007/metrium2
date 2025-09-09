@@ -39,7 +39,7 @@
 }
 
 .manager {
-    @include vars.before('md') {
+    @include vars.before('xl') {
         text-align: center;
     }
     @include vars.from('xl') {
@@ -52,7 +52,7 @@
         aspect-ratio: 3 / 4;
         border-radius: 64px;
         overflow: hidden;
-        @include vars.before('md') {
+        @include vars.before('xl') {
             margin-inline: auto;
         }
         img {

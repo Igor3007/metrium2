@@ -1,0 +1,36 @@
+include ../../../views/helpers/mixins
+
+article.passport.passport-apartments
+    .passport__id ID: 24498
+    .passport__prices.switch
+        .passport__price-item.active(data-case="rub")
+            .passport__price 725 320 000 ₽
+            .passport__per 2 308 232 ₽/м²
+        .passport__price-item(data-case="dol")
+            .passport__price 25 320 000 $
+            .passport__per 308 232 $/м²
+        .passport__price-item(data-case="eur")
+            .passport__price 25 320 000 €
+            .passport__per 308 232 €/м²
+    ul.passport__params
+        li
+            .attr Площадь
+            .value 201 м²
+        li
+            .attr Спален
+            .value 4
+        li
+            .attr Комнат
+            .value 3
+        li
+            .attr С/у
+            .value 3
+    ul.passport__currency.switch
+        li
+            button.active(data-switch="rub") ₽
+        li
+            button(data-switch="dol") $
+        li
+            button(data-switch="eur") €
+    .passport__fav(data-wishlist="24498")
+        +icon('ic_heart', 20)

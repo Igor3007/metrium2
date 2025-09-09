@@ -1,0 +1,133 @@
+@use "../../../styles/vars";
+
+.float-contacts {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+
+    summary {
+        background: var(--accent);
+        border-radius: 50%;
+        width: 56px;
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--white);
+        cursor: pointer;
+        transition: .3s;
+        position: relative;
+        z-index: 5;
+
+        .icon {
+            position: absolute;
+        }
+
+        @include vars.hover {
+            background: var(--accent-11);
+        }
+    }
+
+    .icon.opened {
+        display: none;
+    }
+    &[open] {
+        summary {
+            background: var(--accent-11);
+        }
+        ul {
+            max-height: 300px;
+        }
+        .icon {
+            &.opened {
+                display: block;
+            }
+            &.closed {
+                display: none;
+            }
+
+        }
+    }
+
+    .title {
+        max-width: 0;
+        opacity: 0;
+        position: absolute;
+        padding: 8px;
+        background: var(--white);
+        transition: .3s;
+        box-shadow: 0 0 6px 0 rgba(0,0,0,.25);
+        border-radius: 8px;
+        bottom: 10px;
+        white-space: nowrap;
+        right: 8px;
+        overflow: hidden;
+        font: 400 14px/1 vars.$font-default;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: calc(100% + 8px);
+        gap: 8px;
+        max-height: 0;
+        padding: 4px;
+        transition: .3s;
+
+        li {
+            position: relative;
+            @include vars.hover {
+                .title {
+                    max-width: 300px;
+                    opacity: 1;
+                    right: calc(100% + 8px);
+                }
+            }
+        }
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        background: var(--white);
+        border-radius: 50%;
+        box-shadow: 0 0 6px 0 rgba(0,0,0,.25);
+        position: relative;
+        z-index: 5;
+    }
+
+    .brand-tg {
+        color: var(--brand-tg);
+        @include vars.hover {
+            color: var(--white);
+            background: var(--brand-tg);
+        }
+    }
+    .brand-wa {
+        color: var(--brand-wa);
+        @include vars.hover {
+            color: var(--white);
+            background: var(--brand-wa);
+        }
+    }
+    .brand-vk {
+        color: var(--brand-vk);
+        @include vars.hover {
+            color: var(--white);
+            background: var(--brand-vk);
+        }
+    }
+    .brand-mail {
+        color: var(--accent);
+        --paper: var(--white);
+        @include vars.hover {
+            color: var(--white);
+            background: var(--accent);
+            --paper: var(--accent);
+        }
+    }
+}

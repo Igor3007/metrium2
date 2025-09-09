@@ -1,6 +1,63 @@
+include ../../../blocks/components/index
+include ../../../blocks/modules/index
+include ../../../blocks/components/form/form
+include ../../../views/helpers/mixins
+
 mixin detail-apartament
-    section.section-detail-apartament
-        .container
-            .detail-apartament__wrp
-                .detail-apartament__content
-                .detail-apartament__aside
+    - const gallery_base = "/img/apartment/"
+    - const gallery_images = ["img01.jpg", "img02.jpg", "img03.jpg", "img04.jpg", "img01.jpg", "img02.jpg", "img03.jpg", "img04.jpg"]
+    .cityplace-wrp
+        .cityplace__grid.container
+            include ../../../blocks/modules/gallery/gallery-big
+            div.cityplace__sticky-wrp
+                .sticky-content
+                    include ../../../blocks/modules/passport/passport-apartment
+                    include ../../../blocks/modules/call-form/call-form
+            section.cityplace__anchors
+                +anchors-block([
+                    {anchor: "description", title: "Описание", active: true},
+                    {anchor: "props", title: "Характеристики}"},
+                    {anchor: "infrastructure", title: "Инфраструктура"}
+                ])
+            section.cityplace__content
+                article.cityplace__description#description
+                    h4 Описание
+                    p Предлагается светлый пентхаус в клубном доме на Остоженке. Квартира жилой площадью 246 кв. м с выходом на террасу 90 кв. м. Благодаря большому количеству окон легко планируется кухня, гостиная, столовая группа, три спальни со своими ванными комнатами и гардеробными, кабинет, гостевой санузел. Приятные виды из окон на исторический центр города. Лифт привезет хозяина прямо в квартиру, допуск по индивидуально запрограммированному ключу. В подземном паркинге машиноместо.
+                article#props.cityplace__description
+                    h4 Об объекте недвижимости
+                    +dotted-list([
+                        ["Тип недвижимости", "Пентхаус"],
+                        ["Новостройка или вторичка", "Вторичка"],
+                        ["Готовность", "Готов"],
+                        ["Метро", "Смоленская"],
+                        ["Площадь", "201 м²"],
+                        ["Комнат", "6"],
+                        ["Этаж", "4/9"],
+                        ["Спален", "3"],
+                        ["Санузлов", "3"],
+                        ["Уровней", "2"],
+                        ["Высота потолков", "3,5 м"],
+                        ["Терраса", "Есть"]
+                    ])
+                    h4 О жилом комплексе
+                    +dotted-list([
+                        ["Площадь объектов от", "105.10 м²"],
+                        ["Тип недвижимости", "Квартиры"],
+                        ["Объектов в комплексе", "24"],
+                        ["Этажность", "7"],
+                        ["Потолки", "3.5  — 5 м"],
+                        ["Паркинг", "Да"]
+                    ])
+                    a.link-more(href="#")
+                        span Ещё 23 объекта в этом ЖК
+                        +icon("ic_chevron-right")
+
+                +form-question({
+                    title: "Не подошли характеристики?",
+                    description: "Эксперты «Метриум Премиум» помогут найти подходящие варианты, которые удовлетворят ваши пожелания!",
+                    class: "nested"
+                })
+
+                article.cityplace__map-block#infrastructure
+                    h4 На карте и инфраструктура
+                    +ymap-static("37.620070,55.753630", "12")
