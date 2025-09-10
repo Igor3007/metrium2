@@ -319,7 +319,7 @@ html:has(.cityplace) {
     }
 
     .link-more {
-        display: flex;
+        display: inline-flex;
         gap: 4px;
         font: 500 16px/1.5 vars.$font-default;
         color: var(--accent-11);

@@ -269,3 +269,16 @@
         }
     }
 }
+
+// fix for nested form
+.section-form-question.nested {
+    @include vars.before('xxl') {
+        .form-question {
+            display: block;
+        }
+        .form-question__form, .form-question__main {
+            width: auto;
+        }
+
+    }
+}
