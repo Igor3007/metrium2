@@ -151,6 +151,10 @@
         border-radius: 12px;
         margin-top: 16px;
 
+        &.grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
         .attr {
             font: 400 13px/16px vars.$font-default;
             color: var(--text-2);

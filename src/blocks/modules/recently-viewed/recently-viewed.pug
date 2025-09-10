@@ -24,5 +24,7 @@ mixin recently-viewed(data)
                                             +minicard-country(card)
                                         when "country-place"
                                             +minicard-countryplace(card)
+                                        when "country-inner"
+                                            +minicard-country-inner(card)
                                         default
                                             +minicard(card)

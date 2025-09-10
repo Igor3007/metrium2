@@ -13,7 +13,7 @@ mixin passport-detail(data)
             .passport__price-item(data-case="eur")
                 .passport__price 25 320 000 €
                 .passport__per 308 232 €/м²
-        ul.passport__params
+        ul.passport__params(class=`grid-${params.length}`)
              each param in params
                  li
                     .attr= param[0]
