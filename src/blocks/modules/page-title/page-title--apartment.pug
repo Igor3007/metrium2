@@ -3,7 +3,7 @@ include ../../../blocks/components/form/form
 include ../../../blocks/components/index
 include parts/page-details/page-details
 
-section.page-title.page-title--apartment
+section.page-header
     .container
         +breadcrumbs([
             {url: "/", title: "Главная"},
@@ -12,6 +12,8 @@ section.page-title.page-title--apartment
             {url: "#", title: "Дворянское гнездо"},
             {url: "#", title: "6-комн. Квартира в ЖК Дворянское гнездо"},
         ])
+section.page-title.page-title--apartment
+    .container
         h1 6-комн. Квартира в ЖК Дворянское гнездо
         .page-title__details
             +page-details

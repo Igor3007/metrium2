@@ -10,8 +10,6 @@ block variables
     - const bodyClass = "country-inner cityplace"
     - const mainClass = "city-place"
 
-    -var gallery_base = "/img/country-inner/"
-    -var gallery_images = ["image05.jpg", "image02.jpg", "image03.jpg", "image04.jpg", "image01.jpg", "image06.jpg", "image07.jpg", "image08.jpg", "image09.jpg", "image10.jpg"]
 block main
     section.page-header
         .container
@@ -32,7 +30,10 @@ block main
                     span На карте
     .cityplace-wrp
         .cityplace__grid.container
-            include ../../blocks/modules/gallery/gallery-big
+            +gallery-big({
+                base: "/img/country-inner/",
+                images: ["image05.jpg", "image02.jpg", "image03.jpg", "image04.jpg", "image01.jpg", "image06.jpg", "image07.jpg", "image08.jpg", "image09.jpg", "image10.jpg"]
+            })
             div.cityplace__sticky-wrp
                 .sticky-content
                     include ../../blocks/modules/passport/passport

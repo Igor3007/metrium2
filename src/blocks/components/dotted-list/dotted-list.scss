@@ -9,6 +9,9 @@
         &:not(:last-child) {
             margin-bottom: 12px;
         }
+        @include vars.from('md') {
+            font-size: 16px;
+        }
     }
     &__dots {
         flex-grow: 1;

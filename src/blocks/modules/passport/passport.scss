@@ -31,6 +31,10 @@
         }
     }
 
+    &__per {
+        font: 500 16px/1.5 vars.$font-default;
+    }
+
     &__terms {
         display: flex;
         justify-content: space-between;
@@ -79,7 +83,11 @@
         cursor: pointer;
 
         .passport-apartments & {
-            top: 84px;
+            top: 76px;
+
+            @include vars.from('md') {
+                top: 84px;
+            }
         }
 
         svg {
@@ -146,6 +154,10 @@
         .attr {
             font: 400 13px/16px vars.$font-default;
             color: var(--text-2);
+        }
+
+        .value {
+            font: 400 15px/24px vars.$font-default;
         }
     }
 }

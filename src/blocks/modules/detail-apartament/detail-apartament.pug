@@ -4,11 +4,13 @@ include ../../../blocks/components/form/form
 include ../../../views/helpers/mixins
 
 mixin detail-apartament
-    - const gallery_base = "/img/apartment/"
-    - const gallery_images = ["img01.jpg", "img02.jpg", "img03.jpg", "img04.jpg", "img01.jpg", "img02.jpg", "img03.jpg", "img04.jpg"]
     .cityplace-wrp
         .cityplace__grid.container
-            include ../../../blocks/modules/gallery/gallery-big
+            +gallery-big({
+                base: "/img/apartment/",
+                images: ["img01.jpg", "img02.jpg", "img03.jpg", "img04.jpg", "img01.jpg", "img02.jpg", "img03.jpg", "img04.jpg"],
+                badges: [{text: "Эксклюзив", class: "gold"}, {text: "Старт продаж", class: "green"}, {text: "Дизайнерский интерьер", class: "white"}]
+            })
             div.cityplace__sticky-wrp
                 .sticky-content
                     include ../../../blocks/modules/passport/passport-apartment
@@ -60,7 +62,7 @@ mixin detail-apartament
 
                 article.cityplace__map-block#infrastructure
                     h4 На карте и инфраструктура
-                    .cityplace__map-legend
+                    .cityplace__map-legend.hide-before-md
                         +dotted-list([
                             ["Город", "Москва"],
                             ["Район", "Хамовники"],

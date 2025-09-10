@@ -114,6 +114,10 @@
             width: 100%;
             font-size: 18px;
 
+            &:before {
+                background: var(--accent-22);
+            }
+
             & svg {
                 transition: 0.3s ease;
             }
@@ -127,25 +131,20 @@
                     min-width: 24px;
                 }
             }
-
-            &:hover {
+            @include vars.hover {
                 background-color: var(--accent);
 
-
-                & svg {
+                svg {
                     transform: translateX(5px);
                 }
             }
         }
 
         .checkbox input:checked ~ .checkbox__elem {
-            @media (any-hover: hover) {
-                &:hover {
-                    background: var(--accent-22);
-                    border-color: var(--accent-22);
-                }
+            @include vars.hover {
+                background: var(--accent-22);
+                border-color: var(--accent-22);
             }
-
         }
     }
 
@@ -168,6 +167,11 @@
     &__note {
         .checkbox {
             top: 4px;
+            @include vars.hover {
+                .checkbox__elem {
+                    border-color: var(--accent-22);
+                }
+            }
         }
 
         & a {
@@ -246,9 +250,11 @@
         padding-top: 2px;
         padding-bottom: 0;
     }
+
     .container {
         padding: 0;
     }
+
     .form-question {
         @include vars.from('lg') {
             padding: 32px;

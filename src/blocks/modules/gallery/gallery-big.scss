@@ -1,6 +1,7 @@
 @use "../../../styles/vars";
 
 .gallery-big {
+    position: relative;
     .main {
         picture {
             overflow: hidden;
@@ -140,5 +141,43 @@
                 }
             }
         }
+    }
+    &__badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-bottom: 16px;
+
+        @include vars.from('md') {
+            position: absolute;
+            z-index: 35;
+            left: 20px;
+            top: 20px;
+            max-width: 75%;
+            gap: 6px;
+        }
+
+        .badge {
+            font: 400 14px/20px vars.$font-default;
+            padding: 4px 16px;
+            border-radius: 14px;
+            white-space: nowrap;
+
+            &.gold {
+                background: var(--accent);
+                color: var(--white);
+            }
+
+            &.green {
+                background: var(--accent-11);
+                color: var(--white);
+            }
+
+            &.white {
+                background: var(--white);
+                color: var(--text-1);
+            }
+        }
+
     }
 }

@@ -346,6 +346,19 @@ html:has(.cityplace) {
             padding-bottom: 36px;
         }
     }
+
+    .section-form-question {
+        padding-bottom: 48px;
+        border-bottom: 1px solid var(--accent-13);
+        @include vars.from('md') {
+            padding-bottom: 96px;
+        }
+    }
+
+    .form-question {
+        margin: 0;
+    }
+
 }
 
 .page-header {

@@ -1,29 +1,36 @@
--var base = gallery_base || "/img/residentials/"
--var images = gallery_images || ["image00.jpg", "image01.jpg", "image02.jpg", "image03.jpg", "image04.jpg", "image05.jpg", "image06.jpg", "image07.jpg"]
-section.gallery-big
-    .splide.main
-        .splide__track
-            ul.splide__list
-                for image in images
-                    li.splide__slide
-                        picture
-                            img(src=base+image)
-        .gallery-big__controls
-            .gallery-big__all
-                +icon("ic_fullscreen", 12)
-                span Все фото
-            .gallery-big__counter
-                span 1 / 12
-            .gallery-big__arrows
-                .arrow.disabled(data-dir="prev")
-                    +icon("ic_chevron-left", 12)
-                .arrow(data-dir="next")
-                    +icon("ic_chevron-right", 12)
+mixin gallery-big(data)
+    -var base = data?.base || "/img/residentials/"
+    -var images = data?.images || ["image00.jpg", "image01.jpg", "image02.jpg", "image03.jpg", "image04.jpg", "image05.jpg", "image06.jpg", "image07.jpg"]
+    -var badges = data?.badges || []
+    section.gallery-big
+        if badges.length
+            .gallery-big__badges
+                each badge in badges
+                    .badge(class=badge.class)
+                        span= badge.text
+        .splide.main
+            .splide__track
+                ul.splide__list
+                    for image in images
+                        li.splide__slide
+                            picture
+                                img(src=base+image)
+            .gallery-big__controls
+                .gallery-big__all
+                    +icon("ic_fullscreen", 12)
+                    span Все фото
+                .gallery-big__counter
+                    span 1 / 12
+                .gallery-big__arrows
+                    .arrow.disabled(data-dir="prev")
+                        +icon("ic_chevron-left", 12)
+                    .arrow(data-dir="next")
+                        +icon("ic_chevron-right", 12)
 
-    .splide.thumbs
-        .splide__track
-            ul.splide__list
-                for image in images
-                    li.splide__slide
-                        picture
-                            img(src=base + image)
+        .splide.thumbs
+            .splide__track
+                ul.splide__list
+                    for image in images
+                        li.splide__slide
+                            picture
+                                img(src=base + image)
