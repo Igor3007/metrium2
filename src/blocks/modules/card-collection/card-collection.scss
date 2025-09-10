@@ -45,6 +45,7 @@
         position: absolute;
         left: 0;
         top: 20px;
+        opacity: .7;
 
         & span {
             background-color: var(--accent-11);
@@ -148,6 +149,10 @@
                     background-color: var(--accent-11);
 
                 }
+            }
+
+            &__sticker {
+                opacity: 1;
             }
         }
     }

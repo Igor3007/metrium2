@@ -15,7 +15,10 @@
     &__group {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 8px;
+        @include vars.from('md') {
+            gap: 16px;
+        }
         &.narrow {
             gap: 8px;
         }

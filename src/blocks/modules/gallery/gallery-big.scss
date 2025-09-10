@@ -52,7 +52,6 @@
         top: 20px;
         background: var(--white);
         display: flex;
-        font-size: 14px;
         line-height: 22px;
         align-items: center;
         gap: 8px;
@@ -60,6 +59,12 @@
         border-radius: 20px;
         pointer-events: initial;
         cursor: pointer;
+        font: 500 14px/20px vars.$font-default;
+        opacity: 80%;
+
+        @include vars.hover {
+            opacity: 1;
+        }
 
         span {
             margin-bottom: -2px;
@@ -162,6 +167,11 @@
             padding: 4px 16px;
             border-radius: 14px;
             white-space: nowrap;
+
+            @include vars.from('md') {
+                font-size: 15px;
+                line-height: 24px;
+            }
 
             &.gold {
                 background: var(--accent);

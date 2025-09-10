@@ -301,9 +301,8 @@
             margin-left: 8px;
             letter-spacing: .02em;
 
-            &:hover {
-                text-decoration: underline;
-                color: var(--accent-11);
+            @include vars.hover {
+                color: var(--accent);
             }
         }
 

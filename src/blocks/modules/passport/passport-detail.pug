@@ -1,0 +1,29 @@
+include ../../../views/helpers/mixins
+mixin passport-detail(data)
+    -var params = data?.params || []
+    article.passport.passport-apartments
+        .passport__id ID: 24498
+        .passport__prices.switch
+            .passport__price-item.active(data-case="rub")
+                .passport__price 725 320 000 ₽
+                .passport__per 2 308 232 ₽/м²
+            .passport__price-item(data-case="dol")
+                .passport__price 25 320 000 $
+                .passport__per 308 232 $/м²
+            .passport__price-item(data-case="eur")
+                .passport__price 25 320 000 €
+                .passport__per 308 232 €/м²
+        ul.passport__params
+             each param in params
+                 li
+                    .attr= param[0]
+                    .value= param[1]
+        ul.passport__currency.switch
+            li
+                button.active(data-switch="rub") ₽
+            li
+                button(data-switch="dol") $
+            li
+                button(data-switch="eur") €
+        .passport__fav(data-wishlist="24498")
+            +icon('ic_heart', 20)

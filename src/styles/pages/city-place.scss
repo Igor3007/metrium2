@@ -327,6 +327,10 @@ html:has(.cityplace) {
         margin-top: 16px;
         letter-spacing: .02em;
 
+        @include vars.hover {
+            color: var(--accent);
+        }
+
         .icon {
             width: 18px;
             height: 18px;
@@ -347,7 +351,7 @@ html:has(.cityplace) {
         }
     }
 
-    .section-form-question {
+    .section-form-question.pre-footer {
         padding-bottom: 48px;
         border-bottom: 1px solid var(--accent-13);
         @include vars.from('md') {
