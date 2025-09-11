@@ -549,7 +549,7 @@
         }
     }
 
-    &-common {
+    &-common, &-country-inner {
         #{$ancestor} {
             &__action {
                 @container (width > 400px) {
@@ -740,7 +740,9 @@
     }
     .minicard__prop {
         padding-bottom: 7px;
-        opacity: 1 !important;
+        @container (width <= 400px) {
+            opacity: 1 !important;
+        }
     }
     .minicard__price {
         padding-top: 15px;

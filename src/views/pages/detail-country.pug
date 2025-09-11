@@ -88,13 +88,14 @@ block main
     +recently-viewed({
         title: 'Похожие предложения',
         class: 'similar',
+        type: 'country-inner'
     })
     +special-offers({title: "Подборки городской недвижимости", class: "city-page"})
     +recently-viewed()
     +form-question({
         title: "Затрудняетесь с выбором?",
         description: "Эксперты «Метриум Премиум» помогут вам и сэкономят время без предоплаты и комиссии!",
-        class: "dark-bg slim"
+        class: "dark-bg slim pre-footer"
     })
 block append scripts
     script(src="https://api-maps.yandex.ru/v3/?apikey=0e00c58a-2691-4220-95a9-f61fbbb73582&lang=ru_RU")

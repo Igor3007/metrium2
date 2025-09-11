@@ -1,3 +1,5 @@
+@use "../../../../../styles/vars";
+
 .page-details {
     display: flex;
     align-items: center;
@@ -41,8 +43,8 @@
             color: var(--accent-11);
             font-weight: 500;
 
-            &:hover {
-                text-decoration: underline;
+            @include vars.hover {
+                color: var(--accent);
             }
         }
 

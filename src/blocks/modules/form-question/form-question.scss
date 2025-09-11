@@ -174,11 +174,12 @@
             }
         }
 
-        & a {
+        a {
             color: var(--accent);
+            position: relative;
 
-            &:hover {
-                text-decoration: underline;
+            @include vars.hover {
+                color: var(--accent-22);
             }
         }
     }
