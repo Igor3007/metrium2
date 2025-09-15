@@ -189,6 +189,8 @@
     &__main {
         flex-grow: 1;
         padding: var(--card-padding);
+        display: flex;
+        flex-direction: column;
 
         @container (width > 400px) {
             --card-padding: 24px;
@@ -201,13 +203,14 @@
         flex-direction: column;
         transition: 0.2s linear;
         gap: 8px;
+        margin-top: auto;
 
         @container (width > 400px) {
             flex-direction: row;
             gap: 16px;
         }
 
-        & > div {
+        &>div {
             flex-grow: 1;
 
             @container (width > 400px) {
@@ -251,6 +254,7 @@
 
         position: absolute;
         right: 24px;
+
         @media (any-hover: hover) {
             opacity: 0;
             cursor: pointer;
@@ -338,15 +342,18 @@
         @container (width > 400px) {
             min-height: 172px;
         }
+
         ul {
             display: flex;
             gap: 4px;
             margin-inline: calc(-1 * var(--card-padding));
             padding-inline: var(--card-padding);
             overflow-x: auto;
+
             @container (width > 400px) {
                 flex-direction: column;
             }
+
             li {
                 a {
                     background: var(--accent-12);
@@ -397,6 +404,7 @@
             text-align: center;
             padding: 12px;
             border-radius: 12px;
+
             @container (width > 400px) {
                 padding-block: 62px;
                 font: 400 16px/1.5 vars.$font-default;
@@ -489,7 +497,7 @@
         }
 
 
-        & > div {
+        &>div {
             display: none;
             font-size: 24px;
             font-weight: 400;
@@ -549,7 +557,8 @@
         }
     }
 
-    &-common, &-country-inner {
+    &-common,
+    &-country-inner {
         #{$ancestor} {
             &__action {
                 @container (width > 400px) {
@@ -568,6 +577,7 @@
     @container (width > 1120px) {
         display: flex;
         flex-direction: row;
+
         #{$ancestor} {
             &__top {
                 //aspect-ratio: 247 / 164;
@@ -626,6 +636,7 @@
             display: flex;
             flex-direction: column;
         }
+
         &__params {
             flex-grow: 1;
         }
@@ -645,6 +656,7 @@
                 font-size: 18px;
                 line-height: 28px;
                 margin-left: 10px;
+
                 @include vars.from('lg') {
                     font-size: 24px;
                     line-height: 36px;
@@ -679,6 +691,7 @@
                 }
             }
         }
+
         &__place {
             margin-bottom: 21px;
         }
@@ -696,15 +709,19 @@
                     grid-template-columns: repeat(6, 1fr);
                 }
             }
+
             &__place {
                 margin-bottom: 0;
             }
+
             &__footer {
                 margin-top: 20px;
             }
+
             &__price {
                 padding: 0;
             }
+
             &__slider picture {
                 aspect-ratio: 5 / 3;
             }
@@ -730,6 +747,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 8px;
+
         li {
             width: auto;
 
@@ -738,20 +756,25 @@
             }
         }
     }
+
     .minicard__prop {
         padding-bottom: 7px;
-        @container (width <= 400px) {
+
+        @container (width <=400px) {
             opacity: 1 !important;
         }
     }
+
     .minicard__price {
         padding-top: 15px;
         padding-bottom: 18px;
-        & > div {
+
+        &>div {
             font-size: 24px;
             line-height: 1.5;
         }
     }
+
     .minicard__price-old {
         padding-bottom: 0;
     }

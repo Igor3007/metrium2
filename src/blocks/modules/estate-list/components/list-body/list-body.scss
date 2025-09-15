@@ -4,13 +4,15 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
+
     @include vars.from('md') {
-        grid-template-columns: repeat(auto-fill,minmax(340px,1fr));
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
         margin-top: 20px;
         margin-bottom: 20px;
     }
+
     @include vars.from('xl') {
-        grid-template-columns: repeat(auto-fill,minmax(380px,1fr));
+        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
         gap: 32px;
 
         .estate-list.list & {
@@ -25,4 +27,8 @@
     .minicard-wrapper {
         height: 100%;
     }
+}
+
+.minicard-wrapper {
+    height: 100%;
 }

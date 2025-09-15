@@ -28,7 +28,7 @@ body:not(.is-scroll-page) {
 }
 
 .fb-filter-all a {
-	color: var(--accent-11);
+    color: var(--accent-11);
 }
 
 .first-block {
@@ -520,6 +520,8 @@ body:not(.is-scroll-page) {
         fill: var(--accent-11);
         width: 10px;
         height: 6px;
+        margin-top: 1px;
+        margin-left: 2px;
     }
 }
 
