@@ -1,3 +1,5 @@
+import { initSliderMinicard, initMinicardEvents } from "./minicard.js"
+
 export const initFormAJAX = () => {
     document
         .querySelectorAll('form[data-send="ajax"]')
@@ -170,7 +172,8 @@ function submitForm(form) {
             document.querySelector('[data-catalog="pagination"]').innerHTML = data.paginationHtml;
             document.querySelector('[data-catalog="count"]').innerHTML = data.countText;
 
-
+            initSliderMinicard(document.querySelector('[data-catalog="objects"]'))
+            initMinicardEvents(document.querySelector('[data-catalog="objects"]'))
         });
     }
 
