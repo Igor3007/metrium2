@@ -1,4 +1,6 @@
-document.addEventListener('DOMContentLoaded', function (event) {
+import {afLightbox} from "../vendor/af-lightbox.js";
+
+document.addEventListener('DOMContentLoaded', async function (event) {
 
     const {location} = window;
     const params = new URLSearchParams(location.search);
@@ -19,4 +21,24 @@ document.addEventListener('DOMContentLoaded', function (event) {
             break;
     }
 
+
+    document
+        .querySelectorAll("[data-tpl]")
+        .forEach(el => {
+            el.addEventListener('click', async () => {
+                const {tpl} = el.dataset;
+                const template = await fetch(`/templates/${tpl}.html`).then(resp => resp.text());
+                const popup = new afLightbox({mobileInBottom: true});
+                const wrapper = document.createElement('div');
+                wrapper.innerHTML = template;
+                wrapper.querySelector('button').addEventListener('click', () => {
+                    popup.close()
+                })
+                popup.open('<div></div>', () => {
+                });
+                popup.replaceContent(wrapper);
+            });
+        });
+
 });
+
