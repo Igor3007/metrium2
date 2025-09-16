@@ -1,6 +1,6 @@
-import {Splide} from "@splidejs/splide";
-import {SLIDER_ARROW_PATH} from "./consts.js";
-import {SplideNavHelper} from "./splide-nav-helper.js";
+import { Splide } from "@splidejs/splide";
+import { SLIDER_ARROW_PATH } from "./consts.js";
+import { SplideNavHelper } from "./splide-nav-helper.js";
 
 
 /* ===============================================
@@ -70,6 +70,10 @@ export const initMinicardEvents = (container) => {
     }
 
     container.querySelectorAll('.minicard').forEach(el => {
+
+        if (!el.querySelector('[data-slider]')) {
+            return false
+        }
 
         const slider = el.querySelector('[data-slider]')
 

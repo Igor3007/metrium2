@@ -22,8 +22,7 @@ export const initFormAJAX = () => {
 
                     const result = await response.json();
 
-                    if(response.ok && result.success)
-                    {
+                    if (response.ok && result.success) {
                         form.reset();
                         window.STATUS.msg('Форма успешно отправлена');
                         return;
@@ -71,14 +70,14 @@ export const initFormOnChangeSubmit = () => {
                 e.preventDefault();
 
                 let url = form.getAttribute("action");
-                window.location.href=url;
+                window.location.href = url;
 
                 return false;
             });
         });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initFormOnSubmit();
 });
 
@@ -86,14 +85,15 @@ export const initFormOnSubmit = () => {
     document
         .querySelectorAll('form[data-form="filter"]').forEach(form => {
             console.log(form);
-            form.addEventListener('submit', function(e){
+            form.addEventListener('submit', function (e) {
                 e.preventDefault();
 
                 submitForm(form);
                 return false;
             })
-    });
+        });
 }
+
 function submitForm(form) {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
@@ -149,26 +149,28 @@ function submitForm(form) {
     });
 
     let filterUrl = parts.join('/');
-    if(filterUrl) {
+    if (filterUrl) {
         filterUrl = '/filter/' + filterUrl;
     }
 
     const sort = formData.get('sort');
-    if(sort) {
-        filterUrl += '?sort='+ sort;
+    if (sort) {
+        filterUrl += '?sort=' + sort;
     }
-
 
     url += filterUrl;
 
-    if(redirect) {
+    if (redirect) {
         window.location.href = url;
     }
+
     else {
-        updateCatalogFromUrl(url, ({data}) => {
+        updateCatalogFromUrl(url, ({ data }) => {
             document.querySelector('[data-catalog="objects"]').innerHTML = data.objectsHtml;
             document.querySelector('[data-catalog="pagination"]').innerHTML = data.paginationHtml;
             document.querySelector('[data-catalog="count"]').innerHTML = data.countText;
+
+
         });
     }
 
@@ -195,10 +197,6 @@ function updateCatalogFromUrl(url, callback) {
                 callback({ data });
             }
 
-
-
-
-
             history.pushState({ some: 'state' }, '', url);
 
             showMore();
@@ -208,14 +206,14 @@ function updateCatalogFromUrl(url, callback) {
         });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     showMore();
 });
 
 export const showMore = () => {
     let showMore = document.querySelector('.btn-show-more');
-    if(showMore) {
-        showMore.addEventListener('click', function(e) {
+    if (showMore) {
+        showMore.addEventListener('click', function (e) {
             e.preventDefault();
 
             const nextPage = showMore.dataset.nextPage;
@@ -224,7 +222,7 @@ export const showMore = () => {
             currentUrl.searchParams.set('page', nextPage);
             const newUrl = currentUrl.toString();
 
-            updateCatalogFromUrl(newUrl, ({data}) => {
+            updateCatalogFromUrl(newUrl, ({ data }) => {
                 document.querySelector('[data-catalog="objects"]').innerHTML += data.objectsHtml;
                 document.querySelector('[data-catalog="pagination"]').innerHTML = data.paginationHtml;
             });
