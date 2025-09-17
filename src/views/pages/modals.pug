@@ -1,0 +1,18 @@
+extends ../layouts/page
+include ../../blocks/components/index
+
+block main
+    picture(style="position: absolute")
+        img(src="img/other/img-big.jpg")
+    section
+        .container(style="display:flex; gap: 16px; padding: 32px;")
+            button.btn(data-tpl="callback")
+                span callback
+            button.btn(data-tpl="callback-object")
+                span callback-object
+            button.btn(data-tpl="sign-up")
+                span sign-up
+            button.btn(data-tpl="consultation")
+                span consultation
+            button.btn(data-tpl="presentation")
+                span presentation

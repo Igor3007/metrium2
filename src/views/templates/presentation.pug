@@ -1,0 +1,31 @@
+include ../helpers/mixins.pug
+div.modal
+    form
+        .modal__title
+            h3 Презентация ЖК
+            p Оставьте свой контактный телефон и получите подробную презентацию жилого комплекса (или посёлка, если это презентация посёлка).
+        .modal__content
+            .modal__group
+                .modal__item
+                    .call-form__title.modal__item-title Ваше имя
+                    .call-form__group
+                        .call-form__input
+                            input(type="text" placeholder="Введите имя" name="name" required="required")
+                .modal__item
+                    .call-form__title.modal__item-title Номер телефона
+                    .call-form__group
+                        .call-form__input
+                            input(type="tel" placeholder="Введите номер" name="tel" required="required" data-maska="+7(###)###-##-##")
+                .modal__item
+                    .call-form__title.modal__item-title Электронная почта (для отправки презентации)
+                    .call-form__group
+                        .call-form__input
+                            input(type="email" placeholder="Введите почту" name="email" required="required")
+            .modal__item
+                button.btn.btn-green.btn-wide
+                    span Скачать презентацию
+                .call-form__input.subtitle
+                    +checkbox("", "agree", {required: true})
+                        span.subtitle-text
+                            span Нажимая на кнопку, вы соглашаетесь с нашими
+                            a(href='#' target="_blank")  «Правилами обработки персональных данных»

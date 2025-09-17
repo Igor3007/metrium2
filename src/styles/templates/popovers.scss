@@ -1,0 +1,99 @@
+@use "../../styles/vars";
+
+[popover] {
+    //padding: 40px;
+    //background: var(--white);
+    border-radius: 16px;
+    padding: 0;
+
+    &::backdrop {
+        background: rgba(0,0,0,.7);
+        backdrop-filter: blur(24px);
+    }
+
+    &:popover-open {
+        //inset: unset;
+    }
+}
+
+body:has([popover]:popover-open) {
+    overflow: hidden;
+}
+
+.modal {
+    width: 560px;
+
+    h3 {
+        margin-top: 17px;
+        margin-bottom: 7px;
+    }
+
+    &__item {
+        .btn {
+            margin-bottom: 12px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 32px;
+
+        p {
+            margin-top: 24px;
+        }
+    }
+
+    &__item-title {
+        margin-bottom: 8px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+
+.modal-object {
+    display: flex;
+    padding: 16px;
+    gap: 16px;
+    background: var(--accent-12);
+
+    picture {
+        width: 84px;
+        height: 84px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border-radius: 8px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__text-title {
+        font: 400 18px/28px vars.$font-default;
+        letter-spacing: .02em;
+    }
+
+    &__text-place {
+        font: 400 15px/24px vars.$font-default;
+        letter-spacing: .02em;
+    }
+
+    &__text-price {
+        font: 400 20px/32px vars.$font-default;
+        letter-spacing: .02em;
+        color: var(--accent-21);
+    }
+
+}

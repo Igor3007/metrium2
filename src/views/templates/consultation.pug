@@ -1,0 +1,46 @@
+include ../helpers/mixins.pug
+div.modal
+    form
+        .modal__title
+            h3 Консультация у экспертов Метриум
+        .modal__content
+            .modal__item
+                .call-form__title.modal__item-title Объект недвижимости:
+                .modal-object
+                    picture
+                        img(src="img/country-places/image02.jpg")
+                    .modal-object__text
+                        .modal-object__text-title Коттедж в Пестово 13742
+                        .modal-object__text-place Новорижское шоссе / 15 км от МКАД
+                        .modal-object__text-price 365 000 000 ₽
+            .modal__item
+                .call-form__title.modal__item-title Где вам удобно общаться?
+                .call-form__via
+                    label(for="tele")
+                        input#tele(type="radio" name="via" checked="checked")
+                        .title Телефон
+                    label(for="wap")
+                        input#wap(type="radio" name="via")
+                        .title WhatsApp
+                    label(for="tg")
+                        input#tg(type="radio" name="via")
+                        .title Telegram
+            .modal__group
+                .modal__item
+                    .call-form__title.modal__item-title Как к вам обращаться
+                    .call-form__group
+                        .call-form__input
+                            input(type="text" placeholder="Введите имя" name="name" required="required")
+                .modal__item
+                    .call-form__title.modal__item-title Номер телефона
+                    .call-form__group
+                        .call-form__input
+                            input(type="tel" placeholder="Введите номер" name="tel" required="required" data-maska="+7(###)###-##-##")
+            .modal__item
+                button.btn.btn-green.btn-wide
+                    span Получить консультацию
+                .call-form__input.subtitle
+                    +checkbox("", "agree", {required: true})
+                        span.subtitle-text
+                            span Нажимая на кнопку, вы соглашаетесь с нашими
+                            a(href='#' target="_blank")  «Правилами обработки персональных данных»

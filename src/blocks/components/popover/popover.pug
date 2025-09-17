@@ -1,0 +1,7 @@
+mixin popover(id)
+    div(id=id, popover=true)
+        .af-popup__container
+            .af-popup__close(popovertarget=id popovertargetaction="hide") ×
+            .af-popup__content
+                if block
+                    block
