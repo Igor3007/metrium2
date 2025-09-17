@@ -23,10 +23,39 @@ body:has([popover]:popover-open) {
 .modal {
     width: 560px;
 
-    form {
+    h3 {
+        margin-top: 17px;
+        margin-bottom: 7px;
+    }
+
+    &__item {
+        .btn {
+            margin-bottom: 12px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 32px;
+
+        p {
+            margin-top: 24px;
+        }
+    }
+
+    &__item-title {
+        margin-bottom: 8px;
+    }
+
+    &__content {
         display: flex;
         flex-direction: column;
         gap: 32px;
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
     }
 }
 
