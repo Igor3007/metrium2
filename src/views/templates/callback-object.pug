@@ -30,7 +30,7 @@ div.modal
                             .call-form__title.modal__item-title Как к вам обращаться
                             .call-form__group
                                     .call-form__input
-                                        input(type="text" placeholder="Введите имя" name="name" required="required")
+                                        input(type="text" placeholder="Введите имя" name="name" required="required" maxlength=50 data-maska="A" data-maska-tokens="A:[0-9a-zA-Zа-яА-Я ]:multiple")
                 .modal__item
                     .call-form__title.modal__item-title Номер телефона
                     .call-form__group

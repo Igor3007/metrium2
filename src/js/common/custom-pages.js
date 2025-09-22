@@ -1,4 +1,5 @@
 import {afLightbox} from "../vendor/af-lightbox.js";
+import {MaskInput} from "maska";
 
 document.addEventListener('DOMContentLoaded', async function (event) {
 
@@ -31,11 +32,20 @@ document.addEventListener('DOMContentLoaded', async function (event) {
                 const popup = new afLightbox({mobileInBottom: true});
                 const wrapper = document.createElement('div');
                 wrapper.innerHTML = template;
+
                 wrapper.querySelector('button').addEventListener('click', () => {
-                    popup.close()
-                })
+                    popup.close();
+                });
+
+                wrapper
+                    .querySelectorAll("[data-maska]")
+                    .forEach(input => {
+                        new MaskInput(input);
+                    });
+
                 popup.open('<div></div>', () => {
                 });
+
                 popup.replaceContent(wrapper);
             });
         });

@@ -10,7 +10,7 @@ div.modal
                     .call-form__title.modal__item-title Ваше имя
                     .call-form__group
                         .call-form__input
-                            input(type="text" placeholder="Введите имя" name="name" required="required")
+                            input(type="text" placeholder="Введите имя" name="name" required="required" maxlength=50 data-maska="A" data-maska-tokens="A:[0-9a-zA-Zа-яА-Я ]:multiple")
                 .modal__item
                     .call-form__title.modal__item-title Номер телефона
                     .call-form__group
@@ -20,7 +20,8 @@ div.modal
                     .call-form__title.modal__item-title Электронная почта (для отправки презентации)
                     .call-form__group
                         .call-form__input
-                            input(type="email" placeholder="Введите почту" name="email" required="required")
+                            input(type="email" placeholder="Введите почту" name="email" maxlength=50 required="required" data-maska="A!@B.C"
+                            data-maska-tokens="A:[a-zA-Z0-9.+]:multiple|B:[a-zA-Z0-9]:multiple|C:[a-zA-Z]:multiple")
             .modal__item
                 button.btn.btn-green.btn-wide
                     span Скачать презентацию

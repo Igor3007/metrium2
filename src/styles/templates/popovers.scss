@@ -21,11 +21,13 @@ body:has([popover]:popover-open) {
 }
 
 .modal {
-    width: 560px;
+    max-width: 560px;
+    padding-bottom: 12px;
 
     h3 {
         margin-top: 17px;
         margin-bottom: 7px;
+        line-height: 48px;
     }
 
     &__item {
@@ -57,6 +59,22 @@ body:has([popover]:popover-open) {
         flex-direction: column;
         gap: 24px;
     }
+
+    .subtitle-text {
+        a {
+            position: relative;
+            color: var(--accent-11);
+            &:hover {
+                color: var(--accent);
+            }
+        }
+    }
+
+    .checkbox__elem::after {
+        left: 2px;
+        width: 12px;
+        height: 9px;
+    }
 }
 
 .modal-object {
@@ -64,6 +82,7 @@ body:has([popover]:popover-open) {
     padding: 16px;
     gap: 16px;
     background: var(--accent-12);
+    border-radius: 16px;
 
     picture {
         width: 84px;
