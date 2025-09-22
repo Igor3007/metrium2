@@ -23,7 +23,7 @@ div.modal
                             input(type="email" placeholder="Введите почту" name="email" maxlength=50 required="required" data-maska="A!@B.C"
                             data-maska-tokens="A:[a-zA-Z0-9.+]:multiple|B:[a-zA-Z0-9]:multiple|C:[a-zA-Z]:multiple")
             .modal__item
-                button.btn.btn-green.btn-wide
+                button.btn.btn-green.btn-wide(type="submit")
                     span Скачать презентацию
                 .call-form__input.subtitle
                     +checkbox("", "agree", {required: true})
