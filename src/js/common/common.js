@@ -1,22 +1,22 @@
-import {MaskInput} from "maska";
-import {afSelect} from "../vendor/af-select.js";
-import {Splide} from "@splidejs/splide";
-import {FlexCollections} from "./flex-collections.js";
-import {SplideNavHelper} from "./splide-nav-helper.js";
-import {initAddRemoveClassButtons} from "./add-remove-class.js";
-import {initSliderViewed, initGallery, initFactoidGallery} from "../../blocks/modules/index.js";
-import {initToggleTicks, initDistrictSelectors} from "../../blocks/components";
-import {initTogglers} from "./toggler.js";
-import {initFormAJAX, initFormOnChangeSubmit} from "./form-ajax.js";
-import {initPrefixedInputs} from "./prefixed-inputs.js";
-import {initPopupSelect} from "./popup-select.js";
-import {initMap} from "./city-map.js";
-import {initStaticMaps} from "./map-static.js";
-import {initSliderMinicard, initMinicardEvents} from "./minicard.js";
-import {initWishLists, WishList} from "./wishlist.js";
-import {initScrollToAnchors} from "./initScrollToAnchors.js";
-import {callFormProcess} from "./custom-forms.js";
-import {initSwitch} from "./switcher.js";
+import { MaskInput } from "maska";
+import { afSelect } from "../vendor/af-select.js";
+import { Splide } from "@splidejs/splide";
+import { FlexCollections } from "./flex-collections.js";
+import { SplideNavHelper } from "./splide-nav-helper.js";
+import { initAddRemoveClassButtons } from "./add-remove-class.js";
+import { initSliderViewed, initGallery, initFactoidGallery } from "../../blocks/modules/index.js";
+import { initToggleTicks, initDistrictSelectors } from "../../blocks/components";
+import { initTogglers } from "./toggler.js";
+import { initFormAJAX, initFormOnChangeSubmit } from "./form-ajax.js";
+import { initPrefixedInputs } from "./prefixed-inputs.js";
+import { initPopupSelect } from "./popup-select.js";
+import { initMap } from "./city-map.js";
+import { initStaticMaps } from "./map-static.js";
+import { initSliderMinicard, initMinicardEvents } from "./minicard.js";
+import { initWishLists, WishList } from "./wishlist.js";
+import { initScrollToAnchors } from "./initScrollToAnchors.js";
+import { callFormProcess } from "./custom-forms.js";
+import { initSwitch } from "./switcher.js";
 import "fslightbox";
 import "./all-pages.js";
 import "./custom-pages.js";
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initFactoidGallery();
     initSwitch();
     setTimeout(
-        () => {initFormOnChangeSubmit()}
+        () => { initFormOnChangeSubmit() }
         , 500); // need to prevent clearing eventHandlers with afSelect
 
     /* =================================================
@@ -460,7 +460,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             pagination: false,
             gap: '20px',
             start: 0,
-            perPage: 6,
+            perPage: 4,
             perMove: 1,
             flickMaxPages: 1,
             flickPower: 100,
@@ -739,9 +739,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
             onChange: (current, total) => {
 
                 total = document.body.clientWidth > 576 ? total - 2 : total
-
                 slideCounterCurrent.innerText = current
-                slideCounterTotal.innerText = total
+                slideCounterTotal.innerText = total;
+
+                console.log(slider['Splide'])
             }
         })
 

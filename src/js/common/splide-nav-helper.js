@@ -46,6 +46,9 @@ export class SplideNavHelper {
 
 
         this.slider.on('move', (newIndex, prevIndex, destIndex) => {
+
+
+
             this.nextButton.removeAttribute('disabled')
             this.prevButton.removeAttribute('disabled')
 
