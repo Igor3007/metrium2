@@ -49,7 +49,7 @@ export class SplideNavHelper {
                     this.container.querySelector('.splide-counter').classList.toggle('is-hide', is_overflow)
                 }
 
-                if (this.slider.length <= this.slider.options.perPage) {
+                if (!is_overflow) {
                     this.nextButton.setAttribute('disabled', 'disabled')
                     this.prevButton.setAttribute('disabled', 'disabled')
                 }
