@@ -49,10 +49,10 @@ export class SplideNavHelper {
                     this.container.querySelector('.splide-counter').classList.toggle('is-hide', is_overflow)
                 }
 
-                if (!is_overflow) {
-                    this.nextButton.setAttribute('disabled', 'disabled')
-                    this.prevButton.setAttribute('disabled', 'disabled')
-                }
+                // if (is_overflow) {
+                //     this.nextButton.setAttribute('disabled', 'disabled')
+                //     this.prevButton.setAttribute('disabled', 'disabled')
+                // }
             }, 100)
         })
 
@@ -76,8 +76,19 @@ export class SplideNavHelper {
                 slideTotal = slideTotal + this.slider.options.offsetPagination
             }
 
-            if (this.slider.length == slideTotal) {
+            console.log(newIndex, 'newIndex')
+            console.log(this.slider.length, 'this.slider.length')
+            console.log(slideTotal, 'slideTotal')
+
+            if (this.slider.length == slideTotal && newIndex != 0) {
                 this.nextButton.setAttribute('disabled', 'disabled')
+
+                console.log(this.slider.length)
+                console.log(slideTotal)
+                console.log(newIndex, 'newIndex')
+                console.log(prevIndex, 'prevIndex')
+                //alert('disable next')
+
             }
 
             if (typeof this.params.onChange != 'undefined') {

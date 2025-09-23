@@ -704,14 +704,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 767: {
                     fixedWidth: '360px',
                     gap: 8,
-                    offsetPagination: 2
+                    offsetPagination: 0
 
                 },
 
                 992: {
                     fixedWidth: '360px',
                     gap: 12,
-                    offsetPagination: 2
+                    offsetPagination: 0
 
                 },
 
