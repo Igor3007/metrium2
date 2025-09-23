@@ -737,14 +737,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
             btn: 'special-offers',
             container: slider.closest('section'),
             onChange: (current, total) => {
-
                 total = document.body.clientWidth > 576 ? total - 2 : total
                 slideCounterCurrent.innerText = current
                 slideCounterTotal.innerText = total;
-
-                console.log(slider['Splide'])
             }
         })
+
+
 
         slider['Splide'].mount();
 

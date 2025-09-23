@@ -35,8 +35,20 @@ export class SplideNavHelper {
         this.slider.on('mounted refresh', () => {
 
             this.nextButton.removeAttribute('disabled')
+            let is_overflow = !this.slider.root.classList.contains('is-overflow')
+            this.nextButton.classList.toggle('is-hide', is_overflow)
+            this.prevButton.classList.toggle('is-hide', is_overflow)
+
+
+
 
             setTimeout(() => {
+
+                if (this.container.querySelector('.splide-counter')) {
+                    //скрыть счетчик если нету стрелок
+                    this.container.querySelector('.splide-counter').classList.toggle('is-hide', is_overflow)
+                }
+
                 if (this.slider.length <= this.slider.options.perPage) {
                     this.nextButton.setAttribute('disabled', 'disabled')
                     this.prevButton.setAttribute('disabled', 'disabled')
@@ -46,8 +58,6 @@ export class SplideNavHelper {
 
 
         this.slider.on('move', (newIndex, prevIndex, destIndex) => {
-
-
 
             this.nextButton.removeAttribute('disabled')
             this.prevButton.removeAttribute('disabled')
