@@ -2,6 +2,9 @@
 
 html:has(.main-policy) {
     scroll-padding-top: var(--hgt-header);
+    @include vars.before('xl') {
+        scroll-padding-top: calc(var(--hgt-header) + 70px);
+    }
 }
 
 .policy-title {
@@ -9,7 +12,10 @@ html:has(.main-policy) {
     margin-bottom: 30px;
 
     h2 {
-        margin-block: 20px;
+        margin-top: 20px;
+        @include vars.from('md') {
+            margin-bottom: 20px;
+        }
     }
 }
 
@@ -33,7 +39,7 @@ html:has(.main-policy) {
         & > li {
             counter-increment: index;
             &:before {
-                content: counters(index, ".") ".";
+                content: counters(index, ".") ". ";
             }
         }
 
@@ -68,16 +74,24 @@ html:has(.main-policy) {
     h3 {
         margin-top: 6px;
         margin-bottom: 31px;
+        font: 400 clamp(20px,4vw, 36px)/1 vars.$font-captions;
+
         &:before {
             content: counter(index) ". ";
+            @include vars.before('md') {
+                display: block;
+            }
         }
     }
 }
 
 .policy-content {
     background: var(--bg);
-    padding-top: 48px;
+    padding-top: 24px;
     overflow: visible;
+    @include vars.from('md') {
+        padding-top: 48px;
+    }
 
     .paper {
         background: var(--white);
@@ -158,8 +172,7 @@ html:has(.main-policy) {
             font: 400 16px/1.5 vars.$font-default;
             letter-spacing: .02em;
             color: var(--gray-13);
-            background: var(--accent-12);
-            padding: 14px 24px;
+            overflow: hidden;
             border-radius: 12px;
             counter-increment: index;
             @include vars.before('xl') {
@@ -168,13 +181,29 @@ html:has(.main-policy) {
 
             &:has(.active):nth-child(1 of :has(.active)) {
                 color: var(--white);
-                background: var(--accent-11);
                 font: 400 18px/28px vars.$font-default;
-                padding-block: 14px;
+
+                a {
+                    padding-block: 14px;
+                    background: var(--accent-11);
+
+                    @include vars.hover {
+                        color: var(--white);
+                        background: var(--accent-11);
+                    }
+                }
             }
 
             a {
                 color: inherit;
+                padding: 14px 24px;
+                display: block;
+                background: var(--accent-12);
+
+                @include vars.hover {
+                    background: var(--accent-13);
+                }
+
                 &:before {
                     content: counter(index) ". ";
                 }

@@ -39,6 +39,11 @@
         font: 400 clamp(16px, 4vw, 18px)/1.67 vars.$font-default;
         letter-spacing: .02em;
     }
+    .body-16-24-reg {
+        font: 400 clamp(14px, 3.5vw, 16px)/1.5 vars.$font-default;
+        letter-spacing: .02em;
+        margin-bottom: 8px;
+    }
 
     &__text {
         display: flex;
@@ -70,6 +75,7 @@
     }
 
     .super-link {
+        margin-top: 8px;
         font: 400 36px/48px vars.$font-captions;
         letter-spacing: .04em;
         color: var(--accent-21);
