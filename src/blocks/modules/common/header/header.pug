@@ -1,7 +1,7 @@
 .container
     .header
         .header__left
-            .header__burger.hover-ripple(data-menu="open")
+            button.header__burger.hover-ripple(popovertarget="ham-menu")
                 .icon-burger
                     span
                     span
@@ -45,3 +45,4 @@
                     button.btn.btn-gold
                         +icon('ic_phone')
                         span Позвоните мне
+include ./hamburger_menu

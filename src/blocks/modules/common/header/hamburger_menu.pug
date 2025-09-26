@@ -1,0 +1,117 @@
+#ham-menu(popover)
+    .ham-menu.header__nav
+        section
+            .container
+                .ham-menu__header
+                    button(popovertarget="ham-menu")
+                        +icon("ic_close")
+        section.main
+            .container
+                .ham-menu__content
+                    .submenu-item
+                        .submenu-item__title Городская недвижимость
+                        ul.submenu-pre
+                            li.accent
+                                a(href="#")
+                                    span Эксклюзивные предложения
+                            li
+                                a(href="#")
+                                    svg.icon.green(width="24", height="24")
+                                        use(href="/img/sprites/sprite.svg#ic_city2")
+                                    span Москва-Сити
+                            li
+                                a(href="#")
+                                    svg.icon.red(width="24", height="24")
+                                        use(href="/img/sprites/sprite.svg#ic_percent")
+                                    span Скидки и акции
+                        ul.submenu-main
+                            li
+                                a(href="#") Элитные квартиры
+                            li
+                                a(href="#") Апартаменты
+                            li
+                                a(href="#") Таунхаусы
+                            li
+                                a(href="#") Виллы
+                            li
+                                a(href="#") Пентхаусы
+                            li
+                                a(href="#") Аренда
+                        ul.submenu-post
+                            li
+                                a(href="#") Вся городская недвижимость
+                            li
+                                a(href="#") Все жилые комплексы
+                            li
+                                a(href="#") Все новостройки
+
+                    .submenu-item
+                        .submenu-item__title Загородная недвижимость
+                        ul.submenu-pre
+                            li
+                                a(href="#")
+                                    svg.icon.green(width="24", height="24")
+                                        use(href="/img/sprites/sprite.svg#ic_house-small")
+                                    span Недвижимость на Новой Риге
+                            li
+                                a(href="#")
+                                    svg.icon.green(width="24", height="24")
+                                        use(href="/img/sprites/sprite.svg#ic_house-small")
+                                    span Недвижимость на Рублево-Успенском
+                            li
+                                a(href="#")
+                                    svg.icon.red(width="24", height="24")
+                                        use(href="/img/sprites/sprite.svg#ic_percent")
+                                    span Скидки и акции
+                        ul.submenu-main
+                            li
+                                a(href="#") Коттеджи
+                            li
+                                a(href="#") Таунхаусы
+                            li
+                                a(href="#") Участки
+                            li
+                                a(href="#") Виллы
+                        ul.submenu-post
+                            li
+                                a(href="#") Все посёлки
+                    .submenu-item
+                        .submenu-item__title Информация о компании
+                        ul.submenu-main
+                            li
+                                a(href="#") О компании
+                            li
+                                a(href="#") Консалтинг
+                            li
+                                a(href="#") Юридические услуги
+                            li
+                                a(href="#") Инвестиции
+                            li
+                                a(href="#") Аналитика
+                        .btn-wrapper
+                            button.btn.btn-green
+                                span Продать недвижимость
+        section.dark-bg
+            .container
+                .ham-menu__footer
+                    .ham-menu__footer-item
+                        .ham-menu__footer-title Контактный телефон:
+                        a.super-link(href="tel:+74997552020") +7 (499) 755−20−20
+                    .ham-menu__footer-item
+                        .ham-menu__footer-title Мессенджеры и соцсети:
+                        .flex-wrapper
+                            a(href="")
+                                +icon("ic_tg_fill")
+                                span Telegram
+                            a(href="")
+                                +icon("ic_wa-fill")
+                                span WhatsApp
+                            a(href="")
+                                +icon("ic_vk-fill")
+                                span VK
+                    .ham-menu__footer-item
+                        .btn-wrapper
+                            button.btn.btn-green
+                                +icon("ic_phone")
+                                span Позвоните мне
+
