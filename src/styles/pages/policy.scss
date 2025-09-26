@@ -78,9 +78,6 @@ html:has(.main-policy) {
 
         &:before {
             content: counter(index) ". ";
-            @include vars.before('md') {
-                display: block;
-            }
         }
     }
 }
