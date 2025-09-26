@@ -234,15 +234,26 @@ body.is-fixed-header {
             display: flex;
             align-items: center;
 
-            & ul {
+            .main-menu {
                 display: flex;
                 gap: 16px;
+
+                & > li {
+                    position: relative;
+                    &:hover {
+                        .submenu-wrapper {
+                            max-height: none;
+                            animation: max-height-animation;
+                            animation-duration: .5s;
+                        }
+                    }
+                }
 
                 @media screen and (min-width: vars.$w1200) {
                     gap: 30px;
                 }
 
-                & a {
+                & > li > a {
                     color: var(--ink);
                     letter-spacing: .02em;
                     position: relative;
@@ -269,6 +280,102 @@ body.is-fixed-header {
                         font-size: 18px;
                     }
                 }
+            }
+            .submenu {
+                background: var(--accent-12);
+                padding: 20px;
+                border-radius: 16px;
+                font: 400 16px/1.5 vars.$font-default;
+                letter-spacing: .02em;
+                --ink: var(--text-1);
+                white-space: nowrap;
+
+                &-wrapper {
+                    padding-top: 16px;
+                    position: absolute;
+                    overflow: hidden;
+                    max-height: 0;
+                }
+
+                &-pre {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    margin-bottom: 20px;
+                    & > li {
+                        background: var(--white);
+                        height: 36px;
+                        border-radius: 18px;
+
+                        &.accent {
+                            background: var(--accent);
+                            color: var(--white);
+                            &:hover {
+                                background: var(--accent-22);
+                                color: var(--white);
+                            }
+                        }
+
+                        &:hover {
+                            background: var(--accent-12);
+                            color: var(--accent-11);
+                        }
+
+                        .icon {
+                            width: 24px;
+                            height: 24px;
+                            &.green {
+                                color: var(--accent-11);
+                            }
+                            &.red {
+                                color: var(--red);
+                            }
+                        }
+
+                        a {
+                            color: inherit;
+                            font: 500 16px/24px vars.$font-default;
+                            padding: 6px 16px;
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+
+                            span {
+                                margin-top: 1px;
+                            }
+                        }
+                    }
+                }
+
+                &-main {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+
+                    a {
+                        &:hover {
+                            color: var(--accent-11);
+                        }
+                    }
+                }
+
+                &-post {
+                    margin-top: 12px;
+                    padding-top: 12px;
+                    border-top: 1px solid var(--accent-14);
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+
+                    a {
+                        font-weight: 500;
+                        &:hover {
+                            color: var(--accent-11);
+                        }
+                    }
+                }
+
+
             }
         }
     }
@@ -393,7 +500,7 @@ body.is-fixed-header {
                 }
             }
             &__nav {
-                ul {
+                .main-menu {
                     & > li {
                         &.is-active {
                             --ink: #{vars.$color-accent-11};

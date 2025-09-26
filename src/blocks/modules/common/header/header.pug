@@ -7,9 +7,30 @@
                     span
             .header__nav
                 nav
-                    ul
+                    ul.main-menu
                         each item in mainNav
-                            li(class={'is-active': item.url === pageUrl}): a(href=item.url)= item.title
+                            li(class={'is-active': item.url === pageUrl})
+                                a(href=item.url)= item.title
+                                if item.submenu
+                                    .submenu-wrapper
+                                        .submenu
+                                            if item.premenu
+                                                ul.submenu-pre
+                                                    each _i in item.premenu
+                                                        li(class=_i.bg)
+                                                            a(href=_i.url)
+                                                                if _i.icon
+                                                                    +icon(_i.icon.name, 24, _i.icon.color)
+                                                                span= _i.title
+                                                ul.submenu-main
+                                                    each subitem in item.submenu
+                                                        li
+                                                            a(href=subitem.url)= subitem.title
+                                                if item.postmenu
+                                                    ul.submenu-post
+                                                        each _i in item.postmenu
+                                                            li
+                                                                a(href=_i.url)= _i.title
         .header__logo
             a(href='#')
                 span(style="background-image: url('/img/common/logo.svg')")
