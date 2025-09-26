@@ -1,128 +1,93 @@
 @use "../../../../styles/vars";
 
 .section-page-404 {
-    padding: 45px 0;
+    margin-top: 64px;
+    background-image: url(/img/404.jpg);
+    background-color: rgba(255,255,255,.3);
+    background-blend-mode: lighten;
+    background-size: contain;
+    background-repeat: no-repeat;
 
-    @media screen and (min-width: vars.$w992) {
-        padding: 45px 0;
+    @include vars.before('md') {
+        background-position: top;
+        padding-top: 60vw;
+        margin-bottom: 32px;
     }
 
-    @media screen and (min-width: vars.$w1440) {
-        padding: 70px 0 45px 0;
+    @include vars.from('md') {
+        background-position: right;
+        margin-bottom: 62px;
     }
 }
 
 .page-404 {
 
-    display: flex;
-    flex-direction: column;
-
-
-    &__title {
-        font-size: 17px;
-        font-weight: 500;
-        color: var(--accent);
-        text-align: center;
-        padding-bottom: 60px;
-        line-height: 127%;
-
-        @media screen and (max-width: vars.$w480) {
-
-            padding-bottom: 40px;
-
-            & br {
-                display: none;
-            }
-        }
-    }
-
-    &__label {
-        font-size: 17px;
-        font-weight: 500;
-        text-align: center;
-
-    }
-
-    &__image {
+    @include vars.from('md') {
         display: flex;
-        justify-content: center;
-        padding-bottom: 45px;
-
-        @media screen and (max-width: vars.$w480) {
-            order: -1;
-        }
-
     }
-}
 
 
-.catalog-category--ext {
+    .subtitle {
+        color: var(--text-2);
+    }
 
-    max-width: 1305px;
-    margin: 0 auto;
-    margin-bottom: 110px;
+    .body-16-reg {
+        font: 400 clamp(14px, 3.5vw, 16px)/1.75 vars.$font-default;
+        letter-spacing: .02em;
+    }
+    .body-18-reg {
+        font: 400 clamp(16px, 4vw, 18px)/1.67 vars.$font-default;
+        letter-spacing: .02em;
+    }
 
-    & .catalog-category {
-        &__subcat ul {
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
 
-            justify-content: center;
-
-            @media screen and (max-width: vars.$w1024) {
-                max-width: 785px;
-                margin: 0 auto;
-            }
-
-            & li {
-
-                display: block;
-
-                @media screen and (min-width: vars.$w1200) {
-                    width: calc(20% - 12px);
-                }
-
-                @media screen and (min-width: vars.$w760) {
-                    width: calc(33.33% - 12px);
-                }
-
-                @media screen and (max-width: vars.$w480) {
-
-
-                    width: calc(100% - 12px);
-                    flex-basis: 150px;
-                    flex-grow: 1;
-
-
-
-                    & a {
-                        display: flex;
-                        flex-direction: column;
-                        height: 100%;
-
-                        & .image-main {
-                            margin-top: auto;
-                        }
-                    }
-
-
-                    &:nth-child(2),
-                    &:nth-child(1) {
-                        width: 100%;
-                        flex-basis: auto;
-
-                        & a {
-                            display: flex;
-                            justify-content: space-between;
-                            flex-direction: row;
-                        }
-
-                        & .image-main {
-                            margin-right: 0;
-                            max-width: 110px;
-                            margin-top: 0;
-                        }
-                    }
-                }
-            }
+        @include vars.from('md') {
+            gap: 64px;
+            margin-block: 92px;
+            flex-basis: 50%;
         }
+    }
+
+    .btn-wrapper {
+        display: flex;
+        gap: 12px;
+        margin-top: 16px;
+        @include vars.before('md') {
+            flex-direction: column;
+        }
+    }
+
+    .btn-green {
+        padding-inline: 29px;
+    }
+
+    .btn-line {
+        padding-inline: 28px;
+    }
+
+    .super-link {
+        font: 400 36px/48px vars.$font-captions;
+        letter-spacing: .04em;
+        color: var(--accent-21);
+        @include vars.hover {
+            color: var(--accent-22);
+        }
+    }
+
+    &__footer {
+        .body-18-reg {
+            line-height: 24px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &-dark-bg {
+        background: var(--bg);
+        padding-bottom: 96px;
+        border-bottom: 1px solid var(--accent-13);
     }
 }

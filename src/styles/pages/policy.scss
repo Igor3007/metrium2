@@ -1,0 +1,191 @@
+@use "../../styles/vars";
+
+html:has(.main-policy) {
+    scroll-padding-top: var(--hgt-header);
+}
+
+.policy-title {
+    margin-top: 48px;
+    margin-bottom: 30px;
+
+    h2 {
+        margin-block: 20px;
+    }
+}
+
+.policy-list {
+
+    &>ol>li:before {
+        content: none !important;
+    }
+
+    ol {
+        list-style: none;
+        counter-reset: index;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        font: 400 16px/1.5 vars.$font-default;
+        letter-spacing: .02em;
+
+        & > li {
+            counter-increment: index;
+            &:before {
+                content: counters(index, ".") ".";
+            }
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    li > ol {
+        margin-top: 12px;
+    }
+
+    ul {
+        list-style: none;
+        margin-top: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        & > li {
+            line-height: 24px;
+            display: flex;
+
+            &:before {
+                content: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUuMjkyOTcgMi4xMjEwOUM1LjY4MzQ2IDEuNzMwNzcgNi4zMTY1NSAxLjczMDc3IDYuNzA3MDMgMi4xMjEwOUw5Ljg3ODkxIDUuMjkyOTdDMTAuMjY5MiA1LjY4MzQ2IDEwLjI2OTIgNi4zMTY1NSA5Ljg3ODkxIDYuNzA3MDNMNi43MDcwMyA5Ljg3ODkxQzYuMzE2NTQgMTAuMjY5MiA1LjY4MzQ1IDEwLjI2OTIgNS4yOTI5NyA5Ljg3ODkxTDIuMTIxMDkgNi43MDcwM0MxLjczMDc3IDYuMzE2NTQgMS43MzA3NyA1LjY4MzQ1IDIuMTIxMDkgNS4yOTI5N0w1LjI5Mjk3IDIuMTIxMDlaIiBzdHJva2U9IiNCODhFNUYiIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4K);
+                margin-right: 1em;
+                flex: 0 0 0;
+            }
+        }
+    }
+
+    h3 {
+        margin-top: 6px;
+        margin-bottom: 31px;
+        &:before {
+            content: counter(index) ". ";
+        }
+    }
+}
+
+.policy-content {
+    background: var(--bg);
+    padding-top: 48px;
+    overflow: visible;
+
+    .paper {
+        background: var(--white);
+        padding: 32px;
+        border-radius: 16px;
+    }
+
+    .intro {
+        font: 500 18px/28px vars.$font-default;
+        letter-spacing: .02em;
+    }
+
+    .accent {
+        background: var(--accent-12);
+        padding: 20px 24px;
+        margin-top: 24px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        &-title {
+            font: 500 20px/1.6 vars.$font-default;
+            letter-spacing: .02em;
+        }
+
+        &-description {
+            font: 400 16px/1.5 vars.$font-default;
+            letter-spacing: .02em;
+        }
+    }
+}
+
+.policy-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px !important;
+}
+
+.policy-container {
+    display: grid;
+    grid-template-columns: 1fr 376px;
+    gap: 32px;
+
+    @include vars.before('xl') {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.policy-side {
+    @include vars.before('xl') {
+        order: -1;
+        overflow: auto;
+        position: sticky;
+        top: var(--hgt-header);
+        margin-inline: var(--container-out);
+    }
+    ol {
+        position: sticky;
+        top: var(--hgt-header);
+        background: var(--white);
+        padding: 16px;
+        margin: 0;
+        border-radius: 16px;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        counter-reset: index;
+        @include vars.before('xl') {
+            flex-direction: row;
+            width: fit-content;
+            border-radius: 0;
+        }
+
+        li {
+            font: 400 16px/1.5 vars.$font-default;
+            letter-spacing: .02em;
+            color: var(--gray-13);
+            background: var(--accent-12);
+            padding: 14px 24px;
+            border-radius: 12px;
+            counter-increment: index;
+            @include vars.before('xl') {
+                white-space: nowrap;
+            }
+
+            &:has(.active):nth-child(1 of :has(.active)) {
+                color: var(--white);
+                background: var(--accent-11);
+                font: 400 18px/28px vars.$font-default;
+                padding-block: 14px;
+            }
+
+            a {
+                color: inherit;
+                &:before {
+                    content: counter(index) ". ";
+                }
+            }
+        }
+    }
+}
+
+.policy-footer {
+    background: var(--bg);
+    padding-top: 28px;
+    padding-bottom: 96px;
+    border-bottom: 1px solid var(--accent-13);
+}
