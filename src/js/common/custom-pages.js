@@ -27,6 +27,11 @@ document.addEventListener('DOMContentLoaded', async function (event) {
         .querySelectorAll("[data-tpl]")
         .forEach(el => {
             el.addEventListener('click', async () => {
+
+                document
+                    .querySelectorAll("[popover]")
+                    .forEach(popover => {popover.hidePopover()});
+
                 const {tpl} = el.dataset;
                 const template = await fetch(`/templates/${tpl}.html`).then(resp => resp.text());
                 const popup = new afLightbox({mobileInBottom: true});
