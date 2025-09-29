@@ -234,7 +234,7 @@ body.is-fixed-header {
 
         .submenu {
             background: var(--accent-12);
-            padding: 20px;
+            padding: 20px 48px 20px 20px;
             border-radius: 16px;
             font: 400 16px/1.5 vars.$font-default;
             letter-spacing: .02em;
@@ -256,6 +256,7 @@ body.is-fixed-header {
                 & > li {
                     background: var(--white);
                     height: 36px;
+                    width: max-content;
                     border-radius: 18px;
 
                     &.accent {
@@ -313,10 +314,19 @@ body.is-fixed-header {
             &-post {
                 margin-top: 12px;
                 padding-top: 12px;
-                border-top: 1px solid var(--accent-14);
                 display: flex;
                 flex-direction: column;
                 gap: 12px;
+                position: relative;
+
+                &:before {
+                    content: "";
+                    display: block;
+                    border-top: 1px solid var(--accent-14);
+                    top: 0;
+                    left: 0;
+                    max-width: 328px;
+                }
 
                 a {
                     font-weight: 500;
@@ -343,6 +353,9 @@ body.is-fixed-header {
                             animation: max-height-animation;
                             animation-duration: .5s;
                         }
+                    }
+                    a:before {
+                        width: 100%;
                     }
                 }
 
@@ -580,7 +593,7 @@ body.is-fixed-header {
     }
 
     &__header {
-        padding-block: 32px 48px;
+        padding-block: 32px 40px;
 
         button {
             display: flex;
@@ -681,6 +694,7 @@ body.is-fixed-header {
         .super-link {
             font: 400 28px/40px vars.$font-default;
             color: var(--accent);
+            width: max-content;
             @include vars.hover {
                 color: var(--accent-22);
             }
@@ -696,6 +710,7 @@ body.is-fixed-header {
                 color: var(--accent);
                 font-size: 500 16px/1.5 vars.$font-default;
                 gap: 8px;
+                line-height: 32px;
 
                 @include vars.hover {
                     color: var(--accent-22);
@@ -711,6 +726,12 @@ body.is-fixed-header {
 
     .dark-bg {
         background: var(--accent-12);
+    }
+
+    .btn-wrapper {
+        .btn {
+            width: 280px;
+        }
     }
 }
 
