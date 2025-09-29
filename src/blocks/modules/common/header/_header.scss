@@ -353,9 +353,9 @@ body.is-fixed-header {
                             animation: max-height-animation;
                             animation-duration: .5s;
                         }
-                    }
-                    a:before {
-                        width: 100%;
+                        a:before {
+                            width: 100%;
+                        }
                     }
                 }
 
