@@ -2,11 +2,129 @@
     "mainNav": [
         {
             "url": "/city.html",
-            "title": "Городская"
+            "title": "Городская",
+            "submenu": [
+                {
+                    "url": "#",
+                    "title": "Элитные квартиры"
+                },
+                {
+                    "url": "#",
+                    "title": "Апартаменты"
+                },
+                {
+                    "url": "#",
+                    "title": "Таунхаусы"
+                },
+                {
+                    "url": "#",
+                    "title": "Виллы"
+                },
+                {
+                    "url": "#",
+                    "title": "Пентхаусы"
+                },
+                {
+                    "url": "#",
+                    "title": "Аренда"
+                }
+            ],
+            "premenu": [
+                {
+                    "url": "#",
+                    "title": "Эксклюзивные предложения",
+                    "bg": "accent"
+                },
+                {
+                    "url": "#",
+                    "title": "Москва-Сити",
+                    "icon": {
+                        "name": "ic_city2",
+                        "color": "green"
+                    }
+                },
+                {
+                    "url": "#",
+                    "title": "Скидки и акции",
+                    "icon": {
+                        "name": "ic_percent",
+                        "color": "red"
+                    }
+                }
+            ],
+            "postmenu": [
+                {
+                    "url": "#",
+                    "title": "Вся городская недвижимость"
+                },
+                {
+                    "url": "#",
+                    "title": "Все жилые комплексы"
+                },
+                {
+                    "url": "#",
+                    "title": "Все новостройки"
+                }
+            ]
         },
         {
             "url": "/country.html",
-            "title": "Загородная"
+            "title": "Загородная",
+            "submenu": [
+                {
+                    "url": "#",
+                    "title": "Коттеджи"
+                },
+                {
+                    "url": "#",
+                    "title": "Таунхаусы"
+                },
+                {
+                    "url": "#",
+                    "title": "Участки"
+                },
+                {
+                    "url": "#",
+                    "title": "Виллы"
+                }
+            ],
+            "premenu": [
+                {
+                    "url": "#",
+                    "title": "Эксклюзивные предложения",
+                    "bg": "accent"
+                },
+                {
+                    "url": "#",
+                    "title": "Недвижимость на Новой Риге",
+                    "icon": {
+                        "name": "ic_house-small",
+                        "color": "green"
+                    }
+                },
+                {
+                    "url": "#",
+                    "title": "Недвижимость на Рублево-Успенском",
+                    "icon": {
+                        "name": "ic_house-small",
+                        "color": "green"
+                    }
+                },
+                {
+                    "url": "#",
+                    "title": "Скидки и акции",
+                    "icon": {
+                        "name": "ic_percent",
+                        "color": "red"
+                    }
+                }
+            ],
+            "postmenu": [
+                {
+                    "url": "#",
+                    "title": "Все посёлки"
+                }
+            ]
         },
         {
             "url": "#",

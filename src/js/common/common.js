@@ -17,6 +17,7 @@ import { initWishLists, WishList } from "./wishlist.js";
 import { initScrollToAnchors } from "./initScrollToAnchors.js";
 import { callbackFormProcess } from "./callback-forms.js";
 import { initSwitch } from "./switcher.js";
+import { CheckCookies } from "./cookies.js";
 import "fslightbox";
 import "./all-pages.js";
 import "./custom-pages.js";
@@ -28,6 +29,7 @@ import {
 } from "./consts.js";
 
 document.addEventListener('DOMContentLoaded', function (event) {
+    CheckCookies();
     initTogglers();
     initToggleTicks();
     initAddRemoveClassButtons();
