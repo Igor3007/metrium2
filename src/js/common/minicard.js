@@ -7,45 +7,47 @@ import { SplideNavHelper } from "./splide-nav-helper.js";
 slider minicard
 ===============================================*/
 
-export const initSliderMinicard = (conainer) => {
-    conainer.querySelectorAll('[data-slider="minicard"]').forEach(slider => {
+export const initSliderMinicard = (container) => {
+    if(container) {
+        container.querySelectorAll('[data-slider="minicard"]').forEach(slider => {
 
-        const container = slider.closest('.minicard')
-        const slideCounterCurrent = container.querySelector('[data-slider-counter="current"]')
-        const slideCounterTotal = container.querySelector('[data-slider-counter="total"]')
+            const container = slider.closest('.minicard')
+            const slideCounterCurrent = container.querySelector('[data-slider-counter="current"]')
+            const slideCounterTotal = container.querySelector('[data-slider-counter="total"]')
 
-        slider['Splide'] = new Splide(slider, {
+            slider['Splide'] = new Splide(slider, {
 
-            arrows: false,
-            arrowPath: SLIDER_ARROW_PATH,
-            pagination: false,
-            gap: 20,
-            start: 0,
-            perPage: 1,
-            perMove: 1,
-            flickMaxPages: 1,
-            flickPower: 100,
+                arrows: false,
+                arrowPath: SLIDER_ARROW_PATH,
+                pagination: false,
+                gap: 20,
+                start: 0,
+                perPage: 1,
+                perMove: 1,
+                flickMaxPages: 1,
+                flickPower: 100,
 
-        });
+            });
 
-        slider['Splide'].mount();
+            slider['Splide'].mount();
 
-        slideCounterCurrent.innerText = 1
-        slideCounterTotal.innerText = slider['Splide'].length
+            slideCounterCurrent.innerText = 1
+            slideCounterTotal.innerText = slider['Splide'].length
 
 
-        // init splide nav
-        new SplideNavHelper({
-            slider: slider['Splide'],
-            btn: 'minicard',
-            container,
-            onChange: (current, total) => {
-                slideCounterCurrent.innerText = current
-                slideCounterTotal.innerText = total
-            }
+            // init splide nav
+            new SplideNavHelper({
+                slider: slider['Splide'],
+                btn: 'minicard',
+                container,
+                onChange: (current, total) => {
+                    slideCounterCurrent.innerText = current
+                    slideCounterTotal.innerText = total
+                }
+            })
+
         })
-
-    })
+    }
 }
 
 /* ===============================================
@@ -69,27 +71,27 @@ export const initMinicardEvents = (container) => {
         instance.open(0)
     }
 
-    container.querySelectorAll('.minicard').forEach(el => {
+    if(container) {
+        container.querySelectorAll('.minicard').forEach(el => {
 
-        if (!el.querySelector('[data-slider]')) {
-            return false
-        }
+            if (!el.querySelector('[data-slider]')) {
+                return false
+            }
 
-        const slider = el.querySelector('[data-slider]')
+            const slider = el.querySelector('[data-slider]')
 
-        el.addEventListener('mouseenter', () => {
-            if (slider['Splide'].index <= 1) slider['Splide'].go('>')
+            el.addEventListener('mouseenter', () => {
+                if (slider['Splide'].index <= 1) slider['Splide'].go('>')
+            })
+
+            el.addEventListener('mouseleave', () => {
+                if (slider['Splide'].index <= 1) slider['Splide'].go('<')
+            })
+
+            el.querySelector('.minicard__fullscreen')?.addEventListener('click', (e) => {
+                openGalleryProduct(e, el)
+            })
+
         })
-
-        el.addEventListener('mouseleave', () => {
-            if (slider['Splide'].index <= 1) slider['Splide'].go('<')
-        })
-
-        el.querySelector('.minicard__fullscreen')?.addEventListener('click', (e) => {
-            openGalleryProduct(e, el)
-        })
-
-    })
-
-
+    }
 }

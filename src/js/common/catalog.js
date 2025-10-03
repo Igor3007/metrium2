@@ -1,60 +1,5 @@
 import { initSliderMinicard, initMinicardEvents } from "./minicard.js"
 
-export const initFormAJAX = () => {
-    document
-        .querySelectorAll('form[data-send="ajax"]')
-        .forEach((form) => {
-            form.addEventListener("submit", async (e) => {
-                e.preventDefault();
-                const url = form.getAttribute("action");
-                const formData = new FormData(form);
-                const data = Object.fromEntries(formData);
-
-                try {
-
-                    const response = await fetch(url, {
-                        method: "POST",
-                        headers: {
-                            'Accept': 'application/json',
-                            'Content-Type': 'application/json',
-                            'X-CSRF-TOKEN': data._token // берем токен из формы
-                        },
-                        body: JSON.stringify(data)
-                    });
-
-                    const result = await response.json();
-
-                    if (response.ok && result.success) {
-                        form.reset();
-                        window.STATUS.msg('Форма успешно отправлена');
-                        return;
-                    }
-
-                    //Ошибка валидации (422)
-                    if (response.status === 422) {
-                        window.STATUS.err(result.error);
-                        return;
-                    }
-
-                    //Ограничение частоты запросов (429)
-                    if (response.status === 429) {
-                        window.STATUS.err('Слишком много запросов! Попробуйте позже');
-                        return;
-                    }
-
-                    //Любая другая ошибка (500 и т.п.)
-                    console.error(err);
-                    window.STATUS.err('Извините, что-то пошло не так…');
-                }
-                catch (err) {
-                    console.error(err);
-                    window.STATUS.err('Извините, что-то пошло не так…');
-                }
-            })
-
-        })
-}
-
 export const initFormOnChangeSubmit = () => {
     document
         .querySelectorAll('form[data-send="ajax-on-change"]')
@@ -79,17 +24,11 @@ export const initFormOnChangeSubmit = () => {
         });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    initFormOnSubmit();
-});
-
 export const initFormOnSubmit = () => {
     document
         .querySelectorAll('form[data-form="filter"]').forEach(form => {
-            console.log(form);
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
-
                 submitForm(form);
                 return false;
             })
@@ -97,6 +36,7 @@ export const initFormOnSubmit = () => {
 }
 
 function submitForm(form) {
+
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
     let url = form.getAttribute("action");
@@ -165,29 +105,36 @@ function submitForm(form) {
     if (redirect) {
         window.location.href = url;
     }
-
     else {
         updateCatalogFromUrl(url, ({ data }) => {
-            document.querySelector('[data-catalog="objects"]').innerHTML = data.objectsHtml;
-            document.querySelector('[data-catalog="pagination"]').innerHTML = data.paginationHtml;
-            document.querySelector('[data-catalog="count"]').innerHTML = data.countText;
+            if (data.catalogHtml !== undefined) {
+                document.querySelector('[data-catalog="catalog"]').innerHTML = data.catalogHtml;
+            }
+
+            /*let pagination = document.querySelector('[data-catalog="pagination"]');
+            if(pagination) {
+                document.querySelector('[data-catalog="pagination"]').innerHTML = data.paginationHtml;
+            }*/
+            if (data.countText !== undefined) {
+                document.querySelector('[data-catalog="count"]').innerHTML = data.countText;
+            }
 
             initSliderMinicard(document.querySelector('[data-catalog="objects"]'))
             initMinicardEvents(document.querySelector('[data-catalog="objects"]'))
-        });
+        }, true, 'filter');
     }
-
-
 }
 
-function updateCatalogFromUrl(url, callback) {
+
+
+function updateCatalogFromUrl(url, callback, addToHistory = true,custom = '') {
     fetch(url, {
         method: "GET",
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'X-Requested-With': 'XMLHttpRequest'
-
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-Custom': custom
         },
     })
         .then(res => {
@@ -200,35 +147,76 @@ function updateCatalogFromUrl(url, callback) {
                 callback({ data });
             }
 
-            history.pushState({ some: 'state' }, '', url);
+            if(addToHistory) {
+                history.pushState({ some: 'state' }, '', url);
+            }
 
             showMore();
+            ajaxPagination();
         })
         .catch(err => {
+
+            console.log(err);
+
             window.STATUS.err('Извините, что-то пошло не так…');
         });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
     showMore();
+    ajaxPagination();
 });
+export const ajaxPagination = () => {
+    let ajaxPaginate = document.querySelector('[data-catalog="catalog"]').dataset.ajaxPagination;
 
+    if(ajaxPaginate) {
+        document.querySelectorAll('.pagination__page li').forEach(btn => {
+            if(!btn.classList.contains('disabled') && !btn.classList.contains('disabled')) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    let page = btn.querySelector('a').href;
+                    let wrapper = btn.closest('[data-catalog="inner"]');
+
+                    updateCatalogFromUrl(page, ({ data }) => {
+                        let objectsBlock = wrapper.querySelector('[data-catalog="objects"]');
+                        let paginationBlock = wrapper.querySelector('[data-catalog="pagination"]');
+
+                        objectsBlock.innerHTML = data.objectsHtml;
+                        paginationBlock.innerHTML = data.paginationHtml;
+                    }, false, wrapper.dataset.id);
+
+                    return false;
+                });
+            }
+        });
+    }
+};
 export const showMore = () => {
-    let showMore = document.querySelector('.btn-show-more');
-    if (showMore) {
-        showMore.addEventListener('click', function (e) {
+    let showMoreBtn = document.querySelector('.btn-show-more');
+    if (showMoreBtn) {
+        showMoreBtn.addEventListener('click', function (e) {
             e.preventDefault();
 
-            const nextPage = showMore.dataset.nextPage;
-            const currentUrl = new URL(window.location.href);
+            const nextPage = showMoreBtn.dataset.nextPage;
+            /*const currentUrl = new URL(window.location.href);
 
             currentUrl.searchParams.set('page', nextPage);
-            const newUrl = currentUrl.toString();
+            const newUrl = currentUrl.toString();*/
 
-            updateCatalogFromUrl(newUrl, ({ data }) => {
-                document.querySelector('[data-catalog="objects"]').innerHTML += data.objectsHtml;
-                document.querySelector('[data-catalog="pagination"]').innerHTML = data.paginationHtml;
-            });
+            let wrapper = showMoreBtn.closest('[data-catalog="inner"]');
+
+
+            updateCatalogFromUrl(nextPage, ({ data }) => {
+
+
+                let objectsBlock = wrapper.querySelector('[data-catalog="objects"]');
+                let paginationBlock = wrapper.querySelector('[data-catalog="pagination"]');
+
+
+                objectsBlock.innerHTML += data.objectsHtml;
+                paginationBlock.innerHTML = data.paginationHtml;
+            }, false, wrapper.dataset.id);
 
             return false;
         });

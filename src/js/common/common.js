@@ -7,7 +7,7 @@ import { initAddRemoveClassButtons } from "./add-remove-class.js";
 import { initSliderViewed, initGallery, initFactoidGallery } from "../../blocks/modules/index.js";
 import { initToggleTicks, initDistrictSelectors } from "../../blocks/components";
 import { initTogglers } from "./toggler.js";
-import { initFormAJAX, initFormOnChangeSubmit } from "./form-ajax.js";
+import {initFormOnChangeSubmit, initFormOnSubmit} from "./catalog.js";
 import { initPrefixedInputs } from "./prefixed-inputs.js";
 import { initPopupSelect } from "./popup-select.js";
 import { initMap } from "./city-map.js";
@@ -15,7 +15,7 @@ import { initStaticMaps } from "./map-static.js";
 import { initSliderMinicard, initMinicardEvents } from "./minicard.js";
 import { initWishLists, WishList } from "./wishlist.js";
 import { initScrollToAnchors } from "./initScrollToAnchors.js";
-import { callFormProcess } from "./custom-forms.js";
+import { callbackFormProcess } from "./callback-forms.js";
 import { initSwitch } from "./switcher.js";
 import "fslightbox";
 import "./all-pages.js";
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initToggleTicks();
     initAddRemoveClassButtons();
     initSliderViewed();
-    initFormAJAX();
+    callbackFormProcess();
     initPrefixedInputs();
     initPopupSelect();
     initDistrictSelectors();
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initGallery();
     initScrollToAnchors();
     initStaticMaps();
-    callFormProcess();
+    initFormOnSubmit();
     initFactoidGallery();
     initSwitch();
     setTimeout(
