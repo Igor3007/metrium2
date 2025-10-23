@@ -1,3 +1,5 @@
+import spriteUrl from '/resources/images/sprites/sprite.svg';
+
 export class afLightbox {
     constructor(options) {
 
@@ -37,7 +39,7 @@ export class afLightbox {
 
     createTemplate() {
         let template = document.createElement('div')
-        template.innerHTML = `<div class="af-popup ${this.classes} "> <div class="af-popup__bg"></div><div class="af-popup__wrp"><div class="af-popup__container"><div class="af-popup__close"><svg class="icon"><use href="/img/sprites/sprite.svg#ic_close"></use></svg></div><div class="af-popup__content"></div></div></div></div>`
+        template.innerHTML = `<div class="af-popup ${this.classes} "> <div class="af-popup__bg"></div><div class="af-popup__wrp"><div class="af-popup__container"><div class="af-popup__close"><svg class="icon"><use href="${spriteUrl}#ic_close"></use></svg></div><div class="af-popup__content"></div></div></div></div>`
         document.body.append(template)
         this.instanse = template;
         return template;

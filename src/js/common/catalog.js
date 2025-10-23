@@ -168,7 +168,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 export const ajaxPagination = () => {
     let ajaxPaginate = document.querySelector('[data-catalog="catalog"]').dataset.ajaxPagination;
-
     if(ajaxPaginate) {
         document.querySelectorAll('.pagination__page li').forEach(btn => {
             if(!btn.classList.contains('disabled') && !btn.classList.contains('disabled')) {
