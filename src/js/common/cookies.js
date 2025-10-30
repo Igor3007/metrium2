@@ -7,7 +7,7 @@ const setAcceptCookie = () => {
 export const CheckCookies = async () => {
     if (Cookies.get('cookies_accept')) return;
 
-    const template = await fetch(`/templates/cookies.html`).then(resp => resp.text());
+    const template = await fetch(`/cookies`).then(resp => resp.text());
 
     const wrp = document.createElement('div');
     wrp.classList.add('cookies-wrp');
