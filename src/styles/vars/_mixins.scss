@@ -374,7 +374,7 @@
 }
 
 @mixin splide-nav {
-    display: flex;
+     
     align-items: center;
 
     @media screen and (min-width: variables.$w576) {

@@ -500,7 +500,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             this.slider = params.slider
             this.currentFilter = null
             this.currentCurrency = null
-
+            this.params = params
             this.init()
         }
 
@@ -529,6 +529,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             }
 
             this.slider.refresh();
+            this.slider.go(0);
 
             initSliderMinicard(splideList);
             initMinicardEvents(splideList);
@@ -639,6 +640,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     slider['Splide'].options = {
                         drag: false,
                     };
+
+
+                    console.log(slider['Splide'].options)
+                    console.log('splide drag')
                 })
                 gallery.addEventListener('mouseleave', () => {
                     slider['Splide'].options = {
@@ -808,7 +813,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
             arrows: false,
             arrowPath: SLIDER_ARROW_PATH,
-            pagination: true,
+             
             gap: 32,
             start: 0,
             perPage: 3,
@@ -835,11 +840,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     fixedWidth: '440px',
                     gap: 12,
                     perPage: 2,
+                    pagination: false,
                 },
 
                 1376: {
                     fixedWidth: '440px',
                     gap: 16,
+                    pagination: false,
                 },
 
 

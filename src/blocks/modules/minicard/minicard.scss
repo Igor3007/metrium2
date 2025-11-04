@@ -175,6 +175,7 @@
             aspect-ratio: 3 / 2;
             height: 100%;
             @include vars.picture(0, cover);
+            background-color: #eee;
         }
 
         .splide {
@@ -483,8 +484,7 @@
 
     &__price {
 
-        padding: 10px 0 26px;
-
+        padding: 26px 0 26px;
         letter-spacing: .04em;
         transition: 0.3s ease;
 

@@ -454,3 +454,14 @@ span[data-color=fff] {
         }
     }
 }
+
+
+.is-dynamic-pagination .splide__pagination {
+	white-space: nowrap;
+	flex-wrap: nowrap;
+	width: 95px;
+	overflow: hidden;
+	margin: 0 auto;
+    justify-content: flex-start;
+    scrollbar-width: none !important;
+}

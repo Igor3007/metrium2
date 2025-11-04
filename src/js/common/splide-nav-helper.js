@@ -6,7 +6,7 @@ export class SplideNavHelper {
         this.slider = params.slider
         this.btn = params.btn
         this.container = params.container
-
+        this.dynamicMode = false
         this.prevButton = null
         this.nextButton = null
 
@@ -19,6 +19,28 @@ export class SplideNavHelper {
         this.prevButton.setAttribute('disabled', 'disabled')
 
         this.addEvent()
+    }
+
+    scrollToElem(elem, container) {
+        var rect = elem.getBoundingClientRect();
+        var rectContainer = container.getBoundingClientRect();
+
+        let elemOffset = {
+            top: rect.top + document.body.scrollTop,
+            left: rect.left + document.body.scrollLeft
+        }
+
+        let containerOffset = {
+            top: rectContainer.top + document.body.scrollTop,
+            left: rectContainer.left + document.body.scrollLeft
+        }
+
+        let leftPX = elemOffset.left - containerOffset.left + container.scrollLeft - (container.offsetWidth / 2) + ((elem.offsetWidth + 0) / 2)
+
+        container.scrollTo({
+            left: leftPX,
+            behavior: 'smooth'
+        });
     }
 
     addEvent() {
@@ -39,9 +61,6 @@ export class SplideNavHelper {
             this.nextButton.classList.toggle('is-hide', is_overflow)
             this.prevButton.classList.toggle('is-hide', is_overflow)
 
-
-
-
             setTimeout(() => {
 
                 if (this.container.querySelector('.splide-counter')) {
@@ -49,11 +68,14 @@ export class SplideNavHelper {
                     this.container.querySelector('.splide-counter').classList.toggle('is-hide', is_overflow)
                 }
 
-                // if (is_overflow) {
-                //     this.nextButton.setAttribute('disabled', 'disabled')
-                //     this.prevButton.setAttribute('disabled', 'disabled')
-                // }
+                if(this.slider.Components.Pagination.items.length > 10) {
+                    this.slider.root.classList.add('is-dynamic-pagination')
+                    this.dynamicMode = true
+                }
+
             }, 100)
+
+            
         })
 
 
@@ -76,23 +98,17 @@ export class SplideNavHelper {
                 slideTotal = slideTotal + this.slider.options.offsetPagination
             }
 
-            console.log(newIndex, 'newIndex')
-            console.log(this.slider.length, 'this.slider.length')
-            console.log(slideTotal, 'slideTotal')
-
             if (this.slider.length == slideTotal && newIndex != 0) {
                 this.nextButton.setAttribute('disabled', 'disabled')
-
-                console.log(this.slider.length)
-                console.log(slideTotal)
-                console.log(newIndex, 'newIndex')
-                console.log(prevIndex, 'prevIndex')
-                //alert('disable next')
-
             }
 
             if (typeof this.params.onChange != 'undefined') {
                 this.params.onChange(destIndex + 1, this.slider.length)
+            }
+
+            if(this.dynamicMode) {
+                const elem = this.slider.Components.Pagination.items[newIndex].li;
+                this.scrollToElem(elem, this.slider.root.querySelector('.splide__pagination'))
             }
         })
     }

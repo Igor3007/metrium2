@@ -17,4 +17,34 @@
         flex-direction: column;
         gap: 12px;
     }
+
+    &.list {
+        @container (width > 1120px) {
+            
+            & .minicard .minicard__top {
+              min-width:444px;
+              width: 25%;
+            }
+
+            & .minicard__slider picture {
+                aspect-ratio: unset;
+                height: 100%;
+                width: 100%;
+            }
+
+            & .minicard__title {
+                padding-bottom: 29px;
+            }
+        }
+
+        @container (width > 992px) {
+            .minicard__main {
+                --card-padding: 22px 30px;
+            }
+
+            .minicard__price {
+                padding: 21px 0 21px;
+            }
+        }
+    }
 }
