@@ -188,9 +188,9 @@
 
 .passport {
     & .minicard__price-old {
-        @media screen and (min-width: 576px) {
-            font-size: 16px;
-            padding-bottom: 0;
-        }
+
+        font-size: 16px;
+        padding-bottom: 0;
+
     }
 }
