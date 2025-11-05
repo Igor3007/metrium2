@@ -44,14 +44,25 @@
 
 html:has(.cityplace) {
     scroll-padding-top: 130px;
+
     @include vars.from('xl') {
         scroll-padding-top: 200px;
     }
 }
 
 .cityplace {
+
+    &__list {
+        & .minicard {
+            &__prop {
+                opacity: 1 !important;
+            }
+        }
+    }
+
     .page-title {
         background-color: var(--bg);
+
         @include vars.from('md') {
             padding-bottom: 40px;
         }
@@ -85,7 +96,7 @@ html:has(.cityplace) {
                 margin-top: 24px;
             }
 
-            & + article {
+            &+article {
                 margin-top: 32px;
             }
         }
@@ -97,7 +108,7 @@ html:has(.cityplace) {
 
     &__content {
         h4 {
-            font: 400 clamp(20px,4vw,28px)/1.6 vars.$font-captions;
+            font: 400 clamp(20px, 4vw, 28px)/1.6 vars.$font-captions;
             letter-spacing: 0.04em;
         }
     }
@@ -110,6 +121,7 @@ html:has(.cityplace) {
         position: sticky;
         top: var(--hgt-header);
         z-index: 30;
+
         @include vars.from('md') {
             background-color: transparent;
             margin-inline: -12px;
@@ -128,6 +140,7 @@ html:has(.cityplace) {
         padding: 16px;
         border-radius: 16px;
         font: 400 15px/24px vars.$font-default;
+
         @include vars.from('md') {
             padding: 32px;
             font: 400 18px/28px vars.$font-default;
@@ -158,6 +171,7 @@ html:has(.cityplace) {
         padding: 16px;
         border-radius: 16px;
         margin-top: 24px;
+
         @include vars.from('md') {
             padding: 32px;
             margin-top: 32px;
@@ -189,6 +203,7 @@ html:has(.cityplace) {
         background: var(--white);
         padding: 16px;
         border-radius: 16px;
+
         @include vars.from('md') {
             margin-top: 16px;
         }
@@ -215,6 +230,7 @@ html:has(.cityplace) {
 
         .list-header__controls-sort {
             min-width: 100%;
+
             @include vars.from('xl') {
                 min-width: 400px;
             }
@@ -243,9 +259,11 @@ html:has(.cityplace) {
     &__count {
         font: 400 16px/1.5 vars.$font-default;
         color: var(--text-2);
+
         @include vars.before('xl') {
             margin-bottom: 8px;
         }
+
         @include vars.from('md') {
             font-size: 18px;
             line-height: 28px;
@@ -257,15 +275,18 @@ html:has(.cityplace) {
         padding: 16px;
         border-radius: 16px;
         margin-top: 24px;
+
         @include vars.from('md') {
             margin-top: 32px;
         }
+
         @include vars.from('xl') {
             padding: 32px;
         }
 
         h4 {
             margin-bottom: 16px;
+
             @include vars.from('xl') {
                 margin-bottom: 24px;
             }
@@ -277,6 +298,7 @@ html:has(.cityplace) {
             aspect-ratio: .733;
             border-radius: 12px;
             overflow: hidden;
+
             @include vars.before('md') {
                 .ymaps3x0--controls {
                     display: none;
@@ -284,6 +306,7 @@ html:has(.cityplace) {
             }
         }
     }
+
     &__map-legend {
         .dotted-list {
             @include vars.from('xl') {
@@ -292,6 +315,7 @@ html:has(.cityplace) {
                 columns: 2;
                 column-gap: 50px;
             }
+
             li {
                 font: 500 16px/1.5 vars.$font-default;
                 margin-bottom: 16px;
@@ -345,6 +369,7 @@ html:has(.cityplace) {
 
     .section-special-offers {
         background: var(--bg);
+
         @include vars.from('md') {
             padding-top: 50px;
             padding-bottom: 36px;
@@ -354,6 +379,7 @@ html:has(.cityplace) {
     .section-form-question.pre-footer {
         padding-bottom: 48px;
         border-bottom: 1px solid var(--accent-13);
+
         @include vars.from('md') {
             padding-bottom: 96px;
         }
@@ -367,6 +393,7 @@ html:has(.cityplace) {
 
 .page-header {
     margin-block: 24px;
+
     @include vars.from('md') {
         margin-block: 32px;
     }
@@ -377,6 +404,7 @@ html:has(.cityplace) {
     .section-form-question {
         padding-bottom: 48px;
         border-bottom: 1px solid var(--accent-14);
+
         @include vars.from('md') {
             padding-bottom: 96px;
         }

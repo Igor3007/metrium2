@@ -7,19 +7,21 @@
     padding: 16px;
     border-radius: 16px;
     position: relative;
+
     @include vars.from('md') {
         padding: 24px;
         font-size: 18px;
         line-height: 28px;
     }
 
-    > * + * {
+    >*+* {
         margin-top: 8px;
     }
 
     &__id {
         color: var(--text-2);
         line-height: 32px;
+
         @include vars.from('md') {
             line-height: 36px;
         }
@@ -29,6 +31,7 @@
         color: var(--accent-21);
         font-size: 24px;
         line-height: 36px;
+
         @include vars.from('xl') {
             font-size: 32px;
             line-height: 44px;
@@ -44,6 +47,7 @@
         justify-content: space-between;
         gap: 16px;
         flex-wrap: wrap;
+
         @include vars.from('xxl') {
             justify-content: start;
             gap: 0;
@@ -92,6 +96,8 @@
             @include vars.from('md') {
                 top: 84px;
             }
+
+
         }
 
         svg {
@@ -115,6 +121,7 @@
         top: 16px;
         right: 16px;
         margin-top: 0;
+
         @include vars.from('md') {
             top: 24px;
             right: 24px;
@@ -132,6 +139,7 @@
                 background: var(--accent-11) !important;
                 color: var(--white);
             }
+
             @include vars.hover {
                 background: var(--accent-14);
             }
@@ -143,6 +151,7 @@
                 border-bottom-left-radius: 8px;
             }
         }
+
         li:last-child {
             button {
                 border-top-right-radius: 8px;
@@ -171,6 +180,13 @@
 
         .value {
             font: 400 15px/24px vars.$font-default;
+        }
+    }
+
+    & .passport-apartments {
+        &.minicard__price-old {
+            font-size: 16px;
+            padding-bottom: 0;
         }
     }
 }

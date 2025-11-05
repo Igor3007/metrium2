@@ -31,7 +31,7 @@ export const initGallery = () => {
                 const mainSlider = new Splide(gallery, {});
                 const thumbSlider = new Splide(thumbs, {
                     fixedWidth: 102,
-                    // isNavigation: true,
+                    snap: true,
                     gap: 12
                 });
 
@@ -72,6 +72,17 @@ export const initGallery = () => {
                         scrollDynamicDots(elem, mainSlider.root.querySelector('.splide__pagination'), 300)
                     }
                 });
+
+                // При окончании драга
+                thumbSlider.on('dragged', function (slide) {
+
+                    console.log('ddd')
+
+                    setTimeout(() => {
+                        thumbSlider.root.querySelector('.splide__slide.is-active').classList.remove('is-active')
+                    }, 430)
+                });
+
 
                 // При клике на миниатюру
                 thumbSlider.on('click', function (slide) {

@@ -192,6 +192,7 @@
             padding: 4px 16px;
             border-radius: 14px;
             white-space: nowrap;
+            color: #fff;
 
             @include vars.from('md') {
                 font-size: 15px;

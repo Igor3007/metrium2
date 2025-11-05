@@ -5,12 +5,15 @@ mixin passport-detail(data)
         .passport__id ID: 24498
         .passport__prices.switch
             .passport__price-item.active(data-case="rub")
+                .minicard__price-old 123456 RUB
                 .passport__price 725 320 000 ₽
                 .passport__per 2 308 232 ₽/м²
             .passport__price-item(data-case="dol")
+                .minicard__price-old 123456 usd
                 .passport__price 25 320 000 $
                 .passport__per 308 232 $/м²
             .passport__price-item(data-case="eur")
+                .minicard__price-old 123456 eur
                 .passport__price 25 320 000 €
                 .passport__per 308 232 €/м²
         ul.passport__params(class=`grid-${params.length}`)
