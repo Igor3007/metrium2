@@ -69,7 +69,7 @@ function submitForm(form) {
     formData.forEach((val, name) => {
         if (name === '_token') return;
         if (name === 'sort') return;
-        if (name === 'currency' && !priceValue) return;
+        //if (name === 'currency' && !priceValue) return;
 
         const strVal = String(val).trim();
         if (strVal === '') return; // пустые значения пропускаем
