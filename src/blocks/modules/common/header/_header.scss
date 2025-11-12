@@ -240,7 +240,6 @@ body.is-fixed-header {
             letter-spacing: .02em;
             --ink: var(--text-1);
             white-space: nowrap;
-            box-shadow: 0 4px 16px 0 rgba(0,0,0,.12);
 
             &-wrapper {
                 padding-top: 16px;
@@ -349,6 +348,9 @@ body.is-fixed-header {
                 & > li {
                     position: relative;
                     &:hover {
+                        .submenu {
+                            box-shadow: 0 4px 16px 0 rgba(0,0,0,.12);
+                        }
                         .submenu-wrapper {
                             max-height: none;
                             animation: max-height-animation;

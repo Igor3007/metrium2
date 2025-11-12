@@ -527,6 +527,8 @@
             text-decoration: line-through;
             letter-spacing: .02em;
             padding-bottom: 6px;
+            min-height: 1lh;
+            box-sizing: content-box;
         }
 
 

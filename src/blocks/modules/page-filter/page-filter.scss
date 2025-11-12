@@ -195,7 +195,6 @@
         &.secondary-form {
             margin-bottom: 24px;
             padding-block: 24px;
-            overflow: hidden;
             @include vars.before('md') {
                 gap: 24px;
                 border-top: 1px solid var(--accent-13);
