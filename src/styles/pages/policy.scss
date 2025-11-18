@@ -101,23 +101,30 @@ html:has(.main-policy) {
         letter-spacing: .02em;
     }
 
-    .accent {
+    blockquote {
         background: var(--accent-12);
         padding: 20px 24px;
+        margin: 0;
         margin-top: 24px;
         border-radius: 12px;
         display: flex;
         flex-direction: column;
         gap: 8px;
 
-        &-title {
+        & > strong {
             font: 500 20px/1.6 vars.$font-default;
             letter-spacing: .02em;
         }
 
-        &-description {
+        & p {
             font: 400 16px/1.5 vars.$font-default;
             letter-spacing: .02em;
+            margin-top: 0;
+
+            & strong {
+                font-weight: 500;
+            }
+
         }
     }
 }
