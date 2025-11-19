@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initToggleTicks();
     initAddRemoveClassButtons();
     initSliderViewed();
-    callbackFormProcess();
+    callbackFormProcess(document);
     initPrefixedInputs();
     initPopupSelect();
     initDistrictSelectors();
@@ -813,7 +813,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
             arrows: false,
             arrowPath: SLIDER_ARROW_PATH,
-             
+
             gap: 32,
             start: 0,
             perPage: 3,

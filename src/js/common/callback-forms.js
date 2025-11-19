@@ -12,12 +12,22 @@ const showPopup = async (popupUrl) => {
     });
     popup.replaceContent(wrapper);
 };
-export const callbackFormProcess = () => {
-    document
+export const callbackFormProcess = (container, popup) => {
+    container
         .querySelectorAll('form[data-send="ajax"]')
         .forEach(form => {
+
+            form.querySelectorAll('button[formaction]')
+                .forEach(btn => {
+                    btn.addEventListener('click', function (e){
+                        form.setAttribute("action",btn.getAttribute('formaction'));
+                    })
+                });
+
+
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
+
                 const {type} = e.submitter?.dataset;
                 const url = form.getAttribute("action");
                 const formData = new FormData(form);
@@ -47,6 +57,11 @@ export const callbackFormProcess = () => {
                             window.STATUS.msg('Форма успешно отправлена');
 
                         }
+
+                        if(popup) {
+                            popup.close();
+                        }
+
                         return;
                     }
 

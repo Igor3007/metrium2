@@ -1,5 +1,6 @@
 import {afLightbox} from "../vendor/af-lightbox.js";
 import {MaskInput} from "maska";
+import {callbackFormProcess} from "./callback-forms.js";
 
 document.addEventListener('DOMContentLoaded', async function (event) {
 
@@ -32,15 +33,25 @@ document.addEventListener('DOMContentLoaded', async function (event) {
                     .querySelectorAll("[popover]")
                     .forEach(popover => {popover.hidePopover()});
 
-                const {tpl} = el.dataset;
-                const template = await fetch(`/templates/${tpl}.html`).then(resp => resp.text());
+                const {tpl,objectType,objectId} = el.dataset;
+
+                const params = new URLSearchParams();
+
+                if (objectType) params.append('objectType', objectType);
+                if (objectId)   params.append('objectId', objectId);
+
+                const url = params.toString()
+                    ? `/form/${tpl}?${params.toString()}`
+                    : `/form/${tpl}`;
+
+                const template = await fetch(url).then(resp => resp.text());
                 const popup = new afLightbox({mobileInBottom: true});
                 const wrapper = document.createElement('div');
                 wrapper.innerHTML = template;
 
-                wrapper.querySelector('button').addEventListener('click', () => {
+                /*wrapper.querySelector('button').addEventListener('click', () => {
                     popup.close();
-                });
+                });*/
 
                 wrapper
                     .querySelectorAll("[data-maska]")
@@ -52,8 +63,11 @@ document.addEventListener('DOMContentLoaded', async function (event) {
                 });
 
                 popup.replaceContent(wrapper);
+
+                callbackFormProcess(wrapper, popup);
+
+
             });
         });
 
 });
-
