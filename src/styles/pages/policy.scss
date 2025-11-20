@@ -221,4 +221,10 @@ html:has(.main-policy) {
     padding-top: 28px;
     padding-bottom: 96px;
     border-bottom: 1px solid var(--accent-13);
+
+    .form-question {
+        &:first-child {
+            margin-top: 48px;
+        }
+    }
 }
