@@ -8,13 +8,12 @@
     right: 0;
     top: 0 !important;
     bottom: 0;
-    top: 66px;
     max-width: 720px;
     flex-direction: column;
     overflow-x: auto;
     transform: translateX(-100%);
     transition: 0.3s ease;
-    z-index: 10;
+    z-index: vars.$z-mobile-menu;
     padding: 80px;
 
     @media screen and (max-width: vars.$w760) {

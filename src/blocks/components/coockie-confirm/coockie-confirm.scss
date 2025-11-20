@@ -1,18 +1,17 @@
+@use "../../../styles/vars";
+
 .bottom-popup {
     position: fixed;
-    z-index: 10000000000000;
+    z-index: vars.$z-bottom-popup;
     left: 0;
     right: 0;
     bottom: 0;
     display: flex;
     justify-content: center;
     transition: 0.3s ease;
-    display: none;
     animation: slide-up 0.3s ease forwards;
     text-align: left;
     background-color: #121212;
-    transition: 0.8s ease;
-
 }
 
 .bottom-popup__wrp {
@@ -79,7 +78,7 @@
     }
 
     body>jdiv {
-        z-index: 1000;
+        z-index: vars.$z-jdiv;
         position: relative;
     }
 }

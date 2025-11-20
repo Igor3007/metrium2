@@ -70,7 +70,7 @@
     transform: translateY(50%);
     transition: 0.3s ease;
     color: #fff;
-    z-index: 100000;
+    z-index: vars.$z-status;
     max-width: 360px;
     visibility: hidden;
     border-radius: 8px;

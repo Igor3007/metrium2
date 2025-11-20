@@ -42,7 +42,7 @@
     bottom: 0;
     right: 0;
     overflow-x: auto;
-    z-index: 999999;
+    z-index: vars.$z-popup;
     opacity: 0;
     transition: 0.25s ease;
 }
