@@ -1,5 +1,6 @@
 import {initMinicardEvents, initSliderMinicard} from "./minicard.js";
 import {initWishLists} from "./wishlist.js";
+import { generateFormUrl } from "./catalog.js";
 
 export class EstateMap {
 
@@ -9,13 +10,11 @@ export class EstateMap {
         this.resultContainer = options.resultContainer;
         this.resultWrapper = options.resultWrapper;
         this.loader = options.loader;
-        this.cardTpl = null;
-        this.templateUrl = options.templateUrl;
+        this.form = options.form;
     }
 
     async init() {
         await ymaps3.ready;
-        this.cardTpl = await fetch(this.templateUrl).then(res => res.text());
 
         ymaps3.import.registerCdn('https://cdn.jsdelivr.net/npm/{package}', [
             '@yandex/ymaps3-default-ui-theme@0.0',
@@ -54,7 +53,36 @@ export class EstateMap {
                 new YMapControls({position: 'right'})
                     .addChild(new YMapZoomControl({}))
             );
-        await this.redraw('/json/map.json');
+
+
+        let url = generateFormUrl(this.form);
+
+        await this.redraw(url);
+
+
+        this.form.querySelectorAll('select, input, textarea')
+            .forEach(el => {
+                el.addEventListener('change', (e) => {
+                    this.submitForm(this.form);
+                })
+            });
+
+        this.form.addEventListener('reset', (e) => {
+            e.preventDefault();
+
+            let url = this.form.getAttribute("action");
+            window.location.href = url;
+
+            return false;
+        });
+
+    }
+
+    async submitForm(form) {
+        let url = generateFormUrl(form);
+        history.pushState({ some: 'state' }, '', url);
+        document.querySelector('.city-map__list')?.classList.remove('open');
+        await this.redraw(url);
     }
 
     removeClusters = () => {
@@ -66,8 +94,11 @@ export class EstateMap {
     redraw = async (url) => {
         this.loader?.classList.remove('hidden');
         this.removeClusters();
-        const mapData = await fetch(url)
-            .then(res => res.json());
+        const mapData = await fetch(url, {
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        }).then(res => res.json());
 
         const points = mapData.map((item, i) => ({
             id: i,
@@ -113,12 +144,37 @@ export class EstateMap {
         this.resultContainer.replaceChildren(loader);
     }
 
-    drawResult = (elements) => {
+    drawResult = async (elements) => {
         this.drawLoader();
         const result = document.createDocumentFragment();
+
+        let ids = [];
         elements.forEach((element) => {
-            result.appendChild(this.drawCard(element));
+            ids.push(element.properties.id);
         });
+
+        const url = new URL(this.form.dataset.content);
+        ids.forEach(id => {
+            url.searchParams.append('ids[]', id);
+        });
+
+        let currency = this.form.querySelector('input[name="currency"]:checked')?.value;
+        url.searchParams.append('currency', currency);
+
+        let html = await fetch(url).then(res => res.text());
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        while (temp.firstChild) {
+            result.appendChild(temp.firstChild);
+        }
+
+        initSliderMinicard(result);
+        initMinicardEvents(result);
+        initWishLists(result);
+
+        /*elements.forEach((element) => {
+            result.appendChild(this.drawCard(element));
+        });*/
 
         setTimeout(() => {
             this.resultContainer.replaceChildren(result);

@@ -35,12 +35,9 @@ export const initFormOnSubmit = () => {
         });
 }
 
-function submitForm(form) {
-
+export function generateFormUrl(form) {
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
     let url = form.getAttribute("action");
-    let redirect = form.dataset.redirect;
 
     const buckets = new Map(); // column => { operator, values: [] }
     // находим элемент формы, чтобы взять data-operator
@@ -63,9 +60,9 @@ function submitForm(form) {
     formData.forEach((val, name) => {
         if ((name === 'price_from' || name === 'price_to') && val) {
             priceValue = true;
-            return;
         }
     });
+
     formData.forEach((val, name) => {
         if (name === '_token') return;
         if (name === 'sort') return;
@@ -101,6 +98,15 @@ function submitForm(form) {
     }
 
     url += filterUrl;
+
+    return url;
+}
+
+function submitForm(form) {
+
+    let redirect = form.dataset.redirect;
+
+    let url = generateFormUrl(form);
 
     if (redirect) {
         window.location.href = url;
