@@ -124,12 +124,25 @@ export class afSelect {
         }
 
         function createOptions(item) {
+            let maxWidth = 0;
             item.querySelectorAll('select > option').forEach(function (item, index) {
 
                 // create li elem
-                const li = document.createElement('li')
-                li.innerHTML = item.innerText
-                li.setAttribute('rel', item.value)
+                const li = document.createElement('li');
+                li.innerHTML = item.innerText;
+                li.setAttribute('rel', item.value);
+
+                // get clone of li and get its width
+                const li_clone = li.cloneNode(true);
+                li_clone.style.position = "absolute";
+                li_clone.style.left = "-1000px";
+
+                document.body.appendChild(li_clone);
+                const li_w = li_clone.offsetWidth;
+                if (li_w > maxWidth) {
+                    maxWidth = li_w;
+                }
+                li_clone.remove();
 
                 if (multiple) {
                     let check = document.createElement('span')
@@ -176,6 +189,7 @@ export class afSelect {
                 }
 
             })
+            item.style.minWidth = `${maxWidth * 1.04 + 60}px`; // множитель между размером шрифта списка пунктов и выбранного пункта + стрелка и падинги
         }
 
 
@@ -312,7 +326,7 @@ export class afSelect {
             elem.classList.contains('af-select--top') ? elem.classList.remove('af-select--top') : ''
         }
 
-        elem.style.maxWidth = (elem.offsetWidth) + 'px'
+        // elem.style.maxWidth = (elem.offsetWidth) + 'px'; // минимальная ширина установлена в зависимости от длиннейшего пункта
         elem.querySelector('.select-styled').classList.add('active')
         elem.querySelector('.select-options').classList.add('active')
         elem.querySelector('.select-list').classList.add('active')
