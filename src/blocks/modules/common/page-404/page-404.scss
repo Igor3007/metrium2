@@ -97,8 +97,8 @@
         border-bottom: 1px solid var(--accent-13);
     }
 
-    .form-question {
-        &:first-child {
+    &-dark-bg {
+        .section-form-question:first-child {
             margin-top: 48px;
         }
     }
