@@ -1,23 +1,24 @@
-import { MaskInput } from "maska";
-import { afSelect } from "../vendor/af-select.js";
-import { Splide } from "@splidejs/splide";
+import { CheckCookies } from "./cookies.js";
 import { FlexCollections } from "./flex-collections.js";
+import { MaskInput } from "maska";
+import { Splide } from "@splidejs/splide";
 import { SplideNavHelper } from "./splide-nav-helper.js";
+import { afSelect } from "../vendor/af-select.js";
+import { callbackFormProcess } from "./callback-forms.js";
 import { initAddRemoveClassButtons } from "./add-remove-class.js";
+import { initMap } from "./city-map.js";
+import { initPopUp } from "./initPopUp.js";
+import { initPopupSelect } from "./popup-select.js";
+import { initPrefixedInputs } from "./prefixed-inputs.js";
+import { initScrollToAnchors } from "./initScrollToAnchors.js";
+import { initSliderMinicard, initMinicardEvents } from "./minicard.js";
 import { initSliderViewed, initGallery, initFactoidGallery } from "../../blocks/modules/index.js";
+import { initStaticMaps } from "./map-static.js";
+import { initSwitch } from "./switcher.js";
 import { initToggleTicks, initDistrictSelectors } from "../../blocks/components";
 import { initTogglers } from "./toggler.js";
-import {initFormOnChangeSubmit, initFormOnSubmit} from "./catalog.js";
-import { initPrefixedInputs } from "./prefixed-inputs.js";
-import { initPopupSelect } from "./popup-select.js";
-import { initMap } from "./city-map.js";
-import { initStaticMaps } from "./map-static.js";
-import { initSliderMinicard, initMinicardEvents } from "./minicard.js";
 import { initWishLists, WishList } from "./wishlist.js";
-import { initScrollToAnchors } from "./initScrollToAnchors.js";
-import { callbackFormProcess } from "./callback-forms.js";
-import { initSwitch } from "./switcher.js";
-import { CheckCookies } from "./cookies.js";
+import {initFormOnChangeSubmit, initFormOnSubmit} from "./catalog.js";
 import "fslightbox";
 import "./all-pages.js";
 import "./custom-pages.js";
@@ -45,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initFormOnSubmit();
     initFactoidGallery();
     initSwitch();
+    initPopUp();initPopUp();initPopUp();
     setTimeout(
         () => { initFormOnChangeSubmit() }
         , 500); // need to prevent clearing eventHandlers with afSelect

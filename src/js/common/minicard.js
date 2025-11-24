@@ -1,6 +1,7 @@
 import { Splide } from "@splidejs/splide";
 import { SLIDER_ARROW_PATH } from "./consts.js";
 import { SplideNavHelper } from "./splide-nav-helper.js";
+import {initPopUp} from "./initPopUp.js";
 
 
 /* ===============================================
@@ -55,6 +56,8 @@ minicard hover
 ===============================================*/
 
 export const initMinicardEvents = (container) => {
+
+    initPopUp();
 
     function openGalleryProduct(e, minicard) {
         const img = minicard.querySelectorAll('[data-slider="minicard"] img')
