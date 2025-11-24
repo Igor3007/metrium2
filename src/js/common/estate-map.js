@@ -1,6 +1,7 @@
 import {initMinicardEvents, initSliderMinicard} from "./minicard.js";
 import {initWishLists} from "./wishlist.js";
 import { generateFormUrl } from "./catalog.js";
+import { initPopUp } from "./initPopUp.js";
 
 export class EstateMap {
 
@@ -133,6 +134,8 @@ export class EstateMap {
         initSliderMinicard(card);
         initMinicardEvents(card);
         initWishLists(card);
+        initPopUp(card);
+
 
         return card;
     }
