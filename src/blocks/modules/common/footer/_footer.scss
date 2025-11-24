@@ -21,11 +21,16 @@ footer {
 
         padding-bottom: 28px;
 
-        & .bgimage {
+        .bgimage {
             width: 145px;
             height: 55px;
 
             @include vars.bgimage-contain;
+        }
+
+        a {
+            display: block;
+            width: fit-content;
         }
     }
 
