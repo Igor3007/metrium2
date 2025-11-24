@@ -17,7 +17,7 @@ import { initStaticMaps } from "./map-static.js";
 import { initSwitch } from "./switcher.js";
 import { initToggleTicks, initDistrictSelectors } from "../../blocks/components";
 import { initTogglers } from "./toggler.js";
-import { initWishLists, WishList } from "./wishlist.js";
+import { initWishLists } from "./wishlist.js";
 import {initFormOnChangeSubmit, initFormOnSubmit} from "./catalog.js";
 import "fslightbox";
 import "./all-pages.js";
@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initFormOnSubmit();
     initFactoidGallery();
     initSwitch();
-    initPopUp();initPopUp();initPopUp();
+    initPopUp();
+    initWishLists(document);
     setTimeout(
         () => { initFormOnChangeSubmit() }
         , 500); // need to prevent clearing eventHandlers with afSelect
@@ -878,17 +879,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 })
             }
         })
-
-    /* ==============================================
-    wishlist
-    ==============================================*/
-    window.wishlist = new WishList({
-        elemCookie: 'wishlist',
-        elemTotal: '[data-total="wishlist"]',
-    });
-
-    // init initWishLists
-    initWishLists(document)
 
     /* ===============================================
     filter first block

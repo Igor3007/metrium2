@@ -1,4 +1,3 @@
-
 import Cookies from "js-cookie";
 
 export class WishList {
@@ -60,36 +59,43 @@ export class WishList {
     toggle(id) {
         this.isset(id) ? this.remove(id) : this.add(id)
     }
-
-
 }
 
 export function initWishLists(container) {
 
-    if (container.querySelector('[data-wishlist]')) {
-
-        const items = container.querySelectorAll('[data-wishlist]')
-
-        items.forEach(item => {
-            item.classList.add('initialized');
-            if (window.wishlist.getArray().includes(item.dataset.wishlist)) {
-                item.classList.add('is-active')
-            }
-
-            item.addEventListener('click', e => {
-                e.stopPropagation();
-                e.preventDefault();
-
-                window.wishlist.toggle(item.dataset.wishlist)
-
-                document.querySelectorAll('[data-wishlist]').forEach(el => {
-                    if (item.dataset.wishlist == el.dataset.wishlist) {
-                        el.classList.toggle('is-active', (window.wishlist.isset(item.dataset.wishlist)))
-                    }
-                })
-
-                return false;
-            })
-        })
+    if (!window.wishlist) {
+        window.wishlist = new WishList({
+            elemCookie: 'wishlist',
+            elemTotal: '[data-total="wishlist"]',
+        });
     }
+
+    const items = container.querySelectorAll('[data-wishlist]');
+
+    if (!items.length) return;
+    const init = 'initialized';
+
+    items.forEach(item => {
+        if (item.classList.contains(init)) return;
+
+        item.classList.add(init);
+        if (window.wishlist.getArray().includes(item.dataset.wishlist)) {
+            item.classList.add('is-active')
+        }
+
+        item.addEventListener('click', e => {
+            e.stopPropagation();
+            e.preventDefault();
+
+            window.wishlist.toggle(item.dataset.wishlist)
+
+            document.querySelectorAll('[data-wishlist]').forEach(el => {
+                if (item.dataset.wishlist == el.dataset.wishlist) {
+                    el.classList.toggle('is-active', (window.wishlist.isset(item.dataset.wishlist)))
+                }
+            })
+
+            return false;
+        })
+    })
 }
