@@ -58,7 +58,7 @@ minicard hover
 
 export const initMinicardEvents = (container) => {
 
-    initPopUp();
+    initPopUp(container);
     initWishLists(container);
 
     function openGalleryProduct(e, minicard) {

@@ -1,8 +1,8 @@
 import {afLightbox} from "../vendor/af-lightbox.js";
 import {MaskInput} from "maska";
 import {callbackFormProcess} from "./callback-forms.js";
-export const initPopUp = () => {
-    document
+export const initPopUp = (container) => {
+    container
         .querySelectorAll("[data-tpl]")
         .forEach(el => {
             const marker = "popup-added";

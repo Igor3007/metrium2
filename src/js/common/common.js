@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initFormOnSubmit();
     initFactoidGallery();
     initSwitch();
-    initPopUp();
+    initPopUp(document);
     initWishLists(document);
     setTimeout(
         () => { initFormOnChangeSubmit() }
