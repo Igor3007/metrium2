@@ -23,6 +23,7 @@ export const initSliderMinicard = (container) => {
                 arrowPath: SLIDER_ARROW_PATH,
                 pagination: false,
                 gap: 20,
+                lazyLoad: 'nearby',
                 start: 0,
                 perPage: 1,
                 perMove: 1,
