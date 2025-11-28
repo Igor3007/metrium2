@@ -120,7 +120,7 @@ html:has(.cityplace) {
         background-color: var(--white);
         position: sticky;
         top: var(--hgt-header);
-        z-index: 30;
+        z-index: vars.$z-cityplace-anchors;
 
         @include vars.from('md') {
             background-color: transparent;

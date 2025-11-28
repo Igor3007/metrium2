@@ -4,7 +4,7 @@
     position: fixed;
     bottom: 16px;
     right: 16px;
-    z-index: 20;
+    z-index: vars.$z-float-contacts;
 
     summary {
         background: var(--accent);

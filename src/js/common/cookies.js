@@ -19,7 +19,4 @@ export const CheckCookies = async () => {
     });
 
     document.body.appendChild(wrp);
-
-
-
 }
