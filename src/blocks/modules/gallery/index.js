@@ -62,6 +62,10 @@ export const initGallery = () => {
                     counter.innerHTML = `${_index} / ${length}`;
                     prevBtn.classList.toggle('disabled', _index === 1);
                     nextBtn.classList.toggle('disabled', _index === length);
+
+                    thumbSlider.Components.Slides.get().forEach((s, i) => {
+                        s.slide.classList.toggle('is-selected', i === index);
+                    });
                 });
 
                 mainSlider.on('move', function (newIndex) {
@@ -95,6 +99,7 @@ export const initGallery = () => {
                 thumbSlider.mount();
 
                 counter.innerHTML = `${mainSlider.index + 1} / ${mainSlider.length}`;
+                thumbSlider.Components.Slides.getAt(0).slide.classList.add('is-selected');
 
                 // create a fsLightbox popup gallery
                 const imgArray = Array.from(
