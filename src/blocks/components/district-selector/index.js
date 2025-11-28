@@ -77,12 +77,12 @@ const initDistrictSelector = (element, template, data) => {
 
         let initValue;
         try {
-            initValue = JSON.parse(input.value);
+            initValue = input.value.split(',');
+            //initValue = JSON.parse(input.value);
         }
         catch (e) {
             initValue = [];
         }
-
 
         initFilterSearch(wrapper, data);
 
@@ -142,6 +142,8 @@ const initDistrictSelector = (element, template, data) => {
                 letterList.appendChild(node);
             });
         districts.appendChild(letterList);
+
+
 
         initValue.forEach((id) => {
             districts

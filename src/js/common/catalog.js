@@ -10,6 +10,8 @@ export const initFormOnChangeSubmit = () => {
                     el.addEventListener('change', (e) => {
                         form = el.closest('form');
                         submitForm(form);
+
+
                     })
                 });
 
@@ -24,20 +26,50 @@ export const initFormOnChangeSubmit = () => {
         });
 }
 
+export const initFormChangeCurrency = (form) => {
+    let checkedCurrency = form.querySelector('input[name="currency"]:checked')?.value;
+
+    let minPriceInput = form.querySelector('[name="price_from"]');
+    let maxPriceInput = form.querySelector('[name="price_to"]');
+
+    let minPrice = minPriceInput.getAttribute('data-placeholder-'+checkedCurrency);
+    minPriceInput.setAttribute('placeholder', minPrice);
+    let maxPrice = maxPriceInput.getAttribute('data-placeholder-'+checkedCurrency);
+    maxPriceInput.setAttribute('placeholder', maxPrice);
+}
+
+
 export const initFormOnSubmit = () => {
     document
         .querySelectorAll('form[data-form="filter"]').forEach(form => {
+
+            initFormChangeCurrency(form);
+
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
-                submitForm(form);
+
+                const button = e.submitter;
+
+                submitForm(form, button ? button.value : 'page');
                 return false;
             })
+
+            form.querySelectorAll('input[name="currency"]').forEach(input => {
+                input.addEventListener('change', function(){
+                    initFormChangeCurrency(form);
+                })
+            });
+
         });
 }
 
-export function generateFormUrl(form) {
+export function generateFormUrl(form, btn) {
     const formData = new FormData(form);
     let url = form.getAttribute("action");
+
+    if(btn == 'map') {
+        url += '/map';
+    }
 
     const buckets = new Map(); // column => { operator, values: [] }
     // находим элемент формы, чтобы взять data-operator
@@ -102,11 +134,11 @@ export function generateFormUrl(form) {
     return url;
 }
 
-function submitForm(form) {
+function submitForm(form, btn) {
 
     let redirect = form.dataset.redirect;
 
-    let url = generateFormUrl(form);
+    let url = generateFormUrl(form, btn);
 
     if (redirect) {
         window.location.href = url;

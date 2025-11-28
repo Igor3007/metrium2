@@ -70,32 +70,35 @@ export function initWishLists(container) {
         });
     }
 
-    const items = container.querySelectorAll('[data-wishlist]');
 
-    if (!items.length) return;
-    const init = 'initialized';
+    if(container) {
+        const items = container.querySelectorAll('[data-wishlist]');
 
-    items.forEach(item => {
-        if (item.classList.contains(init)) return;
+        if (!items.length) return;
+        const init = 'initialized';
 
-        item.classList.add(init);
-        if (window.wishlist.getArray().includes(item.dataset.wishlist)) {
-            item.classList.add('is-active')
-        }
+        items.forEach(item => {
+            if (item.classList.contains(init)) return;
 
-        item.addEventListener('click', e => {
-            e.stopPropagation();
-            e.preventDefault();
+            item.classList.add(init);
+            if (window.wishlist.getArray().includes(item.dataset.wishlist)) {
+                item.classList.add('is-active')
+            }
 
-            window.wishlist.toggle(item.dataset.wishlist)
+            item.addEventListener('click', e => {
+                e.stopPropagation();
+                e.preventDefault();
 
-            document.querySelectorAll('[data-wishlist]').forEach(el => {
-                if (item.dataset.wishlist == el.dataset.wishlist) {
-                    el.classList.toggle('is-active', (window.wishlist.isset(item.dataset.wishlist)))
-                }
+                window.wishlist.toggle(item.dataset.wishlist)
+
+                document.querySelectorAll('[data-wishlist]').forEach(el => {
+                    if (item.dataset.wishlist == el.dataset.wishlist) {
+                        el.classList.toggle('is-active', (window.wishlist.isset(item.dataset.wishlist)))
+                    }
+                })
+
+                return false;
             })
-
-            return false;
         })
-    })
+    }
 }
