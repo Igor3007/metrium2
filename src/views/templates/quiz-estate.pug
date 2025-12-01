@@ -1,0 +1,91 @@
+include ../helpers/mixins.pug
+- var step1 = ["Квартира", "Апартаменты", "Таунхаусы", "Виллы", "Пентхаусы", "Коттеджи", "Участки"]
+- var step2 = ["Новостройки", "Вторичка", "Premium", "De Luxe", "Elite", "Ultra Luxury", "Таунхаусы", "Рассмотрю все"]
+- var step3 = ["Вид на реку","С камином","Винная комната","Бассейн в доме","SPA в доме","2-3 парковки","С отделкой","Ресторан в доме","Комната для питомцев","2-4 уровней","Персональный запрос","С мебелью"]
+- var step4 = ["50-150 млн. рублей","150-300 млн. рублей","300-500 млн. рублей","500-1000 млн. рублей","1-2 млрд. рублей","Не имеет значения"]
+- var step5 = ["Нужно срочно","3-6 месяцев","6 месяцев — 1 год","Более 1 года"]
+form.quiz-estate.popup
+    .quiz__step(data-step="1")
+        h4.quiz__step-title 1. Какой тип недвижимости вас интересует?
+        .quiz__grid
+            each item, index in step1
+                .input-wrapper
+                    +checkbox("", `step-1-${index}`, {required: false})
+                        span= item
+    .quiz__step(data-step="2")
+        h4.quiz__step-title 2. Выберите тип и класс жилья или будущего дома:
+        .quiz__grid
+            each item, index in step2
+                +checkbox("", `step-2-${index}`, {required: false})
+                    span= item
+    .quiz__step(data-step="3")
+        h4.quiz__step-title 3. Какие особенности должен учитывать объект?
+        .quiz__grid
+            each item, index in step3
+                +checkbox("", `step-3-${index}`, {required: false})
+                    span= item
+    .quiz__step(data-step="4")
+        h4.quiz__step-title 4. Какую сумму вы планируете инвестировать?
+        .quiz__grid
+            each item, index in step4
+                +checkbox("", `step-4-${index}`, {required: false})
+                    span= item
+    .quiz__step(data-step="5")
+        h4.quiz__step-title 5. Когда вы планируете приобрести недвижимость?
+        .quiz__grid
+            each item, index in step5
+                +checkbox("", `step-5-${index}`, {required: false})
+                    span= item
+    .quiz__step(data-step="6")
+        h4.quiz__step-title По вашим параметрам найдено 16 объектов
+        .subtitle Заполните поля ниже для получения предложения по актуальным объектам в течение 15 минут!
+        .modal__item
+            .call-form__title.modal__item-title Где вам удобно общаться?
+            .call-form__via
+                label(for="tele")
+                    input#tele(type="radio" name="via" checked="checked" value="tele")
+                    .title Телефон
+                label(for="wap")
+                    input#wap(type="radio" name="via" value="wap")
+                    .title WhatsApp
+                label(for="tg")
+                    input#tg(type="radio" name="via" value="tg")
+                    .title Telegram
+        .modal__group
+            .modal__item
+                .call-form__title.modal__item-title Как к вам обращаться
+                .call-form__group
+                    .call-form__input
+                        input(type="text" placeholder="Введите имя" name="name" required="required" maxlength=50 data-maska="A" data-maska-tokens="A:[0-9a-zA-Zа-яА-Я ]:multiple")
+            .modal__item
+                .call-form__title.modal__item-title Номер телефона
+                .call-form__group
+                    .call-form__input
+                        input(type="tel" placeholder="Введите номер" name="tel" required="required" data-maska="+7(###)###-##-##")
+
+    .quiz__footer
+        .quiz__footer-general
+            .quiz__footer-counter 1/5
+            .quiz__footer-btns
+                button(type="button" data-action="back").btn.btn-line.btn-square
+                    +icon("ic_chevron-left")
+                button(type="button" data-action="next").btn.btn-gold
+                    span Далее
+        .quiz__footer-last
+            +checkbox("", "agree", {required: true})
+                span.subtitle-text
+                    span Нажимая на кнопку, вы соглашаетесь с нашими
+                    br
+                    a(href='#' target="_blank")  «Правилами обработки персональных данных»
+            .quiz__footer-btns
+                button(type="button" data-action="back").btn.btn-line.btn-square
+                    +icon("ic_chevron-left")
+                button(type="button" data-action="submit").btn.btn-gold
+                    span Получить результаты
+div.thanx
+    h3 Спасибо!
+    p(style="max-width:500px") Мы получили ваш запрос и свяжемся для консультации по актуальным объектам в течение 15 минут!
+    button.btn.btn-green.btn-wide(data-action="close")
+        span Хорошо
+
+

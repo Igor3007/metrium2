@@ -256,7 +256,16 @@
         }
     }
 
-    &.btn-secondary {}
+    &.btn-square {
+        flex: 0 0 56px;
+        min-width: 56px;
+        max-width: 56px;
+        padding: 0;
+
+        .icon {
+            margin: 0;
+        }
+    }
 
     &.btn-xsmall {
         height: 32px;

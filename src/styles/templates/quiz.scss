@@ -1,0 +1,135 @@
+@use "../../styles/vars";
+
+.quiz {
+    &-estate {
+        @media (width > 1200px) {
+            width: 960px;
+        }
+    }
+    &__step-title {
+        font: 400 28px/40px vars.$font-captions;
+        margin-bottom: 32px;
+        padding-right: 56px;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(216px,1fr));
+        gap: 24px 32px;
+    }
+
+    &__footer {
+        margin-top: 48px;
+    }
+
+    &__footer-general {
+        display: none;
+        justify-content: space-between;
+
+        .questions & {
+            display: flex;
+        }
+    }
+
+    &__footer-last {
+        display: none;
+
+        .last & {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .subtitle-text {
+            text-wrap: balance;
+        }
+
+        a {
+            z-index: 30;
+            color: vars.$color-accent-11;
+
+            @include vars.hover {
+                color: vars.$main;
+            }
+        }
+    }
+
+    &__footer-btns {
+        display: flex;
+        gap: 8px;
+    }
+
+    &__footer-counter {
+        font: 400 20px/1.6 vars.$font-default;
+        letter-spacing: .02em;
+        padding: 12px 41px;
+        border-radius: 28px;
+        background: #F5F7F7;
+    }
+
+    &__step {
+        display: none;
+
+        @for $i from 1 through 7 {
+            .step-#{$i} &[data-step="#{$i}"] {
+                display: block !important;
+            }
+        }
+
+    }
+
+    .first {
+        [data-action="back"] {
+            display: none;
+        }
+    }
+
+    form {
+        &:invalid {
+            [data-action="submit"] {
+                background: var(--accent-14);
+                pointer-events: none;
+            }
+        }
+    }
+
+    .last {
+        h4 {
+            margin-bottom: 12px;
+        }
+        .subtitle {
+            margin-bottom: 32px;
+        }
+    }
+
+    .modal__group {
+        display: flex;
+        flex-direction: row;
+
+        .modal__item {
+            flex-grow: 1;
+            margin-top: 32px;
+        }
+    }
+
+    .thanx {
+        display: none;
+    }
+
+    &.finish {
+        .thanx {
+            display: block;
+        }
+    }
+
+}
+
+.af-popup__wrp:has(.quiz-estate) {
+
+    @media (width > 768px) {
+        align-items: flex-start;
+
+        .af-popup__container {
+            margin-top: 200px;
+        }
+    }
+}

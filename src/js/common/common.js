@@ -18,7 +18,8 @@ import { initSwitch } from "./switcher.js";
 import { initToggleTicks, initDistrictSelectors } from "../../blocks/components";
 import { initTogglers } from "./toggler.js";
 import { initWishLists } from "./wishlist.js";
-import {initFormOnChangeSubmit, initFormOnSubmit} from "./catalog.js";
+import { initFormOnChangeSubmit, initFormOnSubmit } from "./catalog.js";
+import { initQuizButtons } from "./startQuizButtons.js";
 import "fslightbox";
 import "./all-pages.js";
 import "./custom-pages.js";
@@ -48,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initSwitch();
     initPopUp(document);
     initWishLists(document);
+    initQuizButtons(document);
     setTimeout(
         () => { initFormOnChangeSubmit() }
         , 500); // need to prevent clearing eventHandlers with afSelect
