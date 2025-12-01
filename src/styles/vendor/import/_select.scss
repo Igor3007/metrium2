@@ -279,10 +279,7 @@ select {
         overflow: hidden;
         position: relative;
         border-radius: 6px;
-
-
-
-
+        cursor: pointer;
 
         @media screen and (max-width: vars.$w480) {
             font-size: 16px;

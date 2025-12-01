@@ -29,7 +29,7 @@ mixin minicard(data)
                                         +picture('/img/objects/img-block-4')
                                 each item in [1,1,1,1,1,1]
                                     .splide__slide
-                                        +picture(image)
+                                        +picture_splide_lazy(image)
             .minicard__main
                 .minicard__wishlist
                     span(data-wishlist=id): +icon('ic_heart')
