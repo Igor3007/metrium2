@@ -114,6 +114,7 @@ export class Quiz {
         const url = this.action;
         const formData = new FormData(this.elements.form);
         const data = Object.fromEntries(formData);
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         try {
 
@@ -121,9 +122,9 @@ export class Quiz {
                 method: "POST",
                 headers: {
                     'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    'X-CSRF-TOKEN': csrfToken
                 },
-                body: JSON.stringify(data)
+                body: formData
             });
 
             const result = await response.json();

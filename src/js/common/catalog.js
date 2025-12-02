@@ -50,7 +50,11 @@ export const initFormOnSubmit = () => {
 
                 const button = e.submitter;
 
-                submitForm(form, button ? button.value : 'page');
+
+                if(!button.dataset.quiz) {
+                    submitForm(form, button ? button.value : 'page');
+                }
+
                 return false;
             })
 
