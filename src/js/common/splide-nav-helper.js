@@ -45,7 +45,6 @@ export class SplideNavHelper {
 
     addEvent() {
         this.prevButton.addEventListener('click', e => {
-            console.log(this.slider);
             this.slider.go('<')
         })
 
