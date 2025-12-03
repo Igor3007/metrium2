@@ -15,6 +15,7 @@
 .special-offers {
     &__title {
         padding-bottom: 18px;
+        user-select: none;
         @include vars.font-h2;
 
         @media screen and (min-width: vars.$w1200) {

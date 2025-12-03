@@ -36,21 +36,21 @@ export class Quiz {
     }
 
     async init() {
-        this.tpl = await this.loadTemplate(this.tplUrl);
         this.popup = new afLightbox({mobileInBottom: true});
+        this.popup.open('<div class="loader-wrapper abs"><div class="loader"></div></div>', () => {
+        });
+        this.tpl = await this.loadTemplate(this.tplUrl);
         const wrapper = document.createElement('div');
         wrapper.innerHTML = this.tpl;
         wrapper.classList.add('quiz');
 
-        this.popup.open('<div></div>', () => {
-        });
 
         this.popup.replaceContent(wrapper);
         this.elements.wrapper = wrapper;
         this.elements.popup = wrapper.querySelector('.popup');
         this.elements.counter = wrapper.querySelector('.quiz__footer-counter');
         this.elements.next = wrapper.querySelector('[data-action="next"]');
-        this.elements.back = wrapper.querySelector('[data-action="back"]');
+        this.elements.backs = wrapper.querySelectorAll('[data-action="back"]');
         this.elements.submit = wrapper.querySelector('[data-action="submit"]');
         this.elements.close = wrapper.querySelector('[data-action="close"]');
         this.elements.form = wrapper.querySelector('form');
@@ -61,8 +61,10 @@ export class Quiz {
         this.elements.next.addEventListener('click', () => {
             this.nextStep()
         });
-        this.elements.back.addEventListener('click', () => {
-            this.prevStep()
+        this.elements.backs.forEach(btn => {
+            btn.addEventListener('click', () => {
+                this.prevStep()
+            });
         });
         this.elements.submit.addEventListener('click', () => {
             this.submitForm()

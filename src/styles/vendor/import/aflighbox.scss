@@ -48,6 +48,7 @@
 }
 
 .af-popup--mobile {
+    top: 20px;
     & .af-popup {
         &__container {
             @media screen and (max-width: 480px) {
@@ -101,6 +102,8 @@
     padding: 20px var(--container-padding) ;
     border-radius: 16px;
     position: relative;
+    min-width: 240px;
+    min-height: 240px;
 
     @media screen and (min-width: 767.98px) {
         padding-block: 28px;

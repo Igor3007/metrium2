@@ -9,6 +9,7 @@
     &__step-title {
         font: 400 28px/40px vars.$font-captions;
         margin-bottom: 32px;
+        margin-top: 20px;
         padding-right: 56px;
     }
 
@@ -37,6 +38,11 @@
         .last & {
             display: flex;
             justify-content: space-between;
+
+            @include vars.before('md') {
+                flex-direction: column;
+                gap: 16px;
+            }
         }
 
         .subtitle-text {
@@ -56,6 +62,12 @@
     &__footer-btns {
         display: flex;
         gap: 8px;
+
+        [data-action="submit"] {
+            @include vars.before('md') {
+                flex-grow: 1;
+            }
+        }
     }
 
     &__footer-counter {
@@ -90,6 +102,15 @@
                 pointer-events: none;
             }
         }
+        &.step-1:not(:has([data-step="1"] input:checked)) [data-action="next"],
+        &.step-2:not(:has([data-step="2"] input:checked)) [data-action="next"],
+        &.step-3:not(:has([data-step="3"] input:checked)) [data-action="next"],
+        &.step-4:not(:has([data-step="4"] input:checked)) [data-action="next"],
+        &.step-5:not(:has([data-step="5"] input:checked)) [data-action="next"]
+        {
+            background: var(--accent-14);
+            pointer-events: none;
+        }
     }
 
     .last {
@@ -105,14 +126,31 @@
         display: flex;
         flex-direction: row;
 
+        @include vars.before('md') {
+            flex-direction: column;
+            margin-top: 32px;
+        }
+
         .modal__item {
             flex-grow: 1;
             margin-top: 32px;
+
+            @include vars.before('md') {
+                margin-top: 0;
+            }
         }
     }
 
     .thanx {
         display: none;
+
+        h3 {
+            margin-top: 20px;
+        }
+
+        p {
+            margin-bottom: 32px;
+        }
     }
 
     &.finish {
