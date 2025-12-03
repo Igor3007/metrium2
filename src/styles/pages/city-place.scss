@@ -39,6 +39,10 @@
         margin-left: 24px;
         color: var(--accent-11);
         margin-top: 12px;
+
+        @include vars.hover {
+            color: var(--accent);
+        }
     }
 }
 

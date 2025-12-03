@@ -29,6 +29,10 @@ mixin pictureLazy(url)
     source(srcset=''+url+'.webp' type="image/webp" )
     img( class="lazyload" data-src=''+url+'.jpg' loading='lazy' alt='image')
 
+mixin picture_splide_lazy(url)
+    picture
+        img(data-splide-lazy=`${url}.jpg`)
+
 
 mixin picturePng(url)
   picture

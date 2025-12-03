@@ -136,7 +136,12 @@ const initDistrictSelector = (element, template, data) => {
 
 
                 node.querySelector("input").addEventListener("change", (e) => {
-                    areas.querySelector(`[data-id="${x.area_id}"]`).checked = false;
+                    // check if all districts in area are on. then turn on area. else turn of area
+                    const flag = Array.from(
+                        districts
+                            .querySelectorAll(`[data-area="${x.area_id}"]`)
+                    ).every(i => i.checked);
+                    areas.querySelector(`[data-id="${x.area_id}"]`).checked = flag;
                 })
 
                 letterList.appendChild(node);
@@ -149,7 +154,8 @@ const initDistrictSelector = (element, template, data) => {
             districts
                 .querySelectorAll(`[data-id="${id}"]`)
                 .forEach((elem) => {
-                    elem.checked = true
+                    elem.checked = true;
+                    elem.dispatchEvent(new Event('change'));
                 });
         });
 
@@ -185,8 +191,10 @@ const initDistrictSelector = (element, template, data) => {
 }
 
 export const initDistrictSelectors = async () => {
-    const data = await fetch('/api/districts').then(res => res.json());
-    const template = await fetch('/districts/popup').then(res => res.text());
+    // const data = await fetch('/api/districts').then(res => res.json());
+    // const template = await fetch('/districts/popup').then(res => res.text());
+    const data = await fetch('/json/districts.json').then(res => res.json());
+    const template = await fetch('/templates/districts.html').then(res => res.text());
 
     document
         .querySelectorAll('.district-selector')

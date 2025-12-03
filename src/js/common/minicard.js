@@ -67,7 +67,8 @@ export const initMinicardEvents = (container) => {
         const arrImage = [];
 
         img.forEach(image => {
-            arrImage.push(image.getAttribute('src'))
+            let src = image.getAttribute('src') || image.dataset.splideLazy;
+            if (src) arrImage.push(src);
         })
 
         const instance = new FsLightbox();
