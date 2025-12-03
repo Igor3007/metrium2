@@ -515,6 +515,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         changeFilter(el) {
 
+            const link = document.querySelector('.best-offers__more a');
+            if (link) {
+                link.href = el.dataset.url;
+            }
+
             const splideList = this.$el.querySelector('.splide__list--offers')
             splideList.innerHTML = ''
 

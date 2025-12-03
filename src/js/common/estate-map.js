@@ -151,20 +151,27 @@ export class EstateMap {
         this.drawLoader();
         const result = document.createDocumentFragment();
 
-        let ids = [];
-        elements.forEach((element) => {
-            ids.push(element.properties.id);
-        });
+        let ids = elements.map(el => el.properties.id);
 
-        const url = new URL(this.form.dataset.content);
-        ids.forEach(id => {
-            url.searchParams.append('ids[]', id);
-        });
+        const url = this.form.dataset.content;
 
         let currency = this.form.querySelector('input[name="currency"]:checked')?.value;
-        url.searchParams.append('currency', currency);
 
-        let html = await fetch(url).then(res => res.text());
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+
+        let html = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': csrfToken
+            },
+            body: JSON.stringify({
+                ids: ids,
+                currency: currency
+            })
+        }).then(res => res.text());
+
         const temp = document.createElement('div');
         temp.innerHTML = html;
         while (temp.firstChild) {
