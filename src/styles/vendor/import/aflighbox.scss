@@ -45,6 +45,10 @@
     z-index: vars.$z-popup;
     opacity: 0;
     transition: 0.25s ease;
+
+    @include vars.before('lg') {
+        overflow: hidden;
+    }
 }
 
 .af-popup--mobile {
@@ -56,6 +60,8 @@
                 margin-bottom: 0;
                 width: 100%;
                 animation: 0.2s ease 0.2s both fade-drop-filter;
+                max-height: 100%;
+                overflow: auto;
             }
         }
 
@@ -90,6 +96,12 @@
     z-index: 102;
     position: relative;
     min-height: 100%;
+
+    @include vars.before('lg') {
+        border-radius: 15px 15px 0 0;
+        overflow: hidden;
+        max-height: 100%;
+    }
 }
 
 .af-popup--visible {
