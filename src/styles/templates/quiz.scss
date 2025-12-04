@@ -21,6 +21,10 @@
 
     &__footer {
         margin-top: 48px;
+
+        @include vars.before('md') {
+            margin-top: 24px;
+        }
     }
 
     &__footer-general {
@@ -41,7 +45,7 @@
 
             @include vars.before('md') {
                 flex-direction: column;
-                gap: 16px;
+                gap: 32px;
             }
         }
 
