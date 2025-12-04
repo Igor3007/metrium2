@@ -12,6 +12,7 @@
 .our-awards {
     &__title {
         padding-bottom: 24px;
+        user-select: none;
         @include vars.font-h2;
         @media screen and (min-width: vars.$w1200) {
             padding-bottom: 48px;

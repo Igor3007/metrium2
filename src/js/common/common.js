@@ -608,6 +608,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 flickMaxPages: 1,
                 flickPower: 100,
                 offsetPagination: 2,
+                omitEnd: true,
                 breakpoints: {
                     480: {
                         gap: 8,
@@ -636,9 +637,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     1360: {
                         gap: 24,
                         fixedWidth: '410px',
-                        offsetPagination: false
+                        offsetPagination: false,
+                        perPage: 2
                     },
-
 
                 }
 

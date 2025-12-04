@@ -648,6 +648,7 @@ body.is-fixed-header {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 48px;
+        margin-bottom: 32px;
 
         @include vars.before('xl') {
             grid-template-columns: 1fr;
@@ -691,6 +692,7 @@ body.is-fixed-header {
         grid-template-columns: repeat(3, 1fr);
         gap: 48px;
         margin-block: 48px;
+        align-items: center;
         @include vars.before('lg') {
             grid-template-columns: 1fr;
         }

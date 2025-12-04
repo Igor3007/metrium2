@@ -36,6 +36,7 @@
     }
 
     &__title {
+        user-select: none;
         @include vars.font-h3;
         padding-bottom: 6px;
 
@@ -56,6 +57,7 @@
         letter-spacing: .02em;
         line-height: 145%;
         padding-bottom: 24px;
+        user-select: none;
 
         @media screen and (min-width: vars.$w992) {
             padding-bottom: 0;
@@ -171,6 +173,10 @@
                 .checkbox__elem {
                     border-color: var(--accent-22);
                 }
+            }
+
+            span {
+                line-height: 1;
             }
         }
 

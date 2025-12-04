@@ -52,8 +52,6 @@ export class SplideNavHelper {
             this.slider.go('>')
         })
 
-
-
         this.slider.on('mounted refresh', () => {
 
             this.nextButton.removeAttribute('disabled')

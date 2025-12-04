@@ -24,7 +24,7 @@ select {
     user-select: none;
     color: $select-color;
     width: $select-width;
-    min-width: fit-content;
+    min-width: auto !important;
     height: $select-height;
 
     @media screen and (min-width: vars.$w1440) {
@@ -78,8 +78,8 @@ select {
     height: 100%;
     border-radius: 8px;
     border: 2px solid transparent;
-    min-width: fit-content;
     cursor: pointer;
+    max-width: 100%;
 
     &:hover {
         @media (any-hover: hover) {
@@ -96,13 +96,14 @@ select {
     //     padding-right: functions.rem_(8);
     // }
 
-    & span {
+    span {
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
         color: var(--text-1);
         font-size: 16px;
         flex-shrink: 0;
+        max-width: calc(100% - 20px);
         @include vars.from('md') {
             font-size: 18px;
         }
