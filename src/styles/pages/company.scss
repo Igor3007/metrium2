@@ -60,9 +60,14 @@
         }
 
         .partner {
-            background: #e8ebeb;
+            background-color: #e8ebeb;
             border-radius: 16px;
             aspect-ratio: 47 / 30;
+            transition: background-color .3s;
+
+            @include vars.hover {
+                background-color: #ffffff;
+            }
 
             img {
                 width: 100%;

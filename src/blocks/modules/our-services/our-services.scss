@@ -148,13 +148,13 @@
     }
 
     &__desc {
-        color: var(--text-2);
+        color: var(--text-1);
         font-size: 14px;
         line-height: 140%;
         padding-bottom: 12px;
 
         @media screen and (min-width: vars.$w992) {
-            font-size: 16px;
+            font-size: 15px;
         }
     }
 

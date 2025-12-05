@@ -51,7 +51,7 @@
 .item-partner {
     width: 100%;
 
-    & .bgimage {
+    .bgimage {
         padding-top: 66%;
         @include vars.bgimage-contain;
         width: 100%;
