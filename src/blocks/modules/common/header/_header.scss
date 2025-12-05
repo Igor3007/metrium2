@@ -620,6 +620,11 @@ body.is-fixed-header {
                height: 50px;
            }
 
+            @media (width < 992px) {
+                width: 48px;
+                height: 48px;
+            }
+
             &:hover {
                 background: var(--accent);
             }

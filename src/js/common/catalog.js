@@ -1,4 +1,5 @@
 import { initSliderMinicard, initMinicardEvents } from "./minicard.js"
+import {MaskInput} from "maska";
 
 export const initFormOnChangeSubmit = () => {
     document
@@ -161,8 +162,10 @@ function submitForm(form, btn) {
                 document.querySelector('[data-catalog="count"]').innerHTML = data.countText;
             }
 
-            initSliderMinicard(document.querySelector('[data-catalog="objects"]'))
-            initMinicardEvents(document.querySelector('[data-catalog="objects"]'))
+            initSliderMinicard(document.querySelector('[data-catalog="objects"]'));
+            initMinicardEvents(document.querySelector('[data-catalog="objects"]'));
+            new MaskInput("[data-maska]");
+
         }, true, 'filter');
     }
 }

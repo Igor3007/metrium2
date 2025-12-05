@@ -22,6 +22,7 @@
     transition: 0.3s ease;
     cursor: pointer;
     line-height: 140%;
+    user-select: none;
 
     @media screen and (min-width: vars.$w1200) {
         height: 50px;

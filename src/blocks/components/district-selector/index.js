@@ -191,10 +191,10 @@ const initDistrictSelector = (element, template, data) => {
 }
 
 export const initDistrictSelectors = async () => {
-    // const data = await fetch('/api/districts').then(res => res.json());
-    // const template = await fetch('/districts/popup').then(res => res.text());
-    const data = await fetch('/json/districts.json').then(res => res.json());
-    const template = await fetch('/templates/districts.html').then(res => res.text());
+    const data = await fetch('/api/districts').then(res => res.json());
+    const template = await fetch('/districts/popup').then(res => res.text());
+    // const data = await fetch('/json/districts.json').then(res => res.json());
+    // const template = await fetch('/templates/districts.html').then(res => res.text());
 
     document
         .querySelectorAll('.district-selector')
