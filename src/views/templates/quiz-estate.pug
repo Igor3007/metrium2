@@ -5,32 +5,32 @@ include ../helpers/mixins.pug
 - var step4 = ["50-150 млн. рублей","150-300 млн. рублей","300-500 млн. рублей","500-1000 млн. рублей","1-2 млрд. рублей","Не имеет значения"]
 - var step5 = ["Нужно срочно","3-6 месяцев","6 месяцев — 1 год","Более 1 года"]
 form.quiz-estate.popup
-    .quiz__step(data-step="1")
+    .quiz__step(data-step="1").quiz__question
         h4.quiz__step-title 1. Какой тип недвижимости вас интересует?
         .quiz__grid
             each item, index in step1
                 .input-wrapper
                     +checkbox("", `step-1-${index}`, {required: false})
                         span= item
-    .quiz__step(data-step="2")
+    .quiz__step(data-step="2").quiz__question
         h4.quiz__step-title 2. Выберите тип и класс жилья или будущего дома:
         .quiz__grid
             each item, index in step2
                 +checkbox("", `step-2-${index}`, {required: false})
                     span= item
-    .quiz__step(data-step="3")
+    .quiz__step(data-step="3").quiz__question
         h4.quiz__step-title 3. Какие особенности должен учитывать объект?
         .quiz__grid
             each item, index in step3
                 +checkbox("", `step-3-${index}`, {required: false})
                     span= item
-    .quiz__step(data-step="4")
+    .quiz__step(data-step="4").quiz__question
         h4.quiz__step-title 4. Какую сумму вы планируете инвестировать?
         .quiz__grid
             each item, index in step4
                 +checkbox("", `step-4-${index}`, {required: false})
                     span= item
-    .quiz__step(data-step="5")
+    .quiz__step(data-step="5").quiz__question
         h4.quiz__step-title 5. Когда вы планируете приобрести недвижимость?
         .quiz__grid
             each item, index in step5

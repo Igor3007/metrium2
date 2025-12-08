@@ -12,20 +12,20 @@ export const initQuizButtons = (container) => {
             if (!quiz || !action) return;
 
             btn.addEventListener('click', () => {
-                new Quiz(quiz, action, 5, 6);
+                new Quiz(quiz, action);
             });
         });
 }
 
 export class Quiz {
-    constructor(tplUrl, action, questions, steps) {
+    constructor(tplUrl, action) {
         this.tplUrl = tplUrl;
         this.tpl = null;
         this.action = action;
         this.popup = null;
         this.step = 1;
-        this.steps = steps;
-        this.questions = questions;
+        this.steps = 0;
+        this.questions = 0;
         this.elements = {};
 
         this.init()
@@ -43,7 +43,8 @@ export class Quiz {
         const wrapper = document.createElement('div');
         wrapper.innerHTML = this.tpl;
         wrapper.classList.add('quiz');
-
+        this.steps = wrapper.querySelectorAll('.quiz__step').length;
+        this.questions = +this.steps - 1;
 
         this.popup.replaceContent(wrapper);
         this.elements.wrapper = wrapper;

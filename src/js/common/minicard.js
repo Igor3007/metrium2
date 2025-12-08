@@ -47,7 +47,8 @@ export const initSliderMinicard = (container) => {
                     slideCounterCurrent.innerText = current
                     slideCounterTotal.innerText = total
                 }
-            })
+            });
+            slider['Splide'].refresh();
 
         })
     }
