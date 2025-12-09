@@ -1,3 +1,36 @@
-section
+include ./work-step
+
+section.how-we-work
     .container
-        h1 how we work
+        h2 Как мы работаем с вашей недвижимостью
+        .how-we-work__container
+            +workStep({
+                image: "/img/icons/icon-subcategory/44-investments.svg",
+                title: "1. Быстро и точно оценим ваше недвижимость",
+                text: "Знаем и анализируем все данные  о недвижимости, чтобы предложить вам максимально выгодную стоимость"
+            })
+            +workStep({
+                image: "/img/icons/icon-subcategory/21-services.svg",
+                title: "2. Назначаем персонального брокера",
+                text: "У вас будет личный помощник на каждом этапе сделки 24/7, примет все звонки клиентов и организуют показы за вас"
+            })
+            +workStep({
+                image: "/img/icons/icon-subcategory/22-valuation.svg",
+                title: "3. Рекламируем на топовых площадках",
+                text: "Используем только эффективные каналы, собственную базу в 300 000+ клиентов со всего мира, подключаем партнеров, чтобы обеспечить максимальное число обращений"
+            })
+            +workStep({
+                image: "/img/icons/icon-subcategory/04-complexes.svg",
+                title: "4. Проверим все документы",
+                text: "Обезопасим вас от конфликтных ситуаций и потери времени, досконально изучим покупателя от паспорта до соц. сетей"
+            })
+            +workStep({
+                image: "/img/icons/icon-subcategory/05-new-buildings.svg",
+                title: "5. Подготовим объект к продаже",
+                text: "Организуем профессиональную фото и видео съемку, создадим 3-д модель и планировки"
+            })
+            +workStep({
+                image: "/img/icons/icon-subcategory/31-partnership.svg",
+                title: "6. Решим любые вопросы",
+                text: "Умеем продавать квартиры в ипотеке, под залогом, с перепланировкой — ваша недвижимость будет востребована"
+            })

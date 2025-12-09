@@ -1,0 +1,9 @@
+mixin workStep(data)
+    - var image = data?.image
+    - var title = data?.title || "title"
+    - var text = data?.text || "text"
+    article.work-step
+        picture
+            img(src=image)
+        .work-step__title= title
+        .work-step__text= text
