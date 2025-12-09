@@ -1,0 +1,38 @@
+mixin caseSlide(data)
+    - var image = data?.image
+    - var title = data?.title || "title"
+    - var price = data?.price || "price ₽"
+    - var square = data?.square || "square м²"
+    - var time = data?.time || "time"
+    .case-slide
+        picture
+            img(src=image)
+        .case-slider__description
+            .case-slider__title
+                h3= title
+            .case-slider__parms
+                .case-slider__param
+                    .case-slider__param-icon
+                        +icon("ic_wallet")
+                    .case-slider__param-text
+                        .case-slider__param-name
+                            span Стоимость
+                        .case-slider__param-value
+                            span= price
+                .case-slider__param
+                    .case-slider__param-icon
+                        +icon("ic_room")
+                    .case-slider__param-text
+                        .case-slider__param-name
+                            span Площадь
+                        .case-slider__param-value
+                            span= square
+                .case-slider__param
+                    .case-slider__param-icon
+                        +icon("ic_time")
+                    .case-slider__param-text
+                        .case-slider__param-name
+                            span Время продажи
+                        .case-slider__param-value
+                            span= time
+

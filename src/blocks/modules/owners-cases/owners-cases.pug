@@ -1,0 +1,32 @@
+include ./case-slide
+section.owner-cases
+    .dark-bg
+        .container
+            h2 Примеры успешных кейсов продаж с Метриум
+            .splide(slider="owners-case")
+                .splide__track
+                    ul.splide__list
+                        li.splide__slide
+                            +caseSlide({
+                                image: "/img/owners/case1.webp",
+                                title: "Квартира в ЖК «Пик Мира»",
+                                price: "264 400 000 ₽",
+                                square: "164 м2",
+                                time: "3 недели"
+                            })
+                        li.splide__slide
+                            +caseSlide({
+                                image: "/img/owners/case2.webp",
+                                title: "Квартира в ЖК «Пик Мира»",
+                                price: "264 400 000 ₽",
+                                square: "164 м2",
+                                time: "3 недели"
+                            })
+                        li.splide__slide
+                            +caseSlide({
+                                image: "/img/owners/case3.webp",
+                                title: "Квартира в ЖК «Пик Мира»",
+                                price: "264 400 000 ₽",
+                                square: "164 м2",
+                                time: "3 недели"
+                            })

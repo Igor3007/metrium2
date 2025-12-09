@@ -20,6 +20,7 @@ import { initTogglers } from "./toggler.js";
 import { initWishLists } from "./wishlist.js";
 import { initFormOnChangeSubmit, initFormOnSubmit } from "./catalog.js";
 import { initQuizButtons } from "./startQuizButtons.js";
+import { initOwnersSlider } from "../../blocks/modules/owners-cases/owners-slider.js";
 import "fslightbox";
 import "./all-pages.js";
 import "./custom-pages.js";
@@ -47,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initFormOnSubmit();
     initFactoidGallery();
     initSwitch();
+    initOwnersSlider();
     initPopUp(document);
     initWishLists(document);
     initQuizButtons(document);
