@@ -1,0 +1,39 @@
+.first-screen {
+    picture {
+        border-radius: 16px 16px 0 0;
+        overflow: hidden;
+        display: block;
+        aspect-ratio: 160 / 56;
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: bottom;
+        }
+    }
+
+    .facts {
+        display: flex;
+        border-radius: 0 0 16px 16px;
+        overflow: hidden;
+        background: #1f5756;
+        gap: 1px;
+    }
+
+    .fact {
+        flex-grow: 1;
+        background: var(--accent-11);
+        padding: 16px 40px 24px;
+        color: var(--white);
+
+        &__title {
+            font: 400 36px/48px var(--font-guardian);
+        }
+
+        &__text {
+            font: 400 16px/24px var(--font-forma-djr);
+        }
+    }
+}
