@@ -27,6 +27,15 @@
                     margin-inline: 4px 8px;
                 }
             }
+
+            a {
+                font-weight: 500;
+                color: inherit;
+
+                @include vars.hover {
+                    color: var(--accent);
+                }
+            }
         }
     }
 
@@ -40,6 +49,7 @@
         color: var(--accent-11);
         margin-top: 12px;
         gap: 6px;
+        font-weight: 500;
 
         @include vars.hover {
             color: var(--accent);
