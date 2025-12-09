@@ -87,6 +87,10 @@ body {
 
 }
 
+html {
+    scroll-padding-top: var(--hgt-header);
+}
+
 html * {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;

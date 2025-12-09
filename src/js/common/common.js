@@ -510,7 +510,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
 
         init() {
-            this.addEvent()
+            this.addEvent();
+            this.filterItems[0]?.dispatchEvent(new Event('click'));
         }
 
         changeFilter(el) {
