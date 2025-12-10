@@ -4,35 +4,35 @@ mixin caseSlide(data)
     - var price = data?.price || "price ₽"
     - var square = data?.square || "square м²"
     - var time = data?.time || "time"
-    .case-slide
-        picture
-            img(src=image)
-        .case-slider__description
-            .case-slider__title
-                h3= title
-            .case-slider__parms
-                .case-slider__param
-                    .case-slider__param-icon
-                        +icon("ic_wallet")
-                    .case-slider__param-text
-                        .case-slider__param-name
-                            span Стоимость
-                        .case-slider__param-value
-                            span= price
-                .case-slider__param
-                    .case-slider__param-icon
-                        +icon("ic_room")
-                    .case-slider__param-text
-                        .case-slider__param-name
-                            span Площадь
-                        .case-slider__param-value
-                            span= square
-                .case-slider__param
-                    .case-slider__param-icon
-                        +icon("ic_time")
-                    .case-slider__param-text
-                        .case-slider__param-name
-                            span Время продажи
-                        .case-slider__param-value
-                            span= time
-
+    .case-slide__wrapper.holder
+        .case-slide
+            picture
+                img(src=image)
+            .case-slide__description
+                .case-slide__title
+                    h3= title
+                .case-slide__params
+                    .case-slide__param
+                        .case-slide__param-icon
+                            +icon("ic_wallet")
+                        .case-slide__param-text
+                            .case-slide__param-name
+                                span Стоимость
+                            .case-slide__param-value
+                                span= price
+                    .case-slide__param
+                        .case-slide__param-icon
+                            +icon("ic_room")
+                        .case-slide__param-text
+                            .case-slide__param-name
+                                span Площадь
+                            .case-slide__param-value
+                                span= square
+                    .case-slide__param
+                        .case-slide__param-icon
+                            +icon("ic_time")
+                        .case-slide__param-text
+                            .case-slide__param-name
+                                span Время продажи
+                            .case-slide__param-value
+                                span= time
