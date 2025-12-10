@@ -1,0 +1,115 @@
+@use "../../../styles/vars";
+
+.we-adv {
+
+    &__grid {
+        display: grid;
+        gap: 1px;
+        grid-template-columns: repeat(3, 1fr);
+        border-radius: 24px;
+        border: 1px solid var(--accent-13);
+        background: var(--accent-13);
+        overflow: hidden;
+    }
+}
+
+.adv-step {
+    background: var(--white);
+    padding: 44px 44px 44px 178px;
+    gap: 46px;
+    position: relative;
+
+    &, & * {
+        transition: .3s;
+    }
+
+    &__logo {
+        justify-content: flex-end;
+        position: absolute;
+        left: 44px;
+        bottom: -22px;
+
+        .icon {
+            width: 68px;
+            height: 84px;
+            color: var(--accent-11);
+            opacity: .16;
+        }
+    }
+
+    &__number {
+        font: 400 64px/80px var(--font-guardian);
+    }
+
+    &__description {
+        min-height: 148px;
+    }
+
+    &__title {
+        font: 500 20px/32px var(--font-forma-djr);
+        margin-bottom: 12px;
+    }
+
+    &__text {
+        font: 400 16px/24px var(--font-forma-djr);
+        flex-grow: 1;
+    }
+
+    &__arrow {
+        background: var(--accent-11);
+        flex: 0 0 1px;
+        position: relative;
+    }
+
+    &__point {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--accent-11);
+        right: 0;
+        top: -11px;
+
+        .icon {
+            color: var(--white);
+            width: 16px;
+            height: 16px;
+            margin-top: 4px;
+            margin-left: 4px;
+        }
+    }
+
+    @include vars.hover {
+        background: var(--accent-11);
+
+        .adv-step {
+            &__number,
+            &__title,
+            &__text {
+                color: var(--white);
+            }
+
+            &__logo {
+                bottom: 0;
+
+                .icon {
+                    color: var(--white);
+                }
+            }
+
+            &__arrow {
+                background: var(--white);
+            }
+
+            &__point {
+                background: var(--white);
+                right: -10px;
+
+                .icon {
+                    color: var(--accent-11);
+                }
+            }
+        }
+
+    }
+}

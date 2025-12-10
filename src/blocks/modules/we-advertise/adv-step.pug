@@ -1,0 +1,16 @@
+mixin advStep(data)
+    -var number = data?.number
+    -var title = data?.title || "title"
+    -var text = data?.text || "text"
+    -var last = data?.last || false
+    .adv-step.flex
+        .v-flex.adv-step__logo
+            .adv-step__number= number
+            +icon("logo-element")
+        .v-flex.adv-step__description
+            .adv-step__title= title
+            .adv-step__text= text
+            .adv-step__arrow
+                .adv-step__point
+                    +icon("ic_chevron-right")
+
