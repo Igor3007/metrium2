@@ -180,6 +180,7 @@ const initDistrictSelector = (element, template, data) => {
         reset.addEventListener("click", (e) => {
             input.value = "[]";
             container.innerHTML = resultString([]);
+            input.dispatchEvent(new Event('change'));
             popup.close();
         })
 

@@ -4,6 +4,7 @@ import gulp from "gulp";
 import {paths} from "./gulp-tasks/config.js";
 import {
     clean,
+    copyAPI,
     copyFonts,
     copyJSON,
     jsDev,
@@ -49,7 +50,7 @@ gulp.task(
     gulp.series(
         clean,
         stylesDev,
-        gulp.parallel(viewsDev, jsDev, copyFonts, copyJSON, favicons, imagesDev, webpDev, spritesDev, htmlTemplates),
+        gulp.parallel(viewsDev, jsDev, copyAPI, copyFonts, copyJSON, favicons, imagesDev, webpDev, spritesDev, htmlTemplates),
         gulp.parallel('browser-sync', 'watch')
     )
 );
@@ -59,6 +60,6 @@ gulp.task(
     gulp.series(
         clean,
         stylesProd,
-        gulp.parallel(viewsProd, copyFonts, copyJSON, jsProd, favicons, imagesDev, webpProd, spritesProd, htmlTemplates)
+        gulp.parallel(viewsProd, copyAPI, copyFonts, copyJSON, jsProd, favicons, imagesDev, webpProd, spritesProd, htmlTemplates)
     )
 );
