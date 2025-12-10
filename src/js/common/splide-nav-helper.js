@@ -9,6 +9,7 @@ export class SplideNavHelper {
         this.dynamicMode = false
         this.prevButton = null
         this.nextButton = null
+        this.minSlidesToButtons = params.minSlidesToButtons
 
         this.init()
     }
@@ -17,7 +18,6 @@ export class SplideNavHelper {
         this.prevButton = this.container.querySelector('[data-slider-prev="' + this.btn + '"]')
         this.nextButton = this.container.querySelector('[data-slider-next="' + this.btn + '"]')
         this.prevButton.setAttribute('disabled', 'disabled')
-
         this.addEvent()
     }
 
@@ -56,8 +56,8 @@ export class SplideNavHelper {
 
             this.nextButton.removeAttribute('disabled')
             let is_overflow = !this.slider.root.classList.contains('is-overflow')
-            this.nextButton.classList.toggle('is-hide', is_overflow)
-            this.prevButton.classList.toggle('is-hide', is_overflow)
+            this.nextButton.classList.toggle('is-hide', is_overflow || (this.slider.length <= this.minSlidesToButtons))
+            this.prevButton.classList.toggle('is-hide', is_overflow || (this.slider.length <= this.minSlidesToButtons))
 
             setTimeout(() => {
 

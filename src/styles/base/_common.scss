@@ -43,6 +43,8 @@
 }
 
 .splide {
+    user-select: none;
+
     & &__pagination {
         position: relative;
         padding: 24px 0;

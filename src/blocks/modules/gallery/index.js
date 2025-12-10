@@ -49,7 +49,8 @@ export const initGallery = () => {
                             config.dynamicMode = true
                         }
 
-                        mainSlider.root.classList.add('is-visible-pagination')
+                        mainSlider.root.classList.add('is-visible-pagination');
+                        nextBtn.classList.toggle('disabled', mainSlider.index + 1 >= mainSlider.length);
                     }, 100)
                 })
 

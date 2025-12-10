@@ -24,7 +24,7 @@ select {
     user-select: none;
     color: $select-color;
     width: $select-width;
-    min-width: auto !important;
+    //min-width: auto !important;
     height: $select-height;
 
     @media screen and (min-width: vars.$w1440) {

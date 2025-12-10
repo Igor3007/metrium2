@@ -17,7 +17,7 @@
 }
 
 
-main section:last-child {
+main > section:last-child {
     border-bottom: 1px solid var(--accent-13);
     padding-bottom: 32px;
     @include vars.from('md') {

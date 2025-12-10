@@ -8,6 +8,13 @@ export const copyJSON = () => (
         .pipe(browserSync.reload({stream: true}))
 );
 
+export const copyAPI = () => (
+    gulp.src('./src/api/*')
+        .pipe(gulp.dest('./dist/api/'))
+        .pipe(browserSync.reload({stream: true}))
+);
+
+
 export const copyFonts = () => (
     gulp.src(paths.fonts.src, {encoding: false})
         .pipe(gulp.dest(paths.fonts.dist))

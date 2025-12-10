@@ -72,7 +72,8 @@ export const initSliderViewed = () => {
             new SplideNavHelper({
                 slider: slider['Splide'],
                 btn: 'viewed',
-                container: slider.closest('section')
+                container: slider.closest('section'),
+                minSlidesToButtons: 3
             })
 
             //init filter
