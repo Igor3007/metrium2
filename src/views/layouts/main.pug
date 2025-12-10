@@ -1,5 +1,6 @@
 block variables
 include ../helpers/mixins
+include ../../blocks/components/index
 include ../../blocks/components/headers/headers
 
 doctype html
@@ -55,6 +56,7 @@ html(lang="ru")
                 include ../../blocks/modules/common/footer/footer.pug
         button.scroll-top
             +icon("ic_chevron-left")
+        +contact-float()
 
     block scripts
 
