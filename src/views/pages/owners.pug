@@ -1,4 +1,5 @@
 extends ../layouts/page
+include ../../blocks/modules/recently-viewed/recently-viewed
 
 block main
     include ../../blocks/modules/page-title/page-title--owners
@@ -7,6 +8,6 @@ block main
     include ../../blocks/modules/owners-cases/owners-cases
     include ../../blocks/modules/we-advertise/we-advertise
     include ../../blocks/modules/request-section/request-section
-    h1 exclusives
+    +recently-viewed({title: "Наши эксклюзивы", class: "owners-exclusives"})
     h1 services
     h1 special offers
