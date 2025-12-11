@@ -1,6 +1,12 @@
 @use "../../../styles/vars";
 
 .we-adv {
+    padding-top: 96px;
+    margin-bottom: 96px;
+
+    h2 {
+        margin-bottom: 48px;
+    }
 
     &__grid {
         display: grid;

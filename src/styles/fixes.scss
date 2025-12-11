@@ -1,5 +1,15 @@
 @use "./vars";
 
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.v-flex {
+    display: flex;
+    flex-direction: column;
+}
+
 // do not stretch block with currency. make currency buttons square
 @include vars.from('md') {
     .page-filter__item:has(label[for^="currency"]):not(:has(.page-filter__item)) {

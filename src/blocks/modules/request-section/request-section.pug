@@ -1,0 +1,27 @@
+section.calc-request
+    .container
+        .calc-form__wrapper(style="background-image:url(/img/owners/ctabg.jpg)")
+            form.calc-form.v-flex
+                .calc-form__header
+                    h3 Оставьте заявку для бесплатного расчёта стоимости
+                    .calc-form__subtitle Заполните поля ниже и мы свяжемся с вами по расчёту в течение 15 минут!
+                .calc-form__inputs.flex
+                    .input-wrapper.v-flex
+                        label Ваш телефон
+                        input(placeholder="Введите номер *")
+                    .input-wrapper.v-flex
+                        label Ваше имя
+                        input(placeholder="Имя *")
+                .btn-wrapper
+                    button.btn.btn-green.btn-wide
+                        +icon("ic_house-plus")
+                        span Оставить заявку
+                    .flex
+                        label.checkbox
+                            input(type='checkbox' name='agree' required='required')
+                            span.checkbox__elem
+                            span.checkbox__text
+                            span
+                                | Нажимая кнопку, вы&nbsp;даёте согласие на&nbsp;
+                                a(href='#' target='_blank') обработку персональных данных
+
