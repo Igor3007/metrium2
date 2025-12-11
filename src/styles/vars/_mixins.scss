@@ -374,7 +374,7 @@
 }
 
 @mixin splide-nav {
-     
+
     align-items: center;
 
     @media screen and (min-width: variables.$w576) {
@@ -420,7 +420,7 @@
         &[disabled] {
             background-color: transparent;
             border-color: var(--text-3);
-            pointer-events: none;
+            cursor: auto;
 
             & svg {
                 fill: var(--text-3);

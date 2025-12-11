@@ -1,15 +1,5 @@
 @use "./vars";
 
-.flex {
-    display: flex;
-    align-items: center;
-}
-
-.v-flex {
-    display: flex;
-    flex-direction: column;
-}
-
 // do not stretch block with currency. make currency buttons square
 @include vars.from('md') {
     .page-filter__item:has(label[for^="currency"]):not(:has(.page-filter__item)) {
@@ -36,4 +26,18 @@ main > section:last-child {
 
 .dark-bg {
     background: var(--accent-12);
+}
+
+input::placeholder {
+    user-select: none;
+}
+
+.page-wishlist {
+    .section-form-question {
+        margin-bottom: 32px;
+
+        @include vars.from('md') {
+            margin-bottom: 75px;
+        }
+    }
 }

@@ -34,6 +34,11 @@
 
         @include vars.hover {
             background-color: var(--accent-11);
+
+            &[disabled] {
+                cursor: auto;
+                background-color: transparent;
+            }
         }
 
         &.is-hide {
@@ -50,7 +55,6 @@
         &[disabled] {
             background-color: transparent;
             border-color: var(--text-3);
-            pointer-events: none;
 
             & svg {
                 fill: var(--text-3);
