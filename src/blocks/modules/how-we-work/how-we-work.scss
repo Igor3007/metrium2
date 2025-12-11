@@ -1,3 +1,5 @@
+@use "../../../styles/vars";
+
 .how-we-work {
 
     margin-top: 96px;
@@ -20,6 +22,7 @@
     padding: 40px;
     background: var(--accent-12);
     border-radius: 24px;
+    transition: background-color .3s;
 
     picture {
         width: 104px;
@@ -44,4 +47,9 @@
         font: 400 18px/28px var(--font-forma-djr);
         letter-spacing: .02em;
     }
+
+    @include vars.hover {
+        background: var(--accent-13);
+    }
+
 }

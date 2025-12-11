@@ -1,0 +1,51 @@
+@use "../../../styles/vars";
+
+.owners-services {
+    background: var(--accent-13);
+    padding-bottom: 48px;
+
+    .services-grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card-services {
+        padding-right: 44px;
+
+        &__icon {
+            width: 140px;
+            min-width: 140px;
+        }
+
+        &.highlighted {
+            padding-right: 24px;
+
+            .card-services__icon {
+                width: 160px;
+                min-width: 160px;
+                background: var(--accent-12) !important;
+            }
+
+            .card-services__title {
+                color: var(--white) !important;
+            }
+        }
+
+        @include vars.hover {
+            padding-right: 24px;
+
+            .card-services {
+                &__icon {
+                    background: var(--accent-13);
+                    width: 160px;
+                    min-width: 160px;
+                }
+
+                &__title {
+                    color: var(--accent);
+                }
+            }
+        }
+    }
+}

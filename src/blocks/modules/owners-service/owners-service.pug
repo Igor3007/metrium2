@@ -1,0 +1,14 @@
+include ../../../blocks/modules/our-services/our-services
+
+section.owners-services
+    .container
+        h2 Услуги компании
+        p.subtitle Компания «Метриум» предлагает уникальную систему сервисов для инвестиций в высокобюджетную недвижимость по Москве и Московской области.
+        .services-grid
+            each card in pages.owners.services
+                +card-services(card)
+            +card-service-highlighted({
+                title: 'Свяжитесь с нами',
+                desc: 'Наши эксперты проконсультируют по услугам и любым вопросам, связанным с элитной недвижимостью!',
+                icon: '/img/icons/icon-subcategory/25-metrium-2.svg'
+            })
