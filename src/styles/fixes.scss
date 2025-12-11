@@ -23,3 +23,17 @@ main > section:last-child {
 .city-place .page-title h2 {
     margin-bottom: 12px;
 }
+
+input::placeholder {
+    user-select: none;
+}
+
+.page-wishlist {
+    .section-form-question {
+        margin-bottom: 32px;
+
+        @include vars.from('md') {
+            margin-bottom: 75px;
+        }
+    }
+}
