@@ -416,7 +416,7 @@ html:has(.cityplace) {
 
 .city-places-all,
 .city-place {
-    .section-form-question {
+    .section-form-question:last-child {
         padding-bottom: 48px;
         border-bottom: 1px solid var(--accent-14);
 
