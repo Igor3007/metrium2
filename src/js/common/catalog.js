@@ -1,5 +1,6 @@
 import { initSliderMinicard, initMinicardEvents } from "./minicard.js"
 import {MaskInput} from "maska";
+import {callbackFormProcess} from "./callback-forms.js";
 
 export const initFormOnChangeSubmit = () => {
     document
@@ -139,11 +140,58 @@ export function generateFormUrl(form, btn) {
     return url;
 }
 
+export function changeGoToFilterButtons(url) {
+
+    let filterUrl = parseFilterUrl(url);
+
+    document.querySelectorAll('[data-filter="go-out"]').forEach(a => {
+        let hrefUrl = parseFilterUrl(a.href);
+
+        let newHref = hrefUrl.origin + hrefUrl.route;
+        if(filterUrl.filter) {
+            newHref += '/filter/' + filterUrl.filter;
+        }
+
+        const mergedGet = new URLSearchParams(filterUrl.get.toString());
+        for (const [key, value] of hrefUrl.get.entries()) {
+            mergedGet.set(key, value);
+        }
+
+        const newHrefUrl = new URL(newHref);
+
+        newHrefUrl.search = mergedGet.toString();
+
+        a.href = newHrefUrl.toString();
+    });
+}
+
+function parseFilterUrl(url) {
+    let filterUrl = new URL(url);
+    let filterParams = new URLSearchParams(filterUrl.search);
+    let arUrl = filterUrl.pathname.split('/filter/');
+
+    let filterPart = '';
+
+    if(arUrl[1]) {
+        filterPart = arUrl[1];
+    }
+
+    return {
+        'origin': filterUrl.origin,
+        'get': filterParams,
+        'filter': filterPart,
+        'route': arUrl[0]
+    };
+}
+
 function submitForm(form, btn) {
 
     let redirect = form.dataset.redirect;
 
     let url = generateFormUrl(form, btn);
+
+    changeGoToFilterButtons(url);
+
 
     if (redirect) {
         window.location.href = url;
@@ -260,6 +308,13 @@ export const showMore = () => {
 
                 objectsBlock.innerHTML += data.objectsHtml;
                 paginationBlock.innerHTML = data.paginationHtml;
+
+                initSliderMinicard(objectsBlock);
+                initMinicardEvents(objectsBlock);
+                new MaskInput("[data-maska]");
+
+                callbackFormProcess(objectsBlock);
+
             }, false, wrapper.dataset.id);
 
             return false;

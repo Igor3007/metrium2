@@ -2,6 +2,7 @@ import {afLightbox} from "../vendor/af-lightbox.js";
 import {MaskInput} from "maska";
 import {callbackFormProcess} from "./callback-forms.js";
 export const initPopUp = (container) => {
+
     if(container) {
         container
             .querySelectorAll("[data-tpl]")

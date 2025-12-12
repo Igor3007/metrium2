@@ -18,7 +18,7 @@ import { initSwitch } from "./switcher.js";
 import { initToggleTicks, initDistrictSelectors } from "../../blocks/components";
 import { initTogglers } from "./toggler.js";
 import { initWishLists } from "./wishlist.js";
-import { initFormOnChangeSubmit, initFormOnSubmit } from "./catalog.js";
+import {changeGoToFilterButtons, initFormOnChangeSubmit, initFormOnSubmit} from "./catalog.js";
 import { initQuizButtons } from "./startQuizButtons.js";
 import "fslightbox";
 import "./all-pages.js";
@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     initScrollToAnchors();
     initStaticMaps();
     initFormOnSubmit();
+    changeGoToFilterButtons(window.location.href);
     initFactoidGallery();
     initSwitch();
     initPopUp(document);
