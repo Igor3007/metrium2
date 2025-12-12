@@ -24,7 +24,7 @@ export const initAddRemoveClassButtons = () => {
                 }
 
                 if (add === 'list') {
-                    Cookies.set('cardView', 'list', {expires: 365});
+                    Cookies.set('card_view', 'list', {expires: 365});
                 }
             })
         });
@@ -51,7 +51,7 @@ export const initAddRemoveClassButtons = () => {
                 }
 
                 if (remove === 'list') {
-                    Cookies.set('cardView', 'tile', {expires: 365});
+                    Cookies.set('card_view', 'tile', {expires: 365});
                 }
             })
         });
