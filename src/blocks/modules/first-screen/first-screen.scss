@@ -1,3 +1,5 @@
+@use "../../../styles/vars";
+
 .first-screen {
 
     margin-bottom: 96px;
@@ -34,6 +36,11 @@
         background: var(--accent-11);
         padding: 16px 40px 24px;
         color: var(--white);
+        transition: .3s;
+
+        @include vars.hover {
+            background: var(--accent);
+        }
 
         &__title {
             font: 400 36px/48px var(--font-guardian);

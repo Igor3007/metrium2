@@ -1,5 +1,5 @@
-import spriteUrl from '/resources/images/sprites/sprite.svg';
-// const spriteUrl = "/img/sprites/sprite.svg";
+// import spriteUrl from '/resources/images/sprites/sprite.svg';
+const spriteUrl = "/img/sprites/sprite.svg";
 export class afLightbox {
     constructor(options) {
 
