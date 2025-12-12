@@ -22,14 +22,12 @@ export const initSliderMinicard = (container) => {
                 arrows: false,
                 arrowPath: SLIDER_ARROW_PATH,
                 pagination: false,
-                gap: 20,
                 lazyLoad: 'nearby',
                 start: 0,
                 perPage: 1,
                 perMove: 1,
                 flickMaxPages: 1,
-                flickPower: 100,
-
+                flickPower: 100
             });
 
             slider['Splide'].mount();

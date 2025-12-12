@@ -30,6 +30,7 @@ export class EstateMap {
 
         this.contentPin = document.createElement('div');
         this.contentPin.className = 'map-point single';
+        this.contentPin.innerHTML = '<svg class="icon" width="24" height="24"><use href="/img/sprites/sprite.svg#logo-element"></use></svg>'
 
         this.map = new YMap(
             this.element,
@@ -58,7 +59,8 @@ export class EstateMap {
 
         let url = generateFormUrl(this.form);
 
-        await this.redraw(url);
+        // await this.redraw(url);
+        await this.redraw('/json/map.json');
 
 
         this.form.querySelectorAll('select, input, textarea')

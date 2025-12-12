@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 export const initAddRemoveClassButtons = () => {
     document
         .querySelectorAll('[data-add]')
@@ -21,6 +22,10 @@ export const initAddRemoveClassButtons = () => {
                 if (parent) {
                     el.closest(parent).classList.add(add)
                 }
+
+                if (add === 'list') {
+                    Cookies.set('card_view', 'list', {expires: 365});
+                }
             })
         });
 
@@ -43,6 +48,10 @@ export const initAddRemoveClassButtons = () => {
 
                 if (parent) {
                     el.closest(parent).classList.remove(remove)
+                }
+
+                if (remove === 'list') {
+                    Cookies.set('card_view', 'tile', {expires: 365});
                 }
             })
         });
