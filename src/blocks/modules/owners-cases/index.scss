@@ -4,9 +4,16 @@
     overflow: visible;
     padding-block: 96px;
 
+    @include vars.before('md') {
+        padding-block: 48px;
+    }
+
     h2 {
         text-align: center;
         margin-bottom: 48px;
+        @include vars.before('md') {
+            margin-bottom: 24px;
+        }
     }
 
     .splide {
@@ -80,18 +87,29 @@
 
 .case-slide {
     position: absolute;
-    width: 1056px;
-    height: 560px;
-    left: 50%;
     border-radius: 24px;
     overflow: hidden;
-    transform: translateX(-50%);
     border: 8px solid var(--white);
+
+    @include vars.before('xl') {
+        aspect-ratio: 66 / 35;
+    }
+
+    @include vars.from('xl') {
+        width: 1056px;
+        height: 560px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
     &__wrapper {
         position: relative;
-        //aspect-ratio: 66 / 35;
-        height: 560px;
+        @include vars.before('xl') {
+            aspect-ratio: 66 / 35;
+        }
+        @include vars.from('xl') {
+            height: 560px;
+        }
     }
 
     picture {

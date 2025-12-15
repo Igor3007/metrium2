@@ -11,7 +11,14 @@ export const initOwnersSlider = () => {
                 perPage: 3,
                 perMove: 1,
                 focus: "center",
-                updateOnMove: true
+                updateOnMove: true,
+                breakpoints: {
+                    1100: {
+                        arrows: false,
+                        perPage: 1,
+                        pagination: false
+                    }
+                }
             });
             caseSlider.mount();
         });

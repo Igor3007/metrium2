@@ -20,17 +20,22 @@
     }
 
     h3 {
-        font: 400 36px/48px var(--font-guardian);
+        font: 400 clamp(24px, 2.5vw, 36px)/1.33 var(--font-guardian);
         letter-spacing: .04em;
         margin-bottom: 12px;
     }
 
     &__inputs {
         gap: 24px;
+
+        @include vars.before('md') {
+            flex-direction: column;
+        }
     }
 
     .input-wrapper {
         flex-grow: 1;
+        width: 100%;
 
         label {
             margin-bottom: 8px;

@@ -1,11 +1,17 @@
 @use "../../../styles/vars";
 
 .first-screen {
-
     margin-bottom: 96px;
+
+    @include vars.before('md') {
+        margin-bottom: 48px;
+    }
 
     .dark-bg {
         padding-top: 64px;
+        @include vars.before('md') {
+            padding-top: 32px;
+        }
     }
 
     picture {
@@ -29,6 +35,10 @@
         overflow: hidden;
         background: #1f5756;
         gap: 1px;
+
+        @include vars.before('md') {
+            flex-direction: column;
+        }
     }
 
     .fact {
@@ -42,12 +52,16 @@
             background: var(--accent);
         }
 
+        @include vars.before('md') {
+            padding-inline: 16px;
+        }
+
         &__title {
-            font: 400 36px/48px var(--font-guardian);
+            font: 400 clamp(28px, 3vw ,36px)/1.33 var(--font-guardian);
         }
 
         &__text {
-            font: 400 16px/24px var(--font-forma-djr);
+            font: 400 clamp(14px, 1.5vw ,16px)/1.5 var(--font-forma-djr);
         }
     }
 }
