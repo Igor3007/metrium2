@@ -10,11 +10,21 @@
     }
 
     .card-services {
-        padding-right: 44px;
+        padding-right: 24px;
+        transition: .3s;
 
         &__icon {
             width: 140px;
             min-width: 140px;
+            transition: .3s;
+        }
+
+        &__title {
+            transition: .3s;
+        }
+
+        &__main {
+            width: 288px;
         }
 
         &.highlighted {
@@ -32,7 +42,7 @@
         }
 
         @include vars.hover {
-            padding-right: 24px;
+            //padding-right: 24px;
 
             .card-services {
                 &__icon {

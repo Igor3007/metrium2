@@ -1,3 +1,5 @@
+@use "../../../styles/vars";
+
 .owner-cases {
     overflow: visible;
     padding-block: 96px;
@@ -17,6 +19,12 @@
             height: 56px;
             background: var(--accent);
             opacity: 1;
+            transition: .3s;
+
+            @include vars.hover {
+                background: var(--accent-11);
+                opacity: 1;
+            }
 
             svg {
                 width: 13px;

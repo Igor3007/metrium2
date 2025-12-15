@@ -49,6 +49,16 @@
             &:focus-visible {
                 outline: 2px solid var(--accent-11);
             }
+
+            &:hover,
+            &:active {
+                background: var(--accent-13);
+            }
+
+            &:focus {
+                background: var(--white);
+            }
+
         }
     }
 
