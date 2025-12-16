@@ -199,7 +199,9 @@ function submitForm(form, btn) {
     else {
         updateCatalogFromUrl(url, ({ data }) => {
             if (data.catalogHtml !== undefined) {
-                document.querySelector('[data-catalog="catalog"]').innerHTML = data.catalogHtml;
+                const container = document.querySelector('[data-catalog="catalog"]');
+                container.innerHTML = data.catalogHtml;
+                callbackFormProcess(container, null);
             }
 
             /*let pagination = document.querySelector('[data-catalog="pagination"]');
