@@ -8,10 +8,10 @@ section.calc-request
                 .calc-form__inputs.flex
                     .input-wrapper.v-flex
                         label Ваш телефон
-                        input(placeholder="Введите номер *")
+                        input(placeholder="Введите номер *" data-maska="+7(###)###-##-##")
                     .input-wrapper.v-flex
                         label Ваше имя
-                        input(placeholder="Имя *")
+                        input(placeholder="Имя *" maxlength=50)
                 .btn-wrapper
                     button.btn.btn-green.btn-wide
                         +icon("ic_house-plus")

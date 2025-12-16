@@ -84,7 +84,7 @@
         }
 
         &.err {
-            &~.checkbox__elem {
+            & ~ .checkbox__elem {
                 border-color: #f00;
                 background-color: #ff000014;
                 animation: err-pulse 1s 2;
@@ -92,7 +92,7 @@
         }
 
 
-        &:checked~.checkbox__elem {
+        &:checked ~ .checkbox__elem, {
             z-index: 2;
             background-color: var(--accent);
             border-color: var(--accent);
@@ -107,10 +107,23 @@
         }
 
 
-        &:checked~.checkbox__elem:after {
+        &:checked ~ .checkbox__elem:after {
             opacity: 1;
             border-radius: 0;
             transform: rotate(0);
+        }
+    }
+
+    &:has(input:checked) {
+        @include vars.hover {
+            .checkbox__elem {
+                border-color: var(--accent-11);
+                background-color: var(--accent-11);
+
+                &:after {
+                    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMiIgdmlld0JveD0iMCAwIDEyIDIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMUgxMSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4=);
+                }
+            }
         }
     }
 
@@ -131,7 +144,6 @@
         }
     }
 }
-
 
 
 /* radio */
@@ -210,11 +222,11 @@
     }
 
     & input {
-        &:hover~.radio__elem {
+        &:hover ~ .radio__elem {
             border-color: var(--accent);
         }
 
-        &:checked~.radio__elem {
+        &:checked ~ .radio__elem {
 
             background-color: #fff;
 
@@ -248,7 +260,6 @@
 }
 
 
-
 .toggle {
     display: flex;
     align-items: center;
@@ -259,8 +270,6 @@
     @media screen and (min-width: vars.$w992) {
         font-size: 14px;
     }
-
-
 
 
     & div {
@@ -300,7 +309,7 @@
     & input {
         display: none;
 
-        &:checked~div .toggle-slide {
+        &:checked ~ div .toggle-slide {
             background: vars.$accent-1-1;
 
             &:hover {
@@ -320,13 +329,13 @@
         display: none;
     }
 
-    & input:checked~div .toggle-active {
+    & input:checked ~ div .toggle-active {
         display: block;
 
 
     }
 
-    & input:checked~div .toggle-deactive {
+    & input:checked ~ div .toggle-deactive {
         display: none;
         color: vars.$gray-22;
 

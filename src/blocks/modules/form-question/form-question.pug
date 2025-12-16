@@ -2,6 +2,7 @@ mixin  form-question(data)
     -var title = data?.title || "Есть вопрос или нужна консультация?"
     -var description = data?.description || "Оставляйте свой номер телефона — мы перезвоним и расскажем о самых выгодных предложениях, поможем подобрать наиболее подходящие варианты для вас!"
     -var className = data?.class || false
+    -var agree = data?.agree || "Нажимая кнопку, вы даёте согласие на "
     section.section-form-question(class = className)
         .container
             .form-question
@@ -18,5 +19,5 @@ mixin  form-question(data)
                                     +icon('ic_arrow-right')
                             .form-question__note
                                 +checkbox("", "agree", {required: true})
-                                    span Нажимая кнопку, вы даёте согласие на 
+                                    span= agree
                                         a(href='#' target="_blank") обработку персональных данных

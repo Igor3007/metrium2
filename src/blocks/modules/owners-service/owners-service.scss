@@ -2,6 +2,11 @@
 
 .owners-services {
     padding-bottom: 48px;
+    padding-top: 48px;
+
+    @include vars.before('md') {
+        padding-top: 24px;
+    }
 
     .services-grid {
         display: grid;
