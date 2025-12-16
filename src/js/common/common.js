@@ -411,11 +411,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
     // select.afSelect.close()
     // select.afSelect.update()
 
-    const selectCustom = new afSelect({
-        selector: 'select:not(.native)'
-    })
+    setTimeout(() => {
+        const selectCustom = new afSelect({
+            selector: 'select:not(.native)'
+        })
+        selectCustom.init();
+    }, 0);
 
-    selectCustom.init();
 
     document
         .querySelectorAll('form')
