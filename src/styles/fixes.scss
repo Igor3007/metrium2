@@ -30,10 +30,10 @@ input::placeholder {
 
 .page-wishlist {
     .section-form-question {
-        margin-bottom: 32px;
+        padding-bottom: 32px;
 
         @include vars.from('md') {
-            margin-bottom: 75px;
+            padding-bottom: 75px;
         }
     }
 }
