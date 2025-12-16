@@ -20,6 +20,10 @@
         display: block;
         aspect-ratio: 160 / 56;
 
+        @include vars.before('md') {
+            display: none;
+        }
+
         img {
             width: 100%;
             height: 100%;
@@ -38,6 +42,7 @@
 
         @include vars.before('md') {
             flex-direction: column;
+            border-radius: 16px;
         }
     }
 

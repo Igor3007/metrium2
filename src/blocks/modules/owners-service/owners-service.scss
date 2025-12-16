@@ -7,6 +7,9 @@
         display: grid;
         gap: 20px;
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        @include vars.before('md') {
+            grid-template-columns: 1fr;
+        }
     }
 
     .card-services {
@@ -24,7 +27,7 @@
         }
 
         &__main {
-            width: 288px;
+            //width: 288px;
         }
 
         &.highlighted {

@@ -13,7 +13,7 @@ export const initOwnersSlider = () => {
                 focus: "center",
                 updateOnMove: true,
                 breakpoints: {
-                    1100: {
+                    1200: {
                         arrows: false,
                         perPage: 1,
                         pagination: false

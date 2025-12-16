@@ -17,6 +17,8 @@
     }
 
     .splide {
+        overflow: hidden;
+
         &__track {
             overflow: visible;
         }
@@ -86,16 +88,23 @@
 }
 
 .case-slide {
-    position: absolute;
     border-radius: 24px;
     overflow: hidden;
     border: 8px solid var(--white);
 
     @include vars.before('xl') {
-        aspect-ratio: 66 / 35;
+        //min-height: 75vh;
     }
 
     @include vars.from('xl') {
+        position: absolute;
+        width: 1056px;
+        height: 560px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @include vars.from('lg') {
         width: 1056px;
         height: 560px;
         left: 50%;
@@ -105,7 +114,8 @@
     &__wrapper {
         position: relative;
         @include vars.before('xl') {
-            aspect-ratio: 66 / 35;
+            //aspect-ratio: 66 / 35;
+            //min-height: 75vh;
         }
         @include vars.from('xl') {
             height: 560px;
@@ -122,16 +132,25 @@
     }
 
     &__description {
-        position: absolute;
         left: 0;
         right: 0;
         bottom: 0;
-        padding: 128px 40px 24px;
+        padding: 24px 40px;
         background: linear-gradient(180deg, rgba(255, 255, 255, 0) 10.1%, #FFFFFF 40.38%);
+
+        @include vars.before('md') {
+            padding: 24px;
+        }
+
+        @include vars.from('xl') {
+            position: absolute;
+            padding-top: 128px;
+        }
 
         h3 {
             text-align: center;
             margin-bottom: 24px;
+            font: 400 clamp(28px, 3vw , 36px)/1 var(--font-guardian);
         }
     }
 
@@ -139,6 +158,10 @@
         display: flex;
         justify-content: center;
         gap: 48px;
+        @include vars.before('md') {
+            flex-direction: column;
+            gap: 8px;
+        }
     }
 
     &__param {

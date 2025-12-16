@@ -4,8 +4,16 @@
     padding-top: 96px;
     margin-bottom: 96px;
 
+    @include vars.before('md') {
+        padding-top: 48px;
+        margin-bottom: 48px;
+    }
+
     h2 {
         margin-bottom: 48px;
+        @include vars.before('md') {
+            margin-bottom: 24px;
+        }
     }
 
     &__grid {
@@ -16,6 +24,9 @@
         border: 1px solid var(--accent-13);
         background: var(--accent-13);
         overflow: hidden;
+        @include vars.before('md') {
+            grid-template-columns: 1fr;
+        }
     }
 }
 
@@ -24,6 +35,10 @@
     padding: 44px 44px 44px 178px;
     gap: 46px;
     position: relative;
+
+    @include vars.before('md') {
+        padding-left: 94px;
+    }
 
     &, & * {
         transition: .3s;
@@ -34,6 +49,10 @@
         position: absolute;
         left: 44px;
         bottom: -22px;
+
+        @include vars.before('md') {
+            left: 12px;
+        }
 
         .icon {
             width: 68px;
