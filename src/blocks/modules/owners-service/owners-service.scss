@@ -6,6 +6,7 @@
 
     @include vars.before('md') {
         padding-top: 24px;
+        padding-bottom: 0;
     }
 
     .subtitle {
@@ -13,6 +14,12 @@
         letter-spacing: .02em;
         margin-top: 26px;
         margin-bottom: 48px;
+
+        @include vars.before('md') {
+            font: 400 14px/20px vars.$font-default;
+            margin-top: 8px;
+            margin-bottom: 16px;
+        }
     }
 
     .services-grid {
@@ -21,6 +28,7 @@
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         @include vars.before('md') {
             grid-template-columns: 1fr;
+            gap: 8px;
         }
     }
 
@@ -31,6 +39,7 @@
 
         @include vars.before('md') {
             padding: 15px;
+            align-items: center;
         }
 
         &__icon {
@@ -43,6 +52,7 @@
                 max-width: 96px;
                 min-width: 96px !important;
                 height: 100%;
+                min-height: 128px;
                 border-radius: 12px;
             }
         }
@@ -50,12 +60,23 @@
         &__title {
             transition: .3s;
             margin-top: 16px;
+
+            @include vars.before('md') {
+                margin-top: 0;
+                font: 500 16px/1.5 vars.$font-default !important;
+            }
         }
 
         &__desc {
             line-height: 24px;
             text-wrap: balance;
             letter-spacing: .02em;
+            flex-grow: 1;
+
+            @include vars.before('md') {
+                font-size: 13px !important;
+                line-height: 16px;
+            }
         }
 
         &__main {
@@ -66,6 +87,10 @@
 
         &.highlighted {
             padding-right: 24px;
+
+            .card-services__main {
+                height: 100%;
+            }
 
             .card-services__icon {
                 width: 160px;
