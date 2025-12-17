@@ -30,7 +30,6 @@
         align-items: flex-start;
 
         @include vars.before('md') {
-            flex-direction: column;
             padding: 15px;
         }
 
@@ -38,6 +37,14 @@
             width: 140px;
             min-width: 140px;
             transition: .3s;
+
+            @include vars.before('md') {
+                width: 96px !important;
+                max-width: 96px;
+                min-width: 96px !important;
+                height: 100%;
+                border-radius: 12px;
+            }
         }
 
         &__title {
