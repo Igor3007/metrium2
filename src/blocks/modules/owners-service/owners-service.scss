@@ -29,6 +29,11 @@
         transition: .3s;
         align-items: flex-start;
 
+        @include vars.before('md') {
+            flex-direction: column;
+            padding: 15px;
+        }
+
         &__icon {
             width: 140px;
             min-width: 140px;
@@ -67,7 +72,6 @@
         }
 
         @include vars.hover {
-            //padding-right: 24px;
 
             .card-services {
                 &__icon {

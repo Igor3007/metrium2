@@ -8,10 +8,10 @@ section.calc-request
                 .calc-form__inputs.flex
                     .input-wrapper.v-flex
                         label Ваш телефон
-                        input(placeholder="Введите номер *" data-maska="+7(###)###-##-##")
+                        input(required="required" placeholder="Введите номер *" data-maska="+7(###)###-##-##")
                     .input-wrapper.v-flex
                         label Ваше имя
-                        input(placeholder="Имя *" maxlength=50)
+                        input(required="required" placeholder="Имя *" maxlength=50)
                 .btn-wrapper
                     button.btn.btn-green.btn-wide
                         +icon("ic_house-plus")
@@ -22,6 +22,6 @@ section.calc-request
                             span.checkbox__elem
                             span.checkbox__text
                             span
-                                | Нажимая на кнопку, вы соглашаетесь с нашими
-                                a(href='#' target='_blank')  «Правилами обработки персональных данных»
+                                | Даю согласие на обработку
+                                a(href='#' target='_blank')  персональных данных
 
