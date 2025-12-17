@@ -35,6 +35,7 @@
     padding: 44px 44px 44px 178px;
     gap: 46px;
     position: relative;
+    overflow: hidden;
 
     @include vars.before('md') {
         padding-left: 94px;

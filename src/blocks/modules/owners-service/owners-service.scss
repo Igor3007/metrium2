@@ -8,6 +8,13 @@
         padding-top: 24px;
     }
 
+    .subtitle {
+        font: 400 20px/1.6 vars.$font-default;
+        letter-spacing: .02em;
+        margin-top: 26px;
+        margin-bottom: 48px;
+    }
+
     .services-grid {
         display: grid;
         gap: 20px;
@@ -20,6 +27,7 @@
     .card-services {
         padding-right: 24px;
         transition: .3s;
+        align-items: flex-start;
 
         &__icon {
             width: 140px;
@@ -29,10 +37,19 @@
 
         &__title {
             transition: .3s;
+            margin-top: 16px;
+        }
+
+        &__desc {
+            line-height: 24px;
+            text-wrap: balance;
+            letter-spacing: .02em;
         }
 
         &__main {
-            //width: 288px;
+            @include vars.from('md') {
+                width: 288px;
+            }
         }
 
         &.highlighted {

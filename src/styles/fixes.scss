@@ -51,3 +51,12 @@ input::placeholder {
         }
     }
 }
+
+.owners-exclusives {
+    .splide__track {
+        @include vars.before('xxl') {
+            overflow: visible;
+        }
+    }
+
+}

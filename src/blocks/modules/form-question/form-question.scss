@@ -142,10 +142,12 @@
             }
         }
 
-        .checkbox input:checked ~ .checkbox__elem {
+        .checkbox:has(input:checked) {
             @include vars.hover {
-                background: var(--accent-22);
-                border-color: var(--accent-22);
+                .checkbox__elem {
+                    background: var(--accent-22);
+                    border-color: var(--accent-22);
+                }
             }
         }
     }
