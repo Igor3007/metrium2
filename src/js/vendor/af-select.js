@@ -103,14 +103,28 @@ export class afSelect {
         styledList.classList.add('select-list');
 
         if (select.getAttribute('data-find') != 'false' && select.querySelectorAll('option').length > 5) {
+            const styledWrapper = document.createElement('div');
+            styledWrapper.classList = "input-search-wrp";
+
             const styledFindInput = document.createElement('input')
             styledFindInput.setAttribute('type', 'text');
             styledFindInput.setAttribute('placeholder', 'Найти');
-            styledList.appendChild(styledFindInput)
+
+            const clearBtn = document.createElement('div');
+            clearBtn.classList = "clear";
+            clearBtn.innerText = "×";
+
+            styledWrapper.appendChild(styledFindInput);
+            styledWrapper.appendChild(clearBtn);
+
+            styledList.appendChild(styledWrapper);
 
             styledFindInput.addEventListener('keyup', (e) => {
                 this.findOption(e)
-            })
+            });
+            clearBtn.addEventListener('click', (e) => {
+                this.clear(e);
+            });
         }
 
         styledList.appendChild(styledOptions)
@@ -438,6 +452,28 @@ export class afSelect {
                 _this.on.change(option)
             }
         })
+    }
+
+    clear(e) {
+        const {target} = e;
+        const parent = target.closest('.af-select');
+        const select = parent.querySelector('select');
+        const placeholder = select.getAttribute('placeholder');
+        const multiple = select.getAttribute('multiple');
+        const styledSelect = parent.querySelector('.select-styled');
+        select.querySelectorAll('option').forEach(option => {
+            option.removeAttribute('selected');
+
+        });
+        parent
+            .querySelectorAll('.select-options li')
+            .forEach(li => {
+                li.classList.remove('active');
+            });
+        select.dispatchEvent(new Event('change'));
+        if (placeholder) {
+            styledSelect.innerHTML = '<span class="af-selected-placeholder" data-af-placeholder="' + placeholder + '">' + placeholder + '</span>';
+        }
     }
 
     clickEventOpenSelect(elem) {

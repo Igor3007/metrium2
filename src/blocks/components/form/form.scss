@@ -822,6 +822,27 @@
     }
 }
 
+.input-search-wrp {
+    display: flex;
+    align-items: center;
+
+    .clear {
+        padding: 0;
+        font-size: 1.5em;
+        border: none;
+        background: none;
+        color: var(--text-3);
+        cursor: pointer;
+        margin-bottom: 8px;
+        margin-left: 16px;
+        margin-right: 8px;
+
+        &:hover {
+            color: vars.$red;
+        }
+    }
+}
+
 .select-range {
     display: flex;
     gap: 4px;

@@ -95,6 +95,7 @@ const initDistrictSelector = (element, template, data) => {
                 input.value = `[${item}]`;
                 container.innerHTML = `${prefix} ${name}`;
                 popup.close();
+                input.dispatchEvent(new Event("change"));
             })
             instants.appendChild(liNode);
         });

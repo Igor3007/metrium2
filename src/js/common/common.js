@@ -550,6 +550,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             initSliderMinicard(splideList);
             initMinicardEvents(splideList);
             initWishLists(splideList);
+            initPopUp(splideList);
 
             if (this.currentCurrency) {
                 this.changeCurrency({
