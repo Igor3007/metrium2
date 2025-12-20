@@ -75,7 +75,7 @@ mixin minicard-country(data)
                     .minicard__action
                         .minicard__detail
                             a(href='#'): button.btn.btn-green: span Подробнее
-                        .minicard__getcall
+                        .minicard__getcall(data-tpl="callback-object")
                             a(href='#')
                                 button.btn.btn-line
                                     +icon('ic_phone')

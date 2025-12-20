@@ -2,7 +2,8 @@ import {initMinicardEvents, initSliderMinicard} from "./minicard.js";
 import {initWishLists} from "./wishlist.js";
 import { generateFormUrl } from "./catalog.js";
 import { initPopUp } from "./initPopUp.js";
-
+import spriteUrl from '/resources/images/sprites/sprite.svg';
+// const spriteUrl = "/img/sprites/sprite.svg";
 export class EstateMap {
 
     constructor(options) {
@@ -30,7 +31,7 @@ export class EstateMap {
 
         this.contentPin = document.createElement('div');
         this.contentPin.className = 'map-point single';
-        this.contentPin.innerHTML = '<svg class="icon" width="24" height="24"><use href="/img/sprites/sprite.svg#logo-element"></use></svg>'
+        this.contentPin.innerHTML = `<svg class="icon" width="24" height="24"><use href="${spriteUrl}#logo-element"></use></svg>`
 
         this.map = new YMap(
             this.element,
