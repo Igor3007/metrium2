@@ -544,12 +544,19 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 })
             }
 
-            this.slider.refresh();
-            this.slider.go(0);
+            try {
+                this.slider.refresh();
+                this.slider.go(0);
+            } catch (e) {
+                console.error(e)
+            }
 
             initSliderMinicard(splideList);
             initMinicardEvents(splideList);
             initWishLists(splideList);
+
+            //reinit popup. copying of innerHtml nullify listeners
+            splideList.querySelectorAll("[data-tpl]").forEach(x => {x.classList.remove('popup-added')})
             initPopUp(splideList);
 
             if (this.currentCurrency) {
@@ -588,7 +595,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         addEvent() {
             this.filterItems.forEach(el => {
-                el.addEventListener('click', (e) => this.changeFilter(el))
+                el.addEventListener('click', (e) => this.changeFilter(el));
             })
             this.currencyItems.forEach(el => {
                 el.addEventListener('click', (e) => this.changeCurrency(el))
