@@ -59,8 +59,8 @@ export class EstateMap {
 
         let url = generateFormUrl(this.form);
 
-        // await this.redraw(url);
-        await this.redraw('/json/map.json');
+        await this.redraw(url);
+        //await this.redraw('/json/map.json');
 
 
         this.form.querySelectorAll('select, input, textarea')
