@@ -84,4 +84,11 @@
             }
         }
     }
+
+    &:invalid {
+        button {
+            background: var(--text-3);
+            pointer-events: none;
+        }
+    }
 }
