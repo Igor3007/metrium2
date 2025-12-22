@@ -551,12 +551,21 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 console.error(e)
             }
 
+            //reinit popup and wishlist. copying of innerHtml nullify listeners
+            splideList
+                .querySelectorAll("[data-tpl]")
+                .forEach(x => {
+                    x.classList.remove('popup-added')
+                });
+            splideList
+                .querySelectorAll('[data-wishlist]')
+                .forEach(x => {
+                    x.classList.remove('initialized')
+                });
+
             initSliderMinicard(splideList);
             initMinicardEvents(splideList);
             initWishLists(splideList);
-
-            //reinit popup. copying of innerHtml nullify listeners
-            splideList.querySelectorAll("[data-tpl]").forEach(x => {x.classList.remove('popup-added')})
             initPopUp(splideList);
 
             if (this.currentCurrency) {

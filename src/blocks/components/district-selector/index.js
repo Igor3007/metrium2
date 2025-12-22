@@ -92,7 +92,7 @@ const initDistrictSelector = (element, template, data) => {
             liNode.setAttribute("data-id", item);
             liNode.innerHTML = name;
             liNode.addEventListener("click", (e) => {
-                input.value = `[${item}]`;
+                input.value = `${item}`;
                 container.innerHTML = `${prefix} ${name}`;
                 popup.close();
                 input.dispatchEvent(new Event("change"));
