@@ -94,7 +94,6 @@
 
 .case-slide {
     border-radius: 24px;
-    overflow: hidden;
     border: 8px solid var(--white);
 
     @include vars.from('xl') {
@@ -114,10 +113,6 @@
 
     &__wrapper {
         position: relative;
-        @include vars.before('xl') {
-            //aspect-ratio: 66 / 35;
-            //min-height: 75vh;
-        }
         @include vars.from('xl') {
             height: 560px;
         }
@@ -134,9 +129,9 @@
     }
 
     &__description {
-        left: 0;
-        right: 0;
-        bottom: 0;
+        left: -1px;
+        right: -1px;
+        bottom: -1px;
         padding: 24px 40px;
         background: linear-gradient(180deg, rgba(255, 255, 255, 0) 10.1%, #FFFFFF 40.38%);
 
