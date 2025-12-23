@@ -97,10 +97,6 @@
     overflow: hidden;
     border: 8px solid var(--white);
 
-    @include vars.before('xl') {
-        //min-height: 75vh;
-    }
-
     @include vars.from('xl') {
         position: absolute;
         width: 1056px;
@@ -128,6 +124,7 @@
     }
 
     picture {
+        height: calc(100% - 16px);
 
         img {
             width: 100%;

@@ -411,12 +411,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
     // select.afSelect.close()
     // select.afSelect.update()
 
-    setTimeout(() => {
-        const selectCustom = new afSelect({
-            selector: 'select:not(.native)'
-        })
-        selectCustom.init();
-    }, 0);
+    const selectCustom = new afSelect({
+        selector: 'select:not(.native)'
+    })
+    selectCustom.init();
 
 
     document
