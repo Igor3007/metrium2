@@ -91,8 +91,11 @@
     }
 
     &__icon {
-        min-width: 105px;
-        width: 105px;
+        --width: 105px;
+
+        transition: .3s;
+        min-width: var(--width);
+        width: var(--width);
         height: 105px;
         background-color: var(--bg);
         border-radius: 20px;
@@ -101,14 +104,12 @@
         justify-content: center;
 
         @media screen and (min-width: vars.$w1440) {
-            min-width: 160px;
-            width: 160px;
+            --width: 140px;
             height: 160px;
         }
 
         @media screen and (min-width: vars.$w992) {
-            min-width: 110px;
-            width: 110px;
+            --width: 110px;
             height: 110px;
         }
 
@@ -140,6 +141,7 @@
         font-weight: 500;
         letter-spacing: .02em;
         padding-bottom: 5px;
+        transition: .3s color;
 
         @media screen and (min-width: vars.$w576) {
             font-size: 18px;
@@ -152,6 +154,7 @@
         font-size: 14px;
         line-height: 140%;
         padding-bottom: 12px;
+        max-width: 280px;
 
         @media screen and (min-width: vars.$w992) {
             font-size: 15px;
@@ -235,6 +238,24 @@
             &:before {
                 background: var(--accent-22);
             }
+        }
+    }
+
+    @include vars.hover {
+        .card-services__icon {
+            background: var(--accent-13);
+
+            @media screen and (min-width: vars.$w1440) {
+                --width: 160px;
+            }
+
+            @media screen and (min-width: vars.$w992) {
+                --width: 110px;
+            }
+        }
+
+        .card-services__title {
+            color: var(--accent);
         }
     }
 
