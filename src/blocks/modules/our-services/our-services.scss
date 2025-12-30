@@ -241,21 +241,23 @@
         }
     }
 
-    @include vars.hover {
-        .card-services__icon {
-            background: var(--accent-13);
+    &:not(.highlighted) {
+        @include vars.hover {
+            .card-services__icon {
+                background: var(--accent-13);
 
-            @media screen and (min-width: vars.$w1440) {
-                --width: 160px;
+                @media screen and (min-width: vars.$w1440) {
+                    --width: 160px;
+                }
+
+                @media screen and (min-width: vars.$w992) {
+                    --width: 110px;
+                }
             }
 
-            @media screen and (min-width: vars.$w992) {
-                --width: 110px;
+            .card-services__title {
+                color: var(--accent);
             }
-        }
-
-        .card-services__title {
-            color: var(--accent);
         }
     }
 
